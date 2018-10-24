@@ -1,0 +1,172 @@
+/**
+ * Secretum Theme - Full Width Header Area
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.header-full {
+    background-color: $header-bg-color;
+    border-bottom: 2px solid $custom-header-top-line-color;
+    position: relative;
+
+    a,
+    a:link,
+    a:active,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+    }
+
+    .top-row {
+        line-height: 40px;
+        height: 40px;
+
+        a {
+            text-align: center;
+        }
+    }
+
+    .bottom-row {
+        line-height: 50px;
+        height: 50px;
+
+        a {
+            text-align: center;
+        }
+    }
+
+    .search-toggle .fa-icon {
+        font-size: 1.8em;
+        padding: 5px 0 0 0;
+    }
+
+    .contact-toggle .fa-icon {
+        font-size: 2.5em;
+        padding: 2px 0 0 0;
+    }
+
+    .navbar-ham {
+        background-color: transparent;
+        border: 1px solid transparent;
+        display: table;
+        cursor: pointer;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 35px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+
+        span {
+            background: $header-navbar-hamburger-color;
+            border-radius: 3px;
+            display: table-cell;
+            height: 6px;
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            vertical-align: middle;
+            width: 100%;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+              top: 6px;
+            }
+
+            &:nth-child(2) {
+              top: 18px;
+            }
+
+            &:nth-child(3) {
+              top: 30px;
+            }
+        }
+
+        &.open span:nth-child(1) {
+            top: 18px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        &.open span:nth-child(3) {
+            top: 18px;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+
+        &:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+    }
+
+    button.navbar-ham:focus {
+        outline: none;
+        outline: none -webkit-focus-ring-color;
+    }
+
+    .navbar-nav li {
+        line-height: 40px;
+        height: 40px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .navbar-nav li.dropdown a {
+        display: block;
+        line-height: 40px;
+        padding: 0;
+        width: 100%;
+
+        .fa {
+            padding-right: 8px;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+            outline: 0;
+        }
+    }
+
+    .navbar-nav .menu-item a {
+        text-align: left;
+    }
+
+    ul.navbar-nav li ul.dropdown-menu {
+        padding: 9px 6px;
+        display: none;
+    }
+
+    ul.navbar-nav li:hover ul.dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 7px;
+    }
+}

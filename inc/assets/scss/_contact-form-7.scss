@@ -1,0 +1,156 @@
+/**
+ * Secretum Theme - Contact Form 7
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.wpcf7 {
+    max-width: 650px;
+    margin: 0 auto !important;
+
+    select,
+    textarea,
+    input[type="text"],
+    input[type="search"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="color"],
+    input[type="email"],
+    input[type="file"],
+    input[type="submit"] {
+        @extend .form-control;
+    }
+
+   input[type="submit"] {
+        @extend .btn;
+        @extend .btn-primary;
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:focus,
+        &.focus {
+            outline: 0;
+            -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+            box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+        }
+
+        &.disabled,
+        &:disabled {
+            cursor: not-allowed;
+            opacity: .65;
+        }
+
+
+        &:active,
+        &.active {
+            background-image: none;
+        }
+    }
+
+    .wpcf7-form {
+        p {
+            @extend .form-group;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    input[type="file"] {
+        border: 0 !important;
+    }
+
+    input[type="checkbox"] {
+        display: inline;
+        padding: 0;
+        width: auto;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    input,
+    textarea {
+        &::-ms-expand {
+            background-color: transparent;
+            border: 0;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $gray-600;
+            opacity: 1;
+        }
+
+        &::-moz-placeholder {
+            color: $gray-600;
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: $gray-600;
+            opacity: 1;
+        }
+
+        &::placeholder {
+            color: $gray-600;
+            opacity: 1;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &:focus {
+            color: $gray-700;
+            background-color: $white;
+            border-color: $gray-600;
+            outline: none;
+        }
+
+        &:disabled,
+        &[readonly] {
+            background-color: $gray-200;
+            opacity: 1;
+        }
+    }
+
+    select:focus {
+        color: $gray-700;
+        background-color: $white;
+        border-color: $gray-600;
+        outline: none;
+    }
+
+    .wpcf7-not-valid-tip {
+        color: theme-color("danger");
+    }
+
+    .wpcf7-validation-errors {
+        @extend .form-control;
+        color: theme-color("danger");
+        border: 1px solid $gray-200;
+    }
+}
+
+select.wpcf7 textarea:not([size]):not([multiple]),
+select.wpcf7 input:not([size]):not([multiple]) {
+    height: calc(2.25rem + 2px);
+}
+
+select.wpcf7 textarea:focus::-ms-value,
+select.wpcf7 input:focus::-ms-value {
+    color: $gray-700;
+    background-color: $white;
+}

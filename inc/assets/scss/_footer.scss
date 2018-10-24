@@ -1,0 +1,20 @@
+/**
+ * Theme Footer Area
+ *
+ * @package Secretum
+ * @version 0.0.1
+ */
+
+.footer {
+    background: $content-bg;
+    position: relative;
+
+    a:link {
+        text-decoration: none;
+    }
+    a:active {}
+    a:visited {}
+    a:hover {
+        text-decoration: underline;
+    }
+}

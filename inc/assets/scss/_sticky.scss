@@ -1,0 +1,42 @@
+/**
+ * Secretum Theme - Sticky
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.sticky {
+	position: relative;
+}
+
+// Header
+.sticky.is-sticky,
+.admin-bar .sticky.is-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.admin-bar .sticky.is-sticky {
+    top: 32px;
+
+    @include media-breakpoint-down(sm) {
+       top: 64px;
+    }
+}
+
+// Content
+.post:not(.sticky) .icon-thumb-tack {
+	display: none;
+}
+
+.sticky .icon-thumb-tack {
+	display: block;
+	height: 18px;
+	left: -1.5em;
+	position: absolute;
+	top: 1.65em;
+	width: 20px;
+}

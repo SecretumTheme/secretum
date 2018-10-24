@@ -1,0 +1,23 @@
+/**
+ * Secretum Theme - Required Alignments
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    @include clearfix;
+    margin-left: auto;
+    margin-right: auto;
+}

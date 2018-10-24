@@ -1,0 +1,189 @@
+/**
+ * Secretum Theme - Custom Header Area
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.custom-header {
+    position: relative;
+}
+
+.custom-header .container-navigation {
+    background-color: $custom-header-menu-bg-color;
+    border-bottom: 2px solid $custom-header-bottom-line-color;
+    border-top: 1px solid $custom-header-top-line-color;
+    position: relative;
+    width: 100%;
+}
+
+.custom-header .container-navigation.site-navigation-fixed {
+    background-color: rgba( $custom-header-menu-bg-color, 0.9 );
+    position: fixed;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.admin-bar .custom-header .container-navigation.site-navigation-fixed {
+    top: 32px;
+}
+
+.custom-header a.navbar-brand,
+.custom-header .navbar-brand a,
+.custom-header h1.navbar-brand {
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        opacity: 0.8;
+    }
+}
+
+.custom-header .site-description {
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+.has-header-image .wrapper.cover,
+.has-header-video .wrapper.cover {
+    position: relative;
+    z-index: 1;
+}
+
+.has-header-image .custom-header,
+.has-header-video .custom-header {
+    display: table;
+    height: 300px;
+    width: 100%;
+}
+
+.has-header-image.secretum-front-page .custom-header,
+.has-header-video.secretum-front-page .custom-header,
+.home.blog.has-header-image .custom-header,
+.home.blog.has-header-video .custom-header {
+    height: 75vh;
+}
+
+.has-header-image .custom-header .navbar,
+.has-header-video .custom-header .navbar {
+    bottom: 0;
+    display: block;
+    left: 0;
+    height: auto;
+    padding-top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.custom-header-media {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    &:before {
+        background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+        background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0);
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+    }
+
+}
+
+.has-header-image .custom-header-media img,
+.has-header-video .custom-header-media video,
+.has-header-video .custom-header-media iframe {
+    position: fixed;
+    height: auto;
+    left: 50%;
+    max-width: 1000%;
+    min-height: 100%;
+    min-width: 100%;
+    min-width: 100vw;
+    width: auto;
+    top: 50%;
+    padding-bottom: 1px;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.wp-custom-header .wp-custom-header-video-button {
+    background-color: rgba(34, 34, 34, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    height: 45px;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    width: 45px;
+
+    &:hover,
+    &:focus {
+        border-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(34, 34, 34, 0.8);
+        color: #ffffff;
+    }
+
+}
+
+.admin-bar .wp-custom-header-video-button {
+    top: 62px;
+}
+
+.has-header-image:not(.secretum-front-page):not(.home) .custom-header-media img {
+    bottom: 0;
+    position: absolute;
+    top: auto;
+    -ms-transform: translateX(-50%) translateY(0);
+    -moz-transform: translateX(-50%) translateY(0);
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+}
+
+@supports ( object-fit: cover ) {
+    .has-header-image .custom-header-media img,
+    .has-header-video .custom-header-media video,
+    .has-header-video .custom-header-media iframe,
+    .has-header-image:not(.secretum-front-page):not(.home) .custom-header-media img {
+        height: 100%;
+        left: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+        top: 0;
+        -ms-transform: none;
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        width: 100%;
+    }
+}
+
+body:not(.has-header-image):not(.has-header-video) .custom-header-media {
+    display: none;
+}

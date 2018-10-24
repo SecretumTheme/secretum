@@ -1,0 +1,206 @@
+/**
+ * Secretum Theme - Content Entry Area
+ * @package secretum
+ * @version 0.0.1
+ */
+
+ .content-area {
+    .sticky {
+        -moz-box-shadow: 0 0 8px 3px $gray-200;
+        -webkit-box-shadow: 0 0 8px 3px $gray-200;
+        box-shadow: 0 0 8px 3px $gray-200;
+        padding: 20px 20px 0 20px;
+        margin-bottom: 50px;
+    }
+
+    article.has-post-thumbnail {
+        margin-bottom: 1em;
+        max-width: 100%;
+
+        img {
+            @include img-fluid();
+            -webkit-backface-visibility: hidden;
+            -webkit-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+        }
+
+        img:hover,
+        img:focus {
+            opacity: 0.7;
+        }
+
+        //.attachment-thumbnail {}
+
+        //.attachment-medium {}
+
+        //.attachment-large {}
+
+        //.attachment-full {}
+    }
+
+    .entry-header {
+        h1.page-title,
+        h1.entry-title,
+        h2.entry-title,
+        h3.entry-title {
+            color: $h1-entry-title-color;
+            -ms-word-wrap: break-word;
+            word-wrap: break-word;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        //.entry-meta {}
+    }
+
+    .entry-content {
+        @include clearfix;
+
+        h2.entry-heading,
+        h3.entry-heading,
+        h4.entry-heading,
+        h5.entry-heading,
+        h6.entry-heading {
+            padding-top: 2rem;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .example {
+            border: 1px solid $gray-400;
+            border-bottom: 0;
+            border-radius: 7px 7px 0 0;
+            margin: 2rem 0 0 0;
+            display: block;
+            padding: 1rem 1rem;
+        }
+
+        pre {
+            font-size: 95%;
+            line-height: 140%;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+        }
+
+        pre code {
+            color: $gray-900;
+            display: block;
+            font-size: 85%;
+            line-height: 140%;
+            padding: 0 1rem 1rem 1rem;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+        }
+
+        code {
+            // Inline Example
+            &.code {
+                border: none;
+                color: $orange;
+                display: inline-block;
+                padding: 0;
+            }
+
+            // Prettify Print WordPress Plugin
+            &.prettyprint {
+                color: $gray-900;
+
+                &.onyx {
+                    background: $gray-900;
+                    border: 1px solid $blackish;
+                    color: $whiteish;
+
+                    .str { color: #EC7600; }
+                    .kwd { color: #93C763; }
+                    .com { color: #66747B; }
+                    .typ { color: #678CB1; }
+                    .lit { color: #FACD22; }
+                    .pun { color: #F1F2F3; }
+                    .pln { color: #F1F2F3; }
+                    .tag { color: #8AC763; }
+                    .atn { color: #E0E2E4; }
+                    .atv { color: #EC7600; }
+                    .dec { color: $purple; }
+                }
+
+                ol.linenums {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+                    color: #555;
+                    list-style-type: decimal;
+                }
+
+                li.L1, li.L3, li.L5, li.L7, li.L9 {
+                    background: #111;
+                }
+            }
+        }
+
+        .page-links {
+            clear: both;
+            color: $secondary-text-color;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            word-spacing: 0.35em;
+
+            a {
+                color: $secondary-text-color;
+            }
+        }
+    }
+
+    // Archive Pages Content Wrapper
+    //.content-archive{}
+
+    // Search Content Wrapper
+    //.content-search{}
+
+    // Entry Container
+    //.entry-footer {}
+
+    // Post Navigation Link Container
+    .post-navigation {
+        @include clearfix;
+
+        .nav-links {
+            .nav-previous {
+                text-align: left;
+
+                a .nav-title {
+                    color: $secondary-text-color;
+                }
+
+                a .nav-title .nav-subtitle {
+                    color: $primary-brand-color;
+                }
+            }
+
+            .nav-next {
+                text-align: right;
+
+                a .nav-title {
+                    color: $secondary-text-color;
+                }
+
+                a .nav-title .nav-subtitle {
+                    color: $primary-brand-color;
+                }
+            }
+        }
+    }
+}

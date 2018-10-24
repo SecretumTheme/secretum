@@ -1,0 +1,136 @@
+/**
+ * Secretum Theme - WordPress Comments
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.comments-area {}
+
+.comments-title,
+h4.comments-title {}
+
+.comment-navigation {}
+
+.comment-navigation .nav-previous {}
+
+.comment-navigation .nav-next {}
+
+.children,
+.comment-list {
+    list-style-type: none;
+}
+
+ol.comment-list {
+    -webkit-padding-start: 0;
+}
+
+.comment {
+    background-color: $gray-100;
+    margin-bottom: 8px;
+}
+
+.comment.byuser {}
+
+.comment.parent {}
+
+.comment.even,
+.pingback.even {
+    background-color: $gray-100;
+    margin-bottom: 12px;
+    padding: 9px;
+}
+
+.comment.odd,
+.pingback.odd {
+    background-color: $gray-200;
+    margin-bottom: 12px;
+    padding: 9px;
+}
+
+.comment-author,
+.comment-author.vcard {
+    & img.avatar, .avatar {}
+    & .fn {}
+    & a.url {}
+    & .says {}
+}
+
+.comment-metadata {
+    font-size: 11px;
+    font-style: italic;
+    & a:link {
+        text-decoration: none;
+    }
+    & time {}
+    & .edit-link {}
+    & a.comment-edit-link {}
+}
+
+.comment-content {}
+
+.comment .reply {}
+
+a.comment-reply-link {
+    background-color: $secondary-button-bg-color;
+    border: 1px solid transparent;
+    border-color: $secondary-button-border-color;
+    border-radius: .25rem;
+    color: $secondary-button-text-color;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    padding: 2px 3px;
+    text-align: right;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    &:hover {
+        background-color: $secondary-button-bg-hover-color;
+    }
+}
+
+.comment-respond {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.comment-reply-title,
+h3.comment-reply-title {}
+
+.comment-reply-title a {
+    &:hover {}
+}
+
+.comment-form {}
+
+.comment-form .required {}
+
+.logged-in-as {
+    & a:link {}
+}
+
+.comment-form-comment {}
+
+.comment-form-author {}
+
+.comment-form-email {}
+
+.comment-form-url {}
+
+.comment-notes {}
+
+.form-submit,
+p.form-submit {}
+
+.no-comments,
+p.no-comments {}

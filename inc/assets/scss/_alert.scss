@@ -1,0 +1,26 @@
+/**
+ * Secretum Theme - Extend Bootstrap 4 Alert Boxes
+ * @package secretum
+ * @version 0.0.1
+ */
+
+// Extend alerts with default colors
+@each $color, $value in $colors {
+    .alert-#{$color} {
+        @include alert-variant(color-levels($color, $alert-bg-level), color-levels($color, $alert-border-level), color-levels($color, $alert-color-level));
+    }
+}
+
+.alert-black {
+    background-color: $black;
+    border-color: $blackish;
+    color: $whiteish;
+
+    hr {
+        border-top-color: $gray-900;
+    }
+
+    .alert-link {
+        color: $whiteish;
+    }
+}

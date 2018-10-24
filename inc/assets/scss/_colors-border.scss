@@ -1,0 +1,33 @@
+/**
+ * Secretum Theme - Extend Bootstrap 4 Border Colors
+ * @package secretum
+ * @version 0.0.1
+ */
+
+.border-primary { border-color: $primary-brand-color !important; }
+.border-primary-dark { border-color: $primary-brand-color-dark !important; }
+.border-primary-light { border-color: $primary-brand-color-light !important; }
+.border-secondary { border-color: $secondary-brand-color !important; }
+
+.border-white { border-color: $white !important; }
+.border-whiteish { border-color: $whiteish !important; }
+
+.border-black { border-color: $black !important; }
+.border-blackish { border-color: $blackish !important; }
+
+.border-gray-100 { border-color: $gray-100 !important; }
+.border-gray-200 { border-color: $gray-200 !important; }
+.border-gray-300 { border-color: $gray-300 !important; }
+.border-gray-400 { border-color: $gray-400 !important; }
+.border-gray-500 { border-color: $gray-500 !important; }
+.border-gray-600 { border-color: $gray-600 !important; }
+.border-gray-700 { border-color: $gray-700 !important; }
+.border-gray-800 { border-color: $gray-800 !important; }
+.border-gray-900 { border-color: $gray-900 !important; }
+
+// Default colors as border colors
+@each $color, $value in $colors {
+	.border-#{$color} {
+		border-color: $value !important;
+	}
+}

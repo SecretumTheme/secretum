@@ -1,0 +1,146 @@
+.secretum-accordion,
+.secretum-accordion .secretum-accordion-nav,
+.secretum-accordion .secretum-accordion-nav * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.3em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
+  background: none transparent;
+  border: none;
+}
+.secretum-accordion {
+  margin: 20px 0;
+  max-width: 100%;
+}
+.secretum-accordion .secretum-accordion-nav,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-menu-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-custom-content {
+  display: block;
+  text-decoration: none;
+  border: none;
+  position: relative;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-subtoggle {
+  cursor: pointer;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-custom-content.secretum-accordion-custom-content-padded,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image > .secretum-accordion-target-text,
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image > .secretum-accordion-image.secretum-accordion-image-padded {
+  padding: 20px 20px 20px 20px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image.secretum-accordion-target-w-image-before > .secretum-accordion-image.secretum-accordion-image-padded {
+  padding-bottom: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image.secretum-accordion-target-w-image-after > .secretum-accordion-image.secretum-accordion-image-padded {
+  padding-top: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image.secretum-accordion-target-w-desc > .secretum-accordion-target-title {
+  padding-bottom: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image > .secretum-accordion-target-description {
+  padding-top: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-menu-item-has-children > .secretum-accordion-target {
+  padding-right: 90px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu {
+  display: none;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-active > .secretum-accordion-submenu {
+  display: block;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-subtoggle {
+  height: 100%;
+  width: 70px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-subtoggle .fa {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -8px;
+  text-align: center;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-menu-item > .secretum-accordion-target .secretum-accordion-subtoggle .secretum-accordion-subtoggle-icon-collapse {
+  display: none;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-active > .secretum-accordion-target .secretum-accordion-subtoggle .secretum-accordion-subtoggle-icon-collapse {
+  display: block;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-active > .secretum-accordion-target .secretum-accordion-subtoggle .secretum-accordion-subtoggle-icon-expand {
+  display: none;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-target {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-2 .secretum-accordion-target {
+  padding-left: 45px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-3 .secretum-accordion-target {
+  padding-left: 75px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-4 .secretum-accordion-target {
+  padding-left: 105px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-5 .secretum-accordion-target {
+  padding-left: 135px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-6 .secretum-accordion-target {
+  padding-left: 165px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-7 .secretum-accordion-target {
+  padding-left: 195px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-8 .secretum-accordion-target {
+  padding-left: 225px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-9 .secretum-accordion-target {
+  padding-left: 255px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-submenu .secretum-accordion-item-level-10 .secretum-accordion-target {
+  padding-left: 285px;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target > .secretum-accordion-target-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target > .secretum-accordion-target-description {
+  font-size: 80%;
+  font-weight: 400;
+  clear: both;
+  display: block;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-target.secretum-accordion-target-w-image {
+  padding: 0;
+}
+.secretum-accordion .secretum-accordion-nav .secretum-accordion-image {
+  display: block;
+  max-width: 100%;
+  transition: 0.2s opacity ease-in;
+  transform: translateZ(0);
+}
+.secretum-accordion .secretum-accordion-target-w-image:hover .secretum-accordion-image {
+  opacity: .9;
+}

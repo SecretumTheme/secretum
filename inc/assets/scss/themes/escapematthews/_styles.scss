@@ -1,0 +1,26 @@
+/**
+ * Secretum Child Theme Styles
+ * @domain escapematthews.com
+ */
+
+
+.header {
+    a.navbar-brand,
+    .navbar-brand a:link {
+        max-width: 237px;
+        height: auto !important;
+    }
+}
+
+.frontpage-billboard {
+    background-attachment: scroll;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100px;
+    overflow: hidden;
+    position: relative;
+}

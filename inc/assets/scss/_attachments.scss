@@ -1,0 +1,52 @@
+/**
+ * Secretum Theme - Attachments Page
+ * @package secretum
+ * @version 0.0.1
+ */
+
+body.attachment {}
+
+article.attachment,
+.type-attachment {}
+
+ p.attachment {
+ 	dipslay: block;
+
+	img {
+		@include img-fluid();
+	}
+
+	a,
+	a:hover,
+	a:focus{
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		background: none;
+		display: inline-block;
+		max-width: 100%;
+	}
+
+	a img {
+		display: block;
+		-webkit-transition: -webkit-filter 0.2s ease-in;
+		transition: -webkit-filter 0.2s ease-in;
+		transition: filter 0.2s ease-in;
+		transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	a:hover img,
+	a:focus img {
+		-webkit-filter: opacity(60%);
+		filter: opacity(60%);
+	}
+
+	.attachment-thumbnail {}
+
+	.attachment-medium {}
+
+	.attachment-large {}
+
+	.attachment-full {}
+ }

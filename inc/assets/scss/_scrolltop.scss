@@ -1,0 +1,50 @@
+/**
+ * Scroll To Top Feature
+ *
+ * @package Secretum
+ * @version 0.0.1
+ */
+
+.scrolltop {
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;    
+    width: 100%;
+}
+
+.scroll {
+    background: $gray-600;
+    background: rgba( $gray-600, 0.7 );
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 9px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+
+    &:hover {
+        background: rgba( $gray-500, 0.6 );
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+
+    .fa {
+        font-size: 30px;
+        margin-left: 1px;
+        margin-top: -5px;
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;    
+    }
+
+}

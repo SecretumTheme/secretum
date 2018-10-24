@@ -1,0 +1,26 @@
+/**
+ * Secretum Theme Sassy Asset Imports
+ * @package secretum
+ * @version 0.0.1
+ */
+
+// Secretum Styling Variables
+@import "secretum/variables";
+
+// Custom User Theme Variables
+@import "../theme_variables.scss";
+
+// Bootstrap 4.1.0
+@import "bootstrap4/bootstrap";
+
+// Ekko Lightbox 5.3.0
+@import "ekko-lightbox/ekko-lightbox";
+
+// Font Awesome 4.7.0
+@import "fontawesome/font-awesome";
+
+// Secretum WordPress Styles
+@import "secretum/secretum";
+
+// Custom User Theme Styles
+@import "../theme_styles.scss";

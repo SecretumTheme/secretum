@@ -1,0 +1,52 @@
+/**
+ * Theme Copyright Area
+ *
+ * @package Secretum
+ * @version 0.0.1
+ */
+
+.copyright {
+    background: $content-bg;
+    font-size: 0.8125rem;
+    position: relative;
+
+    a:link {
+        text-decoration: none;
+    }
+    a:active {}
+    a:visited {}
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .site-info {
+        a:link {}
+        a:active {}
+        a:visited {}
+        a:hover {}
+    }
+
+    .navbar-copyright {
+        a:link {}
+        a:active {}
+        a:visited {}
+        a:hover {}
+        a:focus {
+            outline: none;
+            outline: none -webkit-focus-ring-color
+        }
+
+        .current-menu-item a:link {
+            text-decoration: underline;
+        }
+
+        .menu-item {
+            &:first-of-type {
+                padding-left: 0;
+            }
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+    }
+}
