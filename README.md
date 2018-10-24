@@ -18,7 +18,7 @@ Secretum - A Flexible Multipurpose WordPress Theme.
 * NOT READY FOR PUBLIC USE!!!
 * NOT READY FOR PUBLIC USE!!!
 
-* Bugs / issues do NOT need to be reported. We know....
+* Bugs / issues do NOT need to be reported. We know.
 * This theme is for advanced WordPress / Bootstrap 4 users. If you need instructions past what is going to be explained below, then this theme is without question not for you. Otherwise, you're going to love this theme, I guarantee it.
 * The master branch is stable, it is running live on Websites.
 * The dev branch is not stable and could be vastly different code, bad and good.
@@ -47,14 +47,11 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * Modern & Responsive design
 * Major browser compatibility
 * Major portable device compatibility
-
 * Child theme ready / included
 * Child theme color variations
-
 * WooCommerce compatible
 * WooCommerce Bookings compatible
 * Contact Form 7 compatible
-
 * WordPress Customizer features
 * Show/hide most theme features
 * Manage all WordPress text via Customizer
@@ -64,21 +61,17 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * RAW HTML control over many other elements
 * Graphic, Google font logo or default font
 * Tagline with google font or default font
-
 * Smart sidebars based on active features
 * Left, right, or no sidebar templates
 * Full width templates
 * Multiple post/page templates
 * All standard post formats
-
 * Documentation post type, taxonomies, template and widgets
 * Testimonials post type and widget
 * Documentation post type, taxonomies and widgets
-
 * Shortcodes for most CSS features
 * Brand logo and text shortcode
 * Menus and nav walker shortcode
-
 * FontAwesome icon set and CSS management
 * Simple to use lightbox
 * Translation ready
