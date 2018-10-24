@@ -13,9 +13,9 @@ Secretum - A Flexible Multipurpose WordPress Theme.
 
 ## NOTE - Alpha Release
 
-* NOT READY FOR PUBLIC USE!
-* NOT READY FOR PUBLIC USE!
-* NOT READY FOR PUBLIC USE!
+* NOT READY FOR PUBLIC USE!!!
+* NOT READY FOR PUBLIC USE!!!
+* NOT READY FOR PUBLIC USE!!!
 
 * Bugs / issues do NOT need to be reported. We know....
 * This theme is for advanced WordPress / Bootstrap 4 users. If you need instructions past what is going to be explained below, then this theme is without question not for you. Otherwise, you're going to love this theme, I guarantee it.
