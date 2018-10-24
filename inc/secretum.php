@@ -128,12 +128,10 @@ include_once(SECRETUM_INC . '/feature/features.php');
 
 
 // Theme Update Checker
-/*
 include_once(SECRETUM_INC . '/puc/plugin-update-checker.php');
 
 $secretum = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/escapematthews/secretum/',
+	'https://github.com/SecretumTheme/secretum/updates.json',
 	SECRETUM_THEME_FILE,
 	'secretum'
 );
- */
