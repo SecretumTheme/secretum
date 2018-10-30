@@ -84,37 +84,12 @@ $colors: (
 	"linkhover": 		$link-hover-color
 );
 
-// Default Website Front Family
-$default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$forms-font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
-
-
 
 
 /**
  * Header Hamburger Menu
  */
 $header-navbar-hamburger-color: $white;
-
-/**
- * Header Nav Link Color & Decor
- */
-$navbar-menu-bg-color: transparent;
-$navbar-menu-link-color: $gray-700;
-$navbar-menu-link-decor: none;
-$navbar-menu-active-link-color: $gray-800;
-$navbar-menu-active-link-decor: none;
-$navbar-menu-visited-link-color: $gray-800;
-$navbar-menu-visited-link-decor: none;
-$navbar-menu-hover-link-color: $gray-900;
-$navbar-menu-hover-link-decor: none;
-
-/**
- * Custom Header Background Color
- */
-$custom-header-menu-bg-color: $white;
-$custom-header-bottom-line-color: $gray-200;
-$custom-header-top-line-color: $gray-300;
 
 /**
  * Frontpage Area

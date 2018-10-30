@@ -8,14 +8,30 @@
 
 
 /**
- * Section :: Frontpage
+ * Section :: Display Settings
  */
 $wp_customize->add_section('secretum_frontpage_settings' , array(
 	'panel' 	=> 'secretum_frontpage',
-    'title' 	=> __('Settings', 'secretum'),
+    'title' 	=> __('Display Settings', 'secretum'),
     'priority' 	=> 10,
 ));
 
+
+// Setting :: Custom Frontpage Feature
+// @see inc/system/header/actions.php
+$wp_customize->add_setting('secretum[custom_frontpages]' , array(
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
+	'type' 				=> 'option',
+	'transport' 		=> 'refresh',
+));
+
+// Control :: Custom Frontpage Feature
+$wp_customize->add_control('secretum[custom_frontpages]', array(
+	'label' 		=> __('Enable Custom Frontpage Feature', 'secretum'),
+	'description' 	=> __('Before enabling set all default frontpage settings below as a fallback. Enabling creates the custom post type "Frontpages" available under the Appearances menu, overrides all over frontpage settings. Hand create any desired layout, then publish and schedule frontpages. A frontpage must be published before it will display.', 'secretum'),
+	'section' 		=> 'secretum_frontpage_settings',
+	'type' 			=> 'checkbox'
+));
 
 // Setting :: Enable Frontpage Heading Area
 $wp_customize->add_setting('secretum[frontpage_header_status]' , array(
@@ -47,6 +63,7 @@ $wp_customize->add_control(new WP_Customize_Media_Control(
 		'label' 		=> __('Heading Background Image', 'secretum'),
 		'description' 	=> __('Image will expand from center. 1900px or wider will limit the stretch.', 'secretum'),
 		'settings' 		=> 'secretum[frontpage_heading_bg]',
+		'section' 		=> 'secretum_frontpage_settings',
 		'mime_type' 	=> 'image',
 	    'flex_width' 	=> true,
 	    'flex_height' 	=> true,
@@ -93,22 +110,6 @@ $wp_customize->add_control('secretum[frontpage_heading_html]', array(
 ));
 
 
-// Setting ::Select A Page To Use
-$wp_customize->add_setting('secretum[frontpage_page_id]' , array(
-	'type' 				=> 'option',
-	'capability' 		=> 'edit_theme_options',
-	'sanitize_callback' => 'secretum_sanitize_dropdown_pages'
-));
-
-// Control :: Select A Page To Use
-$wp_customize->add_control('secretum[frontpage_page_id]', array(
-	'label' 		=> __('Front-page Body Section', 'secretum'),
-	'description' 	=> __('Select a page that will be used to display the content body area of the front-page.', 'secretum'),
-	'section' 		=> 'secretum_frontpage_settings',
-	'type' 			=> 'dropdown-pages'
-));
-
-
 // Setting :: Enable Frontpage Google Map Are
 $wp_customize->add_setting('secretum[frontpage_map_status]' , array(
 	'sanitize_callback' => 'secretum_sanitize_bool',
@@ -134,7 +135,7 @@ $wp_customize->add_setting('secretum[frontpage_map_address]' , array(
 ));
 
 // Control :: Google Map Business Name & Address
-$wp_customize->add_control('secretum[frontpage_map_address', array(
+$wp_customize->add_control('secretum[frontpage_map_address]', array(
 	'label' 		=> __('Google Map Business Name & Address', 'secretum'),
 	'description' 	=> __('Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum'),
 	'section' 		=> 'secretum_frontpage_settings',

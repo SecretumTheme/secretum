@@ -1,18 +1,15 @@
 /**
- * Secretum Theme - Typography
- * @package secretum
+ * Typography
+ *
+ * @package Secretum
  * @version 0.0.1
  */
-
-body {
-	font-family: $font-family-sans-serif;
-}
 
 button,
 input,
 select,
 textarea {
-	font-family: $forms-font-family;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 pre {

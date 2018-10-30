@@ -68,6 +68,11 @@ if (!function_exists('secretum_mod')) {
 			    case 'raw':
 			        $mod = $theme_mod;
 			        break;
+
+			    // URL
+			    case 'url':
+			        $mod = esc_url($theme_mod);
+			        break;
 			}
 
 		// Value Set

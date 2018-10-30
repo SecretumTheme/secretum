@@ -1,5 +1,5 @@
 /**
- * Theme SCSS Imports
+ * Raw Theme SCSS Imports
  *
  * @package Secretum
  * @version 0.0.1
@@ -24,12 +24,10 @@
 @import "bootstrap4/images";
 @import "secretum/featured-image";
 
-@import "bootstrap4/code";
 @import "bootstrap4/grid";
 @import "bootstrap4/tables";
 @import "bootstrap4/forms";
 @import "bootstrap4/buttons";
-@import "transitions";
 @import "bootstrap4/dropdown";
 @import "bootstrap4/button-group";
 @import "bootstrap4/input-group";
@@ -42,19 +40,10 @@
 @import "secretum/breadcrumbs";
 
 @import "bootstrap4/pagination";
-@import "bootstrap4/badge";
-@import "bootstrap4/jumbotron";
-@import "bootstrap4/alert";
-@import "bootstrap4/progress";
 @import "bootstrap4/media";
 @import "bootstrap4/list-group";
 @import "bootstrap4/close";
-@import "bootstrap4/modal";
-@import "bootstrap4/tooltip";
-@import "bootstrap4/popover";
-@import "bootstrap4/carousel";
 @import "bootstrap4/utilities";
-@import "bootstrap4/print";
 
 @import "secretum/accessibility";
 @import "secretum/alignments";
@@ -69,23 +58,15 @@
 @import "secretum/footer";
 @import "secretum/copyright";
 @import "secretum/scrolltop";
-@import "secretum/alert";
 @import "secretum/entry";
 @import "secretum/images";
 @import "secretum/sticky";
 @import "secretum/buttons";
 @import "secretum/caption"; 
-@import "secretum/afterline";
 @import "secretum/galleries";
-@import "secretum/jumbotron";
 @import "secretum/front-page";
 @import "secretum/attachments";
-@import "secretum/contact-form-7";
 
-@import "fontawesome/font-awesome";
-@import "ekko-lightbox/ekko-lightbox.css";
-@import "woocommerce";
-@import "woocommerce-bookings";
 
 // Custom User Theme Styles
 @import "../theme_styles.scss";

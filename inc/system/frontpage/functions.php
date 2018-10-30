@@ -8,40 +8,6 @@
 
 
 /**
- * X Wrapper Classes
- *
- * @return string Pre-sanitized string of class names
-if (!function_exists('secretum_X_wrapper')) {
-	function secretum_X_wrapper()
-	{
-		// Build Class String
-		$class_string = '';
-
-		// Echo Class String
-		echo apply_filters('secretum_X_wrapper', $class_string, 10, 1);
-	}
-}
- */
-
-
-/**
- * X Container Classes
- *
- * @return string Pre-sanitized string of class names
-if (!function_exists('secretum_X_container')) {
-	function secretum_X_container()
-	{
-		// Build Class String
-		$class_string = '';
-
-		// Echo Class String
-		echo apply_filters('secretum_X_container', $class_string, 10, 1);
-	}
-}
- */
-
-
-/**
  * Inject Frontpage Inline BG Style
  *
  * @return string Pre-sanitized string of class names
@@ -53,7 +19,7 @@ if (!function_exists('secretum_frontpage_bg_style')) {
 		$image_src_id = secretum_mod('frontpage_heading_bg', 'int');
 
 		// If Background ID Set
-		if (isset($image_src_id) && is_int($image_src_id)) {
+		if (isset($image_src_id) && is_numeric($image_src_id)) {
 			// Get Attachment Array
 			$image_src_array = wp_get_attachment_image_src($image_src_id, 'full', false);
 
@@ -69,7 +35,7 @@ if (!function_exists('secretum_frontpage_bg_style')) {
 		// Build Class String
 		$class_string = (isset($image_src)) ? ' style="background-image:url(' . $image_src . ');' . $css . '"' : '';
 
-		// Echo Class String
-		echo apply_filters('secretum_frontpage_bg_style', $class_string, 10, 1);
+		// Return Class String
+		return apply_filters('secretum_frontpage_bg_style', $class_string, 10, 1);
 	}
 }

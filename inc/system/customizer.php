@@ -96,7 +96,7 @@ add_action('customize_register', function($wp_customize) {
 	));
 
 	// General Settings
-	include_once(SECRETUM_INC . '/system/frontpage/customize/settings.php');
+	include_once(SECRETUM_INC . '/system/frontpage/customize/display.php');
 
 
 	//

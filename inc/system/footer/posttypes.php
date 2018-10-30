@@ -1,6 +1,7 @@
 <?php
 /**
  * Register WordPress Posttype: secretum_footers
+ * Adds sub-menu "Footers" to Appearances Menu
  *
  * @package WordPress
  * @subpackage Secretum_Theme

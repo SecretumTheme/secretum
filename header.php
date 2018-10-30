@@ -39,7 +39,7 @@
 	 * @source inc/system/header/actions.php
 	 *
 	 * @uses post_type secretum_headers
-	 * @source inc/system/header/actions.php
+	 * @source inc/system/header/posttypes.php
 	 *
 	 * @uses secretum_header_navbar()
 	 * @uses secretum_header_brand_navbar()

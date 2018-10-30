@@ -11,9 +11,9 @@
  * Section :: Display Settings
  */
 $wp_customize->add_section('secretum_copyright_display' , array(
-	'panel' 		=> 'secretum_copyright',
-    'title' 		=> __('Display Settings', 'secretum'),
-    'priority' 		=> 10,
+	'panel' 	=> 'secretum_copyright',
+    'title' 	=> __('Display Settings', 'secretum'),
+    'priority' 	=> 10,
 ));
 
 // Setting :: Copyright Area

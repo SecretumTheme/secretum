@@ -1,6 +1,7 @@
 <?php
 /**
  * Register WordPress Posttype: secretum_headers
+ * Adds sub-menu "Headers" to Appearances Menu
  *
  * @package WordPress
  * @subpackage Secretum_Theme
