@@ -3,7 +3,7 @@
  * The template for displaying author archives
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage SecretumTheme
  */
 get_header(); ?>
 

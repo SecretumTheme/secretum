@@ -1,69 +1,91 @@
 /**
- * Secretum Theme: Sassy Asset Imports For TinyMCE editor
- * @package secretum
- * @version 0.0.1
+ * Secretum Theme - TinyMCE Editor Style Imports
  */
 
+// Secretum Styling Variables
+@import "css/secretum/variables";
 
-/**
- * Secretum Theme WordPress Style Variables
- * @version 0.0.1
- */
-@import "secretum/variables";
+// Custom User Theme Variables
+@import "css/../theme_variables.scss";
 
+// Theme Core
+@import "css/bootstrap4/functions";
+@import "css/bootstrap4/variables";
+@import "css/bootstrap4/mixins";
+@import "css/bootstrap4/root";
+@import "css/bootstrap4/reboot";
 
-/**
- * Bootstrap
- * @version 4.1.0
- */
-@import "bootstrap4/bootstrap";
-@import "bootstrap4/functions";
-@import "bootstrap4/variables";
-@import "bootstrap4/mixins";
-@import "bootstrap4/root";
-@import "bootstrap4/type";
-@import "bootstrap4/images";
-@import "bootstrap4/code";
-@import "bootstrap4/grid";
-@import "bootstrap4/tables";
-@import "bootstrap4/forms";
-@import "bootstrap4/buttons";
-@import "bootstrap4/transitions";
-@import "bootstrap4/dropdown";
-@import "bootstrap4/button-group";
-@import "bootstrap4/input-group";
-@import "bootstrap4/custom-forms";
-@import "bootstrap4/card";
-@import "bootstrap4/badge";
-@import "bootstrap4/jumbotron";
-@import "bootstrap4/alert";
-@import "bootstrap4/progress";
-@import "bootstrap4/media";
-@import "bootstrap4/list-group";
-@import "bootstrap4/close";
-@import "bootstrap4/modal";
-@import "bootstrap4/tooltip";
-@import "bootstrap4/popover";
-@import "bootstrap4/carousel";
-@import "bootstrap4/utilities";
+@import "css/secretum/typography";
+@import "css/bootstrap4/type";
 
+@import "css/bootstrap4/images";
+@import "css/secretum/featured-image";
 
-/**
- * Ekko Lightbox
- * @version 5.3.0
- */
-@import "ekko-lightbox/ekko-lightbox";
+@import "css/bootstrap4/code";
+@import "css/bootstrap4/grid";
+@import "css/bootstrap4/tables";
+@import "css/bootstrap4/forms";
+@import "css/bootstrap4/buttons";
+@import "css/bootstrap4/transitions";
+@import "css/bootstrap4/dropdown";
+@import "css/bootstrap4/button-group";
+@import "css/bootstrap4/input-group";
+@import "css/bootstrap4/custom-forms";
+@import "css/bootstrap4/nav";
+@import "css/bootstrap4/navbar";
+@import "css/bootstrap4/card";
 
+@import "css/bootstrap4/breadcrumb";
+@import "css/secretum/breadcrumbs";
 
-/**
- * Font Awesome
- * @version 4.7.0
- */
-@import "fontawesome/font-awesome";
+@import "css/bootstrap4/pagination";
+@import "css/bootstrap4/badge";
+@import "css/bootstrap4/jumbotron";
+@import "css/bootstrap4/alert";
+@import "css/bootstrap4/progress";
+@import "css/bootstrap4/media";
+@import "css/bootstrap4/list-group";
+@import "css/bootstrap4/close";
+@import "css/bootstrap4/modal";
+@import "css/bootstrap4/tooltip";
+@import "css/bootstrap4/popover";
+@import "css/bootstrap4/carousel";
+@import "css/bootstrap4/utilities";
+@import "css/bootstrap4/print";
+
+@import "css/secretum/accessibility";
+@import "css/secretum/alignments";
 
 
-/**
- * Secretum WordPress Styles
- * @version 0.0.1
- */
-@import "secretum/secretum";
+@import "css/secretum/colors";
+@import "css/secretum/colors-background";
+@import "css/secretum/colors-border";
+
+@import "css/secretum/links";
+@import "css/secretum/header";
+@import "css/secretum/sidebar";
+@import "css/secretum/widgets";
+@import "css/secretum/comments";
+@import "css/secretum/footer";
+@import "css/secretum/copyright";
+@import "css/secretum/scrolltop";
+@import "css/secretum/alert";
+@import "css/secretum/entry";
+@import "css/secretum/images";
+@import "css/secretum/sticky";
+@import "css/secretum/buttons";
+@import "css/secretum/caption"; 
+@import "css/secretum/afterline";
+@import "css/secretum/galleries";
+@import "css/secretum/jumbotron";
+@import "css/secretum/front-page";
+@import "css/secretum/attachments";
+@import "css/secretum/contact-form-7";
+
+@import "css/fontawesome/font-awesome";
+@import "css/ekko-lightbox/ekko-lightbox";
+@import "css/secretum/woocommerce";
+@import "css/secretum/woocommerce-bookings";
+
+// Custom User Theme Styles
+@import "css/../theme_styles.scss";

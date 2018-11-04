@@ -8,31 +8,6 @@
 
 
 /**
- * Get sidebar contents as variable
- *
- * @see /inc/system/footer/template-parts.php
- *
- * @param string $sidebar Valid Sidebar ID
- * @return string HTML
- */
-if (!function_exists('secretum_sidebar_content')) {
-	function secretum_sidebar_content($sidebar)
-	{
-		// If Sidebar Active
-		if (is_active_sidebar(esc_attr($sidebar))) {
-			// Capture Content
-		    ob_start();
-		    dynamic_sidebar($sidebar);
-		    $html = ob_get_clean();
-
-			// Return HTML
-			return apply_filters('secretum_' . esc_attr($sidebar) . '_widgets', $html, 10, 1);
-		}
-	}
-}
-
-
-/**
  * Sanitize Pages Dropdown Menu
  *
  * @see /inc/customizer/frontpage/settings.php

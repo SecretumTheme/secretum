@@ -1,8 +1,5 @@
 /**
- * Content Entry Area
- *
- * @package Secretum
- * @version 0.0.1
+ * Secretum Theme - Content Entry Area
  */
 
 .content-area {
@@ -44,7 +41,6 @@
         h1.entry-title,
         h2.entry-title,
         h3.entry-title {
-            color: $h1-entry-title-color;
             -ms-word-wrap: break-word;
             word-wrap: break-word;
 
@@ -59,11 +55,33 @@
     .entry-content {
         @include clearfix;
 
-        h2.entry-heading,
-        h3.entry-heading,
-        h4.entry-heading,
-        h5.entry-heading,
+        h1.entry-heading {
+            font-size: $h1-font-size;
+            padding-top: 2rem;
+        }
+
+        h2.entry-heading {
+            font-size: $h2-font-size;
+            padding-top: 2rem;
+        }
+
+        h3.entry-heading {
+            font-size: $h3-font-size;
+            padding-top: 2rem;
+        }
+
+        h4.entry-heading {
+            font-size: $h4-font-size;
+            padding-top: 2rem;
+        }
+
+        h5.entry-heading {
+            font-size: $h5-font-size;
+            padding-top: 2rem;
+        }
+
         h6.entry-heading {
+            font-size: $h6-font-size;
             padding-top: 2rem;
         }
 

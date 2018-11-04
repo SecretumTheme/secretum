@@ -1,7 +1,5 @@
 /**
  * Secretum Theme - Widget Styling
- * @package secretum
- * @version 0.0.1
  *
  * INDEX
  * - Global Widgets 	.widget
@@ -385,27 +383,14 @@
 // Footer Widgets
 .footer .widget {
 	// Widget Titles
+    .widget-title {
+        position: relative;
+    }
+
     h2.widget-title,
     h3.widget-title,
     h4.widget-title {
         color: $footer-widget-title-color;
-    }
-
-    // Underline Titles
-    .widget-title {
-        position: relative;
-
-        &:after {
-            background-color: $footer-widget-title-underline-color;
-            content: "";
-            height: 2px;
-            margin: auto;
-            position: absolute;
-            bottom: -9px;
-            left: 0;
-            width: 25%;
-            z-index: 1;
-        }
     }
 
 	// Tag Cloud

@@ -27,7 +27,7 @@ if (!function_exists('secretum_copyright_wrapper')) {
 		// Build Class String
 		$class_string = $background_color_mod . $margin_mod . (!empty($padding_mod) ? $padding_mod : ' py-5');
 
-		// Echo Class String
+		// Return Class String
 		return apply_filters('secretum_copyright_wrapper', $class_string, 10, 1);
 	}
 }
@@ -47,7 +47,7 @@ if (!function_exists('secretum_copyright_container')) {
 		// Build Class String
 		$class_string = (secretum_mod('copyright_container')) ? '-fluid ' . $padding_mod : $padding_mod;
 
-		// Echo Class String
+		// Return Class String
 		return apply_filters('secretum_copyright_container', $class_string, 10, 1);
 	}
 }

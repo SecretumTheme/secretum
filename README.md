@@ -42,33 +42,35 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 
 ** Trying to keep a list of features
 
-* Bootstrap 4 CSS / SCSS - Extended
-* WordPress adapted CSS / SCSS
-* Modern & Responsive design
-* Major browser compatibility
-* Major portable device compatibility
+* Bootstrap 4 SCSS / CSS
+	* Highly compatible, mobile first, responsive, modern features, continually updated
+	* Major browser compatibility
+	* Major portable device compatibility
+* Expanded Bootstrap 4 Color Features
+	* Customizer color changes without adding css bloat to the document head
+	* Bootstrap 4 color class naming standards for all expanded colors
+* WordPress adapted SCSS / CSS
+	* Standard WordPress classes and selectors used
+	* Minimal new class names to learn and remember
+	* Higher compatability chances when moving to Secretum Theme
 * Child theme ready / included
+	* A ready to use child-theme to use
 * Child theme color variations
+	* Multiple child-theme base themes to choose from
 * WooCommerce compatible
+	* Product & Review Microdata ready
+	* Templates designed for improved conversion rates over flare
+	* Templates designed to work with JavaScript disabled
+	* All standard WooCommerce features included
 * WooCommerce Bookings compatible
+	* Templates re-designed for improved booking flow
 * Contact Form 7 compatible
+	* Beautified
 * WordPress Customizer features
-* Show/hide most theme features
-* Manage all WordPress text via Customizer
-* Customize layout/aspects of theme
-* RAW HTML control of entire front-page
-* RAW HTML control over header & footer
-* RAW HTML control over many other elements
-* Graphic, Google font logo or default font
-* Tagline with google font or default font
-* Smart sidebars based on active features
-* Left, right, or no sidebar templates
-* Full width templates
-* Multiple post/page templates
-* All standard post formats
+	* Enable / disable all major theme areas (header, footer, sidebars, post author, etc)
+	* Adjust all front-end Theme/WordPress text
 * Documentation post type, taxonomies, template and widgets
 * Testimonials post type and widget
-* Documentation post type, taxonomies and widgets
 * Shortcodes for most CSS features
 * Brand logo and text shortcode
 * Menus and nav walker shortcode
@@ -89,7 +91,7 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 
 ## Development
 
-Yeah, the gulp file is a mess and created for my personal use at this point.
+The gulp file is looking better...maybe.
 
 
 ## Frequently Asked Questions

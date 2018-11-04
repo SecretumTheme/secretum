@@ -1,6 +1,5 @@
 /*!
  * Secretum Theme Scripts
- * @package secretum
  * @version 0.0.1
  */
 +function ($) {
@@ -10,15 +9,15 @@
 	// Variables and DOM Caching.
 	var 	$body = $( 'body' ),
 			$customHeader = $body.find( '.custom-header' ),
-		$branding = $customHeader.find( '.site-branding' ),
+			$branding = $customHeader.find( '.site-branding' ),
 			$navigation = $body.find( '.container-navigation' ),
 			$navWrap = $navigation.find( '.container' ),
 			$navMenuItem = $navigation.find( '.menu-item' ),
 			$menuToggle = $navigation.find( '.menu-toggle' ),
-		$menuScrollDown = $body.find( '.menu-scroll-down' ),
-		$sidebar = $body.find( '#secondary' ),
-		$entryContent = $body.find( '.entry-content' ),
-		$formatQuote = $body.find( '.format-quote blockquote' ),
+			$menuScrollDown = $body.find( '.menu-scroll-down' ),
+			$sidebar = $body.find( '#secondary' ),
+			$entryContent = $body.find( '.entry-content' ),
+			$formatQuote = $body.find( '.format-quote blockquote' ),
 			isFrontPage = $body.hasClass( 'secretum-front-page' ) || $body.hasClass( 'home blog' ),
 			navigationFixedClass = 'site-navigation-fixed',
 			navigationHeight,

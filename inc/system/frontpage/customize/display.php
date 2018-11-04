@@ -35,7 +35,7 @@ $wp_customize->add_control('secretum[custom_frontpages]', array(
 
 // Setting :: Enable Frontpage Heading Area
 $wp_customize->add_setting('secretum[frontpage_header_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> false
@@ -98,7 +98,7 @@ $wp_customize->add_setting('secretum[frontpage_heading_html]' , array(
 </div><!-- .container -->',
 	'type' 				=> 'option',
 	'transport' 		=> 'refresh',
-	'sanitize_callback' => 'wp_kses_post'
+	'sanitize_callback' => 'secretum_sanitize_html'
 ));
 
 // Control :: Frontpage Heading HTML
@@ -112,7 +112,7 @@ $wp_customize->add_control('secretum[frontpage_heading_html]', array(
 
 // Setting :: Enable Frontpage Google Map Are
 $wp_customize->add_setting('secretum[frontpage_map_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> false
@@ -128,10 +128,10 @@ $wp_customize->add_control('secretum[frontpage_map_status]', array(
 
 // Setting :: Google Map Business Name & Address
 $wp_customize->add_setting('secretum[frontpage_map_address]' , array(
+	'sanitize_callback' => 'sanitize_text_field',
 	'type' 				=> 'option',
-	'default' 			=> '',
 	'transport' 		=> 'refresh',
-	'sanitize_callback' => 'sanitize_text_field'
+	'default' 			=> ''
 ));
 
 // Control :: Google Map Business Name & Address

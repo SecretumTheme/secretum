@@ -40,13 +40,17 @@ add_action('secretum_footer', function() {
 
 			    // Clear Post Data
 			    wp_reset_postdata();
+
+			// Default Template, No Custom Footer Published
+			} else {
+				// Display Footer Template
+				get_template_part('inc/system/footer/templates/footer');
 			}
 
-		// No Custom Footer
+		// Default Template, No Custom Footer
 		} else {
 			// Display Footer Template
-			// @source inc/system/header/template-parts.php
-			echo secretum_footer_display();
+			get_template_part('inc/system/footer/templates/footer');
 		}
 	}
 }, 10, 0);

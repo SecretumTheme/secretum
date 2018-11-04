@@ -239,7 +239,7 @@ $wp_customize->add_setting('secretum[comment_post_label]', array(
 // Control :: Post Comment Button Text
 $wp_customize->add_control('secretum[comment_post_label]', array(
 	'label' 			=> __('Post Comment Button Text', 'secretum'),
-	'description' 		=> 'HTML Allowed.',
+	'description' 		=> 'Text Only.',
 	'section' 			=> 'secretum_theme_text',
 	'type' 				=> 'text'
 ));

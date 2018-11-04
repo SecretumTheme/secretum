@@ -22,19 +22,27 @@ add_filter('navigation_markup_template', function($template) {
 
 
 /**
- * WordPress Replace [...] In Excerpts With Read More Button
- *
- * @example apply_filters('secretum_read_more_text', '');
+ * Replaces [...] In Archive Excerpts
  *
  * @param string $excerpt The Excerpt
- * @return string The Excerpt
+ * @return string Updated Excerpt
  */
 add_filter('excerpt_more', function($excerpt) {
 	return str_replace(
 		' [&hellip;]',
-		'<p class="text-right"><a class="btn btn-secondary" href="' . esc_url(get_permalink(get_the_ID())) . '">' . apply_filters('secretum_read_more_text', __('Read More...', 'secretum')) . '</a></p>',
+		'<p class="text-right"><a class="btn btn-secondary" href="' . esc_url(get_permalink(get_the_ID())) . '">' . secretum_text('continue_reading_text') . '</a></p>',
 		$excerpt
 	);
+});
+
+
+/**
+ * Replaces (...) In <!--more--> Tagged Posts
+ *
+ * @return string Html Button & Text
+ */
+add_filter('the_content_more_link', function() {
+	return '<p class="text-right"><a class="btn btn-secondary more-link" href="' . esc_url(get_permalink(get_the_ID())) . '">' . secretum_text('read_more_text') . '</a></p>';
 });
 
 
@@ -108,16 +116,16 @@ add_filter('comment_form_defaults', function($defaults) {;
 	$aria_req      = ($req ? " aria-required='true'" : '');
 
 	$fields =  array(
-		'author' => '<p class="form-group comment-form-author"><label for="author">' . apply_filters('secretum_text', 'commenter_name') . '</label>' . ($req ? ' <span class="required">*</span>' : '') . '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p class="form-group comment-form-email"><label for="email">' . apply_filters('secretum_text', 'commenter_email') . '</label>' . ($req ? ' <span class="required">*</span>' : '') . '<input class="form-control" id="email" name="email" type="email" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>',
-		'url'    => '<p class="form-group comment-form-url"><label for="url">' . apply_filters('secretum_text', 'commenter_website') . '</label>' . '<input class="form-control" id="url" name="url" type="url" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>',
+		'author' => '<p class="form-group comment-form-author"><label for="author">' . secretum_text('commenter_name', 'html') . '</label>' . ($req ? ' <span class="required">*</span>' : '') . '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></p>',
+		'email'  => '<p class="form-group comment-form-email"><label for="email">' . secretum_text('commenter_email', 'html') . '</label>' . ($req ? ' <span class="required">*</span>' : '') . '<input class="form-control" id="email" name="email" type="email" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></p>',
+		'url'    => '<p class="form-group comment-form-url"><label for="url">' . secretum_text('commenter_website', 'html') . '</label>' . '<input class="form-control" id="url" name="url" type="url" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>',
 	);
 
-	$defaults['comment_field'] 			= '<div class="form-group comment-form-comment"><label for="comment">' . apply_filters('secretum_text', 'commenter_comment') . ' <span class="required">*</span></label>' . '<textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
-	$defaults['comment_notes_before'] 	= sprintf(__('%s %s', 'secretum'), '<span class="required">*</span>', apply_filters('secretum_text', 'comments_required'));
-	$defaults['comment_notes_after'] 	= '<p class="comment-notes">' . apply_filters('secretum_text', 'comment_privacy') . '</p>';
-	$defaults['title_reply'] 			= apply_filters('secretum_text', 'comment_add_title');
-	$defaults['label_submit'] 			= apply_filters('secretum_text', 'comment_post_label');
+	$defaults['comment_field'] 			= '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text('commenter_comment', 'html') . ' <span class="required">*</span></label>' . '<textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
+	$defaults['comment_notes_before'] 	= sprintf(__('%s %s', 'secretum'), '<span class="required">*</span>', secretum_text('comments_required', 'html'));
+	$defaults['comment_notes_after'] 	= '<p class="comment-notes">' . secretum_text('comment_privacy') . '</p>';
+	$defaults['title_reply'] 			= secretum_text('comment_add_title', 'html');
+	$defaults['label_submit'] 			= secretum_text('comment_post_label', 'html');
 	$defaults['class_submit'] 			= 'btn btn-secondary';
 	$defaults['fields'] 				= apply_filters('comment_form_default_fields', $fields);
 

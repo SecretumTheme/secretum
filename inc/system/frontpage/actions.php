@@ -46,12 +46,12 @@ add_action('secretum_frontpage', function() {
 
 		// No Results, Default Index Template
 		} else {
-			get_template_part('inc/system/frontpage/templates/default');
+			get_template_part('inc/system/frontpage/templates/body');
 		}
 
 	// Default Index Template
 	} else {
-		get_template_part('inc/system/frontpage/templates/default');
+		get_template_part('inc/system/frontpage/templates/body');
 	}
 
 	// Google Map

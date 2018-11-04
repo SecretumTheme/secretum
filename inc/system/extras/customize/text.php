@@ -17,6 +17,9 @@ $wp_customize->add_section('secretum_theme_text', array(
     'priority' 			=> 10,
 ));
 
+// Continue/More Reading
+include_once(SECRETUM_INC . '/system/extras/customize/text/more.php');
+
 // Entry Meta Data
 include_once(SECRETUM_INC . '/system/extras/customize/text/meta.php');
 

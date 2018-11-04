@@ -11,10 +11,10 @@
  * Section :: Color Settings
  */
 $wp_customize->add_section('secretum_copyright_colors' , array(
-	'panel' 			=> 'secretum_copyright',
-    'title' 			=> __('Color Settings', 'secretum'),
-    'description' 		=> __('Colors are based on the themes color palette.', 'secretum'),
-    'priority' 			=> 10,
+	'panel' 		=> 'secretum_copyright',
+    'title' 		=> __('Color Settings', 'secretum'),
+    'description' 	=> __('Colors are based on the themes color palette.', 'secretum'),
+    'priority' 		=> 10,
 ));
 
 
@@ -28,10 +28,10 @@ $wp_customize->add_setting('secretum[copyright_background_color]' , array(
 
 // Control :: Container Background Color
 $wp_customize->add_control('secretum[copyright_background_color]', array(
-	'label' 			=> __('Container Background Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_background_colors_array()
+	'label' 	=> __('Container Background Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_background_colors()
 ));
 
 
@@ -45,10 +45,10 @@ $wp_customize->add_setting('secretum[copyright_text_color]' , array(
 
 // Control :: Text Color
 $wp_customize->add_control('secretum[copyright_text_color]', array(
-	'label' 			=> __('Copyright Statement Text Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_text_colors_array()
+	'label' 	=> __('Copyright Statement Text Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_link_colors()
 ));
 
 
@@ -62,10 +62,10 @@ $wp_customize->add_setting('secretum[copyright_text_color_hover]' , array(
 
 // Control :: Text Hover Color
 $wp_customize->add_control('secretum[copyright_text_color_hover]', array(
-	'label' 			=> __('Text Hover Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_text_hover_colors_array()
+	'label' 	=> __('Text Hover Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_link_hover_colors()
 ));
 
 
@@ -79,10 +79,10 @@ $wp_customize->add_setting('secretum[copyright_menu_background_color]' , array(
 
 // Control :: Menu Item Background Color
 $wp_customize->add_control('secretum[copyright_menu_background_color]', array(
-	'label' 			=> __('Menu Item Background Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_background_colors_array()
+	'label' 	=> __('Menu Item Background Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_background_colors()
 ));
 
 
@@ -96,10 +96,10 @@ $wp_customize->add_setting('secretum[copyright_menu_text_color]' , array(
 
 // Control :: Menu Text Color
 $wp_customize->add_control('secretum[copyright_menu_text_color]', array(
-	'label' 			=> __('Menu Item Text Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_text_colors_array()
+	'label' 	=> __('Menu Item Text Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_link_colors()
 ));
 
 
@@ -113,10 +113,10 @@ $wp_customize->add_setting('secretum[copyright_menu_text_color_hover]' , array(
 
 // Control :: Menu Text Hover Color
 $wp_customize->add_control('secretum[copyright_menu_text_color_hover]', array(
-	'label' 			=> __('Menu Item Text Hover Color', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_text_hover_colors_array()
+	'label' 	=> __('Menu Item Text Hover Color', 'secretum'),
+	'section' 	=> 'secretum_copyright_colors',
+	'type' 		=> 'select',
+	'choices' 	=> secretum_customizer_link_hover_colors()
 ));
 
 
@@ -130,9 +130,9 @@ $wp_customize->add_setting('secretum[copyright_menu_border_color]' , array(
 
 // Control :: Menu Item Border Color
 $wp_customize->add_control('secretum[copyright_menu_border_color]', array(
-	'label' 			=> __('Menu Item Border Color', 'secretum'),
-	'description' 		=> __('Manage border size and location under the Display Settings tab.', 'secretum'),
-	'section' 			=> 'secretum_copyright_colors',
-	'type' 				=> 'select',
-	'choices' 			=> secretum_customizer_border_colors_array()
+	'label' 		=> __('Menu Item Border Color', 'secretum'),
+	'description' 	=> __('Manage border size and location under the Display Settings tab.', 'secretum'),
+	'section' 		=> 'secretum_copyright_colors',
+	'type' 			=> 'select',
+	'choices' 		=> secretum_customizer_border_colors()
 ));

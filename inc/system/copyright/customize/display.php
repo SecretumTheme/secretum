@@ -18,7 +18,7 @@ $wp_customize->add_section('secretum_copyright_display' , array(
 
 // Setting :: Copyright Area
 $wp_customize->add_setting('secretum[copyright_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> false
@@ -35,7 +35,7 @@ $wp_customize->add_control('secretum[copyright_status]', array(
 
 // Setting :: Scroll To Top Icon
 $wp_customize->add_setting('secretum[scrolltop]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> false

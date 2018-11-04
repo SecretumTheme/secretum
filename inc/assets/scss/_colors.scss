@@ -1,83 +1,67 @@
 /**
  * Secretum Theme - Extend Bootstrap 4 Colors
- * @package secretum
- * @version 0.0.1
  */
 
-// Theme Colors
-.color-primary { color: $primary-brand-color !important; }
-.color-primary-dark { color: $primary-brand-color-dark !important; }
-.color-primary-light { color: $primary-brand-color-light !important; }
-.color-secondary { color: $secondary-brand-color !important; }
-.color-primary-text { color: $primary-text-color !important; }
-.color-secondary-text { color: $secondary-text-color !important; }
-
-// New Colors
-.color-whiteish { color: $whiteish !important; }
-.color-black { color: $black !important; }
-.color-blackish { color: $blackish !important; }
-
-// Bootstrap 4 Colors
-.color-gray-100 { color: $gray-100 !important; }
-.color-gray-200 { color: $gray-200 !important; }
-.color-gray-300 { color: $gray-300 !important; }
-.color-gray-400 { color: $gray-400 !important; }
-.color-gray-500 { color: $gray-500 !important; }
-.color-gray-600 { color: $gray-600 !important; }
-.color-gray-700 { color: $gray-700 !important; }
-.color-gray-800 { color: $gray-800 !important; }
-.color-gray-900 { color: $gray-900 !important; }
-
-// Default colors as colors
+// Default colors as color
 @each $color, $value in $colors {
 	.color-#{$color} {
 		color: $value !important;
 	}
+	a.color-#{$color}-link {
+		color: $value !important;
+	}
+	a.color-#{$color}-hover {
+		color: $value !important;
+	}
+	.color-#{$color}-link a {
+		color: $value !important;
+	}
+	.color-#{$color}-hover a {
+		color: $value !important;
+	}
 }
 
-// Default colors as colors
+// Theme colors as color
 @each $color, $value in $theme-colors {
 	.color-#{$color} {
 		color: $value !important;
 	}
-}
-
-
-// Hover Theme Colors
-.color-primary-hover:hover { color: $primary-brand-color !important; }
-.color-primary-dark-hover:hover { color: $primary-brand-color-dark !important; }
-.color-primary-light-hover:hover { color: $primary-brand-color-light !important; }
-.color-secondary-hover:hover { color: $secondary-brand-color !important; }
-.color-primary-text-hover:hover { color: $primary-text-color !important; }
-.color-secondary-text-hover:hover { color: $secondary-text-color !important; }
-
-// Hover New Colors
-.color-whiteish-hover:hover { color: $whiteish !important; }
-.color-black-hover:hover { color: $black !important; }
-.color-blackish-hover:hover { color: $blackish !important; }
-
-// Hover Bootstrap 4 Colors
-.color-gray-100-hover:hover { color: $gray-100 !important; }
-.color-gray-200-hover:hover { color: $gray-200 !important; }
-.color-gray-300-hover:hover { color: $gray-300 !important; }
-.color-gray-400-hover:hover { color: $gray-400 !important; }
-.color-gray-500-hover:hover { color: $gray-500 !important; }
-.color-gray-600-hover:hover { color: $gray-600 !important; }
-.color-gray-700-hover:hover { color: $gray-700 !important; }
-.color-gray-800-hover:hover { color: $gray-800 !important; }
-.color-gray-900-hover:hover { color: $gray-900 !important; }
-
-// Hover default colors as colors
-@each $color, $value in $colors {
-	.color-#{$color}-hover:hover {
+	a.color-#{$color}-link {
+		color: $value !important;
+	}
+	a.color-#{$color}-hover {
+		color: $value !important;
+	}
+	.color-#{$color}-link a {
+		color: $value !important;
+	}
+	.color-#{$color}-hover a {
 		color: $value !important;
 	}
 }
 
+// Default Link Color
+a.linkcolor,
+a.link-color {
+	color: $link-color !important;
+}
 
-// Default colors as colors
-@each $color, $value in $theme-colors {
-	.color-#{$color}-hover:hover {
-		color: $value !important;
-	}
+.linkcolor a,
+.link-color a {
+	color: $link-color !important;
+}
+
+// Default Link Hover Color
+a.linkhover:hover,
+a.link-hover:hover,
+a.linkhover:focus,
+a.link-hover:focus {
+	color: $link-hover-color !important;
+}
+
+.linkhover a:hover,
+.link-hover a:hover,
+.linkhover a:focus,
+.link-hover a:focus {
+	color: $link-hover-color !important;
 }

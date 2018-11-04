@@ -17,12 +17,13 @@ add_action('wp_enqueue_scripts', function() {
 	$theme = wp_get_theme();
 
     // Append Child- If Child Theme
-    $child = (is_child_theme()) ? 'child-' : '';
+    //$child = (is_child_theme()) ? 'child-' : '';
 
 	// Theme Styles
 	wp_enqueue_style(
         'secretum',
-        SECRETUM_STYLE_URL . '/css/' . $child . 'theme.min.css',
+        //SECRETUM_STYLE_URL . '/css/' . $child . 'theme.min.css',
+        SECRETUM_STYLE_URL . '/css/theme.min.css',
         array(),
         $theme->get('Version'),
         'all'
@@ -31,7 +32,8 @@ add_action('wp_enqueue_scripts', function() {
     // Theme Scripts
     wp_enqueue_script(
         'secretum',
-        SECRETUM_STYLE_URL . '/js/' . $child . 'theme.min.js',
+        //SECRETUM_STYLE_URL . '/js/' . $child . 'theme.min.js',
+        SECRETUM_STYLE_URL . '/js/theme.min.js',
         array('jquery'),
         $theme->get('Version'),
         true

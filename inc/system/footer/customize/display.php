@@ -18,16 +18,15 @@ $wp_customize->add_section('secretum_footer_display' , array(
 ));
 
 
-// Setting :: Custom Post Type
-// @see inc/system/header/actions.php
+// Setting :: Enable Custom Footer Feature
 $wp_customize->add_setting('secretum[custom_footers]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> ''
 ));
 
-// Control :: Custom Post Type
+// Control :: Enable Custom Footer Feature
 $wp_customize->add_control('secretum[custom_footers]', array(
 	'label' 		=> __('Enable Custom Footer Feature', 'secretum'),
 	'description' 	=> __('Enables custom post type "Footers" available under the Appearances menu, overrides default footer area. Hand create any footer layout, then publish and schedule footers. A footer must be published before this feature will override the default footer settings.', 'secretum'),
@@ -36,18 +35,17 @@ $wp_customize->add_control('secretum[custom_footers]', array(
 ));
 
 
-// Setting :: Footer Area
-// @see inc/system/header/actions.php
+// Setting :: Disable Footer Area
 $wp_customize->add_setting('secretum[footer_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_bool',
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> ''
 ));
 
-// Control :: Footer Area
+// Control :: Disable Footer Area
 $wp_customize->add_control('secretum[footer_status]', array(
-	'label' 	=> __('Hide Footer Area', 'secretum'),
+	'label' 	=> __('Disable Footer Area', 'secretum'),
 	'section' 	=> 'secretum_footer_display',
 	'type' 		=> 'checkbox'
 ));

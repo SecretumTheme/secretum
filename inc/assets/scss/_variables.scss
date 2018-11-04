@@ -1,8 +1,5 @@
 /**
  * Secretum Theme & Boostrap 4 Variables
- *
- * @package secretum
- * @version 0.0.1
  */
 
 // Request a theme color level
@@ -72,39 +69,32 @@ $body-color-light: 		#313131;
 $link-color: 			$gray-900;
 $link-decoration: 		underline;
 $link-hover-color: 		$gray-700;
-$link-hover-decoration: underline;
+$link-hover-decoration: none;
 
 // Add New Colors To Colors Array
 $colors: (
 	"whiteish": 		$whiteish,
 	"blackish": 		$blackish,
-	"primarytext": 		$primary-text-color,
-	"secondarytext":	$secondary-text-color,
-	"linkcolor": 		$link-color,
-	"linkhover": 		$link-hover-color
+	"black": 			$black,
+	"primary-dark": 	$primary-brand-color-dark,
+	"primary-light": 	$primary-brand-color-light,
+	"primary-text": 	$primary-text-color,
+	"secondary-text":	$secondary-text-color,
+	"gray-100": 		$gray-100,
+	"gray-200": 		$gray-200,
+	"gray-300": 		$gray-300,
+	"gray-400": 		$gray-400,
+	"gray-500": 		$gray-500,
+	"gray-600": 		$gray-600,
+	"gray-700": 		$gray-700,
+	"gray-800": 		$gray-800,
+	"gray-900": 		$gray-900,
 );
 
+// Header Hamburger Menu
+$header-navbar-hamburger-color: $gray-500;
 
-
-/**
- * Header Hamburger Menu
- */
-$header-navbar-hamburger-color: $white;
-
-/**
- * Frontpage Area
- */
-$frontpage-heading-bg-color: $gray-300;
-
-/**
- * Content Entry Area
- */
-$h1-entry-title-color: $secondary-brand-color;
-$h1-entry-title-underline-color: $secondary-brand-color;
-
-/**
- * Content Entry Heading Sizes
- */
+// Content Entry Heading Sizes
 $h1-font-size: 2.2rem;
 $h2-font-size: 1.75rem;
 $h3-font-size: 1.5rem;
@@ -112,72 +102,33 @@ $h4-font-size: 1.25rem;
 $h5-font-size: 1.15rem;
 $h6-font-size: 1rem;
 
-/**
- * Content Entry Heading Colors
- */
-$h2-color: $gray-800;
-$h3-color: $gray-800;
-$h4-color: $gray-700;
-$h5-color: $gray-700;
-$h6-color: $gray-600;
-
-/**
- * Primary Button
- */
+// Primary Button
 $primary-button-bg-color: $primary-brand-color;
 $primary-button-bg-hover-color: $primary-brand-color-dark;
 $primary-button-border-color: $primary-brand-color;
 $primary-button-text-color: $white;
 
-/**
- * Secondary Button
- */
+// Secondary Button
 $secondary-button-bg-color: $gray-600;
 $secondary-button-bg-hover-color: $primary-brand-color-dark;
 $secondary-button-border-color: $gray-600;
 $secondary-button-text-color: $white;
 
-/**
- * Search Button
- */
+// Search Button
 $search-button-bg-color: $primary-brand-color;
 $search-button-bg-hover-color: $primary-brand-color-dark;
 $search-button-border-color: $primary-brand-color;
 $search-button-text-color: $white;
 
-/**
- * Content Entry Read More Button
- */
-$read-more-link-bg-color: $primary-brand-color;
-$read-more-link-bg-hover-color: $primary-brand-color-dark;
-$read-more-link-border-color: $primary-brand-color;
-$read-more-link-text-color: $white;
-
-/**
- * Add To Cart Button
- */
-$add-to-cart-button-bg-color: $primary-brand-color;
-$add-to-cart-button-text-color: $white;
-
-/**
- * Sidebar Area
- */
+// Sidebar Area Titles
 $sidebar-widget-title-color: $gray-600;
-$sidebar-widget-title-underline-color: $gray-300;
 $sidebar-widget-li-line-color: $gray-200;
 
-
-/**
- * Footer Widget Titles
- */
+// Footer Widget Titles
 $footer-widget-title-color: $gray-300;
-$footer-widget-title-underline-color: $gray-600;
 $footer-widget-li-line-color: $gray-900;
 
-
-/**
- * WooCommerce Bookings Calendar
- */
+// WooCommerce Bookings Calendar
 $calendar-primary-bg-color: $primary-brand-color;
 $calendar-secondary-bg-color: $whiteish;
 $calendar-border-color: $gray-300;

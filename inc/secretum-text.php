@@ -53,6 +53,8 @@ if (!function_exists('secretum_text')) {
 			'search_button_text'			=> __('Search Us!', 'secretum'),
 			'search_button_placeholder'		=> __('Search our site...', 'secretum'),
 			'search_results_text' 			=> __('Search Results for:', 'secretum'),
+			'continue_reading_text' 		=> __('Continue Reading...', 'secretum'),
+			'read_more_text' 				=> __('Read More...', 'secretum'),
 			'nothing_found_title_text' 		=> __('Nothing Found', 'secretum'),
 			'nothing_found_text' 			=> __('It seems we are unable find what you are looking for. Perhaps searching can help.', 'secretum'),
 			'booking_cart_title' 			=> __('Select A Date To View Available Times', 'secretum')
@@ -67,13 +69,29 @@ if (!function_exists('secretum_text')) {
 
 			// If Text Option Mod Set
 			if (!empty($text_value)) {
-				// Filter Value
-				$string = filter_var(html_entity_decode($text_value), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
+				// Clear Duplicate & Empty Option and Return Value
+				if (isset($array[$key]) && $array[$key] == $text_value || isset($text_value) && empty($text_value)) {
+					// Get Option
+					$get_option = get_option('secretum', array());
+
+					// Remove From Array
+					unset($get_option[$key]);
+
+					// Update Secretum Option
+					update_option('secretum', $get_option);
+
+					// Raw Value
+					$string = $array[$key];
+
+				// Filter Value For Display
+				} else {
+					$string = filter_var(html_entity_decode($text_value), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
+				}
 
 			// Else Return Text String
-			} elseif (isset($array[$key])) {
-				// If Text Value Empty
-				if (empty($text_value)) {
+			} else {
+				// Clear Empty Option
+				if (isset($text_value) && empty($text_value)) {
 					// Get Option
 					$get_option = get_option('secretum', array());
 

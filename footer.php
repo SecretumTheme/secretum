@@ -7,8 +7,7 @@
  */
 
 	/**
-	 * Display Content Before Footer
-	 * @source inc/system/footer/actions.php
+	 * Content Before Footer
 	 */
 	do_action('secretum_footer_before');
 
@@ -21,8 +20,7 @@
 
 
 	/**
-	 * Display Content After Footer
-	 * @source inc/system/footer/actions.php
+	 * Content After Footer
 	 */
 	do_action('secretum_footer_after');
 

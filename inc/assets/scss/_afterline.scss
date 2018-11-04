@@ -1,7 +1,5 @@
 /**
  * Secretum Theme - Create a line after an element
- * @package secretum
- * @version 0.0.1
  */
 
 // Container
@@ -22,36 +20,14 @@
     }
 }
 
-// Colors
-.afterline-primary:after { background-color: $primary-brand-color; }
-.afterline-primary-dark:after { background-color: $primary-brand-color-dark; }
-.afterline-primary-light:after { background-color: $primary-brand-color-light; }
-.afterline-secondary:after { background-color: $secondary-brand-color; }
-
-.afterline-spacer:after { background-color: $gray-500; }
-
-.afterline-white:after { background-color: $white; }
-.afterline-whiteish:after { background-color: $whiteish; }
-
-.afterline-black:after { background-color: $black; }
-.afterline-blackish:after { background-color: $blackish; }
-
-.afterline-gray-100:after { background-color: $gray-100; }
-.afterline-gray-200:after { background-color: $gray-200; }
-.afterline-gray-300:after { background-color: $gray-300; }
-.afterline-gray-400:after { background-color: $gray-400; }
-.afterline-gray-500:after { background-color: $gray-500; }
-.afterline-gray-600:after { background-color: $gray-600; }
-.afterline-gray-700:after { background-color: $gray-700; }
-.afterline-gray-800:after { background-color: $gray-800; }
-.afterline-gray-900:after { background-color: $gray-900; }
-
 // Default colors as afterline colors
 @each $color, $value in $colors {
     .afterline-#{$color}:after {
         background-color: $value;
     }
 }
+
+.afterline-spacer:after { background-color: $gray-500; }
 
 // Line Height
 .afterline-1:after { height: 1px; }

@@ -19,6 +19,15 @@ if (!function_exists('secretum_entry_wrapper')) {
 		$background_color_mod = secretum_mod('entry_background_color', 'attr', true);
 
 		// Get Mod
+		$text_color_mod = secretum_mod('entry_text_color', 'attr', true);
+
+		// Get Mod
+		$link_color_mod = secretum_mod('entry_link_color', 'attr', true);
+
+		// Get Mod
+		$link_color_hover_mod = secretum_mod('entry_link_color_hover', 'attr', true);
+
+		// Get Mod
 		$margin_bottom_mod = secretum_mod('entry_wrapper_margin_bottom', 'attr', true);
 
 		// Get Mod
@@ -28,7 +37,7 @@ if (!function_exists('secretum_entry_wrapper')) {
 		$padding_mod = secretum_mod('entry_wrapper_padding', 'attr', true);
 
 		// Build Class String
-		$class_string = secretum_entry_columns() . $background_color_mod . $margin_bottom_mod . $margin_top_mod . (!empty($padding_mod) ? $padding_mod : '');
+		$class_string = secretum_entry_columns() . $background_color_mod . $text_color_mod . $link_color_mod . $link_color_hover_mod . $margin_bottom_mod . $margin_top_mod . (!empty($padding_mod) ? $padding_mod : '');
 
 		// Echo Class String
 		return apply_filters('secretum_entry_wrapper', $class_string, 10, 1);
