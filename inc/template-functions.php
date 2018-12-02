@@ -104,7 +104,7 @@ if (!function_exists('secretum_sanitize_all')) {
 if (!function_exists('secretum_sanitize_bool')) {
 	function secretum_sanitize_bool($checked)
 	{
-		return ((isset($checked) && true == $checked) ? true : false);
+		return ((isset($checked) && '1' == $checked) ? '1' : '0');
 	}
 }
 
@@ -118,7 +118,22 @@ if (!function_exists('secretum_sanitize_bool')) {
 if (!function_exists('secretum_sanitize_checkbox')) {
 	function secretum_sanitize_checkbox($checked)
 	{
-		return ((isset($checked) && true == $checked) ? true : false);
+		return ((isset($checked) && '1' == $checked) ? '1' : false);
+	}
+}
+
+
+/**
+ * Reset Customzer Settings
+ *
+ * @return false
+ */
+if (!function_exists('secretum_customizer_reset')) {
+	function secretum_customizer_reset()
+	{
+		// Delete Secretum Settings
+		delete_option('secretum');
+		return '';
 	}
 }
 

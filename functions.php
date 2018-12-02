@@ -43,8 +43,15 @@ if (is_admin()) {
 	include_once(SECRETUM_INC . '/editor.php');
 }
 
+// WP Admin or Customizer View
+if (is_admin() || is_customize_preview()) {
+	// Color Arrays
+	include_once(SECRETUM_INC . '/system/customizer/color-choices.php');
+}
+
 
 // WordPress Customizer
+include_once(SECRETUM_INC . '/system/customizer/default-settings.php');
 include_once(SECRETUM_INC . '/system/customizer/register.php');
 
 
@@ -84,6 +91,9 @@ if (secretum_mod('custom_headers')) {
 include_once(SECRETUM_INC . '/system/header/functions.php');
 include_once(SECRETUM_INC . '/system/header/template-parts.php');
 
+// Primary Nav Menu
+include_once(SECRETUM_INC . '/system/primary-nav/functions.php');
+include_once(SECRETUM_INC . '/system/primary-nav/template-parts.php');
 
 // Body
 include_once(SECRETUM_INC . '/system/body/functions.php');
@@ -150,45 +160,8 @@ if (class_exists('woocommerce')) {
 }
 
 
-// Documentation: Post Type & Taxonomies
-if (secretum_mod('feature_documentation_display')) {
-	include_once(SECRETUM_INC . '/system/feature/documentation/functions.php');
-	include_once(SECRETUM_INC . '/system/feature/documentation/posttype.php');
-	include_once(SECRETUM_INC . '/system/feature/documentation/taxonomy.php');
-
-	// Category Widget
-	if(!secretum_mod('feature_documentation_category_widget')) {
-		include_once(SECRETUM_INC . '/system/feature/documentation/widgets/categories.php');
-
-		add_action('widgets_init', function() {
-			register_widget('SecretumCategoriesWidget');
-		});
-	}
-
-	// Recent Post Widget
-	if(!secretum_mod('feature_documentation_recent_widget')) {
-		include_once(SECRETUM_INC . '/system/feature/documentation/widgets/recent.php');
-
-		add_action('widgets_init', function() {
-			register_widget('SecretumRecentWidget');
-		});
-	}
-}
-
-
-// Testimonial: Post Type & Widget
-if (secretum_mod('feature_testimonial_display')) {
-	include_once(SECRETUM_INC . '/system/feature/testimonial/posttype.php');
-
-	// Recent Post Widget
-	if(!secretum_mod('feature_testimonial_query_widget')) {
-		include_once(SECRETUM_INC . '/system/feature/testimonial/widgets/query.php');
-
-		add_action('widgets_init', function() {
-			register_widget('SecretumTestimonialQueryWidget');
-		});
-	}
-}
+// Registered Widgets As Shortcode
+include_once(SECRETUM_INC . '/system/widgets/shortcode.php');
 
 
 // Theme Update Checker

@@ -7,6 +7,9 @@
 	.bg-#{$color} {
 		background-color: $value !important;
 	}
+	.bg-#{$color}-hover:hover {
+		background-color: $value !important;
+	}
 }
 
 // Theme colors as background color
@@ -14,8 +17,13 @@
 	.bg-#{$color} {
 		background-color: $value !important;
 	}
+	.bg-#{$color}-hover:hover {
+		background-color: $value !important;
+	}
 }
 
 // Theme Background Colors
 .body-bg {  background-color: $body-bg !important; }
+.body-bg-hover:hover {  background-color: $body-bg !important; }
 .content-bg { background-color: $content-bg !important; }
+.content-bg-hover:hover { background-color: $content-bg !important; }

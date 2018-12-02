@@ -3,14 +3,13 @@
  * Login Form
  *
  * @package 	WooCommerce/Templates
- * @version 	3.4.0
+ * @version 	3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version 	0.0.1
  */
 if (! defined('ABSPATH')) { exit; }
-
-wc_print_notices(); ?>
+?>
 
 <?php do_action('woocommerce_before_customer_login_form'); ?>
 
@@ -79,7 +78,7 @@ wc_print_notices(); ?>
 
 		<h2><?php esc_html_e('Register', 'secretum'); ?></h2>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register register">
+		<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?>>
 
 			<?php do_action('woocommerce_register_form_start'); ?>
 

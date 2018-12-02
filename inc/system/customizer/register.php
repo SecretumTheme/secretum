@@ -18,8 +18,8 @@ add_action('customize_register', function($wp_customize) {
 	$wp_customize->remove_section("title_tagline");
 
 
-	// Include Help Functions
-	include_once(SECRETUM_INC . '/system/customizer/color-choices.php');
+	// Get Default Settings
+	$default = secretum_customizer_default_settings();
 
 
 	//
@@ -50,6 +50,30 @@ add_action('customize_register', function($wp_customize) {
 
 	// Color Settings
 	include_once(SECRETUM_INC . '/system/header/customize/colors.php');
+
+
+	//
+	// Primary Nav Panel
+	//
+
+	// Add Panel
+	$wp_customize->add_panel('secretum_primary_nav', array(
+		'title' 		=> __(':: Primary Nav', 'secretum'),
+		'description' 	=> __('Manage features related to the primary navigation menu.', 'secretum'),
+		'priority' 		=> 8,
+	));
+
+	// Display Status
+	include_once(SECRETUM_INC . '/system/primary-nav/customize/display.php');
+
+	// Wrapper Settings
+	include_once(SECRETUM_INC . '/system/primary-nav/customize/wrapper.php');
+
+	// Container Settings
+	include_once(SECRETUM_INC . '/system/primary-nav/customize/container.php');
+
+	// Items Settings
+	include_once(SECRETUM_INC . '/system/primary-nav/customize/items.php');
 
 
 	//
@@ -210,21 +234,6 @@ add_action('customize_register', function($wp_customize) {
 	// Content Width
 	include_once(SECRETUM_INC . '/system/extras/customize/width.php');
 
-
-	//
-	// Features Panel
-	//
-
-	// Panel :: Features
-	$wp_customize->add_panel('secretum_features', array(
-		'title' 			=> __(':: Features', 'secretum'),
-		'description' 		=> __('Manage custom features.', 'secretum'),
-		'priority' 			=> 8,
-	));
-
-	// Documentation Settings
-	include_once(SECRETUM_INC . '/system/feature/documentation/customize/settings.php');
-
-	// Testimonial Settings
-	include_once(SECRETUM_INC . '/system/feature/testimonial/customize/settings.php');
+	// Reset Settings
+	include_once(SECRETUM_INC . '/system/extras/customize/reset.php');
 });

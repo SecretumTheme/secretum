@@ -3,7 +3,7 @@
  * Checkout Form
  *
  * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @version     3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version     0.0.1
@@ -18,7 +18,7 @@ wc_print_notices();
 <?php
 if (! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in()) {
 
-		echo apply_filters('secretum_logged_in_to_checkout_text', __('You must be logged in to checkout.', 'secretum'));
+		echo esc_html(apply_filters('secretum_logged_in_to_checkout_text', __('You must be logged in to checkout.', 'secretum')));
 
 		return;
 	}

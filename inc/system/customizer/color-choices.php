@@ -2,6 +2,14 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
+ * @method secretum_customizer_text_colors()
+ * @method secretum_customizer_link_colors()
+ * @method secretum_customizer_link_hover_colors()
+ * @method secretum_customizer_background_colors()
+ * @method secretum_customizer_background_hover_colors()
+ * @method secretum_customizer_button_colors()
+ * @method secretum_customizer_border_colors()
+ *
  * @package WordPress
  * @subpackage Secretum_Theme
  */
@@ -288,6 +296,59 @@ if (!function_exists('secretum_customizer_background_hover_colors')) {
 			'bg-info-hover' 			=> __('Info', 'secretum'),
 			'bg-success-hover' 			=> __('Success', 'secretum'),
 			'bg-warning-hover' 			=> __('Warning', 'secretum')
+		);
+	}
+}
+
+
+/**
+ * Button Colors
+ *
+ * @source inc/system/idx/class-idxsearch_widget.php
+ *
+ * @return array Color key and values
+ */
+if (!function_exists('secretum_customizer_button_colors')) {
+	function secretum_customizer_button_colors()
+	{
+		return array(
+			'' 					=> __('Default Theme Color', 'secretum'),
+			'btn-transparent' 	=> __('Transparent Background', 'secretum'),
+			'btn-light' 		=> __('Light Button Color Base', 'secretum'),
+			'btn-dark' 			=> __('Dark Button Color Base', 'secretum'),
+			'btn-primary'		=> __('Primary Button Color', 'secretum'),
+			'btn-primary-dark' 	=> __('Primary "Dark" Button Color', 'secretum'),
+			'btn-primary-light' => __('Primary "Light" Button Color', 'secretum'),
+			'btn-secondary' 	=> __('Secondary Button Color', 'secretum'),
+			'btn-white' 		=> __('White', 'secretum'),
+			'btn-whiteish' 		=> __('Whiteish', 'secretum'),
+			'btn-black' 		=> __('Black', 'secretum'),
+			'btn-blackish' 		=> __('Blackish', 'secretum'),
+			'btn-gray' 			=> __('Gray', 'secretum'),
+			'btn-gray-dark' 	=> __('Gray "Dark"', 'secretum'),
+			'btn-gray-100' 		=> __('Gray 100', 'secretum'),
+			'btn-gray-200' 		=> __('Gray 200', 'secretum'),
+			'btn-gray-300' 		=> __('Gray 300', 'secretum'),
+			'btn-gray-400' 		=> __('Gray 400', 'secretum'),
+			'btn-gray-500' 		=> __('Gray 500', 'secretum'),
+			'btn-gray-600' 		=> __('Gray 600', 'secretum'),
+			'btn-gray-700' 		=> __('Gray 700', 'secretum'),
+			'btn-gray-800' 		=> __('Gray 800', 'secretum'),
+			'btn-gray-900' 		=> __('Gray 900', 'secretum'),
+			'btn-blue' 			=> __('Blue', 'secretum'),
+			'btn-cyan' 			=> __('Cyan', 'secretum'),
+			'btn-green' 		=> __('Green', 'secretum'),
+			'btn-indigo' 		=> __('Indigo', 'secretum'),
+			'btn-orange' 		=> __('Orange', 'secretum'),
+			'btn-purple' 		=> __('Purple', 'secretum'),
+			'btn-pink' 			=> __('Pink', 'secretum'),
+			'btn-red' 			=> __('Red', 'secretum'),
+			'btn-teal' 			=> __('Teal', 'secretum'),
+			'btn-yellow' 		=> __('Yellow', 'secretum'),
+			'btn-danger' 		=> __('Danger', 'secretum'),
+			'btn-info' 			=> __('Info', 'secretum'),
+			'btn-success' 		=> __('Success', 'secretum'),
+			'btn-warning' 		=> __('Warning', 'secretum')
 		);
 	}
 }

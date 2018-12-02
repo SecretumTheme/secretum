@@ -25,17 +25,16 @@
 if (!function_exists('secretum_mod')) {
 	function secretum_mod($setting_name, $escape = '', $space = '')
 	{
-		// Get Settings
+		// Build Settings Array
 		$settings_array = wp_parse_args(
-			get_option('secretum', array()),
-			array()
+			// Remove Blank Values From Setting Option
+			array_filter(get_option('secretum', array()), 'strlen'),
+			// Remove Blank Values From Default Settings
+			array_filter(secretum_customizer_default_settings(), 'strlen')
 		);
 
 		// Get Theme Mod
 		$theme_mod = isset($settings_array[$setting_name]) ? $settings_array[$setting_name] : '';
-
-		// Space Before Value
-		$spacer = !empty($space) ? ' ' : '';
 
 		// Default Option Result
 		$mod = false;
@@ -46,12 +45,12 @@ if (!function_exists('secretum_mod')) {
 			switch ($escape) {
 			    // Attribute
 			    case 'attr':
-			        $mod = $spacer . esc_attr($theme_mod);
+			        $mod = (!empty($space) ? ' ' : '') . esc_attr($theme_mod);
 			        break;
 
 			    // Interger
 			    case 'int':
-			        $mod = $spacer . absint($theme_mod);
+			        $mod = (!empty($space) ? ' ' : '') . absint($theme_mod);
 			        break;
 
 				// HTML

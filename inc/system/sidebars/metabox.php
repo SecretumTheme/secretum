@@ -39,7 +39,7 @@ if (!class_exists('SecretumMetaboxSidebars')) {
 				'secretum_meta_sidebars',
 				__('Sidebar Locations', 'secretum'),
 				array($this, 'render_metabox'),
-	        	'post',
+	        	array('post', 'page', 'secretumidx_cities', 'secretum_docs', 'secretum_testimonial'),
 				'advanced',
 				'default'
 			);

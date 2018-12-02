@@ -64,6 +64,8 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 	* All standard WooCommerce features included
 * WooCommerce Bookings compatible
 	* Templates re-designed for improved booking flow
+* IMPress for IDX Broker compatible
+	* Custom IDX Search Widget
 * Contact Form 7 compatible
 	* Beautified
 * WordPress Customizer features

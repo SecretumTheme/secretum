@@ -3,7 +3,7 @@
  * Cart Page
  *
  * @package 	WooCommerce/Templates
- * @version     3.4.0
+ * @version     3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version     0.0.1
@@ -96,7 +96,7 @@ if (! defined('ABSPATH')) { exit; } ?>
 									// Backorder notification.
 									if ($_product->backorders_require_notification() && $_product->is_on_backorder($cart_item['quantity'])) {
 
-										echo '<p class="backorder_notification">' . esc_html__('Available on backorder', 'secretum') . '</p>';
+										echo wp_kses_post(apply_filters('woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__('Available on backorder', 'secretum') . '</p>', $product_id));
 
 									}
 								?>
@@ -167,7 +167,7 @@ if (! defined('ABSPATH')) { exit; } ?>
 
 							<?php do_action('woocommerce_cart_actions'); ?>
 
-							<?php wp_nonce_field('woocommerce-cart'); ?>
+							<?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
 
 						</td>
 					</tr>

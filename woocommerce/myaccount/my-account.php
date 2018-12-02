@@ -3,7 +3,7 @@
  * My Account page
  *
  * @package 	WooCommerce/Templates
- * @version 	2.6.0
+ * @version 	3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version 	0.0.1

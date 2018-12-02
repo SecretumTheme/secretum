@@ -3,14 +3,12 @@
  * Empty cart page
  *
  * @package 	WooCommerce/Templates
- * @version 	3.1.0
+ * @version 	3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version     0.0.1
  */
 if (! defined('ABSPATH')) { exit; }
-
-wc_print_notices();
 
 // WooCommerce Bookings
 if (class_exists('WC_Bookings')) {

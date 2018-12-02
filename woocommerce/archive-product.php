@@ -20,9 +20,9 @@ if ((is_shop() && (is_active_sidebar('sidebar-woo-storefront') || is_active_side
 
 <?php get_header('shop');?>
 
-<div class="wrapper<?php do_action('secretum_body_wrapper'); do_action('secretum_body_background');?>" id="woocommerce-wrapper">
+<div class="wrapper<?php echo secretum_body_wrapper(); ?>" id="woocommerce-wrapper">
 
-	<div class="container<?php do_action('secretum_body_container'); ?>" id="content" tabindex="-1">
+	<div class="container<?php echo secretum_body_container(); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 

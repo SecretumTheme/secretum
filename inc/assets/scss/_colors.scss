@@ -10,13 +10,13 @@
 	a.color-#{$color}-link {
 		color: $value !important;
 	}
-	a.color-#{$color}-hover {
+	a.color-#{$color}-hover:hover {
 		color: $value !important;
 	}
 	.color-#{$color}-link a {
 		color: $value !important;
 	}
-	.color-#{$color}-hover a {
+	.color-#{$color}-hover a:hover {
 		color: $value !important;
 	}
 }
@@ -29,13 +29,13 @@
 	a.color-#{$color}-link {
 		color: $value !important;
 	}
-	a.color-#{$color}-hover {
+	a.color-#{$color}-hover:hover {
 		color: $value !important;
 	}
 	.color-#{$color}-link a {
 		color: $value !important;
 	}
-	.color-#{$color}-hover a {
+	.color-#{$color}-hover a:hover {
 		color: $value !important;
 	}
 }

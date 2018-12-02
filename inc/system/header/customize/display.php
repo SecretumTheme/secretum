@@ -82,21 +82,3 @@ $wp_customize->add_control('secretum[logo_identity_status]', array(
 	'section' 			=> 'secretum_header_display',
 	'type' 				=> 'checkbox'
 ));
-
-
-// Setting :: Header Primary Menu
-// @see template-parts/header/navbar-above.php
-// @see template-parts/header/navbar-below.php
-// @see template-parts/header/navbar-brand.php
-$wp_customize->add_setting('secretum[primary_menu_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_checkbox',
-	'type' 				=> 'option',
-	'transport' 		=> 'refresh',
-));
-
-// Control :: Header Primary Menu
-$wp_customize->add_control('secretum[primary_menu_status]', array(
-	'label' 			=> __('Hide Header Primary Menu', 'secretum'),
-	'section' 			=> 'secretum_header_display',
-	'type' 				=> 'checkbox'
-));

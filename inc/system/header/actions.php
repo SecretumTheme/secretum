@@ -33,8 +33,8 @@ add_action('secretum_header', function() {
 	// If Header Display Allowed
 	if (!secretum_mod('header_status')) {
 		// Navbar Menu Above Header
-		// @source inc/system/header/template-parts.php
-		echo secretum_header_navbar('secretum-navbar-primary-above');
+		// @source inc/system/primary-nav/template-parts.php
+		echo secretum_primary_nav('secretum-navbar-primary-above');
 
 		// If Setting, Get Custom Header
 		if (secretum_mod('custom_headers')) {
@@ -64,13 +64,13 @@ add_action('secretum_header', function() {
 		// No Custom Header
 		} else {
 			// Navbar Brand Logo & Primary Menu
-			// @source inc/system/header/template-parts.php
-			echo secretum_header_brand_navbar();
+			// @source inc/system/primary-nav/template-parts.php
+			echo secretum_primary_nav_brand();
 		}
 
 		// Navbar Menu Below Header
-		// @source inc/system/header/template-parts.php
-		echo secretum_header_navbar('secretum-navbar-primary-below');
+		// @source inc/system/primary-nav/template-parts.php
+		echo secretum_primary_nav('secretum-navbar-primary-below');
 	}
 }, 10, 0);
 

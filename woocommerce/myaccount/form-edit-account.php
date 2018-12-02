@@ -3,7 +3,7 @@
  * Edit account form
  *
  * @package 	WooCommerce/Templates
- * @version 	3.4.0
+ * @version 	3.5.0
  *
  * @subpackage 	Secretum/WooCommerce
  * @version 	0.0.1
@@ -12,7 +12,7 @@ if (! defined('ABSPATH')) { exit; }
 
 do_action('woocommerce_before_edit_account_form'); ?>
 
-<form class="woocommerce-EditAccountForm edit-account" action="" method="post">
+<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
 	<?php do_action('woocommerce_edit_account_form_start'); ?>
 

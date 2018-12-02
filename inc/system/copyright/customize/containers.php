@@ -19,10 +19,10 @@ $wp_customize->add_section('secretum_copyright_area', array(
 
 // Setting :: Copyright Container Type
 $wp_customize->add_setting('secretum[copyright_container]', array(
+	'default' 			=> $default['copyright_container'],
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
-	'type' 				=> 'option',
-	'default' 			=> ''
+	'type' 				=> 'option'
 ));
 
 // Control :: Copyright Container Type
@@ -40,10 +40,10 @@ $wp_customize->add_control('secretum[copyright_container]', array(
 
 // Setting :: Copyright Wrapper Padding
 $wp_customize->add_setting('secretum[copyright_wrapper_padding]', array(
+	'default' 			=> $default['copyright_wrapper_padding'],
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
-	'type' 				=> 'option',
-	'default' 			=> ''
+	'type' 				=> 'option'
 ));
 
 // Control :: Copyright Wrapper Padding
@@ -53,22 +53,23 @@ $wp_customize->add_control('secretum[copyright_wrapper_padding]', array(
 	'section' 		=> 'secretum_copyright_area',
 	'type' 			=> 'select',
 	'choices' 		=> array(
+		'' 				=> __('Theme Default', 'secretum'),
 		'py-0' 			=> __('No Padding', 'secretum'),
 		'py-1' 			=> __('4px or .25em Padding', 'secretum'),
 		'py-2' 			=> __('8px or .5em Padding', 'secretum'),
 		'py-3' 			=> __('16px or 1em Padding', 'secretum'),
 		'py-4' 			=> __('24px or 1.5em Padding', 'secretum'),
-		'' 				=> __('48px or 3em Padding (default)', 'secretum'),
+		'py-5' 			=> __('48px or 3em Padding', 'secretum'),
 	)
 ));
 
 
 // Setting :: Copyright Container Padding
 $wp_customize->add_setting('secretum[copyright_container_padding]', array(
+	'default' 			=> $default['copyright_container_padding'],
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
-	'type' 				=> 'option',
-	'default' 			=> ''
+	'type' 				=> 'option'
 ));
 
 // Control :: Copyright Container Padding
@@ -78,7 +79,7 @@ $wp_customize->add_control('secretum[copyright_container_padding]', array(
 	'section' 		=> 'secretum_copyright_area',
 	'type' 			=> 'select',
 	'choices' 		=> array(
-		'' 				=> __('15px Padding (default)', 'secretum'),
+		'' 				=> __('Theme Default', 'secretum'),
 		'px-0' 			=> __('No Padding', 'secretum'),
 		'px-1' 			=> __('4px or .25em Padding', 'secretum'),
 		'px-2' 			=> __('8px or .5em Padding', 'secretum'),
@@ -91,10 +92,10 @@ $wp_customize->add_control('secretum[copyright_container_padding]', array(
 
 // Setting :: Copyright Top Margin
 $wp_customize->add_setting('secretum[copyright_wrapper_margin]', array(
+	'default' 			=> $default['copyright_wrapper_margin'],
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
-	'type' 				=> 'option',
-	'default' 			=> ''
+	'type' 				=> 'option'
 ));
 
 // Control :: Copyright Top Margin
@@ -104,7 +105,8 @@ $wp_customize->add_control('secretum[copyright_wrapper_margin]', array(
 	'section' 		=> 'secretum_copyright_area',
 	'type' 			=> 'select',
 	'choices' 		=> array(
-		'' 				=> __('No Top Margin (default)', 'secretum'),
+		'' 				=> __('Theme Default', 'secretum'),
+		'mt-0' 			=> __('0px or 0em Top Margin', 'secretum'),
 		'mt-1' 			=> __('4px or .25em Top Margin', 'secretum'),
 		'mt-2' 			=> __('8px or .5em Top Margin', 'secretum'),
 		'mt-3' 			=> __('16px or 0em Top Margin', 'secretum'),

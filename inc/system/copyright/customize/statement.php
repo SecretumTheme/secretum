@@ -18,10 +18,10 @@ $wp_customize->add_section('secretum_copyright_statement' , array(
 
 // Setting :: Copyright Text
 $wp_customize->add_setting('secretum[copyright_text]' , array(
+	'default' 			=> $default['copyright_text'],
 	'sanitize_callback' => 'secretum_sanitize_html',
 	'transport' 		=> 'refresh',
-	'type' 				=> 'option',
-	'default' 			=> ''
+	'type' 				=> 'option'
 ));
 
 // Control :: Copyright Text

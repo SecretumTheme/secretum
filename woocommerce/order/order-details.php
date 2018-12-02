@@ -3,7 +3,7 @@
  * Order details
  *
  * @package 	WooCommerce/Templates
- * @version 	3.3.0
+ * @version 	3.5.2
  *
  * @subpackage 	Secretum/WooCommerce
  * @version 	0.0.1
@@ -71,7 +71,7 @@ if ($show_downloads) {
 
 				<tr>
 					<th scope="row"><?php echo $total['label']; ?></th>
-					<td><?php echo $total['value']; ?></td>
+					<td><?php echo ('payment_method' === $key) ? esc_html($total['value']) : $total['value']; ?></td>
 				</tr>
 
 			<?php }

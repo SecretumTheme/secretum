@@ -5,7 +5,7 @@
  * @package WordPress
  * @subpackage Secretum_Theme
  */
-		
+
 
 /**
  * Inject Classes Into Post Navigation Container

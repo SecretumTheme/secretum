@@ -109,7 +109,7 @@ if (!function_exists('secretum_modified_date_check')) {
 if (!function_exists('secretum_categories_list')) {
 	function secretum_categories_list()
 	{
-		$get_the_category_list = get_the_category_list(__(', ', 'secretum'));
+		$get_the_category_list = get_the_category_list(', ');
 
 		if ($get_the_category_list) {
 			return $get_the_category_list;
