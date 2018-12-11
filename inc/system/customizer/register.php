@@ -21,6 +21,16 @@ add_action('customize_register', function($wp_customize) {
 	// Get Default Settings
 	$default = secretum_customizer_default_settings();
 
+	// Controller Setting Arrays
+	include_once(SECRETUM_INC . '/system/customizer/choices/alignments.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/borders.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/colors.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/containers.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/font-families.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/margins.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/paddings.php');
+	include_once(SECRETUM_INC . '/system/customizer/choices/sizes.php');
+
 
 	//
 	// Header Panel
@@ -41,9 +51,6 @@ add_action('customize_register', function($wp_customize) {
 
 	// Display Settings
 	include_once(SECRETUM_INC . '/system/header/customize/display.php');
-
-	// Primary Menu
-	include_once(SECRETUM_INC . '/system/header/customize/menu.php');
 
 	// General Settings
 	include_once(SECRETUM_INC . '/system/header/customize/settings.php');
@@ -74,6 +81,9 @@ add_action('customize_register', function($wp_customize) {
 
 	// Items Settings
 	include_once(SECRETUM_INC . '/system/primary-nav/customize/items.php');
+
+	// Toggler
+	include_once(SECRETUM_INC . '/system/primary-nav/customize/toggler.php');
 
 
 	//

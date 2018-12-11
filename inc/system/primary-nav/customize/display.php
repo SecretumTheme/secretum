@@ -8,7 +8,7 @@
 
 
 /**
- * Section :: Display Setting
+ * Section :: Display Status
  */
 $wp_customize->add_section('secretum_primary_nav_display' , array(
 	'panel' 			=> 'secretum_primary_nav',
@@ -17,17 +17,16 @@ $wp_customize->add_section('secretum_primary_nav_display' , array(
 ));
 
 
-// Setting :: Primary Nav Menu
-// @see inc/system/primary-nav/template-parts.php
+// Setting :: Select To Hide Primary Navigation Menu
 $wp_customize->add_setting('secretum[primary_nav_status]' , array(
 	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'type' 				=> 'option',
 	'transport' 		=> 'refresh',
 ));
 
-// Control :: Primary Nav Menu
+// Control :: Select To Hide Primary Navigation Menu
 $wp_customize->add_control('secretum[primary_nav_status]', array(
-	'label' 			=> __('Hide Primary Navigation Menu', 'secretum'),
+	'label' 			=> __('Select To Hide Primary Navigation Menu', 'secretum'),
 	'section' 			=> 'secretum_primary_nav_display',
 	'type' 				=> 'checkbox'
 ));

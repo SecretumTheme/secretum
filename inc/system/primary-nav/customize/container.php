@@ -8,12 +8,12 @@
 
 
 /**
- * Section :: Container Settings
+ * Section :: Container
  */
 $wp_customize->add_section('secretum_primary_nav_container', array(
 	'panel' 			=> 'secretum_primary_nav',
-    'title' 			=> __('Container Settings', 'secretum'),
-    'description' 		=> __('Customize the inner container within the menu.', 'secretum'),
+    'title' 			=> __('Container', 'secretum'),
+    'description' 		=> __('Customize the container within the wrapper and around the menu items.', 'secretum'),
     'priority' 			=> 10,
 ));
 
@@ -31,14 +31,11 @@ $wp_customize->add_control('secretum[primary_nav_container]', array(
 	'label' 			=> __('Container Type', 'secretum'),
 	'section' 			=> 'secretum_primary_nav_container',
 	'type' 				=> 'radio',
-	'choices' 			=> array(
-		'' 					=> __('Responsive, fixed-width (default)', 'secretum'),
-		'fluid' 			=> __('Fluid, full-width', 'secretum')
-	)
+	'choices' 			=> secretum_customizer_container_types()
 ));
 
 
-// Setting :: Container Background Color
+// Setting :: Background Color
 $wp_customize->add_setting('secretum[primary_nav_container_background_color]' , array(
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
@@ -46,43 +43,51 @@ $wp_customize->add_setting('secretum[primary_nav_container_background_color]' , 
 	'default' 			=> ''
 ));
 
-// Control :: Container Background Color
+// Control :: Background Color
 $wp_customize->add_control('secretum[primary_nav_container_background_color]', array(
-	'label' 	=> __('Container Background Color', 'secretum'),
-	'section' 	=> 'secretum_primary_nav_container',
-	'type' 		=> 'select',
-	'choices' 	=> secretum_customizer_background_colors()
+	'label' 			=> __('Background Color', 'secretum'),
+	'section' 			=> 'secretum_primary_nav_container',
+	'type' 				=> 'select',
+	'choices' 			=> secretum_customizer_background_colors()
 ));
 
 
-// Setting :: Container Padding
-$wp_customize->add_setting('secretum[primary_nav_container_padding]', array(
+// Setting :: Padding - LEFT & RIGHT
+$wp_customize->add_setting('secretum[primary_nav_container_padding_x]', array(
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
 	'type' 				=> 'option',
 	'default' 			=> ''
 ));
 
-// Control :: Container Padding
-$wp_customize->add_control('secretum[primary_nav_container_padding]', array(
-	'label' 			=> __('Container Padding', 'secretum'),
-	'description' 		=> __('Controls RIGHT & LEFT padding within container.', 'secretum'),
+// Control :: Padding - LEFT & RIGHT
+$wp_customize->add_control('secretum[primary_nav_container_padding_x]', array(
+	'label' 			=> __('Padding - LEFT & RIGHT', 'secretum'),
 	'section' 			=> 'secretum_primary_nav_container',
 	'type' 				=> 'select',
-	'choices' 			=> array(
-		'' 					=> __('15px Padding (default)', 'secretum'),
-		'px-0' 				=> __('No Padding', 'secretum'),
-		'px-1' 				=> __('4px or .25em Padding', 'secretum'),
-		'px-2' 				=> __('8px or .5em Padding', 'secretum'),
-		'px-3' 				=> __('16px or 1em Padding', 'secretum'),
-		'px-4' 				=> __('24px or 1.5em Padding', 'secretum'),
-		'px-5' 				=> __('48px or 3em Padding', 'secretum'),
-	)
+	'choices' 			=> secretum_customizer_padding_left_right()
+));
+
+
+// Setting :: Padding - TOP & BOTTOM
+$wp_customize->add_setting('secretum[primary_nav_container_padding_y]', array(
+	'sanitize_callback' => 'sanitize_key',
+	'transport' 		=> 'refresh',
+	'type' 				=> 'option',
+	'default' 			=> ''
+));
+
+// Control :: Padding - TOP & BOTTOM
+$wp_customize->add_control('secretum[primary_nav_container_padding_y]', array(
+	'label' 			=> __('Padding - TOP & BOTTOM', 'secretum'),
+	'section' 			=> 'secretum_primary_nav_container',
+	'type' 				=> 'select',
+	'choices' 			=> secretum_customizer_padding_top_bottom()
 ));
 
 
 
-// Setting :: Container Border Type
+// Setting :: Border Type
 $wp_customize->add_setting('secretum[primary_nav_container_border_type]', array(
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
@@ -90,25 +95,16 @@ $wp_customize->add_setting('secretum[primary_nav_container_border_type]', array(
 	'default' 			=> ''
 ));
 
-// Control :: Container Border Type
+// Control :: Border Type
 $wp_customize->add_control('secretum[primary_nav_container_border_type]', array(
-	'label' 		=> __('Container Border Type', 'secretum'),
-	'description' 	=> __('Manage the border color under the Color Settings tab.', 'secretum'),
-	'section' 		=> 'secretum_primary_nav_container',
-	'type' 			=> 'select',
-	'choices' 		=> array(
-		'' 				=> __('Theme Default', 'secretum'),
-		'all' 			=> __('Solid Border', 'secretum'),
-		'top' 			=> __('Top Border', 'secretum'),
-		'right' 		=> __('Right Border', 'secretum'),
-		'bottom' 		=> __('Bottom Border', 'secretum'),
-		'left' 			=> __('Left Border', 'secretum'),
-		'none' 			=> __('No Border', 'secretum')
-	)
+	'label' 			=> __('Border Type', 'secretum'),
+	'section' 			=> 'secretum_primary_nav_container',
+	'type' 				=> 'select',
+	'choices' 			=> secretum_customizer_border()
 ));
 
 
-// Setting :: Container Border Color
+// Setting :: Border Color
 $wp_customize->add_setting('secretum[primary_nav_container_border_color]' , array(
 	'sanitize_callback' => 'sanitize_key',
 	'transport' 		=> 'refresh',
@@ -116,11 +112,10 @@ $wp_customize->add_setting('secretum[primary_nav_container_border_color]' , arra
 	'default' 			=> ''
 ));
 
-// Control :: Container Border Color
+// Control :: Border Color
 $wp_customize->add_control('secretum[primary_nav_container_border_color]', array(
-	'label' 		=> __('Container Border Color', 'secretum'),
-	'description' 	=> __('Manage border size and location under the Container Settings tab.', 'secretum'),
-	'section' 		=> 'secretum_primary_nav_container',
-	'type' 			=> 'select',
-	'choices' 		=> secretum_customizer_border_colors()
+	'label' 			=> __('Border Color', 'secretum'),
+	'section' 			=> 'secretum_primary_nav_container',
+	'type' 				=> 'select',
+	'choices' 			=> secretum_customizer_border_colors()
 ));

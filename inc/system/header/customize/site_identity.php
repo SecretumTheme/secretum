@@ -26,8 +26,9 @@ $wp_customize->add_setting('blogname', array(
 
 // Control :: Site Title
 $wp_customize->add_control('blogname', array(
-	'label'      => __('Site Title', 'secretum'),
-	'section'    => 'secretum_header_site_identity',
+	'label' 	=> __('Site Title', 'secretum'),
+	'section'   => 'secretum_header_site_identity',
+    'priority' 	=> 10,
 ));
 
 
@@ -40,8 +41,9 @@ $wp_customize->add_setting('blogdescription', array(
 
 // Control :: Tagline
 $wp_customize->add_control('blogdescription', array(
-	'label'      => __('Tagline', 'secretum'),
-	'section'    => 'secretum_header_site_identity',
+	'label' 	=> __('Tagline', 'secretum'),
+	'section' 	=> 'secretum_header_site_identity',
+    'priority' 	=> 10,
 ));
 
 
@@ -58,6 +60,7 @@ $wp_customize->add_control('header_text', array(
 	'description' 	=> __('Setting ignored if graphic logo used.', 'secretum'),
 	'section' 		=> 'secretum_header_site_identity',
 	'type' 			=> 'checkbox',
+    'priority' 		=> 10,
 ));
 
 
@@ -78,6 +81,7 @@ $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
 	'width'         => $custom_logo_args[0]['width'],
 	'flex_height'   => $custom_logo_args[0]['flex-height'],
 	'flex_width'    => $custom_logo_args[0]['flex-width'],
+    'priority' 		=> 10,
 	'button_labels' => array(
 		'select'       => __('Select logo', 'secretum'),
 		'change'       => __('Change logo', 'secretum'),
@@ -112,6 +116,7 @@ $wp_customize->add_control('ssecretum[header_logo_location]', array(
 	'description' 		=> __('Select the display location of the website logo/tagline. Logo location will override menu location.', 'secretum'),
 	'section' 			=> 'secretum_header_site_identity',
 	'type' 				=> 'radio',
+    'priority' 			=> 20,
 	'choices' 			=> array(
 		'' 			=> __('Theme Default', 'secretum'),
 		'left' 		=> __('Left logo', 'secretum'),
@@ -135,6 +140,7 @@ $wp_customize->add_control('secretum[custom_logo_maxwidth]', array(
 	'description' 	=> __('If defined, inline CSS will set a max-width and auto height for the logo.', 'secretum'),
 	'section' 		=> 'secretum_header_site_identity',
 	'settings' 		=> 'secretum[custom_logo_maxwidth]',
+    'priority' 			=> 20,
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -153,6 +159,7 @@ $wp_customize->add_control('secretum[custom_logo_height]', array(
 	'label' 		=> __('Logo Crop Height In Pixels', 'secretum'),
 	'description' 	=> __('Default: 75px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
 	'section' 		=> 'secretum_header_site_identity',
+    'priority' 			=> 20,
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -171,6 +178,7 @@ $wp_customize->add_control('secretum[custom_logo_width]', array(
 	'label' 		=> __('Logo Crop Width In Pixels', 'secretum'),
 	'description' 	=> __('Default: 300px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
 	'section' 		=> 'secretum_header_site_identity',
+    'priority' 			=> 20,
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -178,7 +186,6 @@ $wp_customize->add_control('secretum[custom_logo_width]', array(
 
 // Setting :: Website Site Icon
 $wp_customize->add_setting('site_icon', array(
-	'type'       => 'option',
 	'type'       => 'option',
 	'capability' => 'manage_options',
 	'transport'  => 'postMessage'
@@ -189,6 +196,7 @@ $wp_customize->add_control(new WP_Customize_Site_Icon_Control($wp_customize, 'si
 	'label' 		=> __('Site Icon', 'secretum'),
 	'description' 	=> __('Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Site Icons should be square and at least 512 &times; 512 pixels.', 'secretum'),
 	'section' 		=> 'secretum_header_site_identity',
+    'priority' 			=> 20,
 	'priority' 		=> 60,
 	'height' 		=> 512,
 	'width' 		=> 512

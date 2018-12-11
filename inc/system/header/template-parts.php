@@ -24,7 +24,7 @@ if (!function_exists('secretum_header_top')) {
 		// Else if Header Top Active & Sidebar Not Active & Navwalker Found
 		} elseif (secretum_mod('header_top_status') && !is_active_sidebar('sidebar-header-top') && class_exists('WP_Bootstrap_Navwalker')) {
 
-			$html  = '<nav class="navbar navbar-expand' . secretum_primary_menu_color_theme() . secretum_header_top_wrapper() . '" role="navigation">';
+			$html  = '<nav class="navbar navbar-expand' . secretum_primary_nav_color_scheme() . secretum_header_top_wrapper() . '" role="navigation">';
 			$html .= '<div class="container' . secretum_header_top_container() . '">';
 
 			// Top Left Navbar
@@ -56,9 +56,68 @@ if (!function_exists('secretum_header_top')) {
 			$html .= '</div>'; // <!-- .container -->
 			$html .= '</nav>'; // <!-- .navbar -->
 
-			// Echo HTML
+			// Filter HTML
 			echo apply_filters('secretum_header_top', $html, 10, 1);
 		}
+	}
+}
+
+
+/**
+ * Display Header Brand Navbar
+ *
+ * @return string Primary Navbar HTML
+ */
+if (!function_exists('secretum_header_display')) {
+	function secretum_header_display()
+	{
+		//if (get_theme_mod('secretum_header_sticky')) { echo 'data-toggle="sticky-onscroll"'; }
+
+			// Open HTML
+			$html  = '<div class="header' . secretum_header_wrapper() . '" id="wrapper-header" itemscope itemtype="http://schema.org/WebSite">';
+			$html .= '<a class="skip-link screen-reader-text sr-only" href="#content">' . __('Skip to content', 'secretum') . '</a>';
+
+			// If Left/Right Menus
+			if (has_nav_menu('secretum-navbar-primary-left') || has_nav_menu('secretum-navbar-primary-right')) {
+				$html .= '<nav class="navbar navbar-expand-lg p-0">';
+			}
+
+			$html .= '<div class="container' . secretum_header_container() . '">';
+
+			// Left Primary Navbar
+			$html .= secretum_primary_nav('secretum-navbar-primary-left');
+
+			if (has_nav_menu('secretum-navbar-primary-left')) {
+				// Display Toggler Button
+				$html .= secretum_primary_nav_toggler_button();
+			}
+
+			// Display Logo
+			if (!secretum_mod('logo_identity_status')) {
+				$html .= secretum_header_logo();
+			}
+
+			// If Left/Right Menus
+			if (has_nav_menu('secretum-navbar-primary-right')) {
+				// Display Toggler Button
+				$html .= secretum_primary_nav_toggler_button();
+			}
+
+			// Right Primary Navbar
+			$html .= secretum_primary_nav('secretum-navbar-primary-right');
+
+			// Close HTML
+			$html .= '</div>'; // <!-- .container -->
+
+			// If Left/Right Menus
+			if (has_nav_menu('secretum-navbar-primary-left') || has_nav_menu('secretum-navbar-primary-right')) {
+				$html .= '</nav>'; // <!-- .navbar -->
+			}
+
+			$html .= '</div>'; //<!-- .header -->
+
+			// Filter HTML
+			return apply_filters('secretum_header_display', $html, 10, 1);
 	}
 }
 
@@ -144,7 +203,7 @@ if (!function_exists('secretum_header_logo')) {
 		    restore_current_blog();
 		}
 
-		// Return Logo
+		// Filter HTML
 		return apply_filters('get_custom_logo', $html, $blog_id);
 	}
 }
@@ -165,8 +224,8 @@ if (!function_exists('secretum_featured_image')) {
 			$html .= get_the_post_thumbnail(get_queried_object_id(), 'secretum-featured-image');
 			$html .= '</div>'; // <!-- .featured-image-header -->
 
-			// Echo HTML
-			echo apply_filters('secretum_featured_image', $html, 10, 1);
+			// Filter HTML
+			return apply_filters('secretum_featured_image', $html, 10, 1);
 		}
 	}
 }

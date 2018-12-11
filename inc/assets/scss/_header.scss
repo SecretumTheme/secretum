@@ -12,49 +12,9 @@
         margin: 0;
         max-width: 100%;
         text-decoration: none;
-
-        @include media-breakpoint-down(sm) {
-            margin-left: 5px;
-        }
     }
 
     .navbar-brand img {
         width: 100%;
-    }
-
-    .navbar .show .menu-item {
-        @include media-breakpoint-down(md) {
-            border-bottom: 1px solid #ccc;
-
-            &:first-of-type {
-                border-top: 1px solid #ccc;
-                margin-top: 10px;
-            }
-        }
-    }
-
-    .navbar .menu-item a {
-        &:active {}
-        &:visited {}
-        &:hover {}
-        &:focus {
-            outline: none;
-            outline: none -webkit-focus-ring-color
-        }
-    }
-
-    .navbar button.navbar-toggler {
-        @include media-breakpoint-down(sm) {
-            margin-right: 5px;
-        }
-
-        &:focus {
-            outline: none;
-            outline: none -webkit-focus-ring-color
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$header-navbar-hamburger-color}' stroke-width='3' stroke-linecap='square' stroke-miterlimit='0' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-        }
     }
 }

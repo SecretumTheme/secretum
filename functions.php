@@ -43,16 +43,11 @@ if (is_admin()) {
 	include_once(SECRETUM_INC . '/editor.php');
 }
 
-// WP Admin or Customizer View
-if (is_admin() || is_customize_preview()) {
-	// Color Arrays
-	include_once(SECRETUM_INC . '/system/customizer/color-choices.php');
-}
-
 
 // WordPress Customizer
 include_once(SECRETUM_INC . '/system/customizer/default-settings.php');
 include_once(SECRETUM_INC . '/system/customizer/register.php');
+//include_once(SECRETUM_INC . '/system/customizer/functions.php');
 
 
 // Theme Settings
@@ -72,22 +67,18 @@ include_once(SECRETUM_INC . '/enqueue.php');
 
 
 // Shortcodes
-include_once(SECRETUM_INC . '/shortcode/shortcodes.php');
+//include_once(SECRETUM_INC . '/shortcode/shortcodes.php');
 
 
 // Register Widget Areas
 include_once(SECRETUM_INC . '/system/widgets/widgets-init.php');
 
 
-// WordPress Nav Menus
-include_once(SECRETUM_INC . '/system/menus/functions.php');
-
-
 // Header
 include_once(SECRETUM_INC . '/system/header/actions.php');
-if (secretum_mod('custom_headers')) {
-	include_once(SECRETUM_INC . '/system/header/posttype.php');
-}
+//if (secretum_mod('custom_headers')) {
+//	include_once(SECRETUM_INC . '/system/header/posttype.php');
+//}
 include_once(SECRETUM_INC . '/system/header/functions.php');
 include_once(SECRETUM_INC . '/system/header/template-parts.php');
 
@@ -109,9 +100,9 @@ if (is_admin()) {
 
 // Front-page
 include_once(SECRETUM_INC . '/system/frontpage/actions.php');
-if (secretum_mod('custom_frontpages')) {
-	include_once(SECRETUM_INC . '/system/frontpage/posttype.php');
-}
+//if (secretum_mod('custom_frontpages')) {
+//	include_once(SECRETUM_INC . '/system/frontpage/posttype.php');
+//}
 include_once(SECRETUM_INC . '/system/frontpage/functions.php');
 
 
@@ -121,9 +112,9 @@ include_once(SECRETUM_INC . '/system/entry/functions.php');
 
 // Footer
 include_once(SECRETUM_INC . '/system/footer/actions.php');
-if (secretum_mod('custom_footers')) {
-	include_once(SECRETUM_INC . '/system/footer/posttype.php');
-}
+//if (secretum_mod('custom_footers')) {
+//	include_once(SECRETUM_INC . '/system/footer/posttype.php');
+//}
 include_once(SECRETUM_INC . '/system/footer/functions.php');
 
 
@@ -161,13 +152,13 @@ if (class_exists('woocommerce')) {
 
 
 // Registered Widgets As Shortcode
-include_once(SECRETUM_INC . '/system/widgets/shortcode.php');
+//include_once(SECRETUM_INC . '/system/widgets/shortcode.php');
 
 
 // Theme Update Checker
-include_once(SECRETUM_INC . '/puc/plugin-update-checker.php');
-$secretum = Puc_v4_Factory::buildUpdateChecker(
-	'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-	SECRETUM_THEME_FILE,
-	'secretum'
-);
+//include_once(SECRETUM_INC . '/puc/plugin-update-checker.php');
+//$secretum = Puc_v4_Factory::buildUpdateChecker(
+//	'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
+//	SECRETUM_THEME_FILE,
+//	'secretum'
+//);

@@ -60,6 +60,9 @@ add_action('after_setup_theme', function() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support('post-thumbnails');
 
+	// Customizer Support
+	add_theme_support('customize-selective-refresh-widgets');
+
 	// HTML5 Markup Support
 	add_theme_support('html5', array(
 		'search-form',

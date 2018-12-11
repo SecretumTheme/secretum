@@ -126,13 +126,16 @@ if (!function_exists('secretum_sanitize_checkbox')) {
 /**
  * Reset Customzer Settings
  *
+ * @param string $value Must equal reset to delete option
  * @return false
  */
 if (!function_exists('secretum_customizer_reset')) {
-	function secretum_customizer_reset()
+	function secretum_customizer_reset($value = '')
 	{
 		// Delete Secretum Settings
-		delete_option('secretum');
+		if (!empty($value) && $value == 'RESET') {
+			delete_option('secretum');
+		}
 		return '';
 	}
 }

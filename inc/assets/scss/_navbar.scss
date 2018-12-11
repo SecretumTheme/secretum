@@ -1,0 +1,65 @@
+/**
+ * Secretum Theme - Navbar
+ */
+
+.navbar {
+    .navbar-nav li {
+        border-bottom-color: transparent;
+    }
+
+    .show .navbar-nav li {
+        border-bottom: 1px solid rgba(150,150,150,0.1);
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    .menu-item a {
+        transition: background-color .2s, color .2s;
+        &:active {}
+        &:visited {}
+        &:hover {}
+        &:focus {
+            outline: none;
+            outline: none -webkit-focus-ring-color
+        }
+    }
+}
+
+.dropdown-menu.show {
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212121;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: .25rem;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #222425;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.navbar-toggler {
+    padding: .05rem .25rem;
+    font-size: 1rem;
+    line-height: 1;
+    border: 1px solid rgba(150,150,150,0.5);
+    &:focus {
+        outline: none;
+        outline: none -webkit-focus-ring-color
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(150,150,150,0.5)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='1' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}

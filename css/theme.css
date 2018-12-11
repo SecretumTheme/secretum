@@ -82,6 +82,33 @@ html[lang="ko-KR"] h1, html[lang="ko-KR"] h2, html[lang="ko-KR"] h3, html[lang="
 html[lang="th"] h1, html[lang="th"] h2, html[lang="th"] h3, html[lang="th"] h4, html[lang="th"] h5, html[lang="th"] h6 { line-height: 1.65; font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 html[lang="th"] body, html[lang="th"] button, html[lang="th"] input, html[lang="th"] select, html[lang="th"] textarea { line-height: 1.8; font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 html[lang="ar"] *, html[lang="ary"] *, html[lang="azb"] *, html[lang="haz"] *, html[lang="ps"] *, html[lang^="zh-"] *, html[lang="bg-BG"] *, html[lang="ru-RU"] *, html[lang="uk"] *, html[lang="bn-BD"] *, html[lang="hi-IN"] *, html[lang="mr-IN"] *, html[lang="el"] *, html[lang="gu-IN"] *, html[lang="he-IL"] *, html[lang="ja"] *, html[lang="ko-KR"] *, html[lang="th"] * { letter-spacing: 0 !important; }
+.arial { font-family: Arial, Helvetica, sans-serif; }
+.arialblack { font-family: 'Arial Black', Gadget, sans-serif; }
+.arialnarrow { font-family: 'Arial Narrow', 'Nimbus Sans L', sans-serif; }
+.bookmanoldstyle { font-family: 'Bookman Old Style', serif; }
+.cambria { font-family: Cambria,'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times,serif; }
+.centurygothic { font-family: 'Century Gothic', Futura,'URW Gothic L', sans-serif; }
+.comicsansms { font-family: 'Comic Sans MS', cursive; }
+.constantina { font-family: Constantina,Georgia,'Nimbus Roman No9 L', serif; }
+.consolas { font-family: Consolas,'Lucida Console', 'Bitstream VeraSans Mono', 'DejaVu Sans Mono', monospace; }
+.comicsansms { font-family: 'Comic Sans MS', cursive; }
+.couriernew { font-family: 'Courier New', Courier,Freemono,'Nimbus Mono L', monospace; }
+.garamond { font-family: Garamond, serif; }
+.georgia { font-family: Georgia, serif; }
+.helveticaneue { font-family: 'Helvetica Neue', Arial,'Liberation Sans', FreeSans,sans-serif; }
+.impact { font-family: Impact, Charcoal, sans-serif; }
+.lucidaconsole { font-family: 'Lucida Console', Monaco, monospace; }
+.lucidasansunicode { font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; }
+.mssansserifserif { font-family: 'MS Sans Serif', Geneva, sans-serif; }
+.msserif { font-family: 'MS Serif', 'New York', serif; }
+.palatinolinotype { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; }
+.symbol { font-family: Symbol, sans-serif; }
+.tahoma { font-family: Tahoma, Geneva, sans-serif; }
+.timesnewroman { font-family: 'Times New Roman', Times, serif; }
+.trebuchetms { font-family: 'Trebuchet MS', Helvetica, sans-serif; }
+.verdana { font-family: Verdana, Geneva, sans-serif; }
+.webdings { font-family: Webdings, sans-serif; }
+.wingdings { font-family: Wingdings, 'Zapf Dingbats', sans-serif; }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0.5rem; font-family: inherit; font-weight: 500; line-height: 1.2; color: inherit; }
 h1, .h1 { font-size: 2.2rem; }
 h2, .h2 { font-size: 1.75rem; }
@@ -804,6 +831,16 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .navbar-dark .navbar-text { color: rgba(255, 255, 255, 0.5); }
 .navbar-dark .navbar-text a { color: #ffffff; }
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus { color: #ffffff; }
+.navbar .navbar-nav li { border-bottom-color: transparent; }
+.navbar .show .navbar-nav li { border-bottom: 1px solid rgba(150, 150, 150, 0.1); }
+.navbar .show .navbar-nav li:last-of-type { border-bottom: none; }
+.navbar .menu-item a { -webkit-transition: background-color .2s, color .2s; transition: background-color .2s, color .2s; }
+.navbar .menu-item a:focus { outline: none; outline: none -webkit-focus-ring-color; }
+.dropdown-menu.show { min-width: 10rem; padding: .5rem 0; margin: .125rem 0 0; font-size: 1rem; color: #212121; background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: .25rem; }
+.dropdown-item { display: block; width: 100%; padding: .25rem 1.5rem; clear: both; font-weight: 400; color: #222425; text-align: inherit; white-space: nowrap; background-color: transparent; border: 0; }
+.navbar-toggler { padding: .05rem .25rem; font-size: 1rem; line-height: 1; border: 1px solid rgba(150, 150, 150, 0.5); }
+.navbar-toggler:focus { outline: none; outline: none -webkit-focus-ring-color; }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(150,150,150,0.5)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='1' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 .card { position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #ffffff; background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
 .card > hr { margin-right: 0; margin-left: 0; }
 .card > .list-group:first-child .list-group-item:first-child { border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; }
@@ -2109,6 +2146,29 @@ a.linkhover:hover, a.link-hover:hover, a.linkhover:focus, a.link-hover:focus { c
 .border-danger { border-color: #d32f2f !important; }
 .border-light { border-color: #dee1e4 !important; }
 .border-dark { border-color: #676c71 !important; }
+.text-6 { font-size: 0.375rem; }
+.text-7 { font-size: 0.4375rem; }
+.text-8 { font-size: 0.5rem; }
+.text-9 { font-size: 0.5625rem; }
+.text-10 { font-size: 0.625rem; }
+.text-11 { font-size: 0.6875rem; }
+.text-12 { font-size: 0.75rem; }
+.text-13 { font-size: 0.8125rem; }
+.text-14 { font-size: 0.875rem; }
+.text-15 { font-size: 0.9375rem; }
+.text-16 { font-size: 1rem; }
+.text-17 { font-size: 1.125rem; }
+.text-18 { font-size: 1.25rem; }
+.text-20 { font-size: 1.375rem; }
+.text-24 { font-size: 1.5rem; }
+.text-26 { font-size: 1.625rem; }
+.text-28 { font-size: 1.75rem; }
+.text-30 { font-size: 1.875rem; }
+.text-32 { font-size: 2rem; }
+.text-34 { font-size: 2.125rem; }
+.text-36 { font-size: 2.25rem; }
+.text-38 { font-size: 2.375rem; }
+.text-40 { font-size: 2.5rem; }
 a { color: #222425; text-decoration: underline; -webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out; transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out; transition: color 80ms ease-in, box-shadow 130ms ease-in-out; transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out; }
 a:active, a:hover, a:visited { outline: 0; }
 a:hover { color: #676c71; }
@@ -2119,14 +2179,7 @@ a.nav-link { text-decoration: none; }
 .widget a img { -webkit-box-shadow: 0 0 0 8px #ffffff; box-shadow: 0 0 0 8px #ffffff; }
 .header { position: relative; }
 .header a.navbar-brand, .header .navbar-brand a:link { height: auto !important; padding: 0; margin: 0; max-width: 100%; text-decoration: none; }
-@media (max-width: 767.98px) { .header a.navbar-brand, .header .navbar-brand a:link { margin-left: 5px; } }
 .header .navbar-brand img { width: 100%; }
-@media (max-width: 991.98px) { .header .navbar .show .menu-item { border-bottom: 1px solid #ccc; }
-  .header .navbar .show .menu-item:first-of-type { border-top: 1px solid #ccc; margin-top: 10px; } }
-.header .navbar .menu-item a:focus { outline: none; outline: none -webkit-focus-ring-color; }
-@media (max-width: 767.98px) { .header .navbar button.navbar-toggler { margin-right: 5px; } }
-.header .navbar button.navbar-toggler:focus { outline: none; outline: none -webkit-focus-ring-color; }
-.header .navbar button.navbar-toggler .navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#adb5bd' stroke-width='3' stroke-linecap='square' stroke-miterlimit='0' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 .sidebar.sidebar-docs a, .sidebar.sidebar-docs a:focus { outline: none !important; }
 .sidebar nav[data-toggle='toc'] { top: 42px; }
 @media (max-width: 768px) { .sidebar nav[data-toggle='toc'] { margin-bottom: 42px; position: static; }

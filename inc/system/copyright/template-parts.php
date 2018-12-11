@@ -39,7 +39,6 @@ if (!function_exists('secretum_copyright_display')) {
 			    __('All Rights Reserved.', 'secretum'),
 			    __('Code is Poetry | Proudly Powered by WordPress!', 'secretum')
 			);
-
 		}
 
 		$html .= '</div></footer><!-- .site-info #colophon -->';

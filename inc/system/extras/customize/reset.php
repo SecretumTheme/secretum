@@ -13,7 +13,7 @@
 $wp_customize->add_section('secretum_reset', array(
 	'panel' 			=> 'secretum_extras',
     'title' 			=> __('Reset Settings', 'secretum'),
-    'description' 		=> __('Delete all theme unique customizer settings. Enter the word reset below, publish your changes, then manually refresh the browser window.', 'secretum'),
+    'description' 		=> __('THIS CAN NOT BE UNDONE! Delete all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum'),
     'priority' 			=> 10,
 ));
 
@@ -27,7 +27,7 @@ $wp_customize->add_setting('secretum[reset]', array(
 
 // Control :: Type The Word: reset
 $wp_customize->add_control('secretum[reset]', array(
-	'label' 			=> __('Type The Word: reset', 'secretum'),
+	'label' 			=> __('Type the uppercase word: RESET', 'secretum'),
 	'section' 			=> 'secretum_reset',
 	'type' 				=> 'text'
 ));

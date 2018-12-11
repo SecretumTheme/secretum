@@ -16,6 +16,7 @@
 @import "bootstrap4/reboot";
 
 @import "secretum/typography";
+@import "secretum/font-families";
 @import "bootstrap4/type";
 
 @import "bootstrap4/images";
@@ -33,6 +34,7 @@
 @import "bootstrap4/custom-forms";
 @import "bootstrap4/nav";
 @import "bootstrap4/navbar";
+@import "secretum/navbar";
 @import "bootstrap4/card";
 
 @import "bootstrap4/breadcrumb";
@@ -60,6 +62,7 @@
 @import "secretum/colors-background";
 @import "secretum/colors-border";
 
+@import "secretum/sizes";
 @import "secretum/links";
 @import "secretum/header";
 @import "secretum/sidebar";

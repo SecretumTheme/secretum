@@ -22,32 +22,8 @@ add_action('secretum_frontpage', function() {
 
 	// If Setting, Get Custom Frontpages
 	if (secretum_mod('custom_frontpages')) {
-		// Build Custom Frontpage Query
-		$query = new WP_Query(array(
-		    'post_type' 	 => 'secretum_frontpages',
-		    'post_status' 	 => 'publish',
-		    'order' 		 => 'DESC',
-		    'orderby' 		 => 'ID',
-		    'posts_per_page' => 1,
-		));
-
-		// If Content
-		if ($query->have_posts()) {
-			// Display Custom Header
-			while ($query->have_posts()) {
-				$query->the_post();
-
-		        // Return Content
-		        echo do_shortcode(get_the_content(null, false));
-			}
-
-		    // Clear Post Data
-		    wp_reset_postdata();
-
-		// No Results, Default Index Template
-		} else {
-			get_template_part('inc/system/frontpage/templates/body');
-		}
+		// Secretum Frontpages Plugin
+		echo do_action('secretum_fp');
 
 	// Default Index Template
 	} else {
