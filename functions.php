@@ -80,7 +80,6 @@ include_once(SECRETUM_INC . '/template-functions/frontpage.php');
 include_once(SECRETUM_INC . '/template-functions/header.php');
 include_once(SECRETUM_INC . '/template-functions/primary-nav.php');
 include_once(SECRETUM_INC . '/template-functions/sidebars.php');
-include_once(SECRETUM_INC . '/customize/register.php');
 
 if (is_admin()) {
     include_once(SECRETUM_INC . '/editor.php');
