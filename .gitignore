@@ -21,11 +21,6 @@ README.html
 
 **/.sass-cache
 **/.sass-cache/*
-**/.map
-*.map
-
-
-docs/*
 
 assets/*
 node_modules/*
