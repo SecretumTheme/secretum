@@ -8,11 +8,11 @@
     }
 
     .show .navbar-nav li {
-        border-bottom: 1px solid rgba(150,150,150,0.1);
         &:last-of-type {
             border-bottom: none;
         }
     }
+
     .menu-item a {
         transition: background-color .2s, color .2s;
         &:active {}

@@ -832,7 +832,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .navbar-dark .navbar-text a { color: #ffffff; }
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus { color: #ffffff; }
 .navbar .navbar-nav li { border-bottom-color: transparent; }
-.navbar .show .navbar-nav li { border-bottom: 1px solid rgba(150, 150, 150, 0.1); }
 .navbar .show .navbar-nav li:last-of-type { border-bottom: none; }
 .navbar .menu-item a { -webkit-transition: background-color .2s, color .2s; transition: background-color .2s, color .2s; }
 .navbar .menu-item a:focus { outline: none; outline: none -webkit-focus-ring-color; }
