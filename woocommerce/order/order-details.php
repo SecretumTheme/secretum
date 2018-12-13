@@ -5,10 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version 	3.5.2
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 
 if (! $order = wc_get_order($order_id)) { return; }
 

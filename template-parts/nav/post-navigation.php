@@ -3,11 +3,11 @@
  * Template part for post navigation links
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
+// Display If Allowed
 if (!secretum_mod('post_navigation_links')) {
-
 	the_post_navigation(
 		array(
 			'prev_text' => '<span class="screen-reader-text">' . secretum_text('prev_text') .  '</span>' .
@@ -19,5 +19,4 @@ if (!secretum_mod('post_navigation_links')) {
 				 ' <i class="fa fa-angle-right"></i></span><br />%title</span>'
 		)
 	);
-
 }

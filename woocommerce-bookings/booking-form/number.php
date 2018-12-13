@@ -5,11 +5,9 @@
  * @package 	WooCommerce-Bookings/Templates
  * @version 	1.8.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
-
 $after = isset($field['after']) ? $field['after'] : null;
 $class = $field['class'];
 $label = $field['label'];
@@ -18,9 +16,7 @@ $min   = isset($field['min']) ? $field['min'] : null;
 $name  = $field['name'];
 $step  = isset($field['step']) ? $field['step'] : null;
 ?>
-
 <p class="form-field form-field-wide form-inline <?php echo implode(' ', $class); ?>">
-
 	<label for="<?php echo $name; ?>" class="w-100"><?php _e('Number of Players', 'secretum'); ?>: <input 
 		type="number" 
 		value="<?php echo (! empty($min)) ? $min : 0; ?>" 
@@ -31,5 +27,4 @@ $step  = isset($field['step']) ? $field['step'] : null;
 		id="<?php echo $name; ?>" 
 		class="form-control ml-1 w-30" /> <?php echo (! empty($after)) ? $after : ''; ?>
 	</label>
-
 </p>

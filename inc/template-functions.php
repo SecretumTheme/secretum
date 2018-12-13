@@ -3,7 +3,7 @@
  * Global Template Styling Functions
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 
@@ -36,7 +36,7 @@ if (!function_exists('secretum_sanitize_dropdown_pages')) {
 if (!function_exists('secretum_sanitize_script')) {
 	function secretum_sanitize_script($string)
 	{
-		return base64_encode($string);
+		return json_encode($string);
 	}
 }
 
@@ -52,7 +52,7 @@ if (!function_exists('secretum_sanitize_script')) {
 if (!function_exists('secretum_escape_script')) {
 	function secretum_escape_script($string)
 	{
-		return esc_textarea(base64_decode($string));
+		return esc_textarea(json_decode($string));
 	}
 }
 
@@ -228,7 +228,7 @@ if (!function_exists('secretum_breadcrumbs')) {
 		// If Items Set
 		if (isset($terms[0]->name) && isset($terms[0]->slug)) {
 			// Get Home URL
-			$home_url = esc_url(get_option('home'));
+			$home_url = esc_url(home_url());
 
 			// Get Category Name
 			$category_name = sanitize_text_field($terms[0]->name);
@@ -274,4 +274,96 @@ if (!function_exists('secretum_breadcrumbs')) {
 			return '<div class="breadcrumbs">' . $home . '<a href="' . $home_url . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
 		}
 	}
+}
+
+
+/**
+ * WordPress Bootstrap Pagination
+ *
+ * @link https://github.com/talentedaamer/Bootstrap-wordpress-pagination
+ */
+if (! defined('ABSPATH')) { exit; }
+
+
+if (! function_exists('wp_bootstrap_pagination'))
+{
+    function wp_bootstrap_pagination($args = array())
+    {
+        $defaults = array(
+            'range'           => 4,
+            'custom_query'    => FALSE,
+            'previous_string' => __('Previous', 'secretum'),
+            'next_string'     => __('Next', 'secretum'),
+            'before_output'   => '<div class="post-nav"><ul class="pager">',
+            'after_output'    => '</ul></div>'
+       );
+        
+        $args = wp_parse_args(
+            $args, 
+            apply_filters('wp_bootstrap_pagination_defaults', $defaults)
+       );
+        
+        $args['range'] = (int) $args['range'] - 1;
+        if (!$args['custom_query'])
+            $args['custom_query'] = @$GLOBALS['wp_query'];
+        $count = (int) $args['custom_query']->max_num_pages;
+        $page  = intval(get_query_var('paged'));
+        $ceil  = ceil($args['range'] / 2);
+        
+        if ($count <= 1)
+            return FALSE;
+        
+        if (!$page)
+            $page = 1;
+        
+        if ($count > $args['range']) {
+            if ($page <= $args['range']) {
+                $min = 1;
+                $max = $args['range'] + 1;
+            } elseif ($page >= ($count - $ceil)) {
+                $min = $count - $args['range'];
+                $max = $count;
+            } elseif ($page >= $args['range'] && $page < ($count - $ceil)) {
+                $min = $page - $ceil;
+                $max = $page + $ceil;
+            }
+        } else {
+            $min = 1;
+            $max = $count;
+        }
+        
+        $echo = '';
+        $previous = intval($page) - 1;
+        $previous = esc_attr(get_pagenum_link($previous));
+        
+        $firstpage = esc_attr(get_pagenum_link(1));
+        if ($firstpage && (1 != $page))
+            $echo .= '<li class="previous"><a href="' . $firstpage . '">' . __('First', 'secretum') . '</a></li>';
+
+        if ($previous && (1 != $page))
+            $echo .= '<li><a href="' . $previous . '" title="' . __('previous', 'secretum') . '">' . $args['previous_string'] . '</a></li>';
+        
+        if (!empty($min) && !empty($max)) {
+            for($i = $min; $i <= $max; $i++) {
+                if ($page == $i) {
+                    $echo .= '<li class="active"><span class="active">' . str_pad((int)$i, 2, '0', STR_PAD_LEFT) . '</span></li>';
+                } else {
+                    $echo .= sprintf('<li><a href="%s">%002d</a></li>', esc_attr(get_pagenum_link($i)), $i);
+                }
+            }
+        }
+        
+        $next = intval($page) + 1;
+        $next = esc_attr(get_pagenum_link($next));
+        if ($next && ($count != $page))
+            $echo .= '<li><a href="' . $next . '" title="' . __('next', 'secretum') . '">' . $args['next_string'] . '</a></li>';
+        
+        $lastpage = esc_attr(get_pagenum_link($count));
+        if ($lastpage) {
+            $echo .= '<li class="next"><a href="' . $lastpage . '">' . __('Last', 'secretum') . '</a></li>';
+        }
+
+        if (isset($echo))
+            echo $args['before_output'] . $echo . $args['after_output'];
+    }
 }

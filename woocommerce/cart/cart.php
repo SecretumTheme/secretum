@@ -5,13 +5,12 @@
  * @package 	WooCommerce/Templates
  * @version     3.5.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; } ?>
 
-<?php do_action('woocommerce_before_cart'); ?>
-
+do_action('woocommerce_before_cart');
+?>
 <div class="row no-gutters">
 
 	<div class="col-md-8">

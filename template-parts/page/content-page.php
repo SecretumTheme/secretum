@@ -3,22 +3,17 @@
  * Default Page Loop
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 ?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
 	<header class="entry-header">
-
 		<?php the_title('<h1 class="entry-title mb-4">', '</h1>'); ?>
-
 	</header><!-- .entry-header -->
 
 	<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
 
 	<div class="entry-content">
-
 		<?php
 			the_content();
 
@@ -29,13 +24,9 @@
 				)
 			);
 		?>
-
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-
 		<?php secretum_edit_link(); ?>
-
 	</footer><!-- .entry-footer -->
-
 </article>

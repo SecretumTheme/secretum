@@ -5,10 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version 	3.4.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 
 if (is_user_logged_in() || 'no' === get_option('woocommerce_enable_checkout_login_reminder')) { return; }
 ?>

@@ -4,7 +4,7 @@
  * Template Post Type: post, page
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 ?>
 <!DOCTYPE html>
@@ -23,9 +23,7 @@
 <body class="tpl-content-only">
 
 	<?php while (have_posts()) { the_post();?>
-
 		<?php get_template_part('template-parts/post/content', 'blank');?>
-
 	<?php }?>
 
 <?php wp_footer();?>

@@ -1,5 +1,5 @@
 /*!
- * Secretum Theme Scripts
+ * Secretum
  * @version 0.0.1
  */
 +function ($) {

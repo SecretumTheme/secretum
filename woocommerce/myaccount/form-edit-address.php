@@ -5,10 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version 	3.4.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 
 $page_title = ('billing' === $load_address) ? __('Billing address', 'secretum') : __('Shipping address', 'secretum');
 

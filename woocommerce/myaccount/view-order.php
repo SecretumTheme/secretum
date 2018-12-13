@@ -5,11 +5,10 @@
  * @package 	WooCommerce/Templates
  * @version 	3.0.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; } ?>
-
+?>
 <p class="font-weight-bold">
 
 <?php

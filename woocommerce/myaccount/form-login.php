@@ -5,10 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version 	3.5.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 ?>
 
 <?php do_action('woocommerce_before_customer_login_form'); ?>

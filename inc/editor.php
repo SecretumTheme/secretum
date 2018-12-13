@@ -3,7 +3,7 @@
  * Secretum Theme: WordPress Editor Settings
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 

@@ -5,11 +5,10 @@
  * @package 	WooCommerce/Templates
  * @version     3.3.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; } ?>
-
+?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 <thead>
 	<tr>

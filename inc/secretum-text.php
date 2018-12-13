@@ -3,7 +3,7 @@
  * WordPress Text Strings
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 

@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
 * **Tested up to:** WordPress 5.0-trunk
-* **Version:** 0.0.3
+* **Version:** 0.0.4
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -21,7 +21,6 @@ Secretum - A Flexible Multipurpose WordPress Theme.
 * Bugs / issues do NOT need to be reported. We know.
 * This theme is for advanced WordPress / Bootstrap 4 users. If you need instructions past what is going to be explained below, then this theme is without question not for you. Otherwise, you're going to love this theme, I guarantee it.
 * The master branch is stable, it is running live on Websites.
-* The dev branch is not stable and could be vastly different code, bad and good.
 * Anything can change and no changes are logged during Alpha. We know what needs to be done, and it's being done. Even the child theme can change!
 * Use at your own risk, no support is provided.
 
@@ -64,21 +63,15 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 	* All standard WooCommerce features included
 * WooCommerce Bookings compatible
 	* Templates re-designed for improved booking flow
-* IMPress for IDX Broker compatible
-	* Custom IDX Search Widget
 * Contact Form 7 compatible
 	* Beautified
 * WordPress Customizer features
+	* No CSS rendering in document headers required for most features
 	* Enable / disable all major theme areas (header, footer, sidebars, post author, etc)
-	* Adjust all front-end Theme/WordPress text
-* Documentation post type, taxonomies, template and widgets
-* Testimonials post type and widget
-* Shortcodes for most CSS features
-* Brand logo and text shortcode
-* Menus and nav walker shortcode
+	* Adjust all front-end Theme/WordPress text (Translations via Customizer)
+	* Adjust the color, font, spacing of most theme elements/features
 * FontAwesome icon set and CSS management
 * Simple to use lightbox
-* Translation ready
 
 
 ** Features to do
@@ -88,7 +81,7 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * Pre-built headers
 * Split CSS to enable/disable features
 * Switchable microdata values
-* Post types for landing pages, directory...
+* Finish customizer settings
 
 
 ## Development

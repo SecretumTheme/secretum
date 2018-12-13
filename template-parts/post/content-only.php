@@ -3,14 +3,11 @@
  * Template part for displaying entry content only
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 ?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
 	<div class="entry-content">
-
 		<?php
 			the_content();
 
@@ -23,7 +20,5 @@
 
 			secretum_edit_link();
 		?>
-
 	</div><!-- .entry-content -->
-
 </article><!-- #post-## -->

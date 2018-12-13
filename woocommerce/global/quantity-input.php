@@ -5,10 +5,10 @@
  * @package 	WooCommerce/Templates
  * @version     3.4.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; } ?>
+?>
 
 <?php if ($max_value && $min_value === $max_value) { ?>
 	

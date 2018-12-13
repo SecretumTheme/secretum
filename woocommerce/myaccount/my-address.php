@@ -5,7 +5,7 @@
  * @package 	WooCommerce/Templates
  * @version     2.6.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
 if (! defined('ABSPATH')) { exit; }
@@ -30,7 +30,6 @@ if (! wc_ship_to_billing_address_only() && wc_shipping_enabled()) {
 $oldcol = 1;
 $col    = 1;
 ?>
-
 <p><?php echo apply_filters('woocommerce_my_account_my_address_description', __('The following addresses will be used on the checkout page by default.', 'secretum')); ?></p>
 
 <?php if (! wc_ship_to_billing_address_only() && wc_shipping_enabled()) { ?>

@@ -5,16 +5,15 @@
  * @package 	WooCommerce/Templates
  * @version 	3.2.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 
-do_action('woocommerce_before_account_orders', $has_orders); ?>
+do_action('woocommerce_before_account_orders', $has_orders);
 
-<?php if ($has_orders) { ?>
-
-	<div class="table-responsive-md">
+if ($has_orders) {
+?>
+<div class="table-responsive-md">
 
 	<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table_responsive my_account_orders account-orders-table table table-bordered table-hover">
 

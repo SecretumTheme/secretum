@@ -3,7 +3,7 @@
  * Hook front end scripts and styles
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 

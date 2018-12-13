@@ -5,11 +5,10 @@
  * @package 	WooCommerce/Templates
  * @version     3.0.9
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; } ?>
-
+?>
 <div class="woocommerce-billing-fields">
 
 	<?php if (wc_ship_to_billing_address_only() && WC()->cart->needs_shipping()) { ?>

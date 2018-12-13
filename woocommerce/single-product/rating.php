@@ -5,11 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version     3.1.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
-
 global $product;
 
 if ('no' === get_option('woocommerce_enable_review_rating')) {
@@ -22,18 +20,11 @@ $average      = $product->get_average_rating();
 
 if ($rating_count > 0) {
 ?>
-
-	<div class="woocommerce-product-rating">
-
-		<?php echo wc_get_rating_html($average, $rating_count); ?>
-
-		<?php if (comments_open()) { ?>
-
-			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf(_n('%s review', '%s customer reviews', $review_count, 'secretum'), '<span class="count">' . esc_html($review_count) . '</span>'); ?>)</a>
-
-		<?php } ?>
-
-	</div>
-
+<div class="woocommerce-product-rating">
+	<?php echo wc_get_rating_html($average, $rating_count); ?>
+	<?php if (comments_open()) { ?>
+		<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf(_n('%s review', '%s customer reviews', $review_count, 'secretum'), '<span class="count">' . esc_html($review_count) . '</span>'); ?>)</a>
+	<?php } ?>
+</div>
 <?php
 }

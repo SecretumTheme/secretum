@@ -5,15 +5,13 @@
  * @package 	WooCommerce/Templates
  * @version 	3.5.0
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version     0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
 
 // WooCommerce Bookings
 if (class_exists('WC_Bookings')) {
 ?>
-
 	<p class="cart-empty text-center">
 
 		<?php echo wp_kses_post(apply_filters('secretum_cart_is_empty_text', __('You currently have no temporarily reserved bookings in your cart.', 'secretum'), 10, 1));?>

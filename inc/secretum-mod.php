@@ -3,7 +3,7 @@
  * Secretum Settings Option
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 
@@ -60,7 +60,7 @@ if (!function_exists('secretum_mod')) {
 
 			    // Script Output
 			    case 'script':
-			        $mod = base64_decode($theme_mod);
+			        $mod = json_decode($theme_mod);
 			        break;
 
 			    // Raw Output

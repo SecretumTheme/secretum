@@ -3,7 +3,7 @@
  * Secretum Theme: WooCommerce Bookings Settings
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 
 
@@ -108,7 +108,7 @@ add_filter('wc_bookings_get_time_slots_html', function($block_html, $available_b
         if ( $quantity['available'] > 0 ) {
             if ( $quantity['booked'] ) {
                 /* translators: 1: quantity available */
-                $block_html .= '<li class="block" data-block="' . esc_attr( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . ' <small class="booking-spaces-left">(' . sprintf( _n( '%d left', '%d left', $quantity['available'], 'secretum' ), absint( $quantity['available'] ) ) . ')</small></a></li>';
+                $block_html .= '<li class="block" data-block="' . esc_attr( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . ' <small class="booking-spaces-left">(' . sprintf(__('%d Remain', 'secretum'), $quantity['available']) . ')</small></a></li>';
             } else {
                 $block_html .= '<li class="block" data-block="' . esc_attr( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . '</a></li>';
             }
@@ -183,7 +183,7 @@ add_filter('woocommerce_return_to_shop_text', 20, 3);
 function change_woocommerce_return_to_shop_text($translated_text, $text, $domain) {
         switch ($translated_text) {
             case 'Return to shop' :
-                $translated_text = __('Return to Store', 'woocommerce');
+                $translated_text = __('Return to Store', 'secretum');
                 break;
         }
 

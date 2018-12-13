@@ -5,11 +5,9 @@
  * @package 	WooCommerce/Templates
  * @version     3.4.1
  *
- * @subpackage 	Secretum/WooCommerce
+ * @subpackage 	Secretum
  * @version 	0.0.1
  */
-if (! defined('ABSPATH')) { exit; }
-
 global $product;
 
 $attribute_keys = array_keys($attributes);

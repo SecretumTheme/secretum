@@ -3,35 +3,28 @@
  * The frontpage template file
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 get_header();
 
-
-/**
- * Content Before Frontpage Area
- */
+// Hookable Action Before Frontpage Content
 do_action('secretum_frontpage_before');
 
+// Frontpage Heading
+get_template_part('template-parts/frontpage/heading');
 
-/**
- * Display Primary Frontpage Area
- * @source inc/system/frontpage/actions.php
- *
- * @uses post_type secretum_frontpages
- * @source inc/system/frontpage/posttypes.php
- *
- * @uses inc/system/frontpage/templates/heading.php
- * @uses inc/system/frontpage/templates/default.php
- * @uses inc/system/frontpage/templates/map.php
- */
-do_action('secretum_frontpage');
+// Frontpage Body
+get_template_part('template-parts/frontpage/body');
 
+// Secretum Custom Frontpage Plugin
+if (secretum_mod('custom_frontpage')) {
+	echo do_action('secretum_frontpage');
+}
 
-/**
- * Content After Frontpage Area
- */
+// Frontpage Map
+get_template_part('template-parts/frontpage/map');
+
+// Hookable Action After Frontpage Content
 do_action('secretum_frontpage_after');
-
 
 get_footer();

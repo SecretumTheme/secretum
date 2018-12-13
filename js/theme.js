@@ -6449,7 +6449,7 @@ var Lightbox = (function ($) {
 }(jQuery);
 
 /*!
- * Secretum Theme Scripts
+ * Secretum
  * @version 0.0.1
  */
 +function ($) {

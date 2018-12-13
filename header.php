@@ -3,7 +3,7 @@
  * HTML <head> and document body heading
  *
  * @package WordPress
- * @subpackage Secretum_Theme
+ * @subpackage Secretum
  */
 ?>
 <!DOCTYPE html>
@@ -19,40 +19,33 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php if (secretum_mod('feature_documentation_display')) { echo 'data-spy="scroll" data-target="#toc"'; } ?>>
+<body <?php body_class(); ?>>
 
 <div class="hfeed site" id="page">
 
 <?php
-	/**
-	 * Display Content Before Header Area
-	 * @source inc/system/header/actions.php
-	 *
-	 * @uses secretum_header_top()
-	 * @source inc/system/header/template-parts.php
-	 */
+	// Top Navbar Above Header
+	get_template_part('template-parts/header/navbar-top');
+
+	// Navbar Menu Above Header
+	get_template_part('template-parts/primary-nav/navbar-above');
+
+	// Hookable Action Before Header
 	do_action('secretum_header_before');
 
+	// Display Header Area
+	get_template_part('template-parts/header/display');
 
-	/**
-	 * Display Header Area, Logo/Brand & Primary Menu
-	 * @source inc/system/header/actions.php
-	 *
-	 * @uses post_type secretum_headers
-	 * @source inc/system/header/posttypes.php
-	 *
-	 * @uses secretum_header_navbar()
-	 * @uses secretum_header_brand_navbar()
-	 * @source inc/system/header/template-parts.php
-	 */
-	do_action('secretum_header');
+	// Secretum Custom Headers & Footers Plugin
+	if (secretum_mod('custom_headers')) {
+		echo do_action('secretum_hf', 'headers');
+	}
 
-
-	/**
-	 * Display Content After Header Area
-	 * @source system/header/actions.php
-	 *
-	 * @uses secretum_featured_image()
-	 * @source inc/system/header/functions.php
-	 */
+	// Hookable Action After Header
 	do_action('secretum_header_after');
+
+	// Navbar Menu Below Header
+	get_template_part('template-parts/primary-nav/navbar-below');
+
+	// Featured Image
+	get_template_part('template-parts/header/featured-image');
