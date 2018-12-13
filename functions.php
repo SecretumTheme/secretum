@@ -13,7 +13,7 @@ define('SECRETUM_DIR', 				dirname(__FILE__));
 define('SECRETUM_BASE_URL', 		esc_url(home_url()));
 define('SECRETUM_INC', 				SECRETUM_DIR . '/inc');
 
-define('SECRETUM_THEME_VERSION', 	'0.0.4');
+define('SECRETUM_THEME_VERSION', 	'0.0.3');
 define('SECRETUM_WP_MIN_VERSION', 	'3.8');
 
 define('SECRETUM_THEME_FILE', 		__FILE__);
@@ -300,25 +300,11 @@ add_action('customize_register', function($wp_customize) {
 /**
  * Secretum Updater Plugin
  */
-do_action(
-    'secretum_updater',
-    'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-    SECRETUM_THEME_FILE,
-    'secretum'
-);
-//if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
-//	include_once(ABSPATH . '/wp-content/plugins/secretum-updater/puc/plugin-update-checker.php');
-//	$secretum_updater = Puc_v4_Factory::buildUpdateChecker(
-//		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-//		SECRETUM_THEME_FILE,
-//		'secretum'
-//	);
-//}
-
-// Theme Update Checker
-//include_once(SECRETUM_INC . '/puc/plugin-update-checker.php');
-//$secretum = Puc_v4_Factory::buildUpdateChecker(
-//	'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-//	SECRETUM_THEME_FILE,
-//	'secretum'
-//);
+if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
+	include_once(SECRETUM_UPDATER);
+	$secretum_updater = \Puc_v4_Factory::buildUpdateChecker(
+		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
+		SECRETUM_THEME_FILE,
+		'secretum'
+	);
+}
