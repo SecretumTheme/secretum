@@ -33,7 +33,7 @@ if(!secretum_mod('copyright_status')) {
 			</div></footer><!-- .site-info #colophon -->
 		</div><!-- .col-md -->
 
-		<?php get_template_part('template_parts/copyright/navbar'); ?>
+		<?php get_template_part('template-parts/copyright/navbar'); ?>
 
 		</div><!-- .row -->
 	</div><!-- .container -->

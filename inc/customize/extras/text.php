@@ -18,28 +18,28 @@ $wp_customize->add_section('secretum_theme_text', array(
 ));
 
 // Continue/More Reading
-include_once(SECRETUM_INC . '/system/extras/customize/text/more.php');
+include_once(SECRETUM_INC . '/customize/extras/text/more.php');
 
 // Entry Meta Data
-include_once(SECRETUM_INC . '/system/extras/customize/text/meta.php');
+include_once(SECRETUM_INC . '/customize/extras/text/meta.php');
 
 // Entry Navigation
-include_once(SECRETUM_INC . '/system/extras/customize/text/nav.php');
+include_once(SECRETUM_INC . '/customize/extras/text/nav.php');
 
 // Search Results & Features
-include_once(SECRETUM_INC . '/system/extras/customize/text/search.php');
+include_once(SECRETUM_INC . '/customize/extras/text/search.php');
 
 // Comments
-include_once(SECRETUM_INC . '/system/extras/customize/text/comments.php');
+include_once(SECRETUM_INC . '/customize/extras/text/comments.php');
 
 // Author Profiles
-include_once(SECRETUM_INC . '/system/extras/customize/text/author.php');
+include_once(SECRETUM_INC . '/customize/extras/text/author.php');
 
 // No Content Found
-include_once(SECRETUM_INC . '/system/extras/customize/text/no-content.php');
+include_once(SECRETUM_INC . '/customize/extras/text/no-content.php');
 
 // 404 Error
-include_once(SECRETUM_INC . '/system/extras/customize/text/404.php');
+include_once(SECRETUM_INC . '/customize/extras/text/404.php');
 
 // WooCommerce Text
-include_once(SECRETUM_INC . '/system/extras/customize/text/woo.php');
+include_once(SECRETUM_INC . '/customize/extras/text/woo.php');

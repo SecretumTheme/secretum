@@ -21,13 +21,13 @@
 	do_action('secretum_footer_after');
 
 	// Copyright Area
-	get_template_part('template_parts/copyright/display');
+	get_template_part('template-parts/copyright/display');
 
 	// Hookable Action After Copyright
 	do_action('secretum_copyright_after');
 
 	// Scroll To Top Icon
-	get_template_part('template_parts/copyright/scroll-top');
+	get_template_part('template-parts/copyright/scroll-top');
 ?>
 </div><!-- #page -->
 

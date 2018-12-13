@@ -8,6 +8,7 @@
     }
 
     .show .navbar-nav li {
+        border-bottom: 1px solid rgba(150,150,150,0.1);
         &:last-of-type {
             border-bottom: none;
         }
@@ -32,7 +33,6 @@
     font-size: 1rem;
     color: #212121;
     background-color: #fff;
-    border: 1px solid rgba(0,0,0,0.15);
     border-radius: .25rem;
 }
 
