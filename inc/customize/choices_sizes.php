@@ -13,9 +13,6 @@
 /**
  * Textual Sizing
  *
- * @source inc/system/primary-nav/customize/items.php
- * @source inc/system/primary-nav/customize/toggler.php
- *
  * @return array Keys & Values
  */
 if (!function_exists('secretum_customizer_font_sizes')) {

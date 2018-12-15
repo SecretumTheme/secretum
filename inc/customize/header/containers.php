@@ -114,7 +114,7 @@ $wp_customize->add_control('secretum[header_wrapper_margin]', array(
 	)
 ));
 
-
+/*
 // If Header Top Enabled, Include Header Top Template
 if (secretum_mod('header_top_status')) {
 	// Setting :: Header Container Type
@@ -187,3 +187,4 @@ if (secretum_mod('header_top_status')) {
 		)
 	));
 }
+*/

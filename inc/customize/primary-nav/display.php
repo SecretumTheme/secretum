@@ -17,16 +17,16 @@ $wp_customize->add_section('secretum_primary_nav_display' , array(
 ));
 
 
-// Setting :: Select To Hide Primary Navigation Menu
+// Setting :: Select To Hide Navigation Menu
 $wp_customize->add_setting('secretum[primary_nav_status]' , array(
 	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'type' 				=> 'option',
 	'transport' 		=> 'refresh',
 ));
 
-// Control :: Select To Hide Primary Navigation Menu
+// Control :: Select To Hide Navigation Menu
 $wp_customize->add_control('secretum[primary_nav_status]', array(
-	'label' 			=> __('Select To Hide Primary Navigation Menu', 'secretum'),
+	'label' 			=> __('Select To Hide Navigation Menu', 'secretum'),
 	'section' 			=> 'secretum_primary_nav_display',
 	'type' 				=> 'checkbox'
 ));

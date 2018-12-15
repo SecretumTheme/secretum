@@ -10,26 +10,52 @@
 /**
  * Section: Site Identity
  */
-$wp_customize->add_section('secretum_header_site_identity', array(
-	'panel' 	=> 'secretum_header',
+$wp_customize->add_section('secretum_site_identity_branding', array(
+	'panel' 	=> 'secretum_site_identity',
     'title' 	=> __('Site Identity', 'secretum'),
     'priority' 	=> 10
+));
+
+
+// Setting :: Alignment
+$wp_customize->add_setting('secretum[site_identity_alignment]', array(
+	'sanitize_callback' 	=> 'sanitize_key',
+	'transport' 			=> 'refresh',
+	'type' 					=> 'option',
+	'default' 				=> ''
+));
+
+// Control :: Alignment
+$wp_customize->add_control('secretum[site_identity_alignment]', array(
+	'label' 				=> __('Alignment', 'secretum'),
+	'section' 				=> 'secretum_site_identity_branding',
+	'type' 					=> 'select',
+	'choices' 				=> secretum_customizer_text_alignments()
 ));
 
 
 // Setting :: Site Title
 $wp_customize->add_setting('blogname', array(
 	'default'    		=> get_option('blogname'),
-	'type'       		=> 'option',
+	'sanitize_callback' => 'secretum_sanitize_all',
 	'capability' 		=> 'manage_options',
-	'sanitize_callback' => 'secretum_sanitize_all'
+	'transport'      	=> 'postMessage',
+	'type'       		=> 'option'
 ));
 
 // Control :: Site Title
 $wp_customize->add_control('blogname', array(
 	'label' 	=> __('Site Title', 'secretum'),
-	'section'   => 'secretum_header_site_identity',
+	'section'   => 'secretum_site_identity_branding',
     'priority' 	=> 10,
+));
+
+// Refresh :: Site Title
+$wp_customize->selective_refresh->add_partial('blogname', array(
+	'settings'            => array('blogname'),
+	'selector'            => '.navbar-brand',
+	'render_callback'     => false,
+	'container_inclusive' => false
 ));
 
 
@@ -44,25 +70,16 @@ $wp_customize->add_setting('blogdescription', array(
 // Control :: Tagline
 $wp_customize->add_control('blogdescription', array(
 	'label' 	=> __('Tagline', 'secretum'),
-	'section' 	=> 'secretum_header_site_identity',
+	'section' 	=> 'secretum_site_identity_branding',
     'priority' 	=> 10,
 ));
 
-
-// Setting :: Display Site Title and Tagline
-$wp_customize->add_setting('header_text', array(
-	'theme_supports'    => array('custom-logo', 'header-text'),
-	'default'           => 1,
-	'sanitize_callback' => 'absint',
-));
-
-// Control :: Display Site Title and Tagline
-$wp_customize->add_control('header_text', array(
-	'label' 		=> __('Display Site Title and Tagline', 'secretum'),
-	'description' 	=> __('Setting ignored if graphic logo used.', 'secretum'),
-	'section' 		=> 'secretum_header_site_identity',
-	'type' 			=> 'checkbox',
-    'priority' 		=> 10,
+// Refresh :: Tagline
+$wp_customize->selective_refresh->add_partial('blogdescription', array(
+	'settings'            => array('blogdescription'),
+	'selector'            => '.site-description',
+	'render_callback'     => false,
+	'container_inclusive' => false
 ));
 
 
@@ -79,7 +96,7 @@ $custom_logo_args = get_theme_support('custom-logo');
 // Control :: Upload/Crop Image
 $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'custom_logo', array(
 	'label'         => __('Website Logo', 'secretum'),
-	'section'       => 'secretum_header_site_identity',
+	'section'       => 'secretum_site_identity_branding',
 	'height'        => $custom_logo_args[0]['height'],
 	'width'         => $custom_logo_args[0]['width'],
 	'flex_height'   => $custom_logo_args[0]['flex-height'],
@@ -99,33 +116,9 @@ $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
 // Refresh :: Display Logo
 $wp_customize->selective_refresh->add_partial('custom_logo', array(
 	'settings'            => array('custom_logo'),
-	'selector'            => '.custom-logo-link',
+	'selector'            => '.navbar-brand.custom-logo-link',
 	'render_callback'     => get_custom_logo(),
 	'container_inclusive' => true
-));
-
-
-// Setting :: Logo Location
-$wp_customize->add_setting('secretum[header_logo_location]', array(
-	'default' 			=> '',
-	'type'       		=> 'option',
-	'transport' 		=> 'refresh',
-	'sanitize_callback' => 'sanitize_key'
-));
-
-// Control :: Logo Location
-$wp_customize->add_control('ssecretum[header_logo_location]', array(
-	'label' 			=> __('Logo Location', 'secretum'),
-	'description' 		=> __('Select the display location of the website logo/tagline. Logo location will override menu location.', 'secretum'),
-	'section' 			=> 'secretum_header_site_identity',
-	'type' 				=> 'radio',
-    'priority' 			=> 20,
-	'choices' 			=> array(
-		'' 			=> __('Theme Default', 'secretum'),
-		'left' 		=> __('Left logo', 'secretum'),
-		'right' 	=> __('Right logo', 'secretum'),
-		'center' 	=> __('Center logo', 'secretum')
-	)
 ));
 
 
@@ -141,9 +134,7 @@ $wp_customize->add_setting('secretum[custom_logo_maxwidth]' , array(
 $wp_customize->add_control('secretum[custom_logo_maxwidth]', array(
 	'label' 		=> __('Logo Max-Width In Pixels', 'secretum'),
 	'description' 	=> __('If defined, inline CSS will set a max-width and auto height for the logo.', 'secretum'),
-	'section' 		=> 'secretum_header_site_identity',
-	'settings' 		=> 'secretum[custom_logo_maxwidth]',
-    'priority' 			=> 20,
+	'section' 		=> 'secretum_site_identity_branding',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -161,8 +152,7 @@ $wp_customize->add_setting('secretum[custom_logo_height]' , array(
 $wp_customize->add_control('secretum[custom_logo_height]', array(
 	'label' 		=> __('Logo Crop Height In Pixels', 'secretum'),
 	'description' 	=> __('Default: 75px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
-	'section' 		=> 'secretum_header_site_identity',
-    'priority' 			=> 20,
+	'section' 		=> 'secretum_site_identity_branding',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -180,8 +170,7 @@ $wp_customize->add_setting('secretum[custom_logo_width]' , array(
 $wp_customize->add_control('secretum[custom_logo_width]', array(
 	'label' 		=> __('Logo Crop Width In Pixels', 'secretum'),
 	'description' 	=> __('Default: 300px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
-	'section' 		=> 'secretum_header_site_identity',
-    'priority' 			=> 20,
+	'section' 		=> 'secretum_site_identity_branding',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -199,8 +188,7 @@ $wp_customize->add_setting('site_icon', array(
 $wp_customize->add_control(new WP_Customize_Site_Icon_Control($wp_customize, 'site_icon', array(
 	'label' 		=> __('Site Icon', 'secretum'),
 	'description' 	=> __('Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Site Icons should be square and at least 512 &times; 512 pixels.', 'secretum'),
-	'section' 		=> 'secretum_header_site_identity',
-    'priority' 		=> 20,
+	'section' 		=> 'secretum_site_identity_branding',
 	'priority' 		=> 60,
 	'height' 		=> 512,
 	'width' 		=> 512

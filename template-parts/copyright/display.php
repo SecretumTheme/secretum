@@ -12,7 +12,7 @@ if(!secretum_mod('copyright_status')) {
 <div class="wrapper copyright<?php echo secretum_copyright_wrapper(); ?>" id="wrapper-copyright">
 	<div class="container<?php echo secretum_copyright_container(); ?>">
 		<div class="row"><div class="col-md">
-			<footer id="colophon"><div class="site-info">
+			<footer id="colophon"><div class="site-info<?php echo secretum_copyright_textuals(); echo secretum_copyright_text_alignment(); ?>">
 				<?php
 					// Custom Copyright Statement
 					if (secretum_mod('copyright_text')) {

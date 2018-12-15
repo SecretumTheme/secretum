@@ -19,7 +19,6 @@ $wp_customize->add_section('secretum_header_display' , array(
 
 
 // Setting :: Custom Header Feature
-// @see inc/system/header/actions.php
 $wp_customize->add_setting('secretum[custom_headers]' , array(
 	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'type' 				=> 'option',
@@ -35,25 +34,7 @@ $wp_customize->add_control('secretum[custom_headers]', array(
 ));
 
 
-// Setting :: Top Header Area
-// @see inc/system/header/actions.php
-$wp_customize->add_setting('secretum[header_top_status]' , array(
-	'sanitize_callback' => 'secretum_sanitize_checkbox',
-	'type' 				=> 'option',
-	'transport' 		=> 'refresh',
-));
-
-// Control :: Top Header Area
-$wp_customize->add_control('secretum[header_top_status]', array(
-	'label' 			=> __('Enable Top Header Area', 'secretum'),
-	'description' 		=> __('Create and assign custom menus to "Top Navbar Left" and/or "Top Navbar Right" to activate menus OR use the "Top Header Widget Area" widget for unlimited HTML control over the content area.', 'secretum'),
-	'section' 			=> 'secretum_header_display',
-	'type' 				=> 'checkbox'
-));
-
-
 // Setting :: Header Area
-// @see inc/system/header/actions.php
 $wp_customize->add_setting('secretum[header_status]' , array(
 	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'type' 				=> 'option',
@@ -69,7 +50,6 @@ $wp_customize->add_control('secretum[header_status]', array(
 
 
 // Setting :: Header Logo / Identity
-// @see template-parts/header/navbar-brand.php
 $wp_customize->add_setting('secretum[logo_identity_status]' , array(
 	'sanitize_callback' => 'secretum_sanitize_checkbox',
 	'type' 				=> 'option',

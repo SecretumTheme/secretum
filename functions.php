@@ -77,9 +77,12 @@ include_once(SECRETUM_INC . '/template-functions/copyright.php');
 include_once(SECRETUM_INC . '/template-functions/entry.php');
 include_once(SECRETUM_INC . '/template-functions/footer.php');
 include_once(SECRETUM_INC . '/template-functions/frontpage.php');
+include_once(SECRETUM_INC . '/template-functions/header-top.php');
 include_once(SECRETUM_INC . '/template-functions/header.php');
 include_once(SECRETUM_INC . '/template-functions/primary-nav.php');
+include_once(SECRETUM_INC . '/template-functions/scrolltop.php');
 include_once(SECRETUM_INC . '/template-functions/sidebars.php');
+include_once(SECRETUM_INC . '/template-functions/site_identity.php');
 
 if (is_admin()) {
     include_once(SECRETUM_INC . '/editor.php');
@@ -137,10 +140,27 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/choices_borders.php');
     include_once(SECRETUM_INC . '/customize/choices_colors.php');
     include_once(SECRETUM_INC . '/customize/choices_containers.php');
-    include_once(SECRETUM_INC . '/customize/choices_font-families.php');
+    include_once(SECRETUM_INC . '/customize/choices_font-control.php');
     include_once(SECRETUM_INC . '/customize/choices_margins.php');
     include_once(SECRETUM_INC . '/customize/choices_paddings.php');
     include_once(SECRETUM_INC . '/customize/choices_sizes.php');
+
+
+    //
+    // Site Identity Panel
+    //
+    $wp_customize->add_panel('secretum_site_identity', array(
+        'title'         => __(':: Site Identity', 'secretum'),
+        'priority'      => 8,
+    ));
+
+    // Sections, Settings, & Controls
+    include_once(SECRETUM_INC . '/customize/site_identity/display.php');
+    include_once(SECRETUM_INC . '/customize/site_identity/branding.php');
+    include_once(SECRETUM_INC . '/customize/site_identity/container-title.php');
+    include_once(SECRETUM_INC . '/customize/site_identity/font-title.php');
+    include_once(SECRETUM_INC . '/customize/site_identity/container-desc.php');
+    include_once(SECRETUM_INC . '/customize/site_identity/font-description.php');
 
 
     //
@@ -148,12 +168,10 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_header', array(
         'title'         => __(':: Header', 'secretum'),
-        'description'   => __('Manage features related to the primary website header area.', 'secretum'),
         'priority'      => 8,
     ));
 
     // Sections, Settings, & Controls
-    include_once(SECRETUM_INC . '/customize/header/site_identity.php');
     include_once(SECRETUM_INC . '/customize/header/containers.php');
     include_once(SECRETUM_INC . '/customize/header/display.php');
     include_once(SECRETUM_INC . '/customize/header/settings.php');
@@ -161,11 +179,26 @@ add_action('customize_register', function($wp_customize) {
 
 
     //
+    // Header Top Panel
+    //
+    $wp_customize->add_panel('secretum_header_top', array(
+        'title'         => __(':: Header Top', 'secretum'),
+        'priority'      => 8,
+    ));
+
+    // Sections, Settings, & Controls
+    include_once(SECRETUM_INC . '/customize/header-top/display.php');
+    include_once(SECRETUM_INC . '/customize/header-top/wrapper.php');
+    include_once(SECRETUM_INC . '/customize/header-top/container.php');
+    include_once(SECRETUM_INC . '/customize/header-top/font.php');
+    include_once(SECRETUM_INC . '/customize/header-top/items.php');
+
+
+    //
     // Primary Nav Panel
     //
     $wp_customize->add_panel('secretum_primary_nav', array(
         'title'         => __(':: Primary Nav', 'secretum'),
-        'description'   => __('Manage features related to the primary navigation menu.', 'secretum'),
         'priority'      => 8,
     ));
 
@@ -173,6 +206,7 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/primary-nav/display.php');
     include_once(SECRETUM_INC . '/customize/primary-nav/wrapper.php');
     include_once(SECRETUM_INC . '/customize/primary-nav/container.php');
+    include_once(SECRETUM_INC . '/customize/primary-nav/font.php');
     include_once(SECRETUM_INC . '/customize/primary-nav/items.php');
     include_once(SECRETUM_INC . '/customize/primary-nav/toggler.php');
 
@@ -182,7 +216,6 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_body', array(
         'title'             => __(':: Body', 'secretum'),
-        'description'       => __('Manage all features related to the website body area and content features.', 'secretum'),
         'priority'          => 8,
     ));
 
@@ -196,7 +229,6 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_entry', array(
         'title'             => __(':: Entry', 'secretum'),
-        'description'       => __('Manage features related to the post/page entry areas.', 'secretum'),
         'priority'          => 8,
     ));
 
@@ -210,7 +242,6 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_frontpage', array(
         'title'             => __(':: Frontpage', 'secretum'),
-        'description'       => __('Manage all custom frontpage features.', 'secretum'),
         'priority'          => 8,
     ));
 
@@ -223,7 +254,6 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_sidebars', array(
         'title'             => __(':: Sidebars', 'secretum'),
-        'description'       => __('Manage all sidebar features.', 'secretum'),
         'priority'          => 8,
     ));
 
@@ -238,7 +268,6 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_footer', array(
         'title'             => __(':: Footer', 'secretum'),
-        'description'       => __('Manage features related to the primary website footer area.', 'secretum'),
         'priority'          => 8,
     ));
 
@@ -253,15 +282,15 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_copyright', array(
         'title'             => __(':: Copyright', 'secretum'),
-        'description'       => __('Manage features related to the copyright area.', 'secretum'),
         'priority'          => 8,
     ));
 
     // Sections, Settings, & Controls
-    include_once(SECRETUM_INC . '/customize/copyright/containers.php');
-    include_once(SECRETUM_INC . '/customize/copyright/statement.php');
     include_once(SECRETUM_INC . '/customize/copyright/display.php');
-    include_once(SECRETUM_INC . '/customize/copyright/colors.php');
+    include_once(SECRETUM_INC . '/customize/copyright/wrapper.php');
+    include_once(SECRETUM_INC . '/customize/copyright/container.php');
+    include_once(SECRETUM_INC . '/customize/copyright/font.php');
+    include_once(SECRETUM_INC . '/customize/copyright/statement.php');
 
 
     //
@@ -269,13 +298,13 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_copyright_nav', array(
         'title'             => __(':: Copyright Nav', 'secretum'),
-        'description'       => __('Manage features related to the copyright navigation menu area.', 'secretum'),
         'priority'          => 8,
     ));
 
     // Sections, Settings, & Controls
-    include_once(SECRETUM_INC . '/customize/copyright-nav/containers.php');
-    include_once(SECRETUM_INC . '/customize/copyright-nav/colors.php');
+    include_once(SECRETUM_INC . '/customize/copyright-nav/wrapper.php');
+    include_once(SECRETUM_INC . '/customize/copyright-nav/font.php');
+    include_once(SECRETUM_INC . '/customize/copyright-nav/items.php');
 
 
     //
@@ -283,13 +312,13 @@ add_action('customize_register', function($wp_customize) {
     //
     $wp_customize->add_panel('secretum_extras', array(
         'title'             => __(':: Extras', 'secretum'),
-        'description'       => __('Other theme features that do not fit into a category.', 'secretum'),
         'priority'          => 8,
     ));
 
     // Sections, Settings, & Controls
     include_once(SECRETUM_INC . '/customize/extras/analytics.php');
     include_once(SECRETUM_INC . '/customize/extras/enqueue.php');
+    include_once(SECRETUM_INC . '/customize/extras/scrolltop.php');
     include_once(SECRETUM_INC . '/customize/extras/text.php');
     include_once(SECRETUM_INC . '/customize/extras/width.php');
     include_once(SECRETUM_INC . '/customize/extras/reset.php');

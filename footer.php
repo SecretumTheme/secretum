@@ -27,7 +27,7 @@
 	do_action('secretum_copyright_after');
 
 	// Scroll To Top Icon
-	get_template_part('template-parts/copyright/scroll-top');
+	get_template_part('template-parts/extras/scrolltop');
 ?>
 </div><!-- #page -->
 

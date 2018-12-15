@@ -25,7 +25,7 @@
 
 <?php
 	// Top Navbar Above Header
-	get_template_part('template-parts/header/navbar-top');
+	get_template_part('template-parts/header/header-top');
 
 	// Navbar Menu Above Header
 	get_template_part('template-parts/primary-nav/navbar-above');

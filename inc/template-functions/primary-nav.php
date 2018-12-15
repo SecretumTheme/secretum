@@ -20,8 +20,8 @@ if (!function_exists('secretum_primary_nav_wrapper')) {
 		// Classes
 		$background = secretum_mod('primary_nav_wrapper_background_color', 'attr', true);
 		$border = secretum_mod('primary_nav_wrapper_border_type', 'attr', true) . secretum_mod('primary_nav_wrapper_border_color', 'attr', true);
-		$margin = secretum_mod('primary_nav_wrapper_margin', 'attr', true);
-		$padding = secretum_mod('primary_nav_wrapper_padding', 'attr', true);
+		$margin = secretum_mod('primary_nav_wrapper_margin_bottom', 'attr', true);
+		$padding = secretum_mod('primary_nav_wrapper_padding_y', 'attr', true);
 
 		return apply_filters('secretum_primary_nav_wrapper', $background . $border . $margin . $padding, 10, 1);
 	}
@@ -39,14 +39,13 @@ if (!function_exists('secretum_primary_nav_container')) {
 	function secretum_primary_nav_container()
 	{
 		// Classes
-		$container = secretum_mod('primary_nav_container', 'attr', true);
+		$container = secretum_mod('primary_nav_container', 'attr', false);
 		$background = secretum_mod('primary_nav_container_background_color', 'attr', true);
 		$border = secretum_mod('primary_nav_container_border_type', 'attr', true) . secretum_mod('primary_nav_container_border_color', 'attr', true);
 		$padding = secretum_mod('primary_nav_container_padding_x', 'attr', true) . secretum_mod('primary_nav_container_padding_y', 'attr', true);
-		$font_size = secretum_mod('primary_nav_font_size', 'attr', true);
-		$font_family = secretum_mod('primary_nav_item_font_family', 'attr', true);
+		$font = secretum_mod('primary_nav_font_size', 'attr', true) . secretum_mod('primary_nav_font_family', 'attr', true) . secretum_mod('primary_nav_font_style', 'attr', true) . secretum_mod('primary_nav_text_transform', 'attr', true);
 
-		return apply_filters('secretum_primary_nav_container', $container . $background . $border . $padding . $font_size . $font_family, 10, 1);
+		return apply_filters('secretum_primary_nav_container', $container . $background . $border . $padding . $font, 10, 1);
 	}
 }
 
@@ -94,11 +93,12 @@ if (!function_exists('secretum_primary_nav_divider_classes')) {
 		// Classes
 		$background = secretum_mod('primary_nav_item_background_color', 'attr', true) . secretum_mod('primary_nav_item_background_hover_color', 'attr', true);
 		$border = secretum_mod('primary_nav_item_border_type', 'attr', true) . secretum_mod('primary_nav_item_border_color', 'attr', true);
+		$margin = secretum_mod('primary_nav_item_margin_y', 'attr', true) . secretum_mod('primary_nav_item_margin_x', 'attr', true);
 		$padding = secretum_mod('primary_nav_item_padding_y', 'attr', true) . secretum_mod('primary_nav_item_padding_x', 'attr', true);
 		$text_color = secretum_mod('primary_nav_item_text_color', 'attr', true);
 		$link_colors = secretum_mod('primary_nav_item_link_color', 'attr', true) . secretum_mod('primary_nav_item_link_hover_color', 'attr', true);
 
-		return apply_filters('secretum_primary_nav_divider_classes', $background . $border . $padding . $text_color . $link_colors, 10, 1);
+		return apply_filters('secretum_primary_nav_divider_classes', $background . $border . $margin . $padding . $text_color . $link_colors, 10, 1);
 	}
 }
 

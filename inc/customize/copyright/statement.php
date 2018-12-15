@@ -18,7 +18,7 @@ $wp_customize->add_section('secretum_copyright_statement' , array(
 
 // Setting :: Copyright Text
 $wp_customize->add_setting('secretum[copyright_text]' , array(
-	//'default' 			=> $default['copyright_text'],
+	'default' 			=> $default['copyright_text'],
 	'sanitize_callback' => 'secretum_sanitize_html',
 	'transport' 		=> 'postMessage',
 	'type' 				=> 'option'
@@ -27,7 +27,7 @@ $wp_customize->add_setting('secretum[copyright_text]' , array(
 // Control :: Copyright Text
 $wp_customize->add_control('secretum[copyright_text]', array(
 	'label' 		=> __('Statement', 'secretum'),
-	'description' 	=> sprintf(__('HTML Allowed. Example: <p>Copyright %s &copy; <a href="%s" target="_self">%s</a> - All Rights Reserved.</p>', 'secretum'), date("Y", time()), esc_url(get_home_url('/')), get_bloginfo('name')),
+	'description' 	=> sprintf(__('HTML Allowed. Example: &#x3C;p&#x3E;Copyright %s &#x26;copy; &#x3C;a href=&#x22;%s&#x22; target=&#x22;_self&#x22;&#x3E;%s&#x3C;/a&#x3E; - All Rights Reserved.&#x3C;/p&#x3E;', 'secretum'), date("Y", time()), esc_url(get_home_url('/')), get_bloginfo('name')),
 	'section' 		=> 'secretum_copyright_statement',
 	'type' 			=> 'textarea'
 ));
