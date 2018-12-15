@@ -55,7 +55,6 @@ if (!function_exists('secretum_customizer_margin_top')) {
 			'mt-3' 				=> __('16px or 1em Margin', 'secretum'),
 			'mt-4' 				=> __('24px or 1.5em Margin', 'secretum'),
 			'mt-5' 				=> __('48px or 3em Margin', 'secretum'),
-			'mx-auto d-block' 	=> __('Auto Margins', 'secretum'),
 		);
 	}
 }

@@ -10,9 +10,44 @@
 
 
 /**
- * Font Families
+ * Font Style
  *
- * @source inc/system/primary-nav/customize/items.php
+ * @return array Keys & Values
+ */
+if (!function_exists('secretum_customizer_font_style')) {
+	function secretum_customizer_font_styles()
+	{
+		return array(
+			'' 						=> __('Theme Default', 'secretum'),
+			'font-weight-bold' 		=> __('Weight: bold', 'secretum'),
+			'font-weight-normal' 	=> __('Weight: normal', 'secretum'),
+			'font-weight-light' 	=> __('Weight: light', 'secretum'),
+			'font-italic' 			=> __('Italics', 'secretum')
+		);
+	}
+}
+
+
+/**
+ * Text Transform
+ *
+ * @return array Keys & Values
+ */
+if (!function_exists('secretum_customizer_text_transform')) {
+	function secretum_customizer_text_transform()
+	{
+		return array(
+			'' 					=> __('Theme Default', 'secretum'),
+			'text-lowercase' 	=> __('Lowercase All Text', 'secretum'),
+			'text-uppercase' 	=> __('Uppercase All Text', 'secretum'),
+			'text-capitalize' 	=> __('Capitalize First Letter', 'secretum')
+		);
+	}
+}
+
+
+/**
+ * Font Families
  *
  * @return array Keys & Values
  */

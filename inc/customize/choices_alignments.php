@@ -28,3 +28,22 @@ if (!function_exists('secretum_customizer_margin_alignments')) {
 		);
 	}
 }
+
+
+/**
+ * Text Alignment
+ *
+ * @return array Keys & Values
+ */
+if (!function_exists('secretum_customizer_text_alignments')) {
+	function secretum_customizer_text_alignments()
+	{
+		return array(
+			'' 				=> __('Theme Default', 'secretum'),
+			'text-center' 	=> __('Align Center', 'secretum'),
+			'text-left' 	=> __('Align Left', 'secretum'),
+			'text-right' 	=> __('Align Right', 'secretum')
+		);
+	}
+}
+

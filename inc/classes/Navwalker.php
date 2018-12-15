@@ -192,7 +192,7 @@ class Navwalker extends \Walker_Nav_Menu
 		// Item has_children add atts
 		if (isset($args->has_children) && $args->has_children && 0 === $depth && $args->depth > 1) {
 			$atts['id'] 			= 'menu-item-dropdown-' . $item->ID;
-			$atts['class'] 			= 'dropdown-toggle nav-link';
+			$atts['class'] 			= 'dropdown-toggle nav-link' . $spacing_classes;
 			$atts['data-toggle'] 	= 'dropdown';
 			$atts['aria-expanded'] 	= 'false';
 			$atts['aria-haspopup'] 	= 'true';
@@ -205,7 +205,7 @@ class Navwalker extends \Walker_Nav_Menu
 
 			// Dropdown, use .dropdown-item
 			if ($depth > 0) {
-				$atts['class'] = 'dropdown-item' . $spacing_classes;
+				$atts['class'] = 'dropdown-item';
 
 			// Default, use .nav-link
 			} else {
@@ -541,7 +541,7 @@ class Navwalker extends \Walker_Nav_Menu
 			$output .= '<span class="dropdown-header h6"' . $attributes . '>';
 		} elseif ('dropdown-divider' === $linkmod_type) {
 			// this is a divider.
-			$output .= '<div class="dropdown-divider"' . $attributes . '>';
+			$output .= '<div class="test dropdown-divider"' . $attributes . '>';
 		}
 		return $output;
 	}

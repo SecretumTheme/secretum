@@ -31,20 +31,3 @@ $wp_customize->add_control('secretum[copyright_status]', array(
 	'section' 		=> 'secretum_copyright_display',
 	'type' 			=> 'checkbox'
 ));
-
-
-// Setting :: Scroll To Top Icon
-$wp_customize->add_setting('secretum[scrolltop]' , array(
-	'default' 			=> $default['scrolltop'],
-	'sanitize_callback' => 'secretum_sanitize_checkbox',
-	'transport' 		=> 'refresh',
-	'type' 				=> 'option'
-));
-
-// Control :: Scroll To Top Icon
-$wp_customize->add_control('secretum[scrolltop]', array(
-	'label' 		=> __('Hide Scroll To Top Icon', 'secretum'),
-    'description' 	=> __('Select to disable the scroll to top icon.', 'secretum'),
-	'section' 		=> 'secretum_copyright_display',
-	'type' 			=> 'checkbox'
-));
