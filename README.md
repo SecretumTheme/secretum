@@ -2,8 +2,8 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
-* **Tested up to:** WordPress 5.0-trunk
-* **Version:** 0.0.4
+* **Tested up to:** 5.0.1
+* **Version:** 0.0.5
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -14,13 +14,12 @@ Secretum - A Flexible Multipurpose WordPress Theme.
 
 ## NOTE - Alpha Release
 
-* NOT READY FOR PUBLIC USE!!!
-* NOT READY FOR PUBLIC USE!!!
+Theme is ready for public use but should not be developed past what is provided. Action, filter, and setting names may change at this point.
 
-* Bugs / issues do NOT need to be reported. We know.
-* This theme is for advanced WordPress / Bootstrap 4 users. If you need instructions past what is going to be explained below, then this theme is without question not for you. Otherwise, you're going to love this theme, I guarantee it.
+* Please report any bugs / issues that you find.
+* Most of what you need can be found within the Customizer.
 * The master branch is stable, it is running live on Websites.
-* Anything can change and no changes are logged during Alpha. We know what needs to be done, and it's being done. Even the child theme can change!
+* Anything can change and no changes are logged during Alpha. We know what needs to be done, and it's being done.
 * Use at your own risk, no support is provided.
 
 
@@ -53,8 +52,7 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 	* Higher compatability chances when moving to Secretum Theme
 * Child theme ready / included
 	* A ready to use child-theme to use
-* Child theme color variations
-	* Multiple child-theme base themes to choose from
+* Switch between themes without changing child themes
 * WooCommerce compatible
 	* Product & Review Microdata ready
 	* Templates designed for improved conversion rates over flare
@@ -78,7 +76,6 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * Social media icons
 * Primary mega menu example
 * Pre-built headers
-* Split CSS to enable/disable features
 * Switchable microdata values
 * Finish customizer settings
 
