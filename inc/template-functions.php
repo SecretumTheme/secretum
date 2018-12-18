@@ -46,6 +46,7 @@ if (!function_exists('secretum_import')) {
                 }
             }
 
+            // If Array Set
             if (!empty($array)) {
                 // Merge Arrays & Filter Empty Values
                 $clean_array = array_filter(array_merge($array, secretum_customizer_global_settings()));
@@ -119,7 +120,6 @@ if (!function_exists('secretum_sanitize_dropdown_pages')) {
  *
  * @param string $location
  * @return string 
- */
 if (!function_exists('secretum_export')) {
 	function secretum_export($location)
 	{
@@ -134,6 +134,7 @@ if (!function_exists('secretum_export')) {
 		return json_encode($settings);
 	}
 }
+ */
 
 
 

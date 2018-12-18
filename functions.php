@@ -148,6 +148,9 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/choices_sizes.php');
     include_once(SECRETUM_INC . '/customize/choices_theme-colors.php');
 
+    // Customizer Fallback & Sanitize Functions
+    include_once(SECRETUM_INC . '/customize/customizer-functions.php');
+
 
     //
     // Site Identity Panel
@@ -294,11 +297,10 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/copyright/container.php');
     include_once(SECRETUM_INC . '/customize/copyright/font.php');
     include_once(SECRETUM_INC . '/customize/copyright/statement.php');
-    include_once(SECRETUM_INC . '/customize/copyright/import-export.php');
 
 
     //
-    // Copyright Panel
+    // Copyright Nav Panel
     //
     $wp_customize->add_panel('secretum_copyright_nav', array(
         'title'             => __(':: Copyright Nav', 'secretum'),
@@ -335,6 +337,21 @@ add_action('customize_register', function($wp_customize) {
         include_once(SECRETUM_INC . '/customize/extras/text/woo.php');
     include_once(SECRETUM_INC . '/customize/extras/width.php');
     include_once(SECRETUM_INC . '/customize/extras/reset.php');
+
+    /**
+     * pending
+    //
+    // Exports & Imports
+    //
+    $wp_customize->add_panel('secretum_export_import', array(
+        'title'             => __(':: Exports & Imports', 'secretum'),
+        'priority'          => 8,
+    ));
+
+    // Sections, Settings, & Controls
+    include_once(SECRETUM_INC . '/customize/export-import/global.php');
+    include_once(SECRETUM_INC . '/customize/export-import/copyright.php');
+    */
 });
 
 
@@ -352,7 +369,7 @@ if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
 
 
 /**
- * Theme Setup
+ * Theme Setup - Save Theme Color CSS Files
  */
 add_action('after_switch_theme', function() {
     if (!get_option('secretum_theme_colors')) {
