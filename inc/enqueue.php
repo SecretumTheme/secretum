@@ -16,49 +16,35 @@ add_action('wp_enqueue_scripts', function() {
     // Get Theme Object
 	$theme = wp_get_theme();
 
-    // Append Child- If Child Theme
-    //$child = (is_child_theme()) ? 'child-' : '';
-
-	// Theme Styles
-	wp_enqueue_style(
-        'secretum',
-        //SECRETUM_STYLE_URL . '/css/' . $child . 'theme.min.css',
-        SECRETUM_STYLE_URL . '/css/theme.min.css',
-        array(),
-        $theme->get('Version'),
-        'all'
-    );
-
-    // Theme Scripts
-    wp_enqueue_script(
-        'secretum',
-        //SECRETUM_STYLE_URL . '/js/' . $child . 'theme.min.js',
-        SECRETUM_STYLE_URL . '/js/theme.min.js',
-        array('jquery'),
-        $theme->get('Version'),
-        true
-    );
-
-    // If Documentation Posttype
-    if ('secretum_docs' == get_post_type()) {
-        // Documentation Styles
+    // Selected Style
+    if(secretum_mod('enqueue_theme_colors')) {
         wp_enqueue_style(
-            'secretum-toc',
-            SECRETUM_STYLE_URL . '/css/bootstrap-toc.min.css',
+            'secretum',
+            SECRETUM_STYLE_URL . '/css/' . esc_attr(secretum_mod('enqueue_theme_colors', 'raw')) . '/theme.min.css',
             array(),
             $theme->get('Version'),
             'all'
         );
 
-        // Documentation Scripts
-        wp_enqueue_script(
-            'secretum-toc',
-            SECRETUM_STYLE_URL . '/js/bootstrap-toc.min.js',
-            array('jquery'),
+    // Default Style
+    } else {
+        wp_enqueue_style(
+            'secretum',
+            SECRETUM_STYLE_URL . '/css/theme.min.css',
+            array(),
             $theme->get('Version'),
-            true
+            'all'
         );
     }
+
+    // Theme Scripts
+    wp_enqueue_script(
+        'secretum',
+        SECRETUM_STYLE_URL . '/js/theme.min.js',
+        array('jquery'),
+        $theme->get('Version'),
+        true
+    );
 
     // Comments Form Scripts
     if (is_singular() && comments_open() && get_option('thread_comments')) {

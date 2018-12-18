@@ -45,6 +45,12 @@ add_action('after_setup_theme', function() {
 		add_filter('pings_open', '__return_false', 20);
 	}
 
+	// Header Image Panel
+	add_theme_support('custom-header');
+
+	// Background Image Panel
+	add_theme_support('custom-background');
+
 	// Adjust Avatar Thumbnail Size
 	add_image_size('secretum-thumbnail-avatar', 100, 100, true);
 

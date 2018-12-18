@@ -1,5 +1,8 @@
 /**
- * Secretum Theme & Boostrap 4 Variables
+ * Secretum Theme
+ *
+ * Primary Color: Dark Grayish Violet
+ * Secondary Color: Light Grayish Blue
  */
 
 // Request a theme color level
@@ -7,128 +10,132 @@
   $color: color($color-name);
   $color-base: if($level > 0, $black, $white);
   $level: abs($level);
-
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
 
- // Override Color System
-$white:     #ffffff;
-$gray-100: 	#eef0f1;
-$gray-200: 	#dee1e4;
-$gray-300: 	#cdd2d7;
-$gray-400: 	#bdc3ca;
-$gray-500: 	#adb5bd;
-$gray-600: 	#8a9097;
-$gray-700: 	#676c71;
-$gray-800: 	#45484b;
-$gray-900: 	#222425;
-$black:    	#000000;
+// Primary Colors
+$primary: 							#88858e;
+$primary-brand-color: 				$primary;
+$primary-brand-color-dark: 			#7e7b85;
+$primary-brand-color-light: 		#928f97;
+$primary-spacer-color: 				$primary;
+$primary-text-color: 				#141315;
 
-$blue:    	#1976d2;
-$indigo:  	#536dfe;
-$purple:  	#7b1fa2;
-$pink:    	#ff4081;
-$red:     	#d32f2f;
-$orange:  	#ff5722;
-$yellow:  	#fbc02d;
-$green:   	#28a745;
-$teal:    	#00796b;
-$cyan:    	#0097A7;
+// Secondary Colors
+$secondary: 						#e1e1e3;
+$secondary-brand-color: 			$secondary;
+$secondary-text-color: 				#1d1c1f;
 
-$primary: 	#3c9cc0;
-$secondary: #ff5722;
-$success: 	$green;
-$info: 		$cyan;
-$warning: 	$yellow;
-$danger: 	$red;
-$light: 	$gray-200;
-$dark: 		$gray-700;
+// Color Shades
+$white:     						#f5f5f6;
+$gray-100: 							#f8f9fa;
+$gray-200: 							#e9ecef;
+$gray-300: 							#dee2e6;
+$gray-400: 							#ced4da;
+$gray-500: 							#adb5bd;
+$gray-600: 							#6c757d;
+$gray-700: 							#495057;
+$gray-800: 							#343a40;
+$gray-900: 							#212529;
+$black:    							#000000;
+
+ // Override Colors
+$blue: 								#007bff;
+$indigo: 							#6610f2;
+$purple: 							#6f42c1;
+$pink: 								#e83e8c;
+$red: 								#dc3545;
+$orange: 							#fd7e14;
+$yellow: 							#ffc107;
+$green: 							#28a745;
+$teal: 								#20c997;
+$cyan: 								#17a2b8;
+$success: 							$green;
+$info: 								$cyan;
+$warning: 							$yellow;
+$danger: 							$red;
+$light: 							$gray-200;
+$dark: 								$gray-700;
+$light: 							$gray-200;
+$dark: 								$gray-800;
 
 // New Colors
-$whiteish:  #f7f7f7;
-$blackish: 	#111111;
-
-// Brand Colors
-$primary-brand-color: 		$primary;
-$primary-brand-color-dark: 	#0288d1;
-$primary-brand-color-light: #b3e5fc;
-$secondary-brand-color: 	$secondary;
+$whiteish:  						#f2f2f3;
+$blackish: 							#101112;
 
 // Background Colors
-$body-bg: 				$white;
-$content-bg: 			$whiteish;
+$body-bg: 							$white;
+$content-bg: 						$whiteish;
 
-// Text Colors
-$primary-text-color: 	#212121;
-$secondary-text-color: 	#757575;
-$body-color: 			#212121;
-$body-color-dark: 		#111111;
-$body-color-light: 		#313131;
+// Bootstrap Vars Text Colors
+$body-color: 						$blackish;
+$body-color-dark: 					$black;
+$body-color-light: 					$gray-900;
 
 // Link Color and Decor
-$link-color: 			$gray-900;
-$link-decoration: 		underline;
-$link-hover-color: 		$gray-700;
-$link-hover-decoration: none;
+$link-color: 						$gray-900;
+$link-decoration: 					underline;
+$link-hover-color: 					$gray-700;
+$link-hover-decoration: 			none;
 
 // Add New Colors To Colors Array
 $colors: (
-	"whiteish": 		$whiteish,
-	"blackish": 		$blackish,
-	"black": 			$black,
-	"primary-dark": 	$primary-brand-color-dark,
-	"primary-light": 	$primary-brand-color-light,
-	"primary-text": 	$primary-text-color,
-	"secondary-text":	$secondary-text-color,
-	"gray-100": 		$gray-100,
-	"gray-200": 		$gray-200,
-	"gray-300": 		$gray-300,
-	"gray-400": 		$gray-400,
-	"gray-500": 		$gray-500,
-	"gray-600": 		$gray-600,
-	"gray-700": 		$gray-700,
-	"gray-800": 		$gray-800,
-	"gray-900": 		$gray-900,
+	"whiteish": 					$whiteish,
+	"blackish": 					$blackish,
+	"black": 						$black,
+	"primary-dark": 				$primary-brand-color-dark,
+	"primary-light": 				$primary-brand-color-light,
+	"primary-text": 				$primary-text-color,
+	"secondary-text":				$secondary-text-color,
+	"gray-100": 					$gray-100,
+	"gray-200": 					$gray-200,
+	"gray-300": 					$gray-300,
+	"gray-400": 					$gray-400,
+	"gray-500": 					$gray-500,
+	"gray-600": 					$gray-600,
+	"gray-700": 					$gray-700,
+	"gray-800": 					$gray-800,
+	"gray-900": 					$gray-900,
 );
 
 // Header Hamburger Menu
-$header-navbar-hamburger-color: $gray-500;
+$header-navbar-hamburger-color: 	$gray-500;
 
 // Content Entry Heading Sizes
-$h1-font-size: 2.2rem;
-$h2-font-size: 1.75rem;
-$h3-font-size: 1.5rem;
-$h4-font-size: 1.25rem;
-$h5-font-size: 1.15rem;
-$h6-font-size: 1rem;
+$h1-font-size: 						2.2rem;
+$h2-font-size: 						1.75rem;
+$h3-font-size: 						1.5rem;
+$h4-font-size: 						1.25rem;
+$h5-font-size: 						1.15rem;
+$h6-font-size: 						1rem;
 
 // Primary Button
-$primary-button-bg-color: $primary-brand-color;
-$primary-button-bg-hover-color: $primary-brand-color-dark;
-$primary-button-border-color: $primary-brand-color;
-$primary-button-text-color: $white;
+$primary-button-bg-color: 			$primary-brand-color;
+$primary-button-bg-hover-color: 	$primary-brand-color-dark;
+$primary-button-border-color: 		$primary-brand-color;
+$primary-button-text-color: 		$white;
 
 // Secondary Button
-$secondary-button-bg-color: $gray-600;
-$secondary-button-bg-hover-color: $primary-brand-color-dark;
-$secondary-button-border-color: $gray-600;
-$secondary-button-text-color: $white;
+$secondary-button-bg-color: 		$gray-600;
+$secondary-button-bg-hover-color: 	$primary-brand-color-dark;
+$secondary-button-border-color: 	$gray-600;
+$secondary-button-text-color: 		$white;
 
 // Search Button
-$search-button-bg-color: $primary-brand-color;
-$search-button-bg-hover-color: $primary-brand-color-dark;
-$search-button-border-color: $primary-brand-color;
-$search-button-text-color: $white;
+$search-button-bg-color: 			$primary-brand-color;
+$search-button-bg-hover-color: 		$primary-brand-color-dark;
+$search-button-border-color: 		$primary-brand-color;
+$search-button-text-color: 			$white;
 
 // Sidebar Area Titles
-$sidebar-widget-title-color: $gray-600;
-$sidebar-widget-li-line-color: $gray-200;
+$sidebar-widget-title-color: 		$gray-600;
+$sidebar-widget-li-line-color: 		$gray-200;
 
 // Footer Widget Titles
-$footer-widget-title-color: $gray-300;
-$footer-widget-li-line-color: $gray-900;
+$footer-widget-title-color: 		$gray-300;
+$footer-widget-li-line-color: 		$gray-900;
 
 // WooCommerce Bookings Calendar
-$calendar-primary-bg-color: $primary-brand-color;
-$calendar-secondary-bg-color: $whiteish;
-$calendar-border-color: $gray-300;
+$calendar-primary-bg-color: 		$primary-brand-color;
+$calendar-secondary-bg-color: 		$whiteish;
+$calendar-border-color: 			$gray-300;

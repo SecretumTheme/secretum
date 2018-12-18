@@ -131,6 +131,8 @@ add_action('customize_register', function($wp_customize) {
     // Remove Sections
     $wp_customize->remove_section("colors");
     $wp_customize->remove_section("title_tagline");
+    $wp_customize->remove_section("header_image");
+    $wp_customize->remove_section("background_image");
 
     // Get Default Settings
     $default = secretum_customizer_default_settings();
@@ -144,6 +146,7 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/choices_margins.php');
     include_once(SECRETUM_INC . '/customize/choices_paddings.php');
     include_once(SECRETUM_INC . '/customize/choices_sizes.php');
+    include_once(SECRETUM_INC . '/customize/choices_theme-colors.php');
 
 
     //
@@ -291,6 +294,7 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/copyright/container.php');
     include_once(SECRETUM_INC . '/customize/copyright/font.php');
     include_once(SECRETUM_INC . '/customize/copyright/statement.php');
+    include_once(SECRETUM_INC . '/customize/copyright/import-export.php');
 
 
     //
@@ -320,6 +324,15 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/extras/enqueue.php');
     include_once(SECRETUM_INC . '/customize/extras/scrolltop.php');
     include_once(SECRETUM_INC . '/customize/extras/text.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/more.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/meta.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/nav.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/search.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/comments.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/author.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/no-content.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/404.php');
+        include_once(SECRETUM_INC . '/customize/extras/text/woo.php');
     include_once(SECRETUM_INC . '/customize/extras/width.php');
     include_once(SECRETUM_INC . '/customize/extras/reset.php');
 });
@@ -336,3 +349,26 @@ if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
 		'secretum'
 	);
 }
+
+
+/**
+ * Theme Setup
+ */
+add_action('after_switch_theme', function() {
+    if (!get_option('secretum_theme_colors')) {
+        $files = array();
+        $files = scandir(SECRETUM_DIR . '/css/', 1);
+        $folders = array_diff($files, array('theme_editor.css', 'theme.min.css', 'theme.css.map', 'theme.css', '..', '.'));
+
+        $settings = array();
+        foreach ($folders as $dirname) {
+            $ampersand = str_replace("_",  __(' Primary', 'secretum') . " & ", $dirname);
+            $spaced = str_replace("-", " ", $ampersand);
+            $name = ucwords($spaced) . __(' Secondary', 'secretum');
+            $settings[$dirname] = $name;
+        }
+
+        // Update Theme Colors Option
+        update_option('secretum_theme_colors', $settings);
+    }
+});

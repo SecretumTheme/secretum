@@ -8,6 +8,95 @@
 
 
 /**
+ * Stop Customizer From Saving A Setting
+ *
+ * @param string $string Script String
+ * @return string Cleaned Script
+ */
+if (!function_exists('secretum_import')) {
+    function secretum_import($string)
+    {
+    	if (!is_customize_preview()) { die(); }
+
+        $json_array = json_decode(stripslashes($string), true);
+
+        // String to Array
+        if (is_string($string) && is_array($json_array) && (json_last_error() == JSON_ERROR_NONE)) {
+
+            // Clear
+            $array = [];
+
+            // Simple Sanitize
+            foreach ($json_array as $key => $value) {
+                // Strings
+                if (isset($value) && is_string($value)) {
+                    $array[$key] = wp_kses_post($value);
+
+                // Intergers
+                } elseif (isset($value) && is_int($value)) {
+                    $array[$key] = absint($value);
+
+                // Intergers
+                } elseif (isset($value) && is_array($value)) {
+                    $array[$key] = array_filter($value);
+
+                // Strip All
+                } else {
+                    $array[$key] = wp_strip_all_tags($value, true);
+                }
+            }
+
+            if (!empty($array)) {
+                // Merge Arrays & Filter Empty Values
+                $clean_array = array_filter(array_merge($array, secretum_customizer_global_settings()));
+
+                // Merge Arrays & Filter Empty Values
+                $settings = array_filter(array_intersect_key($clean_array, get_option('secretum', array())));
+
+                // Update Settings Option
+                update_option('secretum', $settings);
+            }
+
+            return '';
+        }
+    }
+}
+
+
+/**
+ * Export Settings
+ *
+ * @param string $location
+ * @return string 
+ */
+if (!function_exists('secretum_export')) {
+    function secretum_export($location)
+    {
+        $settings = array();
+
+        // Get Allowed Settings
+
+        if ($location == "default") {
+            $settings = secretum_customizer_default_settings();
+        }
+
+        if ($location == "copyright") {
+            $settings = secretum_customizer_copyright_settings();
+        }
+
+        // If Settings
+        if (isset($settings)) {
+            // Get Saved Option
+            $option = array_filter(get_option('secretum', array()));
+
+            // Return Encoded Values From Unique Keys
+            return json_encode(array_intersect_key($option, $settings));
+        }
+    }
+}
+
+
+/**
  * Sanitize Pages Dropdown Menu
  *
  * @see /inc/customizer/frontpage/settings.php
@@ -23,6 +112,30 @@ if (!function_exists('secretum_sanitize_dropdown_pages')) {
 		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
 	}
 }
+
+
+/**
+ * 
+ *
+ * @param string $location
+ * @return string 
+ */
+if (!function_exists('secretum_export')) {
+	function secretum_export($location)
+	{
+		$settings = array();
+
+		if ($location == "copyright") {
+			$settings = secretum_customizer_copyright_settings();
+		}
+
+		$intersect = array_intersect(get_option('secretum', array()), $settings);
+
+		return json_encode($settings);
+	}
+}
+
+
 
 
 /**

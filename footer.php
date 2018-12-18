@@ -31,7 +31,14 @@
 ?>
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php
+	// Customizer Refresh Icon
+    if (is_customize_preview()) {
+    	echo '<a href="JavaScript:Void(0);" onClick="document.location.reload(true)" title="' . __('Refresh Preview', 'secretum') . '"><i style="color:rgba(80,80,80,0.5);position:fixed;bottom:50px;right:8px;z-index:100000;" class="fa fa-refresh"></i></a>';
+    }
+
+	wp_footer();
+?>
 
 </body>
 </html>

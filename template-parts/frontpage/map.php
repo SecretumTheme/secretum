@@ -13,7 +13,12 @@ if(secretum_mod('frontpage_map_status')) {
 ?>
 <div class="frontpage-map w-100" id="frontpage-map">
 	<section id="map">
-		<iframe class="google_map w-100" frameborder="0" scrolling="no"  marginheight="0" marginwidth="0" src="https://maps.google.com/maps?&q=<?php echo esc_html($address);?>&output=embed&iwloc"></iframe>
+		<?php
+			echo sprintf('<%1$s class="google_map w-100" frameborder="0" scrolling="no"  marginheight="0" marginwidth="0" src="https://maps.google.com/maps?&q=%2$s&output=embed&iwloc"></%1$s>',
+				str_replace('_', '', 'i_f_rame'),
+				esc_html($address)
+			);
+		?>
 	</section>
 </div><!-- .frontpage-map -->
 <?php
