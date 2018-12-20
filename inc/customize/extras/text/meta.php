@@ -19,7 +19,7 @@ $wp_customize->add_setting('secretum[meta_categories_text]', array(
 $wp_customize->add_control('secretum[meta_categories_text]', array(
 	'label' 			=> __('Post Meta Categories Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -36,7 +36,7 @@ $wp_customize->add_setting('secretum[meta_tags_text]', array(
 $wp_customize->add_control('secretum[meta_tags_text]', array(
 	'label' 			=> __('Post Meta Tag Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -53,7 +53,7 @@ $wp_customize->add_setting('secretum[meta_leave_comment_text]', array(
 $wp_customize->add_control('secretum[meta_leave_comment_text]', array(
 	'label' 			=> __('Post Meta Leave Comment Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -70,7 +70,7 @@ $wp_customize->add_setting('secretum[meta_one_comment_text]', array(
 $wp_customize->add_control('secretum[meta_one_comment_text]', array(
 	'label' 			=> __('Post Meta One Comment Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -87,6 +87,6 @@ $wp_customize->add_setting('secretum[meta_comments_text]', array(
 $wp_customize->add_control('secretum[meta_comments_text]', array(
 	'label' 			=> __('Post Meta Multiple Comments Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

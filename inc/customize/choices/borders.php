@@ -13,11 +13,6 @@
 /**
  * Border Locations
  *
- * @source inc/system/primary-nav/customize/container.php
- * @source inc/system/primary-nav/customize/items.php
- * @source inc/system/primary-nav/customize/toggler.php
- * @source inc/system/primary-nav/customize/wrapper.php
- *
  * @return array Keys & Values
  */
 if (!function_exists('secretum_customizer_border')) {
@@ -37,9 +32,28 @@ if (!function_exists('secretum_customizer_border')) {
 
 
 /**
- * Border Radius
+ * Border Locations
  *
- * @source inc/system/primary-nav/customize/toggler.php
+ * @return array Keys & Values
+ */
+if (!function_exists('secretum_customizer_border_types')) {
+	function secretum_customizer_border_types()
+	{
+		return array(
+			'' 				=> __('Theme Default', 'secretum'),
+			'border' 		=> __('Solid Border', 'secretum'),
+			'border-top' 	=> __('Top Border', 'secretum'),
+			'border-right' 	=> __('Right Border', 'secretum'),
+			'border-bottom' => __('Bottom Border', 'secretum'),
+			'border-left' 	=> __('Left Border', 'secretum'),
+			'border-0' 		=> __('No Border', 'secretum')
+		);
+	}
+}
+
+
+/**
+ * Border Radius
  *
  * @return array Keys & Values
  */
@@ -62,15 +76,6 @@ if (!function_exists('secretum_customizer_border_radius')) {
 
 /**
  * Border Colors
- *
- * @source inc/system/copyright/customize/colors.php
- * @source inc/system/copyright-nav/customize/colors.php
- * @source inc/system/footer/customize/colors.php
- * @source inc/system/header/customize/colors.php
- * @source inc/system/primary-nav/customize/container.php
- * @source inc/system/primary-nav/customize/items.php
- * @source inc/system/primary-nav/customize/toggler.php
- * @source inc/system/primary-nav/customize/wrapper.php
  *
  * @return array Keys & Values
  */

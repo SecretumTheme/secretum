@@ -7,16 +7,6 @@
  */
 
 
-/**
- * Section: Site Identity
- */
-$wp_customize->add_section('secretum_site_identity_branding', array(
-	'panel' 	=> 'secretum_site_identity',
-    'title' 	=> __('Site Identity', 'secretum'),
-    'priority' 	=> 10
-));
-
-
 // Setting :: Alignment
 $wp_customize->add_setting('secretum[site_identity_alignment]', array(
 	'sanitize_callback' 	=> 'sanitize_key',
@@ -28,7 +18,7 @@ $wp_customize->add_setting('secretum[site_identity_alignment]', array(
 // Control :: Alignment
 $wp_customize->add_control('secretum[site_identity_alignment]', array(
 	'label' 				=> __('Alignment', 'secretum'),
-	'section' 				=> 'secretum_site_identity_branding',
+	'section' 				=> 'secretum_site_identity_branding_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_text_alignments()
 ));
@@ -46,7 +36,7 @@ $wp_customize->add_setting('blogname', array(
 // Control :: Site Title
 $wp_customize->add_control('blogname', array(
 	'label' 	=> __('Site Title', 'secretum'),
-	'section'   => 'secretum_site_identity_branding',
+	'section'   => 'secretum_site_identity_branding_section',
     'priority' 	=> 10,
 ));
 
@@ -70,7 +60,7 @@ $wp_customize->add_setting('blogdescription', array(
 // Control :: Tagline
 $wp_customize->add_control('blogdescription', array(
 	'label' 	=> __('Tagline', 'secretum'),
-	'section' 	=> 'secretum_site_identity_branding',
+	'section' 	=> 'secretum_site_identity_branding_section',
     'priority' 	=> 10,
 ));
 
@@ -96,7 +86,7 @@ $custom_logo_args = get_theme_support('custom-logo');
 // Control :: Upload/Crop Image
 $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'custom_logo', array(
 	'label'         => __('Website Logo', 'secretum'),
-	'section'       => 'secretum_site_identity_branding',
+	'section'       => 'secretum_site_identity_branding_section',
 	'height'        => $custom_logo_args[0]['height'],
 	'width'         => $custom_logo_args[0]['width'],
 	'flex_height'   => $custom_logo_args[0]['flex-height'],
@@ -134,7 +124,7 @@ $wp_customize->add_setting('secretum[custom_logo_maxwidth]' , array(
 $wp_customize->add_control('secretum[custom_logo_maxwidth]', array(
 	'label' 		=> __('Logo Max-Width In Pixels', 'secretum'),
 	'description' 	=> __('If defined, inline CSS will set a max-width and auto height for the logo.', 'secretum'),
-	'section' 		=> 'secretum_site_identity_branding',
+	'section' 		=> 'secretum_site_identity_branding_section',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -152,7 +142,7 @@ $wp_customize->add_setting('secretum[custom_logo_height]' , array(
 $wp_customize->add_control('secretum[custom_logo_height]', array(
 	'label' 		=> __('Logo Crop Height In Pixels', 'secretum'),
 	'description' 	=> __('Default: 75px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
-	'section' 		=> 'secretum_site_identity_branding',
+	'section' 		=> 'secretum_site_identity_branding_section',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -170,7 +160,7 @@ $wp_customize->add_setting('secretum[custom_logo_width]' , array(
 $wp_customize->add_control('secretum[custom_logo_width]', array(
 	'label' 		=> __('Logo Crop Width In Pixels', 'secretum'),
 	'description' 	=> __('Default: 300px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
-	'section' 		=> 'secretum_site_identity_branding',
+	'section' 		=> 'secretum_site_identity_branding_section',
 	'type' 			=> 'number',
 	'input_attrs' 	=> array('min' => 0)
 ));
@@ -188,7 +178,7 @@ $wp_customize->add_setting('site_icon', array(
 $wp_customize->add_control(new WP_Customize_Site_Icon_Control($wp_customize, 'site_icon', array(
 	'label' 		=> __('Site Icon', 'secretum'),
 	'description' 	=> __('Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Site Icons should be square and at least 512 &times; 512 pixels.', 'secretum'),
-	'section' 		=> 'secretum_site_identity_branding',
+	'section' 		=> 'secretum_site_identity_branding_section',
 	'priority' 		=> 60,
 	'height' 		=> 512,
 	'width' 		=> 512

@@ -19,6 +19,6 @@ $wp_customize->add_setting('secretum[booking_cart_title]', array(
 $wp_customize->add_control('secretum[booking_cart_title]', array(
 	'label' 			=> __('Select A Booking Cart Title', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

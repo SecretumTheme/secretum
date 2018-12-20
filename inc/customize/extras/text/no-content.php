@@ -19,7 +19,7 @@ $wp_customize->add_setting('secretum[nothing_found_title_text]', array(
 $wp_customize->add_control('secretum[nothing_found_title_text]', array(
 	'label' 			=> __('Default No Content Title', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -36,6 +36,6 @@ $wp_customize->add_setting('secretum[nothing_found_text]', array(
 $wp_customize->add_control('secretum[nothing_found_text]', array(
 	'label' 			=> __('Default No Content Found', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

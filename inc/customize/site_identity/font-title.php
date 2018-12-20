@@ -28,7 +28,7 @@ $wp_customize->add_setting('secretum[site_identity_title_font_family]' , array(
 // Control :: Font Family
 $wp_customize->add_control('secretum[site_identity_title_font_family]', array(
 	'label' 				=> __('Font Family', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_font_families()
 ));
@@ -45,7 +45,7 @@ $wp_customize->add_setting('secretum[site_identity_title_font_size]' , array(
 // Control :: Font Size
 $wp_customize->add_control('secretum[site_identity_title_font_size]', array(
 	'label' 				=> __('Font Size', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_font_sizes()
 ));
@@ -62,7 +62,7 @@ $wp_customize->add_setting('secretum[site_identity_title_font_style]' , array(
 // Control :: Font Style
 $wp_customize->add_control('secretum[site_identity_title_font_style]', array(
 	'label' 				=> __('Font Style', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_font_styles()
 ));
@@ -79,7 +79,7 @@ $wp_customize->add_setting('secretum[site_identity_title_text_transform]' , arra
 // Control :: Text Transform
 $wp_customize->add_control('secretum[site_identity_title_text_transform]', array(
 	'label' 				=> __('Text Transform', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_text_transform()
 ));
@@ -96,7 +96,7 @@ $wp_customize->add_setting('secretum[site_identity_title_link_color]' , array(
 // Control :: Link Color
 $wp_customize->add_control('secretum[site_identity_title_link_color]', array(
 	'label' 				=> __('Link Color', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_link_colors()
 ));
@@ -113,7 +113,7 @@ $wp_customize->add_setting('secretum[site_identity_title_link_hover_color]' , ar
 // Control :: Link Hover Color
 $wp_customize->add_control('secretum[site_identity_title_link_hover_color]', array(
 	'label' 				=> __('Link Hover Color', 'secretum'),
-	'section' 				=> 'secretum_site_identity_title',
+	'section' 				=> 'secretum_site_identity_title_section',
 	'type' 					=> 'select',
 	'choices' 				=> secretum_customizer_link_hover_colors()
 ));

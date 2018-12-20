@@ -19,7 +19,7 @@ $wp_customize->add_setting('secretum[comments_older]', array(
 $wp_customize->add_control('secretum[comments_older]', array(
 	'label' 			=> __('Comment Nav Older Comments', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -36,7 +36,7 @@ $wp_customize->add_setting('secretum[comments_newer]', array(
 $wp_customize->add_control('secretum[comments_newer]', array(
 	'label' 			=> __('Comment Nav Newer Comments', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -53,7 +53,7 @@ $wp_customize->add_setting('secretum[comments_title_single]', array(
 $wp_customize->add_control('secretum[comments_title_single]', array(
 	'label' 			=> __('Comments Title', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -70,7 +70,7 @@ $wp_customize->add_setting('secretum[comments_title_thought]', array(
 $wp_customize->add_control('secretum[comments_title_thought]', array(
 	'label' 			=> __('Comments Title Single Comment', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -87,7 +87,7 @@ $wp_customize->add_setting('secretum[comments_title_thoughts]', array(
 $wp_customize->add_control('secretum[comments_title_thoughts]', array(
 	'label' 			=> __('Comments Title Multiple Comments', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -104,7 +104,7 @@ $wp_customize->add_setting('secretum[comments_closed]', array(
 $wp_customize->add_control('secretum[comments_closed]', array(
 	'label' 			=> __('Comments Closed', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -121,7 +121,7 @@ $wp_customize->add_setting('secretum[comments_required]', array(
 $wp_customize->add_control('secretum[comments_required]', array(
 	'label' 			=> __('Indicates Required Field', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -138,7 +138,7 @@ $wp_customize->add_setting('secretum[commenter_name]', array(
 $wp_customize->add_control('secretum[commenter_name]', array(
 	'label' 			=> __('Comment Form Name Label', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -155,7 +155,7 @@ $wp_customize->add_setting('secretum[commenter_email]', array(
 $wp_customize->add_control('secretum[commenter_email]', array(
 	'label' 			=> __('Comment Form Email Label', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -172,7 +172,7 @@ $wp_customize->add_setting('secretum[commenter_website]', array(
 $wp_customize->add_control('secretum[commenter_website]', array(
 	'label' 			=> __('Comment Form Website Label', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -189,7 +189,7 @@ $wp_customize->add_setting('secretum[commenter_comment]', array(
 $wp_customize->add_control('secretum[commenter_comment]', array(
 	'label' 			=> __('Comment Form Comment Label', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -206,7 +206,7 @@ $wp_customize->add_setting('secretum[comment_privacy]', array(
 $wp_customize->add_control('secretum[comment_privacy]', array(
 	'label' 			=> __('Comment Email Privacy Notice', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -223,7 +223,7 @@ $wp_customize->add_setting('secretum[comment_add_title]', array(
 $wp_customize->add_control('secretum[comment_add_title]', array(
 	'label' 			=> __('Add Comment Button Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -240,6 +240,6 @@ $wp_customize->add_setting('secretum[comment_post_label]', array(
 $wp_customize->add_control('secretum[comment_post_label]', array(
 	'label' 			=> __('Post Comment Button Text', 'secretum'),
 	'description' 		=> 'Text Only.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

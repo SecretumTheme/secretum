@@ -19,7 +19,7 @@ $wp_customize->add_setting('secretum[continue_reading_text]', array(
 $wp_customize->add_control('secretum[continue_reading_text]', array(
 	'label' 			=> __('Archive Continue Reading Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -36,6 +36,6 @@ $wp_customize->add_setting('secretum[read_more_text]', array(
 $wp_customize->add_control('secretum[read_more_text]', array(
 	'label' 			=> __('Entry Read More <!--more--> Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

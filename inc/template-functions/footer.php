@@ -15,23 +15,13 @@
 if (!function_exists('secretum_footer_wrapper')) {
 	function secretum_footer_wrapper()
 	{
-		// Get Mod
-		$background_color_mod = secretum_mod('footer_background_color', 'attr', true);
+		// Classes
+		$background = secretum_mod('footer_wrapper_background_color', 'attr', true);
+		$border = secretum_mod('footer_wrapper_border_type', 'attr', true) . secretum_mod('footer_wrapper_border_color', 'attr', true);
+		$margin = secretum_mod('footer_wrapper_margin_top', 'attr', true) . secretum_mod('footer_wrapper_margin_bottom', 'attr', true);
+		$padding = secretum_mod('footer_wrapper_padding_y', 'attr', true);
 
-		// Get Mod
-		$border_color_mod = secretum_mod('footer_border_color') ? ' border-top' . secretum_mod('footer_border_color', 'attr', true) : '';
-
-		// Get Mod
-		$margin_mod = secretum_mod('footer_wrapper_margin', 'attr', true);
-
-		// Get Mod
-		$padding_mod = secretum_mod('footer_wrapper_padding', 'attr', true);
-
-		// Build Class String
-		$class_string = $background_color_mod . $border_color_mod . $margin_mod . (!empty($padding_mod) ? $padding_mod : ' py-5');
-
-		// Echo Class String
-		return apply_filters('secretum_footer_wrapper', $class_string, 10, 1);
+		return apply_filters('secretum_footer_wrapper', $background . $border . $margin . $padding, 10, 1);
 	}
 }
 
@@ -44,13 +34,35 @@ if (!function_exists('secretum_footer_wrapper')) {
 if (!function_exists('secretum_footer_container')) {
 	function secretum_footer_container()
 	{
-		// Get Mod
-		$padding_mod = secretum_mod('footer_container_padding', 'attr', true);
+		// Classes
+		$container = secretum_mod('footer_container_type', 'attr', false);
+		$background = secretum_mod('footer_container_background_color', 'attr', true);
+		$border = secretum_mod('footer_container_border_type', 'attr', true) . secretum_mod('footer_container_border_color', 'attr', true);
+		$padding = secretum_mod('footer_container_padding_x', 'attr', true) . secretum_mod('footer_container_padding_y', 'attr', true);
 
-		// Build Class String
-		$class_string = (secretum_mod('footer_container')) ? '-fluid ' . $padding_mod : $padding_mod;
-
-		// Echo Class String
-		return apply_filters('secretum_footer_container', $class_string, 10, 1);
+		return apply_filters('secretum_footer_container', $container . $background . $border . $padding, 10, 1);
 	}
 }
+
+
+/**
+ * Font/Text/Link Classes
+ *
+ * @return string Pre-sanitized string of class names
+ */
+if (!function_exists('secretum_footer_textuals')) {
+	function secretum_footer_textuals()
+	{
+		// Classes
+		$font_size = secretum_mod('footer_font_size', 'attr', true);
+		$font_family = secretum_mod('footer_font_family', 'attr', true);
+		$font_style = secretum_mod('footer_font_style', 'attr', true);
+		$text_transform = secretum_mod('footer_transform', 'attr', true);
+		$text_color = secretum_mod('footer_text_color', 'attr', true);
+		$link_color = secretum_mod('footer_link_color', 'attr', true);
+		$link_hover_color = secretum_mod('footer_link_hover_color', 'attr', true);
+
+		return apply_filters('secretum_footer_fonts', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1);
+	}
+}
+

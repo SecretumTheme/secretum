@@ -15,22 +15,53 @@
 if (!function_exists('secretum_sidebar_wrapper')) {
 	function secretum_sidebar_wrapper()
 	{
-		// Get Mod
-		$background_color_mod = secretum_mod('sidebar_background_color', 'attr', true);
+		// Classes
+		$background = secretum_mod('sidebar_wrapper_background_color', 'attr', true);
+		$border = secretum_mod('sidebar_wrapper_border_type', 'attr', true) . secretum_mod('sidebar_wrapper_border_color', 'attr', true);
+		$margin = secretum_mod('sidebar_wrapper_margin_top', 'attr', true) . secretum_mod('sidebar_wrapper_margin_bottom', 'attr', true);
+		$padding = secretum_mod('sidebar_wrapper_padding_y', 'attr', true);
 
-		// Get Mod
-		$margin_bottom_mod = secretum_mod('sidebar_wrapper_margin_bottom', 'attr', true);
+		return apply_filters('secretum_sidebar_wrapper', $background . $border . $margin . $padding, 10, 1);
+	}
+}
 
-		// Get Mod
-		$margin_top_mod = secretum_mod('sidebar_wrapper_margin_top', 'attr', true);
 
-		// Get Mod
-		$padding_mod = secretum_mod('sidebar_wrapper_padding', 'attr', true);
+/**
+ * Sidebar Container Classes
+ *
+ * @return string Pre-sanitized string of class names
+ */
+if (!function_exists('secretum_sidebar_container')) {
+	function secretum_sidebar_container()
+	{
+		// Classes
+		$background = secretum_mod('sidebar_container_background_color', 'attr', true);
+		$border = secretum_mod('sidebar_container_border_type', 'attr', true) . secretum_mod('sidebar_container_border_color', 'attr', true);
+		$padding = secretum_mod('sidebar_container_padding_x', 'attr', true) . secretum_mod('sidebar_container_padding_y', 'attr', true);
 
-		// Build Class String
-		$class_string = $background_color_mod . $margin_bottom_mod . $margin_top_mod . (!empty($padding_mod) ? $padding_mod : '');
+		return apply_filters('secretum_sidebar_container', $background . $border . $padding, 10, 1);
+	}
+}
 
-		return apply_filters('secretum_sidebar_wrapper', $class_string, 10, 1);
+
+/**
+ * Font/Text/Link Classes
+ *
+ * @return string Pre-sanitized string of class names
+ */
+if (!function_exists('secretum_sidebar_textuals')) {
+	function secretum_sidebar_textuals()
+	{
+		// Classes
+		$font_size = secretum_mod('sidebar_font_size', 'attr', true);
+		$font_family = secretum_mod('sidebar_font_family', 'attr', true);
+		$font_style = secretum_mod('sidebar_font_style', 'attr', true);
+		$text_transform = secretum_mod('sidebar_text_transform', 'attr', true);
+		$text_color = secretum_mod('sidebar_text_color', 'attr', true);
+		$link_color = secretum_mod('sidebar_link_color', 'attr', true);
+		$link_hover_color = secretum_mod('sidebar_link_hover_color', 'attr', true);
+
+		return apply_filters('secretum_sidebar_text_fonts', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1);
 	}
 }
 

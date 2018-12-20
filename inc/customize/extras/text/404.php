@@ -19,7 +19,7 @@ $wp_customize->add_setting('secretum[error_document_title]', array(
 $wp_customize->add_control('secretum[error_document_title]', array(
 	'label' 			=> __('Error Document Title', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -36,6 +36,6 @@ $wp_customize->add_setting('secretum[error_document_text]', array(
 $wp_customize->add_control('secretum[error_document_text]', array(
 	'label' 			=> __('Error Document Notice Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

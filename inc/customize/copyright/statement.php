@@ -7,15 +7,6 @@
  */
 
 
-/**
- * Section :: Copyright Statement
- */
-$wp_customize->add_section('secretum_copyright_statement' , array(
-	'panel' 	=> 'secretum_copyright',
-    'title' 	=> __('Copyright Statement', 'secretum'),
-    'priority' 	=> 10,
-));
-
 // Setting :: Copyright Text
 $wp_customize->add_setting('secretum[copyright_text]' , array(
 	'default' 			=> $default['copyright_text'],
@@ -28,7 +19,7 @@ $wp_customize->add_setting('secretum[copyright_text]' , array(
 $wp_customize->add_control('secretum[copyright_text]', array(
 	'label' 		=> __('Statement', 'secretum'),
 	'description' 	=> sprintf(__('HTML Allowed. Example: &#x3C;p&#x3E;Copyright %s &#x26;copy; &#x3C;a href=&#x22;%s&#x22; target=&#x22;_self&#x22;&#x3E;%s&#x3C;/a&#x3E; - All Rights Reserved.&#x3C;/p&#x3E;', 'secretum'), date("Y", time()), esc_url(get_home_url('/')), get_bloginfo('name')),
-	'section' 		=> 'secretum_copyright_statement',
+	'section' 		=> 'secretum_copyright_statement_section',
 	'type' 			=> 'textarea'
 ));
 

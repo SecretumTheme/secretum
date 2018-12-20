@@ -100,6 +100,9 @@ add_filter('body_class', function($classes) {
 		$classes[] = 'secretum-front-page';
 	}
 
+	$classes[] = secretum_globals_colors();
+	$classes[] = secretum_globals_fonts();
+
 	return $classes;
 }, 20, 2);
 

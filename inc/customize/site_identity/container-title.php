@@ -7,17 +7,6 @@
  */
 
 
-/**
- * Section :: Container
- */
-$wp_customize->add_section('secretum_site_identity_title_container', array(
-	'panel' 			=> 'secretum_site_identity',
-    'title' 			=> __('Title Container', 'secretum'),
-    'description' 		=> __('Header Container > <b>Title Container</b>', 'secretum'),
-    'priority' 			=> 10,
-));
-
-
 // Setting :: Background Color
 $wp_customize->add_setting('secretum[site_identity_title_container_background_color]' , array(
 	'sanitize_callback' => 'sanitize_key',
@@ -29,7 +18,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_background_co
 // Control :: Background Color
 $wp_customize->add_control('secretum[site_identity_title_container_background_color]', array(
 	'label' 			=> __('Background Color', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_background_colors()
 ));
@@ -46,7 +35,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_margin_x]', a
 // Control :: Margin - LEFT & RIGHT
 $wp_customize->add_control('secretum[site_identity_title_container_margin_x]', array(
 	'label' 			=> __('Margin - LEFT & RIGHT', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_margin_left_right()
 ));
@@ -63,7 +52,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_margin_y]', a
 // Control :: Margin - TOP & BOTTOM
 $wp_customize->add_control('secretum[site_identity_title_container_margin_y]', array(
 	'label' 			=> __('Margin - TOP & BOTTOM', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_margin_top_bottom()
 ));
@@ -80,7 +69,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_padding_x]', 
 // Control :: Padding - LEFT & RIGHT
 $wp_customize->add_control('secretum[site_identity_title_container_padding_x]', array(
 	'label' 			=> __('Padding - LEFT & RIGHT', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_padding_left_right()
 ));
@@ -97,7 +86,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_padding_y]', 
 // Control :: Padding - TOP & BOTTOM
 $wp_customize->add_control('secretum[site_identity_title_container_padding_y]', array(
 	'label' 			=> __('Padding - TOP & BOTTOM', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_padding_top_bottom()
 ));
@@ -114,7 +103,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_border_type]'
 // Control :: Border Type
 $wp_customize->add_control('secretum[site_identity_title_container_border_type]', array(
 	'label' 			=> __('Border Type', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_border()
 ));
@@ -131,7 +120,7 @@ $wp_customize->add_setting('secretum[site_identity_title_container_border_color]
 // Control :: Border Color
 $wp_customize->add_control('secretum[site_identity_title_container_border_color]', array(
 	'label' 			=> __('Border Color', 'secretum'),
-	'section' 			=> 'secretum_site_identity_title_container',
+	'section' 			=> 'secretum_site_identity_title_container_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_customizer_border_colors()
 ));

@@ -7,7 +7,7 @@
  */
 
 // Show Desc If Allowed && Ignore If Left/Right Primary Nav In Use
-if (!secretum_mod('header_text_description_status') && (!has_nav_menu('secretum-navbar-primary-left') && !has_nav_menu('secretum-navbar-primary-right'))) {
+if (!secretum_mod('site_identity_tagline_status') && (!has_nav_menu('secretum-navbar-primary-left') && !has_nav_menu('secretum-navbar-primary-right'))) {
 	$description = get_bloginfo('description', 'display');
 
 	if ($description) {

@@ -7,10 +7,10 @@
  */
 
 // If Active
-if(!secretum_mod('footer_status') && !secretum_mod('custom_footers') && (is_active_sidebar('footer-left') || is_active_sidebar('footer-center') || is_active_sidebar('footer-right'))) {
+if(!secretum_mod('footer_display_status') && !secretum_mod('custom_footers') && (is_active_sidebar('footer-left') || is_active_sidebar('footer-center') || is_active_sidebar('footer-right'))) {
 ?>
 <div class="wrapper footer<?php echo secretum_footer_wrapper(); ?>" id="wrapper-footer">
-	<div class="container<?php echo secretum_footer_container(); ?>">
+	<div class="container<?php echo secretum_footer_container(); echo secretum_footer_textuals();?>">
 		<div class="row">
 			<?php if (is_active_sidebar('footer-left')) { ?>
 				<div class="col-md">

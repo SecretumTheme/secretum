@@ -101,6 +101,22 @@ namespace Secretum\Customizer {
 
 
 	/**
+	 * Reset Customzer Settings
+	 *
+	 * @param string $value Must equal reset to delete option
+	 * @return false
+	 */
+	function reset($value = '')
+	{
+		if (!empty($value) && $value == 'RESET') {
+			// Delete Settings
+			delete_option('secretum');
+		}
+		return '';
+	}
+
+
+	/**
 	 * Sanitize Pages Dropdown Menu
 	 *
 	 * @see /inc/customizer/frontpage/settings.php
@@ -109,7 +125,7 @@ namespace Secretum\Customizer {
 	 * @param array $setting
 	 * @return int Valid page id
 	 */
-	function sanitize_dropdown_pages($page_id, $setting)
+	function sanitizeDropdownPages($page_id, $setting)
 	{
 		// Retrieve the post status based on the Page ID
 		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
@@ -124,7 +140,7 @@ namespace Secretum\Customizer {
 	 * @param string $string Script String
 	 * @return string Cleaned Script
 	 */
-	function sanitize_script($string)
+	function sanitizeScript($string)
 	{
 		return json_encode($string);
 	}
@@ -138,7 +154,7 @@ namespace Secretum\Customizer {
 	 * @param string $string Script String
 	 * @return string Cleaned Script
 	 */
-	function escape_script($string)
+	function escapeScript($string)
 	{
 		return esc_textarea(json_decode($string));
 	}
@@ -152,7 +168,7 @@ namespace Secretum\Customizer {
 	 * @param string $string HTML String
 	 * @return string Cleaned HTML
 	 */
-	function sanitize_html($string)
+	function sanitizeHtml($string)
 	{
 		// Sanitize content for allowed HTML tags
 		$data = wp_kses_post($string);
@@ -168,7 +184,7 @@ namespace Secretum\Customizer {
 	 * @param string $string HTML String
 	 * @return string Cleaned HTML
 	 */
-	function sanitize_all($string)
+	function sanitizeAll($string)
 	{
 		// Strip all HTML tags including script and style
 		$data = wp_strip_all_tags($string, true);
@@ -184,7 +200,7 @@ namespace Secretum\Customizer {
 	 * @param bool $checked If value is selected
 	 * @return bool Return true if selected
 	 */
-	function sanitize_bool($checked)
+	function sanitizeBool($checked)
 	{
 		return ((isset($checked) && '1' == $checked) ? '1' : '0');
 	}
@@ -196,24 +212,8 @@ namespace Secretum\Customizer {
 	 * @param bool $checked If value is selected
 	 * @return bool Return true if selected
 	 */
-	function sanitize_checkbox($checked)
+	function sanitizeCheckbox($checked)
 	{
 		return ((isset($checked) && '1' == $checked) ? '1' : false);
-	}
-
-
-	/**
-	 * Reset Customzer Settings
-	 *
-	 * @param string $value Must equal reset to delete option
-	 * @return false
-	 */
-	function customizer_reset($value = '')
-	{
-		// Delete Secretum Settings
-		if (!empty($value) && $value == 'RESET') {
-			delete_option('secretum');
-		}
-		return '';
 	}
 }

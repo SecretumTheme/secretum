@@ -29,7 +29,7 @@ $wp_customize->add_setting('secretum[enqueue_theme_colors]', array(
 $wp_customize->add_control('secretum[enqueue_theme_colors]', array(
 	'label' 			=> __('Theme Color', 'secretum'),
 	'description' 		=> __('Select a theme color below (a stylesheet) to use as your primary style, changing the base colors of the theme.', 'secretum'),
-	'section' 			=> 'secretum_enqueue',
+	'section' 			=> 'secretum_enqueue_section',
 	'type' 				=> 'select',
 	'choices' 			=> secretum_theme_colors()
 ));
@@ -47,6 +47,6 @@ $wp_customize->add_setting('secretum[enqueue_contact_pageids]', array(
 $wp_customize->add_control('secretum[enqueue_contact_pageids]', array(
 	'label' 			=> __('Contact Form Page IDs', 'secretum'),
 	'description' 		=> __('Make contact form plugins load scripts and styles on set pages, rather than the entire website. Enter a comma separated list of page IDs to load popular contact form styles and scripts. Example: 90,1001', 'secretum'),
-	'section' 			=> 'secretum_enqueue',
+	'section' 			=> 'secretum_enqueue_section',
 	'type' 				=> 'text'
 ));

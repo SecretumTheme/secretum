@@ -7,8 +7,7 @@
  */
 
 
-
-if (!secretum_mod('logo_identity_status')) {
+if (!secretum_mod('site_identity_branding_status')) {
 	// Get Current Blog ID
 	$blog_id = get_current_blog_id();
 
@@ -19,7 +18,7 @@ if (!secretum_mod('logo_identity_status')) {
 	}
 
 	// Has Custom Logo
-	if (has_custom_logo()) {
+	if (has_custom_logo() && !secretum_mod('site_identity_logo_status')) {
 		// Set Max Width Inline CSS
 		$maxwidth = secretum_mod('custom_logo_maxwidth') ? secretum_mod('custom_logo_maxwidth', 'int', false) : '';
 		$inlinecss = !empty($maxwidth) ? ' style="max-width:' . $maxwidth . 'px;height:auto !important;"' : '';
@@ -36,11 +35,8 @@ if (!secretum_mod('logo_identity_status')) {
 		    ))
 		);
 
-		// Display Site Description
-		get_template_part('template-parts/header/site-description');
-
 	// Front-page or Home & No Custom Logo
-	} elseif (is_front_page() && is_home() && get_theme_mod('header_text')) {
+	} elseif (is_front_page() && is_home() && !secretum_mod('site_identity_logo_status')) {
 		// Build Heading Logo Link
 		echo sprintf('<h1 class="navbar-brand%1$s"><a href="%2$s" rel="home" itemprop="url">%3$s</a></h1>',
 		    secretum_site_identity_title_container() . secretum_site_identity_title_textuals(),
@@ -48,21 +44,18 @@ if (!secretum_mod('logo_identity_status')) {
 		    esc_attr(get_bloginfo('name', 'display'))
 		);
 
-		// Display Site Description
-		get_template_part('template-parts/header/site-description');
-
 	// Not Front-page & No Custom Logo
-	} elseif (get_theme_mod('header_text')) {
+	} elseif (!secretum_mod('site_identity_logo_status')) {
 		// Build Text Link
 		echo sprintf('<a class="navbar-brand%1$s" href="%2$s" rel="home" itemprop="url">%3$s</a>',
 		    secretum_site_identity_title_container() . secretum_site_identity_title_textuals(),
 		    esc_url(get_home_url('/')),
 		    esc_attr(get_bloginfo('name', 'display'))
 		);
-
-		// Display Site Description
-		get_template_part('template-parts/header/site-description');
 	}
+
+	// Display Site Description
+	get_template_part('template-parts/header/site-description');
 
 	// Restore Current Website
 	if (isset($switched)) {

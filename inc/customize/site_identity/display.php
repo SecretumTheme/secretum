@@ -7,27 +7,52 @@
  */
 
 
-/**
- * Section :: Display Status
- */
-$wp_customize->add_section('secretum_site_identity_display' , array(
-	'panel' 			=> 'secretum_site_identity',
-    'title' 			=> __('Display Status', 'secretum'),
-    'priority' 			=> 10,
+// Setting :: Hide Brand Logo / Tagline Area
+$wp_customize->add_setting('secretum[site_identity_branding_status]', array(
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
+	'transport' 		=> 'refresh',
+	'type' 				=> 'option',
+	'default' 			=> ''
 ));
 
-// Setting :: Display Text Title and Tagline
-$wp_customize->add_setting('header_text', array(
-	'theme_supports'    => array('custom-logo', 'header-text'),
-	'default'           => 1,
-	'sanitize_callback' => 'absint',
+// Control :: Hide Brand Logo / Tagline Area
+$wp_customize->add_control('secretum[site_identity_branding_status]', array(
+	'label' 		=> __('Hide Brand Logo / Tagline Area', 'secretum'),
+	'section' 		=> 'secretum_site_identity_section',
+	'type' 			=> 'checkbox',
+    'priority' 		=> 10,
 ));
 
-// Control :: Display Text Title and Tagline
-$wp_customize->add_control('header_text', array(
-	'label' 		=> __('Display Text Title and Tagline', 'secretum'),
-	'description' 	=> __('Setting ignored if graphic logo used.', 'secretum'),
-	'section' 		=> 'secretum_site_identity_display',
+
+// Setting :: Hide Brand Text / Logo
+$wp_customize->add_setting('secretum[site_identity_logo_status]', array(
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
+	'transport' 		=> 'refresh',
+	'type' 				=> 'option',
+	'default' 			=> ''
+));
+
+// Control :: Hide Brand Text / Logo
+$wp_customize->add_control('secretum[site_identity_logo_status]', array(
+	'label' 		=> __('Hide Tagline / Desc Text', 'secretum'),
+	'section' 		=> 'secretum_site_identity_section',
+	'type' 			=> 'checkbox',
+    'priority' 		=> 10,
+));
+
+
+// Setting :: Hide Tagline / Desc Text
+$wp_customize->add_setting('secretum[site_identity_tagline_status]', array(
+	'sanitize_callback' => 'secretum_sanitize_checkbox',
+	'transport' 		=> 'refresh',
+	'type' 				=> 'option',
+	'default' 			=> ''
+));
+
+// Control :: Hide Tagline / Desc Text
+$wp_customize->add_control('secretum[site_identity_tagline_status]', array(
+	'label' 		=> __('Hide Tagline / Desc Text', 'secretum'),
+	'section' 		=> 'secretum_site_identity_section',
 	'type' 			=> 'checkbox',
     'priority' 		=> 10,
 ));

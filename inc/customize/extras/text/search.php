@@ -18,7 +18,7 @@ $wp_customize->add_setting('secretum[search_button_placeholder]', array(
 // Control :: Search Button Placeholder Text
 $wp_customize->add_control('secretum[search_button_placeholder]', array(
 	'label' 			=> __('Search Button Placeholder Text', 'secretum'),
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -34,7 +34,7 @@ $wp_customize->add_setting('secretum[search_button_text]', array(
 // Control :: Search Button Text
 $wp_customize->add_control('secretum[search_button_text]', array(
 	'label' 			=> __('Search Button Text', 'secretum'),
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));
 
@@ -51,6 +51,6 @@ $wp_customize->add_setting('secretum[search_results_text]', array(
 $wp_customize->add_control('secretum[search_results_text]', array(
 	'label' 			=> __('Search Results Text', 'secretum'),
 	'description' 		=> 'HTML Allowed.',
-	'section' 			=> 'secretum_theme_text',
+	'section' 			=> 'secretum_theme_text_section',
 	'type' 				=> 'text'
 ));

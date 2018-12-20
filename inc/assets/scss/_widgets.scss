@@ -1,10 +1,5 @@
 /**
  * Secretum - Widget Styling
- *
- * INDEX
- * - Global Widgets 	.widget
- * - Sidebar Widgets 	.sidebar .widget
- * - Footer Widgets 	.footer .widget
  */
 
 // Global Widgets
@@ -346,9 +341,7 @@
 	// Widget Titles
 	h2.widget-title,
 	h3.widget-title,
-	h4.widget-title {
-	    color: $sidebar-widget-title-color;
-	}
+	h4.widget-title {}
 
 	// Lines Between Items
 	li.menu-item {
@@ -389,9 +382,7 @@
 
     h2.widget-title,
     h3.widget-title,
-    h4.widget-title {
-        color: $footer-widget-title-color;
-    }
+    h4.widget-title {}
 
 	// Tag Cloud
 	.tagcloud {
