@@ -39,7 +39,7 @@ if (!secretum_mod('primary_nav_status') && $secretum_menu_status) {
 		'menu_id' 			=> 'main-menu',
 		'divider'			=> secretum_primary_nav_divider_classes(),
 		'walker' 			=> new \Secretum\Navwalker(),
-	    'fallback_cb'       => secretum_primary_nav_fallback(),
+	    'fallback_cb'       => 'secretum_primary_nav_fallback',
 	    'echo'				=> true
 	));
 ?>

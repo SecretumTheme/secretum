@@ -13,12 +13,8 @@
 if (!function_exists('secretum_primary_nav_fallback')) {
 	function secretum_primary_nav_fallback()
 	{
-		echo '<ul id="main-menu" class="navbar-nav ml-auto py-3"><li class="menu-item">';
-		echo '<a href="' . admin_url('nav-menus.php') . '">' . apply_filters('secretum_create_menu_text', __('Create Menu', 'secretum')) . '</a>';
-		echo '</li></ul>';
-
+		echo '<ul id="main-menu" class="navbar-nav ml-auto py-3"><li class="menu-item"><a href="' . admin_url('nav-menus.php') . '">' . apply_filters('secretum_create_menu_text', __('Create Menu', 'secretum')) . '</a></li></ul>';
 	}
-
 }
 
 
@@ -28,12 +24,8 @@ if (!function_exists('secretum_primary_nav_fallback')) {
 if (!function_exists('secretum_account_menu_fallback')) {
 	function secretum_account_menu_fallback()
 	{
-		echo '<ul id="account-menu"><li class="menu-item">';
-		echo '<a href="' . admin_url('nav-menus.php') . '">' . apply_filters('secretum_create_menu_text', __('Create Menu', 'secretum')) . '</a>';
-		echo '</li></ul>';
-
+		echo '<ul id="account-menu"><li class="menu-item"><a href="' . admin_url('nav-menus.php') . '">' . apply_filters('secretum_create_menu_text', __('Create Menu', 'secretum')) . '</a></li></ul>';
 	}
-
 }
 
 
