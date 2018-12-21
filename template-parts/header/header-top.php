@@ -14,8 +14,8 @@ if (secretum_mod('header_top_status') && is_active_sidebar('sidebar-header-top')
 // If Header Top Status Active & Has Navs
 } elseif (secretum_mod('header_top_status') && (has_nav_menu('secretum-navbar-top-left') || has_nav_menu('secretum-navbar-top-right'))) {
 ?>
-<nav class="wrapper<?php echo secretum_header_top_wrapper(); ?> navbar navbar-expand-lg<?php echo secretum_header_top_wrapper(); ?>">
-<div class="container<?php echo secretum_header_top_container(); ?>">
+<nav class="wrapper navbar navbar-expand-lg<?php echo secretum_header_top_wrapper(); ?>">
+<div class="container<?php echo secretum_header_top_container(); echo secretum_header_top_text_alignment(); ?>">
 <?php
 	// Display Top Left Nav
 	wp_nav_menu(array(

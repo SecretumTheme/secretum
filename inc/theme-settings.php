@@ -22,12 +22,12 @@ if (! isset($content_width)) {
  */
 add_action('after_setup_theme', function() {
 	// Load Theme Translated Strings
-	load_theme_textdomain('secretum', SECRETUM_THEME_DIR . '/languages');
+	load_theme_textdomain('secretum', SECRETUM_THEME_DIR . '/lang');
 
 	// Register Navigation Menus
 	register_nav_menus(array(
-		'secretum-navbar-primary-above' => __('Primary Navbar Above Header', 'secretum'),
 		'secretum-navbar-primary-below' => __('Primary Navbar Below Header', 'secretum'),
+		'secretum-navbar-primary-above' => __('Primary Navbar Above Header', 'secretum'),
 		'secretum-navbar-primary-left' 	=> __('Primary Navbar Left of Logo', 'secretum'),
 		'secretum-navbar-primary-right' => __('Primary Navbar Right of Logo', 'secretum'),
 		'secretum-navbar-top-left' 		=> __('Top Left Textual Menu', 'secretum'),

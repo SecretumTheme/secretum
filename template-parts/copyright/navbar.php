@@ -7,7 +7,7 @@
  */
 
 // If Nav Menu Has Items
-if (has_nav_menu('secretum-navbar-copyright')) {
+if (has_nav_menu('secretum-navbar-copyright') && !secretum_mod('copyright_nav_status')) {
 ?>
 <div class="col-md">
 <nav class="navbar navbar-expand<?php echo secretum_copyright_nav_wrapper(); ?>">

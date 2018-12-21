@@ -51,16 +51,6 @@ $customizer->select(
 // Select
 $customizer->select(
     'header_top_wrapper',
-    'header_top_wrapper_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['header_top_wrapper_padding_x'],
-    secretum_customizer_padding_left_right()
-);
-
-// Select
-$customizer->select(
-    'header_top_wrapper',
     'header_top_wrapper_padding_y',
     __('Padding - Top & Bottom', 'secretum'),
     '',
@@ -178,7 +168,7 @@ $customizer->select(
 
 // Textuals
 $customizer->section(
-    'header_top',
+    'header_top_textuals',
     'header_top',
     __('Textuals', 'secretum'),
     __('Customize fonts, text and link colors.', 'secretum')
@@ -196,71 +186,71 @@ $customizer->select(
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_font_family',
+    'header_top_textuals',
+    'header_top_textual_font_family',
     __('Font Family', 'secretum'),
     '',
-    $default['header_top_font_family'],
+    $default['header_top_textual_font_family'],
     secretum_customizer_font_families()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_font_size',
+    'header_top_textuals',
+    'header_top_textual_font_size',
     __('Font Size', 'secretum'),
     '',
-    $default['header_top_font_size'],
+    $default['header_top_textual_font_size'],
     secretum_customizer_font_sizes()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_font_style',
+    'header_top_textuals',
+    'header_top_textual_font_style',
     __('Font Style', 'secretum'),
     '',
-    $default['header_top_font_style'],
+    $default['header_top_textual_font_style'],
     secretum_customizer_font_styles()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_text_transform',
+    'header_top_textuals',
+    'header_top_textual_text_transform',
     __('Text Transform', 'secretum'),
     '',
-    $default['header_top_text_transform'],
+    $default['header_top_textual_text_transform'],
     secretum_customizer_text_transform()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_text_color',
+    'header_top_textuals',
+    'header_top_textual_text_color',
     __('Text Color', 'secretum'),
     '',
-    $default['header_top_text_color'],
+    $default['header_top_textual_text_color'],
     secretum_customizer_text_colors()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_link_color',
+    'header_top_textuals',
+    'header_top_textual_link_color',
     __('Link Color', 'secretum'),
     '',
-    $default['header_top_link_color'],
+    $default['header_top_textual_link_color'],
     secretum_customizer_link_colors()
 );
 
 // Select
 $customizer->select(
-    'header_top',
-    'header_top_link_hover_color',
+    'header_top_textuals',
+    'header_top_textual_link_hover_color',
     __('Link Hover Color', 'secretum'),
     '',
-    $default['header_top_link_hover_color'],
+    $default['header_top_textual_link_hover_color'],
     secretum_customizer_link_hover_colors()
 );
 

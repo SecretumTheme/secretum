@@ -3,29 +3,7 @@
  */
 
 // Primary Sidebar Container
-.sidebar {
-	// Documentation Sidebar
-	&.sidebar-docs a,
-	&.sidebar-docs a:focus {
-        outline: none !important;
-    }
-
-	// Documentation ToC
-	nav[data-toggle='toc'] {
-		top: 42px;
-	}
-
-	@media (max-width: 768px) {
-		nav[data-toggle='toc'] {
-			margin-bottom: 42px;
-			position: static;
-		}
-
-		nav[data-toggle='toc'] .nav .nav {
-			display: block;
-		}
-	}
-}
+.sidebar {}
 
 // Custom Left Sidebar Container
 .sidebar#sidebar-left {}

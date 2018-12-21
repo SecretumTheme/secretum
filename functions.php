@@ -13,7 +13,7 @@ define('SECRETUM_DIR', 				dirname(__FILE__));
 define('SECRETUM_BASE_URL', 		esc_url(home_url()));
 define('SECRETUM_INC', 				SECRETUM_DIR . '/inc');
 
-define('SECRETUM_THEME_VERSION', 	'0.0.9');
+define('SECRETUM_THEME_VERSION', 	'0.0.10');
 define('SECRETUM_WP_MIN_VERSION', 	'3.8');
 
 define('SECRETUM_THEME_FILE', 		__FILE__);
@@ -224,8 +224,8 @@ add_action('customize_register', function($wp_customize) {
  * Secretum Updater Plugin
  */
 if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
-	include_once(SECRETUM_UPDATER);
-	$secretum_updater = \Puc_v4_Factory::buildUpdateChecker(
+    if (!class_exists('Puc_v4p4_Autoloader')) { include_once(SECRETUM_UPDATER); }
+	$secretum_theme_updater = \Puc_v4_Factory::buildUpdateChecker(
 		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
 		SECRETUM_THEME_FILE,
 		'secretum'

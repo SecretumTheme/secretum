@@ -35,13 +35,16 @@ if (!function_exists('secretum_primary_nav_container')) {
 	function secretum_primary_nav_container()
 	{
 		// Classes
-		$container = secretum_mod('primary_nav_container', 'attr', false);
+		$container = secretum_mod('primary_nav_container_type', 'attr', false);
 		$background = secretum_mod('primary_nav_container_background_color', 'attr', true);
 		$border = secretum_mod('primary_nav_container_border_type', 'attr', true) . secretum_mod('primary_nav_container_border_color', 'attr', true);
+		$margin = secretum_mod('primary_nav_container_margin_x', 'attr', true) . secretum_mod('primary_nav_container_margin_y', 'attr', true);
 		$padding = secretum_mod('primary_nav_container_padding_x', 'attr', true) . secretum_mod('primary_nav_container_padding_y', 'attr', true);
-		$font = secretum_mod('primary_nav_font_size', 'attr', true) . secretum_mod('primary_nav_font_family', 'attr', true) . secretum_mod('primary_nav_font_style', 'attr', true) . secretum_mod('primary_nav_text_transform', 'attr', true);
+		$textuals = secretum_mod('primary_nav_textual_text_transform', 'attr', true) . secretum_mod('primary_nav_textual_font_family', 'attr', true) . secretum_mod('primary_nav_textual_font_size', 'attr', true) . secretum_mod('primary_nav_textual_font_style', 'attr', true);
+		$text_color = secretum_mod('primary_nav_textual_text_color', 'attr', true);
+		$link_colors = secretum_mod('primary_nav_textual_link_color', 'attr', true) . secretum_mod('primary_nav_textual_link_hover_color', 'attr', true);
 
-		return apply_filters('secretum_primary_nav_container', $container . $background . $border . $padding . $font, 10, 1);
+		return apply_filters('secretum_primary_nav_container', $container . $background . $border . $margin . $padding . $textuals . $text_color . $link_colors, 10, 1);
 	}
 }
 

@@ -2181,11 +2181,7 @@ a.nav-link { text-decoration: none; }
 .header a.navbar-brand, .header .navbar-brand a:link { height: auto !important; padding: 0; margin: 0; max-width: 100%; text-decoration: none; }
 .header .navbar-brand img { width: 100%; }
 .header .site-description { margin: 0; padding: 0; }
-.sidebar.sidebar-docs a, .sidebar.sidebar-docs a:focus { outline: none !important; }
-.sidebar nav[data-toggle='toc'] { top: 42px; }
-@media (max-width: 768px) { .sidebar nav[data-toggle='toc'] { margin-bottom: 42px; position: static; }
-  .sidebar nav[data-toggle='toc'] .nav .nav { display: block; } }
-.widget h2.widget-title, .widget h3.widget-title, .widget h4.widget-title { font-size: 1.375rem; font-weight: bold; margin-bottom: 0.9375rem; padding-bottom: 0.3125rem; text-align: left; text-transform: uppercase; -ms-word-wrap: break-word; word-wrap: break-word; }
+.widget h2.widget-title, .widget h3.widget-title, .widget h4.widget-title { font-size: 1.375rem; font-weight: bold; margin-bottom: 0.9375rem; padding-bottom: 0.3125rem; text-transform: uppercase; -ms-word-wrap: break-word; word-wrap: break-word; }
 .widget h2.widget-title a:link, .widget h3.widget-title a:link, .widget h4.widget-title a:link { color: inherit; }
 .widget .mejs-container { clear: none; }
 .widget select { width: 100%; }
@@ -2880,7 +2876,7 @@ p.attachment a:hover img, p.attachment a:focus img { -webkit-filter: opacity(60%
 select.wpcf7 textarea:not([size]):not([multiple]), select.wpcf7 input:not([size]):not([multiple]) { height: calc(2.25rem + 2px); }
 select.wpcf7 textarea:focus::-ms-value, select.wpcf7 input:focus::-ms-value { color: #7f868e; background-color: #fcfcfc; }
 /*! Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License) */
-@font-face { font-family: 'FontAwesome'; src: url("../fonts/fontawesome-webfont.eot?v=4.7.0"); src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'FontAwesome'; src: url("../../fonts/fontawesome-webfont.eot?v=4.7.0"); src: url("../../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg"); font-weight: normal; font-style: normal; }
 .fa { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -15%; }
 .fa-2x { font-size: 2em; }

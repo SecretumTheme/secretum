@@ -40,8 +40,23 @@ if (!function_exists('secretum_footer_container')) {
 		$border = secretum_mod('footer_container_border_type', 'attr', true) . secretum_mod('footer_container_border_color', 'attr', true);
 		$margin = secretum_mod('footer_container_margin_x', 'attr', true) . secretum_mod('footer_container_margin_y', 'attr', true);
 		$padding = secretum_mod('footer_container_padding_x', 'attr', true) . secretum_mod('footer_container_padding_y', 'attr', true);
+		$textuals = secretum_footer_textuals();
+		$alignment = secretum_footer_text_alignment();
 
-		return apply_filters('secretum_footer_container', $container . $background . $border . $margin . $padding, 10, 1);
+		return apply_filters('secretum_footer_container', $container . $background . $border . $margin . $padding . $textuals . $alignment, 10, 1);
+	}
+}
+
+
+/**
+ * Alignment
+ *
+ * @return string Pre-sanitized class name
+ */
+if (!function_exists('secretum_footer_text_alignment')) {
+	function secretum_footer_text_alignment()
+	{
+		return apply_filters('secretum_footer_text_alignment', secretum_mod('footer_text_alignment', 'attr', true), 10, 1);
 	}
 }
 

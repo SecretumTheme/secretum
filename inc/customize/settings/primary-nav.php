@@ -114,6 +114,74 @@ $customizer->select(
     secretum_customizer_border_colors()
 );
 
+// Container
+$customizer->section(
+    'primary_nav_container',
+    'primary_nav',
+    __('Container', 'secretum'),
+    __('Customize the container within the header top wrapper.', 'secretum')
+);
+
+// Radio
+$customizer->radio(
+    'primary_nav_container',
+    'primary_nav_container_type',
+    __('Container Type', 'secretum'),
+    '',
+    $default['primary_nav_container_type'],
+    secretum_customizer_container_types()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_container',
+    'primary_nav_container_background_color',
+    __('Background Color', 'secretum'),
+    '',
+    $default['primary_nav_container_background_color'],
+    secretum_customizer_background_colors()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_container',
+    'primary_nav_container_margin_x',
+    __('Margin - Left & Right', 'secretum'),
+    '',
+    $default['primary_nav_container_margin_x'],
+    secretum_customizer_margin_left_right()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_container',
+    'primary_nav_container_margin_y',
+    __('Margin - Top & Bottom', 'secretum'),
+    '',
+    $default['primary_nav_container_margin_y'],
+    secretum_customizer_margin_top_bottom()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_container',
+    'primary_nav_container_padding_x',
+    __('Padding - Left & Right', 'secretum'),
+    '',
+    $default['primary_nav_container_padding_x'],
+    secretum_customizer_padding_left_right()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_container',
+    'primary_nav_container_padding_y',
+    __('Padding - Top & Bottom', 'secretum'),
+    '',
+    $default['primary_nav_container_padding_y'],
+    secretum_customizer_padding_top_bottom()
+);
+
 // Textuals
 $customizer->section(
     'primary_nav_textuals',
