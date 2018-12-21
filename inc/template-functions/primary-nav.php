@@ -10,8 +10,6 @@
 /**
  * Wrapper Classes
  *
- * @source inc/system/primary_nav/template-parts.php
- *
  * @return string Pre-sanitized string of class names
  */
 if (!function_exists('secretum_primary_nav_wrapper')) {
@@ -30,8 +28,6 @@ if (!function_exists('secretum_primary_nav_wrapper')) {
 
 /**
  * Container Classes
- *
- * @source inc/system/primary_nav/template-parts.php
  *
  * @return string Pre-sanitized string of class names
  */
@@ -53,8 +49,6 @@ if (!function_exists('secretum_primary_nav_container')) {
 /**
  * Alignment
  *
- * @source inc/system/primary_nav/template-parts.php
- *
  * @return string Pre-sanitized class name
  */
 if (!function_exists('secretum_primary_nav_alignment')) {
@@ -67,8 +61,6 @@ if (!function_exists('secretum_primary_nav_alignment')) {
 
 /**
  * Navbar Base Color Theme: navbar-light navbar-dark
- *
- * @source inc/system/primary_nav/template-parts.php
  *
  * @return string Pre-sanitized class name
  */
@@ -83,30 +75,24 @@ if (!function_exists('secretum_primary_nav_color_scheme')) {
 /**
  * Primary Menu Item Classes
  *
- * @source inc/system/primary_nav/template-parts.php
- *
  * @return string Pre-sanitized string of class names
  */
 if (!function_exists('secretum_primary_nav_divider_classes')) {
 	function secretum_primary_nav_divider_classes()
 	{
 		// Classes
-		$background = secretum_mod('primary_nav_item_background_color', 'attr', true) . secretum_mod('primary_nav_item_background_hover_color', 'attr', true);
-		$border = secretum_mod('primary_nav_item_border_type', 'attr', true) . secretum_mod('primary_nav_item_border_color', 'attr', true);
-		$margin = secretum_mod('primary_nav_item_margin_y', 'attr', true) . secretum_mod('primary_nav_item_margin_x', 'attr', true);
-		$padding = secretum_mod('primary_nav_item_padding_y', 'attr', true) . secretum_mod('primary_nav_item_padding_x', 'attr', true);
-		$text_color = secretum_mod('primary_nav_item_text_color', 'attr', true);
-		$link_colors = secretum_mod('primary_nav_item_link_color', 'attr', true) . secretum_mod('primary_nav_item_link_hover_color', 'attr', true);
+		$background = secretum_mod('primary_nav_items_background_color', 'attr', true) . secretum_mod('primary_nav_items_background_hover_color', 'attr', true);
+		$border = secretum_mod('primary_nav_items_border_type', 'attr', true) . secretum_mod('primary_nav_items_border_color', 'attr', true);
+		$margin = secretum_mod('primary_nav_items_margin_y', 'attr', true) . secretum_mod('primary_nav_items_margin_x', 'attr', true);
+		$padding = secretum_mod('primary_nav_items_padding_y', 'attr', true) . secretum_mod('primary_nav_items_padding_x', 'attr', true);
 
-		return apply_filters('secretum_primary_nav_divider_classes', $background . $border . $margin . $padding . $text_color . $link_colors, 10, 1);
+		return apply_filters('secretum_primary_nav_divider_classes', $background . $border . $margin . $padding, 10, 1);
 	}
 }
 
 
 /**
  * Toggler Icon Wrapper
- *
- * @source inc/system/primary_nav/template-parts.php
  *
  * @return string Pre-sanitized string of class names
  */
@@ -126,8 +112,6 @@ if (!function_exists('secretum_primary_nav_toggler_wrapper')) {
 
 /**
  * Toggler Icon
- *
- * @source inc/system/primary_nav/template-parts.php
  *
  * @return string Pre-sanitized string of class names
  */

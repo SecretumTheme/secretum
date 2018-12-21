@@ -6,17 +6,19 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'entry',
     __('Entry', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'entry_display',
     'entry',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
 
 // Checkbox
@@ -28,7 +30,7 @@ $customizer->checkbox(
     $default['entry_meta_published_status']
 );
 
-// Radio Select
+// Radio
 $customizer->radio(
     'entry_display',
     'entry_meta_link',
@@ -106,7 +108,7 @@ $customizer->checkbox(
     'entry_meta_navigation_links',
     __('Hide Post Navigation Links', 'secretum'), 
     __('This feature is active when <!--nextpage--> is in use.', 'secretum'),
-    $default['ntry_meta_navigation_links']
+    $default['entry_meta_navigation_links']
 );
 
 // Wrapper

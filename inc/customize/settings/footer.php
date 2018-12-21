@@ -6,24 +6,36 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'footer',
     __('Footer', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'footer_display',
     'footer',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
-
+/**
+// Checkbox
+$customizer->checkbox(
+    'footer_display',
+    'custom_footers',
+    __('Enable Custom Footers Feature', 'secretum'),
+    __('Before enabling set all default footer settings. A custom footer must be published before it will display.', 'secretum'),
+    $default['custom_footers']
+);
+*/
 // Checkbox
 $customizer->checkbox(
     'footer_display',
     'footer_status',
     __('Select To Hide Footer Area', 'secretum'),
+    '',
     $default['footer_status']
 );
 
@@ -175,7 +187,7 @@ $customizer->select(
 
 // Textuals
 $customizer->section(
-    'footer',
+    'footer_textuals',
     'footer',
     __('Textuals', 'secretum'),
     __('Customize fonts, text and link colors.', 'secretum')
@@ -183,7 +195,7 @@ $customizer->section(
 
 // Select
 $customizer->select(
-    'footer',
+    'footer_textuals',
     'footer_text_alignment',
     __('Text Alignment', 'secretum'),
     '',
@@ -193,70 +205,70 @@ $customizer->select(
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_font_family',
+    'footer_textuals',
+    'footer_textual_font_family',
     __('Font Family', 'secretum'),
     '',
-    $default['footer_font_family'],
+    $default['footer_textual_font_family'],
     secretum_customizer_font_families()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_font_size',
+    'footer_textuals',
+    'footer_textual_font_size',
     __('Font Size', 'secretum'),
     '',
-    $default['footer_font_size'],
+    $default['footer_textual_font_size'],
     secretum_customizer_font_sizes()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_font_style',
+    'footer_textuals',
+    'footer_textual_font_style',
     __('Font Style', 'secretum'),
     '',
-    $default['footer_font_style'],
+    $default['footer_textual_font_style'],
     secretum_customizer_font_styles()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_text_transform',
+    'footer_textuals',
+    'footer_textual_text_transform',
     __('Text Transform', 'secretum'),
     '',
-    $default['footer_text_transform'],
+    $default['footer_textual_text_transform'],
     secretum_customizer_text_transform()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_text_color',
+    'footer_textuals',
+    'footer_textual_text_color',
     __('Text Color', 'secretum'),
     '',
-    $default['footer_text_color'],
+    $default['footer_textual_text_color'],
     secretum_customizer_text_colors()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_link_color',
+    'footer_textuals',
+    'footer_textual_link_color',
     __('Link Color', 'secretum'),
     '',
-    $default['footer_link_color'],
+    $default['footer_textual_link_color'],
     secretum_customizer_link_colors()
 );
 
 // Select
 $customizer->select(
-    'footer',
-    'footer_link_hover_color',
+    'footer_textuals',
+    'footer_textual_link_hover_color',
     __('Link Hover Color', 'secretum'),
     '',
-    $default['footer_link_hover_color'],
+    $default['footer_textual_link_hover_color'],
     secretum_customizer_link_hover_colors()
 );

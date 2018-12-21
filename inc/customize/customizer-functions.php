@@ -117,92 +117,16 @@ namespace Secretum\Customizer {
 
 
 	/**
-	 * Sanitize Pages Dropdown Menu
-	 *
-	 * @see /inc/customizer/frontpage/settings.php
-	 *
-	 * @param int $page_id Curret page id
-	 * @param array $setting
-	 * @return int Valid page id
-	 */
-	function sanitizeDropdownPages($page_id, $setting)
-	{
-		// Retrieve the post status based on the Page ID
-		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
-	}
-
-
-	/**
-	 * Encode Script For Database
-	 *
-	 * @see /inc/system/extras/customizer/text/*
-	 *
-	 * @param string $string Script String
-	 * @return string Cleaned Script
-	 */
-	function sanitizeScript($string)
-	{
-		return json_encode($string);
-	}
-
-
-	/**
-	 * Escape & Decode Script For Textarea
-	 *
-	 * @see /inc/system/extras/customizer/text/*
-	 *
-	 * @param string $string Script String
-	 * @return string Cleaned Script
-	 */
-	function escapeScript($string)
-	{
-		return esc_textarea(json_decode($string));
-	}
-
-
-	/**
-	 * Sanitize HTML For Display
-	 *
-	 * @see /inc/customizer/text/*
-	 *
-	 * @param string $string HTML String
-	 * @return string Cleaned HTML
-	 */
-	function sanitizeHtml($string)
-	{
-		// Sanitize content for allowed HTML tags
-		$data = wp_kses_post($string);
-
-		// Convert HTML entities to corresponding characters
-		return html_entity_decode($data);
-	}
-
-
-	/**
 	 * Sanitize Everything From String
+	 * Strip all HTML tags including script and style
+	 * Convert all applicable characters to HTML entities
 	 *
 	 * @param string $string HTML String
 	 * @return string Cleaned HTML
 	 */
 	function sanitizeAll($string)
 	{
-		// Strip all HTML tags including script and style
-		$data = wp_strip_all_tags($string, true);
-
-		// Convert all applicable characters to HTML entities
-		return htmlentities($data);
-	}
-
-
-	/**
-	 * Sanitize Boolean Value
-	 *
-	 * @param bool $checked If value is selected
-	 * @return bool Return true if selected
-	 */
-	function sanitizeBool($checked)
-	{
-		return ((isset($checked) && '1' == $checked) ? '1' : '0');
+		return htmlentities(wp_strip_all_tags($string, true));
 	}
 
 
@@ -216,4 +140,83 @@ namespace Secretum\Customizer {
 	{
 		return ((isset($checked) && '1' == $checked) ? '1' : false);
 	}
+
+
+	/**
+	 * Sanitize HTML For Display
+	 * Sanitize content for allowed HTML tags
+	 * Convert HTML entities to corresponding characters
+	 *
+	 * @param string $string HTML String
+	 * @return string Cleaned HTML
+	 */
+	function sanitizeHtml($string)
+	{
+		return html_entity_decode(wp_kses_post($string));
+	}
+
+
+	/**
+	 * Sanitize Interger
+	 *
+	 * @param int $int Interger Value
+	 * @return int Numeric Value
+	 */
+	function sanitizeInt($int)
+	{
+		return is_numeric($int) ? $int : '';
+	}
+
+
+	/**
+	 * Encode Script For Database
+	 *
+	 * @param string $string Script String
+	 * @return string Cleaned Script
+	 */
+	function sanitizeScript($string)
+	{
+		return json_encode($string);
+	}
+
+
+	/**
+	 * Escape & Decode Script For Textarea
+	 *
+	 * @param string $string Script String
+	 * @return string Cleaned Script
+	 */
+	function escapeScript($string)
+	{
+		return esc_textarea(json_decode($string));
+	}
+
+
+	/**
+	 * Sanitize Text Translation String
+	 * Return a blank space if a space was provided
+	 * Strip all HTML tags including script and style
+	 * Convert all applicable characters to HTML entities
+	 *
+	 * @param string $string HTML String
+	 * @return string Cleaned HTML
+	 */
+	function sanitizeTranslate($string)
+	{
+		return (ctype_space($string)) ? " " : htmlentities(wp_strip_all_tags($string, true));
+	}
+
+
+	/**
+	 * Sanitize Pages Dropdown Menu
+	 *
+	 * @param int $page_id Curret page id
+	 * @param array $setting
+	 * @return int Valid page id
+	function sanitizeDropdownPages($page_id, $setting)
+	{
+		// Retrieve the post status based on the Page ID
+		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
+	}
+	 */
 }

@@ -7,7 +7,7 @@
  */
 
 
-// Globals Panel
+// Panel
 $customizer->panel(
     'globals',
     __('Globals', 'secretum')

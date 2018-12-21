@@ -20,7 +20,7 @@ if (!function_exists('secretum_entry_wrapper')) {
 		$background = secretum_mod('entry_wrapper_background_color', 'attr', true);
 		$border = secretum_mod('entry_wrapper_border_type', 'attr', true) . secretum_mod('entry_wrapper_border_color', 'attr', true);
 		$margin = secretum_mod('entry_wrapper_margin_top', 'attr', true) . secretum_mod('entry_wrapper_margin_bottom', 'attr', true);
-		$padding = secretum_mod('entry_wrapper_padding_y', 'attr', true);
+		$padding = secretum_mod('entry_wrapper_padding_x', 'attr', true) . secretum_mod('entry_wrapper_padding_y', 'attr', true);
 
 		return apply_filters('secretum_entry_wrapper', $columns . $background . $border . $margin . $padding, 10, 1);
 	}

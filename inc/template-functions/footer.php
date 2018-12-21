@@ -19,7 +19,7 @@ if (!function_exists('secretum_footer_wrapper')) {
 		$background = secretum_mod('footer_wrapper_background_color', 'attr', true);
 		$border = secretum_mod('footer_wrapper_border_type', 'attr', true) . secretum_mod('footer_wrapper_border_color', 'attr', true);
 		$margin = secretum_mod('footer_wrapper_margin_top', 'attr', true) . secretum_mod('footer_wrapper_margin_bottom', 'attr', true);
-		$padding = secretum_mod('footer_wrapper_padding_y', 'attr', true);
+		$padding = secretum_mod('footer_wrapper_padding_x', 'attr', true) . secretum_mod('footer_wrapper_padding_y', 'attr', true);
 
 		return apply_filters('secretum_footer_wrapper', $background . $border . $margin . $padding, 10, 1);
 	}
@@ -38,9 +38,10 @@ if (!function_exists('secretum_footer_container')) {
 		$container = secretum_mod('footer_container_type', 'attr', false);
 		$background = secretum_mod('footer_container_background_color', 'attr', true);
 		$border = secretum_mod('footer_container_border_type', 'attr', true) . secretum_mod('footer_container_border_color', 'attr', true);
+		$margin = secretum_mod('footer_container_margin_x', 'attr', true) . secretum_mod('footer_container_margin_y', 'attr', true);
 		$padding = secretum_mod('footer_container_padding_x', 'attr', true) . secretum_mod('footer_container_padding_y', 'attr', true);
 
-		return apply_filters('secretum_footer_container', $container . $background . $border . $padding, 10, 1);
+		return apply_filters('secretum_footer_container', $container . $background . $border . $margin . $padding, 10, 1);
 	}
 }
 
@@ -54,15 +55,11 @@ if (!function_exists('secretum_footer_textuals')) {
 	function secretum_footer_textuals()
 	{
 		// Classes
-		$font_size = secretum_mod('footer_font_size', 'attr', true);
-		$font_family = secretum_mod('footer_font_family', 'attr', true);
-		$font_style = secretum_mod('footer_font_style', 'attr', true);
-		$text_transform = secretum_mod('footer_transform', 'attr', true);
-		$text_color = secretum_mod('footer_text_color', 'attr', true);
-		$link_color = secretum_mod('footer_link_color', 'attr', true);
-		$link_hover_color = secretum_mod('footer_link_hover_color', 'attr', true);
+		$textuals = secretum_mod('footer_textual_font_family', 'attr', true) . secretum_mod('footer_textual_font_size', 'attr', true) . secretum_mod('footer_textual_font_style', 'attr', true) . secretum_mod('footer_textual_transform', 'attr', true);
+		$text_color = secretum_mod('footer_textual_text_color', 'attr', true);
+		$link_colors = secretum_mod('footer_textual_link_color', 'attr', true) . secretum_mod('footer_textual_link_hover_color', 'attr', true);
 
-		return apply_filters('secretum_footer_fonts', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1);
+		return apply_filters('secretum_footer_fonts', $textuals . $text_color . $link_colors, 10, 1);
 	}
 }
 

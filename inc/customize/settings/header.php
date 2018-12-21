@@ -6,19 +6,30 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'header',
     __('Header', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'header_display',
     'header',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
-
+/**
+// Checkbox
+$customizer->checkbox(
+    'header_display',
+    'custom_headers',
+    __('Enable Custom Headers Feature', 'secretum'),
+    __('Before enabling set all default header settings. A custom header must be published before it will display.', 'secretum'),
+    $default['custom_headers']
+);
+*/
 // Checkbox
 $customizer->checkbox(
     'header_display',

@@ -6,13 +6,14 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'sidebar',
     __('Sidebars', 'secretum')
 );
 
-// Display
+//Section
 $customizer->section(
     'sidebar_display',
     'sidebar',
@@ -20,12 +21,13 @@ $customizer->section(
     __('A widget must be assigned to a sidebar location before the sidebar will display.', 'secretum')
 );
 
-// Sidebar Location
+// Radio
 $customizer->radio(
     'sidebar_display',
     'sidebar_location',
     __('Sidebar Display Location', 'secretum'),
     __('Set the global sidebar location. This setting can be overridden at the post/page/post_type level.', 'secretum'),
+    $default['sidebar_location'],
     array(
         ''      => __( 'Based on Theme', 'secretum' ),
         'right' => __( 'Right Sidebar', 'secretum' ),
@@ -40,6 +42,7 @@ $customizer->checkbox(
     'sidebar_display',
     'sidebar_status',
     __('Select To Hide Sidebar Area', 'secretum'),
+    '',
     $default['sidebar_status']
 );
 

@@ -6,17 +6,19 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'primary_nav',
     __('Primary Nav', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'primary_nav_display',
     'primary_nav',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
 
 // Checkbox
@@ -112,77 +114,9 @@ $customizer->select(
     secretum_customizer_border_colors()
 );
 
-// Container
-$customizer->section(
-    'primary_nav_container',
-    'primary_nav',
-    __('Container', 'secretum'),
-    __('Customize the container within the header top wrapper.', 'secretum')
-);
-
-// Radio
-$customizer->radio(
-    'primary_nav_container',
-    'primary_nav_container_type',
-    __('Container Type', 'secretum'),
-    '',
-    $default['primary_nav_container_type'],
-    secretum_customizer_container_types()
-);
-
-// Select
-$customizer->select(
-    'primary_nav_container',
-    'primary_nav_container_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['primary_nav_container_background_color'],
-    secretum_customizer_background_colors()
-);
-
-// Select
-$customizer->select(
-    'primary_nav_container',
-    'primary_nav_container_margin_x',
-    __('Margin - Left & Right', 'secretum'),
-    '',
-    $default['primary_nav_container_margin_x'],
-    secretum_customizer_margin_left_right()
-);
-
-// Select
-$customizer->select(
-    'primary_nav_container',
-    'primary_nav_container_margin_y',
-    __('Margin - Top & Bottom', 'secretum'),
-    '',
-    $default['primary_nav_container_margin_y'],
-    secretum_customizer_margin_top_bottom()
-);
-
-// Select
-$customizer->select(
-    'primary_nav_container',
-    'primary_nav_container_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['primary_nav_container_padding_x'],
-    secretum_customizer_padding_left_right()
-);
-
-// Select
-$customizer->select(
-    'primary_nav_container',
-    'primary_nav_container_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['primary_nav_container_padding_y'],
-    secretum_customizer_padding_top_bottom()
-);
-
 // Textuals
 $customizer->section(
-    'primary_nav',
+    'primary_nav_textuals',
     'primary_nav',
     __('Textuals', 'secretum'),
     __('Customize fonts, text and link colors.', 'secretum')
@@ -190,81 +124,71 @@ $customizer->section(
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_text_alignment',
-    __('Text Alignment', 'secretum'),
-    '',
-    $default['primary_nav_text_alignment'],
-    secretum_customizer_text_alignments()
-);
-
-// Select
-$customizer->select(
-    'primary_nav',
-    'primary_nav_font_family',
+    'primary_nav_textuals',
+    'primary_nav_textual_font_family',
     __('Font Family', 'secretum'),
     '',
-    $default['primary_nav_font_family'],
+    $default['primary_nav_textual_font_family'],
     secretum_customizer_font_families()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_font_size',
+    'primary_nav_textuals',
+    'primary_nav_textual_font_size',
     __('Font Size', 'secretum'),
     '',
-    $default['primary_nav_font_size'],
+    $default['primary_nav_textual_font_size'],
     secretum_customizer_font_sizes()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_font_style',
+    'primary_nav_textuals',
+    'primary_nav_textual_font_style',
     __('Font Style', 'secretum'),
     '',
-    $default['primary_nav_font_style'],
+    $default['primary_nav_textual_font_style'],
     secretum_customizer_font_styles()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_text_transform',
+    'primary_nav_textuals',
+    'primary_nav_textual_text_transform',
     __('Text Transform', 'secretum'),
     '',
-    $default['primary_nav_text_transform'],
+    $default['primary_nav_textual_text_transform'],
     secretum_customizer_text_transform()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_text_color',
+    'primary_nav_textuals',
+    'primary_nav_textual_text_color',
     __('Text Color', 'secretum'),
     '',
-    $default['primary_nav_text_color'],
+    $default['primary_nav_textual_text_color'],
     secretum_customizer_text_colors()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_link_color',
+    'primary_nav_textuals',
+    'primary_nav_textual_link_color',
     __('Link Color', 'secretum'),
     '',
-    $default['primary_nav_link_color'],
+    $default['primary_nav_textual_link_color'],
     secretum_customizer_link_colors()
 );
 
 // Select
 $customizer->select(
-    'primary_nav',
-    'primary_nav_link_hover_color',
+    'primary_nav_textuals',
+    'primary_nav_textual_link_hover_color',
     __('Link Hover Color', 'secretum'),
     '',
-    $default['primary_nav_link_hover_color'],
+    $default['primary_nav_textual_link_hover_color'],
     secretum_customizer_link_hover_colors()
 );
 
@@ -279,10 +203,20 @@ $customizer->section(
 // Select
 $customizer->select(
     'primary_nav_items',
+    'primary_nav_alignment',
+    __('Alignment', 'secretum'),
+    '',
+    $default['primary_nav_alignment'],
+    secretum_customizer_margin_alignments()
+);
+
+// Select
+$customizer->select(
+    'primary_nav_items',
     'primary_nav_items_background_color',
     __('Background Color', 'secretum'),
     '',
-    $default['primary_nav_background_color'],
+    $default['primary_nav_items_background_color'],
     secretum_customizer_background_colors()
 );
 
@@ -292,7 +226,7 @@ $customizer->select(
     'primary_nav_items_background_hover_color',
     __('Background Hover Color', 'secretum'),
     '',
-    $default['primary_nav_background_hover_color'],
+    $default['primary_nav_items_background_hover_color'],
     secretum_customizer_background_hover_colors()
 );
 
@@ -302,7 +236,7 @@ $customizer->select(
     'primary_nav_items_margin_x',
     __('Margin - Left & Right', 'secretum'),
     '',
-    $default['primary_nav_margin_x'],
+    $default['primary_nav_items_margin_x'],
     secretum_customizer_margin_left_right()
 );
 
@@ -312,7 +246,7 @@ $customizer->select(
     'primary_nav_items_margin_y',
     __('Margin - Top & Bottom', 'secretum'),
     '',
-    $default['primary_nav_margin_y'],
+    $default['primary_nav_items_margin_y'],
     secretum_customizer_margin_top_bottom()
 );
 
@@ -322,7 +256,7 @@ $customizer->select(
     'primary_nav_items_padding_x',
     __('Padding - Left & Right', 'secretum'),
     '',
-    $default['primary_nav_padding_x'],
+    $default['primary_nav_items_padding_x'],
     secretum_customizer_padding_left_right()
 );
 
@@ -332,7 +266,7 @@ $customizer->select(
     'primary_nav_items_padding_y',
     __('Padding - Top & Bottom', 'secretum'),
     '',
-    $default['primary_nav_padding_y'],
+    $default['primary_nav_items_padding_y'],
     secretum_customizer_padding_top_bottom()
 );
 
@@ -356,6 +290,7 @@ $customizer->select(
     secretum_customizer_border_colors()
 );
 
+
 // Menu Items
 $customizer->section(
     'primary_nav_toggler',
@@ -367,10 +302,10 @@ $customizer->section(
 // Select
 $customizer->select(
     'primary_nav_toggler',
-    'primary_nav_toggler_icon',
+    'primary_nav_toggler_icon_alignment',
     __('Alignment', 'secretum'),
     '',
-    $default['primary_nav_toggler_icon'],
+    $default['primary_nav_toggler_icon_alignment'],
     secretum_customizer_margin_alignments()
 );
 

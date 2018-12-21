@@ -16,7 +16,7 @@ if (!secretum_mod('header_status') && !secretum_mod('custom_headers')) {
 	<nav class="navbar navbar-expand-lg p-0">
 <?php } ?>
 
-	<div class="container<?php echo secretum_header_container(); echo secretum_site_identity_title_alignment(); ?>">
+	<div class="container<?php echo secretum_header_container(); echo secretum_site_identity_alignment(); ?>">
 		<?php get_template_part('template-parts/primary-nav/navbar-left'); ?>
 		<?php get_template_part('template-parts/header/logo'); ?>
 		<?php get_template_part('template-parts/primary-nav/navbar-right'); ?>

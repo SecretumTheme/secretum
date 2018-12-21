@@ -6,17 +6,19 @@
  * @subpackage Secretum
  */
 
-// Copyright Panel
+
+// Panel
 $customizer->panel(
     'copyright',
     __('Copyright', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'copyright_display',
     'copyright',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
 
 // Checkbox
@@ -24,6 +26,7 @@ $customizer->checkbox(
     'copyright_display',
     'copyright_status',
     __('Select To Hide Copyright Area', 'secretum'),
+    '',
     $default['copyright_status']
 );
 
@@ -175,7 +178,7 @@ $customizer->select(
 
 // Textuals
 $customizer->section(
-    'copyright',
+    'copyright_textuals',
     'copyright',
     __('Textuals', 'secretum'),
     __('Customize fonts, text and link colors.', 'secretum')
@@ -183,7 +186,7 @@ $customizer->section(
 
 // Select
 $customizer->select(
-    'copyright',
+    'copyright_textuals',
     'copyright_text_alignment',
     __('Text Alignment', 'secretum'),
     '',
@@ -193,71 +196,71 @@ $customizer->select(
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_font_family',
+    'copyright_textuals',
+    'copyright_textual_font_family',
     __('Font Family', 'secretum'),
     '',
-    $default['copyright_font_family'],
+    $default['copyright_textual_font_family'],
     secretum_customizer_font_families()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_font_size',
+    'copyright_textuals',
+    'copyright_textual_font_size',
     __('Font Size', 'secretum'),
     '',
-    $default['copyright_font_size'],
+    $default['copyright_textual_font_size'],
     secretum_customizer_font_sizes()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_font_style',
+    'copyright_textuals',
+    'copyright_textual_font_style',
     __('Font Style', 'secretum'),
     '',
-    $default['copyright_font_style'],
+    $default['copyright_textual_font_style'],
     secretum_customizer_font_styles()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_text_transform',
+    'copyright_textuals',
+    'copyright_textual_text_transform',
     __('Text Transform', 'secretum'),
     '',
-    $default['copyright_text_transform'],
+    $default['copyright_textual_text_transform'],
     secretum_customizer_text_transform()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_text_color',
+    'copyright_textuals',
+    'copyright_textual_text_color',
     __('Text Color', 'secretum'),
     '',
-    $default['copyright_text_color'],
+    $default['copyright_textual_text_color'],
     secretum_customizer_text_colors()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_link_color',
+    'copyright_textuals',
+    'copyright_textual_link_color',
     __('Link Color', 'secretum'),
     '',
-    $default['copyright_link_color'],
+    $default['copyright_textual_link_color'],
     secretum_customizer_link_colors()
 );
 
 // Select
 $customizer->select(
-    'copyright',
-    'copyright_link_hover_color',
+    'copyright_textuals',
+    'copyright_textual_link_hover_color',
     __('Link Hover Color', 'secretum'),
     '',
-    $default['copyright_link_hover_color'],
+    $default['copyright_textual_link_hover_color'],
     secretum_customizer_link_hover_colors()
 );
 
@@ -265,7 +268,8 @@ $customizer->select(
 $customizer->section(
     'copyright_statement',
     'copyright',
-    __('Copyright Statement', 'secretum')
+    __('Copyright Statement', 'secretum'),
+    ''
 );
 
 // Textarea
@@ -274,7 +278,7 @@ $customizer->textarea(
     'copyright_text',
     __('Statement', 'secretum'),
     sprintf(__('HTML Allowed. Example: &#x3C;p&#x3E;Copyright %s &#x26;copy; &#x3C;a href=&#x22;%s&#x22; target=&#x22;_self&#x22;&#x3E;%s&#x3C;/a&#x3E; - All Rights Reserved.&#x3C;/p&#x3E;', 'secretum'), date("Y", time()), esc_url(get_home_url('/')), get_bloginfo('name')),
-    $default['copyright_text']
+    wp_kses_post($default['copyright_text'])
 );
 
 // Refresh Partial :: Copyright Statement
@@ -282,7 +286,7 @@ $wp_customize->selective_refresh->add_partial('copyright_text_partial', array(
     'settings'            => array('secretum[copyright_text]'),
     'selector'            => '.site-info',
     'render_callback'     => function() {
-        return $default['copyright_text'];
+        return wp_kses_post($default['copyright_text']);
     },
     'container_inclusive' => false
 ));

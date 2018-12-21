@@ -6,17 +6,19 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+
+// Panel
 $customizer->panel(
     'header_top',
     __('Header Top', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'header_top_display',
     'header_top',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
 
 // Checkbox
@@ -276,7 +278,7 @@ $customizer->select(
     'header_top_items_background_color',
     __('Background Color', 'secretum'),
     '',
-    $default['header_top_background_color'],
+    $default['header_top_items_background_color'],
     secretum_customizer_background_colors()
 );
 
@@ -286,7 +288,7 @@ $customizer->select(
     'header_top_items_background_hover_color',
     __('Background Hover Color', 'secretum'),
     '',
-    $default['header_top_background_hover_color'],
+    $default['header_top_items_background_hover_color'],
     secretum_customizer_background_hover_colors()
 );
 
@@ -296,7 +298,7 @@ $customizer->select(
     'header_top_items_margin_x',
     __('Margin - Left & Right', 'secretum'),
     '',
-    $default['header_top_margin_x'],
+    $default['header_top_items_margin_x'],
     secretum_customizer_margin_left_right()
 );
 
@@ -306,7 +308,7 @@ $customizer->select(
     'header_top_items_margin_y',
     __('Margin - Top & Bottom', 'secretum'),
     '',
-    $default['header_top_margin_y'],
+    $default['header_top_items_margin_y'],
     secretum_customizer_margin_top_bottom()
 );
 
@@ -316,7 +318,7 @@ $customizer->select(
     'header_top_items_padding_x',
     __('Padding - Left & Right', 'secretum'),
     '',
-    $default['header_top_padding_x'],
+    $default['header_top_items_padding_x'],
     secretum_customizer_padding_left_right()
 );
 
@@ -326,7 +328,7 @@ $customizer->select(
     'header_top_items_padding_y',
     __('Padding - Top & Bottom', 'secretum'),
     '',
-    $default['header_top_padding_y'],
+    $default['header_top_items_padding_y'],
     secretum_customizer_padding_top_bottom()
 );
 

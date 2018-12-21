@@ -6,28 +6,30 @@
  * @subpackage Secretum
  */
 
-// Frontpage Panel
+
+// Panel
 $customizer->panel(
     'frontpage',
     __('Frontpage', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'frontpage_display',
     'frontpage',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
-
+/**
 // Checkbox
 $customizer->checkbox(
     'frontpage_display',
     'custom_frontpages',
     __('Enable Custom Frontpage Feature', 'secretum'),
-    __('Before enabling set all default frontpage settings below as a fallback. Enabling creates the custom post type "Frontpages" available under the Appearances menu, overrides all over frontpage settings. Hand create any desired layout, then publish and schedule frontpages. A frontpage must be published before it will display.', 'secretum'),
+    __('Before enabling set all default frontpage and other design related settings. A custom frontpage must be published before it will display.', 'secretum'),
     $default['custom_frontpages']
 );
-
+*/
 // Checkbox
 $customizer->checkbox(
     'frontpage_display',

@@ -6,17 +6,19 @@
  * @subpackage Secretum
  */
 
-// Site Identity Panel
+
+// Panel
 $customizer->panel(
     'site_identity',
     __('Site Identity', 'secretum')
 );
 
-// Display
+// Section
 $customizer->section(
     'site_identity_display',
     'site_identity',
-    __('Display Settings', 'secretum')
+    __('Display Settings', 'secretum'),
+    ''
 );
 
 // Checkbox
@@ -32,7 +34,7 @@ $customizer->checkbox(
 $customizer->checkbox(
     'site_identity_display',
     'site_identity_logo_status',
-    __('Hide Tagline / Desc Text', 'secretum'),
+    __('Hide Logo / Title', 'secretum'),
     '',
     $default['site_identity_logo_status']
 );
@@ -50,7 +52,8 @@ $customizer->checkbox(
 $customizer->section(
     'site_identity_branding',
     'site_identity',
-    __('Branding', 'secretum')
+    __('Branding', 'secretum'),
+    ''
 );
 
 // Select
@@ -66,7 +69,7 @@ $customizer->select(
 // Setting :: Site Title
 $wp_customize->add_setting('blogname', array(
     'default'           => get_option('blogname'),
-    'sanitize_callback' => 'secretum_sanitize_all',
+    'sanitize_callback' => 'Secretum\Customizer\sanitizeAll',
     'capability'        => 'manage_options',
     'transport'         => 'postMessage',
     'type'              => 'option'
@@ -93,7 +96,7 @@ $wp_customize->add_setting('blogdescription', array(
     'default'           => get_option('blogdescription'),
     'type'              => 'option',
     'capability'        => 'manage_options',
-    'sanitize_callback' => 'secretum_sanitize_html'
+    'sanitize_callback' => 'Secretum\Customizer\sanitizeHtml'
 ));
 
 // Control :: Tagline
@@ -157,7 +160,7 @@ $customizer->number(
     __('Logo Max-Width In Pixels', 'secretum'),
     __('If defined, inline CSS will set a max-width and auto height for the logo.', 'secretum'),
     array('min' => 0),
-    $default['custom_logo_maxwidth']
+    (int) $default['custom_logo_maxwidth']
 );
 
 // Select
@@ -165,9 +168,19 @@ $customizer->number(
     'site_identity_branding',
     'custom_logo_height',
     __('Logo Crop Height In Pixels', 'secretum'),
-    __('Default: 75px - After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
+    __('After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
     array('min' => 0),
-    $default['custom_logo_height']
+    (int) $default['custom_logo_height']
+);
+
+// Select
+$customizer->number(
+    'site_identity_branding',
+    'custom_logo_width',
+    __('Logo Crop Width In Pixels', 'secretum'),
+    __('After publishing, refresh the customizer, then reselect logo to crop.', 'secretum'),
+    array('min' => 0),
+    (int) $default['custom_logo_width']
 );
 
 // Setting :: Website Site Icon
@@ -192,7 +205,8 @@ $wp_customize->add_control(new WP_Customize_Site_Icon_Control($wp_customize, 'si
 $customizer->section(
     'site_identity_title_container',
     'site_identity',
-    __('Title Container', 'secretum')
+    __('Title Container', 'secretum'),
+    ''
 );
 
 // Select
@@ -263,4 +277,210 @@ $customizer->select(
     '',
     $default['site_identity_title_container_border_color'],
     secretum_customizer_border_colors()
+);
+
+
+// Textuals
+$customizer->section(
+    'site_identity_title_textuals',
+    'site_identity',
+    __('Title Textuals', 'secretum'),
+    __('Customize fonts, text and link colors.', 'secretum')
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_font_family',
+    __('Font Family', 'secretum'),
+    '',
+    $default['site_identity_title_textual_font_family'],
+    secretum_customizer_font_families()
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_font_size',
+    __('Font Size', 'secretum'),
+    '',
+    $default['site_identity_title_textual_font_size'],
+    secretum_customizer_font_sizes()
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_font_style',
+    __('Font Style', 'secretum'),
+    '',
+    $default['site_identity_title_textual_font_style'],
+    secretum_customizer_font_styles()
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_text_transform',
+    __('Text Transform', 'secretum'),
+    '',
+    $default['site_identity_title_textual_text_transform'],
+    secretum_customizer_text_transform()
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_link_color',
+    __('Link Color', 'secretum'),
+    '',
+    $default['site_identity_title_textual_link_color'],
+    secretum_customizer_link_colors()
+);
+
+// Select
+$customizer->select(
+    'site_identity_title_textuals',
+    'site_identity_title_textual_link_hover_color',
+    __('Link Hover Color', 'secretum'),
+    '',
+    $default['site_identity_title_textual_link_hover_color'],
+    secretum_customizer_link_hover_colors()
+);
+
+// Tagline Container
+$customizer->section(
+    'site_identity_desc_container',
+    'site_identity',
+    __('Tagline Container', 'secretum'),
+    ''
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_background_color',
+    __('Background Color', 'secretum'),
+    '',
+    $default['site_identity_desc_container_background_color'],
+    secretum_customizer_background_colors()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_margin_x',
+    __('Margin - Left & Right', 'secretum'),
+    '',
+    $default['site_identity_desc_container_margin_x'],
+    secretum_customizer_margin_left_right()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_margin_y',
+    __('Margin - Top & Bottom', 'secretum'),
+    '',
+    $default['site_identity_desc_container_margin_y'],
+    secretum_customizer_margin_top_bottom()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_padding_x',
+    __('Padding - Left & Right', 'secretum'),
+    '',
+    $default['site_identity_desc_container_padding_x'],
+    secretum_customizer_padding_left_right()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_padding_y',
+    __('Padding - Top & Bottom', 'secretum'),
+    '',
+    $default['site_identity_desc_container_padding_y'],
+    secretum_customizer_padding_top_bottom()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_border_type',
+    __('Border Type', 'secretum'),
+    '',
+    $default['site_identity_desc_container_border_type'],
+    secretum_customizer_border_types()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_container',
+    'site_identity_desc_container_border_color',
+    __('Border Color', 'secretum'),
+    '',
+    $default['site_identity_desc_container_border_color'],
+    secretum_customizer_border_colors()
+);
+
+
+// Textuals
+$customizer->section(
+    'site_identity_desc_textuals',
+    'site_identity',
+    __('Tagline Textuals', 'secretum'),
+    __('Customize fonts, text and link colors.', 'secretum')
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_textuals',
+    'site_identity_desc_textual_font_family',
+    __('Font Family', 'secretum'),
+    '',
+    $default['site_identity_desc_textual_font_family'],
+    secretum_customizer_font_families()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_textuals',
+    'site_identity_desc_textual_font_size',
+    __('Font Size', 'secretum'),
+    '',
+    $default['site_identity_desc_textual_font_size'],
+    secretum_customizer_font_sizes()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_textuals',
+    'site_identity_desc_textual_font_style',
+    __('Font Style', 'secretum'),
+    '',
+    $default['site_identity_desc_textual_font_style'],
+    secretum_customizer_font_styles()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_textuals',
+    'site_identity_desc_textual_text_transform',
+    __('Text Transform', 'secretum'),
+    '',
+    $default['site_identity_desc_textual_text_transform'],
+    secretum_customizer_text_transform()
+);
+
+// Select
+$customizer->select(
+    'site_identity_desc_textuals',
+    'site_identity_desc_textual_text_color',
+    __('Text Color', 'secretum'),
+    '',
+    $default['site_identity_desc_textual_text_color'],
+    secretum_customizer_text_colors()
 );

@@ -6,13 +6,13 @@
  * @subpackage Secretum
  */
 
-// Header Top Panel
+// Panel
 $customizer->panel(
     'body',
     __('Body', 'secretum')
 );
 
-// Wrapper
+// Section
 $customizer->section(
     'body_wrapper',
     'body',

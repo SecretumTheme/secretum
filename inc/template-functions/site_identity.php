@@ -13,7 +13,7 @@
  * @return string Pre-sanitized class name
  */
 if (!function_exists('secretum_site_identity_alignment')) {
-	function secretum_site_identity_title_alignment()
+	function secretum_site_identity_alignment()
 	{
 		return apply_filters('secretum_site_identity_alignment', secretum_mod('site_identity_alignment', 'attr', true), 10, 1);
 	}
@@ -48,15 +48,11 @@ if (!function_exists('secretum_site_identity_title_textuals')) {
 	function secretum_site_identity_title_textuals()
 	{
 		// Classes
-		$font_size = secretum_mod('site_identity_title_font_size', 'attr', true);
-		$font_family = secretum_mod('site_identity_title_font_family', 'attr', true);
-		$font_style = secretum_mod('site_identity_title_font_style', 'attr', true);
-		$text_transform = secretum_mod('site_identity_title_text_transform', 'attr', true);
-		$text_color = secretum_mod('site_identity_title_text_color', 'attr', true);
-		$link_color = secretum_mod('site_identity_title_link_color', 'attr', true);
-		$link_hover_color = secretum_mod('site_identity_title_link_hover_color', 'attr', true);
+		$fonts = secretum_mod('site_identity_title_textual_font_family', 'attr', true) . secretum_mod('site_identity_title_textual_font_size', 'attr', true) . secretum_mod('site_identity_title_textual_font_style', 'attr', true);
+		$texts = secretum_mod('site_identity_title_textual_text_transform', 'attr', true) . secretum_mod('site_identity_title_textual_text_color', 'attr', true);
+		$links = secretum_mod('site_identity_title_textual_link_color', 'attr', true) . secretum_mod('site_identity_title_textual_link_hover_color', 'attr', true);
 
-		return apply_filters('secretum_site_identity_title_textuals', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1);
+		return apply_filters('secretum_site_identity_title_textuals', $fonts . $texts . $links, 10, 1);
 	}
 }
 
@@ -89,14 +85,10 @@ if (!function_exists('secretum_site_identity_desc_textuals')) {
 	function secretum_site_identity_desc_textuals()
 	{
 		// Classes
-		$font_size = secretum_mod('site_identity_desc_font_size', 'attr', true);
-		$font_family = secretum_mod('site_identity_desc_font_family', 'attr', true);
-		$font_style = secretum_mod('site_identity_desc_font_style', 'attr', true);
-		$text_transform = secretum_mod('site_identity_desc_text_transform', 'attr', true);
-		$text_color = secretum_mod('site_identity_desc_text_color', 'attr', true);
-		$link_color = secretum_mod('site_identity_desc_link_color', 'attr', true);
-		$link_hover_color = secretum_mod('site_identity_desc_link_hover_color', 'attr', true);
+		$fonts = secretum_mod('site_identity_desc_textual_font_family', 'attr', true) . secretum_mod('site_identity_desc_textual_font_size', 'attr', true) . secretum_mod('site_identity_desc_textual_font_style', 'attr', true);
+		$texts = secretum_mod('site_identity_desc_textual_text_transform', 'attr', true) . secretum_mod('site_identity_desc_textual_text_color', 'attr', true);
+		$links = secretum_mod('site_identity_desc_textual_link_color', 'attr', true) . secretum_mod('site_identity_desc_textual_link_hover_color', 'attr', true);
 
-		return apply_filters('secretum_site_identity_desc_textuals', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1);
+		return apply_filters('secretum_site_identity_desc_textuals', $fonts . $texts . $links, 10, 1);
 	}
 }

@@ -13,7 +13,7 @@ define('SECRETUM_DIR', 				dirname(__FILE__));
 define('SECRETUM_BASE_URL', 		esc_url(home_url()));
 define('SECRETUM_INC', 				SECRETUM_DIR . '/inc');
 
-define('SECRETUM_THEME_VERSION', 	'0.0.7');
+define('SECRETUM_THEME_VERSION', 	'0.0.8');
 define('SECRETUM_WP_MIN_VERSION', 	'3.8');
 
 define('SECRETUM_THEME_FILE', 		__FILE__);
@@ -136,9 +136,6 @@ add_action('customize_register', function($wp_customize) {
     $wp_customize->remove_section("header_image");
     $wp_customize->remove_section("background_image");
 
-    // Get Default Settings
-    $default = secretum_customizer_default_settings();
-
     // Controller Setting Arrays
     include_once(SECRETUM_INC . '/customize/choices/alignments.php');
     include_once(SECRETUM_INC . '/customize/choices/borders.php');
@@ -161,27 +158,15 @@ add_action('customize_register', function($wp_customize) {
     // Start Secretum Customizer Class
     $customizer = \Secretum\Customizer::instance($wp_customize);
 
+    // Get Default Settings
+    $default = secretum_customizer_default_settings();
+
     // Globals
     include_once(SECRETUM_INC . '/customize/settings/globals.php');
 
     // Site Identity
     include_once(SECRETUM_INC . '/customize/settings/site-identity.php');
 
-
-/**
-    // Title Container
-    $customizer->section('site_identity_title_container', 'site_identity', __('Title Container', 'secretum'), __('Header Container > <b>Title Container</b>', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/site_identity/container-title.php');
-    // Title Font Control
-    $customizer->section('site_identity_title', 'site_identity', __('Title Font Control', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/site_identity/font-title.php');
-    // Description Container
-    $customizer->section('site_identity_desc_container', 'site_identity', __('Description Container', 'secretum'), __('Header Container > <b>Description Container</b>', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/site_identity/container-desc.php');
-    // Description Font Control
-    $customizer->section('site_identity_desc', 'site_identity', __('Description Font Control', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/site_identity/font-description.php');
-*/
     // Header Top
     include_once(SECRETUM_INC . '/customize/settings/header-top.php');
 
@@ -191,7 +176,7 @@ add_action('customize_register', function($wp_customize) {
     // Primary Nav
     include_once(SECRETUM_INC . '/customize/settings/primary-nav.php');
 
-    // Primary Nav
+    // Body
     include_once(SECRETUM_INC . '/customize/settings/body.php');
 
     // Entry
@@ -206,41 +191,17 @@ add_action('customize_register', function($wp_customize) {
     // Copyright
     include_once(SECRETUM_INC . '/customize/settings/copyright.php');
 
-    // Copyright Navigation
+    // Copyright Nav
     include_once(SECRETUM_INC . '/customize/settings/copyright-nav.php');
 
     // Frontpage
     include_once(SECRETUM_INC . '/customize/settings/frontpage.php');
 
+    // Extras
+    include_once(SECRETUM_INC . '/customize/settings/extras.php');
 
-    // Extras Panel
-    $customizer->panel('extras', __('Extras', 'secretum'));
-    // Analytics Tracking Code
-    $customizer->section('analytics', 'extras', __('Analytics Tracking Code', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/analytics.php');
-    // Enqueue Management
-    $customizer->section('enqueue', 'extras', __('Enqueue Management', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/enqueue.php');
-    // Scroll To Top Icon
-    $customizer->section('scrolltop', 'extras', __('Scroll To Top Icon', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/scrolltop.php');
-    // Text Adjustments
-    $customizer->section('theme_text', 'extras', __('Text Adjustments', 'secretum'), __('To reset text fields to default, delete the text and then publish. To remove the text from displaying completely, delete the text and then add a single empty space, and publish.', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/text/more.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/meta.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/nav.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/search.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/comments.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/author.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/no-content.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/404.php');
-    include_once(SECRETUM_INC . '/customize/extras/text/woo.php');
-    // 
-    $customizer->section('theme_settings', 'extras', __('Content Width', 'secretum'), __('Default pluginable content width.', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/width.php');
-    // 
-    $customizer->section('reset', 'extras', __('Reset Settings', 'secretum'), __('THIS CAN NOT BE UNDONE! Delete all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum'));
-    include_once(SECRETUM_INC . '/customize/extras/reset.php');
+    // Extras
+    include_once(SECRETUM_INC . '/customize/settings/translations.php');
 
     /**
      * pending

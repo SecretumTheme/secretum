@@ -8,258 +8,10 @@
 
 
 /**
- * Stop Customizer From Saving A Setting
- *
- * @param string $string Script String
- * @return string Cleaned Script
- */
-if (!function_exists('secretum_import')) {
-    function secretum_import($string)
-    {
-    	if (!is_customize_preview()) { die(); }
-
-        $json_array = json_decode(stripslashes($string), true);
-
-        // String to Array
-        if (is_string($string) && is_array($json_array) && (json_last_error() == JSON_ERROR_NONE)) {
-
-            // Clear
-            $array = [];
-
-            // Simple Sanitize
-            foreach ($json_array as $key => $value) {
-                // Strings
-                if (isset($value) && is_string($value)) {
-                    $array[$key] = wp_kses_post($value);
-
-                // Intergers
-                } elseif (isset($value) && is_int($value)) {
-                    $array[$key] = absint($value);
-
-                // Intergers
-                } elseif (isset($value) && is_array($value)) {
-                    $array[$key] = array_filter($value);
-
-                // Strip All
-                } else {
-                    $array[$key] = wp_strip_all_tags($value, true);
-                }
-            }
-
-            // If Array Set
-            if (!empty($array)) {
-                // Merge Arrays & Filter Empty Values
-                $clean_array = array_filter(array_merge($array, secretum_customizer_global_settings()));
-
-                // Merge Arrays & Filter Empty Values
-                $settings = array_filter(array_intersect_key($clean_array, get_option('secretum', array())));
-
-                // Update Settings Option
-                update_option('secretum', $settings);
-            }
-
-            return '';
-        }
-    }
-}
-
-
-/**
- * Export Settings
- *
- * @param string $location
- * @return string 
- */
-if (!function_exists('secretum_export')) {
-    function secretum_export($location)
-    {
-        $settings = array();
-
-        // Get Allowed Settings
-
-        if ($location == "default") {
-            $settings = secretum_customizer_default_settings();
-        }
-
-        if ($location == "copyright") {
-            $settings = secretum_customizer_copyright_settings();
-        }
-
-        // If Settings
-        if (isset($settings)) {
-            // Get Saved Option
-            $option = array_filter(get_option('secretum', array()));
-
-            // Return Encoded Values From Unique Keys
-            return json_encode(array_intersect_key($option, $settings));
-        }
-    }
-}
-
-
-/**
- * Sanitize Pages Dropdown Menu
- *
- * @see /inc/customizer/frontpage/settings.php
- *
- * @param int $page_id Curret page id
- * @param array $setting
- * @return int Valid page id
- */
-if (!function_exists('secretum_sanitize_dropdown_pages')) {
-	function secretum_sanitize_dropdown_pages($page_id, $setting)
-	{
-		// Retrieve the post status based on the Page ID
-		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
-	}
-}
-
-
-/**
- * 
- *
- * @param string $location
- * @return string 
-if (!function_exists('secretum_export')) {
-	function secretum_export($location)
-	{
-		$settings = array();
-
-		if ($location == "copyright") {
-			$settings = secretum_customizer_copyright_settings();
-		}
-
-		$intersect = array_intersect(get_option('secretum', array()), $settings);
-
-		return json_encode($settings);
-	}
-}
- */
-
-
-
-
-/**
- * Encode Script For Database
- *
- * @see /inc/system/extras/customizer/text/*
- *
- * @param string $string Script String
- * @return string Cleaned Script
- */
-if (!function_exists('secretum_sanitize_script')) {
-	function secretum_sanitize_script($string)
-	{
-		return json_encode($string);
-	}
-}
-
-
-/**
- * Escape & Decode Script For Textarea
- *
- * @see /inc/system/extras/customizer/text/*
- *
- * @param string $string Script String
- * @return string Cleaned Script
- */
-if (!function_exists('secretum_escape_script')) {
-	function secretum_escape_script($string)
-	{
-		return esc_textarea(json_decode($string));
-	}
-}
-
-
-/**
- * Sanitize HTML For Display
- *
- * @see /inc/customizer/text/*
- *
- * @param string $string HTML String
- * @return string Cleaned HTML
- */
-if (!function_exists('secretum_sanitize_html')) {
-	function secretum_sanitize_html($string)
-	{
-		// Sanitize content for allowed HTML tags
-		$data = wp_kses_post($string);
-
-		// Convert HTML entities to corresponding characters
-		return html_entity_decode($data);
-	}
-}
-
-
-/**
- * Sanitize Everything From String
- *
- * @param string $string HTML String
- * @return string Cleaned HTML
- */
-if (!function_exists('secretum_sanitize_all')) {
-	function secretum_sanitize_all($string)
-	{
-		// Strip all HTML tags including script and style
-		$data = wp_strip_all_tags($string, true);
-
-		// Convert all applicable characters to HTML entities
-		return htmlentities($data);
-	}
-}
-
-
-/**
- * Sanitize Boolean Value
- *
- * @param bool $checked If value is selected
- * @return bool Return true if selected
- */
-if (!function_exists('secretum_sanitize_bool')) {
-	function secretum_sanitize_bool($checked)
-	{
-		return ((isset($checked) && '1' == $checked) ? '1' : '0');
-	}
-}
-
-
-/**
- * Sanitize Checkbox Value
- *
- * @param bool $checked If value is selected
- * @return bool Return true if selected
- */
-if (!function_exists('secretum_sanitize_checkbox')) {
-	function secretum_sanitize_checkbox($checked)
-	{
-		return ((isset($checked) && '1' == $checked) ? '1' : false);
-	}
-}
-
-
-/**
- * Reset Customzer Settings
- *
- * @param string $value Must equal reset to delete option
- * @return false
- */
-if (!function_exists('secretum_customizer_reset')) {
-	function secretum_customizer_reset($value = '')
-	{
-		// Delete Secretum Settings
-		if (!empty($value) && $value == 'RESET') {
-			delete_option('secretum');
-		}
-		return '';
-	}
-}
-
-
-/**
  * Default Menu Fallback
  */
-if (!function_exists('secretum_menu_fallback')) {
-	function secretum_menu_fallback()
+if (!function_exists('secretum_primary_nav_fallback')) {
+	function secretum_primary_nav_fallback()
 	{
 		echo '<ul id="main-menu" class="navbar-nav ml-auto py-3"><li class="menu-item">';
 		echo '<a href="' . admin_url('nav-menus.php') . '">' . apply_filters('secretum_create_menu_text', __('Create Menu', 'secretum')) . '</a>';
@@ -481,3 +233,249 @@ if (! function_exists('wp_bootstrap_pagination'))
             echo $args['before_output'] . $echo . $args['after_output'];
     }
 }
+
+
+/**
+ * Stop Customizer From Saving A Setting
+ *
+ * @param string $string Script String
+ * @return string Cleaned Script
+if (!function_exists('secretum_import')) {
+    function secretum_import($string)
+    {
+    	if (!is_customize_preview()) { die(); }
+
+        $json_array = json_decode(stripslashes($string), true);
+
+        // String to Array
+        if (is_string($string) && is_array($json_array) && (json_last_error() == JSON_ERROR_NONE)) {
+
+            // Clear
+            $array = [];
+
+            // Simple Sanitize
+            foreach ($json_array as $key => $value) {
+                // Strings
+                if (isset($value) && is_string($value)) {
+                    $array[$key] = wp_kses_post($value);
+
+                // Intergers
+                } elseif (isset($value) && is_int($value)) {
+                    $array[$key] = absint($value);
+
+                // Intergers
+                } elseif (isset($value) && is_array($value)) {
+                    $array[$key] = array_filter($value);
+
+                // Strip All
+                } else {
+                    $array[$key] = wp_strip_all_tags($value, true);
+                }
+            }
+
+            // If Array Set
+            if (!empty($array)) {
+                // Merge Arrays & Filter Empty Values
+                $clean_array = array_filter(array_merge($array, secretum_customizer_global_settings()));
+
+                // Merge Arrays & Filter Empty Values
+                $settings = array_filter(array_intersect_key($clean_array, get_option('secretum', array())));
+
+                // Update Settings Option
+                update_option('secretum', $settings);
+            }
+
+            return '';
+        }
+    }
+}
+ */
+
+
+/**
+ * Export Settings
+ *
+ * @param string $location
+ * @return string 
+if (!function_exists('secretum_export')) {
+    function secretum_export($location)
+    {
+        $settings = array();
+
+        // Get Allowed Settings
+
+        if ($location == "default") {
+            $settings = secretum_customizer_default_settings();
+        }
+
+        if ($location == "copyright") {
+            $settings = secretum_customizer_copyright_settings();
+        }
+
+        // If Settings
+        if (isset($settings)) {
+            // Get Saved Option
+            $option = array_filter(get_option('secretum', array()));
+
+            // Return Encoded Values From Unique Keys
+            return json_encode(array_intersect_key($option, $settings));
+        }
+    }
+}
+ */
+
+
+/**
+ * Sanitize Pages Dropdown Menu
+ *
+ * @see /inc/customizer/frontpage/settings.php
+ *
+ * @param int $page_id Curret page id
+ * @param array $setting
+ * @return int Valid page id
+if (!function_exists('secretum_sanitize_dropdown_pages')) {
+	function secretum_sanitize_dropdown_pages($page_id, $setting)
+	{
+		// Retrieve the post status based on the Page ID
+		return ('publish' == get_post_status(absint($page_id)) ? absint($page_id) : $setting->default);
+	}
+}
+ */
+
+
+/**
+ * 
+ *
+ * @param string $location
+ * @return string 
+if (!function_exists('secretum_export')) {
+	function secretum_export($location)
+	{
+		$settings = array();
+
+		if ($location == "copyright") {
+			$settings = secretum_customizer_copyright_settings();
+		}
+
+		$intersect = array_intersect(get_option('secretum', array()), $settings);
+
+		return json_encode($settings);
+	}
+}
+ */
+
+
+/**
+ * Encode Script For Database
+ *
+ * @see /inc/system/extras/customizer/text/*
+ *
+ * @param string $string Script String
+ * @return string Cleaned Script
+if (!function_exists('secretum_sanitize_script')) {
+	function secretum_sanitize_script($string)
+	{
+		return json_encode($string);
+	}
+}
+ */
+
+
+/**
+ * Escape & Decode Script For Textarea
+ *
+ * @see /inc/system/extras/customizer/text/*
+ *
+ * @param string $string Script String
+ * @return string Cleaned Script
+if (!function_exists('secretum_escape_script')) {
+	function secretum_escape_script($string)
+	{
+		return esc_textarea(json_decode($string));
+	}
+}
+ */
+
+
+/**
+ * Sanitize HTML For Display
+ *
+ * @see /inc/customizer/text/*
+ *
+ * @param string $string HTML String
+ * @return string Cleaned HTML
+if (!function_exists('secretum_sanitize_html')) {
+	function secretum_sanitize_html($string)
+	{
+		// Sanitize content for allowed HTML tags
+		$data = wp_kses_post($string);
+
+		// Convert HTML entities to corresponding characters
+		return html_entity_decode($data);
+	}
+}
+ */
+
+
+/**
+ * Sanitize Everything From String
+ *
+ * @param string $string HTML String
+ * @return string Cleaned HTML
+if (!function_exists('secretum_sanitize_all')) {
+	function secretum_sanitize_all($string)
+	{
+		// Strip all HTML tags including script and style
+		$data = wp_strip_all_tags($string, true);
+
+		// Convert all applicable characters to HTML entities
+		return htmlentities($data);
+	}
+}
+ */
+
+
+/**
+ * Sanitize Boolean Value
+ *
+ * @param bool $checked If value is selected
+ * @return bool Return true if selected
+if (!function_exists('secretum_sanitize_bool')) {
+	function secretum_sanitize_bool($checked)
+	{
+		return ((isset($checked) && '1' == $checked) ? '1' : '0');
+	}
+}
+ */
+
+
+/**
+ * Sanitize Checkbox Value
+ *
+ * @param bool $checked If value is selected
+ * @return bool Return true if selected
+if (!function_exists('secretum_sanitize_checkbox')) {
+	function secretum_sanitize_checkbox($checked)
+	{
+		return ((isset($checked) && '1' == $checked) ? '1' : false);
+	}
+}
+ */
+
+
+/**
+ * Reset Customzer Settings
+ *
+ * @param string $value Must equal reset to delete option
+ * @return false
+if (!function_exists('secretum_customizer_reset')) {
+	function secretum_customizer_reset($value = '')
+	{
+		// Delete Secretum Settings
+		if (!empty($value) && $value == 'RESET') {
+			delete_option('secretum');
+		}
+		return '';
+	}
+}
+ */

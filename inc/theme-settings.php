@@ -91,8 +91,8 @@ add_action('after_setup_theme', function() {
 
 	// Enable Custom Logo Support
 	add_theme_support('custom-logo', array(
-        'height' 		=> secretum_mod('custom_logo_height') ? absint(secretum_mod('secretum_custom_logo_height', 'int')) : 75,
-        'width' 		=> secretum_mod('custom_logo_width') ? absint(secretum_mod('secretum_custom_logo_width', 'int')) : 300,
+        'height' 		=> secretum_mod('custom_logo_height') ? secretum_mod('custom_logo_height', 'int') : 75,
+        'width' 		=> secretum_mod('custom_logo_width') ? secretum_mod('custom_logo_width', 'int') : 300,
         'header-text' 	=> array('site-title', 'site-description'),
         'flex-height' 	=> true,
         'flex-width' 	=> true
