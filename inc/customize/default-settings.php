@@ -22,6 +22,7 @@ if (!function_exists('secretum_customizer_default_settings')) {
 			secretum_customizer_header_settings(),
 			secretum_customizer_primary_nav_settings(),
 			secretum_customizer_body_settings(),
+			secretum_customizer_featured_image_settings(),
 			secretum_customizer_entry_settings(),
 			secretum_customizer_sidebar_settings(),
 			secretum_customizer_footer_settings(),
@@ -276,6 +277,37 @@ if (!function_exists('secretum_customizer_body_settings')) {
 			'body_container_padding_y' 						=> '',
 			'body_container_border_type' 					=> '',
 			'body_container_border_color' 					=> ''
+		));
+	}
+}
+
+
+/**
+ * Featured Image Customizer Settings
+ *
+ * @param array Filtered array
+ */
+if (!function_exists('secretum_customizer_featured_image_settings')) {
+	function secretum_customizer_featured_image_settings()
+	{
+		return apply_filters('secretum_customizer_featured_image_settings', array(
+			// Wrapper
+			'featured_image_wrapper_background_color' 				=> '',
+			'featured_image_wrapper_padding_x' 						=> '',
+			'featured_image_wrapper_padding_y' 						=> '',
+			'featured_image_wrapper_margin_top' 					=> '',
+			'featured_image_wrapper_margin_bottom' 					=> '',
+			'featured_image_wrapper_border_type' 					=> '',
+			'featured_image_wrapper_border_color' 					=> '',
+			// Container
+			'featured_image_container_type' 						=> '',
+			'featured_image_container_background_color' 			=> '',
+			'featured_image_container_margin_x' 					=> '',
+			'featured_image_container_margin_y' 					=> '',
+			'featured_image_container_padding_x' 					=> '',
+			'featured_image_container_padding_y' 					=> '',
+			'featured_image_container_border_type' 					=> '',
+			'featured_image_container_border_color' 				=> ''
 		));
 	}
 }

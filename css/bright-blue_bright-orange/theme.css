@@ -137,7 +137,7 @@ mark, .mark { padding: 0.2em; background-color: #fcf8e3; }
 .figure { display: inline-block; }
 .figure-img { margin-bottom: 0.5rem; line-height: 1; }
 .figure-caption { font-size: 90%; color: #8a9097; }
-.featured-image-header { text-align: center; width: 100%; }
+.featured-image-header img { height: auto; text-align: center; width: 100%; }
 code { font-size: 87.5%; color: #ff4081; word-break: break-word; }
 a > code { color: inherit; }
 kbd { padding: 0.2rem 0.4rem; font-size: 87.5%; color: #fcfcfc; background-color: #6c737a; border-radius: 0.2rem; }

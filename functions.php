@@ -13,7 +13,7 @@ define('SECRETUM_DIR', 				dirname(__FILE__));
 define('SECRETUM_BASE_URL', 		esc_url(home_url()));
 define('SECRETUM_INC', 				SECRETUM_DIR . '/inc');
 
-define('SECRETUM_THEME_VERSION', 	'0.0.10');
+define('SECRETUM_THEME_VERSION', 	'0.0.11');
 define('SECRETUM_WP_MIN_VERSION', 	'3.8');
 
 define('SECRETUM_THEME_FILE', 		__FILE__);
@@ -76,6 +76,7 @@ include_once(SECRETUM_INC . '/template-functions/copyright-nav.php');
 include_once(SECRETUM_INC . '/template-functions/copyright.php');
 include_once(SECRETUM_INC . '/template-functions/copyright-nav.php');
 include_once(SECRETUM_INC . '/template-functions/entry.php');
+include_once(SECRETUM_INC . '/template-functions/featured-image.php');
 include_once(SECRETUM_INC . '/template-functions/footer.php');
 include_once(SECRETUM_INC . '/template-functions/frontpage.php');
 include_once(SECRETUM_INC . '/template-functions/globals.php');
@@ -178,6 +179,9 @@ add_action('customize_register', function($wp_customize) {
 
     // Body
     include_once(SECRETUM_INC . '/customize/settings/body.php');
+
+    // Featured Image
+    include_once(SECRETUM_INC . '/customize/settings/featured-image.php');
 
     // Entry
     include_once(SECRETUM_INC . '/customize/settings/entry.php');

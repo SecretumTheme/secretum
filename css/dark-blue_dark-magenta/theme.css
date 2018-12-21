@@ -137,7 +137,7 @@ mark, .mark { padding: 0.2em; background-color: #fcf8e3; }
 .figure { display: inline-block; }
 .figure-img { margin-bottom: 0.5rem; line-height: 1; }
 .figure-caption { font-size: 90%; color: #8a9097; }
-.featured-image-header { text-align: center; width: 100%; }
+.featured-image-header img { height: auto; text-align: center; width: 100%; }
 code { font-size: 87.5%; color: #ff4081; word-break: break-word; }
 a > code { color: inherit; }
 kbd { padding: 0.2rem 0.4rem; font-size: 87.5%; color: #ffffff; background-color: #222425; border-radius: 0.2rem; }
@@ -1838,6 +1838,10 @@ a.text-dark:hover, a.text-dark:focus { color: #4f5356 !important; }
   .table .thead-dark th { color: inherit; border-color: #cdd2d7; } }
 .screen-reader-text { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; word-wrap: normal !important; }
 .screen-reader-text:focus { background-color: #f7f7f7; border-radius: 3px; -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #006699; display: block; font-size: 14px; font-size: 0.875rem; font-weight: 700; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }
+.alignleft { display: inline; float: left; margin-right: 1.5em; }
+.alignright { display: inline; float: right; margin-left: 1.5em; }
+.aligncenter { margin-left: auto; margin-right: auto; }
+.aligncenter::after { display: block; clear: both; content: ""; }
 .color-blue { color: #1976d2 !important; }
 a.color-blue-link { color: #1976d2 !important; }
 a.color-blue-hover:hover { color: #1976d2 !important; }

@@ -3,8 +3,11 @@
  */
 
 .featured-image-header {
-    text-align: center;
-    width: 100%;
+	img {
+	    height: auto;
+	    max-width: 100%;
+	    text-align: center;
+	}
 
     //.attachment-secretum-featured-image {}
 
