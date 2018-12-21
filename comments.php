@@ -21,7 +21,7 @@ do_action('secretum_before_comments');
 				if (1 === (int)$comments_number) {
 					echo secretum_text('comments_title_single') . ' "<span>' . get_the_title() . '</span>"';
 
-				} else {
+				} elseif(isset($discussion)) {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(

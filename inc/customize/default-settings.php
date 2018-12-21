@@ -291,7 +291,7 @@ if (!function_exists('secretum_customizer_entry_settings')) {
 			'entry_meta_published_status'					=> '',
 			'entry_meta_tagslinks_status'					=> '',
 			'entry_meta_updated_status'						=> '',
-			'entry_meta_navigation_links'					=> '',
+			'entry_meta_post_navigation_links'				=> '',
 			// Wrapper
 			'entry_wrapper_background_color' 				=> '',
 			'entry_wrapper_padding_x'						=> '',
@@ -494,6 +494,14 @@ if (!function_exists('secretum_customizer_frontpage_settings')) {
 			'frontpage_heading_html' 							=> '',
 			'frontpage_map_status' 								=> '',
 			'frontpage_map_address' 							=> '',
+			// Wrapper
+			'frontpage_wrapper_background_color' 				=> '',
+			'frontpage_wrapper_padding_x' 						=> '',
+			'frontpage_wrapper_padding_y' 						=> '',
+			'frontpage_wrapper_margin_top' 						=> '',
+			'frontpage_wrapper_margin_bottom' 					=> '',
+			'frontpage_wrapper_border_type' 					=> '',
+			'frontpage_wrapper_border_color' 					=> '',
 		));
 	}
 }

@@ -17,7 +17,7 @@ $customizer->panel(
 $customizer->section(
     'frontpage_display',
     'frontpage',
-    __('Display Settings', 'secretum'),
+    __('Display', 'secretum'),
     ''
 );
 /**
@@ -39,9 +39,35 @@ $customizer->checkbox(
     $default['frontpage_header_status']
 );
 
+// Checkbox
+$customizer->checkbox(
+    'frontpage_display',
+    'frontpage_map_status',
+    __('Enable Frontpage Google Map Area', 'secretum'),
+    '',
+    $default['frontpage_map_status']
+);
+
+// Text Input
+$customizer->inputText(
+    'frontpage_display',
+    'frontpage_map_address',
+    __('Google Map Business Name & Address', 'secretum'),
+    __('Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum'),
+    $default['frontpage_map_address']
+);
+
+// Wrapper
+$customizer->section(
+    'frontpage_content',
+    'frontpage',
+    __('Content', 'secretum'),
+    __('Frontpage content management.', 'secretum')
+);
+
 // Background Image
 $customizer->backgroundImage(
-    'frontpage_display',
+    'frontpage_content',
     'frontpage_heading_bg',
     1900,
     400,
@@ -51,7 +77,7 @@ $customizer->backgroundImage(
 
 // Textarea
 $customizer->textarea(
-    'frontpage_display',
+    'frontpage_content',
     'frontpage_heading_html',
     __('Frontpage Heading HTML', 'secretum'),
     __('Full HTML control of the heading area. HTML will not display until a modification is made and published.', 'secretum'),
@@ -73,20 +99,80 @@ $customizer->textarea(
     $default['frontpage_heading_html']
 );
 
-// Checkbox
-$customizer->checkbox(
-    'frontpage_display',
-    'frontpage_map_status',
-    __('Enable Frontpage Google Map Area', 'secretum'),
-    '',
-    $default['frontpage_map_status']
+// Wrapper
+$customizer->section(
+    'frontpage_wrapper',
+    'frontpage',
+    __('Wrapper', 'secretum'),
+    __('Customize the outter wrapper around frontpage heading area.', 'secretum')
 );
 
-// Text Input
-$customizer->inputText(
-    'frontpage_display',
-    'frontpage_map_address',
-    __('Google Map Business Name & Address', 'secretum'),
-    __('Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum'),
-    $default['frontpage_map_address']
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_background_color',
+    __('Background Color', 'secretum'),
+    '',
+    $default['frontpage_wrapper_background_color'],
+    secretum_customizer_background_colors()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_padding_x',
+    __('Padding - Left & Right', 'secretum'),
+    '',
+    $default['frontpage_wrapper_padding_x'],
+    secretum_customizer_padding_left_right()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_padding_y',
+    __('Padding - Top & Bottom', 'secretum'),
+    '',
+    $default['frontpage_wrapper_padding_y'],
+    secretum_customizer_padding_top_bottom()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_margin_bottom',
+    __('Margin - Bottom', 'secretum'),
+    __('Increases spacing after section.', 'secretum'),
+    $default['frontpage_wrapper_margin_bottom'],
+    secretum_customizer_margin_bottom()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_margin_top',
+    __('Margin - Top', 'secretum'),
+    __('Increases spacing before section.', 'secretum'),
+    $default['frontpage_wrapper_margin_top'],
+    secretum_customizer_margin_top()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_border_type',
+    __('Border Type', 'secretum'),
+    '',
+    $default['frontpage_wrapper_border_type'],
+    secretum_customizer_border_types()
+);
+
+// Select
+$customizer->select(
+    'frontpage_wrapper',
+    'frontpage_wrapper_border_color',
+    __('Border Color', 'secretum'),
+    '',
+    $default['frontpage_wrapper_border_color'],
+    secretum_customizer_border_colors()
 );

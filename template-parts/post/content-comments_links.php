@@ -8,7 +8,7 @@
 
 // If Posts & Comments Open Or Comments
 if ('post' == get_post_type() && comments_open() || '0' != get_comments_number()) {
-	if (!secretum_mod('entrymeta_commentlink_status')) { ?>
+	if (!secretum_mod('entry_meta_commentlink_status')) { ?>
 		<span class="comments-link">
 			<i class="fa fa-comments"></i> <?php
 				comments_popup_link(

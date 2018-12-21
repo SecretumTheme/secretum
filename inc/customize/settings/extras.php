@@ -45,33 +45,6 @@ $customizer->textareaScript(
 
 // Section
 $customizer->section(
-    'enqueue',
-    'extras',
-    __('Enqueue Management', 'secretum'),
-    ''
-);
-
-// Select
-$customizer->select(
-    'enqueue',
-    'enqueue_theme_colors',
-    __('Theme Color', 'secretum'),
-    __('Select a theme color below (a stylesheet) to use as your primary style, changing the base colors of the theme.', 'secretum'),
-    $default['enqueue_theme_colors'],
-    secretum_theme_colors()
-);
-
-// Input Text
-$customizer->inputText(
-    'enqueue',
-    'enqueue_contact_pageids',
-    __('Contact Form Page IDs', 'secretum'),
-    __('Make contact form plugins load scripts and styles on set pages, rather than the entire website. Enter a comma separated list of page IDs to load popular contact form styles and scripts. Example: 90,1001', 'secretum'),
-    $default['enqueue_contact_pageids']
-);
-
-// Section
-$customizer->section(
     'scrolltop_icon',
     'extras',
     __('Scroll To Top Icon', 'secretum'),
@@ -186,31 +159,3 @@ $customizer->select(
     $default['scrolltop_padding_y'],
     secretum_customizer_padding_top_bottom()
 );
-
-// Section
-$customizer->section(
-    'content_width',
-    'extras',
-    __('Content Width', 'secretum'),
-    ''
-);
-
-// Number
-$customizer->number(
-    'content_width',
-    'content_width',
-    __('Default Content Width In Pixels', 'secretum'),
-    __('Sets width limits on embeds and other plugable content.', 'secretum'),
-    array(),
-    $default['content_width']
-);
-
-// Section
-$customizer->section(
-    'reset',
-    'extras',
-    __('Reset Settings', 'secretum'),
-    __('THIS CAN NOT BE UNDONE! Deletes all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum')
-);
-
-$customizer->reset();

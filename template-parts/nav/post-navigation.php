@@ -7,7 +7,7 @@
  */
 
 // Display If Allowed
-if (!secretum_mod('post_navigation_links')) {
+if (!secretum_mod('entry_meta_post_navigation_links')) {
 	the_post_navigation(
 		array(
 			'prev_text' => '<span class="screen-reader-text">' . secretum_text('prev_text') .  '</span>' .

@@ -21,7 +21,7 @@ if (!function_exists('secretum_header_top_wrapper')) {
 		$margin = secretum_mod('header_top_wrapper_margin_top', 'attr', true) . secretum_mod('header_top_wrapper_margin_bottom', 'attr', true);
 		$padding = secretum_mod('header_top_wrapper_padding_x', 'attr', true) . secretum_mod('header_top_wrapper_padding_y', 'attr', true);
 
-		return apply_filters('secretum_header_top_wrapper', $background . $border . $margin_bottom . $padding, 10, 1);
+		return apply_filters('secretum_header_top_wrapper', $background . $border . $margin . $padding, 10, 1);
 	}
 }
 

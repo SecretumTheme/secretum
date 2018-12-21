@@ -156,14 +156,14 @@ class Customizer
 	 */
 	final public function radio($section_name, $setting_name, $label, $description, $default, $choices = array())
 	{
-		$this->wp_customize->add_setting('secretum[' . sanitize_key($section_name) . '_' . sanitize_key($setting_name) . ']', array(
-			'sanitize_callback' => 'Secretum\Customizer\sanitizeCheckbox',
+		$this->wp_customize->add_setting('secretum[' . sanitize_key($setting_name) . ']', array(
+			'sanitize_callback' => 'sanitize_key',
 			'transport' 		=> 'refresh',
 			'type' 				=> 'option',
 			'default' 			=> sanitize_key($default)
 		));
 
-		$this->wp_customize->add_control('secretum[' . sanitize_key($section_name) . '_' . sanitize_key($setting_name) . ']', array(
+		$this->wp_customize->add_control('secretum[' . sanitize_key($setting_name) . ']', array(
 			'label' 			=> esc_html($label),
    			'description' 		=> esc_html($description),
 			'section' 			=> 'secretum_' . sanitize_key($section_name) . '_section',

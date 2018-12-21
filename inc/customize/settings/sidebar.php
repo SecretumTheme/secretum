@@ -37,15 +37,6 @@ $customizer->radio(
     )
 );
 
-// Checkbox
-$customizer->checkbox(
-    'sidebar_display',
-    'sidebar_status',
-    __('Select To Hide Sidebar Area', 'secretum'),
-    '',
-    $default['sidebar_status']
-);
-
 // Wrapper
 $customizer->section(
     'sidebar_wrapper',

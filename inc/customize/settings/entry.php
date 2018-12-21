@@ -105,10 +105,10 @@ $customizer->checkbox(
 // Checkbox
 $customizer->checkbox(
     'entry_display',
-    'entry_meta_navigation_links',
+    'entry_meta_post_navigation_links',
     __('Hide Post Navigation Links', 'secretum'), 
     __('This feature is active when <!--nextpage--> is in use.', 'secretum'),
-    $default['entry_meta_navigation_links']
+    $default['entry_meta_post_navigation_links']
 );
 
 // Wrapper
