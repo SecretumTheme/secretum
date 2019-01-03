@@ -18,9 +18,7 @@ license.txt
 phpunit.xml
 readme.html
 README.html
-
-**/.sass-cache
-**/.sass-cache/*
+.INSTRUCTIONS
 
 assets/*
 node_modules/*
@@ -29,9 +27,7 @@ vendor/*
 
 composer.json
 composer.lock
-gulpfile.js
 package-lock.json
-package.json
 
 stage.sh
 styles.sh

@@ -2,90 +2,59 @@
  * Secretum - TinyMCE Editor Style Imports
  */
 
-// Secretum Styling Variables
-@import "css/secretum/variables";
-
-// Custom User Theme Variables
-@import "css/../theme_variables.scss";
-
-// Theme Core
-@import "css/bootstrap4/functions";
-@import "css/bootstrap4/variables";
-@import "css/bootstrap4/mixins";
-@import "css/bootstrap4/root";
-@import "css/bootstrap4/reboot";
-
-@import "css/secretum/typography";
-@import "css/bootstrap4/type";
-
-@import "css/bootstrap4/images";
-@import "css/secretum/featured-image";
-
-@import "css/bootstrap4/code";
-@import "css/bootstrap4/grid";
-@import "css/bootstrap4/tables";
-@import "css/bootstrap4/forms";
-@import "css/bootstrap4/buttons";
-@import "css/bootstrap4/transitions";
-@import "css/bootstrap4/dropdown";
-@import "css/bootstrap4/button-group";
-@import "css/bootstrap4/input-group";
-@import "css/bootstrap4/custom-forms";
-@import "css/bootstrap4/nav";
-@import "css/bootstrap4/navbar";
-@import "css/bootstrap4/card";
-
-@import "css/bootstrap4/breadcrumb";
-@import "css/secretum/breadcrumbs";
-
-@import "css/bootstrap4/pagination";
-@import "css/bootstrap4/badge";
-@import "css/bootstrap4/jumbotron";
-@import "css/bootstrap4/alert";
-@import "css/bootstrap4/progress";
-@import "css/bootstrap4/media";
-@import "css/bootstrap4/list-group";
-@import "css/bootstrap4/close";
-@import "css/bootstrap4/modal";
-@import "css/bootstrap4/tooltip";
-@import "css/bootstrap4/popover";
-@import "css/bootstrap4/carousel";
-@import "css/bootstrap4/utilities";
-@import "css/bootstrap4/print";
-
-@import "css/secretum/accessibility";
-@import "css/secretum/alignments";
-
-
-@import "css/secretum/colors";
-@import "css/secretum/colors-background";
-@import "css/secretum/colors-border";
-
-@import "css/secretum/links";
-@import "css/secretum/header";
-@import "css/secretum/sidebar";
-@import "css/secretum/widgets";
-@import "css/secretum/comments";
-@import "css/secretum/footer";
-@import "css/secretum/copyright";
-@import "css/secretum/scrolltop";
-@import "css/secretum/alert";
-@import "css/secretum/entry";
-@import "css/secretum/images";
-@import "css/secretum/sticky";
-@import "css/secretum/buttons";
-@import "css/secretum/caption"; 
-@import "css/secretum/afterline";
-@import "css/secretum/galleries";
-@import "css/secretum/jumbotron";
-@import "css/secretum/front-page";
-@import "css/secretum/attachments";
-@import "css/secretum/contact-form-7";
-
-@import "css/fontawesome/font-awesome";
-@import "css/ekko-lightbox/ekko-lightbox";
-@import "css/secretum/woocommerce";
-@import "css/secretum/woocommerce-bookings";
-
-// Custom User Theme Styles
-@import "css/../theme_styles.scss";
+@import "secretum/variables";
+@import "../theme_variables.scss";
+@import "bootstrap4/functions";
+@import "bootstrap4/variables";
+@import "bootstrap4/mixins";
+@import "bootstrap4/root";
+@import "bootstrap4/reboot";
+@import "bootstrap4/utilities";
+@import "secretum/accessibility";
+@import "secretum/alignments";
+@import "secretum/links";
+@import "secretum/typography";
+@import "secretum/font-families";
+@import "bootstrap4/type";
+@import "secretum/sizes";
+@import "bootstrap4/grid";
+@import "bootstrap4/tables";
+@import "bootstrap4/images";
+@import "secretum/featured-image";
+@import "secretum/images";
+@import "secretum/svg";
+@import "bootstrap4/forms";
+@import "bootstrap4/custom-forms";
+@import "bootstrap4/input-group";
+@import "bootstrap4/buttons";
+@import "bootstrap4/button-group";
+@import "secretum/buttons";
+@import "bootstrap4/nav";
+@import "bootstrap4/navbar";
+@import "secretum/navbar";
+@import "bootstrap4/breadcrumb";
+@import "secretum/breadcrumbs";
+@import "bootstrap4/code";
+@import "secretum/code";
+@import "secretum/colors";
+@import "secretum/colors-background";
+@import "secretum/colors-border";
+@import "bootstrap4/pagination";
+@import "bootstrap4/media";
+@import "bootstrap4/transitions";
+@import "secretum/header";
+@import "secretum/entry";
+@import "secretum/sticky";
+@import "secretum/attachments";
+@import "secretum/galleries";
+@import "secretum/caption"; 
+@import "secretum/front-page";
+@import "secretum/afterline";
+@import "secretum/widgets";
+@import "secretum/comments";
+@import "secretum/sidebar";
+@import "secretum/footer";
+@import "secretum/copyright";
+@import "secretum/scrolltop";
+@import "bootstrap4/print";
+@import "../theme_styles.scss";

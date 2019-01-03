@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
 * **Tested up to:** 5.0.1
-* **Version:** 0.0.12
+* **Version:** 0.0.13
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -43,6 +43,7 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 	* Highly compatible, mobile first, responsive, modern features, continually updated
 	* Major browser compatibility
 	* Major portable device compatibility
+	* Enable/Disable Bootstrap Scripts within Customizer > :: Globals > Enqueue Management
 * Bootstrap 4 Extended Features
 	* Bootstrap 4 color class naming standards for all expanded colors
 * WordPress adapted SCSS / CSS
@@ -52,12 +53,20 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * WordPress Customizer
 	* Currently over 350 unique settings
 	* No CSS rendering in document headers for most features
-	* Switch between themes without changing child themes
 	* Enable / disable all major theme areas (header, footer, sidebars, post author, etc)
 	* Adjust all front-end Theme/WordPress text (Translations via Customizer)
 	* Adjust the color, font, spacing of most theme elements/features
-* Child theme ready / included
-	* A ready to use child-theme to use
+	* Switch themes in the Customizer > :: Globals > Enqueue Management
+		* Swap themes without changing child themes
+* Basic SVG icon set included
+	* Automatically disables when Better Font Awesome enabled
+	* Disable default SVG icon set within the Customizer > :: Globals > Enqueue Management
+* Built-in simple to use lightbox
+	* Enable/disable feature within Customizer > :: Globals > Enqueue Management
+
+** Other Features
+
+* Automatic Better Font Awesome detection & intergration
 * WooCommerce compatible
 	* Product & Review Microdata ready
 	* Templates designed for improved conversion rates over flare
@@ -67,8 +76,6 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 	* Templates re-designed for improved booking flow
 * Contact Form 7 compatible
 	* Beautified
-* FontAwesome icon set and CSS management
-* Simple to use lightbox
 
 
 ** Features to do

@@ -1,0 +1,53 @@
+{
+    "name": "Secretum",
+    "author": "SecretumTheme",
+    "version": "0.0.13",
+    "license": "GPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SecretumTheme/secretum"
+    },
+    "bugs": {
+        "url": "https://github.com/SecretumTheme/secretum/issues"
+    },
+    "keywords": [
+        "wordpress",
+        "bootstrap",
+        "theme",
+        "secretum"
+    ],
+    "scripts": {
+        "postinstall": "gulp assets"
+    },
+    "engines": {
+        "node": ">=8.0.0",
+        "npm": ">=5.0.0"
+    },
+    "devDependencies": {
+        "bootstrap": "^4.1.0",
+        "browser-sync": "^2.26.3",
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-imagemin": "^4.1.0",
+        "gulp-line-ending-corrector": "^1.0.2",
+        "gulp-notify": "^3.2.0",
+        "gulp-remove-empty-lines": "^0.1.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^4.0.1",
+        "gulp-sort": "^2.0.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-strip-css-comments": "^2.0.0",
+        "gulp-uglify": "^3.0.0",
+        "gulp-uglifycss": "^1.0.9",
+        "gulp-wp-pot": "^2.3.3",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.3",
+        "require-dir": "^1.2.0",
+        "run-sequence": "^2.2.1"
+    },
+    "dependencies": {
+        "ekko-lightbox": "git://github.com/ashleydw/lightbox.git"
+    }
+}

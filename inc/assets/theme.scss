@@ -14,80 +14,93 @@
 @import "bootstrap4/mixins";
 @import "bootstrap4/root";
 @import "bootstrap4/reboot";
+@import "bootstrap4/utilities";
+
+@import "secretum/accessibility";
+@import "secretum/alignments";
+
+@import "secretum/links";
 
 @import "secretum/typography";
 @import "secretum/font-families";
 @import "bootstrap4/type";
+@import "secretum/sizes";
+
+@import "bootstrap4/grid";
+@import "bootstrap4/tables";
 
 @import "bootstrap4/images";
 @import "secretum/featured-image";
+@import "secretum/images";
+@import "secretum/svg";
 
-@import "bootstrap4/code";
-@import "bootstrap4/grid";
-@import "bootstrap4/tables";
 @import "bootstrap4/forms";
-@import "bootstrap4/buttons";
-@import "bootstrap4/transitions";
-@import "bootstrap4/dropdown";
-@import "bootstrap4/button-group";
-@import "bootstrap4/input-group";
 @import "bootstrap4/custom-forms";
+@import "bootstrap4/input-group";
+//@import "bootstrap4/dropdown";
+
+@import "bootstrap4/buttons";
+@import "bootstrap4/button-group";
+@import "secretum/buttons";
+
 @import "bootstrap4/nav";
 @import "bootstrap4/navbar";
 @import "secretum/navbar";
-@import "bootstrap4/card";
 
 @import "bootstrap4/breadcrumb";
 @import "secretum/breadcrumbs";
 
-@import "bootstrap4/pagination";
-@import "bootstrap4/badge";
-@import "bootstrap4/jumbotron";
-@import "bootstrap4/alert";
-@import "bootstrap4/progress";
-@import "bootstrap4/media";
-@import "bootstrap4/list-group";
-@import "bootstrap4/close";
-@import "bootstrap4/modal";
-@import "bootstrap4/tooltip";
-@import "bootstrap4/popover";
-@import "bootstrap4/carousel";
-@import "bootstrap4/utilities";
-@import "bootstrap4/print";
-
-@import "secretum/accessibility";
-@import "secretum/alignments";
+@import "bootstrap4/code";
+@import "secretum/code";
 
 @import "secretum/colors";
 @import "secretum/colors-background";
 @import "secretum/colors-border";
 
-@import "secretum/sizes";
-@import "secretum/links";
+@import "bootstrap4/pagination";
+@import "bootstrap4/media";
+
+//@import "bootstrap4/jumbotron";
+//@import "secretum/jumbotron";
+
+//@import "bootstrap4/alert";
+//@import "secretum/alert";
+
+//@import "bootstrap4/card";
+//@import "bootstrap4/badge";
+//@import "bootstrap4/progress";
+//@import "bootstrap4/list-group";
+//@import "bootstrap4/close";
+//@import "bootstrap4/modal";
+//@import "bootstrap4/tooltip";
+//@import "bootstrap4/popover";
+//@import "bootstrap4/carousel";
+@import "bootstrap4/transitions";
+
 @import "secretum/header";
-@import "secretum/sidebar";
+@import "secretum/entry";
+@import "secretum/sticky";
+@import "secretum/attachments";
+@import "secretum/galleries";
+@import "secretum/caption"; 
+@import "secretum/front-page";
+@import "secretum/afterline";
 @import "secretum/widgets";
 @import "secretum/comments";
+@import "secretum/sidebar";
 @import "secretum/footer";
 @import "secretum/copyright";
 @import "secretum/scrolltop";
-@import "secretum/alert";
-@import "secretum/entry";
-@import "secretum/images";
-@import "secretum/sticky";
-@import "secretum/buttons";
-@import "secretum/caption"; 
-@import "secretum/afterline";
-@import "secretum/galleries";
-@import "secretum/jumbotron";
-@import "secretum/front-page";
-@import "secretum/attachments";
-@import "secretum/contact-form-7";
 
-@import "fontawesome/font-awesome";
-@import "ekko-lightbox/ekko-lightbox";
-@import "secretum/woocommerce";
-@import "secretum/woocommerce-bookings";
+@import "bootstrap4/print";
+
+//@import "fontawesome/font-awesome";
+//@import "ekko-lightbox/ekko-lightbox";
+
+//@import "secretum/contact-form-7";
+
+//@import "secretum/woocommerce";
+//@import "secretum/woocommerce-bookings";
 
 // Custom User Theme Styles
 @import "../theme_styles.scss";

@@ -5,6 +5,14 @@
 .header {
     position: relative;
 
+    .navbar-brand {
+        white-space: normal;
+
+        img {
+            width: 100%;
+        }
+    }
+
     a.navbar-brand,
     .navbar-brand a:link {
         height: auto !important;
@@ -12,10 +20,6 @@
         margin: 0;
         max-width: 100%;
         text-decoration: none;
-    }
-
-    .navbar-brand img {
-        width: 100%;
     }
 
     .site-description {

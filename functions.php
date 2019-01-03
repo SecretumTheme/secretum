@@ -13,7 +13,7 @@ define('SECRETUM_DIR', 				dirname(__FILE__));
 define('SECRETUM_BASE_URL', 		esc_url(home_url()));
 define('SECRETUM_INC', 				SECRETUM_DIR . '/inc');
 
-define('SECRETUM_THEME_VERSION', 	'0.0.12');
+define('SECRETUM_THEME_VERSION', 	'0.0.13');
 define('SECRETUM_WP_MIN_VERSION', 	'3.8');
 
 define('SECRETUM_THEME_FILE', 		__FILE__);
@@ -66,6 +66,7 @@ spl_autoload_register(function ($class) {
 include_once(SECRETUM_INC . '/customize/default-settings.php');
 include_once(SECRETUM_INC . '/secretum-mod.php');
 include_once(SECRETUM_INC . '/secretum-text.php');
+include_once(SECRETUM_INC . '/secretum-icon.php');
 include_once(SECRETUM_INC . '/enqueue.php');
 include_once(SECRETUM_INC . '/editor.php');
 include_once(SECRETUM_INC . '/theme-settings.php');
@@ -137,6 +138,9 @@ add_action('customize_register', function($wp_customize) {
     $wp_customize->remove_section("header_image");
     $wp_customize->remove_section("background_image");
 
+    // Register Custom Customizer Sections Type
+    $wp_customize->register_section_type("\Secretum\CustomizerSections");
+
     // Controller Setting Arrays
     include_once(SECRETUM_INC . '/customize/choices/alignments.php');
     include_once(SECRETUM_INC . '/customize/choices/borders.php');
@@ -161,6 +165,22 @@ add_action('customize_register', function($wp_customize) {
 
     // Get Default Settings
     $default = secretum_customizer_default_settings();
+
+    // Register Secretum Pro Section
+    $wp_customize->add_section(
+        new \Secretum\CustomizerSections(
+            $wp_customize,
+            'secretum_pro_section',
+            array(
+                'title'         => __('Secretum Pro!', 'secretum'),
+                'button_text'   => __('Instant Upgrade!', 'secretum'),
+                'button_url'    => 'https://secretumtheme.com/secretum/',
+                'button_class'  => 'button button-primary alignright',
+                'section_class' => 'secretum-pro-section',
+                'priority'      => 0
+            )
+        )
+    );
 
     // Globals
     include_once(SECRETUM_INC . '/customize/settings/globals.php');
@@ -221,7 +241,49 @@ add_action('customize_register', function($wp_customize) {
     include_once(SECRETUM_INC . '/customize/export-import/global.php');
     include_once(SECRETUM_INC . '/customize/export-import/copyright.php');
     */
+
+    // Register Documentation Section
+    $wp_customize->add_section(
+        new \Secretum\CustomizerSections(
+            $wp_customize,
+            'secretum_docs_section',
+            array(
+                'title'         => __('Secretum Documentation', 'secretum'),
+                'button_text'   => __('View', 'secretum'),
+                'button_url'    => 'https://secretumtheme.com/secretum/docs/',
+                'button_class'  => 'button button-secondary alignright',
+                'section_class' => 'secretum-docs-section',
+                'priority'      => 10000
+            )
+        )
+    );
 });
+
+
+/**
+ * Enqueue Customizer Control Scripts
+ */
+add_action('customize_controls_enqueue_scripts', function() {
+    wp_enqueue_script('secretum-customize-controls', SECRETUM_THEME_URL . '/inc/customize/custom-sections/custom-sections.js', array('customize-controls'));
+    wp_enqueue_style('secretum-customize-controls', SECRETUM_THEME_URL . '/inc/customize/custom-sections/custom-sections.css');
+}, 0);
+
+
+/**
+ * Add SVG Definitions To Website Footer If No Font Awesome
+ */
+if (!class_exists('Better_Font_Awesome_Plugin')) {
+    add_action('wp_footer', function() {
+        // Define SVG sprite file.
+        // @source Twenty Seventeen By WordPress.org
+        $svg_icons = get_parent_theme_file_path('/images/svg-icons.svg');
+
+        // If it exists, include it.
+        if (file_exists($svg_icons)) {
+            require_once($svg_icons);
+        }
+    }, 9999);
+}
 
 
 /**

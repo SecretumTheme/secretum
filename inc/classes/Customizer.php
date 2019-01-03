@@ -61,6 +61,31 @@ class Customizer
 
 
 	/**
+	 * Create Pro Section
+	 *
+	 * @param string $section_name Short section name
+	 * @param string $panel_name Short panel name
+	 * @param string $title Title of Section
+	 * @param string $description Description for Section
+	 */
+	final public function sectionPro()
+	{
+		$this->wp_customize->add_section(
+			new CustomizerProSection(
+				$this->wp_customize,
+				'secretum_pro_panel',
+				array(
+					'title'    => esc_html__( 'Secretum Pro', 'secretum' ),
+					'pro_text' => esc_html__( 'Instant Upgrade!',         'secretum' ),
+					'pro_url'  => 'https://secretumtheme.com/secretum/',
+					'priority' => 0
+				)
+			)
+		);
+	}
+
+
+	/**
 	 * Add Partial
 	 *
 	 * @param string $setting_name Name of he setting to save
