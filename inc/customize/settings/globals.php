@@ -73,20 +73,89 @@ $customizer->section(
 $customizer->select(
     'enqueue',
     'enqueue_theme_colors',
-    __('Theme Color', 'secretum'),
-    __('Select a theme color below (a stylesheet) to use as your primary style, changing the base colors of the theme.', 'secretum'),
+    __('Color Scheme', 'secretum'),
+    __('Select a theme color scheme below (a stylesheet) to use as your primary style, changing the base colors of the theme.', 'secretum'),
     $default['enqueue_theme_colors'],
     secretum_theme_colors()
 );
 
-// Input Text
-$customizer->inputText(
+// Checkbox
+$customizer->checkbox(
     'enqueue',
-    'enqueue_contact_pageids',
-    __('Contact Form Page IDs', 'secretum'),
-    __('Make contact form plugins load scripts and styles on set pages, rather than the entire website. Enter a comma separated list of page IDs to load popular contact form styles and scripts. Example: 90,1001', 'secretum'),
-    $default['enqueue_contact_pageids']
+    'enqueue_theme_js_status', 
+    __('Disable Primary JS File', 'secretum'),
+    __('Disables "bundled" theme.min.js file. This is the primary .js file for the theme (ie: all Bootstrap, Secretum, Ekko, etc. scripts)', 'secretum'),
+    $default['enqueue_theme_js_status']
 );
+
+// Checkbox
+$customizer->checkbox(
+    'enqueue',
+    'enqueue_bootstrap_bundle_js_status', 
+    __('Enable Bootstrap JS File', 'secretum'),
+    __('The primary (all features) Bootstrap Bundle file. The Primary JS File must be disabled to use this feature.', 'secretum'),
+    $default['enqueue_bootstrap_bundle_js_status']
+);
+
+// Checkbox
+$customizer->checkbox(
+    'enqueue',
+    'enqueue_secretum_js_status', 
+    __('Enable Theme JS File', 'secretum'),
+    __('Very small theme dependent jQuery file (ie: Scroll to Top, Sticky Menu/Header, Menu Togglers, etc). The Primary JS File must be disabled to use this feature.', 'secretum'),
+    $default['enqueue_secretum_js_status']
+);
+
+// Checkbox
+$customizer->checkbox(
+    'enqueue',
+    'enqueue_ekko_lightbox_status', 
+    __('Enable Ekko Lightbox', 'secretum'),
+    '',
+    $default['enqueue_ekko_lightbox_status']
+);
+
+// Checkbox
+$customizer->checkbox(
+    'enqueue',
+    'enqueue_jquery_status', 
+    __('Disable jQuery', 'secretum'),
+    __('Automatically disables all WordPress & Theme based JavaScript files. ** Warning ** Some plugins require jQuery to function correctly.', 'secretum'),
+    $default['enqueue_jquery_status']
+);
+
+if (class_exists('woocommerce')) {
+    // Checkbox
+    $customizer->checkbox(
+        'enqueue',
+        'enqueue_woocommerce_status', 
+        __('Enable WooCommerce Styles', 'secretum'),
+        '',
+        $default['enqueue_woocommerce_status']
+    );
+
+    if (class_exists('WC_Bookings')) {
+        // Checkbox
+        $customizer->checkbox(
+            'enqueue',
+            'enqueue_woocommerce_bookings_status', 
+            __('Enable WooCommerce Bookings Styles', 'secretum'),
+            '',
+            $default['enqueue_woocommerce_bookings_status']
+        );
+    }
+}
+
+if (class_exists('WPCF7')) {
+    // Input Text
+    $customizer->inputText(
+        'enqueue',
+        'enqueue_contact_pageids',
+        __('Contact Form Page IDs', 'secretum'),
+        __('Make adapted contact form plugins load scripts and styles on set page ids, rather than the entire website. Enter a comma separated list of page IDs. Example: 90,1001', 'secretum'),
+        $default['enqueue_contact_pageids']
+    );
+}
 
 // Section
 $customizer->section(

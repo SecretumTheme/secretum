@@ -47,7 +47,19 @@ if (!function_exists('secretum_customizer_globals_settings')) {
 			'globals_background_color'							=> '',
 			'globals_text_color' 								=> '',
 			'globals_link_color' 								=> '',
-			'globals_link_hover_color' 							=> ''
+			'globals_link_hover_color' 							=> '',
+			// Enqueue Scripts
+			'enqueue_contact_pageids' 							=> '',
+			'enqueue_theme_colors' 								=> '',
+			'enqueue_ekko_lightbox_status' 						=> '',
+			'enqueue_woocommerce_status' 						=> 1,
+			'enqueue_woocommerce_bookings_status' 				=> '',
+			'enqueue_theme_js_status' 							=> '',
+			'enqueue_secretum_js_status' 						=> '',
+			'enqueue_bootstrap_bundle_js_status'				=> '',
+			'enqueue_jquery_status' 							=> '',
+			// Content Width
+			'content_width' 									=> '640'
 		));
 	}
 }
@@ -559,9 +571,6 @@ if (!function_exists('secretum_customizer_extras_settings')) {
 		return apply_filters('secretum_customizer_extras_settings', array(
 			// Analytics
 			'analytics_location' 								=> '',
-			// Enqueue Scripts
-			'enqueue_contact_pageids' 							=> '',
-			'enqueue_theme_colors' 								=> '',
 			// Scroll Top
 			'scrolltop' 										=> '',
 			'scrolltop_text_color' 								=> '',
@@ -573,9 +582,7 @@ if (!function_exists('secretum_customizer_extras_settings')) {
 			'scrolltop_border_color' 							=> '',
 			'scrolltop_border_radius' 							=> '',
 			'scrolltop_padding_x' 								=> '',
-			'scrolltop_padding_y' 								=> '',
-			// Content Width
-			'content_width' 									=> '640'
+			'scrolltop_padding_y' 								=> ''
 		));
 	}
 }

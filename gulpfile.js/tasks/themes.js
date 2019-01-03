@@ -51,7 +51,7 @@ gulp.task('themes.css', function () {
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(descSRC))
-    .pipe(notify({message: 'Created "themes.css"', onLast: true}))
+    .pipe(notify({message: 'Created Custom Color Themes', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
@@ -64,6 +64,6 @@ gulp.task('themes.min.css', function () {
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(descSRC))
-    .pipe(notify({message: 'Created "themes.min.css"', onLast: true}))
+    .pipe(notify({message: 'Created Minimized Custom Color Themes', onLast: true}))
     .on('error', console.error.bind(console))
 });

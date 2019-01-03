@@ -36,8 +36,9 @@ gulp.task('assets', function() {
     gulp.src(vendorSRC + '/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest(descSRC + '/js'))
 
     // Ekko Lightbox
-    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.scss')).pipe(gulp.dest(descSRC + '/css/secretum'))
-    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.js').pipe(gulp.dest(descSRC + '/js'))
+    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.min.css')).pipe(gulp.dest('./css'))
+    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js').pipe(gulp.dest('./js'))
+    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js.map').pipe(gulp.dest('./js'))
 
     return stream
 });

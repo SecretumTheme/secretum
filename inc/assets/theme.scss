@@ -62,10 +62,8 @@
 
 //@import "bootstrap4/jumbotron";
 //@import "secretum/jumbotron";
-
 //@import "bootstrap4/alert";
 //@import "secretum/alert";
-
 //@import "bootstrap4/card";
 //@import "bootstrap4/badge";
 //@import "bootstrap4/progress";
@@ -75,6 +73,7 @@
 //@import "bootstrap4/tooltip";
 //@import "bootstrap4/popover";
 //@import "bootstrap4/carousel";
+
 @import "bootstrap4/transitions";
 
 @import "secretum/header";
@@ -93,14 +92,6 @@
 @import "secretum/scrolltop";
 
 @import "bootstrap4/print";
-
-//@import "fontawesome/font-awesome";
-//@import "ekko-lightbox/ekko-lightbox";
-
-//@import "secretum/contact-form-7";
-
-//@import "secretum/woocommerce";
-//@import "secretum/woocommerce-bookings";
 
 // Custom User Theme Styles
 @import "../theme_styles.scss";

@@ -11,7 +11,6 @@
  *
  * @command gulp assets
  * @command gulp editor
- * @command gulp ekko
  * @command gulp images
  * @command gulp scripts
  * @command gulp styles
@@ -80,7 +79,7 @@ gulp.task('clean', function() {
  * @command gulp all
  */
 gulp.task('all', function (done) {
-    sequence('editor', 'ekko', 'images', 'scripts', 'styles', 'themes', 'translate', 'woocommerce', done);
+    sequence('editor', 'images', 'scripts', 'styles', 'themes', 'translate', 'woocommerce', done);
 });
 
 
@@ -100,7 +99,7 @@ gulp.task('styles', function (done) {
  * @command gulp scripts
  */
 gulp.task('scripts', function (done) {
-    sequence('theme.js', 'theme.min.js', done);
+    sequence('theme.js', 'theme.min.js', 'secretum.js', 'secretum.min.js', 'bootstrap.bundle.js', 'bootstrap.bundle.min.js', done);
 });
 
 
@@ -111,16 +110,6 @@ gulp.task('scripts', function (done) {
  */
 gulp.task('editor', function (done) {
     sequence('editor.css', 'editor.min.css', done);
-});
-
-
-/**
- * Gulp Task: Compile Ekko Lightbox Stylesheets & Scripts
- *
- * @command gulp ekko
- */
-gulp.task('ekko', function (done) {
-    sequence('ekko-lightbox.css', 'ekko-lightbox.min.css', 'ekko-lightbox.js', 'ekko-lightbox.min.js', done);
 });
 
 
