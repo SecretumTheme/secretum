@@ -79,7 +79,7 @@ gulp.task('clean', function() {
  * @command gulp all
  */
 gulp.task('all', function (done) {
-    sequence('editor', 'images', 'scripts', 'styles', 'themes', 'translate', 'woocommerce', done);
+    sequence('editor', 'images', 'scripts', 'styles', 'themes', 'woocommerce', 'translate', done);
 });
 
 
@@ -110,6 +110,16 @@ gulp.task('scripts', function (done) {
  */
 gulp.task('editor', function (done) {
     sequence('editor.css', 'editor.min.css', done);
+});
+
+
+/**
+ * Gulp Task: Compile Custom Color & Styling Themes
+ *
+ * @command gulp themes
+ */
+gulp.task('themes', function (done) {
+    sequence('themes.css', 'themes.min.css', done);
 });
 
 

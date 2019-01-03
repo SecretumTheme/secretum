@@ -1,5 +1,5 @@
 /**
- * Secretum Gulp Task: Color & Styling Themes
+ * Secretum Gulp Task: Custom Color & Styling Themes
  *
  * Compiles:
  *      /theme-color-name/theme.css
@@ -35,11 +35,6 @@ const AUTOPREFIXER_BROWSERS = [
     'android >= 4',
     'bb >= 10'
 ];
-
-gulp.task('themes', function () {
-    gulp.start('themes.css')
-    gulp.start('themes.min.css')
-});
 
 gulp.task('themes.css', function () {
     return gulp.src(scssSRC)
