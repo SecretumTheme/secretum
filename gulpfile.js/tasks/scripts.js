@@ -66,7 +66,7 @@ gulp.task('secretum.min.js', function () {
 });
 
 gulp.task('bootstrap.bundle.js', function () {
-    return gulp.src(secretumJsSRC)
+    return gulp.src(bootstrapJsSRC)
     .pipe(concat('bootstrap.bundle.js'))
     .pipe(noComments())
     .pipe(lineec())
@@ -76,7 +76,7 @@ gulp.task('bootstrap.bundle.js', function () {
 });
 
 gulp.task('bootstrap.bundle.min.js', function () {
-    return gulp.src(secretumJsSRC)
+    return gulp.src(bootstrapJsSRC)
     .pipe(concat('bootstrap.bundle.min.js'))
     .pipe(noComments())
     .pipe(lineec())

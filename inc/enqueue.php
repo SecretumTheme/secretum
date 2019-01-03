@@ -41,8 +41,8 @@ add_action('wp_enqueue_scripts', function() {
         );
     }
 
-    // Theme Scripts
-    if(!secretum_mod('enqueue_theme_js_status') && !secretum_mod('enqueue_jquery_status')) {
+    // Primary Theme Script
+    if (!secretum_mod('enqueue_primary_js_status') && !secretum_mod('enqueue_jquery_status')) {
         wp_enqueue_script(
             'secretum',
             SECRETUM_STYLE_URL . '/js/theme.min.js',
@@ -50,6 +50,30 @@ add_action('wp_enqueue_scripts', function() {
             $theme->get('Version'),
             true
         );
+
+    // Primary JS Disabled
+    } elseif (secretum_mod('enqueue_primary_js_status') && !secretum_mod('enqueue_jquery_status')) {
+        // Bootstrap Bundle Script
+        if (secretum_mod('enqueue_bootstrap_bundle_js_status')) {
+            wp_enqueue_script(
+                'secretum-bootstrap-bundle',
+                SECRETUM_STYLE_URL . '/js/bootstrap.bundle.min.js',
+                array('jquery'),
+                '4.2.1',
+                true
+            );
+        }
+
+        // Secretum Theme Script
+        if (secretum_mod('enqueue_secretum_js_status')) {
+            wp_enqueue_script(
+                'secretum',
+                SECRETUM_STYLE_URL . '/js/secretum.min.js',
+                array('jquery'),
+                $theme->get('Version'),
+                true
+            );
+        }
     }
 
     // Ekko Lightbox

@@ -54,7 +54,7 @@ if (!function_exists('secretum_customizer_globals_settings')) {
 			'enqueue_ekko_lightbox_status' 						=> '',
 			'enqueue_woocommerce_status' 						=> 1,
 			'enqueue_woocommerce_bookings_status' 				=> '',
-			'enqueue_theme_js_status' 							=> '',
+			'enqueue_primary_js_status' 						=> '',
 			'enqueue_secretum_js_status' 						=> '',
 			'enqueue_bootstrap_bundle_js_status'				=> '',
 			'enqueue_jquery_status' 							=> '',

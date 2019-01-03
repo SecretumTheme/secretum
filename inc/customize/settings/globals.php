@@ -82,10 +82,10 @@ $customizer->select(
 // Checkbox
 $customizer->checkbox(
     'enqueue',
-    'enqueue_theme_js_status', 
+    'enqueue_primary_js_status', 
     __('Disable Primary JS File', 'secretum'),
     __('Disables "bundled" theme.min.js file. This is the primary .js file for the theme (ie: all Bootstrap, Secretum, Ekko, etc. scripts)', 'secretum'),
-    $default['enqueue_theme_js_status']
+    $default['enqueue_primary_js_status']
 );
 
 // Checkbox
