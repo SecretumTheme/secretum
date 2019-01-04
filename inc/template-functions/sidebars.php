@@ -18,8 +18,8 @@ if (!function_exists('secretum_sidebar_wrapper')) {
 		// Classes
 		$background = secretum_mod('sidebar_wrapper_background_color', 'attr', true);
 		$border = secretum_mod('sidebar_wrapper_border_type', 'attr', true) . secretum_mod('sidebar_wrapper_border_color', 'attr', true);
-		$margin = secretum_mod('sidebar_wrapper_margin_top', 'attr', true) . secretum_mod('sidebar_wrapper_margin_bottom', 'attr', true);
-		$padding = secretum_mod('sidebar_wrapper_padding_y', 'attr', true);
+		$margin = secretum_mod('sidebar_wrapper_margin_top', 'attr', true) . secretum_mod('sidebar_wrapper_margin_right', 'attr', true) . secretum_mod('sidebar_wrapper_margin_bottom', 'attr', true) . secretum_mod('sidebar_wrapper_margin_left', 'attr', true);
+		$padding = secretum_mod('sidebar_wrapper_padding_x', 'attr', true) . secretum_mod('sidebar_wrapper_padding_y', 'attr', true);
 
 		return apply_filters('secretum_sidebar_wrapper', $background . $border . $margin . $padding, 10, 1);
 	}

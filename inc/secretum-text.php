@@ -53,6 +53,8 @@ if (!function_exists('secretum_text')) {
 			'search_button_text'			=> __('Search Us!', 'secretum'),
 			'search_button_placeholder'		=> __('Search our site...', 'secretum'),
 			'search_results_text' 			=> __('Search Results for:', 'secretum'),
+			'navbar_search_button_text'		=> __('Search our site...', 'secretum'),
+			'navbar_search_button_title'	=> __('Press Enter To Search...', 'secretum'),
 			'continue_reading_text' 		=> __('Continue Reading...', 'secretum'),
 			'read_more_text' 				=> __('Read More...', 'secretum'),
 			'nothing_found_title_text' 		=> __('Nothing Found', 'secretum'),

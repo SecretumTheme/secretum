@@ -4,3 +4,4 @@
 .gitignore export-ignore
 updates.json export-ignore
 README.md export-ignore
+gulpfile.js export-ignore

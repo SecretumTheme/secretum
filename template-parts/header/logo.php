@@ -38,17 +38,19 @@ if (!secretum_mod('site_identity_branding_status')) {
 	// Front-page or Home & No Custom Logo
 	} elseif (is_front_page() && is_home() && !secretum_mod('site_identity_logo_status')) {
 		// Build Heading Logo Link
-		echo sprintf('<h1 class="navbar-brand%1$s"><a href="%2$s" rel="home" itemprop="url">%3$s</a></h1>',
-		    secretum_site_identity_title_container() . secretum_site_identity_title_textuals(),
+		echo sprintf('<h1 class="navbar-brand%1$s"><a href="%2$s" rel="home" itemprop="url"%3$s>%4$s</a></h1>',
+		    secretum_site_identity_title_container(),
 		    esc_url(get_home_url('/')),
+		    ' class="' . secretum_site_identity_title_textuals() . '"',
 		    esc_attr(get_bloginfo('name', 'display'))
 		);
 
 	// Not Front-page & No Custom Logo
 	} elseif (!secretum_mod('site_identity_logo_status')) {
 		// Build Text Link
-		echo sprintf('<a class="navbar-brand%1$s" href="%2$s" rel="home" itemprop="url">%3$s</a>',
-		    secretum_site_identity_title_container() . secretum_site_identity_title_textuals(),
+		echo sprintf('<a class="navbar-brand%1$s%2$s" href="%3$s" rel="home" itemprop="url">%4$s</a>',
+		    secretum_site_identity_title_container(),
+		    secretum_site_identity_title_textuals(),
 		    esc_url(get_home_url('/')),
 		    esc_attr(get_bloginfo('name', 'display'))
 		);

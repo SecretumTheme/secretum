@@ -41,7 +41,7 @@ class Navwalker extends \Walker_Nav_Menu
 		$indent = str_repeat($t, $depth);
 
 		// Default class to add to the file.
-		$classes = array('dropdown-menu');
+		$classes = array('dropdown-menu' . secretum_primary_nav_dropdown_classes());
 
 		/**
 		 * Filters the CSS class(es) applied to a menu list element.
@@ -141,7 +141,7 @@ class Navwalker extends \Walker_Nav_Menu
 
 		// Add some additional default classes to the item.
 		$classes[] = 'menu-item-' . $item->ID;
-		$classes[] = 'nav-item';
+		$classes[] = 'nav-item' . secretum_mod('primary_nav_dropdown_background_hover_color', 'attr', true);
 
 		// Inject List Items Class
 		$classes[] = isset($args->items_class) ? strip_tags($args->items_class) : '';
@@ -205,7 +205,7 @@ class Navwalker extends \Walker_Nav_Menu
 
 			// Dropdown, use .dropdown-item
 			if ($depth > 0) {
-				$atts['class'] = 'dropdown-item';
+				$atts['class'] = 'dropdown-item' . secretum_primary_nav_dropdown_textual_classes();
 
 			// Default, use .nav-link
 			} else {

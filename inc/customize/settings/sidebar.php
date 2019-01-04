@@ -42,7 +42,7 @@ $customizer->section(
     'sidebar_wrapper',
     'sidebar',
     __('Wrapper', 'secretum'),
-    __('Customize the outter wrapper around header top area.', 'secretum')
+    __('Outer div that wraps around all containers and elements for this area', 'secretum')
 );
 
 // Select
@@ -78,9 +78,29 @@ $customizer->select(
 // Select
 $customizer->select(
     'sidebar_wrapper',
+    'sidebar_wrapper_margin_top',
+    __('Margin - Top', 'secretum'),
+    __('Spacing around/outside the wrapper', 'secretum'),
+    $default['sidebar_wrapper_margin_top'],
+    secretum_customizer_margin_top()
+);
+
+// Select
+$customizer->select(
+    'sidebar_wrapper',
+    'sidebar_wrapper_margin_right',
+    __('Margin - Right', 'secretum'),
+    __('Spacing around/outside the wrapper', 'secretum'),
+    $default['sidebar_wrapper_margin_right'],
+    secretum_customizer_margin_right()
+);
+
+// Select
+$customizer->select(
+    'sidebar_wrapper',
     'sidebar_wrapper_margin_bottom',
     __('Margin - Bottom', 'secretum'),
-    __('Increases spacing after section.', 'secretum'),
+    __('Spacing around/outside the wrapper', 'secretum'),
     $default['sidebar_wrapper_margin_bottom'],
     secretum_customizer_margin_bottom()
 );
@@ -88,11 +108,11 @@ $customizer->select(
 // Select
 $customizer->select(
     'sidebar_wrapper',
-    'sidebar_wrapper_margin_top',
-    __('Margin - Top', 'secretum'),
-    __('Increases spacing before section.', 'secretum'),
-    $default['sidebar_wrapper_margin_top'],
-    secretum_customizer_margin_top()
+    'sidebar_wrapper_margin_left',
+    __('Margin - Left', 'secretum'),
+    __('Spacing around/outside the wrapper', 'secretum'),
+    $default['sidebar_wrapper_margin_left'],
+    secretum_customizer_margin_left()
 );
 
 // Select
@@ -120,17 +140,7 @@ $customizer->section(
     'sidebar_container',
     'sidebar',
     __('Container', 'secretum'),
-    __('Customize the container within the header top wrapper.', 'secretum')
-);
-
-// Radio
-$customizer->radio(
-    'sidebar_container',
-    'sidebar_container_type',
-    __('Container Type', 'secretum'),
-    '',
-    $default['sidebar_container_type'],
-    secretum_customizer_container_types()
+    __('Inner div that contains other elments to display', 'secretum')
 );
 
 // Select

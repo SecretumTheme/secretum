@@ -3,30 +3,31 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
 * **Tested up to:** 5.0.1
-* **Version:** 0.0.14
+* **Version:** 0.0.15
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
-Secretum - A Flexible Multipurpose WordPress Theme.
+Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money!
 
 
 ## NOTE - Alpha Release
 
-Theme is ready for public use but should not be developed past what is provided. Action, filter, and setting names may change at this point.
+Theme is ready for public use and should only be developed on for testing purposes. Templates, actions, filters, and setting naming structures have been standardized, however they could change due to error or whatever reason...
 
-* Please report any bugs / issues that you find.
-* Most of what you need can be found within the Customizer.
-* The master branch is stable, it is running live on Websites.
-* Anything can change and no changes are logged during Alpha. We know what needs to be done, and it's being done.
+* Most of what you need can be found within the Customizer, try to find it first
+* Dev for testing only!
+* No standards have been created for devs
+* Please report any bugs / issues that you find
+* The master branch is stable, it is running live on Websites
+* Anything can change and most changes are not logged during Alpha. We know what needs to be done, and it's being done.
 * Use at your own risk, no support is provided.
 
 
 ## Description
 
-Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress and Bootstrap 4 users.
-
+Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money! Export & import (share) theme settings across any Secretum theme install. Mass rapid deploy child-themes that automatically setup upon activation. Very simple to use, no new interfaces to learn, no fancy page-builders needed.
 
 ## For Support, Bugs & Feature Requests
 
@@ -39,6 +40,25 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 
 ** Trying to keep a list of features
 
+* Built for all skill levels
+	* First-time users can have a Website ready for use in less than 1 minute
+	* Any user can highly customize the look, layout, style, and colors within minutes
+		** The customizer uses primarily checkboxes and dropdowns, keeping it simple
+	* Advanced developers can create whatever they desire (dev via gulp)
+		** Child-theme ready
+		** Customize based on WordPress theming standards
+		** Customize with filters and/or function replication
+	* No page builders to learn, they're not needed with Secretum
+		** Secretum works with most 3rd-party page builders
+	* Simple to use copy+paste examples for settings and HTML display
+* Rapid theme deployment & setting replication
+	* Export settings globally or for a unique feature
+	* Import settings globally or for a unique feature
+	* Sharing settings across any Secretum Theme
+	* Automatic setting replication via custom filters
+	* Instant replication ability upon theme activation
+* Works with Gutenberg - Does Not Need Gutenberg
+	* Compatible with all Gutenberg block plugins
 * Bootstrap 4 SCSS / CSS
 	* Highly compatible, mobile first, responsive, modern features, continually updated
 	* Major browser compatibility
@@ -49,7 +69,10 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 * WordPress adapted SCSS / CSS
 	* Standard WordPress classes and selectors used
 	* Minimal new class names to learn and remember
-	* Higher compatability chances when moving to Secretum Theme
+	* Higher compatibility chances when moving to Secretum Theme
+* JavaScript/jQuery is enabled by default
+	* Secretum is fully functional without JavaScript, assuming no other Plugins require JavaScript
+	* Enable/Disable bundled scripts, theme scripts, Bootstrap scripts, jQuery, and others
 * WordPress Customizer
 	* Currently over 350 unique settings
 	* No CSS rendering in document headers for most features
@@ -66,8 +89,8 @@ Secretum - A Highly Flexible Multipurpose WordPress Theme for advanced WordPress
 
 ** Other Features
 
-* Automatic Better Font Awesome detection & intergration
-* WooCommerce compatible
+* Automatic Better Font Awesome detection & integration
+* Automatic WooCommerce detection & integration
 	* Product & Review Microdata ready
 	* Templates designed for improved conversion rates over flare
 	* Templates designed to work with JavaScript disabled

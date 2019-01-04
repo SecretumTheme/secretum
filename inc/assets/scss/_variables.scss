@@ -13,21 +13,8 @@
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
 
-// Primary Colors
-$primary: 							#88858e;
-$primary-brand-color: 				$primary;
-$primary-brand-color-dark: 			#7e7b85;
-$primary-brand-color-light: 		#928f97;
-$primary-spacer-color: 				$primary;
-$primary-text-color: 				#141315;
-
-// Secondary Colors
-$secondary: 						#e1e1e3;
-$secondary-brand-color: 			$secondary;
-$secondary-text-color: 				#1d1c1f;
-
 // Color Shades
-$white:     						#f5f5f6;
+$white:     						#fefefe;
 $gray-100: 							#f8f9fa;
 $gray-200: 							#e9ecef;
 $gray-300: 							#dee2e6;
@@ -39,7 +26,7 @@ $gray-800: 							#343a40;
 $gray-900: 							#212529;
 $black:    							#000000;
 
- // Override Colors
+ // Color Names
 $blue: 								#007bff;
 $indigo: 							#6610f2;
 $purple: 							#6f42c1;
@@ -54,13 +41,26 @@ $success: 							$green;
 $info: 								$cyan;
 $warning: 							$yellow;
 $danger: 							$red;
-$light: 							$gray-200;
-$dark: 								$gray-700;
+
+// Color Themes
 $light: 							$gray-200;
 $dark: 								$gray-800;
 
+// Primary Colors
+$primary: 							#1c86ee; // Dodger Blue 2
+$primary-brand-color: 				$primary;
+$primary-brand-color-dark: 			#1179e0;
+$primary-brand-color-light: 		#3493f0;
+$primary-spacer-color: 				$gray-300;
+$primary-text-color: 				$gray-900;
+
+// Secondary Colors
+$secondary: 						$gray-600;
+$secondary-brand-color: 			$secondary;
+$secondary-text-color: 				$gray-800;
+
 // New Colors
-$whiteish:  						#f2f2f3;
+$whiteish:  						#f7f7f3;
 $blackish: 							#101112;
 
 // Background Colors
@@ -100,6 +100,9 @@ $colors: (
 
 // Header Hamburger Menu
 $header-navbar-hamburger-color: 	$gray-500;
+
+// Navmenu Dropdown Hover Color
+$dropdown-link-hover-bg:            transparent;
 
 // Content Entry Heading Sizes
 $h1-font-size: 						2.2rem;

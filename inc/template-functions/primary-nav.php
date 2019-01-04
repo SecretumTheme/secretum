@@ -95,6 +95,44 @@ if (!function_exists('secretum_primary_nav_divider_classes')) {
 
 
 /**
+ * Primary Menu Dropdown Classes
+ *
+ * @return string Pre-sanitized string of class names
+ */
+if (!function_exists('secretum_primary_nav_dropdown_classes')) {
+	function secretum_primary_nav_dropdown_classes()
+	{
+		// Classes
+		$background = secretum_mod('primary_nav_dropdown_background_color', 'attr', true);
+		$border = secretum_mod('primary_nav_dropdown_border_type', 'attr', true) . secretum_mod('primary_nav_dropdown_border_color', 'attr', true);
+		$margin = secretum_mod('primary_nav_dropdown_margin_y', 'attr', true) . secretum_mod('primary_nav_dropdown_margin_x', 'attr', true);
+		$padding = secretum_mod('primary_nav_dropdown_padding_y', 'attr', true) . secretum_mod('primary_nav_dropdown_padding_x', 'attr', true);
+
+		return apply_filters('secretum_primary_nav_dropdown_classes', $background . $border . $margin . $padding, 10, 1);
+	}
+}
+
+
+/**
+ * Primary Menu Dropdown Classes
+ *
+ * @return string Pre-sanitized string of class names
+ */
+if (!function_exists('secretum_primary_nav_dropdown_textual_classes')) {
+	function secretum_primary_nav_dropdown_textual_classes()
+	{
+		// Classes
+		$align = secretum_mod('primary_nav_dropdown_text_alignment', 'attr', true);
+		$font = secretum_mod('primary_nav_dropdown_textual_font_family', 'attr', true) . secretum_mod('primary_nav_dropdown_textual_font_size', 'attr', true) . secretum_mod('primary_nav_dropdown_textual_font_style', 'attr', true);
+		$text = secretum_mod('primary_nav_dropdown_textual_text_transform', 'attr', true) . secretum_mod('primary_nav_dropdown_textual_text_color', 'attr', true);
+		$links = secretum_mod('primary_nav_dropdown_textual_link_color', 'attr', true) . secretum_mod('primary_nav_dropdown_textual_link_hover_color', 'attr', true);
+
+		return apply_filters('secretum_primary_nav_dropdown_textual_classes', $align . $font . $text . $links, 10, 1);
+	}
+}
+
+
+/**
  * Toggler Icon Wrapper
  *
  * @return string Pre-sanitized string of class names
@@ -103,10 +141,10 @@ if (!function_exists('secretum_primary_nav_toggler_wrapper')) {
 	function secretum_primary_nav_toggler_wrapper()
 	{
 		// Classes
-		$background = secretum_mod('primary_nav_toggler_icon_background_color', 'attr', true);
-		$border = secretum_mod('primary_nav_toggler_icon_border_radius', 'attr', true) . secretum_mod('primary_nav_toggler_icon_border_color', 'attr', true);
-		$margin = secretum_mod('primary_nav_toggler_icon_margin_y', 'attr', true) . secretum_mod('primary_nav_toggler_icon_margin_x', 'attr', true);
-		$alignment = secretum_mod('primary_nav_toggler_icon_alignment', 'attr', true);
+		$background = secretum_mod('primary_nav_toggler_background_color', 'attr', true);
+		$border = secretum_mod('primary_nav_toggler_border_radius', 'attr', true) . secretum_mod('primary_nav_toggler_border_color', 'attr', true);
+		$margin = secretum_mod('primary_nav_toggler_margin_y', 'attr', true) . secretum_mod('primary_nav_toggler_margin_x', 'attr', true);
+		$alignment = secretum_mod('primary_nav_toggler_alignment', 'attr', true);
 
 		return apply_filters('secretum_primary_nav_toggler_wrapper', $background . $border . $margin . $alignment, 10, 1);
 	}
@@ -122,8 +160,8 @@ if (!function_exists('secretum_primary_nav_toggler_icon')) {
 	function secretum_primary_nav_toggler_icon()
 	{
 		// Classes
-		$background = secretum_mod('primary_nav_toggler_icon_background_color', 'attr', true);
-		$size = secretum_mod('primary_nav_toggler_icon_size', 'attr', true);
+		$background = secretum_mod('primary_nav_toggler_background_color', 'attr', true);
+		$size = secretum_mod('primary_nav_toggler_font_size', 'attr', true);
 
 		return apply_filters('secretum_primary_nav_toggler_icon', $background . $size, 10, 1);
 	}

@@ -29,6 +29,16 @@
     }
 }
 
+button.icon-search {
+    background: url('../images/search.png') no-repeat scroll;
+    background-size: contain;
+    height: 30px;
+    position: relative;
+    top: 7px;
+    left: 7px;
+    z-index: 1;
+}
+
 
 //
 // Alternate buttons

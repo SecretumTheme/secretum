@@ -28,6 +28,9 @@ if (!secretum_mod('primary_nav_status') && has_nav_menu('secretum-navbar-primary
 	    'fallback_cb'       => false,
 	    'echo'				=> true
 	));
+
+	// Navbar Search Form
+	get_template_part('template-parts/primary-nav/search');
 ?>
 </div><!-- .container -->
 </nav><!-- .navbar -->

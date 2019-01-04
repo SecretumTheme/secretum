@@ -120,6 +120,22 @@ $customizer->textTranslate(
 // Text Translate
 $customizer->textTranslate(
     'wordpress_text',
+    'navbar_search_button_text',
+    __('Navbar Search Button Placeholder Text', 'secretum'),
+    ''
+);
+
+// Text Translate
+$customizer->textTranslate(
+    'wordpress_text',
+    'navbar_search_button_title',
+    __('Navbar Search Button Title Text', 'secretum'),
+    ''
+);
+
+// Text Translate
+$customizer->textTranslate(
+    'wordpress_text',
     'search_results_text',
     __('Search Results Text', 'secretum'),
     ''
