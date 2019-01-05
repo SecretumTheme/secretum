@@ -1,10 +1,10 @@
 /**
- * Secretum Gulp Task: Custom Color & Styling Themes
+ * Custom Color & Styling Themes
  *
  * Compiles:
- *      /theme-color-name/theme.css
- *      /theme-color-name/theme.css.map
- *      /theme-color-name/theme.min.css
+ *      css/themes/theme-color-name/theme.css
+ *      css/themes/theme-color-name/theme.css.map
+ *      css/themes/theme-color-name/theme.min.css
  *
  * @command gulp themes
  * @command gulp themes.css
@@ -14,15 +14,13 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
+var sequence        = require('run-sequence');
 var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
 var lineec          = require('gulp-line-ending-corrector');
-var scssSRC   		= './assets/css/secretum/themes/**/*.scss';
-var descSRC     	= './css/themes';
-
-const AUTOPREFIXER_BROWSERS = [
+const autoprefixers = [
     'last 2 version',
     '> 1%',
     'ie >= 9',
@@ -36,29 +34,45 @@ const AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
+
+/**
+ * Compile Custom Color & Styling Themes
+ */
+gulp.task('themes', function (done) {
+    sequence('themes.css', 'themes.min.css', done);
+});
+
+
+/**
+ * Create theme-color-name/theme.css
+ */
 gulp.task('themes.css', function () {
-    return gulp.src(scssSRC)
+    return gulp.src('./assets/css/secretum/themes/**/*.scss')
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css/themes'))
     .pipe(notify({message: 'Created Custom Color Themes', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
+
+/**
+ * Create theme-color-name/theme.min.css
+ */
 gulp.task('themes.min.css', function () {
-    return gulp.src(scssSRC)
+    return gulp.src('./assets/css/secretum/themes/**/*.scss')
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css/themes'))
     .pipe(notify({message: 'Created Minimized Custom Color Themes', onLast: true}))
     .on('error', console.error.bind(console))
 });

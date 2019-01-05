@@ -1,5 +1,5 @@
 /**
- * Secretum Gulp Task: WordPress Editor Stylesheet
+ * WordPress Editor Stylesheet
  *
  * Compiles:
  *      theme_editor.css
@@ -14,15 +14,13 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
+var sequence        = require('run-sequence');
 var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
 var lineec          = require('gulp-line-ending-corrector');
-var editorCssSRC   	= './assets/css/theme_editor.scss';
-var editorDestPath  = './css';
-
-const AUTOPREFIXER_BROWSERS = [
+const autoprefixers = [
     'last 2 version',
     '> 1%',
     'ie >= 9',
@@ -36,29 +34,45 @@ const AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
+
+/**
+ * Compile WordPress Editor Stylesheets
+ */
+gulp.task('editor', function (done) {
+    sequence('editor.css', 'editor.min.css', done);
+});
+
+
+/**
+ * Create editor.css
+ */
 gulp.task('editor.css', function () {
-    return gulp.src(editorCssSRC)
+    return gulp.src('./assets/css/theme_editor.scss')
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(editorDestPath))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
+
+/**
+ * Create editor.min.css
+ */
 gulp.task('editor.min.css', function () {
-    return gulp.src(editorCssSRC)
+    return gulp.src('./assets/css/theme_editor.scss')
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(editorDestPath))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });

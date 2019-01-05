@@ -73,6 +73,16 @@ $customizer->select(
 // Select
 $customizer->select(
     'scrolltop_icon',
+    'scrolltop_icon_size',
+    __('Icon Size', 'secretum'),
+    '',
+    $default['scrolltop_icon_size'],
+    secretum_customizer_font_sizes()
+);
+
+// Select
+$customizer->select(
+    'scrolltop_icon',
     'scrolltop_background_color',
     __('Background Color', 'secretum'),
     '',

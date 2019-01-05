@@ -1,50 +1,47 @@
 /**
- * Secretum Gulp Task: Copy Theme Assets inc/assets to /assets
+ * Copy Theme Assets inc/assets to /assets
  *
  * @command gulp assets
  */
-var gulp        = require('gulp');
-var concat      = require('gulp-concat');
-var fileSRC     = './inc/assets';
-var vendorSRC   = './node_modules';
-var descSRC     = './assets';
+var gulp    = require('gulp');
+var concat  = require('gulp-concat');
+var replace = require('gulp-replace');
 
 gulp.task('assets', function() {
     var stream
 
     // Custom Theme Variables
-    gulp.src(fileSRC + '/theme_variables.scss').pipe(gulp.dest(descSRC))
+    gulp.src('./inc/assets/theme_variables.scss').pipe(gulp.dest('./assets'))
 
     // Custom Theme Styles
-    gulp.src(fileSRC + '/theme_styles.scss').pipe(gulp.dest(descSRC))
+    gulp.src('./inc/assets/theme_styles.scss').pipe(gulp.dest('./assets'))
 
     // Images
-    gulp.src(fileSRC + '/images/*.{png,jpg,gif,svg}').pipe(gulp.dest(descSRC + '/images'))
+    gulp.src('./inc/assets/images/*.{png,jpg,gif,svg}').pipe(gulp.dest('./assets/images'))
 
     // Editor CSS
-    gulp.src(fileSRC + '/theme_editor.scss').pipe(gulp.dest(descSRC + '/css'))
+    gulp.src('./inc/assets/theme_editor.scss').pipe(gulp.dest('./assets/css'))
 
     // Secretum Theme
-    gulp.src(fileSRC + '/theme.scss').pipe(gulp.dest(descSRC + '/css'))
-    gulp.src(fileSRC + '/scss/*.scss').pipe(gulp.dest(descSRC + '/css/secretum'))
-    gulp.src(fileSRC + '/scss/*/*.scss').pipe(gulp.dest(descSRC + '/css/secretum'))
-    gulp.src(fileSRC + '/scss/*/*/*.scss').pipe(gulp.dest(descSRC + '/css/secretum'))
-    gulp.src(fileSRC + '/secretum.js').pipe(gulp.dest(descSRC + '/js'))
+    gulp.src('./inc/assets/theme.scss').pipe(gulp.dest('./assets/css'))
+    gulp.src('./inc/assets/scss/*.scss').pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./inc/assets/scss/*/*.scss').pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./inc/assets/scss/*/*/*.scss').pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./inc/assets/secretum.js').pipe(gulp.dest('./assets/js'))
 
     // Bootstrap
-    gulp.src(vendorSRC + '/bootstrap/scss/**/*.scss').pipe(gulp.dest(descSRC + '/css/bootstrap4'))
-    gulp.src(vendorSRC + '/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest(descSRC + '/js'))
+    gulp.src('./node_modules/bootstrap/scss/**/*.scss').pipe(gulp.dest('./assets/css/bootstrap4'))
+    gulp.src('./node_modules/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest('./assets/js'))
 
     // Ekko Lightbox
-    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.min.css')).pipe(gulp.dest('./css'))
-    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js').pipe(gulp.dest('./js'))
-    gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js.map').pipe(gulp.dest('./js'))
+    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.min.css')).pipe(gulp.dest('./css'))
+    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js').pipe(gulp.dest('./js'))
+    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js.map').pipe(gulp.dest('./js'))
 
     // Open Iconic
-    gulp.src(vendorSRC + '/open-iconic/font/css/open-iconic.scss').pipe(concat('_open-iconic.scss')).pipe(gulp.dest(descSRC + '/css/secretum'))
-    gulp.src(vendorSRC + '/open-iconic/png/*.png').pipe(gulp.dest(descSRC + '/images/iconic/png'))
-    gulp.src(vendorSRC + '/open-iconic/svg/*.svg').pipe(gulp.dest(descSRC + '/images/iconic/svg'))
-    gulp.src(vendorSRC + '/open-iconic/font/fonts/*.{eot,otf,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
+    gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./node_modules/foundation-icons/svgs/*.svg').pipe(gulp.dest('./images/svg'))
+    gulp.src('./node_modules/foundation-icons/*.{eot,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
 
     return stream
 });

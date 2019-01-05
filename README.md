@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
 * **Tested up to:** 5.0.1
-* **Version:** 0.0.16
+* **Version:** 0.0.17
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -81,15 +81,13 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 	* Adjust the color, font, spacing of most theme elements/features
 	* Switch themes in the Customizer > :: Globals > Enqueue Management
 		* Swap themes without changing child themes
-* Basic SVG icon set included
-	* Automatically disables when Better Font Awesome enabled
-	* Disable default SVG icon set within the Customizer > :: Globals > Enqueue Management
+* Foundation Icon Fonts (283 Icons)
+* Automatic Better Font Awesome detection & integration
 * Built-in simple to use lightbox
 	* Enable/disable feature within Customizer > :: Globals > Enqueue Management
 
 ** Other Features
 
-* Automatic Better Font Awesome detection & integration
 * Automatic WooCommerce detection & integration
 	* Product & Review Microdata ready
 	* Templates designed for improved conversion rates over flare
@@ -134,10 +132,10 @@ Coming soon...
 
 ## Changelog
 
-### 0.0.1 2018-10-01
+### x.x.1 2018-10-01
 * Alpha nothing is being logged
 
-### 0.0.8 2018-12-20
+### x.x.8 2018-12-20
 * Major customizer upgrade
 
 

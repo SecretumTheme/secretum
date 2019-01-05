@@ -1,7 +1,7 @@
 {
     "name": "Secretum",
     "author": "SecretumTheme",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "license": "GPL-2.0",
     "repository": {
         "type": "git",
@@ -24,17 +24,17 @@
         "npm": ">=5.0.0"
     },
     "devDependencies": {
-        "bootstrap": "^4.1.0",
         "browser-sync": "^2.26.3",
         "del": "^3.0.0",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^5.0.0",
         "gulp-concat": "^2.6.1",
-        "gulp-imagemin": "^4.1.0",
+        "gulp-imagemin": "^5.0.3",
         "gulp-line-ending-corrector": "^1.0.2",
         "gulp-notify": "^3.2.0",
         "gulp-remove-empty-lines": "^0.1.0",
         "gulp-rename": "^1.2.2",
+        "gulp-replace": "^1.0.0",
         "gulp-sass": "^4.0.1",
         "gulp-sort": "^2.0.0",
         "gulp-sourcemaps": "^2.6.4",
@@ -42,13 +42,15 @@
         "gulp-uglify": "^3.0.0",
         "gulp-uglifycss": "^1.0.9",
         "gulp-wp-pot": "^2.3.3",
-        "jquery": "^3.3.1",
-        "popper.js": "^1.14.3",
+        "inquirer": "^6.2.1",
         "require-dir": "^1.2.0",
         "run-sequence": "^2.2.1"
     },
     "dependencies": {
+        "bootstrap": "^4.2.1",
         "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
-        "open-iconic": "git://github.com/iconic/open-iconic.git"
+        "foundation-icons": "^1.0.1",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.6"
     }
 }

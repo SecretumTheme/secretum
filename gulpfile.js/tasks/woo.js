@@ -1,5 +1,5 @@
 /**
- * Secretum Gulp Task: WooCommerce & WooCommerce Bookings
+ * WooCommerce & WooCommerce Bookings
  *
  * Compiles:
  * 		woocommerce.css
@@ -19,16 +19,13 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
+var sequence        = require('run-sequence');
 var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
 var lineec          = require('gulp-line-ending-corrector');
-var woocommerceSRC  = './assets/css/secretum/woocommerce.scss';
-var bookingsSRC   	= './assets/css/secretum/woocommerce-bookings.scss';
-var descSRC     	= './css';
-
-const AUTOPREFIXER_BROWSERS = [
+const autoprefixers = [
     'last 2 version',
     '> 1%',
     'ie >= 9',
@@ -42,56 +39,80 @@ const AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
+
+/**
+ * Compile WooCommerce & WooCommerce Bookings Stylesheets
+ */
+gulp.task('woocommerce', function (done) {
+    sequence('woocommerce.css', 'woocommerce.min.css', 'woocommerce-bookings.css', 'woocommerce-bookings.min.css', done);
+});
+
+
+/**
+ * Create woocommerce.css
+ */
 gulp.task('woocommerce.css', function () {
-    return gulp.src(woocommerceSRC)
+    return gulp.src('./assets/css/secretum/woocommerce.scss')
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
+
+/**
+ * Create woocommerce.min.css
+ */
 gulp.task('woocommerce.min.css', function () {
-    return gulp.src(woocommerceSRC)
+    return gulp.src('./assets/css/secretum/woocommerce.scss')
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
+
+/**
+ * Create woocommerce-bookings.css
+ */
 gulp.task('woocommerce-bookings.css', function () {
-    return gulp.src(bookingsSRC)
+    return gulp.src('./assets/css/secretum/woocommerce-bookings.scss')
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
+
+/**
+ * Create woocommerce-bookings.min.css
+ */
 gulp.task('woocommerce-bookings.min.css', function () {
-    return gulp.src(bookingsSRC)
+    return gulp.src('./assets/css/secretum/woocommerce-bookings.scss')
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
-    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(descSRC))
+    .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });

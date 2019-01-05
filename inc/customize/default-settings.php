@@ -595,15 +595,16 @@ if (!function_exists('secretum_customizer_extras_settings')) {
 			// Scroll Top
 			'scrolltop' 										=> '',
 			'scrolltop_text_color' 								=> 'text-primary',
+			'scrolltop_icon_size' 								=> 'text-16',
 			'scrolltop_background_color' 						=> 'bg-gray-200',
 			'scrolltop_background_hover_color' 					=> 'bg-gray-300',
 			'scrolltop_margin_right' 							=> '',
 			'scrolltop_margin_bottom' 							=> '',
 			'scrolltop_border_type' 							=> '',
 			'scrolltop_border_color' 							=> '',
-			'scrolltop_border_radius' 							=> '',
-			'scrolltop_padding_x' 								=> '',
-			'scrolltop_padding_y' 								=> ''
+			'scrolltop_border_radius' 							=> 'rounded-circle',
+			'scrolltop_padding_x' 								=> 'px-3',
+			'scrolltop_padding_y' 								=> 'py-2'
 		));
 	}
 }

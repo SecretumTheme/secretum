@@ -23,8 +23,8 @@ README.html
 assets/*
 node_modules/*
 psds/*
-vendor/*
 
+package-lock.json
 composer.json
 composer.lock
 

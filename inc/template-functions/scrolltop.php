@@ -36,7 +36,8 @@ if (!function_exists('secretum_scrolltop_textuals')) {
 	{
 		// Classes
 		$text_color = secretum_mod('scrolltop_text_color', 'attr', true);
+		$font_size = secretum_mod('scrolltop_icon_size', 'attr', true);
 
-		return apply_filters('secretum_scrolltop_textuals', $text_color, 10, 1);
+		return apply_filters('secretum_scrolltop_textuals', $text_color . $font_size, 10, 1);
 	}
 }
