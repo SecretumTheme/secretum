@@ -8,82 +8,49 @@
 
 
 /**
- * Returns Either Font Awesome Icon or Default SVG Icon
+ * Returns either Iconic icon/png/svg or Font Awesome Icon if Better Font Awesome Plugin installed
  *
- * @example echo secretum_icon(array('fa' => ''));
- * @example echo secretum_icon(array('svg' => ''));
- * @example echo secretum_icon(array('svg' => '', 'fa' => ''));
- * @example echo secretum_icon(array('svg' => 'hashtag', 'fa' => 'fa fa-tags'));
- * @example echo secretum_icon(array('svg' => 'folder-open', 'fa' => 'fa fa-folder-open'));
+ * @example echo secretum_icon(array('fa' => 'icon-name'));
+ * @example echo secretum_icon(array('io' => 'icon-name'));
+ * @example echo secretum_icon(array('png' => 'icon-name'));
+ * @example echo secretum_icon(array('svg' => 'icon-name'));
  *
- * @param array $args [sgv(icon), fa(classes), title, desc, fallback(bool)]
+ * @param array $args [fa, io, png, svg, title]
  * @return string HTML
  */
 if (!function_exists('secretum_icon')) {
 	function secretum_icon($args = array())
 	{
 		// Parse args.
-		$args = wp_parse_args($args, array(
-			'svg' 		=> '',
+		$args = wp_parse_args($args, [
 			'fa'        => '',
-			'title'     => '',
-			'desc' 		=> '',
-			'fallback' 	=> false,
-		));
+			'io'        => '',
+			'png' 		=> '',
+			'svg' 		=> '',
+			'title'     => ''
+		]);
+
+		// Build Alt Tag
+		$alt = (!empty($args['title'])) ? ' alt="' . esc_html($args['title']) . '"' : '';
 
 		// Default Output
 		$html = '';
 
 		// Display Font Awesome Icon If Plugin Enabled
 		if (class_exists('Better_Font_Awesome_Plugin') && !empty($args['fa'])) {
-			$html .= '<i class="' . esc_attr($args['fa']) . '"></i>';
+			$html .= '<i class="fa ' . esc_attr($args['fa']) . '" aria-hidden="true"' . $alt . '></i>';
 
-		// Else Display SVG Icon
+		// Display SVG Icon
+		} elseif (!empty($args['io'])) {
+			$html .= '<span class="oi" data-glyph="' . esc_attr($args['io']) . '" aria-hidden="true"' . $alt . '></span>';
+
+		// Display SVG Icon
 		} elseif (!empty($args['svg'])) {
-			// Set aria hidden.
-			$aria_hidden = ' aria-hidden="true"';
+			$html .= '<img src="' . SECRETUM_THEME_URL . '/images/iconic/svg/' . esc_attr($args['svg']) . '.svg"' . $alt . '/>';
 
-			// Default ARIA.
-			$aria_labelledby = '';
-
-			// Default
-			$unique_id = '';
-
-			// Reset ARIA.
-			if (!empty($args['title'])) {
-				$aria_hidden     = '';
-				$unique_id       = uniqid();
-				$aria_labelledby = ' aria-labelledby="title-' . $unique_id . '"';
-
-				// Reset ARIA.
-				if (!empty($args['desc'])) {
-					$aria_labelledby = ' aria-labelledby="title-' . $unique_id . ' desc-' . $unique_id . '"';
-				}
-			}
-
-			// Begin SVG markup.
-			$html .= '<svg class="svg icon-' . esc_attr($args['svg']) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
-
-			// Display the title.
-			if (!empty($args['title']) && !empty($unique_id)) {
-				$html .= '<title id="title-' . $unique_id . '">' . esc_html($args['title']) . '</title>';
-
-				// Display the desc only if the title is already set.
-				if (!empty($args['desc'])) {
-					$html .= '<desc id="desc-' . $unique_id . '">' . esc_html($args['desc']) . '</desc>';
-				}
-			}
-
-
-			// Display the icon.
-			$html .= ' <use href="#icon-' . esc_html($args['svg']) . '" xlink:href="#icon-' . esc_html($args['svg']) . '"></use> ';
-
-			// Add some markup to use as a fallback for browsers that do not support SVGs.
-			if ($args['fallback']) {
-				$html .= '<span class="svg-fallback icon-' . esc_attr($args['svg']) . '"></span>';
-			}
-
-			$html .= '</svg>';
+		// Display PNG Icon
+		} elseif (!empty($args['png'])) {
+			$html .= '<img src="' . SECRETUM_THEME_URL . '/images/iconic/png/' . esc_attr($args['png']) . '.png"' . $alt . '/>';
 		}
 
 		return $html;

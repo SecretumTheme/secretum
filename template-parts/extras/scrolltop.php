@@ -7,8 +7,8 @@
  */
 
 // If Active
-if (!secretum_mod('scrolltop') && class_exists('Better_Font_Awesome_Plugin')) {
+if (!secretum_mod('scrolltop')) {
 ?>
-	<div class="scrolltop"><div class="scroll icon<?php echo secretum_scrolltop_container(); ?>"><i class="fa fa-4x fa-angle-up<?php echo secretum_scrolltop_textuals(); ?>"></i></div></div>
+	<div class="scrolltop"><div class="scroll icon<?php echo secretum_scrolltop_container(); ?>"><span class="oi<?php echo secretum_scrolltop_textuals(); ?>" data-glyph="arrow-top" aria-hidden="true"></span></div></div>
 <?php
 }

@@ -9,7 +9,7 @@
 var gulp 			= require('gulp');
 var notify          = require('gulp-notify');
 var imagemin        = require('gulp-imagemin');
-var imagesSRC       = './assets/images/*.{png,jpg,gif,svg}';
+var imagesSRC       = ['./assets/images/*.{png,jpg,gif,svg}', './assets/images/**/*.{png,jpg,gif,svg}'];
 var imagesDestPath  = './images/';
 
 gulp.task('images', function() {

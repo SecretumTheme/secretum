@@ -27,7 +27,6 @@ vendor/*
 
 composer.json
 composer.lock
-package-lock.json
 
 stage.sh
 styles.sh

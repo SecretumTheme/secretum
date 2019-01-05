@@ -1,7 +1,7 @@
 {
     "name": "Secretum",
     "author": "SecretumTheme",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "license": "GPL-2.0",
     "repository": {
         "type": "git",
@@ -48,6 +48,7 @@
         "run-sequence": "^2.2.1"
     },
     "dependencies": {
-        "ekko-lightbox": "git://github.com/ashleydw/lightbox.git"
+        "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
+        "open-iconic": "git://github.com/iconic/open-iconic.git"
     }
 }

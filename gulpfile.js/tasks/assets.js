@@ -40,5 +40,11 @@ gulp.task('assets', function() {
     gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js').pipe(gulp.dest('./js'))
     gulp.src(vendorSRC + '/ekko-lightbox/dist/ekko-lightbox.min.js.map').pipe(gulp.dest('./js'))
 
+    // Open Iconic
+    gulp.src(vendorSRC + '/open-iconic/font/css/open-iconic.scss').pipe(concat('_open-iconic.scss')).pipe(gulp.dest(descSRC + '/css/secretum'))
+    gulp.src(vendorSRC + '/open-iconic/png/*.png').pipe(gulp.dest(descSRC + '/images/iconic/png'))
+    gulp.src(vendorSRC + '/open-iconic/svg/*.svg').pipe(gulp.dest(descSRC + '/images/iconic/svg'))
+    gulp.src(vendorSRC + '/open-iconic/font/fonts/*.{eot,otf,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
+
     return stream
 });

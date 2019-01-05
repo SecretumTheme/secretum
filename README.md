@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
 * **Tested up to:** 5.0.1
-* **Version:** 0.0.15
+* **Version:** 0.0.16
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -43,13 +43,13 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 * Built for all skill levels
 	* First-time users can have a Website ready for use in less than 1 minute
 	* Any user can highly customize the look, layout, style, and colors within minutes
-		** The customizer uses primarily checkboxes and dropdowns, keeping it simple
+		* The customizer uses primarily checkboxes and dropdowns, keeping it simple
 	* Advanced developers can create whatever they desire (dev via gulp)
-		** Child-theme ready
-		** Customize based on WordPress theming standards
-		** Customize with filters and/or function replication
+		* Child-theme ready
+		* Customize based on WordPress theming standards
+		* Customize with filters and/or function replication
 	* No page builders to learn, they're not needed with Secretum
-		** Secretum works with most 3rd-party page builders
+		* Secretum works with most 3rd-party page builders
 	* Simple to use copy+paste examples for settings and HTML display
 * Rapid theme deployment & setting replication
 	* Export settings globally or for a unique feature
@@ -103,6 +103,7 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 
 ** Features to do
 
+* Background images
 * Social media icons
 * Primary mega menu example
 * Pre-built headers
@@ -151,9 +152,8 @@ Coming soon...
 
 * [WordPress](https://www.wordpress.org/)
 * [Bootstrap](https://getbootstrap.com/)
-* [SASS / SCSS](http://sass-lang.com/)
-* [Grunt](http://gruntjs.com/)
-* [AutoPrefixr](https://github.com/ai/autoprefixer)
-* [BrowserSync](https://github.com/shakyShane/browser-sync)
+* [Open Iconic](https://www.useiconic.com/open)
+* [NPM](https://www.npmjs.com/)
+* [Gulp](https://gulpjs.com/)
 * [Sublime Text](https://www.sublimetext.com/)
 * [Linux Mint](https://linuxmint.com/)
