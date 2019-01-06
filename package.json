@@ -27,8 +27,11 @@
         "npm": ">=5.0.0"
     },
     "devDependencies": {
+        "bootstrap": "^4.2.1",
         "browser-sync": "^2.26.3",
         "del": "^3.0.0",
+        "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
+        "foundation-icons": "^1.0.1",
         "gulp": "^4.0.0",
         "gulp-autoprefixer": "^5.0.0",
         "gulp-concat": "^2.6.1",
@@ -46,15 +49,11 @@
         "gulp-uglifycss": "^1.0.9",
         "gulp-wp-pot": "^2.3.3",
         "inquirer": "^6.2.1",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.6",
         "require-dir": "^1.2.0",
         "run-sequence": "^2.2.1",
         "undertaker-forward-reference": "^1.0.2"
     },
-    "dependencies": {
-        "bootstrap": "^4.2.1",
-        "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
-        "foundation-icons": "^1.0.1",
-        "jquery": "^3.3.1",
-        "popper.js": "^1.14.6"
-    }
+    "dependencies": {}
 }

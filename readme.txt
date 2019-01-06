@@ -6,4 +6,4 @@ Version: 0.0.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Secretum - A Flexable Multipurpose WordPress Theme.
+Secretum - A Highly Flexible Multipurpose WordPress Theme.
