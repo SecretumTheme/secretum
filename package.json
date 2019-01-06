@@ -11,10 +11,13 @@
         "url": "https://github.com/SecretumTheme/secretum/issues"
     },
     "keywords": [
+        "secretum",
         "wordpress",
         "bootstrap",
         "theme",
-        "secretum"
+        "child-theme",
+        "responsive",
+        "mobile-first"
     ],
     "scripts": {
         "postinstall": "gulp assets"

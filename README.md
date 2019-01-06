@@ -149,8 +149,8 @@ Coming soon...
 ## Built With / Credits
 
 * [WordPress](https://www.wordpress.org/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Open Iconic](https://www.useiconic.com/open)
+* [Bootstrap 4](https://getbootstrap.com/)
+* [Foundation Icons](https://zurb.com/playground/foundation-icon-fonts-3)
 * [NPM](https://www.npmjs.com/)
 * [Gulp](https://gulpjs.com/)
 * [Sublime Text](https://www.sublimetext.com/)
