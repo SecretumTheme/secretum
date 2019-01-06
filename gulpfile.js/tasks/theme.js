@@ -38,9 +38,7 @@ const autoprefixers = [
 /**
  * Compile Theme Stylesheets
  */
-gulp.task('theme', function (done) {
-    sequence('theme.css', 'theme.min.css', done);
-});
+gulp.task('theme', gulp.series('theme.css', 'theme.min.css'));
 
 
 /**

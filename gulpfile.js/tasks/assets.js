@@ -4,10 +4,15 @@
  * @command gulp assets
  */
 var gulp    = require('gulp');
+var notify  = require('gulp-notify');
 var concat  = require('gulp-concat');
 var replace = require('gulp-replace');
 
-gulp.task('assets', function() {
+
+/**
+ * Copy Assets
+ */
+gulp.task('assets', function(done) {
     var stream
 
     // Custom Theme Variables
@@ -43,5 +48,8 @@ gulp.task('assets', function() {
     gulp.src('./node_modules/foundation-icons/svgs/*.svg').pipe(gulp.dest('./images/svg'))
     gulp.src('./node_modules/foundation-icons/*.{eot,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
 
+    .pipe(notify({message: 'Assets Moved', onLast: true}))
+
+    done();
     return stream
 });

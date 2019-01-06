@@ -20,4 +20,7 @@
  */
 var gulp        = require('gulp');
 var requireDir  = require('require-dir');
-var dir         = requireDir('./tasks', {extensions: ['.js']});
+var forwardRef 	= require('undertaker-forward-reference');
+
+gulp.registry(forwardRef());
+requireDir('./tasks', {extensions: ['.js']});

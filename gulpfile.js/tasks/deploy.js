@@ -17,9 +17,7 @@ var next_version;
 /**
  * Deploy Version Prompt & Version Update
  */
-gulp.task('deploy', function(done) {
-    sequence('prompt', 'version', done);
-});
+gulp.task('deploy', gulp.series('prompt', 'version'));
 
 
 /**

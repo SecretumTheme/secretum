@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying 404 pages (not found)
+ * Template for displaying 404 pages (not found)asd
  *
  * @package WordPress
  * @subpackage Secretum

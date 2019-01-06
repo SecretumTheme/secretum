@@ -43,9 +43,7 @@ const autoprefixers = [
 /**
  * Compile WooCommerce & WooCommerce Bookings Stylesheets
  */
-gulp.task('woocommerce', function (done) {
-    sequence('woocommerce.css', 'woocommerce.min.css', 'woocommerce-bookings.css', 'woocommerce-bookings.min.css', done);
-});
+gulp.task('woocommerce', gulp.series('woocommerce.css', 'woocommerce.min.css', 'woocommerce-bookings.css', 'woocommerce-bookings.min.css'));
 
 
 /**

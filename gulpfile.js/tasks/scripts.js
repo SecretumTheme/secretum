@@ -30,9 +30,7 @@ var lineec      = require('gulp-line-ending-corrector');
 /**
  * Compile Theme Scripts
  */
-gulp.task('scripts', function (done) {
-    sequence('theme.js', 'theme.min.js', 'secretum.js', 'secretum.min.js', 'bootstrap.bundle.js', 'bootstrap.bundle.min.js', done);
-});
+gulp.task('scripts', gulp.series('theme.js', 'theme.min.js', 'secretum.js', 'secretum.min.js', 'bootstrap.bundle.js', 'bootstrap.bundle.min.js'));
 
 
 /**

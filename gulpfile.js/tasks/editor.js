@@ -38,9 +38,7 @@ const autoprefixers = [
 /**
  * Compile WordPress Editor Stylesheets
  */
-gulp.task('editor', function (done) {
-    sequence('editor.css', 'editor.min.css', done);
-});
+gulp.task('editor', gulp.series('editor.css', 'editor.min.css'));
 
 
 /**
