@@ -18,6 +18,7 @@ phpunit.xml
 readme.html
 README.html
 .INSTRUCTIONS
+CONTRIBUTING.md
 
 assets/*
 node_modules/*

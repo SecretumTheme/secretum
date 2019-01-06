@@ -132,10 +132,10 @@ Coming soon...
 
 ## Changelog
 
-### x.x.1 2018-10-01
+### 0x0x1 2018-10-01
 * Alpha nothing is being logged
 
-### x.x.8 2018-12-20
+### 0x0x8 2018-12-20
 * Major customizer upgrade
 
 
@@ -152,6 +152,7 @@ Coming soon...
 * [Bootstrap 4](https://getbootstrap.com/)
 * [Foundation Icons](https://zurb.com/playground/foundation-icon-fonts-3)
 * [NPM](https://www.npmjs.com/)
-* [Gulp](https://gulpjs.com/)
+* [Gulp 4](https://gulpjs.com/)
+* [WP CLI](https://wp-cli.org/)
 * [Sublime Text](https://www.sublimetext.com/)
 * [Linux Mint](https://linuxmint.com/)
