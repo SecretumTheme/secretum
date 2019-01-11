@@ -2,21 +2,35 @@
 /**
  * Template part for post navigation links
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-// Display If Allowed
-if (!secretum_mod('entry_meta_post_navigation_links')) {
-	the_post_navigation(
-		array(
-			'prev_text' => '<span class="screen-reader-text">' . secretum_text('prev_text') .  '</span>' .
-				'<span class="nav-title float-sm-left"><span aria-hidden="true" class="nav-subtitle"><i class="fa fa-angle-left"></i> ' . 
-				secretum_text('prev_text') . '</span><br />%title</span>',
-			'next_text' => '<span class="screen-reader-text">' . secretum_text('next_text') . '</span>' .
-				'<span class="nav-title float-sm-right"><span aria-hidden="true" class="nav-subtitle">' . 
-				secretum_text('next_text') .
-				 ' <i class="fa fa-angle-right"></i></span><br />%title</span>'
-		)
-	);
+namespace Secretum;
+
+// @about Previous Text
+$previous_text = secretum_text( 'prev_text', false );
+
+// @about Left Arrow Icon
+$left_icon = secretum_icon( [
+	'fi' 	=> 'arrow-left',
+	'fa' 	=> 'fa-angle-left',
+	'echo' 	=> false,
+] );
+
+// @about Next Text
+$next_text = secretum_text( 'next_text', false );
+
+// @about Right Arrow Icon
+$right_icon = secretum_icon( [
+	'fi' 	=> 'arrow-right',
+	'fa' 	=> 'fa-angle-right',
+	'echo' 	=> false,
+] );
+
+// @about Display Post Navigation If Allowed
+if ( ! secretum_mod( 'entry_meta_post_navigation_links' ) ) {
+	secretum_do_post_navigation( [
+		'prev_text' => '<span class="screen-reader-text">' . $previous_text . '</span><span class="nav-title float-sm-left"><span aria-hidden="true" class="nav-subtitle">' . $left_icon . ' ' . $previous_text . '</span><br />%title</span>',
+		'next_text' => '<span class="screen-reader-text">' . $next_text . '</span><span class="nav-title float-sm-right"><span aria-hidden="true" class="nav-subtitle">' . $next_text . ' ' . $right_icon . '</span><br />%title</span>',
+	] );
 }

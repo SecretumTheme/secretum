@@ -2,153 +2,115 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
- * @method secretum_customizer_padding_top_bottom()
- * @method secretum_customizer_padding_top()
- * @method secretum_customizer_padding_bottom()
- * @method secretum_customizer_padding_left_right()
- * @method secretum_customizer_padding_left()
- * @method secretum_customizer_padding_right()
- *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
+
+namespace Secretum;
 
 
 /**
- * Paddings Top & Bottom
- *
- * @source inc/system/primary-nav/customize/wrapper.php
- * @source inc/system/primary-nav/customize/items.php
+ * Padding Top & Bottom
  *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_top_bottom')) {
-	function secretum_customizer_padding_top_bottom()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'py-0' 	=> __('No Paddings', 'secretum'),
-			'py-1' 	=> __('4px or .25em Paddings', 'secretum'),
-			'py-2' 	=> __('8px or .5em Paddings', 'secretum'),
-			'py-3' 	=> __('16px or 1em Paddings', 'secretum'),
-			'py-4' 	=> __('24px or 1.5em Paddings', 'secretum'),
-			'py-5' 	=> __('48px or 3em Paddings', 'secretum')
-		);
-	}
+function secretum_customizer_padding_top_bottom() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'py-0' 	=> __( 'No Padding (py-0)', 'secretum' ),
+		'py-1' 	=> __( '4px or .25em Padding (py-1)', 'secretum' ),
+		'py-2' 	=> __( '8px or .5em Padding (py-2)', 'secretum' ),
+		'py-3' 	=> __( '16px or 1em Padding (py-3)', 'secretum' ),
+		'py-4' 	=> __( '24px or 1.5em Padding (py-4)', 'secretum' ),
+		'py-5' 	=> __( '48px or 3em Padding (py-5)', 'secretum' ),
+	];
 }
 
 
 /**
  * Padding Top
  *
- * @source 
- *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_top')) {
-	function secretum_customizer_padding_top()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'pt-0' 	=> __('No Padding', 'secretum'),
-			'pt-1' 	=> __('4px or .25em Padding', 'secretum'),
-			'pt-2' 	=> __('8px or .5em Padding', 'secretum'),
-			'pt-3' 	=> __('16px or 1em Padding', 'secretum'),
-			'pt-4' 	=> __('24px or 1.5em Padding', 'secretum'),
-			'pt-5' 	=> __('48px or 3em Padding', 'secretum')
-		);
-	}
+function secretum_customizer_padding_top() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'pt-0' 	=> __( 'No Padding (pt-0)', 'secretum' ),
+		'pt-1' 	=> __( '4px or .25em Padding (pt-1)', 'secretum' ),
+		'pt-2' 	=> __( '8px or .5em Padding (pt-2)', 'secretum' ),
+		'pt-3' 	=> __( '16px or 1em Padding (pt-3)', 'secretum' ),
+		'pt-4' 	=> __( '24px or 1.5em Padding (pt-4)', 'secretum' ),
+		'pt-5' 	=> __( '48px or 3em Padding (pt-5)', 'secretum' ),
+	];
 }
 
 
 /**
  * Padding Bottom
  *
- * @source 
- *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_bottom')) {
-	function secretum_customizer_padding_bottom()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'pb-0' 	=> __('No Padding', 'secretum'),
-			'pb-1' 	=> __('4px or .25em Padding', 'secretum'),
-			'pb-2' 	=> __('8px or .5em Padding', 'secretum'),
-			'pb-3' 	=> __('16px or 1em Padding', 'secretum'),
-			'pb-4' 	=> __('24px or 1.5em Padding', 'secretum'),
-			'pb-5' 	=> __('48px or 3em Padding', 'secretum')
-		);
-	}
+function secretum_customizer_padding_bottom() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'pb-0' 	=> __( 'No Padding (pb-0)', 'secretum' ),
+		'pb-1' 	=> __( '4px or .25em Padding (pb-1)', 'secretum' ),
+		'pb-2' 	=> __( '8px or .5em Padding (pb-2)', 'secretum' ),
+		'pb-3' 	=> __( '16px or 1em Padding (pb-3)', 'secretum' ),
+		'pb-4' 	=> __( '24px or 1.5em Padding (pb-4)', 'secretum' ),
+		'pb-5' 	=> __( '48px or 3em Padding (pb-5)', 'secretum' ),
+	];
 }
 
 
 /**
- * Paddings Left & Right
- *
- * @source inc/system/primary-nav/customize/container.php
- * @source inc/system/primary-nav/customize/items.php
+ * Padding Left & Right
  *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_left_right')) {
-	function secretum_customizer_padding_left_right()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'px-0' 	=> __('No Paddings', 'secretum'),
-			'px-1' 	=> __('4px or .25em Paddings', 'secretum'),
-			'px-2' 	=> __('8px or .5em Paddings', 'secretum'),
-			'px-3' 	=> __('16px or 1em Paddings', 'secretum'),
-			'px-4' 	=> __('24px or 1.5em Paddings', 'secretum'),
-			'px-5' 	=> __('48px or 3em Paddings', 'secretum')
-		);
-	}
+function secretum_customizer_padding_left_right() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'px-0' 	=> __( 'No Padding (px-0)', 'secretum' ),
+		'px-1' 	=> __( '4px or .25em Padding (px-1)', 'secretum' ),
+		'px-2' 	=> __( '8px or .5em Padding (px-2)', 'secretum' ),
+		'px-3' 	=> __( '16px or 1em Padding (px-3)', 'secretum' ),
+		'px-4' 	=> __( '24px or 1.5em Padding (px-4)', 'secretum' ),
+		'px-5' 	=> __( '48px or 3em Padding (px-5)', 'secretum' ),
+	];
 }
 
 
 /**
  * Padding Left
  *
- * @source 
- *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_left')) {
-	function secretum_customizer_padding_left()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'pl-0' 	=> __('No Padding', 'secretum'),
-			'pl-1' 	=> __('4px or .25em Padding', 'secretum'),
-			'pl-2' 	=> __('8px or .5em Padding', 'secretum'),
-			'pl-3' 	=> __('16px or 1em Padding', 'secretum'),
-			'pl-4' 	=> __('24px or 1.5em Padding', 'secretum'),
-			'pl-5' 	=> __('48px or 3em Padding', 'secretum')
-		);
-	}
+function secretum_customizer_padding_left() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'pl-0' 	=> __( 'No Padding (pl-0)', 'secretum' ),
+		'pl-1' 	=> __( '4px or .25em Padding (pl-1)', 'secretum' ),
+		'pl-2' 	=> __( '8px or .5em Padding (pl-2)', 'secretum' ),
+		'pl-3' 	=> __( '16px or 1em Padding (pl-3)', 'secretum' ),
+		'pl-4' 	=> __( '24px or 1.5em Padding (pl-4)', 'secretum' ),
+		'pl-5' 	=> __( '48px or 3em Padding (pl-5)', 'secretum' ),
+	];
 }
 
 
 /**
  * Padding Right
  *
- * @source 
- *
  * @return array Keys & Values
  */
-if (!function_exists('secretum_customizer_padding_right')) {
-	function secretum_customizer_padding_right()
-	{
-		return array(
-			'' 		=> __('Theme Default', 'secretum'),
-			'pr-0' 	=> __('No Padding', 'secretum'),
-			'pr-1' 	=> __('4px or .25em Padding', 'secretum'),
-			'pr-2' 	=> __('8px or .5em Padding', 'secretum'),
-			'pr-3' 	=> __('16px or 1em Padding', 'secretum'),
-			'pr-4' 	=> __('24px or 1.5em Padding', 'secretum'),
-			'pr-5' 	=> __('48px or 3em Padding', 'secretum')
-		);
-	}
+function secretum_customizer_padding_right() {
+	return [
+		'' 		=> __( 'Theme Default', 'secretum' ),
+		'pr-0' 	=> __( 'No Padding (pr-0)', 'secretum' ),
+		'pr-1' 	=> __( '4px or .25em Padding (pr-1)', 'secretum' ),
+		'pr-2' 	=> __( '8px or .5em Padding (pr-2)', 'secretum' ),
+		'pr-3' 	=> __( '16px or 1em Padding (pr-3)', 'secretum' ),
+		'pr-4' 	=> __( '24px or 1.5em Padding (pr-4)', 'secretum' ),
+		'pr-5' 	=> __( '48px or 3em Padding (pr-5)', 'secretum' ),
+	];
 }

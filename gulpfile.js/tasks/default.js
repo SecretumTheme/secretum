@@ -9,7 +9,6 @@
 var project_url = 'secretum.localhost';
 var gulp        = require('gulp');
 var del        	= require('del');
-var sequence    = require('run-sequence');
 var browserSync = require('browser-sync');
 
 function browserReload(done) {

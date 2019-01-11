@@ -2,13 +2,15 @@
 /**
  * Template part for displaying contact details
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
+
+namespace Secretum;
+
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
-		<?php the_title('<h1 class="entry-title mb-4">', '</h1>'); ?>
+		<?php the_title( '<h1 class="entry-title mb-4">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
