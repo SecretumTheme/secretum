@@ -16,7 +16,7 @@ namespace Secretum;
 	<div class="entry-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) {
-			echo '<p>' . esc_html__( 'Ready to publish your first post?', 'secretum' ) . ' <a href="' . esc_url( admin_url( 'post-new.php' ) ) ) . '">' . esc_html__( 'Get started here', 'secretum' ) . '</a>.</p>';
+			echo '<p>' . esc_html__( 'Ready to publish your first post?', 'secretum' ) . ' <a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">' . esc_html__( 'Get started here', 'secretum' ) . '</a>.</p>';
 		} else {
 		?>
 			<p><?php secretum_text( 'nothing_found_text', true ); ?></p>
