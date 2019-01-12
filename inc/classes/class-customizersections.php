@@ -1,20 +1,22 @@
 <?php
+/**
+ * Extend WordPress Customizer Section(s)
+ *
+ * @package Secretum
+ */
+
 namespace Secretum;
 
 /**
- * Secretum Customizer Custom Sections Creator
+ * Secretum Customizer Sections Class
  *
  * @see https://developer.wordpress.org/reference/classes/wp_customize_section/
- *
- * @package WordPress
- * @subpackage Secretum
  */
 class CustomizerSections extends \WP_Customize_Section {
-
 	/**
-     * Type of this section.
-     *
-     * @var string
+	 * Type of this section.
+	 *
+	 * @var string
 	 */
 	public $type = 'secretum';
 
@@ -29,7 +31,7 @@ class CustomizerSections extends \WP_Customize_Section {
 
 	/**
 	 * Custom Button URL.
-     *
+	 *
 	 * @var string
 	 */
 	public $button_url = '';
@@ -37,7 +39,7 @@ class CustomizerSections extends \WP_Customize_Section {
 
 	/**
 	 * Custom Button Classes
-     *
+	 *
 	 * @var string
 	 */
 	public $button_class = '';
@@ -45,7 +47,7 @@ class CustomizerSections extends \WP_Customize_Section {
 
 	/**
 	 * Custom Section Classes
-     *
+	 *
 	 * @var string
 	 */
 	public $section_class = '';
@@ -58,10 +60,10 @@ class CustomizerSections extends \WP_Customize_Section {
 	 */
 	public function json() {
 		$json = parent::json();
-		$json['button_url']  	= esc_url($this->button_url);
-		$json['button_class'] 	= esc_attr($this->button_class);
-		$json['button_text'] 	= esc_html($this->button_text);
-		$json['section_class'] 	= esc_attr($this->section_class);
+		$json['button_url']  	= esc_url( $this->button_url );
+		$json['button_class'] 	= esc_attr( $this->button_class );
+		$json['button_text'] 	= esc_html( $this->button_text );
+		$json['section_class'] 	= esc_attr( $this->section_class );
 		return $json;
 	}
 
@@ -71,7 +73,8 @@ class CustomizerSections extends \WP_Customize_Section {
 	 *
 	 * @return void
 	 */
-	protected function render_template() { ?>
+	protected function render_template() {
+	?>
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand {{ data.section_class }}">
 			<h3 class="accordion-section-title">
 				{{ data.title }}
@@ -80,5 +83,6 @@ class CustomizerSections extends \WP_Customize_Section {
 				<# } #>
 			</h3>
 		</li>
-	<?php }
+	<?php
+	}
 }

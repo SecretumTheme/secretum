@@ -2,291 +2,292 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
+namespace Secretum;
 
-// Panel
+// @about Panel
 $customizer->panel(
-    'copyright',
-    __('Copyright', 'secretum')
+	'copyright',
+	__( 'Copyright', 'secretum' )
 );
 
-// Section
+// @about Section
 $customizer->section(
-    'copyright_display',
-    'copyright',
-    __('Display Settings', 'secretum'),
-    ''
+	'copyright_display',
+	'copyright',
+	__( 'Display Settings', 'secretum' ),
+	''
 );
 
-// Checkbox
+// @about Checkbox
 $customizer->checkbox(
-    'copyright_display',
-    'copyright_status',
-    __('Select To Hide Copyright Area', 'secretum'),
-    '',
-    $default['copyright_status']
+	'copyright_display',
+	'copyright_status',
+	__( 'Select To Hide Copyright Area', 'secretum' ),
+	'',
+	$default['copyright_status']
 );
 
-// Wrapper
+// @about Wrapper
 $customizer->section(
-    'copyright_wrapper',
-    'copyright',
-    __('Wrapper', 'secretum'),
-    __('Customize the outter wrapper around copyright area.', 'secretum')
+	'copyright_wrapper',
+	'copyright',
+	__( 'Wrapper', 'secretum' ),
+	__( 'Customize the outter wrapper around copyright area.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['copyright_wrapper_background_color'],
-    secretum_customizer_background_colors()
+	'copyright_wrapper',
+	'copyright_wrapper_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['copyright_wrapper_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['copyright_wrapper_padding_x'],
-    secretum_customizer_padding_left_right()
+	'copyright_wrapper',
+	'copyright_wrapper_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_wrapper_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_wrapper_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'copyright_wrapper',
+	'copyright_wrapper_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_wrapper_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_margin_bottom',
-    __('Margin - Bottom', 'secretum'),
-    __('Increases spacing after section.', 'secretum'),
-    $default['copyright_wrapper_margin_bottom'],
-    secretum_customizer_margin_bottom()
+	'copyright_wrapper',
+	'copyright_wrapper_margin_bottom',
+	__( 'Margin - Bottom', 'secretum' ),
+	__( 'Increases spacing after section.', 'secretum' ),
+	$default['copyright_wrapper_margin_bottom'],
+	secretum_customizer_margin_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_margin_top',
-    __('Margin - Top', 'secretum'),
-    __('Increases spacing before section.', 'secretum'),
-    $default['copyright_wrapper_margin_top'],
-    secretum_customizer_margin_top()
+	'copyright_wrapper',
+	'copyright_wrapper_margin_top',
+	__( 'Margin - Top', 'secretum' ),
+	__( 'Increases spacing before section.', 'secretum' ),
+	$default['copyright_wrapper_margin_top'],
+	secretum_customizer_margin_top()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_border_type',
-    __('Border Type', 'secretum'),
-    '',
-    $default['copyright_wrapper_border_type'],
-    secretum_customizer_border_types()
+	'copyright_wrapper',
+	'copyright_wrapper_border_type',
+	__( 'Border Type', 'secretum' ),
+	'',
+	$default['copyright_wrapper_border_type'],
+	secretum_customizer_border_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_wrapper',
-    'copyright_wrapper_border_color',
-    __('Border Color', 'secretum'),
-    '',
-    $default['copyright_wrapper_border_color'],
-    secretum_customizer_border_colors()
+	'copyright_wrapper',
+	'copyright_wrapper_border_color',
+	__( 'Border Color', 'secretum' ),
+	'',
+	$default['copyright_wrapper_border_color'],
+	secretum_customizer_border_colors()
 );
 
-// Container
+// @about Container
 $customizer->section(
-    'copyright_container',
-    'copyright',
-    __('Container', 'secretum'),
-    __('Customize the container within the header top wrapper.', 'secretum')
+	'copyright_container',
+	'copyright',
+	__( 'Container', 'secretum' ),
+	__( 'Customize the container within the header top wrapper.', 'secretum' )
 );
 
-// Radio
+// @about Radio
 $customizer->radio(
-    'copyright_container',
-    'copyright_container_type',
-    __('Container Type', 'secretum'),
-    '',
-    $default['copyright_container_type'],
-    secretum_customizer_container_types()
+	'copyright_container',
+	'copyright_container_type',
+	__( 'Container Type', 'secretum' ),
+	'',
+	$default['copyright_container_type'],
+	secretum_customizer_container_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_container',
-    'copyright_container_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['copyright_container_background_color'],
-    secretum_customizer_background_colors()
+	'copyright_container',
+	'copyright_container_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['copyright_container_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_container',
-    'copyright_container_margin_x',
-    __('Margin - Left & Right', 'secretum'),
-    '',
-    $default['copyright_container_margin_x'],
-    secretum_customizer_margin_left_right()
+	'copyright_container',
+	'copyright_container_margin_x',
+	__( 'Margin - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_container_margin_x'],
+	secretum_customizer_margin_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_container',
-    'copyright_container_margin_y',
-    __('Margin - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_container_margin_y'],
-    secretum_customizer_margin_top_bottom()
+	'copyright_container',
+	'copyright_container_margin_y',
+	__( 'Margin - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_container_margin_y'],
+	secretum_customizer_margin_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_container',
-    'copyright_container_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['copyright_container_padding_x'],
-    secretum_customizer_padding_left_right()
+	'copyright_container',
+	'copyright_container_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_container_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_container',
-    'copyright_container_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_container_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'copyright_container',
+	'copyright_container_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_container_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );
 
-// Textuals
+// @about Textuals
 $customizer->section(
-    'copyright_textuals',
-    'copyright',
-    __('Textuals', 'secretum'),
-    __('Customize fonts, text and link colors.', 'secretum')
+	'copyright_textuals',
+	'copyright',
+	__( 'Textuals', 'secretum' ),
+	__( 'Customize fonts, text and link colors.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_text_alignment',
-    __('Text Alignment', 'secretum'),
-    '',
-    $default['copyright_text_alignment'],
-    secretum_customizer_text_alignments()
+	'copyright_textuals',
+	'copyright_text_alignment',
+	__( 'Text Alignment', 'secretum' ),
+	'',
+	$default['copyright_text_alignment'],
+	secretum_customizer_text_alignments()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_font_family',
-    __('Font Family', 'secretum'),
-    '',
-    $default['copyright_textual_font_family'],
-    secretum_customizer_font_families()
+	'copyright_textuals',
+	'copyright_textual_font_family',
+	__( 'Font Family', 'secretum' ),
+	'',
+	$default['copyright_textual_font_family'],
+	secretum_customizer_font_families()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_font_size',
-    __('Font Size', 'secretum'),
-    '',
-    $default['copyright_textual_font_size'],
-    secretum_customizer_font_sizes()
+	'copyright_textuals',
+	'copyright_textual_font_size',
+	__( 'Font Size', 'secretum' ),
+	'',
+	$default['copyright_textual_font_size'],
+	secretum_customizer_font_sizes()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_font_style',
-    __('Font Style', 'secretum'),
-    '',
-    $default['copyright_textual_font_style'],
-    secretum_customizer_font_styles()
+	'copyright_textuals',
+	'copyright_textual_font_style',
+	__( 'Font Style', 'secretum' ),
+	'',
+	$default['copyright_textual_font_style'],
+	secretum_customizer_font_styles()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_text_transform',
-    __('Text Transform', 'secretum'),
-    '',
-    $default['copyright_textual_text_transform'],
-    secretum_customizer_text_transform()
+	'copyright_textuals',
+	'copyright_textual_text_transform',
+	__( 'Text Transform', 'secretum' ),
+	'',
+	$default['copyright_textual_text_transform'],
+	secretum_customizer_text_transform()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_text_color',
-    __('Text Color', 'secretum'),
-    '',
-    $default['copyright_textual_text_color'],
-    secretum_customizer_text_colors()
+	'copyright_textuals',
+	'copyright_textual_text_color',
+	__( 'Text Color', 'secretum' ),
+	'',
+	$default['copyright_textual_text_color'],
+	secretum_customizer_text_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_link_color',
-    __('Link Color', 'secretum'),
-    '',
-    $default['copyright_textual_link_color'],
-    secretum_customizer_link_colors()
+	'copyright_textuals',
+	'copyright_textual_link_color',
+	__( 'Link Color', 'secretum' ),
+	'',
+	$default['copyright_textual_link_color'],
+	secretum_customizer_link_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_textuals',
-    'copyright_textual_link_hover_color',
-    __('Link Hover Color', 'secretum'),
-    '',
-    $default['copyright_textual_link_hover_color'],
-    secretum_customizer_link_hover_colors()
+	'copyright_textuals',
+	'copyright_textual_link_hover_color',
+	__( 'Link Hover Color', 'secretum' ),
+	'',
+	$default['copyright_textual_link_hover_color'],
+	secretum_customizer_link_hover_colors()
 );
 
-// Display
+// @about Display
 $customizer->section(
-    'copyright_statement',
-    'copyright',
-    __('Copyright Statement', 'secretum'),
-    ''
+	'copyright_statement',
+	'copyright',
+	__( 'Copyright Statement', 'secretum' ),
+	''
 );
 
-// Textarea
+// @about Textarea
 $customizer->textarea(
-    'copyright_statement',
-    'copyright_text',
-    __('Statement', 'secretum'),
-    sprintf(__('HTML Allowed. Example: &#x3C;p&#x3E;Copyright %s &#x26;copy; &#x3C;a href=&#x22;%s&#x22; target=&#x22;_self&#x22;&#x3E;%s&#x3C;/a&#x3E; - All Rights Reserved.&#x3C;/p&#x3E;', 'secretum'), date("Y", time()), esc_url(get_home_url('/')), get_bloginfo('name')),
-    wp_kses_post($default['copyright_text'])
+	'copyright_statement',
+	'copyright_text',
+	__( 'Statement', 'secretum' ),
+	/* Translators: Example html - 1) year 2) url 3) blog name */
+	sprintf( __( 'HTML Allowed. Example: &#x3C;p&#x3E;Copyright %1$s &#x26;copy; &#x3C;a href=&#x22;%2$s&#x22; target=&#x22;_self&#x22;&#x3E;%3$s&#x3C;/a&#x3E; - All Rights Reserved.&#x3C;/p&#x3E;', 'secretum' ), date( 'Y', time() ), esc_url( get_home_url( '/' ) ), get_bloginfo( 'name' ) ),
+	wp_kses_post( $default['copyright_text'] )
 );
 
-// Refresh Partial :: Copyright Statement
-$wp_customize->selective_refresh->add_partial('copyright_text_partial', array(
-    'settings'            => array('secretum[copyright_text]'),
-    'selector'            => '.site-info',
-    'render_callback'     => function() {
-        return wp_kses_post($default['copyright_text']);
-    },
-    'container_inclusive' => false
-));
+// @about Refresh Partial :: Copyright Statement
+$wp_customize->selective_refresh->add_partial( 'copyright_text_partial', array(
+	'settings'         => array( 'secretum[copyright_text]' ),
+	'selector'         => '.site-info',
+	'render_callback'  => function() {
+		return wp_kses_post( $default['copyright_text'] );
+	},
+	'container_inclusive' => false,
+) );

@@ -2,185 +2,185 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
+namespace Secretum;
 
-// Panel
+// @about Panel
 $customizer->panel(
-    'header',
-    __('Header', 'secretum')
+	'header',
+	__( 'Header', 'secretum' )
 );
 
-// Section
+// @about Section
 $customizer->section(
-    'header_display',
-    'header',
-    __('Display Settings', 'secretum'),
-    ''
+	'header_display',
+	'header',
+	__( 'Display Settings', 'secretum' ),
+	''
 );
 /**
-// Checkbox
+// @about Checkbox
 $customizer->checkbox(
-    'header_display',
-    'custom_headers',
-    __('Enable Custom Headers Feature', 'secretum'),
-    __('Before enabling set all default header settings. A custom header must be published before it will display.', 'secretum'),
-    $default['custom_headers']
+	'header_display',
+	'custom_headers',
+	__( 'Enable Custom Headers Feature', 'secretum' ),
+	__( 'Before enabling set all default header settings. A custom header must be published before it will display.', 'secretum' ),
+	$default['custom_headers']
 );
 */
-// Checkbox
+// @about Checkbox
 $customizer->checkbox(
-    'header_display',
-    'header_status',
-    __('Hide Header Area', 'secretum'),
-    __('Select to disable the entire header area.', 'secretum'),
-    $default['header_status']
+	'header_display',
+	'header_status',
+	__( 'Hide Header Area', 'secretum' ),
+	__( 'Select to disable the entire header area.', 'secretum' ),
+	$default['header_status']
 );
 
-// Wrapper
+// @about Wrapper
 $customizer->section(
-    'header_wrapper',
-    'header',
-    __('Wrapper', 'secretum'),
-    __('Customize the outter wrapper around header top area.', 'secretum')
+	'header_wrapper',
+	'header',
+	__( 'Wrapper', 'secretum' ),
+	__( 'Customize the outter wrapper around header top area.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['header_wrapper_background_color'],
-    secretum_customizer_background_colors()
+	'header_wrapper',
+	'header_wrapper_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['header_wrapper_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['header_wrapper_padding_x'],
-    secretum_customizer_padding_left_right()
+	'header_wrapper',
+	'header_wrapper_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['header_wrapper_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['header_wrapper_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'header_wrapper',
+	'header_wrapper_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['header_wrapper_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_margin_bottom',
-    __('Margin - Bottom', 'secretum'),
-    __('Increases spacing after section.', 'secretum'),
-    $default['header_wrapper_margin_bottom'],
-    secretum_customizer_margin_bottom()
+	'header_wrapper',
+	'header_wrapper_margin_bottom',
+	__( 'Margin - Bottom', 'secretum' ),
+	__( 'Increases spacing after section.', 'secretum' ),
+	$default['header_wrapper_margin_bottom'],
+	secretum_customizer_margin_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_margin_top',
-    __('Margin - Top', 'secretum'),
-    __('Increases spacing before section.', 'secretum'),
-    $default['header_wrapper_margin_top'],
-    secretum_customizer_margin_top()
+	'header_wrapper',
+	'header_wrapper_margin_top',
+	__( 'Margin - Top', 'secretum' ),
+	__( 'Increases spacing before section.', 'secretum' ),
+	$default['header_wrapper_margin_top'],
+	secretum_customizer_margin_top()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_border_type',
-    __('Border Type', 'secretum'),
-    '',
-    $default['header_wrapper_border_type'],
-    secretum_customizer_border_types()
+	'header_wrapper',
+	'header_wrapper_border_type',
+	__( 'Border Type', 'secretum' ),
+	'',
+	$default['header_wrapper_border_type'],
+	secretum_customizer_border_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_wrapper',
-    'header_wrapper_border_color',
-    __('Border Color', 'secretum'),
-    '',
-    $default['header_wrapper_border_color'],
-    secretum_customizer_border_colors()
+	'header_wrapper',
+	'header_wrapper_border_color',
+	__( 'Border Color', 'secretum' ),
+	'',
+	$default['header_wrapper_border_color'],
+	secretum_customizer_border_colors()
 );
 
-// Container
+// @about Container
 $customizer->section(
-    'header_container',
-    'header',
-    __('Container', 'secretum'),
-    __('Customize the container within the header top wrapper.', 'secretum')
+	'header_container',
+	'header',
+	__( 'Container', 'secretum' ),
+	__( 'Customize the container within the header top wrapper.', 'secretum' )
 );
 
-// Radio
+// @about Radio
 $customizer->radio(
-    'header_container',
-    'header_container_type',
-    __('Container Type', 'secretum'),
-    '',
-    $default['header_container_type'],
-    secretum_customizer_container_types()
+	'header_container',
+	'header_container_type',
+	__( 'Container Type', 'secretum' ),
+	'',
+	$default['header_container_type'],
+	secretum_customizer_container_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_container',
-    'header_container_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['header_container_background_color'],
-    secretum_customizer_background_colors()
+	'header_container',
+	'header_container_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['header_container_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_container',
-    'header_container_margin_x',
-    __('Margin - Left & Right', 'secretum'),
-    '',
-    $default['header_container_margin_x'],
-    secretum_customizer_margin_left_right()
+	'header_container',
+	'header_container_margin_x',
+	__( 'Margin - Left & Right', 'secretum' ),
+	'',
+	$default['header_container_margin_x'],
+	secretum_customizer_margin_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_container',
-    'header_container_margin_y',
-    __('Margin - Top & Bottom', 'secretum'),
-    '',
-    $default['header_container_margin_y'],
-    secretum_customizer_margin_top_bottom()
+	'header_container',
+	'header_container_margin_y',
+	__( 'Margin - Top & Bottom', 'secretum' ),
+	'',
+	$default['header_container_margin_y'],
+	secretum_customizer_margin_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_container',
-    'header_container_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['header_container_padding_x'],
-    secretum_customizer_padding_left_right()
+	'header_container',
+	'header_container_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['header_container_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'header_container',
-    'header_container_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['header_container_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'header_container',
+	'header_container_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['header_container_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );

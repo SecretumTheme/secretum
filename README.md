@@ -38,6 +38,10 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 
 ## Features
 
+100% WordPress Compliant: Theme Check Compliant, Core Rule Set Compliant, Best Practices Compliant, Documentation Standards Compliant, and Coding Standards Compliant.
+
+Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.com/WPTRT/theme-unit-test/blob/master/themeunittestdata.wordpress.xml) and [WooCommerce sample_products.xml](https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml)
+
 ** Trying to keep a list of features
 
 * Built for all skill levels
@@ -101,12 +105,15 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 
 ** Features to do
 
-* Background images
-* Social media icons
-* Primary mega menu example
-* Pre-built headers
+* Background images for everything and in customizer
+* Social media icons widget
+* Primary menus: mega, slideout, fullpage, etc
 * Switchable microdata values
-* Finish customizer settings
+* Finish customizer settings...
+* Group related customizer blocks into classes
+* Customzer add active menu item for all navs
+* Dropdown / Textual classes for Top/Copy navs for Navwalker
+* Add customizer/prebuilds for jumbotron, carousels, headers, etc..
 
 
 ## Development
@@ -137,6 +144,10 @@ Coming soon...
 
 ### 0x0x8 2018-12-20
 * Major customizer upgrade
+
+### 0x0x18 2019-01-10
+* WordPress/Code Compliance Update
+* Pre-Release Check
 
 
 ## Screenshots

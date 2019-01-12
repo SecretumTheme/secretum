@@ -40,8 +40,7 @@ gulp.task('assets', function(done) {
 
     // Ekko Lightbox
     gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.min.css')).pipe(gulp.dest('./css'))
-    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js').pipe(gulp.dest('./js'))
-    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js.map').pipe(gulp.dest('./js'))
+    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.js').pipe(gulp.dest('./assets/js/ekko-lightbox'))
 
     // Open Iconic
     gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/secretum'))

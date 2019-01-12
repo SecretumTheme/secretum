@@ -2,17 +2,18 @@
 /**
  * Copyright Navbar
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-// If Nav Menu Has Items
-if (has_nav_menu('secretum-navbar-copyright') && !secretum_mod('copyright_nav_status')) {
+namespace Secretum;
+
+// @about If Nav Menu Has Items
+if ( has_nav_menu( 'secretum-navbar-copyright' ) && ! secretum_mod( 'copyright_nav_status' ) ) {
 ?>
 <div class="col-md">
-<nav class="navbar navbar-expand<?php echo secretum_copyright_nav_wrapper(); ?>">
+<nav class="navbar navbar-expand<?php secretum_copyright_nav_wrapper(); ?>">
 	<?php
-		wp_nav_menu(array(
+		wp_nav_menu( array(
 			'depth' 			=> 0,
 			'theme_location' 	=> 'secretum-navbar-copyright',
 			'container_class' 	=> 'navbar-nav w-100',
@@ -22,8 +23,8 @@ if (has_nav_menu('secretum-navbar-copyright') && !secretum_mod('copyright_nav_st
 			'divider'			=> secretum_copyright_nav_divider_classes(),
 			'walker' 			=> new \Secretum\Navwalker(),
 			'fallback_cb'       => false,
-		    'echo'				=> true
-		));
+			'echo'				=> true,
+		) );
 	?>
 </nav><!-- .navbar -->
 </div><!-- .col-md -->

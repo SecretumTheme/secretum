@@ -2,19 +2,14 @@
 /**
  * Site Branding Description
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-// Show Desc If Allowed && Ignore If Left/Right Primary Nav In Use
-if (!secretum_mod('site_identity_tagline_status') && (!has_nav_menu('secretum-navbar-primary-left') && !has_nav_menu('secretum-navbar-primary-right'))) {
-	$description = get_bloginfo('description', 'display');
+namespace Secretum;
 
-	if ($description) {
-		echo sprintf('<p class="site-description%1$s%2$s">%3$s</p>',
-			secretum_site_identity_desc_container(),
-			secretum_site_identity_desc_textuals(),
-			$description
-		);
-	}
+// @about Show Desc If Allowed && Ignore If Left/Right Primary Nav In Use
+if ( ! secretum_mod( 'site_identity_tagline_status' ) && ( ! has_nav_menu( 'secretum-navbar-primary-left' ) && ! has_nav_menu( 'secretum-navbar-primary-right' ) ) ) {
+?>
+	<p class="site-description<?php secretum_site_identity_desc_container(); ?><?php secretum_site_identity_desc_textuals(); ?>"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
+<?php
 }

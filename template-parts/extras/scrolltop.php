@@ -2,13 +2,14 @@
 /**
  * Scroll To Top Icon
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-// If Active
-if (!secretum_mod('scrolltop')) {
+namespace Secretum;
+
+// @about If Active
+if ( ! secretum_mod( 'scrolltop' ) ) {
 ?>
-	<div class="scrolltop"><div class="scroll<?php echo secretum_scrolltop_container(); echo secretum_scrolltop_textuals(); ?>"><i class="fi-arrow-up" aria-hidden="true"></i></div></div>
+	<div class="scrolltop"><div class="scroll<?php secretum_scrolltop_container(); ?><?php secretum_scrolltop_textuals(); ?>"><i class="fi-arrow-up" aria-hidden="true"></i></div></div>
 <?php
 }

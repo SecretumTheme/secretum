@@ -4,21 +4,20 @@
  *
  * @package 	WooCommerce/Templates
  * @version     3.0.0
- *
  * @subpackage 	Secretum
- * @version 	0.0.1
  */
 
-if ($related_products) {
+namespace Secretum;
+
+if ( $related_products ) {
 ?>
 <section class="related products">
-	<h2><?php esc_html_e('Related products', 'secretum'); ?></h2>
+	<h2><?php esc_html_e( 'Related products', 'secretum' ); ?></h2>
 	<?php woocommerce_product_loop_start(); ?>
-		<?php foreach ($related_products as $related_product) { ?>
+		<?php foreach ( $related_products as $related_product ) { ?>
 			<?php
-			 	$post_object = get_post($related_product->get_id());
-				setup_postdata($GLOBALS['post'] =& $post_object);
-				wc_get_template_part('content', 'product'); ?>
+				setup_postdata( get_post( $related_product->get_id() ) );
+				wc_get_template_part( 'content', 'product' ); ?>
 		<?php } ?>
 	<?php woocommerce_product_loop_end(); ?>
 </section>

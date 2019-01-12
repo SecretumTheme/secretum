@@ -4,97 +4,95 @@
  *
  * @package 	WooCommerce/Templates
  * @version 	3.5.2
- *
  * @subpackage 	Secretum
- * @version 	0.0.1
  */
 
-if (! $order = wc_get_order($order_id)) { return; }
+namespace Secretum;
 
-$order_items           = $order->get_items(apply_filters('woocommerce_purchase_order_item_types', 'line_item'));
-$show_purchase_note    = $order->has_status(apply_filters('woocommerce_purchase_note_order_statuses', array('completed', 'processing')));
+$order = wc_get_order( $order_id );
+if ( ! isset( $order_id ) && $order_id !== $order ) { return; }
+
+$order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
+$show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', array( 'completed', 'processing' ) ) );
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
 $downloads             = $order->get_downloadable_items();
 $show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
 
-if ($show_downloads) {
-	wc_get_template('order/order-downloads.php', array('downloads' => $downloads, 'show_title' => true));
+if ( $show_downloads ) {
+	wc_get_template(
+		'order/order-downloads.php',
+		array(
+			'downloads' => $downloads,
+			'show_title' => true,
+		)
+	);
 }
 ?>
 <section class="woocommerce-order-details">
+	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<?php do_action('woocommerce_order_details_before_order_table', $order); ?>
-
-	<h2 class="woocommerce-order-details__title"><?php _e('Order details', 'secretum'); ?></h2>
+	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'secretum' ); ?></h2>
 
 	<table class="woocommerce-table woocommerce-table--order-details order_details table table-bordered table-hover">
-
 		<thead class="thead-dark">
-
 			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php _e('Product', 'secretum'); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php _e('Total', 'secretum'); ?></th>
+				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'secretum' ); ?></th>
+				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'secretum' ); ?></th>
 			</tr>
-
 		</thead>
-
 		<tbody>
-
 			<?php
-				do_action('woocommerce_order_details_before_order_table_items', $order);
+			do_action( 'woocommerce_order_details_before_order_table_items', $order );
 
-				foreach ($order_items as $item_id => $item) {
+			foreach ( $order_items as $item_id => $item ) {
+				$product = $item->get_product();
 
-					$product = $item->get_product();
+				wc_get_template( 'order/order-details-item.php', array(
+					'order'			     => $order,
+					'item_id'		     => $item_id,
+					'item'			     => $item,
+					'show_purchase_note' => $show_purchase_note,
+					'purchase_note'	     => $product ? $product->get_purchase_note() : '',
+					'product'	         => $product,
+				) );
+			}
 
-					wc_get_template('order/order-details-item.php', array(
-						'order'			     => $order,
-						'item_id'		     => $item_id,
-						'item'			     => $item,
-						'show_purchase_note' => $show_purchase_note,
-						'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-						'product'	         => $product,
-					));
-
-				}
-
-				do_action('woocommerce_order_details_after_order_table_items', $order);
-
+			do_action( 'woocommerce_order_details_after_order_table_items', $order );
 			?>
 
 		</tbody>
 
 		<tfoot>
-
-			<?php foreach ($order->get_order_item_totals() as $key => $total) { ?>
-
+			<?php
+			foreach ( $order->get_order_item_totals() as $key => $total ) {
+			?>
 				<tr>
-					<th scope="row"><?php echo $total['label']; ?></th>
-					<td><?php echo ('payment_method' === $key) ? esc_html($total['value']) : $total['value']; ?></td>
+					<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
+					<td><?php if ( isset( $total['value'] ) ) { echo wp_kses_post( $total['value'] ); } ?></td>
 				</tr>
-
-			<?php }
-
-			if ($order->get_customer_note()) { ?>
-
+			<?php
+			}
+			if ( $order->get_customer_note() ) {
+			?>
 				<tr>
-					<th><?php _e('Note:', 'secretum'); ?></th>
-					<td><?php echo wptexturize($order->get_customer_note()); ?></td>
+					<th><?php esc_html_e( 'Note:', 'secretum' ); ?></th>
+					<td><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></td>
 				</tr>
-
-			<?php } ?>
-
+			<?php
+			}
+			?>
 		</tfoot>
-
 	</table>
 
-	<?php do_action('woocommerce_order_details_after_order_table', $order); ?>
-
+	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 </section>
 
 <?php
-if ($show_customer_details) {
-
-	wc_get_template('order/order-details-customer.php', array('order' => $order));
-
+if ( $show_customer_details ) {
+	wc_get_template(
+		'order/order-details-customer.php',
+		array(
+			'order' => $order,
+		)
+	);
 }

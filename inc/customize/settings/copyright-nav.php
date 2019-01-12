@@ -2,290 +2,290 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
+namespace Secretum;
 
-// Panel
+// @about Panel
 $customizer->panel(
-    'copyright_nav',
-    __('Copyright Nav', 'secretum')
+	'copyright_nav',
+	__( 'Copyright Nav', 'secretum' )
 );
 
-// Section
+// @about Section
 $customizer->section(
-    'copyright_nav_display',
-    'copyright_nav',
-    __('Display Settings', 'secretum'),
-    ''
+	'copyright_nav_display',
+	'copyright_nav',
+	__( 'Display Settings', 'secretum' ),
+	''
 );
 
-// Checkbox
+// @about Checkbox
 $customizer->checkbox(
-    'copyright_nav_display',
-    'copyright_nav_status',
-    __('Select To Hide Navigation Menu', 'secretum'),
-    '',
-    $default['copyright_nav_status']
+	'copyright_nav_display',
+	'copyright_nav_status',
+	__( 'Select To Hide Navigation Menu', 'secretum' ),
+	'',
+	$default['copyright_nav_status']
 );
 
-// Wrapper
+// @about Wrapper
 $customizer->section(
-    'copyright_nav_wrapper',
-    'copyright_nav',
-    __('Wrapper', 'secretum'),
-    __('Customize the outter wrapper around navigation menu.', 'secretum')
+	'copyright_nav_wrapper',
+	'copyright_nav',
+	__( 'Wrapper', 'secretum' ),
+	__( 'Customize the outter wrapper around navigation menu.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['copyright_nav_wrapper_background_color'],
-    secretum_customizer_background_colors()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['copyright_nav_wrapper_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Partial
+// @about Partial
 $customizer->partial(
-    'copyright_nav_wrapper_background_color',
-    '.navbar-nav.primary'
+	'copyright_nav_wrapper_background_color',
+	'.navbar-nav.primary'
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['copyright_nav_wrapper_padding_x'],
-    secretum_customizer_padding_left_right()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_nav_wrapper_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_nav_wrapper_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_nav_wrapper_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_margin_bottom',
-    __('Margin - Bottom', 'secretum'),
-    __('Increases spacing after section.', 'secretum'),
-    $default['copyright_nav_wrapper_margin_bottom'],
-    secretum_customizer_margin_bottom()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_margin_bottom',
+	__( 'Margin - Bottom', 'secretum' ),
+	__( 'Increases spacing after section.', 'secretum' ),
+	$default['copyright_nav_wrapper_margin_bottom'],
+	secretum_customizer_margin_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_margin_top',
-    __('Margin - Top', 'secretum'),
-    __('Increases spacing before section.', 'secretum'),
-    $default['copyright_nav_wrapper_margin_top'],
-    secretum_customizer_margin_top()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_margin_top',
+	__( 'Margin - Top', 'secretum' ),
+	__( 'Increases spacing before section.', 'secretum' ),
+	$default['copyright_nav_wrapper_margin_top'],
+	secretum_customizer_margin_top()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_border_type',
-    __('Border Type', 'secretum'),
-    '',
-    $default['copyright_nav_wrapper_border_type'],
-    secretum_customizer_border_types()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_border_type',
+	__( 'Border Type', 'secretum' ),
+	'',
+	$default['copyright_nav_wrapper_border_type'],
+	secretum_customizer_border_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_wrapper',
-    'copyright_nav_wrapper_border_color',
-    __('Border Color', 'secretum'),
-    '',
-    $default['copyright_nav_wrapper_border_color'],
-    secretum_customizer_border_colors()
+	'copyright_nav_wrapper',
+	'copyright_nav_wrapper_border_color',
+	__( 'Border Color', 'secretum' ),
+	'',
+	$default['copyright_nav_wrapper_border_color'],
+	secretum_customizer_border_colors()
 );
 
-// Textuals
+// @about Textuals
 $customizer->section(
-    'copyright_nav_textuals',
-    'copyright_nav',
-    __('Textuals', 'secretum'),
-    __('Customize fonts, text and link colors.', 'secretum')
+	'copyright_nav_textuals',
+	'copyright_nav',
+	__( 'Textuals', 'secretum' ),
+	__( 'Customize fonts, text and link colors.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_font_family',
-    __('Font Family', 'secretum'),
-    '',
-    $default['copyright_nav_textual_font_family'],
-    secretum_customizer_font_families()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_font_family',
+	__( 'Font Family', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_font_family'],
+	secretum_customizer_font_families()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_font_size',
-    __('Font Size', 'secretum'),
-    '',
-    $default['copyright_nav_textual_font_size'],
-    secretum_customizer_font_sizes()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_font_size',
+	__( 'Font Size', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_font_size'],
+	secretum_customizer_font_sizes()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_font_style',
-    __('Font Style', 'secretum'),
-    '',
-    $default['copyright_nav_textual_font_style'],
-    secretum_customizer_font_styles()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_font_style',
+	__( 'Font Style', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_font_style'],
+	secretum_customizer_font_styles()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_text_transform',
-    __('Text Transform', 'secretum'),
-    '',
-    $default['copyright_nav_textual_text_transform'],
-    secretum_customizer_text_transform()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_text_transform',
+	__( 'Text Transform', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_text_transform'],
+	secretum_customizer_text_transform()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_text_color',
-    __('Text Color', 'secretum'),
-    '',
-    $default['copyright_nav_textual_text_color'],
-    secretum_customizer_text_colors()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_text_color',
+	__( 'Text Color', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_text_color'],
+	secretum_customizer_text_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_link_color',
-    __('Link Color', 'secretum'),
-    '',
-    $default['copyright_nav_textual_link_color'],
-    secretum_customizer_link_colors()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_link_color',
+	__( 'Link Color', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_link_color'],
+	secretum_customizer_link_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_textuals',
-    'copyright_nav_textual_link_hover_color',
-    __('Link Hover Color', 'secretum'),
-    '',
-    $default['copyright_nav_textual_link_hover_color'],
-    secretum_customizer_link_hover_colors()
+	'copyright_nav_textuals',
+	'copyright_nav_textual_link_hover_color',
+	__( 'Link Hover Color', 'secretum' ),
+	'',
+	$default['copyright_nav_textual_link_hover_color'],
+	secretum_customizer_link_hover_colors()
 );
 
-// Menu Items
+// @about Menu Items
 $customizer->section(
-    'copyright_nav_items',
-    'copyright_nav',
-    __('Menu Items', 'secretum'),
-    __('Customize the properties of items within the menu.', 'secretum')
+	'copyright_nav_items',
+	'copyright_nav',
+	__( 'Menu Items', 'secretum' ),
+	__( 'Customize the properties of items within the menu.', 'secretum' )
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_alignment',
-    __('Alignment', 'secretum'),
-    '',
-    $default['copyright_nav_alignment'],
-    secretum_customizer_margin_alignments()
+	'copyright_nav_items',
+	'copyright_nav_alignment',
+	__( 'Alignment', 'secretum' ),
+	'',
+	$default['copyright_nav_alignment'],
+	secretum_customizer_margin_alignments()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_background_color',
-    __('Background Color', 'secretum'),
-    '',
-    $default['copyright_nav_items_background_color'],
-    secretum_customizer_background_colors()
+	'copyright_nav_items',
+	'copyright_nav_items_background_color',
+	__( 'Background Color', 'secretum' ),
+	'',
+	$default['copyright_nav_items_background_color'],
+	secretum_customizer_background_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_background_hover_color',
-    __('Background Hover Color', 'secretum'),
-    '',
-    $default['copyright_nav_items_background_hover_color'],
-    secretum_customizer_background_hover_colors()
+	'copyright_nav_items',
+	'copyright_nav_items_background_hover_color',
+	__( 'Background Hover Color', 'secretum' ),
+	'',
+	$default['copyright_nav_items_background_hover_color'],
+	secretum_customizer_background_hover_colors()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_margin_x',
-    __('Margin - Left & Right', 'secretum'),
-    '',
-    $default['copyright_nav_items_margin_x'],
-    secretum_customizer_margin_left_right()
+	'copyright_nav_items',
+	'copyright_nav_items_margin_x',
+	__( 'Margin - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_nav_items_margin_x'],
+	secretum_customizer_margin_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_margin_y',
-    __('Margin - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_nav_items_margin_y'],
-    secretum_customizer_margin_top_bottom()
+	'copyright_nav_items',
+	'copyright_nav_items_margin_y',
+	__( 'Margin - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_nav_items_margin_y'],
+	secretum_customizer_margin_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_padding_x',
-    __('Padding - Left & Right', 'secretum'),
-    '',
-    $default['copyright_nav_items_padding_x'],
-    secretum_customizer_padding_left_right()
+	'copyright_nav_items',
+	'copyright_nav_items_padding_x',
+	__( 'Padding - Left & Right', 'secretum' ),
+	'',
+	$default['copyright_nav_items_padding_x'],
+	secretum_customizer_padding_left_right()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_padding_y',
-    __('Padding - Top & Bottom', 'secretum'),
-    '',
-    $default['copyright_nav_items_padding_y'],
-    secretum_customizer_padding_top_bottom()
+	'copyright_nav_items',
+	'copyright_nav_items_padding_y',
+	__( 'Padding - Top & Bottom', 'secretum' ),
+	'',
+	$default['copyright_nav_items_padding_y'],
+	secretum_customizer_padding_top_bottom()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_border_type',
-    __('Border Type', 'secretum'),
-    '',
-    $default['copyright_nav_items_border_type'],
-    secretum_customizer_border_types()
+	'copyright_nav_items',
+	'copyright_nav_items_border_type',
+	__( 'Border Type', 'secretum' ),
+	'',
+	$default['copyright_nav_items_border_type'],
+	secretum_customizer_border_types()
 );
 
-// Select
+// @about Select
 $customizer->select(
-    'copyright_nav_items',
-    'copyright_nav_items_border_color',
-    __('Border Color', 'secretum'),
-    '',
-    $default['copyright_nav_items_border_color'],
-    secretum_customizer_border_colors()
+	'copyright_nav_items',
+	'copyright_nav_items_border_color',
+	__( 'Border Color', 'secretum' ),
+	'',
+	$default['copyright_nav_items_border_color'],
+	secretum_customizer_border_colors()
 );
