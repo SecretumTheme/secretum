@@ -2,43 +2,42 @@
 /**
  * The template for displaying the footer
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-	// Hookable Action Before Footer
-	do_action('secretum_footer_before');
+namespace Secretum;
 
-	// Display Footer Area
-	get_template_part('template-parts/footer/display');
+// @about Hookable Action
+do_action( 'secretum_footer_before' );
 
-	// Secretum Custom Headers & Footers Plugin
-	if (secretum_mod('custom_footers')) {
-		echo do_action('secretum_hf', 'footers');
-	}
+// @about Display Footer Area
+get_template_part( 'template-parts/footer/display' );
 
-	// Hookable Action After Footer
-	do_action('secretum_footer_after');
+// @about Secretum Custom Headers & Footers Plugin
+if ( secretum_mod( 'custom_footers' ) ) {
+	do_action( 'secretum_hf', 'footers' );
+}
 
-	// Copyright Area
-	get_template_part('template-parts/copyright/display');
+// @about Hookable Action
+do_action( 'secretum_footer_after' );
 
-	// Hookable Action After Copyright
-	do_action('secretum_copyright_after');
+// @about Copyright Area
+get_template_part( 'template-parts/copyright/display' );
 
-	// Scroll To Top Icon
-	get_template_part('template-parts/extras/scrolltop');
+// @about Hookable Action
+do_action( 'secretum_copyright_after' );
+
+// @about Scroll To Top Icon
+get_template_part( 'template-parts/extras/scrolltop' );
 ?>
 </div><!-- #page -->
-
 <?php
-	// Customizer Refresh Icon
-    if (is_customize_preview()) {
-    	echo '<a href="JavaScript:Void(0);" onClick="document.location.reload(true)" title="' . __('Refresh Preview', 'secretum') . '"><i style="color:rgba(80,80,80,0.5);font-size:22px;position:fixed;bottom:50px;right:8px;z-index:100000;" class="fi-refresh" aria-hidden="true"></i></a>';
-    }
+// @about Customizer Refresh Icon
+if ( is_customize_preview() ) {
+	secretum_customizer_refresh();
+}
 
-	wp_footer();
+wp_footer();
 ?>
-
 </body>
 </html>

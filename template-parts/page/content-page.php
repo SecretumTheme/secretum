@@ -2,31 +2,39 @@
 /**
  * Default Page Loop
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
+
+namespace Secretum;
+
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
-		<?php the_title('<h1 class="entry-title mb-4">', '</h1>'); ?>
+		<?php the_title( '<h1 class="entry-title mb-4">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php //echo get_the_post_thumbnail($post->ID, 'large'); ?>
+	<?php // @edit Maybe add back echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
 		<?php
-			the_content();
+		// @about Hookable Action
+		do_action( 'secretum_before_entry_content' );
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links py-3 mt-3 text-center">' . secretum_text('content_pages_text'),
-					'after'  => '</div>',
-				)
-			);
+		the_content();
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links py-3 mt-3 text-center">' . secretum_text( 'content_pages_text', false ),
+				'after'  => '</div>',
+			)
+		);
+
+		// @about Hookable Action
+		do_action( 'secretum_after_entry_content' );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php secretum_edit_link(); ?>
+		<?php secretum_edit_link( get_the_ID() ); ?>
 	</footer><!-- .entry-footer -->
 </article>

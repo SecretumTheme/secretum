@@ -2,21 +2,22 @@
 /**
  * Primary Navbar - Above
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
 
-// If Display Allowed & Menu Active
-if (!secretum_mod('primary_nav_status') && has_nav_menu('secretum-navbar-primary-above')) {
-?>
-<nav class="wrapper navbar navbar-expand-lg<?php echo secretum_primary_nav_color_scheme(); echo secretum_primary_nav_wrapper(); ?>">
-<div class="container<?php echo secretum_primary_nav_container(); ?>">
-<?php
-	// Display Toggler
-	get_template_part('template-parts/primary-nav/toggler');
+namespace Secretum;
 
-	// Display Nav
-	wp_nav_menu(array(
+// @about If Display Allowed & Menu Active
+if ( ! secretum_mod( 'primary_nav_status' ) && has_nav_menu( 'secretum-navbar-primary-above' ) ) {
+?>
+<nav class="wrapper navbar navbar-expand-lg<?php secretum_primary_nav_color_scheme(); ?><?php secretum_primary_nav_wrapper(); ?>">
+<div class="container<?php secretum_primary_nav_container(); ?>">
+<?php
+	// @about Display Toggler
+	get_template_part( 'template-parts/primary-nav/toggler' );
+
+	// @about Display Nav
+	wp_nav_menu( array(
 		'depth' 			=> 2,
 		'theme_location' 	=> 'secretum-navbar-primary-above',
 		'container_class' 	=> 'collapse navbar-collapse',
@@ -24,15 +25,19 @@ if (!secretum_mod('primary_nav_status') && has_nav_menu('secretum-navbar-primary
 		'menu_class' 		=> 'navbar-nav primary' . secretum_primary_nav_alignment(),
 		'menu_id' 			=> 'main-menu',
 		'divider'			=> secretum_primary_nav_divider_classes(),
-		'walker' 			=> new \Secretum\Navwalker(),
-	    'fallback_cb'       => false,
-	    'echo'				=> true
-	));
+		'walker' 			=> new \Secretum\navwalker(
+			'primary_nav',
+			secretum_primary_nav_dropdown_classes(),
+			secretum_primary_nav_dropdown_textual_classes()
+		),
+		'fallback_cb' 		=> false,
+		'echo'				=> true,
+	) );
 
-	// Navbar Search Form
-	get_template_part('template-parts/primary-nav/search');
+	// @about Navbar Search Form
+	get_template_part( 'template-parts/primary-nav/search' );
 ?>
 </div><!-- .container -->
 </nav><!-- .navbar -->
-<?php 
+<?php
 }

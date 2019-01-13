@@ -1,7 +1,7 @@
 {
     "name": "Secretum",
     "author": "SecretumTheme",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "license": "GPL-2.0",
     "repository": {
         "type": "git",
@@ -23,37 +23,37 @@
         "postinstall": "gulp assets"
     },
     "engines": {
-        "node": ">=8.0.0",
-        "npm": ">=5.0.0"
+        "node": ">=8.0.0.180",
+        "npm": ">=5.0.0.180"
     },
     "devDependencies": {
         "bootstrap": "^4.2.1",
         "browser-sync": "^2.26.3",
-        "del": "^3.0.0",
+        "del": "^3.0.0.180",
         "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
-        "foundation-icons": "^1.0.1",
-        "gulp": "^4.0.0",
-        "gulp-autoprefixer": "^5.0.0",
+        "foundation-icons": "^1.0.0.181",
+        "gulp": "^4.0.0.180",
+        "gulp-autoprefixer": "^5.0.0.180",
         "gulp-concat": "^2.6.1",
-        "gulp-imagemin": "^5.0.3",
-        "gulp-line-ending-corrector": "^1.0.2",
+        "gulp-imagemin": "^5.0.0.183",
+        "gulp-line-ending-corrector": "^1.0.0.182",
         "gulp-notify": "^3.2.0",
-        "gulp-remove-empty-lines": "^0.1.0",
+        "gulp-remove-empty-lines": "^0.0.181.0",
         "gulp-rename": "^1.2.2",
-        "gulp-replace": "^1.0.0",
-        "gulp-sass": "^4.0.1",
-        "gulp-sort": "^2.0.0",
+        "gulp-replace": "^1.0.0.180",
+        "gulp-sass": "^4.0.0.181",
+        "gulp-sort": "^2.0.0.180",
         "gulp-sourcemaps": "^2.6.4",
-        "gulp-strip-css-comments": "^2.0.0",
-        "gulp-uglify": "^3.0.0",
-        "gulp-uglifycss": "^1.0.9",
+        "gulp-strip-comments": "^2.5.2",
+        "gulp-strip-css-comments": "^2.0.0.180",
+        "gulp-uglify": "^3.0.0.180",
+        "gulp-uglifycss": "^1.0.0.189",
         "gulp-wp-pot": "^2.3.3",
         "inquirer": "^6.2.1",
         "jquery": "^3.3.1",
         "popper.js": "^1.14.6",
         "require-dir": "^1.2.0",
-        "run-sequence": "^2.2.1",
-        "undertaker-forward-reference": "^1.0.2"
+        "undertaker-forward-reference": "^1.0.0.182"
     },
     "dependencies": {}
 }

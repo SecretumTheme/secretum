@@ -1,0 +1,30 @@
+{
+    "name": "SecretumTheme/secretum",
+    "description": "Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money!",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://secretumtheme.com/secretum/",
+    "keywords": [
+        "secretum",
+        "wordpress",
+        "theme",
+        "wordpress-theme"
+    ],
+    "authors": [
+        {
+            "name": "Secretum Team",
+            "email": "authors@secretumtheme.com",
+            "homepage": "https://secretumtheme.com/about/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/SecretumTheme/secretum/issues",
+        "source": "https://github.com/SecretumTheme/secretum"
+    },
+    "archive": {
+        "exclude": ["/.*", "/composer.lock"]
+    },
+    "require": {
+        "php": ">=5.4.0"
+    }
+}

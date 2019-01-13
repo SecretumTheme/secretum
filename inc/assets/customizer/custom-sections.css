@@ -1,0 +1,27 @@
+/**
+ * Secretum - Custom Customizer Controls
+ */
+#customize-controls  .control-section-secretum.secretum-pro-section {
+	margin-bottom: 16px;
+}
+
+#customize-controls .control-section-secretum.secretum-docs-section {
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+
+#customize-controls .control-section-secretum .accordion-section-title:hover,
+#customize-controls .control-section-secretum .accordion-section-title:focus {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.control-section-secretum .accordion-section-title .button {
+	font-weight: 400;
+	margin-left: 8px;
+	margin-top: -4px;
+}
+
+.rtl .control-section-secretum .accordion-section-title .button {
+	margin-left: 0;
+	margin-right: 8px;
+}

@@ -9,7 +9,6 @@ var gulp            = require('gulp');
 var inquirer        = require('inquirer');
 var notify          = require('gulp-notify');
 var replace         = require('gulp-replace');
-var sequence        = require('run-sequence');
 var current_version = require('../../package.json').version;
 var next_version;
 

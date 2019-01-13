@@ -2,9 +2,11 @@
 /**
  * Template part for displaying entry content only
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
+
+namespace Secretum;
+
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<div class="entry-content">
@@ -13,9 +15,9 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links py-3 mt-5 text-center">' . secretum_text('content_pages_text'),
+					'before' => '<div class="page-links py-3 mt-5 text-center">' . secretum_text( 'content_pages_text', false ),
 					'after'  => '</div>',
-				)
+				 )
 			);
 
 			secretum_edit_link();

@@ -2,28 +2,44 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package WordPress
- * @subpackage Secretum
+ * @package Secretum
  */
+
+namespace Secretum;
+
+/**
+ * Inject Entry Content Before Post Content
+ */
+add_action( 'secretum_before_content', function() {
+	// @about Display Featured Image If No Location Set or Forced
+	if ( ! secretum_mod( 'featured_image_display_location' ) || 'before_content' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
+		get_template_part( 'template-parts/header/featured-image' );
+	}
+} );
+
+/**
+ * Inject Entry Content Before Entry Content
+ */
+add_action( 'secretum_before_entry_content', function() {
+	// @about Display Featured Image If allowed
+	if ( 'before_entry' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
+		get_template_part( 'template-parts/header/featured-image' );
+	}
+} );
 
 
 /**
  * Entry Wrapper Classes
- *
- * @return string Class names
  */
-if (!function_exists('secretum_entry_wrapper')) {
-	function secretum_entry_wrapper()
-	{
-		// Classes
-		$columns = secretum_entry_columns();
-		$background = secretum_mod('entry_wrapper_background_color', 'attr', true);
-		$border = secretum_mod('entry_wrapper_border_type', 'attr', true) . secretum_mod('entry_wrapper_border_color', 'attr', true);
-		$margin = secretum_mod('entry_wrapper_margin_top', 'attr', true) . secretum_mod('entry_wrapper_margin_bottom', 'attr', true);
-		$padding = secretum_mod('entry_wrapper_padding_x', 'attr', true) . secretum_mod('entry_wrapper_padding_y', 'attr', true);
+function secretum_entry_wrapper() {
+	// @about Classes
+	$columns = secretum_entry_columns();
+	$background = secretum_mod( 'entry_wrapper_background_color', 'attr', true );
+	$border = secretum_mod( 'entry_wrapper_border_type', 'attr', true ) . secretum_mod( 'entry_wrapper_border_color', 'attr', true );
+	$margin = secretum_mod( 'entry_wrapper_margin_top', 'attr', true ) . secretum_mod( 'entry_wrapper_margin_bottom', 'attr', true );
+	$padding = secretum_mod( 'entry_wrapper_padding_x', 'attr', true ) . secretum_mod( 'entry_wrapper_padding_y', 'attr', true );
 
-		return apply_filters('secretum_entry_wrapper', $columns . $background . $border . $margin . $padding, 10, 1);
-	}
+	echo esc_html( apply_filters( 'secretum_entry_wrapper', $columns . $background . $border . $margin . $padding, 10, 1 ) );
 }
 
 
@@ -32,43 +48,50 @@ if (!function_exists('secretum_entry_wrapper')) {
  *
  * @return string Columns value
  */
-if (!function_exists('secretum_entry_columns')) {
-	function secretum_entry_columns()
-	{
-		// Global Sidebar Location
-		$global_location = secretum_mod('sidebar_location', 'attr');
+function secretum_entry_columns() {
+	// @about Global Sidebar Location
+	$global_location = secretum_mod( 'sidebar_location', 'attr' );
 
-		// Local Sidebar Location
-		$local_location = get_post_meta(get_the_ID(), 'secretum_meta_sidebars');
+	// @about Local Sidebar Location
+	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
 
-		// Build Sidebar Location
-		$sidebar_location = !empty($local_location[0]) ? $local_location[0] : $global_location;
+	// @about Build Sidebar Location
+	$sidebar_location = ! empty( $local_location[0] ) ? $local_location[0] : $global_location;
 
-		// Default Width
-		$columns = "-12";
+	// @about Default Width
+	$columns = '-12';
 
-		// Half Width
-		if (!empty($sidebar_location) && $sidebar_location == 'both') {
-			$columns = "-6";
-		}
-
-		// Normal Width
-		if (!empty($sidebar_location) && ($sidebar_location == 'left' || $sidebar_location == 'right')) {
-			$columns = "-8";
-		}
-
-		// Full Width
-		if (!empty($sidebar_location) && $sidebar_location == 'none') {
-			$columns = "-12";
-		}
-
-		// Full Width
-		if (!is_active_sidebar('sidebar-1') && !is_active_sidebar('sidebar-right') && !is_active_sidebar('sidebar-left')) {
-			$columns = "-12";
-		}
-
-		return $columns;
+	// @about Half Width
+	if ( ! empty( $sidebar_location ) && 'both' === $sidebar_location ) {
+		$columns = '-6';
 	}
+
+	// @about Normal Width
+	if ( ! empty( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
+		$columns = '-8';
+	}
+
+	// @about Full Width
+	if ( ! empty( $sidebar_location ) && 'none' === $sidebar_location ) {
+		$columns = '-12';
+	}
+
+	// @about Full Width
+	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-right' ) && ! is_active_sidebar( 'sidebar-left' ) ) {
+		$columns = '-12';
+	}
+
+	if ( class_exists( 'woocommerce' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+		$columns = '-12';
+
+		if ( ( is_active_sidebar( 'sidebar-woo-product' ) || is_active_sidebar( 'sidebar-woo-default' ) ) ) {
+			$columns = '-9';
+		} elseif ( class_exists( 'WC_Bookings' ) ) {
+			$columns = '';
+		}
+	}
+
+	return $columns;
 }
 
 
@@ -77,25 +100,27 @@ if (!function_exists('secretum_entry_columns')) {
 /**
  * Check if the content has been modified
  */
-if (!function_exists('secretum_modified_date_check')) {
-	function secretum_modified_date_check()
-	{
-		return (get_the_time('U') !== get_the_modified_time('U')) ? true : false;
-	}
+function secretum_modified_date_check() {
+	return (get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ? true : false;
 }
 
 
 /**
  * Get Post Category Listing
  */
-if (!function_exists('secretum_categories_list')) {
-	function secretum_categories_list()
-	{
-		$get_the_category_list = get_the_category_list(', ');
+function secretum_categories_list() {
+	$get_the_category_list = get_the_category_list( ', ' );
 
-		if ($get_the_category_list) {
-			return $get_the_category_list;
-		}
+	if ( $get_the_category_list ) {
+		echo wp_kses(
+			$get_the_category_list,
+			[
+				'a' => [
+					'href' 	=> true,
+					'rel' 	=> true,
+				],
+			]
+		);
 	}
 }
 
@@ -103,32 +128,61 @@ if (!function_exists('secretum_categories_list')) {
 /**
  * Post Tags Listing
  */
-if (!function_exists('secretum_tags_list')) {
-	function secretum_tags_list()
-	{
-		$get_the_tag_list = get_the_tag_list('', ', ');
+function secretum_tags_list() {
+	$get_the_tag_list = get_the_tag_list( '', ', ' );
 
-		if ($get_the_tag_list) {
-			return $get_the_tag_list;
-		}
+	if ( $get_the_tag_list ) {
+		echo wp_kses(
+			$get_the_tag_list,
+			[
+				'a' => [
+					'href' 	=> true,
+					'rel' 	=> true,
+				],
+			]
+		);
 	}
 }
 
 
 /**
  * Custom Edit Post Link
+ *
+ * @param int $post_id Current Post ID.
  */
-if (!function_exists('secretum_edit_link')) {
-	function secretum_edit_link($post_id = '')
-	{
-		edit_post_link(
-			sprintf(
-				esc_html__('Edit %s', 'secretum'),
-				the_title('<span class="screen-reader-text">"', '"</span>', false)
-			),
-			'<i class="fa fa-pencil"></i> <span class="edit-link">',
-			'</span>',
-			$post_id
-		);
-	}
+function secretum_edit_link( $post_id ) {
+	edit_post_link(
+		__( 'Edit', 'secretum' ),
+		'<span class="screen-reader-text">' . __( 'Edit', 'secretum' ) . '</span><span class="edit-link">',
+		'</span>',
+		(int) $post_id
+	);
+}
+
+
+/**
+ * Password Protected Posts/Pages/Products Form
+ */
+function secretum_post_password_form() {
+	echo wp_kses(
+		get_the_password_form(),
+		[
+			'form' 	=> [
+				'action' 	=> true,
+				'class' 	=> true,
+				'method' 	=> true,
+			],
+			'label' => [
+				'for' 		=> true,
+			],
+			'input' => [
+				'name' 		=> true,
+				'id' 		=> true,
+				'type' 		=> true,
+				'size' 		=> true,
+				'value' 	=> true,
+			],
+			'p' 	=> true,
+		]
+	);
 }

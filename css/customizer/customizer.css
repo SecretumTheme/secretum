@@ -1,0 +1,11 @@
+/**
+ * Secretum - Customizer Styles
+ */
+ .secretum-customizer-icon {
+	color: rgba(80,80,80,0.5);
+	font-size: 22px;
+	position: fixed;
+	bottom: 50px;
+	right: 8px;
+	z-index: 100000;
+ }
