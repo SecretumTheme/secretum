@@ -17,15 +17,13 @@ error_log
 phpunit.xml
 readme.html
 README.html
-.INSTRUCTIONS
+composer.phar
 CONTRIBUTING.md
 
-assets/*
 node_modules/*
+vendor/*
+assets/*
 psds/*
-
-composer.json
-composer.lock
 
 stage.sh
 styles.sh
