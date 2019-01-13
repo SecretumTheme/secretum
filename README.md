@@ -2,10 +2,10 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
-* **Tested up to:** 5.0.1
-* **Version:** 0.0.17
+* **Tested up to:** 5.0.0.181
+* **Version:** 0.0.18
 * **License:** GPLv2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.18html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
@@ -28,6 +28,7 @@ Theme is ready for public use and should only be developed on for testing purpos
 ## Description
 
 Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money! Export & import (share) theme settings across any Secretum theme install. Mass rapid deploy child-themes that automatically setup upon activation. Very simple to use, no new interfaces to learn, no fancy page-builders needed.
+
 
 ## For Support, Bugs & Feature Requests
 
@@ -147,7 +148,7 @@ Coming soon...
 
 ### 0x0x18 2019-01-10
 * WordPress/Code Compliance Update
-* Pre-Release Check
+* Pre-Release Final Check
 
 
 ## Screenshots
