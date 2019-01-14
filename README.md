@@ -2,10 +2,10 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
-* **Tested up to:** 5.0.0.181
-* **Version:** 0.0.18
+* **Tested up to:** 5.0.0.191
+* **Version:** 0.0.19
 * **License:** GPLv2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.18html
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.19html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
@@ -141,7 +141,7 @@ Coming soon...
 ## Changelog
 
 ### 0x0x1 2018-10-01
-* Alpha nothing is being logged
+* Alpha
 
 ### 0x0x8 2018-12-20
 * Major customizer upgrade
@@ -149,6 +149,13 @@ Coming soon...
 ### 0x0x18 2019-01-10
 * WordPress/Code Compliance Update
 * Pre-Release Final Check
+
+### 0x0x19 2019-01-14
+* Composer correction
+* Commented out custom customizer sections
+	* Created new branch for feature build
+* Commented out customizer export/import
+	* Created new branch for feature build
 
 
 ## Screenshots
