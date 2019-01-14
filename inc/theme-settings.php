@@ -35,15 +35,12 @@ add_action( 'after_setup_theme', function() {
 		'secretum-navbar-copyright' 	=> __( 'Copyright Textual Menu', 'secretum' ),
 	] );
 
-	// @about Remove Front-end Comments
-	if ( secretum_mod( 'secretum_close_comments' ) ) {
-		add_filter( 'comments_open', '__return_false', 20 );
-	}
+	// @about Editor Stylesheet
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'css/theme_editor.min.css' );
 
-	// @about Remove Front-end Pings
-	if ( secretum_mod( 'secretum_close_pings' ) ) {
-		add_filter( 'pings_open', '__return_false', 20 );
-	}
+	// @about Add support for responsive embedded content
+	add_theme_support( 'responsive-embeds' );
 
 	// @about Header Image Panel
 	add_theme_support( 'custom-header' );
@@ -97,48 +94,22 @@ add_action( 'after_setup_theme', function() {
 		'flex-height' 	=> true,
 		'flex-width' 	=> true,
 	] );
-} );
 
+	// @about Customizer Theme Colors
+	if ( ! get_option( 'secretum_theme_colors' ) ) {
+		$files = array();
+		$files = scandir( SECRETUM_DIR . '/css/', 1 );
+		$folders = array_diff( $files, array( 'theme_editor.css', 'theme.min.css', 'theme.css.map', 'theme.css', '..', '.' ) );
 
-/**
- * Initialize Theme Settings
- */
-add_action( 'init', function() {
-	// @about Inject Analytics Code Within WordPress Header or Footer
-	$analytics = secretum_mod( 'analytics_code' );
-	$location = secretum_mod( 'analytics_location', 'attr' );
+		$settings = array();
+		foreach ( $folders as $dirname ) {
+			$ampersand = str_replace( '_',  __( ' Primary', 'secretum' ) . ' & ', esc_attr( $dirname ) );
+			$spaced = str_replace( '-', ' ', $ampersand );
+			$name = ucwords( $spaced ) . __( ' Secondary', 'secretum' );
+			$settings[ $dirname ] = $name;
+		}
 
-	if ( 'header' === $location && ! empty( $analytics ) ) {
-		add_action( 'wp_head', function() {
-			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
-		} );
-
-	} elseif ( empty( $location ) && ! empty( $analytics ) ) {
-		add_action( 'wp_footer', function() {
-			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
-		} );
+		// @about Update Theme Colors Option
+		update_option( 'secretum_theme_colors', $settings );
 	}
 } );
-
-
-/**
- * Remove User Endpoints From API
- *
- * @link http://v2.wp-api.org/reference/users/
- *
- * @param array $endpoints Wordpress API Endpoints.
- * @return array Cleaned Registered Endpoints
- */
-add_filter( 'rest_endpoints', function( $endpoints ) {
-	// @about Remove List Of Users
-	if ( isset( $endpoints['/wp/v2/users'] ) ) {
-		unset( $endpoints['/wp/v2/users'] );
-	}
-
-	// @about Remove User View
-	if ( isset( $endpoints['/wp/v2/users/( ?P<id>[\d]+ )'] ) ) {
-		unset( $endpoints['/wp/v2/users/( ?P<id>[\d]+ )'] );
-	}
-
-	return $endpoints;
-}, 1000 );
