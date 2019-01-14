@@ -12,7 +12,7 @@ define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.18' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.19' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -136,7 +136,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 	$wp_customize->remove_section( 'background_image' );
 
 	// @about Register Custom Customizer Sections Type
-	$wp_customize->register_section_type( '\Secretum\CustomizerSections' );
+	// @about Moved to branch: feature-customizer-sections | $wp_customize->register_section_type( '\Secretum\CustomizerSections' );
 
 	// @about Controller Setting Arrays
 	include_once( SECRETUM_INC . '/customize/choices/alignments.php' );
@@ -163,6 +163,8 @@ add_action( 'customize_register', function( $wp_customize ) {
 	$default = secretum_customizer_default_settings();
 
 	// @about Register Secretum Pro Section
+	// @about Moved to branch: feature-customizer-sections
+	/**
 	$wp_customize->add_section(
 		new \Secretum\CustomizerSections(
 			$wp_customize,
@@ -177,6 +179,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 			)
 		)
 	);
+	*/
 
 	// @about Include Settings
 	include_once( SECRETUM_INC . '/customize/settings/globals.php' );
@@ -196,16 +199,22 @@ add_action( 'customize_register', function( $wp_customize ) {
 	include_once( SECRETUM_INC . '/customize/settings/translations.php' );
 
 	// @about Exports & Imports
+	// @about Moved to branch: feature-export-import
+	/**
 	$wp_customize->add_panel( 'secretum_export_import', array(
 		'title'	 => __( ':: Exports & Imports', 'secretum' ),
 		'priority'  => 8,
 	) );
 
 	// @about Sections, Settings, & Controls
+	// @about Moved to branch: feature-export-import
 	include_once( SECRETUM_INC . '/customize/export-import/global.php' );
 	include_once( SECRETUM_INC . '/customize/export-import/copyright.php' );
+	**/
 
 	// @about Register Documentation Section
+	// @about Moved to branch: feature-customizer-sections
+	/**
 	$wp_customize->add_section(
 		new \Secretum\CustomizerSections(
 			$wp_customize,
@@ -220,7 +229,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 			)
 		)
 	);
-
+	*/
 } );
 
 
