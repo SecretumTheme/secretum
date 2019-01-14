@@ -9,6 +9,23 @@ namespace Secretum;
 
 
 /**
+ * Add SVG Definitions To Website Footer If No Font Awesome
+ */
+if ( ! class_exists( 'Better_Font_Awesome_Plugin' ) ) {
+	add_action( 'wp_footer', function() {
+		// @about Define SVG sprite file.
+		// @source Twenty Seventeen By WordPress.org
+		$svg_icons = get_parent_theme_file_path( '/images/svg-icons.svg' );
+
+		// If it exists, include it.
+		if ( file_exists( $svg_icons ) ) {
+			require_once( $svg_icons );
+		}
+	}, 9999 );
+}
+
+
+/**
  * Render Breadcrumbs
  *
  * @param string $taxonomy The taxonomy term.

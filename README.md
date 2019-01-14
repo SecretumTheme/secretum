@@ -155,7 +155,10 @@ Coming soon...
 * Commented out custom customizer sections
 	* Created new branch for feature build
 * Commented out customizer export/import
-	* Created new branch for feature build
+	* Created new branch for feature 
+
+### 0x0x20 2019-01-14
+* Reduced php memory footprint
 
 
 ## Screenshots

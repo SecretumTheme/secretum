@@ -17,6 +17,26 @@ add_action( 'customize_controls_enqueue_scripts', function() {
 } );
 
 
+/**
+ * Initialize Theme Settings
+ */
+add_action( 'init', function() {
+	// @about Inject Analytics Code Within WordPress Header or Footer
+	$analytics = secretum_mod( 'analytics_code' );
+	$location = secretum_mod( 'analytics_location', 'attr' );
+
+	if ( 'header' === $location && ! empty( $analytics ) ) {
+		add_action( 'wp_head', function() {
+			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
+		} );
+
+	} elseif ( empty( $location ) && ! empty( $analytics ) ) {
+		add_action( 'wp_footer', function() {
+			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
+		} );
+	}
+} );
+
 
 /**
  * WordPress Enqueue Action
