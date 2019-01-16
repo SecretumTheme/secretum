@@ -2,10 +2,12 @@
 /**
  * Hook Scripts and Styles
  *
- * @package Secretum
- * @subpackage enqueue.php
- * @author SecretumTheme <author@secretumtheme.com>
- * @copyright 2018-2019 Secretum
+ * @package    Secretum
+ * @subpackage Secretum\enqueue.php
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/enqueue.php
  */
 
 namespace Secretum;

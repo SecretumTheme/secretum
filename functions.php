@@ -7,7 +7,7 @@
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/functions.php
  */
 
 namespace Secretum;
@@ -210,7 +210,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 
 // Secretum Updater Plugin.
 if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) === true ) {
-	if (class_exists( 'Puc_v4p4_Autoloader' ) === false ) {
+	if ( class_exists( 'Puc_v4p4_Autoloader' ) === false ) {
 		require_once  SECRETUM_UPDATER;
 	}
 
