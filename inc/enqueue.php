@@ -2,12 +2,10 @@
 /**
  * Hook Scripts and Styles
  *
- * @package    Secretum
- * @subpackage Secretum\enqueue.php
- * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
- * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/enqueue.php
+ * @package Secretum
+ * @subpackage enqueue.php
+ * @author SecretumTheme <author@secretumtheme.com>
+ * @copyright 2018-2019 Secretum
  */
 
 namespace Secretum;
@@ -22,30 +20,6 @@ add_action( 'customize_controls_enqueue_scripts', function() {
 } );
 
 
-<<<<<<< HEAD
-/**
- * Initialize Theme Settings
- */
-add_action( 'init', function() {
-	// @about Inject Analytics Code Within WordPress Header or Footer
-	$analytics = secretum_mod( 'analytics_code' );
-	$location = secretum_mod( 'analytics_location', 'attr' );
-
-	if ( 'header' === $location && ! empty( $analytics ) ) {
-		add_action( 'wp_head', function() {
-			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
-		} );
-
-	} elseif ( empty( $location ) && ! empty( $analytics ) ) {
-		add_action( 'wp_footer', function() {
-			echo esc_js( secretum_mod( 'analytics_code', 'script' ) );
-		} );
-	}
-} );
-
-
-=======
->>>>>>> feature-export-import
 /**
  * WordPress Enqueue Action
  */
