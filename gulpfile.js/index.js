@@ -7,7 +7,7 @@
  * @command gulp --silent
  * @command gulp watch --silent
  * @command gulp clean --silent
- * @command gulp deploy --silent
+ * @command gulp bump --silent
  *
  * @command gulp assets --silent
  * @command gulp editor --silent
