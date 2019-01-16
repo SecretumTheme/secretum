@@ -2,7 +2,12 @@
 /**
  * Hook Scripts and Styles
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\enqueue.php
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/enqueue.php
  */
 
 namespace Secretum;
@@ -17,6 +22,7 @@ add_action( 'customize_controls_enqueue_scripts', function() {
 } );
 
 
+<<<<<<< HEAD
 /**
  * Initialize Theme Settings
  */
@@ -38,19 +44,21 @@ add_action( 'init', function() {
 } );
 
 
+=======
+>>>>>>> feature-export-import
 /**
  * WordPress Enqueue Action
  */
 add_action( 'wp_enqueue_scripts', function() {
-	// @about Get Theme Object
+	// Get Theme Object.
 	$theme = wp_get_theme();
 
-	// @about Customizer Preview Styles
+	// Customizer Preview Styles.
 	if ( is_customize_preview() ) {
 		wp_enqueue_style( 'secretum-customizer-css', SECRETUM_THEME_URL . '/css/customizer/customizer.css' );
 	}
 
-	// @about Selected Style
+	// Selected Style.
 	if ( secretum_mod( 'enqueue_theme_colors' ) ) {
 		wp_enqueue_style(
 			'secretum',
@@ -60,7 +68,7 @@ add_action( 'wp_enqueue_scripts', function() {
 			'all'
 		);
 	} else {
-		// @about Default Style
+		// Default Style.
 		wp_enqueue_style(
 			'secretum',
 			SECRETUM_STYLE_URL . '/css/theme.min.css',
@@ -70,7 +78,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		);
 	}
 
-	// @about Primary Theme Script
+	// Primary Theme Script.
 	if ( ! secretum_mod( 'enqueue_primary_javascript_status' ) ) {
 		wp_enqueue_script(
 			'secretum',
@@ -80,8 +88,8 @@ add_action( 'wp_enqueue_scripts', function() {
 			true
 		);
 	} elseif ( secretum_mod( 'enqueue_bootstrap_bundle_javascript_status' ) ) {
-		// @about Primary JS Disabled
-		// @about Bootstrap Bundle Script
+		// Primary JS Disabled.
+		// Bootstrap Bundle Script.
 		if ( secretum_mod( 'enqueue_bootstrap_bundle_js_status' ) ) {
 			wp_enqueue_script(
 				'secretum-bootstrap-bundle',
@@ -92,7 +100,7 @@ add_action( 'wp_enqueue_scripts', function() {
 			);
 		}
 
-		// @about Secretum Theme Script
+		// Secretum Theme Script.
 		if ( secretum_mod( 'enqueue_secretum_javascript_status' ) ) {
 			wp_enqueue_script(
 				'secretum',
@@ -104,7 +112,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		}
 	}
 
-	// @about Ekko Lightbox
+	// Ekko Lightbox.
 	if ( secretum_mod( 'enqueue_ekko_lightbox_status' ) && ( ! secretum_mod( 'enqueue_primary_javascript_status' ) || secretum_mod( 'enqueue_bootstrap_bundle_javascript_status' ) ) ) {
 		wp_enqueue_style(
 			'secretum-ekko-lightbox',
@@ -123,7 +131,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		);
 	}
 
-	// @about WooCommerce
+	// WooCommerce.
 	if ( class_exists( 'woocommerce' ) && ! secretum_mod( 'enqueue_woocommerce_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce',
@@ -134,7 +142,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		);
 	}
 
-	// @about WooCommerce Bookings
+	// WooCommerce Bookings.
 	if ( class_exists( 'WC_Bookings' ) && ! secretum_mod( 'enqueue_woocommerce_bookings_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce-bookings',
@@ -145,23 +153,23 @@ add_action( 'wp_enqueue_scripts', function() {
 		);
 	}
 
-	// @about Comments Form Scripts
+	// Comments Form Scripts.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && ! secretum_mod( 'enqueue_jquery_status' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// @about If Contact Page IDs Set
+	// If Contact Page IDs Set.
 	if ( secretum_mod( 'enqueue_contact_pageids' ) && ! secretum_mod( 'enqueue_jquery_status' ) ) {
-		// @about Get Mod
+		// Get Mod.
 		$pageids_mod = secretum_mod( 'enqueue_contact_pageids', 'raw' );
 
-		// @about No whitespace, no starting or trailing comma
+		// No whitespace, no starting or trailing comma.
 		$strip_page_ids = preg_replace( '/\s+/', '', trim( $pageids_mod, ',' ) );
 
-		// @about Convert to array and filter to digits only
+		// Convert to array and filter to digits only.
 		$array_page_ids = array_filter( explode( ',', $strip_page_ids ), 'ctype_digit' );
 
-		// @about Dequeue on all other than allowed pages
+		// Dequeue on all other than allowed pages.
 		if ( isset( $array_page_ids ) && is_array( $array_page_ids ) && ! is_page( $array_page_ids ) ) {
 			wp_dequeue_style( 'contact-form-7' );
 			wp_dequeue_script( 'contact-form-7' );
