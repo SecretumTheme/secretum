@@ -44,6 +44,7 @@ gulp.task('assets', function(done) {
 
     // Open Iconic
     gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../../../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/themes'))
     gulp.src('./node_modules/foundation-icons/svgs/*.svg').pipe(gulp.dest('./images/svg'))
     gulp.src('./node_modules/foundation-icons/*.{eot,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
 
