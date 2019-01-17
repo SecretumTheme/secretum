@@ -12,6 +12,7 @@
 
 namespace Secretum;
 
+
 // Constants.
 define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
