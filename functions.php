@@ -222,24 +222,3 @@ if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) =
 		'secretum'
 	);
 }
-
-
-// Theme Setup - Save Theme Color CSS Files.
-add_action( 'after_switch_theme', function() {
-	if ( ! get_option( 'secretum_theme_colors' ) ) {
-		$files = array();
-		$files = scandir( SECRETUM_DIR . '/css/', 1 );
-		$folders = array_diff( $files, array( 'theme_editor.css', 'theme.min.css', 'theme.css.map', 'theme.css', '..', '.' ) );
-
-		$settings = array();
-		foreach ( $folders as $dirname ) {
-			$ampersand = str_replace( '_',  __( ' Primary', 'secretum' ) . ' & ', esc_attr( $dirname ) );
-			$spaced = str_replace( '-', ' ', $ampersand );
-			$name = ucwords( $spaced ) . __( ' Secondary', 'secretum' );
-			$settings[ $dirname ] = $name;
-		}
-
-		// Update Theme Colors Option.
-		update_option( 'secretum_theme_colors', $settings );
-	}
-} );
