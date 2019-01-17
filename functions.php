@@ -88,6 +88,7 @@ require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
 
+
 // WP Admin Only.
 if ( is_admin() ) {
 	// Editor Features.
@@ -102,6 +103,7 @@ if ( is_admin() ) {
 	// Theme Admin Area.
 	// Building Section: add_action( 'admin_menu', '\Secretum\ThemePage::instance' );.
 }
+
 
 // WooCommerce Features.
 if ( class_exists( 'woocommerce' ) ) {
