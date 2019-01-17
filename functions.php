@@ -88,13 +88,22 @@ require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
 
+// WP Admin Only.
 if ( is_admin() ) {
+	// Editor Features.
 	require_once SECRETUM_INC . '/editor.php';
+
+	// Initialize Admin Features.
+	add_action( 'admin_init', function() {
+		// Add Metabox Sidebars.
+		new MetaboxSidebars;
+	} );
 
 	// Theme Admin Area.
 	// Building Section: add_action( 'admin_menu', '\Secretum\ThemePage::instance' );.
 }
 
+// WooCommerce Features.
 if ( class_exists( 'woocommerce' ) ) {
 	require_once SECRETUM_INC . '/woocommerce.php';
 
@@ -111,13 +120,6 @@ add_action( 'widgets_init', function() {
 	require_once SECRETUM_INC . '/sidebars/footer.php';
 	require_once SECRETUM_INC . '/sidebars/woocommerce.php';
 	require_once SECRETUM_INC . '/sidebars/backup.php';
-} );
-
-
-// Initialize Admin Features.
-add_action( 'admin_init', function() {
-	// Add Metabox Sidebars.
-	new MetaboxSidebars;
 } );
 
 
