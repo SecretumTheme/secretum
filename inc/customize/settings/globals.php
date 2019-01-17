@@ -2,26 +2,32 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer\Globals
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/globals.php
  */
 
 namespace Secretum;
 
-// @about Panel
+
+// Panel.
 $customizer->panel(
 	'globals',
 	__( 'Globals', 'secretum' )
 );
 
-// @about Section
+// Section.
 $customizer->section(
 	'globals',
 	'globals',
-	__( 'Website Colors', 'secretum' ),
+	__( 'Default Website Colors', 'secretum' ),
 	__( 'Global website background, text and link colors.', 'secretum' )
 );
 
-// @about Select
+// Select.
 $customizer->select(
 	'globals',
 	'globals_background_color',
@@ -31,7 +37,7 @@ $customizer->select(
 	secretum_customizer_background_colors()
 );
 
-// @about Select
+// Select.
 $customizer->select(
 	'globals',
 	'globals_text_color',
@@ -41,7 +47,7 @@ $customizer->select(
 	secretum_customizer_text_colors()
 );
 
-// @about Select
+// Select.
 $customizer->select(
 	'globals',
 	'globals_link_color',
@@ -51,7 +57,7 @@ $customizer->select(
 	secretum_customizer_link_colors()
 );
 
-// @about Select
+// Select.
 $customizer->select(
 	'globals',
 	'globals_link_hover_color',
@@ -61,7 +67,7 @@ $customizer->select(
 	secretum_customizer_link_hover_colors()
 );
 
-// @about Section
+// Section.
 $customizer->section(
 	'enqueue',
 	'globals',
@@ -69,17 +75,7 @@ $customizer->section(
 	__( 'Enqueue Management', 'secretum' )
 );
 
-// @about Select
-$customizer->select(
-	'enqueue',
-	'enqueue_theme_colors',
-	__( 'Color Scheme', 'secretum' ),
-	__( 'Select a theme color scheme below (a stylesheet) to use as your primary style, changing the base colors of the theme.', 'secretum' ),
-	$default['enqueue_theme_colors'],
-	secretum_theme_colors()
-);
-
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_primary_javascript_status',
@@ -88,7 +84,7 @@ $customizer->checkbox(
 	$default['enqueue_primary_javascript_status']
 );
 
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_bootstrap_bundle_javascript_status',
@@ -97,7 +93,7 @@ $customizer->checkbox(
 	$default['enqueue_bootstrap_bundle_javascript_status']
 );
 
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_secretum_javascript_status',
@@ -106,7 +102,7 @@ $customizer->checkbox(
 	$default['enqueue_secretum_javascript_status']
 );
 
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_ekko_lightbox_status',
@@ -115,8 +111,8 @@ $customizer->checkbox(
 	$default['enqueue_ekko_lightbox_status']
 );
 
-if ( class_exists( 'woocommerce' ) ) {
-	// @about Checkbox
+if ( class_exists( 'woocommerce' ) === true ) {
+	// Checkbox.
 	$customizer->checkbox(
 		'enqueue',
 		'enqueue_woocommerce_status',
@@ -125,8 +121,8 @@ if ( class_exists( 'woocommerce' ) ) {
 		$default['enqueue_woocommerce_status']
 	);
 
-	if ( class_exists( 'WC_Bookings' ) ) {
-		// @about Checkbox
+	if ( class_exists( 'WC_Bookings' ) === true ) {
+		// Checkbox.
 		$customizer->checkbox(
 			'enqueue',
 			'enqueue_woocommerce_bookings_status',
@@ -137,8 +133,8 @@ if ( class_exists( 'woocommerce' ) ) {
 	}
 }
 
-if ( class_exists( 'WPCF7' ) ) {
-	// @about Input Text
+if ( class_exists( 'WPCF7' ) === true ) {
+	// Input Text.
 	$customizer->input_text(
 		'enqueue',
 		'enqueue_contact_pageids',
@@ -148,7 +144,7 @@ if ( class_exists( 'WPCF7' ) ) {
 	);
 }
 
-// @about Section
+// Section.
 $customizer->section(
 	'content_width',
 	'globals',
@@ -156,7 +152,7 @@ $customizer->section(
 	''
 );
 
-// @about Number
+// Number.
 $customizer->number(
 	'content_width',
 	'content_width',
@@ -166,7 +162,7 @@ $customizer->number(
 	$default['content_width']
 );
 
-// @about Section
+// Section.
 $customizer->section(
 	'reset',
 	'globals',
@@ -174,4 +170,5 @@ $customizer->section(
 	__( 'THIS CAN NOT BE UNDONE! Deletes all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum' )
 );
 
+// Reset Section.
 $customizer->reset();

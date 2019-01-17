@@ -3,7 +3,7 @@
  * Secretum Theme
  *
  * @package    Secretum
- * @subpackage Theme\functions.php
+ * @subpackage Secretum\functions.php
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -61,6 +61,7 @@ spl_autoload_register( function ( $class ) {
 
 // Include Theme Files.
 require_once  SECRETUM_INC . '/customize/default-settings.php';
+require_once  SECRETUM_INC . '/customize/stylesheet-settings.php';
 require_once  SECRETUM_INC . '/secretum-mod.php';
 require_once  SECRETUM_INC . '/secretum-text.php';
 require_once  SECRETUM_INC . '/secretum-icon.php';
@@ -171,6 +172,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 	*/
 
 	// Include Settings.
+	require_once  SECRETUM_INC . '/customize/settings/theme.php';
 	require_once  SECRETUM_INC . '/customize/settings/globals.php';
 	require_once  SECRETUM_INC . '/customize/settings/site-identity.php';
 	require_once  SECRETUM_INC . '/customize/settings/header-top.php';
