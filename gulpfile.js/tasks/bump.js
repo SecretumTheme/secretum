@@ -1,7 +1,7 @@
 /**
- * Deploy Version Number Update
+ * Bump Version Number Update
  *
- * @command gulp deploy
+ * @command gulp bump
  * @command gulp prompt
  * @command gulp version
  */
@@ -14,9 +14,9 @@ var next_version;
 
 
 /**
- * Deploy Version Prompt & Version Update
+ * Bump Version Prompt & Version Update
  */
-gulp.task('deploy', gulp.series('prompt', 'version'));
+gulp.task('bump', gulp.series('prompt', 'version'));
 
 
 /**

@@ -2,10 +2,10 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
-* **Tested up to:** 5.0.0.191
-* **Version:** 0.0.19
+* **Tested up to:** 5.0.0.201
+* **Version:** 0.0.20
 * **License:** GPLv2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.19html
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.20html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
@@ -155,8 +155,13 @@ Coming soon...
 * Commented out custom customizer sections
 	* Created new branch for feature build
 * Commented out customizer export/import
-	* Created new branch for feature build
+	* Created new branch for feature
 
+### 0x0x20 2019-01-18
+* Reduced php memory footprint
+* Corrected base color palette styles icon use
+* Changed how palette styles load in the customizer
+* Minor adjustments from compliance update
 
 ## Screenshots
 

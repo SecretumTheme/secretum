@@ -7,13 +7,6 @@
 
 namespace Secretum;
 
-/**
- * Register theme editor stylesheet
- */
-add_action( 'admin_init', function() {
-	add_editor_style( 'css/theme_editor-style.min.css' );
-} );
-
 
 /**
  * Add the formats dropdown to visual editor
