@@ -1,7 +1,7 @@
 {
     "name": "Secretum",
     "author": "SecretumTheme",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "license": "GPL-2.0",
     "repository": {
         "type": "git",
@@ -23,37 +23,37 @@
         "postinstall": "gulp assets"
     },
     "engines": {
-        "node": ">=8.0.0.200",
-        "npm": ">=5.0.0.200"
+        "node": ">=8.0.0.210",
+        "npm": ">=5.0.0.210"
     },
     "devDependencies": {
         "bootstrap": "^4.2.1",
         "browser-sync": "^2.26.3",
-        "del": "^3.0.0.200",
+        "del": "^3.0.0.210",
         "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
-        "foundation-icons": "^1.0.0.201",
-        "gulp": "^4.0.0.200",
-        "gulp-autoprefixer": "^5.0.0.200",
+        "foundation-icons": "^1.0.0.211",
+        "gulp": "^4.0.0.210",
+        "gulp-autoprefixer": "^5.0.0.210",
         "gulp-concat": "^2.6.1",
-        "gulp-imagemin": "^5.0.0.203",
-        "gulp-line-ending-corrector": "^1.0.0.202",
+        "gulp-imagemin": "^5.0.0.213",
+        "gulp-line-ending-corrector": "^1.0.0.212",
         "gulp-notify": "^3.2.0",
-        "gulp-remove-empty-lines": "^0.0.201.0",
+        "gulp-remove-empty-lines": "^0.0.211.0",
         "gulp-rename": "^1.2.2",
-        "gulp-replace": "^1.0.0.200",
-        "gulp-sass": "^4.0.0.201",
-        "gulp-sort": "^2.0.0.200",
+        "gulp-replace": "^1.0.0.210",
+        "gulp-sass": "^4.0.0.211",
+        "gulp-sort": "^2.0.0.210",
         "gulp-sourcemaps": "^2.6.4",
         "gulp-strip-comments": "^2.5.2",
-        "gulp-strip-css-comments": "^2.0.0.200",
-        "gulp-uglify": "^3.0.0.200",
-        "gulp-uglifycss": "^1.0.0.209",
+        "gulp-strip-css-comments": "^2.0.0.210",
+        "gulp-uglify": "^3.0.0.210",
+        "gulp-uglifycss": "^1.0.0.219",
         "gulp-wp-pot": "^2.3.3",
         "inquirer": "^6.2.1",
         "jquery": "^3.3.1",
         "popper.js": "^1.14.6",
         "require-dir": "^1.2.0",
-        "undertaker-forward-reference": "^1.0.0.202"
+        "undertaker-forward-reference": "^1.0.0.212"
     },
     "dependencies": {}
 }
