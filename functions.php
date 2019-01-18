@@ -134,9 +134,6 @@ add_action( 'customize_register', function( $wp_customize ) {
 	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
 
-	// Register Custom Customizer Sections Type
-	// Moved to branch: feature-customizer-sections | $wp_customize->register_section_type( '\Secretum\CustomizerSections' );.
-	// Blank on purpose.
 	// Controller Setting Arrays.
 	require_once SECRETUM_INC . '/customize/choices/alignments.php';
 	require_once SECRETUM_INC . '/customize/choices/borders.php';
@@ -157,25 +154,6 @@ add_action( 'customize_register', function( $wp_customize ) {
 	// Get Default Settings.
 	$default = secretum_customizer_default_settings();
 
-	// Register Secretum Pro Section.
-	// Moved to branch: feature-customizer-sections.
-	/**
-	$wp_customize->add_section(
-		new \Secretum\CustomizerSections(
-			$wp_customize,
-			'secretum_pro_section',
-			array(
-				'title'		 => __( 'Secretum Pro!', 'secretum' ),
-				'button_text'   => __( 'Instant Upgrade!', 'secretum' ),
-				'button_url'	=> 'https://secretumtheme.com/secretum/',
-				'button_class'  => 'button button-primary alignright',
-				'section_class' => 'secretum-pro-section',
-				'priority'	  => 0,
-			)
-		)
-	);
-	*/
-
 	// Include Settings.
 	require_once SECRETUM_INC . '/customize/settings/theme.php';
 	require_once SECRETUM_INC . '/customize/settings/globals.php';
@@ -193,25 +171,6 @@ add_action( 'customize_register', function( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/settings/frontpage.php';
 	require_once SECRETUM_INC . '/customize/settings/extras.php';
 	require_once SECRETUM_INC . '/customize/settings/translations.php';
-
-	// Register Documentation Section.
-	// Moved to branch: feature-customizer-sections.
-	/**
-	$wp_customize->add_section(
-		new \Secretum\CustomizerSections(
-			$wp_customize,
-			'secretum_docs_section',
-			array(
-				'title'		 => __( 'Secretum Documentation', 'secretum' ),
-				'button_text'   => __( 'View', 'secretum' ),
-				'button_url'	=> 'https://secretumtheme.com/secretum/docs/',
-				'button_class'  => 'button button-secondary alignright',
-				'section_class' => 'secretum-docs-section',
-				'priority'	  => 10000,
-			)
-		)
-	);
-	*/
 } );
 
 
