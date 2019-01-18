@@ -18,7 +18,7 @@ define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.22' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.23' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -92,9 +92,6 @@ require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 // WP Admin Only.
 if ( is_admin() ) {
-	// Editor Features.
-	require_once SECRETUM_INC . '/editor.php';
-
 	// Initialize Admin Features.
 	add_action( 'admin_init', function() {
 		// Add Metabox Sidebars.
