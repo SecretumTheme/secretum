@@ -88,6 +88,7 @@ require_once SECRETUM_INC . '/template-functions/primary-nav.php';
 require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
+require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 
 // WP Admin Only.
@@ -144,9 +145,6 @@ add_action( 'customize_register', function( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/choices/paddings.php';
 	require_once SECRETUM_INC . '/customize/choices/sizes.php';
 	require_once SECRETUM_INC . '/customize/choices/theme-colors.php';
-
-	// Customizer Fallback & Sanitize Functions.
-	require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 	// Start Secretum Customizer Class.
 	$customizer = \Secretum\Customizer::instance( $wp_customize );
