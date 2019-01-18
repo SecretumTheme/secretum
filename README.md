@@ -2,10 +2,10 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.7
-* **Tested up to:** 5.0.0.211
-* **Version:** 0.0.21
+* **Tested up to:** 5.0.0.221
+* **Version:** 0.0.22
 * **License:** GPLv2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.21html
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.22html
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 

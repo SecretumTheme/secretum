@@ -18,7 +18,7 @@ define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.21' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.22' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -67,7 +67,6 @@ require_once SECRETUM_INC . '/secretum-mod.php';
 require_once SECRETUM_INC . '/secretum-text.php';
 require_once SECRETUM_INC . '/secretum-icon.php';
 require_once SECRETUM_INC . '/enqueue.php';
-require_once SECRETUM_INC . '/editor.php';
 require_once SECRETUM_INC . '/theme-settings.php';
 require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-filters.php';
@@ -101,6 +100,11 @@ if ( is_admin() ) {
 		// Add Metabox Sidebars.
 		new MetaboxSidebars;
 	} );
+
+	// Tiny Mce Editor Features.
+	if ( false === is_customize_preview() ) {
+		require_once SECRETUM_INC . '/editor.php';
+	}
 }
 
 
