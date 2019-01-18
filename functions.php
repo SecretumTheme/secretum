@@ -101,9 +101,6 @@ if ( is_admin() ) {
 		// Add Metabox Sidebars.
 		new MetaboxSidebars;
 	} );
-
-	// Theme Admin Area.
-	// Building Section: add_action( 'admin_menu', '\Secretum\ThemePage::instance' );.
 }
 
 
