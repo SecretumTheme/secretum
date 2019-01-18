@@ -18,7 +18,7 @@ define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.20' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.21' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -88,6 +88,7 @@ require_once SECRETUM_INC . '/template-functions/primary-nav.php';
 require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
+require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 
 // WP Admin Only.
@@ -100,9 +101,6 @@ if ( is_admin() ) {
 		// Add Metabox Sidebars.
 		new MetaboxSidebars;
 	} );
-
-	// Theme Admin Area.
-	// Building Section: add_action( 'admin_menu', '\Secretum\ThemePage::instance' );.
 }
 
 
@@ -144,9 +142,6 @@ add_action( 'customize_register', function( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/choices/paddings.php';
 	require_once SECRETUM_INC . '/customize/choices/sizes.php';
 	require_once SECRETUM_INC . '/customize/choices/theme-colors.php';
-
-	// Customizer Fallback & Sanitize Functions.
-	require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 	// Start Secretum Customizer Class.
 	$customizer = \Secretum\Customizer::instance( $wp_customize );

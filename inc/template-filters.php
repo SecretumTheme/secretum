@@ -2,7 +2,12 @@
 /**
  * WordPress Filters
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\template-filters.php
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-filters.php
  */
 
 namespace Secretum;
@@ -11,6 +16,7 @@ namespace Secretum;
  * Inject Classes Into Post Navigation Container
  *
  * @param  string $template Default Nav Container.
+ *
  * @return string Updated NAV Container
  */
 add_filter( 'navigation_markup_template', function( $template ) {
@@ -25,6 +31,7 @@ add_filter( 'navigation_markup_template', function( $template ) {
  * Replaces [...] In Archive Excerpts
  *
  * @param string $excerpt The Excerpt.
+ *
  * @return string Updated Excerpt
  */
 add_filter( 'excerpt_more', function( $excerpt ) {
@@ -50,6 +57,7 @@ add_filter( 'the_content_more_link', function() {
  * Remove hentry class on pages
  *
  * @param array $classes List of body classes.
+ *
  * @return array Updated body class array
  */
 add_filter( 'post_class', function( $classes ) {
@@ -65,37 +73,38 @@ add_filter( 'post_class', function( $classes ) {
  * Update WordPress classes in <body>
  *
  * @param array $classes WordPress <body> classes.
+ *
  * @return array Updated <body> classes
  */
 add_filter( 'body_class', function( $classes ) {
-	// @about Remove tag Class
+	// Remove tag Class.
 	foreach ( $classes as $key => $class ) {
 		if ( 'tag' === $class ) {
 			unset( $classes[ $key ] );
 		}
 	}
 
-	// @about Add group-blog Class
+	// Add group-blog Class.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
-	// @about Add hfeed Class
+	// Add hfeed Class.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
-	// @about Add has-header-image to custom header
+	// Add has-header-image to custom header.
 	if ( has_header_image() ) {
 		$classes[] = 'has-header-image';
 	}
 
-	// @about Add has-header-image to custom header
+	// Add has-header-image to custom header.
 	if ( has_header_image() ) {
 		$classes[] = 'has-header-image';
 	}
 
-	// @about Add secretum-front-page class to front page
+	// Add secretum-front-page class to front .
 	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
 		$classes[] = 'secretum-front-page';
 	}
