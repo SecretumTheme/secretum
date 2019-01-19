@@ -114,6 +114,9 @@ $customizer->select(
 	secretum_customizer_border_colors()
 );
 
+
+\Secretum\Textuals::settings( $customizer, $default, 'copyright_nav' );
+/**
 // @about Textuals
 $customizer->section(
 	'copyright_nav_textuals',
@@ -191,6 +194,9 @@ $customizer->select(
 	$default['copyright_nav_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/
+
+
 
 // @about Menu Items
 $customizer->section(

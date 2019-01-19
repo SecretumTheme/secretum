@@ -34,6 +34,44 @@ define( 'SECRETUM_THEME_NAME', 		'secretum' );
 
 
 // Register Classes.
+function secretum_register_classes( $class ) {
+	// Namespace Prefix.
+	$prefix = 'Secretum\\';
+
+	// Move To Next Rgistered autoloader.
+	$len = strlen( $prefix );
+	if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+		return;
+	}
+
+	// Base Dir For Namespace Prefix.
+	$base_dir = __DIR__ . '/inc/classes/';
+
+	// Class directories.
+	$class_paths = [
+		$base_dir, 
+		$base_dir . 'customizer/'
+	];
+
+	// Build Class Name.
+	$relative_class = substr( $class, $len );
+
+	foreach ( $class_paths as $path ) {
+		// Replace Dir Separators & Replace Namespace with Base Dir.
+		$file = $path . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
+
+		// Include File.
+		if ( file_exists( $file ) === true ) {
+			require $file;
+		}
+	}
+}//end secretum_register_classes()
+
+spl_autoload_register( 'Secretum\secretum_register_classes' );
+
+
+// Register Classes.
+/**
 spl_autoload_register( function ( $class ) {
 	// Namespace Prefix.
 	$prefix = 'Secretum\\';
@@ -58,7 +96,7 @@ spl_autoload_register( function ( $class ) {
 		require $file;
 	}
 } );
-
+*/
 
 // Include Theme Files.
 require_once SECRETUM_INC . '/customize/default-settings.php';
