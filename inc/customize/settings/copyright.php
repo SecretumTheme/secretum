@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/copyright.php
  */
 
 namespace Secretum;
@@ -30,6 +35,19 @@ $customizer->checkbox(
 	$default['copyright_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'copyright',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'copyright_wrapper',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'copyright_wrapper',
@@ -87,6 +105,7 @@ $customizer->select(
 	$default['copyright_wrapper_margin_top'],
 	secretum_customizer_margin_top()
 );
+*/
 
 // @about Select
 $customizer->select(
@@ -108,6 +127,19 @@ $customizer->select(
 	secretum_customizer_border_colors()
 );
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'copyright',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'copyright_container',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'copyright_container',
@@ -175,7 +207,14 @@ $customizer->select(
 	$default['copyright_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'copyright',
+] );
+
+/**
 // @about Textuals
 $customizer->section(
 	'copyright_textuals',
@@ -263,6 +302,7 @@ $customizer->select(
 	$default['copyright_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/
 
 // @about Display
 $customizer->section(

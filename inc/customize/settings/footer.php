@@ -39,6 +39,13 @@ $customizer->checkbox(
 	$default['footer_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'footer',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'footer_wrapper',
@@ -116,7 +123,15 @@ $customizer->select(
 	$default['footer_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'footer',
+] );
+
+/*
 // @about Container
 $customizer->section(
 	'footer_container',
@@ -184,7 +199,13 @@ $customizer->select(
 	$default['footer_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/
 
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'footer',
+] );
+
+/**
 // @about Textuals
 $customizer->section(
 	'footer_textuals',
@@ -272,3 +293,4 @@ $customizer->select(
 	$default['footer_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/

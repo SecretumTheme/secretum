@@ -37,6 +37,19 @@ $customizer->radio(
 	)
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'sidebar',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'sidebar_wrapper',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'sidebar_wrapper',
@@ -134,7 +147,22 @@ $customizer->select(
 	$default['sidebar_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' 	=> 'sidebar',
+	'type' 		=> false,
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'sidebar_container',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'sidebar_container',
@@ -192,7 +220,15 @@ $customizer->select(
 	$default['sidebar_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/
 
+
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'sidebar',
+] );
+
+/*
 // @about Textuals
 $customizer->section(
 	'sidebar',
@@ -280,3 +316,4 @@ $customizer->select(
 	$default['sidebar_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/

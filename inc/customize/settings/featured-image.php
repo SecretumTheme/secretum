@@ -51,6 +51,19 @@ $customizer->select(
 	]
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'featured_image',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'featured_image_wrapper',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'featured_image_wrapper',
@@ -128,7 +141,23 @@ $customizer->select(
 	$default['featured_image_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'featured_image',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'featured_image_container',
+] );
+
+/*
 // @about Container
 $customizer->section(
 	'featured_image_container',
@@ -196,3 +225,4 @@ $customizer->select(
 	$default['featured_image_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/

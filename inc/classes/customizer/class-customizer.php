@@ -36,7 +36,7 @@ class Customizer {
 	 *
 	 * @param object $wp_customize WP_Customize_Manager Instance.
 	 */
-	final public function init( $wp_customize ) {
+	public function init( $wp_customize ) {
 		$this->wp_customize = $wp_customize;
 
 	}//end init()
@@ -91,6 +91,25 @@ class Customizer {
 		] );
 
 	}//end partial()
+
+
+	/**
+	 * Add Partial
+	 *
+	 * @param string $setting_name Name of he setting to save.
+	 * @param string $selector Class/Selector Name.
+	 * @param string $callback Setting Function Callback Name.
+	 */
+	final public function add_partial( $setting_name, $selector, $callback ) {
+		$this->wp_customize->selective_refresh->add_partial( 'secretum_' . sanitize_key( $setting_name ) . '_partial', [
+			'settings' 				=> 'secretum[' . sanitize_key( $setting_name ) . ']',
+		    [
+				'selector' 			=> esc_html( $selector ),
+				'render_callback' 	=> esc_attr( $callback ),
+		   	]
+		] );
+
+	}//end add_partial()
 
 
 	/**

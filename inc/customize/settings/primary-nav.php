@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/primary-nav.php
  */
 
 namespace Secretum;
@@ -39,6 +44,13 @@ $customizer->checkbox(
 	$default['primary_nav_search_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'primary_nav',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'primary_nav_wrapper',
@@ -122,7 +134,15 @@ $customizer->select(
 	$default['primary_nav_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'primary_nav',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'primary_nav_container',
@@ -190,8 +210,14 @@ $customizer->select(
 	$default['primary_nav_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'primary_nav',
+] );
 
+/**
 // @about Textuals
 $customizer->section(
 	'primary_nav_textuals',
@@ -269,7 +295,7 @@ $customizer->select(
 	$default['primary_nav_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
-
+*/
 
 // @about Menu Items
 $customizer->section(
@@ -448,6 +474,13 @@ $customizer->select(
 	secretum_customizer_padding_top_bottom()
 );
 
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'primary_nav_dropdown',
+] );
+
+/**
 // @about Select
 $customizer->select(
 	'primary_nav_dropdown',
@@ -467,8 +500,17 @@ $customizer->select(
 	$default['primary_nav_dropdown_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'panel' 	=> 'primary_nav',
+	'section' 	=> 'primary_nav_dropdown',
+	'title' 	=> __( 'Dropdown Textuals', 'secretum' ),
+] );
+
+/**
 // @about Textuals
 $customizer->section(
 	'primary_nav_dropdown_textuals',
@@ -546,7 +588,7 @@ $customizer->select(
 	$default['primary_nav_dropdown_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
-
+*/
 
 // @about Menu Items
 $customizer->section(

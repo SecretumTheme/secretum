@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Template_Functions
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/header.php
  */
 
 namespace Secretum;
@@ -12,7 +17,7 @@ namespace Secretum;
  * Inject Content After Header
  */
 add_action( 'secretum_after_header', function() {
-	// @about Display Featured Image If Allowed
+	// Display Featured Image If Allowed.
 	if ( 'after_header' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
@@ -23,28 +28,24 @@ add_action( 'secretum_after_header', function() {
  * Header Wrapper Classes
  */
 function secretum_header_wrapper() {
-	// @about Classes
-	$background = secretum_mod( 'header_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'header_wrapper_border_type', 'attr', true ) . secretum_mod( 'header_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'header_wrapper_margin_top', 'attr', true ) . secretum_mod( 'header_wrapper_margin_bottom', 'attr', true );
-	$padding = secretum_mod( 'header_wrapper_padding_y', 'attr', true );
+	$wrapper = \Secretum\Wrapper::classes( 'header' );
+	$borders = \Secretum\Borders::classes( 'header_wrapper' );
 
-	echo esc_html( apply_filters( 'secretum_header_wrapper', $background . $border . $margin . $padding, 10, 1 ) );
-}
+	echo esc_html( $wrapper . $borders );
+
+}//end secretum_header_wrapper()
 
 
 /**
  * Header Container Classes
  */
 function secretum_header_container() {
-	// @about Classes
-	$container = secretum_mod( 'header_container_type', 'attr', false );
-	$background = secretum_mod( 'header_container_background_color', 'attr', true );
-	$border = secretum_mod( 'header_container_border_type', 'attr', true ) . secretum_mod( 'header_container_border_color', 'attr', true );
-	$padding = secretum_mod( 'header_container_padding_x', 'attr', true ) . secretum_mod( 'header_container_padding_y', 'attr', true );
+	$container = \Secretum\Container::classes( 'header' );
+	$borders = \Secretum\Borders::classes( 'header_container' );
 
-	echo esc_html( apply_filters( 'secretum_header_container', $container . $background . $border . $padding, 10, 1 ) );
-}
+	echo esc_html( $container . $borders );
+
+}//end secretum_header_container()
 
 
 /**
@@ -86,7 +87,8 @@ function secretum_render_brand_logo() {
 			],
 		]
 	);
-}
+
+}//end secretum_render_brand_logo()
 
 
 /**
@@ -114,7 +116,8 @@ function secretum_render_heading_logo() {
 			],
 		]
 	);
-}
+
+}//end secretum_render_heading_logo()
 
 
 /**
@@ -139,4 +142,5 @@ function secretum_render_link_logo() {
 			],
 		]
 	);
-}
+
+}//end secretum_render_link_logo()

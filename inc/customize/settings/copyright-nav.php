@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/copyright-nav.php
  */
 
 namespace Secretum;
@@ -30,6 +35,18 @@ $customizer->checkbox(
 	$default['copyright_nav_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'copyright_nav',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'copyright_nav_wrapper',
+] );
+/**
 // @about Wrapper
 $customizer->section(
 	'copyright_nav_wrapper',
@@ -94,6 +111,7 @@ $customizer->select(
 	secretum_customizer_margin_top()
 );
 
+
 // @about Select
 $customizer->select(
 	'copyright_nav_wrapper',
@@ -113,9 +131,12 @@ $customizer->select(
 	$default['copyright_nav_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
-
-\Secretum\Textuals::settings( $customizer, $default, 'copyright_nav' );
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'copyright_nav',
+] );
 /**
 // @about Textuals
 $customizer->section(
@@ -276,6 +297,13 @@ $customizer->select(
 	secretum_customizer_padding_top_bottom()
 );
 
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'copyright_nav_items',
+] );
+
+/**
 // @about Select
 $customizer->select(
 	'copyright_nav_items',
@@ -295,3 +323,4 @@ $customizer->select(
 	$default['copyright_nav_items_border_color'],
 	secretum_customizer_border_colors()
 );
+*/

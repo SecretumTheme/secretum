@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Secretum\Customizer\Settings\site-identity.php
+ * @subpackage Secretum\Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -212,6 +212,22 @@ $wp_customize->add_control( new \WP_Customize_Site_Icon_Control( $wp_customize, 
 	'width'		 	=> 512,
 ) ) );
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'panel' 	=> 'site_identity',
+	'section' 	=> 'site_identity_title',
+	'title' 	=> __( 'Title Container', 'secretum' ),
+	'type' 		=> false,
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'site_identity_title_container',
+] );
+
+/**
 // Title Container.
 $customizer->section(
 	'site_identity_title_container',
@@ -289,8 +305,16 @@ $customizer->select(
 	$default['site_identity_title_container_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'panel' 	=> 'site_identity',
+	'section' 	=> 'site_identity_title',
+	'title' 	=> __( 'Title Textuals', 'secretum' ),
+] );
 
+/**
 // Textuals.
 $customizer->section(
 	'site_identity_title_textuals',
@@ -358,7 +382,23 @@ $customizer->select(
 	$default['site_identity_title_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/
 
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'panel' 	=> 'site_identity',
+	'section' 	=> 'site_identity_desc',
+	'title' 	=> __( 'Tagline Container', 'secretum' ),
+	'type' 		=> false,
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'site_identity_desc_container',
+] );
+
+/**
 // Tagline Container.
 $customizer->section(
 	'site_identity_desc_container',
@@ -436,8 +476,16 @@ $customizer->select(
 	$default['site_identity_desc_container_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'panel' 	=> 'site_identity',
+	'section' 	=> 'site_identity_desc',
+	'title' 	=> __( 'Tagline Textuals', 'secretum' ),
+] );
 
+/**
 // Textuals.
 $customizer->section(
 	'site_identity_desc_textuals',
@@ -495,3 +543,4 @@ $customizer->select(
 	$default['site_identity_desc_textual_text_color'],
 	secretum_customizer_text_colors()
 );
+*/

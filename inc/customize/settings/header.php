@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/header.php
  */
 
 namespace Secretum;
@@ -39,6 +44,21 @@ $customizer->checkbox(
 	$default['header_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'header',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' 	=> 'header_wrapper',
+	'selector' 	=> '',
+	'callback' 	=> '',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'header_wrapper',
@@ -97,6 +117,7 @@ $customizer->select(
 	secretum_customizer_margin_top()
 );
 
+
 // @about Select
 $customizer->select(
 	'header_wrapper',
@@ -116,7 +137,21 @@ $customizer->select(
 	$default['header_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'header',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'header_container',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'header_container',
@@ -184,3 +219,4 @@ $customizer->select(
 	$default['header_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/

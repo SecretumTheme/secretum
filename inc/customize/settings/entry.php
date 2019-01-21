@@ -111,6 +111,18 @@ $customizer->checkbox(
 	$default['entry_meta_post_navigation_links']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'entry',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'entry_wrapper',
+] );
+/**
 // @about Wrapper
 $customizer->section(
 	'entry_wrapper',
@@ -188,3 +200,4 @@ $customizer->select(
 	$default['entry_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/

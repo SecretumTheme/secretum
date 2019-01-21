@@ -33,7 +33,11 @@ define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' 
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
 
 
-// Register Classes.
+/**
+ * Register Secretum Classes
+ *
+ * @param string $class Loaded Classes.
+ */
 function secretum_register_classes( $class ) {
 	// Namespace Prefix.
 	$prefix = 'Secretum\\';
@@ -187,6 +191,10 @@ add_action( 'customize_register', function( $wp_customize ) {
 
 	// Get Default Settings.
 	$default = secretum_customizer_default_settings();
+	$defaults = secretum_customizer_default_settings();
+
+	// Container Class Instance.
+	//$container = \Secretum\Container::instance();
 
 	// Include Settings.
 	require_once SECRETUM_INC . '/customize/settings/theme.php';

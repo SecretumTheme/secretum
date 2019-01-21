@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/body.php
  */
 
 namespace Secretum;
@@ -13,6 +18,19 @@ $customizer->panel(
 	__( 'Body', 'secretum' )
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'body',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'body_wrapper',
+] );
+
+/**
 // @about Section
 $customizer->section(
 	'body_wrapper',
@@ -70,6 +88,7 @@ $customizer->select(
 	$default['body_wrapper_margin_top'],
 	secretum_customizer_margin_top()
 );
+*/
 
 // @about Select
 $customizer->select(
@@ -91,6 +110,19 @@ $customizer->select(
 	secretum_customizer_border_colors()
 );
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $defaults )->settings( [
+	'section' => 'body',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'body_container',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'body_container',
@@ -158,3 +190,4 @@ $customizer->select(
 	$default['body_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/

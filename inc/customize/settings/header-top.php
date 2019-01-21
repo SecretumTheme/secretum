@@ -2,7 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/header-top.php
  */
 
 namespace Secretum;
@@ -30,6 +35,19 @@ $customizer->checkbox(
 	$default['header_top_status']
 );
 
+
+// Wrapper.
+\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+	'section' => 'header_top',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'header_top_wrapper',
+] );
+
+/**
 // @about Wrapper
 $customizer->section(
 	'header_top_wrapper',
@@ -97,7 +115,21 @@ $customizer->select(
 	$default['header_top_wrapper_border_color'],
 	secretum_customizer_border_colors()
 );
+*/
 
+
+// Container.
+\Secretum\Container::instance( $customizer, $default )->settings( [
+	'section' => 'header_top',
+] );
+
+
+// Borders.
+\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+	'section' => 'header_top_container',
+] );
+
+/**
 // @about Container
 $customizer->section(
 	'header_top_container',
@@ -165,7 +197,14 @@ $customizer->select(
 	$default['header_top_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
+*/
 
+// Textuals.
+\Secretum\Textuals::instance( $customizer, $default )->settings( [
+	'section' => 'header_top',
+] );
+
+/*
 // @about Textuals
 $customizer->section(
 	'header_top_textuals',
@@ -253,6 +292,7 @@ $customizer->select(
 	$default['header_top_textual_link_hover_color'],
 	secretum_customizer_link_hover_colors()
 );
+*/
 
 // @about Menu Items
 $customizer->section(
