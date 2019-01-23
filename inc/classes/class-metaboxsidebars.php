@@ -2,7 +2,12 @@
 /**
  * WordPress Metaboxes
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Classes\MetaboxSidebars
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-metaboxsidebars.php
  */
 
 namespace Secretum;
@@ -52,15 +57,15 @@ class MetaboxSidebars {
 	 * @param object $post WordPress Post Data.
 	 */
 	public function render_metabox( $post ) {
-		// @about Retrieve an existing value from the database
+		// Retrieve an existing value from the database.
 		$meta_sidebars = get_post_meta( $post->ID, 'secretum_meta_sidebars', true );
 
-		// @about Set default values
+		// Set default values.
 		if ( empty( $meta_sidebars ) ) {
 			$meta_sidebars = '';
 		}
 
-		// @about Add Nonce
+		// Add Nonce.
 		wp_nonce_field( SECRETUM_THEME_BASE, 'secretum_meta_sidebars_nonce' );
 	?>
 		<table class="form-table"></table>
@@ -89,28 +94,28 @@ class MetaboxSidebars {
 	 * @return int $post_id
 	 */
 	public function save_metabox( $post_id, $post ) {
-		// @about Get Nonce Value
+		// Get Nonce Value.
 		$nonce = filter_input( INPUT_POST, 'secretum_meta_sidebars_nonce', FILTER_SANITIZE_SPECIAL_CHARS );
 
-		// @about Require & Verify Nonce
+		// Require & Verify Nonce.
 		if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, SECRETUM_THEME_BASE ) ) {
 			return $post_id;
 		}
 
-		// @about User Level Check
+		// User Level Check.
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return $post_id;
 		}
 
-		// @about Ignore if Autosave or Revision
+		// Ignore if Autosave or Revision.
 		if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
 			return $post_id;
 		}
 
-		// @about Get Post Data
+		// Get Post Data.
 		$meta_sidebars = filter_input( INPUT_POST, 'secretum_meta_sidebars', FILTER_SANITIZE_SPECIAL_CHARS );
 
-		// @about Update Database
+		// Update Database.
 		update_post_meta(
 			$post_id,
 			'secretum_meta_sidebars',

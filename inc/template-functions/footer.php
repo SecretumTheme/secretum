@@ -11,31 +11,26 @@ namespace Secretum;
  * Footer Wrapper Classes
  */
 function secretum_footer_wrapper() {
-	// @about Classes
-	$background = secretum_mod( 'footer_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'footer_wrapper_border_type', 'attr', true ) . secretum_mod( 'footer_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'footer_wrapper_margin_top', 'attr', true ) . secretum_mod( 'footer_wrapper_margin_bottom', 'attr', true );
-	$padding = secretum_mod( 'footer_wrapper_padding_x', 'attr', true ) . secretum_mod( 'footer_wrapper_padding_y', 'attr', true );
+	$wrapper = \Secretum\Wrapper::classes( 'footer' );
+	$borders = \Secretum\Borders::classes( 'footer_wrapper' );
 
-	echo esc_html( apply_filters( 'secretum_footer_wrapper', $background . $border . $margin . $padding, 10, 1 ) );
-}
+	echo esc_html( $wrapper . $borders );
+
+}//end secretum_footer_wrapper()
 
 
 /**
  * Footer Container Classes
  */
 function secretum_footer_container() {
-	// @about Classes
-	$container = secretum_mod( 'footer_container_type', 'attr', false );
-	$background = secretum_mod( 'footer_container_background_color', 'attr', true );
-	$border = secretum_mod( 'footer_container_border_type', 'attr', true ) . secretum_mod( 'footer_container_border_color', 'attr', true );
-	$margin = secretum_mod( 'footer_container_margin_x', 'attr', true ) . secretum_mod( 'footer_container_margin_y', 'attr', true );
-	$padding = secretum_mod( 'footer_container_padding_x', 'attr', true ) . secretum_mod( 'footer_container_padding_y', 'attr', true );
-	$textuals = secretum_footer_textuals();
-	$alignment = secretum_footer_text_alignment();
+	$alignment = secretum_mod( 'footer_text_alignment', 'attr', true );
+	$container = \Secretum\Container::classes( 'footer' );
+	$textuals = \Secretum\Textuals::classes( 'footer' );
+	$borders = \Secretum\Borders::classes( 'footer_container' );
 
-	echo esc_html( apply_filters( 'secretum_footer_container', $container . $background . $border . $margin . $padding . $textuals . $alignment, 10, 1 ) );
-}
+	echo esc_html( $alignment . $container . $textuals . $borders );
+
+}//end secretum_footer_container()
 
 
 /**
@@ -44,11 +39,9 @@ function secretum_footer_container() {
  * @return string Pre-sanitized string of class names
  */
 function secretum_footer_textuals() {
-	// @about Classes
 	$alignment = secretum_mod( 'footer_text_alignment', 'attr', true );
-	$textuals = secretum_mod( 'footer_textual_font_family', 'attr', true ) . secretum_mod( 'footer_textual_font_size', 'attr', true ) . secretum_mod( 'footer_textual_font_style', 'attr', true ) . secretum_mod( 'footer_textual_transform', 'attr', true );
-	$text_color = secretum_mod( 'footer_textual_text_color', 'attr', true );
-	$link_colors = secretum_mod( 'footer_textual_link_color', 'attr', true ) . secretum_mod( 'footer_textual_link_hover_color', 'attr', true );
+	$textuals = \Secretum\Textuals::classes( 'footer' );
 
-	return apply_filters( 'secretum_footer_fonts', $alignment . $textuals . $text_color . $link_colors, 10, 1 );
-}
+	return $alignment . $textuals;
+
+}//end secretum_footer_textuals()

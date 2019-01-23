@@ -2,7 +2,12 @@
 /**
  * Global Theme Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme-Settings
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/theme-settings.php
  */
 
 namespace Secretum;
@@ -21,10 +26,10 @@ if ( ! isset( $content_width ) ) {
  * WordPress Theme Settings
  */
 add_action( 'after_setup_theme', function() {
-	// @about Load Theme Translated Strings
+	// Load Theme Translated Strings.
 	load_theme_textdomain( 'secretum', SECRETUM_THEME_DIR . '/lang' );
 
-	// @about Register Navigation Menus
+	// Register Navigation Menus.
 	register_nav_menus( [
 		'secretum-navbar-primary-below' => __( 'Primary Navbar Below Header', 'secretum' ),
 		'secretum-navbar-primary-above' => __( 'Primary Navbar Above Header', 'secretum' ),
@@ -35,38 +40,38 @@ add_action( 'after_setup_theme', function() {
 		'secretum-navbar-copyright' 	=> __( 'Copyright Textual Menu', 'secretum' ),
 	] );
 
-	// @about Editor Stylesheet
+	// Editor Stylesheet.
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'css/theme_editor.min.css' );
 
-	// @about Add support for responsive embedded content
+	// Add support for responsive embedded content.
 	add_theme_support( 'responsive-embeds' );
 
-	// @about Header Image Panel
+	// Header Image Panel.
 	add_theme_support( 'custom-header' );
 
-	// @about Background Image Panel
+	// Background Image Panel.
 	add_theme_support( 'custom-background' );
 
-	// @about Adjust Avatar Thumbnail Size
+	// Adjust Avatar Thumbnail Size.
 	add_image_size( 'secretum-thumbnail-avatar', 100, 100, true );
 
-	// @about Featured Image Support
+	// Featured Image Support.
 	add_image_size( 'secretum-featured-image', 2000, 1200, true );
 
-	// @about WordPress to manage <title> tags
+	// WordPress to manage <title> tags.
 	add_theme_support( 'title-tag' );
 
-	// @about Include RSS feed links to wp_head
+	// Include RSS feed links to wp_head.
 	add_theme_support( 'automatic-feed-links' );
 
-	// @about Enable support for Post Thumbnails on posts and pages.
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	// @about Customizer Support
+	// Customizer Support.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// @about HTML5 Markup Support
+	// HTML5 Markup Support.
 	add_theme_support( 'html5', [
 		'search-form',
 		'comment-form',
@@ -75,7 +80,7 @@ add_action( 'after_setup_theme', function() {
 		'caption',
 	] );
 
-	// @about Post Format Support
+	// Post Format Support.
 	add_theme_support( 'post-formats', [
 		'aside',
 		'audio',
@@ -86,7 +91,7 @@ add_action( 'after_setup_theme', function() {
 		'video',
 	] );
 
-	// @about Enable Custom Logo Support
+	// Enable Custom Logo Support.
 	add_theme_support( 'custom-logo', [
 		'height' 		=> secretum_mod( 'custom_logo_height' ) ? secretum_mod( 'custom_logo_height', 'int' ) : 75,
 		'width' 		=> secretum_mod( 'custom_logo_width' ) ? secretum_mod( 'custom_logo_width', 'int' ) : 300,
@@ -95,7 +100,7 @@ add_action( 'after_setup_theme', function() {
 		'flex-width' 	=> true,
 	] );
 
-	// @about Customizer Theme Colors
+	// Customizer Theme Colors.
 	if ( ! get_option( 'secretum_theme_colors' ) ) {
 		$files = array();
 		$files = scandir( SECRETUM_DIR . '/css/', 1 );
@@ -109,7 +114,7 @@ add_action( 'after_setup_theme', function() {
 			$settings[ $dirname ] = $name;
 		}
 
-		// @about Update Theme Colors Option
+		// Update Theme Colors Option.
 		update_option( 'secretum_theme_colors', $settings );
 	}
 } );

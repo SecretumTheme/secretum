@@ -2,18 +2,24 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Customize\Settings\Extras
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/extras.php
  */
 
 namespace Secretum;
 
-// @about Panel
+// Panel.
 $customizer->panel(
 	'extras',
 	__( 'Extras', 'secretum' )
 );
 
-// @about Section
+
+// Section.
 $customizer->section(
 	'analytics',
 	'extras',
@@ -21,20 +27,22 @@ $customizer->section(
 	''
 );
 
-// @about Radio
+
+// Radio.
 $customizer->radio(
 	'analytics',
 	'analytics_location',
 	__( 'Analytics Code Location', 'secretum' ),
 	'',
 	$default['analytics_location'],
-	array(
+	[
 		'' 			=> __( 'Footer (best performance)', 'secretum' ),
 		'header' 	=> __( 'Header (best tracking)', 'secretum' ),
-	)
+	]
 );
 
-// @about Textarea Script
+
+// Textarea Script.
 $customizer->textarea_script(
 	'analytics',
 	'analytics_code',
@@ -42,7 +50,8 @@ $customizer->textarea_script(
 	__( 'Include all opening and closing script tags.', 'secretum' )
 );
 
-// @about Section
+
+// Section.
 $customizer->section(
 	'scrolltop_icon',
 	'extras',
@@ -50,7 +59,8 @@ $customizer->section(
 	''
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'scrolltop_icon',
 	'scrolltop',
@@ -59,7 +69,8 @@ $customizer->checkbox(
 	$default['scrolltop']
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_text_color',
@@ -69,7 +80,8 @@ $customizer->select(
 	secretum_customizer_text_colors()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_icon_size',
@@ -79,7 +91,8 @@ $customizer->select(
 	secretum_customizer_font_sizes()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_background_color',
@@ -89,7 +102,8 @@ $customizer->select(
 	secretum_customizer_background_colors()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_background_hover_color',
@@ -99,7 +113,8 @@ $customizer->select(
 	secretum_customizer_background_hover_colors()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_border_type',
@@ -109,7 +124,8 @@ $customizer->select(
 	secretum_customizer_border_types()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_border_radius',
@@ -119,7 +135,8 @@ $customizer->select(
 	secretum_customizer_border_radius()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_border_color',
@@ -129,7 +146,8 @@ $customizer->select(
 	secretum_customizer_border_colors()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_margin_bottom',
@@ -139,7 +157,8 @@ $customizer->select(
 	secretum_customizer_margin_bottom()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_margin_right',
@@ -149,7 +168,8 @@ $customizer->select(
 	secretum_customizer_margin_right()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_padding_x',
@@ -159,7 +179,8 @@ $customizer->select(
 	secretum_customizer_padding_left_right()
 );
 
-// @about Select
+
+// Select.
 $customizer->select(
 	'scrolltop_icon',
 	'scrolltop_padding_y',

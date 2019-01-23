@@ -2,18 +2,24 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Customize\Settings\Footer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/footer.php
  */
 
 namespace Secretum;
 
-// @about Panel
+// Panel.
 $customizer->panel(
 	'footer',
 	__( 'Footer', 'secretum' )
 );
 
-// @about Section
+
+// Section.
 $customizer->section(
 	'footer_display',
 	'footer',
@@ -21,7 +27,7 @@ $customizer->section(
 	''
 );
 /**
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'footer_display',
 	'custom_footers',
@@ -30,245 +36,41 @@ $customizer->checkbox(
 	$default['custom_footers']
 );
 */
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'footer_display',
 	'footer_status',
-	__( 'Select To Hide Footer Area', 'secretum' ),
-	'',
+	__( 'Hide Footer Area', 'secretum' ),
+	__( 'Select to disable the entire footer area.', 'secretum' ),
 	$default['footer_status']
 );
 
-// @about Wrapper
-$customizer->section(
-	'footer_wrapper',
-	'footer',
-	__( 'Wrapper', 'secretum' ),
-	__( 'Customize the outter wrapper around header top area.', 'secretum' )
-);
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_background_color',
-	__( 'Background Color', 'secretum' ),
-	'',
-	$default['footer_wrapper_background_color'],
-	secretum_customizer_background_colors()
-);
+// Wrapper.
+$wrapper->settings( [
+	'section' => 'footer',
+] );
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_padding_x',
-	__( 'Padding - Left & Right', 'secretum' ),
-	'',
-	$default['footer_wrapper_padding_x'],
-	secretum_customizer_padding_left_right()
-);
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_padding_y',
-	__( 'Padding - Top & Bottom', 'secretum' ),
-	'',
-	$default['footer_wrapper_padding_y'],
-	secretum_customizer_padding_top_bottom()
-);
+// Wrapper Borders.
+$borders->settings( [
+	'section' => 'footer_wrapper',
+] );
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_margin_bottom',
-	__( 'Margin - Bottom', 'secretum' ),
-	__( 'Increases spacing after section.', 'secretum' ),
-	$default['footer_wrapper_margin_bottom'],
-	secretum_customizer_margin_bottom()
-);
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_margin_top',
-	__( 'Margin - Top', 'secretum' ),
-	__( 'Increases spacing before section.', 'secretum' ),
-	$default['footer_wrapper_margin_top'],
-	secretum_customizer_margin_top()
-);
+// Container.
+$container->settings( [
+	'section' => 'footer',
+] );
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_border_type',
-	__( 'Border Type', 'secretum' ),
-	'',
-	$default['footer_wrapper_border_type'],
-	secretum_customizer_border_types()
-);
 
-// @about Select
-$customizer->select(
-	'footer_wrapper',
-	'footer_wrapper_border_color',
-	__( 'Border Color', 'secretum' ),
-	'',
-	$default['footer_wrapper_border_color'],
-	secretum_customizer_border_colors()
-);
+// Container Borders.
+$borders->settings( [
+	'section' => 'footer_container',
+] );
 
-// @about Container
-$customizer->section(
-	'footer_container',
-	'footer',
-	__( 'Container', 'secretum' ),
-	__( 'Customize the container within the header top wrapper.', 'secretum' )
-);
 
-// @about Radio
-$customizer->radio(
-	'footer_container',
-	'footer_container_type',
-	__( 'Container Type', 'secretum' ),
-	'',
-	$default['footer_container_type'],
-	secretum_customizer_container_types()
-);
-
-// @about Select
-$customizer->select(
-	'footer_container',
-	'footer_container_background_color',
-	__( 'Background Color', 'secretum' ),
-	'',
-	$default['footer_container_background_color'],
-	secretum_customizer_background_colors()
-);
-
-// @about Select
-$customizer->select(
-	'footer_container',
-	'footer_container_margin_x',
-	__( 'Margin - Left & Right', 'secretum' ),
-	'',
-	$default['footer_container_margin_x'],
-	secretum_customizer_margin_left_right()
-);
-
-// @about Select
-$customizer->select(
-	'footer_container',
-	'footer_container_margin_y',
-	__( 'Margin - Top & Bottom', 'secretum' ),
-	'',
-	$default['footer_container_margin_y'],
-	secretum_customizer_margin_top_bottom()
-);
-
-// @about Select
-$customizer->select(
-	'footer_container',
-	'footer_container_padding_x',
-	__( 'Padding - Left & Right', 'secretum' ),
-	'',
-	$default['footer_container_padding_x'],
-	secretum_customizer_padding_left_right()
-);
-
-// @about Select
-$customizer->select(
-	'footer_container',
-	'footer_container_padding_y',
-	__( 'Padding - Top & Bottom', 'secretum' ),
-	'',
-	$default['footer_container_padding_y'],
-	secretum_customizer_padding_top_bottom()
-);
-
-// @about Textuals
-$customizer->section(
-	'footer_textuals',
-	'footer',
-	__( 'Textuals', 'secretum' ),
-	__( 'Customize fonts, text and link colors.', 'secretum' )
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_text_alignment',
-	__( 'Text Alignment', 'secretum' ),
-	'',
-	$default['footer_text_alignment'],
-	secretum_customizer_text_alignments()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_font_family',
-	__( 'Font Family', 'secretum' ),
-	'',
-	$default['footer_textual_font_family'],
-	secretum_customizer_font_families()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_font_size',
-	__( 'Font Size', 'secretum' ),
-	'',
-	$default['footer_textual_font_size'],
-	secretum_customizer_font_sizes()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_font_style',
-	__( 'Font Style', 'secretum' ),
-	'',
-	$default['footer_textual_font_style'],
-	secretum_customizer_font_styles()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_text_transform',
-	__( 'Text Transform', 'secretum' ),
-	'',
-	$default['footer_textual_text_transform'],
-	secretum_customizer_text_transform()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_text_color',
-	__( 'Text Color', 'secretum' ),
-	'',
-	$default['footer_textual_text_color'],
-	secretum_customizer_text_colors()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_link_color',
-	__( 'Link Color', 'secretum' ),
-	'',
-	$default['footer_textual_link_color'],
-	secretum_customizer_link_colors()
-);
-
-// @about Select
-$customizer->select(
-	'footer_textuals',
-	'footer_textual_link_hover_color',
-	__( 'Link Hover Color', 'secretum' ),
-	'',
-	$default['footer_textual_link_hover_color'],
-	secretum_customizer_link_hover_colors()
-);
+// Textuals.
+$textuals->settings( [
+	'section' => 'footer',
+] );

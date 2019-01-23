@@ -2,7 +2,12 @@
 /**
  * The template for displaying all pages
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Page
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/page.php
  */
 
 namespace Secretum;
@@ -18,20 +23,20 @@ get_header();
 			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
 				<main class="site-main" id="main">
 					<?php
-					// @about Hookable Action
+					// Hookable Action.
 					do_action( 'secretum_before_content' );
 
 					while ( have_posts() ) { the_post();
-						// @about Page Content
+						// Page Content.
 						get_template_part( 'template-parts/page/content', 'page' );
 
-						// @about Comments Template
+						// Comments Template.
 						if ( comments_open() || get_comments_number() ) {
 							comments_template();
 						}
 					}
 
-					// @about Hookable Action
+					// Hookable Action.
 					do_action( 'secretum_after_content' );
 					?>
 				</main><!-- .site-main -->

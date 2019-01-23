@@ -26,13 +26,9 @@ function secretum_featured_image_display() {
  * Wrapper Classes
  */
 function secretum_featured_image_wrapper() {
-	// @about Classes
-	$background = secretum_mod( 'featured_image_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'featured_image_wrapper_border_type', 'attr', true ) . secretum_mod( 'featured_image_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'featured_image_wrapper_margin_top', 'attr', true ) . secretum_mod( 'featured_image_wrapper_margin_bottom', 'attr', true );
-	$padding = secretum_mod( 'featured_image_wrapper_padding_x', 'attr', true ) . secretum_mod( 'featured_image_wrapper_padding_y', 'attr', true );
-
-	echo esc_html( apply_filters( 'secretum_featured_image_wrapper', $background . $border . $margin . $padding, 10, 1 ) );
+	$wrapper = \Secretum\Wrapper::classes( 'featured_image' );
+	$borders = \Secretum\Borders::classes( 'featured_image_wrapper' );
+	echo esc_html( $wrapper . $borders );
 }
 
 

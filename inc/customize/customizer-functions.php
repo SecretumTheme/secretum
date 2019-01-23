@@ -3,7 +3,7 @@
  * Customizer Fallback & Sanitize Functions
  *
  * @package    Secretum
- * @subpackage Secretum\customizer-functions.php
+ * @subpackage Customize\Customizer-Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -11,6 +11,7 @@
  */
 
 namespace Secretum;
+
 
 /**
  * Customizer Refresh Icon
@@ -48,6 +49,22 @@ function secretum_customizer_reset( $value = '' ) {
 	}
 	return '';
 }//end secretum_customizer_reset()
+
+
+/**
+ * Get Blog Name
+ */
+function secretum_customizer_blog_name() {
+	bloginfo( 'name' );
+}//end secretum_customizer_blog_name()
+
+
+/**
+ * Get Blog Description
+ */
+function secretum_customizer_blog_desc() {
+	bloginfo( 'description' );
+}//end secretum_customizer_blog_desc()
 
 
 /**
@@ -135,7 +152,6 @@ function secretum_customizer_sanitize_script( $string ) {
  * @param string $string HTML String.
  *
  * @return string Cleaned HTML
- */
 function secretum_customizer_sanitize_translate( $string ) {
 	if ( ctype_space( $string ) === true ) {
 		return ' ';
@@ -143,3 +159,4 @@ function secretum_customizer_sanitize_translate( $string ) {
 		return htmlentities( wp_strip_all_tags( $string, true ) );
 	}
 }//end secretum_customizer_sanitize_translate()
+ */

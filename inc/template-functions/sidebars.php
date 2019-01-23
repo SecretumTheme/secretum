@@ -11,13 +11,10 @@ namespace Secretum;
  * Sidebar Wrapper Classes
  */
 function secretum_sidebar_wrapper() {
-	// @about Classes
-	$background = secretum_mod( 'sidebar_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'sidebar_wrapper_border_type', 'attr', true ) . secretum_mod( 'sidebar_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'sidebar_wrapper_margin_top', 'attr', true ) . secretum_mod( 'sidebar_wrapper_margin_right', 'attr', true ) . secretum_mod( 'sidebar_wrapper_margin_bottom', 'attr', true ) . secretum_mod( 'sidebar_wrapper_margin_left', 'attr', true );
-	$padding = secretum_mod( 'sidebar_wrapper_padding_x', 'attr', true ) . secretum_mod( 'sidebar_wrapper_padding_y', 'attr', true );
+	$wrapper = \Secretum\Wrapper::classes( 'sidebar' );
+	$borders = \Secretum\Borders::classes( 'sidebar_wrapper' );
 
-	echo esc_html( apply_filters( 'secretum_sidebar_wrapper', $background . $border . $margin . $padding, 10, 1 ) );
+	echo esc_html( $wrapper . $borders );
 }
 
 
@@ -27,12 +24,10 @@ function secretum_sidebar_wrapper() {
  * @return string Pre-sanitized string of class names
  */
 function secretum_sidebar_container() {
-	// @about Classes
-	$background = secretum_mod( 'sidebar_container_background_color', 'attr', true );
-	$border = secretum_mod( 'sidebar_container_border_type', 'attr', true ) . secretum_mod( 'sidebar_container_border_color', 'attr', true );
-	$padding = secretum_mod( 'sidebar_container_padding_x', 'attr', true ) . secretum_mod( 'sidebar_container_padding_y', 'attr', true );
+	$container = \Secretum\Container::classes( 'sidebar' );
+	$borders = \Secretum\Borders::classes( 'sidebar_container' );
 
-	return apply_filters( 'secretum_sidebar_container', $background . $border . $padding, 10, 1 );
+	return $container . $borders;
 }
 
 
@@ -42,16 +37,9 @@ function secretum_sidebar_container() {
  * @return string Pre-sanitized string of class names
  */
 function secretum_sidebar_textuals() {
-	// @about Classes
-	$font_size = secretum_mod( 'sidebar_font_size', 'attr', true );
-	$font_family = secretum_mod( 'sidebar_font_family', 'attr', true );
-	$font_style = secretum_mod( 'sidebar_font_style', 'attr', true );
-	$text_transform = secretum_mod( 'sidebar_text_transform', 'attr', true );
-	$text_color = secretum_mod( 'sidebar_text_color', 'attr', true );
-	$link_color = secretum_mod( 'sidebar_link_color', 'attr', true );
-	$link_hover_color = secretum_mod( 'sidebar_link_hover_color', 'attr', true );
+	$textuals = \Secretum\Textuals::classes( 'sidebar' );
 
-	return apply_filters( 'secretum_sidebar_text_fonts', $font_size . $font_family . $font_style . $text_transform . $text_color . $link_color . $link_hover_color, 10, 1 );
+	return $textuals;
 }
 
 

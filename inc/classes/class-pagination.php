@@ -2,11 +2,15 @@
 /**
  * WordPress Pagination Display
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Classes\Pagination
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-pagination.php
  */
 
 namespace Secretum;
-
 
 /**
  * Initilize Pagination
@@ -80,9 +84,9 @@ class Pagination {
 	 * @param string $next_label Next >> Text Label.
 	 */
 	final public function init( $wp_query = null, $nav_label = '', $previous_label = '', $next_label = '' ) {
-		// @ about Required Call
+		// @ about Required Call.
 		if ( null !== $wp_query ) {
-			// @about Set Vars
+			// Set Vars.
 			$this->wp_query 			= $wp_query;
 			$this->nav_label 			= ( empty( $nav_label ) ) ? esc_html__( 'Posts Navigation', 'secretum' ) : esc_html( $nav_label );
 			$this->previous_label 		= ( empty( $previous_label ) ) ? esc_html__( 'Previous', 'secretum' ) : esc_html( $previous_label );
@@ -90,7 +94,7 @@ class Pagination {
 			$this->previous_post_link 	= esc_url( get_previous_posts_page_link() );
 			$this->next_post_link 		= esc_url( get_next_posts_page_link() );
 
-			// @about Display Pagination Feature
+			// Display Pagination Feature.
 			$this->paginate();
 		}
 	}
@@ -127,15 +131,15 @@ class Pagination {
 	 * Display Pagination Feature
 	 */
 	final public function paginate() {
-		// @about If Pages
+		// If Pages.
 		if ( $this->paginate_check() ) {
-			// @about Start Nav
+			// Start Nav.
 			$html = $this->nav_open();
 
-			// @about Previous << Link
+			// Previous << Link.
 			$html .= $this->previous_posts();
 
-			// @about Build Link Items
+			// Build Link Items.
 			$html .= $this->page_number_links( paginate_links(
 				[
 					'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -152,13 +156,13 @@ class Pagination {
 				]
 			) );
 
-			// @about Next >> Link
+			// Next >> Link.
 			$html .= $this->next_posts();
 
-			// @about End Nav
+			// End Nav.
 			$html .= $this->nav_close();
 
-			// @ About Sanitize HTML
+			// @ About Sanitize HTML.
 			echo wp_kses(
 				$html,
 				[

@@ -2,27 +2,32 @@
 /**
  * Wordpress Customizer Interface
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Classes\Customizer\Customizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-customizer.php
  */
 
 namespace Secretum;
-
 
 /**
  * Initilize Customizer Features
  */
 class Customizer {
+
 	/**
-	 * Instance Object
+	 * Customizer Default Settings
 	 *
-	 * @var object
+	 * @var array
+	public $defaults;
 	 */
-	protected static $instance = null;
 
 	/**
 	 * WP_Customize_Manager Instance
 	 *
-	 * @var object
+	 * @var array
 	 */
 	public $wp_customize;
 
@@ -31,11 +36,13 @@ class Customizer {
 	 * Start Class
 	 *
 	 * @param object $wp_customize WP_Customize_Manager Instance.
-	 * @return void
 	 */
-	final public function init( $wp_customize ) {
-		$this->wp_customize = $wp_customize;
-	}
+	public function __construct( $wp_customize ) {
+		if ( true === isset( $wp_customize ) && true === is_object( $wp_customize ) ) {
+			$this->wp_customize = $wp_customize;
+		}
+
+	}//end __construct()
 
 
 	/**
@@ -43,14 +50,14 @@ class Customizer {
 	 *
 	 * @param string $section_name Shortname for setting name/section name.
 	 * @param string $title Title of section.
-	 * @return void
 	 */
 	final public function panel( $section_name, $title ) {
 		$this->wp_customize->add_panel( 'secretum_' . sanitize_key( $section_name ) . '_panel', [
 			'title' 	=> ':: ' . esc_html( $title ),
 			'priority'  => 8,
 		] );
-	}
+
+	}//end panel()
 
 
 	/**
@@ -60,7 +67,6 @@ class Customizer {
 	 * @param string $panel_name Short panel name.
 	 * @param string $title Title of Section.
 	 * @param string $description Description for Section.
-	 * @return void
 	 */
 	final public function section( $section_name, $panel_name, $title, $description ) {
 		$this->wp_customize->add_section( 'secretum_' . sanitize_key( $section_name ) . '_section', [
@@ -69,7 +75,8 @@ class Customizer {
 			'description' 	=> esc_html( $description ),
 			'priority' 		=> 10,
 		] );
-	}
+
+	}//end section()
 
 
 	/**
@@ -77,7 +84,6 @@ class Customizer {
 	 *
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $selector Class/Selector Name.
-	 * @return void
 	 */
 	final public function partial( $setting_name, $selector ) {
 		$this->wp_customize->selective_refresh->add_partial( 'secretum_' . sanitize_key( $setting_name ) . '_partial', [
@@ -86,7 +92,8 @@ class Customizer {
 			'render_callback'	 	=> false,
 			'container_inclusive' 	=> false,
 		] );
-	}
+
+	}//end partial()
 
 
 	/**
@@ -97,7 +104,6 @@ class Customizer {
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
-	 * @return void
 	 */
 	final public function checkbox( $section_name, $setting_name, $label, $description, $default ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
@@ -113,7 +119,8 @@ class Customizer {
 			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
 			'type' 				=> 'checkbox',
 		] );
-	}
+
+	}//end checkbox()
 
 
 	/**
@@ -122,10 +129,9 @@ class Customizer {
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
 	 * @param int    $width Default width.
-	 * @param int	 $height Default height.
+	 * @param int    $height Default height.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
-	 * @return void
 	 */
 	final public function background_image( $section_name, $setting_name, $width, $height, $label, $description ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
@@ -146,65 +152,8 @@ class Customizer {
 			'width' 		=> absint( $width ),
 			'height' 		=> absint( $height ),
 		] ) );
-	}
 
-
-	/**
-	 * Radio Select
-	 *
-	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
-	 * @param string $label Label for Control.
-	 * @param string $description Description for Control.
-	 * @param string $default Default Display Value.
-	 * @param array  $choices Selection Values.
-	 * @return void
-	 */
-	final public function radio( $section_name, $setting_name, $label, $description, $default, $choices = [] ) {
-		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'sanitize_callback' => 'sanitize_key',
-			'transport' 		=> 'refresh',
-			'type' 				=> 'option',
-			'default' 			=> sanitize_key( $default ),
-		] );
-
-		$this->wp_customize->add_control( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'label' 			=> esc_html( $label ),
-			'description' 		=> esc_html( $description ),
-			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
-			'type' 				=> 'radio',
-			'choices'			=> $choices,
-		] );
-	}
-
-
-	/**
-	 * Dropdown Select
-	 *
-	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
-	 * @param string $label Label for Control.
-	 * @param string $description Description for Control.
-	 * @param string $default Default Display Value.
-	 * @param array  $select Selection Options.
-	 * @return void
-	 */
-	final public function select( $section_name, $setting_name, $label, $description, $default, $select = [] ) {
-		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'sanitize_callback' => 'sanitize_key',
-			'transport' 		=> 'refresh',
-			'type' 				=> 'option',
-			'default' 			=> sanitize_key( $default ),
-		] );
-
-		$this->wp_customize->add_control( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'label' 			=> esc_html( $label ),
-			'description' 		=> esc_html( $description ),
-			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
-			'type' 				=> 'select',
-			'choices' 			=> $select,
-		] );
-	}
+	}//end background_image()
 
 
 	/**
@@ -216,7 +165,6 @@ class Customizer {
 	 * @param string $description Description for Control.
 	 * @param array  $input_attrs Min/Max attributes.
 	 * @param string $default Default Display Value.
-	 * @return void
 	 */
 	final public function number( $section_name, $setting_name, $label, $description, $input_attrs = [], $default ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
@@ -233,7 +181,66 @@ class Customizer {
 			'type' 				=> 'number',
 			'input_attrs' 		=> $input_attrs,
 		] );
-	}
+
+	}//end number()
+
+
+	/**
+	 * Radio Select
+	 *
+	 * @param string $section_name Short section name.
+	 * @param string $setting_name Name of he setting to save.
+	 * @param string $label Label for Control.
+	 * @param string $description Description for Control.
+	 * @param string $default Default Display Value.
+	 * @param array  $choices Selection Values.
+	 */
+	final public function radio( $section_name, $setting_name, $label, $description, $default, $choices = [] ) {
+		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
+			'sanitize_callback' => 'sanitize_key',
+			'transport' 		=> 'refresh',
+			'type' 				=> 'option',
+			'default' 			=> sanitize_key( $default ),
+		] );
+
+		$this->wp_customize->add_control( 'secretum[' . sanitize_key( $setting_name ) . ']', [
+			'label' 			=> esc_html( $label ),
+			'description' 		=> esc_html( $description ),
+			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
+			'type' 				=> 'radio',
+			'choices'			=> $choices,
+		] );
+
+	}//end radio()
+
+
+	/**
+	 * Dropdown Select
+	 *
+	 * @param string $section_name Short section name.
+	 * @param string $setting_name Name of he setting to save.
+	 * @param string $label Label for Control.
+	 * @param string $description Description for Control.
+	 * @param string $default Default Display Value.
+	 * @param array  $select Selection Options.
+	 */
+	final public function select( $section_name, $setting_name, $label, $description, $default, $select = [] ) {
+		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
+			'sanitize_callback' => 'sanitize_key',
+			'transport' 		=> 'refresh',
+			'type' 				=> 'option',
+			'default' 			=> sanitize_key( $default ),
+		] );
+
+		$this->wp_customize->add_control( 'secretum[' . sanitize_key( $setting_name ) . ']', [
+			'label' 			=> esc_html( $label ),
+			'description' 		=> esc_html( $description ),
+			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
+			'type' 				=> 'select',
+			'choices' 			=> $select,
+		] );
+
+	}//end select()
 
 
 	/**
@@ -244,7 +251,6 @@ class Customizer {
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
-	 * @return void
 	 */
 	final public function input_text( $section_name, $setting_name, $label, $description, $default ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
@@ -260,33 +266,8 @@ class Customizer {
 			'section' 		=> 'secretum_' . sanitize_key( $section_name ) . '_section',
 			'type' 			=> 'text',
 		] );
-	}
 
-
-	/**
-	 * Text Translation Field
-	 *
-	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
-	 * @param string $label Label for Control.
-	 * @param string $description Description for Control.
-	 * @return void
-	 */
-	final public function text_translate( $section_name, $setting_name, $label, $description ) {
-		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'sanitize_callback' => 'Secretum\secretum_customizer_sanitize_translate',
-			'type' 				=> 'option',
-			'transport' 		=> 'refresh',
-			'default' 			=> secretum_text( $setting_name, false ),
-		] );
-
-		$this->wp_customize->add_control( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			'label' 		=> esc_html( $label ),
-			'description' 	=> esc_html( $description ),
-			'section' 		=> 'secretum_' . sanitize_key( $section_name ) . '_section',
-			'type' 			=> 'text',
-		] );
-	}
+	}//end input_text()
 
 
 	/**
@@ -297,7 +278,6 @@ class Customizer {
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
-	 * @return void
 	 */
 	final public function textarea( $section_name, $setting_name, $label, $description, $default ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
@@ -313,7 +293,8 @@ class Customizer {
 			'section' 			=> 'secretum_' . sanitize_key( $section_name ) . '_section',
 			'type' 				=> 'textarea',
 		] );
-	}
+
+	}//end textarea()
 
 
 	/**
@@ -323,11 +304,10 @@ class Customizer {
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
-	 * @return void
 	 */
 	final public function textarea_script( $section_name, $setting_name, $label, $description ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			// @about Temp removed 'sanitize_js_callback' 	=> 'secretum_customizer_escape_script',
+			// Temp removed 'sanitize_js_callback' 	=> 'secretum_customizer_escape_script',.
 			'sanitize_callback' 	=> 'Secretum\secretum_customizer_sanitize_script',
 			'transport' 			=> 'refresh',
 			'type' 					=> 'option',
@@ -340,7 +320,8 @@ class Customizer {
 			'section' 				=> 'secretum_' . sanitize_key( $section_name ) . '_section',
 			'type' 					=> 'textarea',
 		] );
-	}
+
+	}//end textarea_script()
 
 
 	/**
@@ -361,21 +342,8 @@ class Customizer {
 			'section' 		=> 'secretum_reset_section',
 			'type' 			=> 'text',
 		] );
-	}
+
+	}//end reset()
 
 
-	/**
-	 * Create Instance
-	 *
-	 * @param object $wp_customize WP_Customize_Manager Instance.
-	 * @return object $instance Instance Object.
-	 */
-	public static function instance( $wp_customize ) {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-			self::$instance->init( $wp_customize );
-		}
-
-		return self::$instance;
-	}
-}
+}//end class

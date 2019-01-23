@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Secretum\Customizer\Globals
+ * @subpackage Customize\Settings\Globals
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -12,12 +12,12 @@
 
 namespace Secretum;
 
-
 // Panel.
 $customizer->panel(
 	'globals',
 	__( 'Globals', 'secretum' )
 );
+
 
 // Section.
 $customizer->section(
@@ -26,6 +26,7 @@ $customizer->section(
 	__( 'Default Website Colors', 'secretum' ),
 	__( 'Global website background, text and link colors.', 'secretum' )
 );
+
 
 // Select.
 $customizer->select(
@@ -37,6 +38,7 @@ $customizer->select(
 	secretum_customizer_background_colors()
 );
 
+
 // Select.
 $customizer->select(
 	'globals',
@@ -46,6 +48,7 @@ $customizer->select(
 	$default['globals_text_color'],
 	secretum_customizer_text_colors()
 );
+
 
 // Select.
 $customizer->select(
@@ -57,6 +60,7 @@ $customizer->select(
 	secretum_customizer_link_colors()
 );
 
+
 // Select.
 $customizer->select(
 	'globals',
@@ -67,6 +71,7 @@ $customizer->select(
 	secretum_customizer_link_hover_colors()
 );
 
+
 // Section.
 $customizer->section(
 	'enqueue',
@@ -74,6 +79,7 @@ $customizer->section(
 	__( 'Enqueue Management', 'secretum' ),
 	__( 'Enqueue Management', 'secretum' )
 );
+
 
 // Checkbox.
 $customizer->checkbox(
@@ -84,6 +90,7 @@ $customizer->checkbox(
 	$default['enqueue_primary_javascript_status']
 );
 
+
 // Checkbox.
 $customizer->checkbox(
 	'enqueue',
@@ -92,6 +99,7 @@ $customizer->checkbox(
 	__( 'The primary (all features) Bootstrap Bundle file. The primary JavaScript must be disabled to enable this feature.', 'secretum' ),
 	$default['enqueue_bootstrap_bundle_javascript_status']
 );
+
 
 // Checkbox.
 $customizer->checkbox(
@@ -102,6 +110,7 @@ $customizer->checkbox(
 	$default['enqueue_secretum_javascript_status']
 );
 
+
 // Checkbox.
 $customizer->checkbox(
 	'enqueue',
@@ -110,6 +119,7 @@ $customizer->checkbox(
 	__( 'Ekko Lightbox (built around Bootstrap Modal plugin) is not bundled with the theme assets as most websites will not use a lightbox.', 'secretum' ),
 	$default['enqueue_ekko_lightbox_status']
 );
+
 
 if ( class_exists( 'woocommerce' ) === true ) {
 	// Checkbox.
@@ -133,6 +143,7 @@ if ( class_exists( 'woocommerce' ) === true ) {
 	}
 }
 
+
 if ( class_exists( 'WPCF7' ) === true ) {
 	// Input Text.
 	$customizer->input_text(
@@ -144,6 +155,7 @@ if ( class_exists( 'WPCF7' ) === true ) {
 	);
 }
 
+
 // Section.
 $customizer->section(
 	'content_width',
@@ -151,6 +163,7 @@ $customizer->section(
 	__( 'Content Width', 'secretum' ),
 	''
 );
+
 
 // Number.
 $customizer->number(
@@ -162,6 +175,7 @@ $customizer->number(
 	$default['content_width']
 );
 
+
 // Section.
 $customizer->section(
 	'reset',
@@ -169,6 +183,7 @@ $customizer->section(
 	__( 'Reset Settings', 'secretum' ),
 	__( 'THIS CAN NOT BE UNDONE! Deletes all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum' )
 );
+
 
 // Reset Section.
 $customizer->reset();

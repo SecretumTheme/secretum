@@ -3,7 +3,7 @@
  * WordPress Filters
  *
  * @package    Secretum
- * @subpackage Secretum\template-filters.php
+ * @subpackage Template-Filters
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -37,7 +37,7 @@ add_filter( 'navigation_markup_template', function( $template ) {
 add_filter( 'excerpt_more', function( $excerpt ) {
 	return str_replace(
 		' [&hellip;]',
-		'<p class="text-right"><a class="btn btn-secondary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text', false ) . '</a></p>',
+		'<p class="text-right"><a class="btn btn-secondary continue-reading" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text' ) . '</a></p>',
 		$excerpt
 	);
 } );
@@ -49,7 +49,7 @@ add_filter( 'excerpt_more', function( $excerpt ) {
  * @return string Html Button & Text
  */
 add_filter( 'the_content_more_link', function() {
-	return '<p class="text-right"><a class="btn btn-secondary more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'read_more_text', false ) . '</a></p>';
+	return '<p class="text-right"><a class="btn btn-secondary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'read_more_text' ) . '</a></p>';
 } );
 
 

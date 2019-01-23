@@ -3,7 +3,7 @@
  * Secretum Theme
  *
  * @package    Secretum
- * @subpackage Secretum\functions.php
+ * @subpackage Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -33,13 +33,14 @@ define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' 
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
 
 
-// Register Classes.
-spl_autoload_register( function ( $class ) {
+/**
+ * Register Secretum Classes
+ *
+ * @param string $class Loaded Classes.
+ */
+function secretum_register_classes( $class ) {
 	// Namespace Prefix.
 	$prefix = 'Secretum\\';
-
-	// Base Dir For Namespace Prefix.
-	$base_dir = __DIR__ . '/inc/classes/';
 
 	// Move To Next Rgistered autoloader.
 	$len = strlen( $prefix );
@@ -47,24 +48,35 @@ spl_autoload_register( function ( $class ) {
 		return;
 	}
 
+	// Base Dir For Namespace Prefix.
+	$base_dir = __DIR__ . '/inc/classes/';
+
+	// Class directories.
+	$class_paths = [
+		$base_dir,
+		$base_dir . 'customizer/',
+	];
+
 	// Build Class Name.
 	$relative_class = substr( $class, $len );
 
-	// Replace Dir Separators & Replace Namespace with Base Dir.
-	$file = $base_dir . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
+	foreach ( $class_paths as $path ) {
+		// Replace Dir Separators & Replace Namespace with Base Dir.
+		$file = $path . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
 
-	// Include File.
-	if ( file_exists( $file ) === true ) {
-		require $file;
+		// Include File.
+		if ( file_exists( $file ) === true ) {
+			require $file;
+		}
 	}
-} );
+}//end secretum_register_classes()
+
+spl_autoload_register( 'Secretum\secretum_register_classes' );
 
 
 // Include Theme Files.
 require_once SECRETUM_INC . '/customize/default-settings.php';
-require_once SECRETUM_INC . '/customize/stylesheet-settings.php';
 require_once SECRETUM_INC . '/secretum-mod.php';
-require_once SECRETUM_INC . '/secretum-text.php';
 require_once SECRETUM_INC . '/secretum-icon.php';
 require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';
@@ -87,7 +99,6 @@ require_once SECRETUM_INC . '/template-functions/primary-nav.php';
 require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
-require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 
 // WP Admin Only.
@@ -126,12 +137,18 @@ add_action( 'widgets_init', function() {
 
 
 // WordPress Customizer.
-add_action( 'customize_register', function( $wp_customize ) {
+add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize ) {
 	// Remove Sections.
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'title_tagline' );
 	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
+
+	// Sanitizers & Helper Functions.
+	require_once SECRETUM_INC . '/customize/customizer-functions.php';
+
+	// Stylesheet Settings For Base Color Palette.
+	require_once SECRETUM_INC . '/customize/stylesheet-settings.php';
 
 	// Controller Setting Arrays.
 	require_once SECRETUM_INC . '/customize/choices/alignments.php';
@@ -144,11 +161,18 @@ add_action( 'customize_register', function( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/choices/sizes.php';
 	require_once SECRETUM_INC . '/customize/choices/theme-colors.php';
 
-	// Start Secretum Customizer Class.
-	$customizer = \Secretum\Customizer::instance( $wp_customize );
-
 	// Get Default Settings.
 	$default = secretum_customizer_default_settings();
+	$defaults = secretum_customizer_default_settings();
+
+	// Start Secretum Customizer.
+	$customizer = new \Secretum\Customizer( $wp_customize );
+	$wrapper 	= new \Secretum\Wrapper( $customizer, $defaults );
+	$container 	= new \Secretum\Container( $customizer, $defaults );
+	$textuals 	= new \Secretum\Textuals( $customizer, $defaults );
+	$borders 	= new \Secretum\Borders( $customizer, $defaults );
+	$navitems 	= new \Secretum\NavItems( $customizer, $defaults );
+	$dropdown 	= new \Secretum\Dropdown( $customizer, $defaults );
 
 	// Include Settings.
 	require_once SECRETUM_INC . '/customize/settings/theme.php';
@@ -166,7 +190,10 @@ add_action( 'customize_register', function( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/settings/copyright-nav.php';
 	require_once SECRETUM_INC . '/customize/settings/frontpage.php';
 	require_once SECRETUM_INC . '/customize/settings/extras.php';
-	require_once SECRETUM_INC . '/customize/settings/translations.php';
+
+	// Text Translations.
+	$translate = new \Secretum\TransCustomizer( $wp_customize );
+	$translate->settings();
 } );
 
 

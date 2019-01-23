@@ -32,14 +32,11 @@ add_action( 'secretum_before_entry_content', function() {
  * Entry Wrapper Classes
  */
 function secretum_entry_wrapper() {
-	// @about Classes
 	$columns = secretum_entry_columns();
-	$background = secretum_mod( 'entry_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'entry_wrapper_border_type', 'attr', true ) . secretum_mod( 'entry_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'entry_wrapper_margin_top', 'attr', true ) . secretum_mod( 'entry_wrapper_margin_bottom', 'attr', true );
-	$padding = secretum_mod( 'entry_wrapper_padding_x', 'attr', true ) . secretum_mod( 'entry_wrapper_padding_y', 'attr', true );
+	$wrapper = \Secretum\Wrapper::classes( 'entry' );
+	$borders = \Secretum\Borders::classes( 'entry_wrapper' );
 
-	echo esc_html( apply_filters( 'secretum_entry_wrapper', $columns . $background . $border . $margin . $padding, 10, 1 ) );
+	echo esc_html( $columns . $wrapper . $borders );
 }
 
 

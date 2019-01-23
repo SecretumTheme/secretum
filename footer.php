@@ -2,37 +2,42 @@
 /**
  * The template for displaying the footer
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Footer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/footer.php
  */
 
 namespace Secretum;
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_footer_before' );
 
-// @about Display Footer Area
+// Display Footer Area.
 get_template_part( 'template-parts/footer/display' );
 
-// @about Secretum Custom Headers & Footers Plugin
+// Secretum Custom Headers & Footers Plugin.
 if ( secretum_mod( 'custom_footers' ) ) {
 	do_action( 'secretum_hf', 'footers' );
 }
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_footer_after' );
 
-// @about Copyright Area
+// Copyright Area.
 get_template_part( 'template-parts/copyright/display' );
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_copyright_after' );
 
-// @about Scroll To Top Icon
+// Scroll To Top Icon.
 get_template_part( 'template-parts/extras/scrolltop' );
 ?>
 </div><!-- #page -->
 <?php
-// @about Customizer Refresh Icon
+// Customizer Refresh Icon.
 if ( is_customize_preview() ) {
 	secretum_customizer_refresh();
 }

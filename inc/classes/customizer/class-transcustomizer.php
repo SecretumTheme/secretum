@@ -1,0 +1,122 @@
+<?php
+/**
+ * Secretum Customizer Settings Interface
+ *
+ * @package    Secretum
+ * @subpackage Classes\Customizer\TransCustomizer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/wp_customize/class-transcustomizer.php
+ */
+
+namespace Secretum;
+
+/**
+ * Customizer Text Translations
+ */
+class TransCustomizer {
+
+	// Labels & Default Text Strings.
+	use TransTrait;
+
+
+	/**
+	 * Secretum Customizer Object
+	 *
+	 * @var array
+	 */
+	protected $wp_customize;
+
+
+	/**
+	 * Start Class
+	 *
+	 * @param object $wp_customize Secretum Customizer Object.
+	 */
+	public function __construct( $wp_customize ) {
+		if ( true === isset( $wp_customize ) && true === is_object( $wp_customize ) ) {
+			$this->wp_customize = $wp_customize;
+		}
+
+	}//end __construct()
+
+
+	/**
+	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @return void
+	 */
+	final public function settings() {
+		if ( true === empty( $this->wp_customize ) ) {
+			return;
+		}
+
+		// Panel.
+		$this->wp_customize->add_panel( 'secretum_wordpress_text_panel', [
+			'title' 	=> ':: ' . esc_html__( 'Translations', 'secretum' ),
+			'priority'  => 8,
+		] );
+
+		// Section.
+		$this->wp_customize->add_section( 'secretum_wordpress_text_section', [
+			'panel' 		=> 'secretum_wordpress_text_panel',
+			'title' 		=> esc_html__( 'WordPress Text', 'secretum' ),
+			'description' 	=> esc_html__( 'HTML Allowed! To reset: delete the text from the input, then publish. To remove from display: delete the text and add a single empty space, then publish.', 'secretum' ),
+			'priority' 		=> 10,
+		] );
+
+		foreach ( (array) $this->defaults() as $key => $items ) {
+			// Add Setting.
+			$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $key ) . ']', [
+				'default' 			=> esc_html( $items['default'] ),
+				'sanitize_callback' => [ $this, 'sanitize' ],
+				'type' 				=> 'option',
+			] );
+
+			// Add Control.
+			$this->wp_customize->add_control( 'secretum[' . sanitize_key( $key ) . ']', [
+				'section' 	=> 'secretum_wordpress_text_section',
+				'label' 	=> esc_html( $items['label'] ),
+				'type' 		=> 'text',
+			] );
+
+			// Build Render Callback.
+			if ( true === isset( $this->_option[ $key ] ) ) {
+				$render_callback = wp_kses_post( $this->_option[ $key ] );
+			} else {
+				$render_callback = false;
+			}
+
+			// Add Partial Refresh.
+			$this->wp_customize->selective_refresh->add_partial( 'secretum[' . sanitize_key( $key ) . ']', [
+				'render_callback' 		=> $render_callback,
+				'container_inclusive' 	=> true,
+				'fallback_refresh' 		=> true,
+			] );
+		}
+
+	}//end settings()
+
+
+	/**
+	 * Sanitize Text Translation String
+	 * Return a blank space if a space was provided
+	 * Strip all HTML tags including script and style
+	 * Convert all applicable characters to HTML entities
+	 *
+	 * @param string $string HTML String.
+	 *
+	 * @return string Cleaned HTML
+	 */
+	final public function sanitize( $string ) {
+		if ( ctype_space( $string ) === true ) {
+			return ' ';
+		} else {
+			return htmlentities( wp_strip_all_tags( $string, true ) );
+		}
+
+	}//end sanitize()
+
+
+}//end class

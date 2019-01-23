@@ -2,7 +2,12 @@
 /**
  * Display Icon Markup
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum-Icon
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/secretum-icon.php
  */
 
 namespace Secretum;
@@ -20,7 +25,7 @@ namespace Secretum;
  * @return string HTML
  */
 function secretum_icon( $args = [] ) {
-	// @about Parse args.
+	// Parse args.
 	$args = wp_parse_args( $args, [
 		'fi' 	=> '',
 		'fa' 	=> '',
@@ -30,31 +35,31 @@ function secretum_icon( $args = [] ) {
 		'echo' 	=> true,
 	] );
 
-	// @about Build Alt Tag
+	// Build Alt Tag.
 	$alt = ( ! empty( $args['alt'] ) ) ? ' alt="' . esc_html( $args['alt'] ) . '"' : '';
 
-	// @about Text Size
+	// Text Size.
 	$text_size = ( ! empty( $args['size'] ) ) ? esc_attr( $args['size'] ) : '';
 
-	// @about Default Output
+	// Default Output.
 	$html = '';
 
-	// @about Display Font Awesome Icon If Plugin Enabled
+	// Display Font Awesome Icon If Plugin Enabled.
 	if ( class_exists( 'Better_Font_Awesome_Plugin' ) && ! empty( $args['fa'] ) ) {
 		$html .= '<i class="fa ' . esc_attr( $args['fa'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
 	} elseif ( ! empty( $args['fi'] ) ) {
-		// @about Display Foundation Icon
+		// Display Foundation Icon.
 		$html .= '<i class="fi-' . esc_attr( $args['fi'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
 	} elseif ( ! empty( $args['svg'] ) ) {
-		// @about Display SVG Icon
+		// Display SVG Icon.
 		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_attr( $args['svg'] ) . '.svg" class="' . $text_size . '"' . $alt . '/>';
 	}
 
 	if ( true === $args['echo'] ) {
-		// @about Sanitize Echo
+		// Sanitize Echo.
 		echo wp_kses_post( $html );
 	} else {
-		// @about Return String
+		// Return String.
 		return $html;
 	}
 }
