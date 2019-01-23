@@ -20,7 +20,7 @@ if ( has_nav_menu( 'secretum-navbar-copyright' ) && ! secretum_mod( 'copyright_n
 			'container_id' 		=> 'navCopyright',
 			'menu_class' 		=> 'navbar-nav primary-copyright' . secretum_copyright_nav_alignment(),
 			'menu_id' 			=> 'navbarNavCopyright',
-			'divider'			=> secretum_copyright_nav_divider_classes(),
+			'divider'			=> secretum_copyright_nav_items(),
 			'walker' 			=> new \Secretum\Navwalker(),
 			'fallback_cb'       => false,
 			'echo'				=> true,

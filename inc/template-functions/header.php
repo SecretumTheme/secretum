@@ -12,7 +12,6 @@
 
 namespace Secretum;
 
-
 /**
  * Inject Content After Header
  */

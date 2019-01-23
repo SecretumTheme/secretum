@@ -2,7 +2,12 @@
 /**
  * HTML <head> and document body heading
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Header
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/header.php
  */
 
 namespace Secretum;
@@ -26,25 +31,25 @@ namespace Secretum;
 <div class="hfeed site" id="page">
 
 <?php
-// @about Top Navbar Above Header
+// Top Navbar Above Header.
 get_template_part( 'template-parts/header/header-top' );
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_before_header' );
 
-// @about Navbar Menu Above Header
+// Navbar Menu Above Header.
 get_template_part( 'template-parts/primary-nav/navbar-above' );
 
-// @about Display Header Area
+// Display Header Area.
 get_template_part( 'template-parts/header/display' );
 
-// @about Secretum Custom Headers & Footers Plugin
+// Secretum Custom Headers & Footers Plugin.
 if ( secretum_mod( 'custom_headers' ) ) {
 	do_action( 'secretum_hf', 'headers' );
 }
 
-// @about Navbar Menu Below Header
+// Navbar Menu Below Header.
 get_template_part( 'template-parts/primary-nav/navbar-below' );
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_after_header' );

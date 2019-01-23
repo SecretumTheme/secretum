@@ -3,7 +3,7 @@
  * Global Template Styling Functions
  *
  * @package    Secretum
- * @subpackage Theme\functions.php
+ * @subpackage Template-Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -11,6 +11,37 @@
  */
 
 namespace Secretum;
+
+
+/**
+ * Translation Text Display
+ *
+ * @see class/customizer/class-trans.php
+ * @see class/customizer/class-transcustomizer.php
+ * @see class/customizer/class-transtrait.php
+ *
+ * @example (echo) secretum_text( 'read_more_text', true );
+ * @example (return) secretum_text( 'read_more_text' );
+ *
+ * @param string $key Array Key To Get Value Of.
+ * @param bool   $echo True to return.
+ *
+ * @return string Text String
+ */
+function secretum_text( $key = '', $echo = false ) {
+	$translate = \Secretum\Trans::instance();
+
+	// Required.
+	if ( false === ( empty( $key ) ) ) {
+		if ( false === $echo ) {
+			// Return Text.
+			return $translate->get( $key, false );
+		} else {
+			// Echo Text.
+			$translate->get( $key, true );
+		}
+	}
+}
 
 
 /**

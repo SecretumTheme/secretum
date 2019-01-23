@@ -55,7 +55,6 @@ function secretum_primary_nav_wrapper() {
  * Container Classes
  */
 function secretum_primary_nav_container() {
-	//$border = secretum_mod( 'primary_nav_container_border_type', 'attr', true ) . secretum_mod( 'primary_nav_container_border_color', 'attr', true );
 	$container 	= \Secretum\Container::classes( 'primary_nav' );
 	$borders 	= \Secretum\Borders::classes( 'primary_nav_container' );
 	$textuals 	= \Secretum\Textuals::classes( 'primary_nav' );
@@ -80,7 +79,9 @@ function secretum_primary_nav_color_scheme() {
  * @return string Classes.
  */
 function secretum_primary_nav_alignment() {
-	return apply_filters( 'secretum_primary_nav_alignment', secretum_mod( 'primary_nav_alignment', 'attr', true ), 10, 1 );
+	$alignment = secretum_mod( 'primary_nav_alignment', 'attr', true );
+
+	return $alignment;
 
 }//end secretum_primary_nav_alignment()
 
@@ -90,15 +91,12 @@ function secretum_primary_nav_alignment() {
  *
  * @return string Classes.
  */
-function secretum_primary_nav_divider_classes() {
-	$background = secretum_mod( 'primary_nav_items_background_color', 'attr', true ) . secretum_mod( 'primary_nav_items_background_hover_color', 'attr', true );
-	$border = secretum_mod( 'primary_nav_items_border_type', 'attr', true ) . secretum_mod( 'primary_nav_items_border_color', 'attr', true );
-	$margin = secretum_mod( 'primary_nav_items_margin_y', 'attr', true ) . secretum_mod( 'primary_nav_items_margin_x', 'attr', true );
-	$padding = secretum_mod( 'primary_nav_items_padding_y', 'attr', true ) . secretum_mod( 'primary_nav_items_padding_x', 'attr', true );
+function secretum_primary_nav_items() {
+	$nav_items = \Secretum\NavItems::classes( 'primary_nav' );
 
-	return apply_filters( 'secretum_primary_nav_divider_classes', $background . $border . $margin . $padding, 10, 1 );
+	return $nav_items;
 
-}//end secretum_primary_nav_divider_classes()
+}//end secretum_primary_nav_items()
 
 
 /**
@@ -106,7 +104,7 @@ function secretum_primary_nav_divider_classes() {
  *
  * @return string Classes.
  */
-function secretum_primary_nav_dropdown_classes() {
+function secretum_primary_nav_dropdown() {
 	$background = secretum_mod( 'primary_nav_dropdown_background_color', 'attr', true );
 	$border = secretum_mod( 'primary_nav_dropdown_border_type', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_border_color', 'attr', true );
 	$margin = secretum_mod( 'primary_nav_dropdown_margin_y', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_margin_x', 'attr', true );
@@ -114,7 +112,7 @@ function secretum_primary_nav_dropdown_classes() {
 
 	return apply_filters( 'secretum_primary_nav_dropdown_classes', $background . $border . $margin . $padding, 10, 1 );
 
-}//end secretum_primary_nav_dropdown_classes()
+}//end secretum_primary_nav_dropdown()
 
 
 /**
@@ -122,27 +120,23 @@ function secretum_primary_nav_dropdown_classes() {
  *
  * @return string Classes.
  */
-function secretum_primary_nav_dropdown_textual_classes() {
-	$align = secretum_mod( 'primary_nav_dropdown_text_alignment', 'attr', true );
-	$font = secretum_mod( 'primary_nav_dropdown_textual_font_family', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_textual_font_size', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_textual_font_style', 'attr', true );
-	$text = secretum_mod( 'primary_nav_dropdown_textual_text_transform', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_textual_text_color', 'attr', true );
-	$links = secretum_mod( 'primary_nav_dropdown_textual_link_color', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_textual_link_hover_color', 'attr', true );
+function secretum_primary_nav_dropdown_textual() {
+	$textuals = \Secretum\Textuals::classes( 'primary_nav_dropdown' );
 
-	return apply_filters( 'secretum_primary_nav_dropdown_textual_classes', $align . $font . $text . $links, 10, 1 );
+	return $textuals;
 
-}//end secretum_primary_nav_dropdown_textual_classes()
+}//end secretum_primary_nav_dropdown_textual()
 
 
 /**
  * Toggler Icon Wrapper
  */
 function secretum_primary_nav_toggler_wrapper() {
+	$wrapper 	= \Secretum\Wrapper::classes( 'primary_nav_toggler' );
 	$borders 	= \Secretum\Borders::classes( 'primary_nav_toggler' );
-	$background = secretum_mod( 'primary_nav_toggler_background_color', 'attr', true );
-	$margin 	= secretum_mod( 'primary_nav_toggler_margin_y', 'attr', true ) . secretum_mod( 'primary_nav_toggler_margin_x', 'attr', true );
 	$alignment 	= secretum_mod( 'primary_nav_toggler_alignment', 'attr', true );
 
-	echo esc_html( apply_filters( 'secretum_primary_nav_toggler_wrapper', $background . $borders . $margin . $alignment, 10, 1 ) );
+	echo esc_html( apply_filters( 'secretum_primary_nav_toggler_wrapper', $wrapper . $borders . $alignment, 10, 1 ) );
 
 }//end secretum_primary_nav_toggler_wrapper()
 
@@ -152,9 +146,9 @@ function secretum_primary_nav_toggler_wrapper() {
  */
 function secretum_primary_nav_toggler_icon() {
 	$background = secretum_mod( 'primary_nav_toggler_background_color', 'attr', true );
-	$size = secretum_mod( 'primary_nav_toggler_font_size', 'attr', true );
+	$size 		= secretum_mod( 'primary_nav_toggler_font_size', 'attr', true );
 
-	echo esc_html( apply_filters( 'secretum_primary_nav_toggler_icon', $background . $size, 10, 1 ) );
+	echo esc_html( $background . $size );
 
 }//end secretum_primary_nav_toggler_icon()
 

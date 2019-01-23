@@ -3,7 +3,7 @@
  * Hook Scripts and Styles
  *
  * @package    Secretum
- * @subpackage Secretum\enqueue.php
+ * @subpackage Enqueue
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,10 +14,13 @@ namespace Secretum;
 
 
 // Enqueue Customizer Control Scripts.
-//add_action( 'customize_controls_enqueue_scripts', function() {
-//	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'customize-controls' ] );
-//	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );
-//} );
+/**
+ * Temp Removed
+add_action( 'customize_controls_enqueue_scripts', function() {
+	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'customize-controls' ] );
+	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );
+} );
+*/
 
 
 // WordPress Enqueue Action.
@@ -26,9 +29,12 @@ add_action( 'wp_enqueue_scripts', function() {
 	$theme = wp_get_theme();
 
 	// Customizer Preview Styles.
-	//if ( is_customize_preview() === true ) {
-	//	wp_enqueue_style( 'secretum-customizer-css', SECRETUM_THEME_URL . '/css/customizer/customizer.css' );
-	//}
+	/**
+	* Temp Removed
+	if ( is_customize_preview() === true ) {
+		wp_enqueue_style( 'secretum-customizer-css', SECRETUM_THEME_URL . '/css/customizer/customizer.css' );
+	}
+	*/
 
 	// Selected Style.
 	if ( secretum_mod( 'theme_color_palette' ) === true ) {

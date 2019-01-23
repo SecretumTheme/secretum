@@ -2,7 +2,12 @@
 /**
  * Template for displaying 404 pages (not found)asd
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage 404
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/404.php
  */
 
 namespace Secretum;

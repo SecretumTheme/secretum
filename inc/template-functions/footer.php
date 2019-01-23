@@ -23,7 +23,6 @@ function secretum_footer_wrapper() {
  * Footer Container Classes
  */
 function secretum_footer_container() {
-	//$border = secretum_mod( 'footer_container_border_type', 'attr', true ) . secretum_mod( 'footer_container_border_color', 'attr', true );
 	$alignment = secretum_mod( 'footer_text_alignment', 'attr', true );
 	$container = \Secretum\Container::classes( 'footer' );
 	$textuals = \Secretum\Textuals::classes( 'footer' );

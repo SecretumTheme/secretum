@@ -2,7 +2,12 @@
 /**
  * Secretum Theme: WooCommerce Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/woocommerce.php
  */
 
 namespace Secretum;
@@ -17,7 +22,7 @@ remove_action( 'wp_head', [ $GLOBALS['woocommerce'], 'generator' ] );
  * WooCommerce
  */
 add_action( 'after_setup_theme', function() {
-	// @about Theme Support
+	// Theme Support.
 	add_theme_support( 'woocommerce',
 		[
 			'thumbnail_image_width' => 250,
@@ -33,7 +38,7 @@ add_action( 'after_setup_theme', function() {
 		]
 	);
 
-	// @about Product Images
+	// Product Images.
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -118,7 +123,7 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
 		'secretum-navbar-primary-right',
 	];
 
-	// @about If Allowed To Display
+	// If Allowed To Display.
 	if ( ( isset( $ajax ) && $ajax ) || ( property_exists( $args, 'theme_location' ) && in_array( $args->theme_location, $theme_locations, true ) ) ) {
 		$active = ( is_cart() ) ? ' current-menu-item' : '';
 		$icon .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="woocommerce-cart-icon" class="menu-item' . $active . '">';
@@ -136,14 +141,14 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
  * WooCommerce Filter Hook - Add Bootstrap Classes To Checkout Form
  */
 add_filter( 'woocommerce_form_field_args', function( $args, $key, $value ) {
-	// @about Remove Woo Classes
+	// Remove Woo Classes.
 	foreach ( $args['class'] as $key => $class ) {
 		if ( 'form-row-wide' === $class || 'form-row-first' === $class || 'form-row-last' === $class ) {
 			unset( $args['class'][ $key ] );
 		}
 	}
 
-	// @about Add Bootstrap 4 Classes
+	// Add Bootstrap 4 Classes.
 	$args['class'][]	 = 'form-group';
 	$args['label_class'] = [ 'col-form-label-lg mt-1' ];
 	$args['input_class'] = [ 'form-control', 'form-control-lg' ];

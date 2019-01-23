@@ -2,31 +2,36 @@
 /**
  * The frontpage template file
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Front-Page
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/front-page.php
  */
 
 namespace Secretum;
 
 get_header();
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_frontpage_before' );
 
-// @about Frontpage Heading
+// Frontpage Heading.
 get_template_part( 'template-parts/frontpage/heading' );
 
-// @about Frontpage Body
+// Frontpage Body.
 get_template_part( 'template-parts/frontpage/body' );
 
-// @about Secretum Custom Frontpage Plugin
+// Secretum Custom Frontpage Plugin.
 if ( secretum_mod( 'custom_frontpage' ) ) {
 	do_action( 'secretum_frontpage' );
 }
 
-// @about Frontpage Map
+// Frontpage Map.
 get_template_part( 'template-parts/frontpage/map' );
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_frontpage_after' );
 
 get_footer();

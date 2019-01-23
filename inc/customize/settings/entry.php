@@ -2,18 +2,24 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Customize\Settings\Entry
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/entry.php
  */
 
 namespace Secretum;
 
-// @about Panel
+// Panel.
 $customizer->panel(
 	'entry',
 	__( 'Entry', 'secretum' )
 );
 
-// @about Section
+
+// Section.
 $customizer->section(
 	'entry_display',
 	'entry',
@@ -21,7 +27,8 @@ $customizer->section(
 	''
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_published_status',
@@ -30,7 +37,8 @@ $customizer->checkbox(
 	$default['entry_meta_published_status']
 );
 
-// @about Radio
+
+// Radio.
 $customizer->radio(
 	'entry_display',
 	'entry_meta_link',
@@ -45,7 +53,8 @@ $customizer->radio(
 	)
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_updated_status',
@@ -54,7 +63,8 @@ $customizer->checkbox(
 	$default['entry_meta_updated_status']
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_author_status',
@@ -63,7 +73,8 @@ $customizer->checkbox(
 	$default['entry_meta_author_status']
 );
 
-// @about Radio Select
+
+// Radio Select.
 $customizer->radio(
 	'entry_display',
 	'entry_meta_author_link', __( 'Author Link', 'secretum' ),
@@ -75,7 +86,8 @@ $customizer->radio(
 	)
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_catlinks_status',
@@ -84,7 +96,8 @@ $customizer->checkbox(
 	$default['entry_meta_catlinks_status']
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_tagslinks_status',
@@ -93,7 +106,8 @@ $customizer->checkbox(
 	$default['entry_meta_tagslinks_status']
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_commentlink_status',
@@ -102,7 +116,8 @@ $customizer->checkbox(
 	$default['entry_meta_commentlink_status']
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_post_navigation_links',
@@ -113,91 +128,12 @@ $customizer->checkbox(
 
 
 // Wrapper.
-\Secretum\Wrapper::instance( $customizer, $default )->settings( [
+$wrapper->settings( [
 	'section' => 'entry',
 ] );
 
 
-// Borders.
-\Secretum\Borders::instance( $customizer, $defaults )->settings( [
+// Wrapper Borders.
+$borders->settings( [
 	'section' => 'entry_wrapper',
 ] );
-/**
-// @about Wrapper
-$customizer->section(
-	'entry_wrapper',
-	'entry',
-	__( 'Wrapper', 'secretum' ),
-	__( 'Customize the outter wrapper around entry top area.', 'secretum' )
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_background_color',
-	__( 'Background Color', 'secretum' ),
-	'',
-	$default['entry_wrapper_background_color'],
-	secretum_customizer_background_colors()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_padding_x',
-	__( 'Padding - Left & Right', 'secretum' ),
-	'',
-	$default['entry_wrapper_padding_x'],
-	secretum_customizer_padding_left_right()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_padding_y',
-	__( 'Padding - Top & Bottom', 'secretum' ),
-	'',
-	$default['entry_wrapper_padding_y'],
-	secretum_customizer_padding_top_bottom()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_margin_bottom',
-	__( 'Margin - Bottom', 'secretum' ),
-	__( 'Increases spacing after section.', 'secretum' ),
-	$default['entry_wrapper_margin_bottom'],
-	secretum_customizer_margin_bottom()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_margin_top',
-	__( 'Margin - Top', 'secretum' ),
-	__( 'Increases spacing before section.', 'secretum' ),
-	$default['entry_wrapper_margin_top'],
-	secretum_customizer_margin_top()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_border_type',
-	__( 'Border Type', 'secretum' ),
-	'',
-	$default['entry_wrapper_border_type'],
-	secretum_customizer_border_types()
-);
-
-// @about Select
-$customizer->select(
-	'entry_wrapper',
-	'entry_wrapper_border_color',
-	__( 'Border Color', 'secretum' ),
-	'',
-	$default['entry_wrapper_border_color'],
-	secretum_customizer_border_colors()
-);
-*/

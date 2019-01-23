@@ -2,15 +2,20 @@
 /**
  * The template for displaying comments
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Comments
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/comments.php
  */
 
 namespace Secretum;
 
-// @required Ignore If Password Required
+// Ignore If Password Required.
 if ( post_password_required() ) { return; }
 
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_before_comments' );
 ?>
 <div class="comments-area my-5 py-5 border-top" id="comments">
@@ -48,5 +53,5 @@ do_action( 'secretum_before_comments' );
 	<?php comment_form(); ?>
 </div><!-- .comments-area -->
 <?php
-// @about Hookable Action
+// Hookable Action.
 do_action( 'secretum_after_comments' );

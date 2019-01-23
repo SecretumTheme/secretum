@@ -3,7 +3,7 @@
  * WordPress Customizer Settings
  *
  * @package    Secretum
- * @subpackage Secretum\stylesheet-settings.php
+ * @subpackage Customize\Styleshee-Settings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

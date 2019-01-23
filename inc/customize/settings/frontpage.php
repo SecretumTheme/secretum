@@ -2,18 +2,24 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Customize\Settings\Frontpage
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/frontpage.php
  */
 
 namespace Secretum;
 
-// @about Panel
+// Panel.
 $customizer->panel(
 	'frontpage',
 	__( 'Frontpage', 'secretum' )
 );
 
-// @about Section
+
+// Section.
 $customizer->section(
 	'frontpage_display',
 	'frontpage',
@@ -21,7 +27,7 @@ $customizer->section(
 	''
 );
 /**
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'frontpage_display',
 	'custom_frontpages',
@@ -30,7 +36,7 @@ $customizer->checkbox(
 	$default['custom_frontpages']
 );
 */
-// @about Checkbox
+// Checkbox.
 $customizer->checkbox(
 	'frontpage_display',
 	'frontpage_header_status',
@@ -39,7 +45,8 @@ $customizer->checkbox(
 	$default['frontpage_header_status']
 );
 
-// @about Checkbox
+
+// Checkbox.
 $customizer->checkbox(
 	'frontpage_display',
 	'frontpage_map_status',
@@ -48,7 +55,8 @@ $customizer->checkbox(
 	$default['frontpage_map_status']
 );
 
-// @about Text Input
+
+// Text Input.
 $customizer->input_text(
 	'frontpage_display',
 	'frontpage_map_address',
@@ -57,7 +65,8 @@ $customizer->input_text(
 	$default['frontpage_map_address']
 );
 
-// @about Wrapper
+
+// Content.
 $customizer->section(
 	'frontpage_content',
 	'frontpage',
@@ -65,7 +74,8 @@ $customizer->section(
 	__( 'Frontpage content management.', 'secretum' )
 );
 
-// @about Background Image
+
+// Background Image.
 $customizer->background_image(
 	'frontpage_content',
 	'frontpage_heading_bg',
@@ -75,7 +85,8 @@ $customizer->background_image(
 	__( 'Image will expand from center. 1900px or wider will limit the stretch.', 'secretum' )
 );
 
-// @about Textarea
+
+// Textarea.
 $customizer->textarea(
 	'frontpage_content',
 	'frontpage_heading_html',
@@ -99,80 +110,8 @@ $customizer->textarea(
 	$default['frontpage_heading_html']
 );
 
-// @about Wrapper
-$customizer->section(
-	'frontpage_wrapper',
-	'frontpage',
-	__( 'Wrapper', 'secretum' ),
-	__( 'Customize the outter wrapper around frontpage heading area.', 'secretum' )
-);
 
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_background_color',
-	__( 'Background Color', 'secretum' ),
-	'',
-	$default['frontpage_wrapper_background_color'],
-	secretum_customizer_background_colors()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_padding_x',
-	__( 'Padding - Left & Right', 'secretum' ),
-	'',
-	$default['frontpage_wrapper_padding_x'],
-	secretum_customizer_padding_left_right()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_padding_y',
-	__( 'Padding - Top & Bottom', 'secretum' ),
-	'',
-	$default['frontpage_wrapper_padding_y'],
-	secretum_customizer_padding_top_bottom()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_margin_bottom',
-	__( 'Margin - Bottom', 'secretum' ),
-	__( 'Increases spacing after section.', 'secretum' ),
-	$default['frontpage_wrapper_margin_bottom'],
-	secretum_customizer_margin_bottom()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_margin_top',
-	__( 'Margin - Top', 'secretum' ),
-	__( 'Increases spacing before section.', 'secretum' ),
-	$default['frontpage_wrapper_margin_top'],
-	secretum_customizer_margin_top()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_border_type',
-	__( 'Border Type', 'secretum' ),
-	'',
-	$default['frontpage_wrapper_border_type'],
-	secretum_customizer_border_types()
-);
-
-// @about Select
-$customizer->select(
-	'frontpage_wrapper',
-	'frontpage_wrapper_border_color',
-	__( 'Border Color', 'secretum' ),
-	'',
-	$default['frontpage_wrapper_border_color'],
-	secretum_customizer_border_colors()
-);
+// Wrapper.
+$wrapper->settings( [
+	'section' => 'frontpage',
+] );

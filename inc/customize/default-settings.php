@@ -3,7 +3,7 @@
  * WordPress Customizer Settings
  *
  * @package    Secretum
- * @subpackage Secretum\default-settings.php
+ * @subpackage Customize\Default-Settings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -154,6 +154,7 @@ function secretum_customizer_header_top_settings() {
 		'header_top_textual_link_color' 					=> '',
 		'header_top_textual_link_hover_color' 				=> '',
 		// Items.
+		'header_top_items_alignment'						=> '',
 		'header_top_items_background_color' 				=> '',
 		'header_top_items_background_hover_color' 			=> '',
 		'header_top_items_margin_x' 						=> '',
@@ -239,7 +240,7 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_textual_link_color' 					=> 'color-whiteish-link',
 		'primary_nav_textual_link_hover_color' 				=> 'color-white-hover',
 		// Nav Items.
-		'primary_nav_alignment' 							=> '',
+		'primary_nav_items_alignment' 						=> '',
 		'primary_nav_items_background_color' 				=> '',
 		'primary_nav_items_background_hover_color' 			=> '',
 		'primary_nav_items_border_type' 					=> 'border-left',
@@ -536,9 +537,8 @@ function secretum_customizer_copyright_nav_settings() {
 		'copyright_nav_textual_text_color' 					=> '',
 		'copyright_nav_textual_link_color' 					=> '',
 		'copyright_nav_textual_link_hover_color' 			=> '',
-		// Alignment.
-		'copyright_nav_alignment' 							=> '',
 		// Nav Items.
+		'copyright_nav_items_alignment' 					=> '',
 		'copyright_nav_items_background_color' 				=> '',
 		'copyright_nav_items_background_hover_color' 		=> '',
 		'copyright_nav_items_margin_y' 						=> '',

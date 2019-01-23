@@ -16,7 +16,7 @@ function secretum_body_wrapper() {
 
 	echo esc_html( $wrapper . $borders );
 
-}// end secretum_body_wrapper()
+}//end secretum_body_wrapper()
 
 
 /**
@@ -28,4 +28,4 @@ function secretum_body_container() {
 
 	echo esc_html( $container . $borders );
 
-}// end secretum_body_container()
+}//end secretum_body_container()

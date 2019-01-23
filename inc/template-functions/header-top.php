@@ -28,7 +28,9 @@ function secretum_header_top_wrapper() {
  * Text Alignment Class
  */
 function secretum_header_top_text_alignment() {
-	echo esc_html( apply_filters( 'secretum_header_top_text_alignment', secretum_mod( 'header_top_text_alignment', 'attr', true ) ) );
+	$alignment = secretum_mod( 'header_top_text_alignment', 'attr', true );
+
+	echo esc_html( $alignment );
 
 }//end secretum_header_top_text_alignment()
 
@@ -51,12 +53,9 @@ function secretum_header_top_container() {
  *
  * @return string Classes.
  */
-function secretum_header_top_divider_classes() {
-	$background = secretum_mod( 'header_top_items_background_color', 'attr', true ) . secretum_mod( 'header_top_items_background_hover_color', 'attr', true );
-	$border = secretum_mod( 'header_top_items_border_type', 'attr', true ) . secretum_mod( 'header_top_items_border_color', 'attr', true );
-	$margin = secretum_mod( 'header_top_items_margin_y', 'attr', true ) . secretum_mod( 'header_top_items_margin_x', 'attr', true );
-	$padding = secretum_mod( 'header_top_items_padding_y', 'attr', true ) . secretum_mod( 'header_top_items_padding_x', 'attr', true );
+function secretum_header_top_items() {
+	$nav_items = \Secretum\NavItems::classes( 'header_top' );
 
-	return apply_filters( 'secretum_header_top_divider_classes', $background . $border . $margin . $padding, 10, 1 );
+	return $nav_items;
 
-}//end secretum_header_top_divider_classes()
+}//end secretum_header_top_items()

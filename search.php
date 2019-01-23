@@ -2,7 +2,12 @@
 /**
  * The template for displaying search results pages
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Search
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/search.php
  */
 
 namespace Secretum;
@@ -18,7 +23,7 @@ get_header();
 			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
 				<main class="site-main" id="main">
 					<?php
-					// @about Hookable Action
+					// Hookable Action.
 					do_action( 'secretum_before_content' );
 
 					if ( have_posts() ) { ?>
@@ -37,7 +42,7 @@ get_header();
 						get_template_part( 'template-parts/post/content', 'none' );
 					}
 
-					// @about Hookable Action
+					// Hookable Action.
 					do_action( 'secretum_after_content' );
 					?>
 				</main><!-- .site-main -->

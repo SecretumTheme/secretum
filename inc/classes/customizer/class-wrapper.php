@@ -3,7 +3,7 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Secretum\Customizer\Wrapper
+ * @subpackage Classes\Customizer\Wrapper
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,26 +14,15 @@ namespace Secretum;
 
 /**
  * Customizer Wrapper Grouping
- *
- * @example \Secretum\Wrapper::instance( $customizer, $default )->settings( [
- *				'section' => 'header',
- *			] );
- * @example echo esc_html( \Secretum\Wrapper::classes( 'header' ) );
  */
 class Wrapper {
 	/**
-	 * Instance Object
-	 *
-	 * @var object
-	 */
-	protected static $instance = null;
-
-	/**
-	 * Class Object
+	 * Secretum Customizer Object
 	 *
 	 * @var array
 	 */
 	private $_customizer;
+
 
 	/**
 	 * Customizer Default Settings
@@ -44,16 +33,18 @@ class Wrapper {
 
 
 	/**
-	 * Set Class Vars
+	 * Start Class
 	 *
-	 * @param object $customizer Secretum Customize Instance.
-	 * @param array  $defaults Customizer Default Settings Array.
+	 * @param object $customizer Secretum Customizer Object.
+	 * @param array  $defaults   Default Settings Array.
 	 */
-	final public function init( $customizer, $defaults ) {
-		$this->_default 	= $defaults;
-		$this->_customizer 	= $customizer;
+	public function __construct( $customizer, $defaults ) {
+		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
+			$this->_customizer 	= $customizer;
+			$this->_default 	= $defaults;
+		}
 
-	}//end init()
+	}//end __construct()
 
 
 	/**
@@ -61,7 +52,7 @@ class Wrapper {
 	 *
 	 * @param array $args [section (required), panel, title] Settings.
 	 */
-	final public function settings( $args = [] ) {
+	final public function settings( array $args ) {
 		// Build Args.
 		$args = wp_parse_args( $args, [
 			'section' 	=> '',
@@ -88,7 +79,7 @@ class Wrapper {
 			$args['section'] . '_wrapper_background_color',
 			__( 'Background Color', 'secretum' ),
 			'',
-			$this->_default[$args['section'] . '_wrapper_background_color'],
+			$this->_default[ $args['section'] . '_wrapper_background_color' ],
 			secretum_customizer_background_colors()
 		);
 
@@ -97,8 +88,8 @@ class Wrapper {
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_margin_top',
 			__( 'Margin - Top', 'secretum' ),
-			__( 'Spacing outside/before section.', 'secretum' ),
-			$this->_default[$args['section'] . '_wrapper_margin_top'],
+			__( 'Spacing outside/above the wrapper.', 'secretum' ),
+			$this->_default[ $args['section'] . '_wrapper_margin_top' ],
 			secretum_customizer_margin_top()
 		);
 
@@ -107,8 +98,8 @@ class Wrapper {
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_margin_bottom',
 			__( 'Margin - Bottom', 'secretum' ),
-			__( 'Spacing outside/after section.', 'secretum' ),
-			$this->_default[$args['section'] . '_wrapper_margin_bottom'],
+			__( 'Spacing outside/below the wrapper.', 'secretum' ),
+			$this->_default[ $args['section'] . '_wrapper_margin_bottom' ],
 			secretum_customizer_margin_bottom()
 		);
 
@@ -118,7 +109,7 @@ class Wrapper {
 			$args['section'] . '_wrapper_padding_y',
 			__( 'Padding - Top & Bottom', 'secretum' ),
 			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[$args['section'] . '_wrapper_padding_y'],
+			$this->_default[ $args['section'] . '_wrapper_padding_y' ],
 			secretum_customizer_padding_top_bottom()
 		);
 
@@ -128,7 +119,7 @@ class Wrapper {
 			$args['section'] . '_wrapper_padding_x',
 			__( 'Padding - Left & Right', 'secretum' ),
 			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[$args['section'] . '_wrapper_padding_x'],
+			$this->_default[ $args['section'] . '_wrapper_padding_x' ],
 			secretum_customizer_padding_left_right()
 		);
 
@@ -186,25 +177,6 @@ class Wrapper {
 		return $panel;
 
 	}//end _panel()
-
-
-	/**
-	 * Create Instance
-	 *
-	 * @param object $customizer Secretum Customize Instance.
-	 * @param array  $defaults Customizer Default Settings Array.
-	 *
-	 * @return object $instance Instance Object.
-	 */
-	public static function instance( $customizer, $defaults ) {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-			self::$instance->init( $customizer, $defaults );
-		}
-
-		return self::$instance;
-
-	}//end instance()
 
 
 }//end class

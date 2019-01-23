@@ -2,7 +2,12 @@
 /**
  * Secretum Settings Option
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Secretum_Mod
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/secretum-mod.php
  */
 
 namespace Secretum;
@@ -23,56 +28,56 @@ namespace Secretum;
  * @return bool/string Sanitized Class Name
  */
 function secretum_mod( $setting_name, $escape = '', $space = '' ) {
-	// @about Build Settings Array
+	// Build Settings Array.
 	$settings_array = wp_parse_args(
-		// @about Remove Blank Values From Setting Option
+		// Remove Blank Values From Setting Option.
 		array_filter( get_option( 'secretum', array() ), 'strlen' ),
-		// @about Remove Blank Values From Default Settings
+		// Remove Blank Values From Default Settings.
 		array_filter( secretum_customizer_default_settings(), 'strlen' )
 	);
 
-	// @about Get Theme Mod
+	// Get Theme Mod.
 	$theme_mod = isset( $settings_array[ $setting_name ] ) ? $settings_array[ $setting_name ] : '';
 
-	// @about Default Option Result
+	// Default Option Result.
 	$mod = false;
 
-	// @about If Mod & Escape Type Set
+	// If Mod & Escape Type Set.
 	if ( ! empty( $theme_mod ) && ! empty( $escape ) ) {
-		// @about Switch on Type
+		// Switch on Type.
 		switch ( $escape ) {
-			// @about Attribute
+			// Attribute.
 			case 'attr':
 				$mod = ( ! empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
 				break;
 
-			// @about Interger
+			// Interger.
 			case 'int':
 				$mod = ( ! empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
 				break;
 
-			// @about HTML
+			// HTML.
 			case 'html':
 				$mod = html_entity_decode( $theme_mod );
 				break;
 
-			// @about Script Output
+			// Script Output.
 			case 'script':
 				$mod = json_decode( $theme_mod );
 				break;
 
-			// @about Raw Output
+			// Raw Output.
 			case 'raw':
 				$mod = $theme_mod;
 				break;
 
-			// @about URL
+			// URL.
 			case 'url':
 				$mod = esc_url( $theme_mod );
 				break;
 		}
 	} elseif ( ! empty( $theme_mod ) && empty( $escape ) ) {
-		// @about Value Set
+		// Value Set.
 		$mod = true;
 	}// End if().
 

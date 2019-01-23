@@ -44,7 +44,7 @@ function secretum_copyright_statement() {
  */
 function secretum_copyright_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'copyright' );
-	$borders 	= \Secretum\Borders::classes( 'copyright_wrapper' );
+	$borders = \Secretum\Borders::classes( 'copyright_wrapper' );
 
 	echo esc_html( $wrapper . $borders );
 
@@ -55,8 +55,7 @@ function secretum_copyright_wrapper() {
  * Copyright Container Classes
  */
 function secretum_copyright_container() {
-	//$border = secretum_mod( 'copyright_container_border_type', 'attr', true ) . secretum_mod( 'copyright_container_border_color', 'attr', true );
-	$container = \Secretum\Container::classes( 'copyright' );
+	$container 	= \Secretum\Container::classes( 'copyright' );
 	$borders 	= \Secretum\Borders::classes( 'copyright_container' );
 
 	echo esc_html( $container . $borders );

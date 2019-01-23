@@ -2,7 +2,12 @@
 /**
  * Secretum Theme: WooCommerce Bookings Settings
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce-Bookings
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/woocommerce-bookings.php
  */
 
 namespace Secretum;
@@ -31,22 +36,22 @@ add_filter( 'woocommerce_bookings_remove_inactive_cart_time', function( $minutes
 add_filter( 'booking_form_fields', function( $fields ) {
 	$new_order = array();
 
-	// @about Calendar
+	// Calendar.
 	if ( isset( $fields['wc_bookings_field_start_date'] ) ) {
 		$new_order[] = $fields['wc_bookings_field_start_date'];
 	}
 
-	// @about Duration
+	// Duration.
 	if ( isset( $fields['wc_bookings_field_duration'] ) ) {
 		$new_order[] = $fields['wc_bookings_field_duration'];
 	}
 
-	// @about Resource
+	// Resource.
 	if ( isset( $fields['wc_bookings_field_resource'] ) ) {
 		$new_order[] = $fields['wc_bookings_field_resource'];
 	}
 
-	// @about Persons
+	// Persons.
 	if ( isset( $fields['wc_bookings_field_persons'] ) ) {
 		$new_order[] = $fields['wc_bookings_field_persons'];
 	}
@@ -66,7 +71,7 @@ add_filter( 'booking_form_fields', function( $fields ) {
 add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available_blocks, $blocks ) {
 	$booked_blocks  = '';
 
-	// @about Build booking array from all blocks
+	// Build booking array from all blocks.
 	foreach ( $blocks as $key => $id ) {
 		if ( ! array_key_exists( $id, $available_blocks ) ) {
 			$booked_blocks[ $id ] = array(
@@ -79,10 +84,10 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 		}
 	}
 
-	// @about Maybe Build New Available Blocks
+	// Maybe Build New Available Blocks.
 	$new_available_blocks = ( ! empty( $booked_blocks ) ) ? $booked_blocks + $available_blocks : '';
 
-	// @about Put Available Blocks In Proper Order
+	// Put Available Blocks In Proper Order.
 	if ( ! empty( $new_available_blocks ) ) {
 		$keys = array_keys( $new_available_blocks );
 		natcasesort( $keys );
@@ -94,17 +99,17 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 		$available_blocks = $new_array;
 	}
 
-	// @about Reset Block HTML
+	// Reset Block HTML.
 	$block_html = '';
 
-	// @about Rebuild Block HTML
+	// Rebuild Block HTML.
 	foreach ( $available_blocks as $block => $quantity ) {
-		// @about Inject Sold-out Marker
+		// Inject Sold-out Marker.
 		if ( 0 === $quantity['available'] ) {
 			$block_html .= '<li class="block"><a href="#" class="sold-out">' . __( 'booked','secretum' ) . '</a></li>';
 		}
 
-		// @about Original Block HTML
+		// Original Block HTML.
 		if ( $quantity['available'] > 0 ) {
 			if ( $quantity['booked'] ) {
 				/* translators: 1: quantity available */
