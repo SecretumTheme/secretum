@@ -148,7 +148,7 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
 	// Stylesheet Settings For Base Color Palette.
-	require_once SECRETUM_INC . '/customize/stylesheet-settings.php';
+	require_once SECRETUM_INC . '/customize/settings/theme-stylesheets.php';
 
 	// Controller Setting Arrays.
 	require_once SECRETUM_INC . '/customize/choices/alignments.php';
@@ -209,3 +209,5 @@ if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) =
 		'secretum'
 	);
 }
+
+//include_once('/var/www/html/php-mem-size.php');

@@ -29,7 +29,7 @@ $customizer->section(
 
 
 // Radio.
-$customizer->radio(
+$customizer->select(
 	'analytics',
 	'analytics_location',
 	__( 'Analytics Code Location', 'secretum' ),

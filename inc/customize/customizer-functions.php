@@ -136,7 +136,7 @@ function secretum_customizer_sanitize_int( $int ) {
  *
  * @param string $string Script String.
  *
- * @return string Cleaned Script
+ * @return string Encoded Script
  */
 function secretum_customizer_sanitize_script( $string ) {
 	return wp_json_encode( $string );
@@ -144,19 +144,12 @@ function secretum_customizer_sanitize_script( $string ) {
 
 
 /**
- * Sanitize Text Translation String
- * Return a blank space if a space was provided
- * Strip all HTML tags including script and style
- * Convert all applicable characters to HTML entities
+ * Decode Script For Textarea
  *
- * @param string $string HTML String.
+ * @param string $string Script String.
  *
- * @return string Cleaned HTML
-function secretum_customizer_sanitize_translate( $string ) {
-	if ( ctype_space( $string ) === true ) {
-		return ' ';
-	} else {
-		return htmlentities( wp_strip_all_tags( $string, true ) );
-	}
-}//end secretum_customizer_sanitize_translate()
+ * @return string Decoded Script
  */
+function secretum_customizer_decode_script( $string ) {
+	return json_decode( $string );
+}//end secretum_customizer_decode_script()

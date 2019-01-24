@@ -16,11 +16,32 @@ namespace Secretum;
 // Enqueue Customizer Control Scripts.
 /**
  * Temp Removed
-add_action( 'customize_controls_enqueue_scripts', function() {
-	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'customize-controls' ] );
-	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );
+ * add_action( 'customize_controls_enqueue_scripts', function() {
+ * 	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'customize-controls' ] );
+ * 	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );
+ * } );
+ */
+
+
+/**
+ * Inject Analytics Code
+ */
+add_action('init', function() {
+	// Get Theme Mods.
+	$location = secretum_mod( 'analytics_location', 'attr' );
+	$analytics = secretum_mod( 'analytics_code' );
+
+	if ( true === isset( $location ) && "header" === $location && false === empty( $analytics ) ) {
+		add_action( 'wp_head', function() {
+			echo json_decode( secretum_mod( 'analytics_code', 'raw' ) );
+		} );
+
+	} elseif ( true === empty( $location ) && false === empty( $analytics ) ) {
+		add_action( 'wp_footer', function() {
+			echo json_decode( secretum_mod( 'analytics_code', 'raw' ) );
+		} );
+	}
 } );
-*/
 
 
 // WordPress Enqueue Action.
@@ -29,12 +50,9 @@ add_action( 'wp_enqueue_scripts', function() {
 	$theme = wp_get_theme();
 
 	// Customizer Preview Styles.
-	/**
-	* Temp Removed
 	if ( is_customize_preview() === true ) {
 		wp_enqueue_style( 'secretum-customizer-css', SECRETUM_THEME_URL . '/css/customizer/customizer.css' );
 	}
-	*/
 
 	// Selected Style.
 	if ( secretum_mod( 'theme_color_palette' ) === true ) {

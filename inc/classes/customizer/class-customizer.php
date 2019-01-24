@@ -307,7 +307,7 @@ class Customizer {
 	 */
 	final public function textarea_script( $section_name, $setting_name, $label, $description ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			// Temp removed 'sanitize_js_callback' 	=> 'secretum_customizer_escape_script',.
+			'sanitize_js_callback' 	=> 'Secretum\secretum_customizer_decode_script',
 			'sanitize_callback' 	=> 'Secretum\secretum_customizer_sanitize_script',
 			'transport' 			=> 'refresh',
 			'type' 					=> 'option',
