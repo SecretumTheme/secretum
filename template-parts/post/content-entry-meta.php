@@ -2,12 +2,17 @@
 /**
  * Template part for displaying content entra meta details
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Post
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/post/content-entry-meta.php
  */
 
 namespace Secretum;
 
-// @about If Posts
+// If Posts.
 if ( 'post' === get_post_type() ) {
 ?>
 <div class="entry-meta my-4">

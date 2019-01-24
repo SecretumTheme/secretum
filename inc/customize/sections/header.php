@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Header
+ * @subpackage Core\Customize\Sections\Header
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/header.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/header.php
  */
 
 namespace Secretum;
@@ -32,7 +32,7 @@ $customizer->checkbox(
 	'custom_headers',
 	__( 'Enable Custom Headers Feature', 'secretum' ),
 	__( 'Before enabling set all default header settings. A custom header must be published before it will display.', 'secretum' ),
-	$default['custom_headers']
+	$defaults['custom_headers']
 );
 */
 // Checkbox.
@@ -41,7 +41,7 @@ $customizer->checkbox(
 	'header_status',
 	__( 'Hide Header Area', 'secretum' ),
 	__( 'Select to disable the entire header area.', 'secretum' ),
-	$default['header_status']
+	$defaults['header_status']
 );
 
 // Wrapper.

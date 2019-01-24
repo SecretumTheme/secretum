@@ -2,9 +2,13 @@
 /**
  * Show options for ordering
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Loop
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     3.3.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/loop/orderby.php
  */
 
 namespace Secretum;

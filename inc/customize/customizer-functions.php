@@ -3,7 +3,7 @@
  * Customizer Fallback & Sanitize Functions
  *
  * @package    Secretum
- * @subpackage Customize\Customizer-Functions
+ * @subpackage Core\Customize\Customizer-Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

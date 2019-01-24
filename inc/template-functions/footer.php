@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Footer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/footer.php
  */
 
 namespace Secretum;

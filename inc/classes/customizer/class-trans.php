@@ -3,7 +3,7 @@
  * Display Text Translation Strings
  *
  * @package    Secretum
- * @subpackage Classes\Customizer\Trans
+ * @subpackage Core\Classes\Customizer\Trans
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

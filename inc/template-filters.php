@@ -3,7 +3,7 @@
  * WordPress Filters
  *
  * @package    Secretum
- * @subpackage Template-Filters
+ * @subpackage Core\Template-Filters
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -109,8 +109,8 @@ add_filter( 'body_class', function( $classes ) {
 		$classes[] = 'secretum-front-page';
 	}
 
-	$classes[] = secretum_globals_colors();
-	$classes[] = secretum_globals_fonts();
+	$classes[] = secretum_theme_colors();
+	$classes[] = secretum_theme_fonts();
 
 	return $classes;
 }, 20, 2 );

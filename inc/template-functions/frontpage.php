@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Frontpage
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/frontpage.php
  */
 
 namespace Secretum;
@@ -12,27 +17,27 @@ namespace Secretum;
  * Inject Frontpage Inline BG Style
  */
 function secretum_frontpage_bg_style() {
-	// @about Get Background Image ID
+	// Get Background Image ID.
 	$image_src_id = secretum_mod( 'frontpage_heading_bg', 'int' );
 
-	// @about If Background ID Set
+	// If Background ID Set.
 	if ( isset( $image_src_id ) && is_numeric( $image_src_id ) ) {
-		// @about Get Attachment Array
+		// Get Attachment Array.
 		$image_src_array = wp_get_attachment_image_src( $image_src_id, 'full', false );
 
-		// @about Set Img SRC Url
+		// Set Img SRC Url.
 		if ( isset( $image_src_array ) && isset( $image_src_array[0] ) ) {
 			$image_src = esc_url( $image_src_array[0] );
 		}
 	}
 
-	// @about Extra CSS
+	// Extra CSS.
 	$css = 'background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;width:100%;';
 
-	// @about Build Class String
+	// Build Class String.
 	$class_string = ( isset( $image_src ) ) ? ' style="background-image:url( ' . $image_src . ' );' . $css . '"' : '';
 
-	// @about Return Class String
+	// Return Class String.
 	echo esc_html( apply_filters( 'secretum_frontpage_bg_style', $class_string, 10, 1 ) );
 }
 
@@ -64,7 +69,6 @@ function secretum_display_google_map() {
  * Copyright Wrapper Classes
  */
 function secretum_frontpage_wrapper() {
-	// @about Classes
 	$background = secretum_mod( 'frontpage_wrapper_background_color', 'attr', true );
 	$border = secretum_mod( 'frontpage_wrapper_border_type', 'attr', true ) . secretum_mod( 'frontpage_wrapper_border_color', 'attr', true );
 	$margin = secretum_mod( 'frontpage_wrapper_margin_top', 'attr', true ) . secretum_mod( 'frontpage_wrapper_margin_bottom', 'attr', true );

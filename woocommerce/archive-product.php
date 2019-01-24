@@ -2,9 +2,13 @@
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive
  *
- * @package 	WooCommerce/Templates
- * @version     3.4.0
- * @subpackage 	Secretum
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
+ * @version 	3.4.0
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/archive-product.php
  */
 
 namespace Secretum;

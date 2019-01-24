@@ -3,7 +3,7 @@
  * The template for displaying archive pages
  *
  * @package    Secretum
- * @subpackage Archive
+ * @subpackage Theme\Archive
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

@@ -3,7 +3,7 @@
  * WordPress Customizer Settings
  *
  * @package    Secretum
- * @subpackage Customize\Default-Settings
+ * @subpackage Core\Customize\Default-Settings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -19,6 +19,7 @@ namespace Secretum;
  */
 function secretum_customizer_default_settings() {
 	return array_merge(
+		secretum_customizer_theme_settings(),
 		secretum_customizer_globals_settings(),
 		secretum_customizer_site_identity_settings(),
 		secretum_customizer_header_top_settings(),
@@ -38,16 +39,29 @@ function secretum_customizer_default_settings() {
 
 
 /**
+ * Default Theme Settings
+ *
+ * @return array Customizer Setting Names
+ */
+function secretum_customizer_theme_settings() {
+	return [
+		'theme_background_color'								=> '',
+		'theme_text_color' 										=> '',
+		'theme_link_color' 										=> '',
+		'theme_link_hover_color' 								=> '',
+		'theme_font_family' 									=> '',
+		'theme_font_size' 										=> '',
+	];
+}//end secretum_customizer_theme_settings()
+
+
+/**
  * Globals Customizer Settings
  *
  * @return array Customizer Setting Names
  */
 function secretum_customizer_globals_settings() {
 	return [
-		'globals_background_color'								=> '',
-		'globals_text_color' 									=> '',
-		'globals_link_color' 									=> '',
-		'globals_link_hover_color' 								=> '',
 		// Enqueue Scripts.
 		'enqueue_contact_pageids' 								=> '',
 		'enqueue_theme_colors' 									=> '',

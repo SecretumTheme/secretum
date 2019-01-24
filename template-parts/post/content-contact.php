@@ -2,7 +2,12 @@
 /**
  * Template part for displaying contact details
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Post
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/post/content-contact.php
  */
 
 namespace Secretum;

@@ -3,7 +3,7 @@
  * Secretum Theme: WooCommerce Bookings Settings
  *
  * @package    Secretum
- * @subpackage WooCommerce-Bookings
+ * @subpackage Core\WooCommerce-Bookings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

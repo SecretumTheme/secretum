@@ -3,7 +3,7 @@
  * Default sidebar containing the main widget area
  *
  * @package    Secretum
- * @subpackage Sidebar
+ * @subpackage Theme\Sidebar
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

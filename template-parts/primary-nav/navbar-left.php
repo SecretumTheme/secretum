@@ -3,7 +3,7 @@
  * Primary Navbar - Left
  *
  * @package    Secretum
- * @subpackage Secretum\Customizer
+ * @subpackage Theme\Template-Parts\Primary-Nav
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

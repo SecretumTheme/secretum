@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Featured-Image
+ * @subpackage Core\Customize\Sections\Featured-Image
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/featured-image.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/featured-image.php
  */
 
 namespace Secretum;
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'featured_image_status',
 	__( 'Disable Featured Images', 'secretum' ),
 	'',
-	$default['featured_image_status']
+	$defaults['featured_image_status']
 );
 
 
@@ -51,7 +51,7 @@ $customizer->select(
 	'featured_image_display_location',
 	__( 'Featured Image Display Location', 'secretum' ),
 	'',
-	$default['featured_image_display_location'],
+	$defaults['featured_image_display_location'],
 	[
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'before_content' 	=> __( 'Before Post Title', 'secretum' ),

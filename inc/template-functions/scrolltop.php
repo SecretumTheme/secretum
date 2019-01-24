@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Scrolltop
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/scrolltop.php
  */
 
 namespace Secretum;
@@ -11,7 +16,6 @@ namespace Secretum;
  * Container Classes
  */
 function secretum_scrolltop_container() {
-	// @about Classes
 	$background = secretum_mod( 'scrolltop_background_color', 'attr', true ) . secretum_mod( 'scrolltop_background_hover_color', 'attr', true );
 	$border = secretum_mod( 'scrolltop_border_type', 'attr', true ) . secretum_mod( 'scrolltop_border_radius', 'attr', true ) . secretum_mod( 'scrolltop_border_color', 'attr', true );
 	$margin = secretum_mod( 'scrolltop_margin_right', 'attr', true ) . secretum_mod( 'scrolltop_margin_bottom', 'attr', true );
@@ -25,7 +29,6 @@ function secretum_scrolltop_container() {
  * Text/Front Classes
  */
 function secretum_scrolltop_textuals() {
-	// @about Classes
 	$text_color = secretum_mod( 'scrolltop_text_color', 'attr', true );
 	$font_size = secretum_mod( 'scrolltop_icon_size', 'attr', true );
 

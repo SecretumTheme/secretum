@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Sidebar
+ * @subpackage Core\Customize\Sections\Sidebar
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/sidebar.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/sidebar.php
  */
 
 namespace Secretum;
@@ -34,7 +34,7 @@ $customizer->radio(
 	'sidebar_location',
 	__( 'Sidebar Display Location', 'secretum' ),
 	__( 'Set the global sidebar location. This setting can be overridden at the post/page/post_type level.', 'secretum' ),
-	$default['sidebar_location'],
+	$defaults['sidebar_location'],
 	[
 		'' 		=> __( 'Based on Theme', 'secretum' ),
 		'right' => __( 'Right Sidebar', 'secretum' ),

@@ -2,7 +2,12 @@
 /**
  * Template part for displaying posts
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Post
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/post/content.php
  */
 
 namespace Secretum;
@@ -27,7 +32,7 @@ namespace Secretum;
 
 	<div class="entry-content">
 		<?php
-		// @about Hookable Action
+		// Hookable Action.
 		do_action( 'secretum_before_entry_content' );
 
 		the_content();
@@ -39,23 +44,23 @@ namespace Secretum;
 			 )
 		);
 
-		// @about Hookable Action
+		// Hookable Action.
 		do_action( 'secretum_after_entry_content' );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer py-4">
 		<?php
-		// @about Category Links
+		// Category Links.
 		get_template_part( 'template-parts/post/content', 'cat-links' );
 
-		// @about Tag Links
+		// Tag Links.
 		get_template_part( 'template-parts/post/content', 'tags-links' );
 
-		// @about Comment Link
+		// Comment Link.
 		get_template_part( 'template-parts/post/content', 'comments-links' );
 
-		// @about Edit Link
+		// Edit Link.
 		secretum_edit_link( get_the_ID() );
 		?>
 	</footer><!-- .entry-footer -->

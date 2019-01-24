@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Sidebars
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/sidebars.php
  */
 
 namespace Secretum;
@@ -56,24 +61,24 @@ function secretum_sidebar_textuals() {
  * @return bool Defaults to false
  */
 function secretum_sidebar_location( $location_check ) {
-	// @about Global Sidebar Location
+	// Global Sidebar Location.
 	$global_location = secretum_mod( 'sidebar_location', 'attr' );
 
-	// @about Local Sidebar Location
+	// Local Sidebar Location.
 	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
 
-	// @about Build Sidebar Location
+	// Build Sidebar Location.
 	$sidebar_location = ! empty( $local_location[0] ) ? $local_location[0] : $global_location;
 
-	// @about Default No Sidebars
+	// Default No Sidebars.
 	$display = false;
 
-	// @about Left or both
+	// Left or both.
 	if ( isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'left' === $sidebar_location ) && 'right' === $location_check ) {
 		$display = true;
 	}
 
-	// @about Right or both
+	// Right or both.
 	if ( isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'right' === $sidebar_location ) && 'right' === $location_check ) {
 		$display = true;
 	}

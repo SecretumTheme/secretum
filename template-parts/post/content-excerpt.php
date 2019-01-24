@@ -2,7 +2,12 @@
 /**
  * Template part for displaying posts with excerpts
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Post
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/post/content-excerpt.php
  */
 
 namespace Secretum;
@@ -33,16 +38,16 @@ namespace Secretum;
 
 	<footer class="entry-footer">
 		<?php
-		// @about Category Links
+		// Category Links.
 		get_template_part( 'template-parts/post/content', 'cat-links' );
 
-		// @about Tag Links
+		// Tag Links.
 		get_template_part( 'template-parts/post/content', 'tags-links' );
 
-		// @about Comment Link
+		// Comment Link.
 		get_template_part( 'template-parts/post/content', 'comments-links' );
 
-		// @about Edit Link
+		// Edit Link.
 		secretum_edit_link( get_the_ID() );
 		?>
 	</footer><!-- .entry-footer -->

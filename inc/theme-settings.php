@@ -3,7 +3,7 @@
  * Global Theme Settings
  *
  * @package    Secretum
- * @subpackage Theme-Settings
+ * @subpackage Core\Theme-Settings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

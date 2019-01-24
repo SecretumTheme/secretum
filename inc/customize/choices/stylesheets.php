@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Customizer Settings
+ * WordPress Customizer add_control 'choices' Arrays
  *
  * @package    Secretum
- * @subpackage Customize\Theme-Stylesheets
+ * @subpackage Core\Customize\Choices\Stylesheets
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/theme-stylesheets.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/stylesheets.php
  */
 
 namespace Secretum;

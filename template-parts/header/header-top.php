@@ -2,22 +2,27 @@
 /**
  * Header Top Area
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Header
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/header/header-top.php
  */
 
 namespace Secretum;
 
-// @about If Header Top Status & Sidebar Active
+// If Header Top Status & Sidebar Active.
 if ( secretum_mod( 'header_top_status' ) && is_active_sidebar( 'sidebar-header-top' ) ) {
-	// @about Top Header Widget Area
+	// Top Header Widget Area.
 	dynamic_sidebar( 'secretum-sidebar-header-top' );
 } elseif ( secretum_mod( 'header_top_status' ) && ( has_nav_menu( 'secretum-navbar-top-left' ) || has_nav_menu( 'secretum-navbar-top-right' ) ) ) {
-	// @about If Header Top Status Active & Has Navs
+	// If Header Top Status Active & Has Navs.
 ?>
 <nav class="wrapper navbar navbar-expand-lg<?php secretum_header_top_wrapper(); ?>">
 <div class="container<?php secretum_header_top_container(); ?><?php secretum_header_top_text_alignment(); ?>">
 <?php
-	// @about Display Top Left Nav
+	// Display Top Left Nav.
 	wp_nav_menu( [
 		'depth' 			=> 0,
 		'theme_location' 	=> 'secretum-navbar-top-left',
@@ -31,7 +36,7 @@ if ( secretum_mod( 'header_top_status' ) && is_active_sidebar( 'sidebar-header-t
 		'echo'				=> true,
 	] );
 
-	// @about Display Top Right Nav
+	// Display Top Right Nav.
 	wp_nav_menu( [
 		'depth' 			=> 0,
 		'theme_location' 	=> 'secretum-navbar-top-right',

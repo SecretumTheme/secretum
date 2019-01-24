@@ -3,7 +3,7 @@
  * The template for displaying all single posts
  *
  * @package    Secretum
- * @subpackage Single
+ * @subpackage Theme\Single
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

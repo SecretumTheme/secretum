@@ -2,9 +2,13 @@
 /**
  * Order details
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Order
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	3.5.2
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details.php
  */
 
 namespace Secretum;

@@ -2,9 +2,13 @@
 /**
  * The Template for displaying all single products & bookings
  *
- * @package 	WooCommerce/Templates
- * @version     1.6.4
- * @subpackage 	Secretum
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
+ * @version 	1.6.4
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product.php
  */
 
 namespace Secretum;

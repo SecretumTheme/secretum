@@ -2,9 +2,13 @@
 /**
  * Booking product add to cart.
  *
- * @package 	WooCommerce-Bookings/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce-Bookings\Single-Product\Add-To-Cart
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	1.10.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/single-product/add-to-cart/booking.php
  */
 
 namespace Secretum;

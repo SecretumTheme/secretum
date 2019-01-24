@@ -3,7 +3,7 @@
  * Hook Scripts and Styles
  *
  * @package    Secretum
- * @subpackage Enqueue
+ * @subpackage Core\Enqueue
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

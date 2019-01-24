@@ -2,12 +2,17 @@
 /**
  * Display Copyright Area
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Copyright
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/copyright/display.php
  */
 
 namespace Secretum;
 
-// @about If Active
+// If Active.
 if ( ! secretum_mod( 'copyright_status' ) ) {
 ?>
 <div class="wrapper copyright<?php secretum_copyright_wrapper(); ?>" id="wrapper-copyright">
@@ -15,11 +20,11 @@ if ( ! secretum_mod( 'copyright_status' ) ) {
 		<div class="row"><div class="col-md">
 			<footer id="colophon"><div class="site-info<?php secretum_copyright_textuals(); ?><?php secretum_copyright_text_alignment(); ?>">
 				<?php
-				// @about Custom Copyright Statement
+				// Custom Copyright Statement.
 				if ( secretum_mod( 'copyright_text' ) ) {
 					secretum_mod( 'copyright_text', 'html', false );
 				} else {
-					// @about Default Copyright Statement
+					// Default Copyright Statement.
 					secretum_copyright_statement();
 				}
 				?>

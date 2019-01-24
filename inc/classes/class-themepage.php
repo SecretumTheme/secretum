@@ -3,7 +3,7 @@
  * Theme Admin Page Manager
  *
  * @package    Secretum
- * @subpackage Classes\ThemePage
+ * @subpackage Core\Classes\ThemePage
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

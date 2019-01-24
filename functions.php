@@ -3,7 +3,7 @@
  * Secretum Theme
  *
  * @package    Secretum
- * @subpackage Functions
+ * @subpackage Theme\Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -61,7 +61,7 @@ function secretum_register_classes( $class ) {
 	$relative_class = substr( $class, $len );
 
 	foreach ( $class_paths as $path ) {
-		// Replace Dir Separators & Replace Namespace with Base Dir.
+		// Replace Dir Separators and Replace Namespace with Base Dir.
 		$file = $path . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
 
 		// Include File.
@@ -84,21 +84,20 @@ require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-filters.php';
 require_once SECRETUM_INC . '/template-functions/author.php';
 require_once SECRETUM_INC . '/template-functions/body.php';
-require_once SECRETUM_INC . '/template-functions/copyright-nav.php';
 require_once SECRETUM_INC . '/template-functions/copyright.php';
 require_once SECRETUM_INC . '/template-functions/copyright-nav.php';
 require_once SECRETUM_INC . '/template-functions/entry.php';
 require_once SECRETUM_INC . '/template-functions/featured-image.php';
 require_once SECRETUM_INC . '/template-functions/footer.php';
 require_once SECRETUM_INC . '/template-functions/frontpage.php';
-require_once SECRETUM_INC . '/template-functions/globals.php';
-require_once SECRETUM_INC . '/template-functions/header-top.php';
 require_once SECRETUM_INC . '/template-functions/header.php';
+require_once SECRETUM_INC . '/template-functions/header-top.php';
 require_once SECRETUM_INC . '/template-functions/post-navigation.php';
 require_once SECRETUM_INC . '/template-functions/primary-nav.php';
 require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions/site-identity.php';
+require_once SECRETUM_INC . '/template-functions/theme.php';
 
 
 // WP Admin Only.
@@ -144,11 +143,8 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
 
-	// Sanitizers & Helper Functions.
+	// Sanitizers and Helper Functions.
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';
-
-	// Stylesheet Settings For Base Color Palette.
-	require_once SECRETUM_INC . '/customize/settings/theme-stylesheets.php';
 
 	// Controller Setting Arrays.
 	require_once SECRETUM_INC . '/customize/choices/alignments.php';
@@ -159,10 +155,9 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	require_once SECRETUM_INC . '/customize/choices/margins.php';
 	require_once SECRETUM_INC . '/customize/choices/paddings.php';
 	require_once SECRETUM_INC . '/customize/choices/sizes.php';
-	require_once SECRETUM_INC . '/customize/choices/theme-colors.php';
+	require_once SECRETUM_INC . '/customize/choices/stylesheets.php';
 
-	// Get Default Settings.
-	$default = secretum_customizer_default_settings();
+	// Default Theme Settings.
 	$defaults = secretum_customizer_default_settings();
 
 	// Start Secretum Customizer.
@@ -174,22 +169,21 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	$navitems 	= new \Secretum\NavItems( $customizer, $defaults );
 	$dropdown 	= new \Secretum\Dropdown( $customizer, $defaults );
 
-	// Include Settings.
-	require_once SECRETUM_INC . '/customize/settings/theme.php';
-	require_once SECRETUM_INC . '/customize/settings/globals.php';
-	require_once SECRETUM_INC . '/customize/settings/site-identity.php';
-	require_once SECRETUM_INC . '/customize/settings/header-top.php';
-	require_once SECRETUM_INC . '/customize/settings/header.php';
-	require_once SECRETUM_INC . '/customize/settings/primary-nav.php';
-	require_once SECRETUM_INC . '/customize/settings/body.php';
-	require_once SECRETUM_INC . '/customize/settings/featured-image.php';
-	require_once SECRETUM_INC . '/customize/settings/entry.php';
-	require_once SECRETUM_INC . '/customize/settings/sidebar.php';
-	require_once SECRETUM_INC . '/customize/settings/footer.php';
-	require_once SECRETUM_INC . '/customize/settings/copyright.php';
-	require_once SECRETUM_INC . '/customize/settings/copyright-nav.php';
-	require_once SECRETUM_INC . '/customize/settings/frontpage.php';
-	require_once SECRETUM_INC . '/customize/settings/extras.php';
+	// Include Panels, Sections, and Settings.
+	require_once SECRETUM_INC . '/customize/sections/theme.php';
+	require_once SECRETUM_INC . '/customize/sections/site-identity.php';
+	require_once SECRETUM_INC . '/customize/sections/header-top.php';
+	require_once SECRETUM_INC . '/customize/sections/header.php';
+	require_once SECRETUM_INC . '/customize/sections/primary-nav.php';
+	require_once SECRETUM_INC . '/customize/sections/body.php';
+	require_once SECRETUM_INC . '/customize/sections/featured-image.php';
+	require_once SECRETUM_INC . '/customize/sections/entry.php';
+	require_once SECRETUM_INC . '/customize/sections/sidebar.php';
+	require_once SECRETUM_INC . '/customize/sections/footer.php';
+	require_once SECRETUM_INC . '/customize/sections/copyright.php';
+	require_once SECRETUM_INC . '/customize/sections/copyright-nav.php';
+	require_once SECRETUM_INC . '/customize/sections/frontpage.php';
+	require_once SECRETUM_INC . '/customize/sections/extras.php';
 
 	// Text Translations.
 	$translate = new \Secretum\TransCustomizer( $wp_customize );
@@ -209,5 +203,3 @@ if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) =
 		'secretum'
 	);
 }
-
-//include_once('/var/www/html/php-mem-size.php');

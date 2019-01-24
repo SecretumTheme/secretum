@@ -3,7 +3,7 @@
  * Extend WordPress Menu Nav Walker
  *
  * @package    Secretum
- * @subpackage Classes\Navwalker
+ * @subpackage Core\Classes\Navwalker
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

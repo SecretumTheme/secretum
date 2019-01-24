@@ -3,7 +3,7 @@
  * Template for displaying 404 pages (not found)asd
  *
  * @package    Secretum
- * @subpackage 404
+ * @subpackage Theme\404
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

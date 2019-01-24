@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Primary-Nav
+ * @subpackage Core\Customize\Sections\Primary-Nav
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/primary-nav.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/primary-nav.php
  */
 
 namespace Secretum;
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'primary_nav_status',
 	__( 'Select To Hide Navigation Menu', 'secretum' ),
 	'',
-	$default['primary_nav_status']
+	$defaults['primary_nav_status']
 );
 
 
@@ -44,7 +44,7 @@ $customizer->checkbox(
 	'primary_nav_search_status',
 	__( 'Show Search Form Within Navbar', 'secretum' ),
 	'',
-	$default['primary_nav_search_status']
+	$defaults['primary_nav_search_status']
 );
 
 
@@ -122,7 +122,7 @@ $customizer->select(
 	'primary_nav_toggler_icon_alignment',
 	__( 'Alignment', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_icon_alignment'],
+	$defaults['primary_nav_toggler_icon_alignment'],
 	secretum_customizer_margin_alignments()
 );
 
@@ -140,7 +140,7 @@ $customizer->select(
 	'primary_nav_toggler_font_size',
 	__( 'Font Size', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_font_size'],
+	$defaults['primary_nav_toggler_font_size'],
 	secretum_customizer_font_sizes()
 );
 
@@ -151,7 +151,7 @@ $customizer->select(
 	'primary_nav_toggler_background_color',
 	__( 'Background Color', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_background_color'],
+	$defaults['primary_nav_toggler_background_color'],
 	secretum_customizer_background_colors()
 );
 
@@ -162,7 +162,7 @@ $customizer->select(
 	'primary_nav_toggler_margin_x',
 	__( 'Margin - Left & Right', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_margin_x'],
+	$defaults['primary_nav_toggler_margin_x'],
 	secretum_customizer_margin_left_right()
 );
 
@@ -173,7 +173,7 @@ $customizer->select(
 	'primary_nav_toggler_margin_y',
 	__( 'Margin - Top & Bottom', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_margin_y'],
+	$defaults['primary_nav_toggler_margin_y'],
 	secretum_customizer_margin_top_bottom()
 );
 
@@ -184,7 +184,7 @@ $customizer->select(
 	'primary_nav_toggler_border_radius',
 	__( 'Border Radius', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_border_radius'],
+	$defaults['primary_nav_toggler_border_radius'],
 	secretum_customizer_border_radius()
 );
 
@@ -195,7 +195,7 @@ $customizer->select(
 	'primary_nav_toggler_border_color',
 	__( 'Border Color', 'secretum' ),
 	'',
-	$default['primary_nav_toggler_border_color'],
+	$defaults['primary_nav_toggler_border_color'],
 	secretum_customizer_border_colors()
 );
 
@@ -216,7 +216,7 @@ if ( class_exists( 'woocommerce' ) ) {
 		'primary_nav_cart_link_padding_t',
 		__( 'Padding - Top (above icon)', 'secretum' ),
 		'',
-		$default['primary_nav_cart_link_padding_t'],
+		$defaults['primary_nav_cart_link_padding_t'],
 		secretum_customizer_padding_top()
 	);
 
@@ -234,7 +234,7 @@ if ( class_exists( 'woocommerce' ) ) {
 		'primary_nav_cart_icon_color',
 		__( 'Cart Icon Color', 'secretum' ),
 		'',
-		$default['primary_nav_cart_icon_color'],
+		$defaults['primary_nav_cart_icon_color'],
 		secretum_customizer_text_colors()
 	);
 
@@ -245,7 +245,7 @@ if ( class_exists( 'woocommerce' ) ) {
 		'primary_nav_cart_icon_size',
 		__( 'Cart Icon Size', 'secretum' ),
 		'',
-		$default['primary_nav_cart_icon_size'],
+		$defaults['primary_nav_cart_icon_size'],
 		secretum_customizer_font_sizes()
 	);
 
@@ -256,7 +256,7 @@ if ( class_exists( 'woocommerce' ) ) {
 		'primary_nav_cart_count_color',
 		__( 'Cart Count Color', 'secretum' ),
 		'',
-		$default['primary_nav_cart_count_color'],
+		$defaults['primary_nav_cart_count_color'],
 		secretum_customizer_text_colors()
 	);
 
@@ -267,7 +267,7 @@ if ( class_exists( 'woocommerce' ) ) {
 		'primary_nav_cart_count_size',
 		__( 'Cart Count Size', 'secretum' ),
 		'',
-		$default['primary_nav_cart_count_size'],
+		$defaults['primary_nav_cart_count_size'],
 		secretum_customizer_font_sizes()
 	);
 }// End if().

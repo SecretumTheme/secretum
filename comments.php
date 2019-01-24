@@ -3,7 +3,7 @@
  * The template for displaying comments
  *
  * @package    Secretum
- * @subpackage Comments
+ * @subpackage Theme\Comments
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
