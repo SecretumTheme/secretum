@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Featured-Image
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/featured-image.php
  */
 
 namespace Secretum;
@@ -36,7 +41,6 @@ function secretum_featured_image_wrapper() {
  * Container Classes
  */
 function secretum_featured_image_container() {
-	// @about Classes
 	$container = secretum_mod( 'featured_image_container_type', 'attr', false );
 	$background = secretum_mod( 'featured_image_container_background_color', 'attr', true );
 	$border = secretum_mod( 'featured_image_container_border_type', 'attr', true ) . secretum_mod( 'featured_image_container_border_color', 'attr', true );

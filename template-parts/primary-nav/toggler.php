@@ -2,7 +2,12 @@
 /**
  * Primary Navbar Toggler
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Primary-Nav
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/primary-nav/toggler.php
  */
 
 namespace Secretum;

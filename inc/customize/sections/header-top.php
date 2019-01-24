@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Header-Top
+ * @subpackage Core\Customize\Sections\Header-Top
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/header-top.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/header-top.php
  */
 
 namespace Secretum;
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'header_top_status',
 	__( 'Select To Display Top Header Area', 'secretum' ),
 	__( 'Create and assign custom menus to "Top Navbar Left" and/or "Top Navbar Right" to activate menus =OR= use the "Top Header Widget Area" widget for unlimited HTML control over the content area. A menu or widget must be defined for the top header area to display.', 'secretum' ),
-	$default['header_top_status']
+	$defaults['header_top_status']
 );
 
 

@@ -2,12 +2,17 @@
 /**
  * Copyright Navbar
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Copyright
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/copyright/navbar.php
  */
 
 namespace Secretum;
 
-// @about If Nav Menu Has Items
+// If Nav Menu Has Items.
 if ( has_nav_menu( 'secretum-navbar-copyright' ) && ! secretum_mod( 'copyright_nav_status' ) ) {
 ?>
 <div class="col-md">

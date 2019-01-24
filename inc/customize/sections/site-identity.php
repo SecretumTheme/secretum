@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Site-Identity
+ * @subpackage Core\Customize\Sections\Site-Identity
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/site-identity.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/site-identity.php
  */
 
 namespace Secretum;
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'site_identity_branding_status',
 	__( 'Hide Brand Logo / Tagline Area', 'secretum' ),
 	'',
-	$default['site_identity_branding_status']
+	$defaults['site_identity_branding_status']
 );
 
 
@@ -44,7 +44,7 @@ $customizer->checkbox(
 	'site_identity_logo_status',
 	__( 'Hide Logo / Title', 'secretum' ),
 	'',
-	$default['site_identity_logo_status']
+	$defaults['site_identity_logo_status']
 );
 
 
@@ -54,7 +54,7 @@ $customizer->checkbox(
 	'site_identity_tagline_status',
 	__( 'Hide Tagline / Desc Text', 'secretum' ),
 	'',
-	$default['site_identity_tagline_status']
+	$defaults['site_identity_tagline_status']
 );
 
 
@@ -73,7 +73,7 @@ $customizer->select(
 	'site_identity_alignment',
 	__( 'Alignment', 'secretum' ),
 	'',
-	$default['site_identity_alignment'],
+	$defaults['site_identity_alignment'],
 	secretum_customizer_text_alignments()
 );
 
@@ -174,7 +174,7 @@ $customizer->number(
 	[
 		'min' => 0,
 	],
-	(int) $default['custom_logo_maxwidth']
+	(int) $defaults['custom_logo_maxwidth']
 );
 
 
@@ -187,7 +187,7 @@ $customizer->number(
 	[
 		'min' => 0,
 	],
-	(int) $default['custom_logo_height']
+	(int) $defaults['custom_logo_height']
 );
 
 
@@ -200,7 +200,7 @@ $customizer->number(
 	[
 		'min' => 0,
 	],
-	(int) $default['custom_logo_width']
+	(int) $defaults['custom_logo_width']
 );
 
 

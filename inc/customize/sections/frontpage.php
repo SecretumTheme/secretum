@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Frontpage
+ * @subpackage Core\Customize\Sections\Frontpage
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/frontpage.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/frontpage.php
  */
 
 namespace Secretum;
@@ -33,7 +33,7 @@ $customizer->checkbox(
 	'custom_frontpages',
 	__( 'Enable Custom Frontpage Feature', 'secretum' ),
 	__( 'Before enabling set all default frontpage and other design related settings. A custom frontpage must be published before it will display.', 'secretum' ),
-	$default['custom_frontpages']
+	$defaults['custom_frontpages']
 );
 */
 // Checkbox.
@@ -42,7 +42,7 @@ $customizer->checkbox(
 	'frontpage_header_status',
 	__( 'Enable Frontpage Heading Area', 'secretum' ),
 	'',
-	$default['frontpage_header_status']
+	$defaults['frontpage_header_status']
 );
 
 
@@ -52,7 +52,7 @@ $customizer->checkbox(
 	'frontpage_map_status',
 	__( 'Enable Frontpage Google Map Area', 'secretum' ),
 	'',
-	$default['frontpage_map_status']
+	$defaults['frontpage_map_status']
 );
 
 
@@ -62,7 +62,7 @@ $customizer->input_text(
 	'frontpage_map_address',
 	__( 'Google Map Business Name & Address', 'secretum' ),
 	__( 'Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum' ),
-	$default['frontpage_map_address']
+	$defaults['frontpage_map_address']
 );
 
 
@@ -107,7 +107,7 @@ $customizer->textarea(
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->',
-	$default['frontpage_heading_html']
+	$defaults['frontpage_heading_html']
 );
 
 

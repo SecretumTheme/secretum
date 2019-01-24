@@ -2,12 +2,17 @@
 /**
  * Template part for comment navigation links
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Nav
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/nav/comment-navigation.php
  */
 
 namespace Secretum;
 
-// @about If comments and comments allowed
+// If comments and comments allowed.
 if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
 ?>
 <nav class="comment-navigation my-4 clearfix" id="comment-nav-above">

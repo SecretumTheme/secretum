@@ -3,7 +3,7 @@
  * WordPress Customizer add_control 'choices' Arrays
  *
  * @package    Secretum
- * @subpackage Customize\Choices\Colors
+ * @subpackage Core\Customize\Choices\Colors
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -19,7 +19,7 @@ namespace Secretum;
  * @return array Color key and values
  */
 function secretum_customizer_text_colors() {
-	return array(
+	return [
 		'' 						=> __( 'Theme Default', 'secretum' ),
 		'color-primary-text' 	=> __( 'Primary Text Color', 'secretum' ),
 		'color-secondary-text' 	=> __( 'Secondary Text Color', 'secretum' ),
@@ -58,7 +58,7 @@ function secretum_customizer_text_colors() {
 		'color-info' 			=> __( 'Info', 'secretum' ),
 		'color-success' 		=> __( 'Success', 'secretum' ),
 		'color-warning' 		=> __( 'Warning', 'secretum' ),
-	);
+	];
 }
 
 
@@ -68,7 +68,7 @@ function secretum_customizer_text_colors() {
  * @return array Color key and values
  */
 function secretum_customizer_link_colors() {
-	return array(
+	return [
 		'' 							=> __( 'Theme Default', 'secretum' ),
 		'color-linkcolor' 			=> __( 'Theme Link Color', 'secretum' ),
 		'color-light-link' 			=> __( 'Light Theme Color Base', 'secretum' ),
@@ -108,7 +108,7 @@ function secretum_customizer_link_colors() {
 		'color-info-link' 			=> __( 'Info', 'secretum' ),
 		'color-success-link' 		=> __( 'Success', 'secretum' ),
 		'color-warning-link' 		=> __( 'Warning', 'secretum' ),
-	);
+	];
 }
 
 
@@ -118,7 +118,7 @@ function secretum_customizer_link_colors() {
  * @return array Color key and values
  */
 function secretum_customizer_link_hover_colors() {
-	return array(
+	return [
 		'' 								=> __( 'Theme Default', 'secretum' ),
 		'color-linkhover' 				=> __( 'Theme Link Hover Color', 'secretum' ),
 		'color-light-hover' 			=> __( 'Light Theme Color Base', 'secretum' ),
@@ -158,7 +158,7 @@ function secretum_customizer_link_hover_colors() {
 		'color-info-hover' 				=> __( 'Info', 'secretum' ),
 		'color-success-hover' 			=> __( 'Success', 'secretum' ),
 		'color-warning-hover' 			=> __( 'Warning', 'secretum' ),
-	);
+	];
 }
 
 
@@ -168,7 +168,7 @@ function secretum_customizer_link_hover_colors() {
  * @return array Color key and values
  */
 function secretum_customizer_background_colors() {
-	return array(
+	return [
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'bg-transparent' 	=> __( 'Transparent Background', 'secretum' ),
 		'content-bg' 		=> __( 'Default Content Background', 'secretum' ),
@@ -210,7 +210,7 @@ function secretum_customizer_background_colors() {
 		'bg-info' 			=> __( 'Info', 'secretum' ),
 		'bg-success' 		=> __( 'Success', 'secretum' ),
 		'bg-warning' 		=> __( 'Warning', 'secretum' ),
-	);
+	];
 }
 
 
@@ -220,7 +220,7 @@ function secretum_customizer_background_colors() {
  * @return array Color key and values
  */
 function secretum_customizer_background_hover_colors() {
-	return array(
+	return [
 		'' 							=> __( 'Theme Default', 'secretum' ),
 		'bg-transparent-hover' 		=> __( 'Transparent Background', 'secretum' ),
 		'content-bg-hover' 			=> __( 'Default Content Background', 'secretum' ),
@@ -262,7 +262,7 @@ function secretum_customizer_background_hover_colors() {
 		'bg-info-hover' 			=> __( 'Info', 'secretum' ),
 		'bg-success-hover' 			=> __( 'Success', 'secretum' ),
 		'bg-warning-hover' 			=> __( 'Warning', 'secretum' ),
-	);
+	];
 }
 
 
@@ -272,7 +272,7 @@ function secretum_customizer_background_hover_colors() {
  * @return array Color key and values
  */
 function secretum_customizer_button_colors() {
-	return array(
+	return [
 		'' 					=> __( 'Default Theme Color', 'secretum' ),
 		'btn-transparent' 	=> __( 'Transparent Background', 'secretum' ),
 		'btn-light' 		=> __( 'Light Button Color Base', 'secretum' ),
@@ -310,5 +310,5 @@ function secretum_customizer_button_colors() {
 		'btn-info' 			=> __( 'Info', 'secretum' ),
 		'btn-success' 		=> __( 'Success', 'secretum' ),
 		'btn-warning' 		=> __( 'Warning', 'secretum' ),
-	);
+	];
 }

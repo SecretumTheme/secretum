@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Entry
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/entry.php
  */
 
 namespace Secretum;
@@ -11,7 +16,7 @@ namespace Secretum;
  * Inject Entry Content Before Post Content
  */
 add_action( 'secretum_before_content', function() {
-	// @about Display Featured Image If No Location Set or Forced
+	// Display Featured Image If No Location Set or Forced.
 	if ( ! secretum_mod( 'featured_image_display_location' ) || 'before_content' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
@@ -21,7 +26,7 @@ add_action( 'secretum_before_content', function() {
  * Inject Entry Content Before Entry Content
  */
 add_action( 'secretum_before_entry_content', function() {
-	// @about Display Featured Image If allowed
+	// Display Featured Image If allowed.
 	if ( 'before_entry' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
@@ -46,34 +51,34 @@ function secretum_entry_wrapper() {
  * @return string Columns value
  */
 function secretum_entry_columns() {
-	// @about Global Sidebar Location
+	// Global Sidebar Location.
 	$global_location = secretum_mod( 'sidebar_location', 'attr' );
 
-	// @about Local Sidebar Location
+	// Local Sidebar Location.
 	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
 
-	// @about Build Sidebar Location
+	// Build Sidebar Location.
 	$sidebar_location = ! empty( $local_location[0] ) ? $local_location[0] : $global_location;
 
-	// @about Default Width
+	// Default Width.
 	$columns = '-12';
 
-	// @about Half Width
+	// Half Width.
 	if ( ! empty( $sidebar_location ) && 'both' === $sidebar_location ) {
 		$columns = '-6';
 	}
 
-	// @about Normal Width
+	// Normal Width.
 	if ( ! empty( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
 		$columns = '-8';
 	}
 
-	// @about Full Width
+	// Full Width.
 	if ( ! empty( $sidebar_location ) && 'none' === $sidebar_location ) {
 		$columns = '-12';
 	}
 
-	// @about Full Width
+	// Full Width.
 	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-right' ) && ! is_active_sidebar( 'sidebar-left' ) ) {
 		$columns = '-12';
 	}

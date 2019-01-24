@@ -24,15 +24,19 @@ gulp.task('assets', function(done) {
     // Images
     gulp.src('./inc/assets/images/*.{png,jpg,gif,svg}').pipe(gulp.dest('./assets/images'))
 
-    // Editor CSS
+    // Editor Styles
     gulp.src('./inc/assets/theme_editor.scss').pipe(gulp.dest('./assets/css'))
 
-    // Secretum Theme
+    // Secretum SCSS Assets
     gulp.src('./inc/assets/theme.scss').pipe(gulp.dest('./assets/css'))
     gulp.src('./inc/assets/scss/*.scss').pipe(gulp.dest('./assets/css/secretum'))
     gulp.src('./inc/assets/scss/*/*.scss').pipe(gulp.dest('./assets/css/secretum'))
     gulp.src('./inc/assets/scss/*/*/*.scss').pipe(gulp.dest('./assets/css/secretum'))
+    gulp.src('./inc/assets/customizer/*.css').pipe(gulp.dest('./css/customizer'))
+
+    // Scretum JavaScript Assets
     gulp.src('./inc/assets/secretum.js').pipe(gulp.dest('./assets/js'))
+    gulp.src('./inc/assets/customizer/*.js').pipe(gulp.dest('./assets/js/customizer'))
 
     // Bootstrap
     gulp.src('./node_modules/bootstrap/scss/**/*.scss').pipe(gulp.dest('./assets/css/bootstrap4'))

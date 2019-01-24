@@ -3,7 +3,7 @@
  * Wordpress Customizer Interface
  *
  * @package    Secretum
- * @subpackage Classes\Customizer\Customizer
+ * @subpackage Core\Classes\Customizer\Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -307,7 +307,7 @@ class Customizer {
 	 */
 	final public function textarea_script( $section_name, $setting_name, $label, $description ) {
 		$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $setting_name ) . ']', [
-			// Temp removed 'sanitize_js_callback' 	=> 'secretum_customizer_escape_script',.
+			'sanitize_js_callback' 	=> 'Secretum\secretum_customizer_decode_script',
 			'sanitize_callback' 	=> 'Secretum\secretum_customizer_sanitize_script',
 			'transport' 			=> 'refresh',
 			'type' 					=> 'option',

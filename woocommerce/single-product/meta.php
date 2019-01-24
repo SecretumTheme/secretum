@@ -2,16 +2,20 @@
 /**
  * Single Product Meta
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Single-Product
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     3.0.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product/meta.php
  */
 
 namespace Secretum;
 
 global $product;
 
-// @about Set Vars
+// Set Vars.
 $product_sku = $product->get_sku();
 $product_id = $product->get_id();
 $sku = ( $product_sku ) ? $product_sku : __( 'N/A', 'secretum' );

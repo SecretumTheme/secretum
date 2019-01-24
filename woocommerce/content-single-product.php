@@ -2,9 +2,13 @@
 /**
  * The template for displaying product content in the single-product.php template
  *
- * @package 	WooCommerce/Templates
- * @version     3.4.0
- * @subpackage 	Secretum
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
+ * @version 	3.4.0
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-product.php
  */
 
 namespace Secretum;
@@ -17,7 +21,7 @@ namespace Secretum;
  */
 do_action( 'woocommerce_before_single_product' );
 
-// @about Maybe Required
+// Maybe Required.
 if ( post_password_required() ) {
 	secretum_post_password_form();
 	return;

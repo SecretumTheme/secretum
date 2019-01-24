@@ -3,7 +3,7 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Classes\Customizer\NavItems
+ * @subpackage Core\Classes\Customizer\NavItems
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

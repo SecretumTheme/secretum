@@ -3,7 +3,7 @@
  * The template for displaying author archives
  *
  * @package    Secretum
- * @subpackage Author
+ * @subpackage Theme\Author
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

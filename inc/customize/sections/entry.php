@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Entry
+ * @subpackage Core\Customize\Sections\Entry
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'entry_meta_published_status',
 	__( 'Hide Published Date', 'secretum' ),
 	'',
-	$default['entry_meta_published_status']
+	$defaults['entry_meta_published_status']
 );
 
 
@@ -44,7 +44,7 @@ $customizer->radio(
 	'entry_meta_link',
 	__( 'Archive Link', 'secretum' ),
 	'',
-	$default['entry_meta_link'],
+	$defaults['entry_meta_link'],
 	array(
 		'' 		=> __( 'No Archive Link', 'secretum' ),
 		'month' => __( 'Link To Monthly Archive', 'secretum' ),
@@ -60,7 +60,7 @@ $customizer->checkbox(
 	'entry_meta_updated_status',
 	__( 'Show Updated Date', 'secretum' ),
 	__( 'Only shows if an post has updated.', 'secretum' ),
-	$default['entry_meta_updated_status']
+	$defaults['entry_meta_updated_status']
 );
 
 
@@ -70,7 +70,7 @@ $customizer->checkbox(
 	'entry_meta_author_status',
 	__( 'Hide Author Name', 'secretum' ),
 	'',
-	$default['entry_meta_author_status']
+	$defaults['entry_meta_author_status']
 );
 
 
@@ -79,7 +79,7 @@ $customizer->radio(
 	'entry_display',
 	'entry_meta_author_link', __( 'Author Link', 'secretum' ),
 	'',
-	$default['entry_meta_author_link'],
+	$defaults['entry_meta_author_link'],
 	array(
 		'' 			=> __( 'No Archive Link', 'secretum' ),
 		'author' 	=> __( 'Link To Author Archive', 'secretum' ),
@@ -93,7 +93,7 @@ $customizer->checkbox(
 	'entry_meta_catlinks_status',
 	__( 'Hide Category Links', 'secretum' ),
 	'',
-	$default['entry_meta_catlinks_status']
+	$defaults['entry_meta_catlinks_status']
 );
 
 
@@ -103,7 +103,7 @@ $customizer->checkbox(
 	'entry_meta_tagslinks_status',
 	__( 'Hide Tag Links', 'secretum' ),
 	'',
-	$default['entry_meta_tagslinks_status']
+	$defaults['entry_meta_tagslinks_status']
 );
 
 
@@ -113,7 +113,7 @@ $customizer->checkbox(
 	'entry_meta_commentlink_status',
 	__( 'Hide Comment Link', 'secretum' ),
 	'',
-	$default['entry_meta_commentlink_status']
+	$defaults['entry_meta_commentlink_status']
 );
 
 
@@ -123,7 +123,7 @@ $customizer->checkbox(
 	'entry_meta_post_navigation_links',
 	__( 'Hide Post Navigation Links', 'secretum' ),
 	__( 'This feature is active when <!--nextpage--> is in use.', 'secretum' ),
-	$default['entry_meta_post_navigation_links']
+	$defaults['entry_meta_post_navigation_links']
 );
 
 

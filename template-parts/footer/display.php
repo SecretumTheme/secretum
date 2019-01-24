@@ -2,12 +2,17 @@
 /**
  * Display Footer Area
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Footer
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/footer/display.php
  */
 
 namespace Secretum;
 
-// @about If Active
+// If Active.
 if ( ! secretum_mod( 'footer_display_status' ) && ! secretum_mod( 'custom_footers' ) && ( is_active_sidebar( 'footer-left' ) || is_active_sidebar( 'footer-center' ) || is_active_sidebar( 'footer-right' ) ) ) {
 ?>
 <div class="wrapper footer<?php secretum_footer_wrapper(); ?>" id="wrapper-footer">

@@ -3,7 +3,7 @@
  * WordPress Customizer add_control 'choices' Arrays
  *
  * @package    Secretum
- * @subpackage Customize\Choices\Paddings
+ * @subpackage Core\Customize\Choices\Paddings
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

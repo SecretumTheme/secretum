@@ -2,12 +2,17 @@
 /**
  * Display Header Area
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Header
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/header/display.php
  */
 
 namespace Secretum;
 
-// @about If Active
+// If Active.
 if ( ! secretum_mod( 'header_status' ) && ! secretum_mod( 'custom_headers' ) ) {
 ?>
 <div class="header<?php secretum_header_wrapper(); ?>" id="wrapper-header" itemscope itemtype="http://schema.org/WebSite">

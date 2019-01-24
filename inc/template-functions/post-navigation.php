@@ -2,7 +2,12 @@
 /**
  * Functions related to theme display or manipulation
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Template-Functions\Post-Navigation
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/post-navigation.php
  */
 
 namespace Secretum;
@@ -45,11 +50,11 @@ function secretum_do_post_navigation( $args = array() ) {
 		$args['taxonomy']
 	);
 
-	// @ About Only add markup if there's somewhere to navigate to.
+	// Only add markup if there's somewhere to navigate to.
 	if ( $previous || $next ) {
-		// @ About Build Prevous Return Home Link
+		// Build Prevous Return Home Link.
 		if ( ! $previous ) {
-			// @about Home Icon
+			// Home Icon.
 			$home_icon = secretum_icon( [
 				'fi' 	=> 'home',
 				'fa' 	=> 'fa-home',

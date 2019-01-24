@@ -3,7 +3,7 @@
  * WordPress Metaboxes
  *
  * @package    Secretum
- * @subpackage Classes\MetaboxSidebars
+ * @subpackage Core\Classes\MetaboxSidebars
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

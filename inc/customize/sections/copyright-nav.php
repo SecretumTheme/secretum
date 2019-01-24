@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Copyright-Nav
+ * @subpackage Core\Customize\Sections\Copyright-Nav
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -34,7 +34,7 @@ $customizer->checkbox(
 	'copyright_nav_status',
 	__( 'Select To Hide Navigation Menu', 'secretum' ),
 	'',
-	$default['copyright_nav_status']
+	$defaults['copyright_nav_status']
 );
 
 

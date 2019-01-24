@@ -3,11 +3,11 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Customize\Settings\Footer
+ * @subpackage Core\Customize\Sections\Footer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/footer.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/footer.php
  */
 
 namespace Secretum;
@@ -33,7 +33,7 @@ $customizer->checkbox(
 	'custom_footers',
 	__( 'Enable Custom Footers Feature', 'secretum' ),
 	__( 'Before enabling set all default footer settings. A custom footer must be published before it will display.', 'secretum' ),
-	$default['custom_footers']
+	$defaults['custom_footers']
 );
 */
 // Checkbox.
@@ -42,7 +42,7 @@ $customizer->checkbox(
 	'footer_status',
 	__( 'Hide Footer Area', 'secretum' ),
 	__( 'Select to disable the entire footer area.', 'secretum' ),
-	$default['footer_status']
+	$defaults['footer_status']
 );
 
 
