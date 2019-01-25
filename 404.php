@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/404.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -20,7 +21,14 @@ get_header();
 			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
 				<main class="site-main" id="main">
 
-					<?php do_action( 'secretum_before_content' ); ?>
+					<?php
+					/**
+					 * Hook: secretum_before_content
+					 *
+					 * @since 1.0.0
+					 */
+					do_action( 'secretum_before_content' );
+					?>
 
 					<section class="error-404 not-found">
 						<header class="entry-header">
@@ -48,7 +56,14 @@ get_header();
 						</footer><!-- .entry-footer -->
 					</section>
 
-					<?php do_action( 'secretum_after_content' ); ?>
+					<?php
+					/**
+					 * Hook: secretum_after_content
+					 *
+					 * @since 1.0.0
+					 */
+					do_action( 'secretum_after_content' );
+					?>
 
 				</main><!-- .site-main -->
 			</div><!-- .content-area -->

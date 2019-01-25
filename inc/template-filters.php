@@ -8,23 +8,10 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-filters.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
-
-/**
- * Inject Classes Into Post Navigation Container
- *
- * @param  string $template Default Nav Container.
- *
- * @return string Updated NAV Container
- */
-add_filter( 'navigation_markup_template', function( $template ) {
-	return '<nav class="container navigation post-navigation py-5" role="navigation">
-			<h2 class="screen-reader-text">%2$s</h2>
-			<div class="nav-links">%3$s</div>
-			</nav>';
-} );
 
 
 /**
@@ -37,7 +24,7 @@ add_filter( 'navigation_markup_template', function( $template ) {
 add_filter( 'excerpt_more', function( $excerpt ) {
 	return str_replace(
 		' [&hellip;]',
-		'<p class="text-right"><a class="btn btn-secondary continue-reading" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text' ) . '</a></p>',
+		'<p class="text-right"><span class="screen-reader-text">' . secretum_text( 'continue_reading_text' ) . ' ' . get_the_title() . '</span><a class="btn btn-secondary continue-reading" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text' ) . '</a></p>',
 		$excerpt
 	);
 } );
@@ -49,7 +36,7 @@ add_filter( 'excerpt_more', function( $excerpt ) {
  * @return string Html Button & Text
  */
 add_filter( 'the_content_more_link', function() {
-	return '<p class="text-right"><a class="btn btn-secondary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'read_more_text' ) . '</a></p>';
+	return '<p class="text-right"><span class="screen-reader-text">' . secretum_text( 'read_more_text' ) . '</span><a class="btn btn-secondary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'read_more_text' ) . '</a></p>';
 } );
 
 

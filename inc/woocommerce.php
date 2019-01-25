@@ -8,15 +8,10 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/woocommerce.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
-
-/**
- * Remove WooCommerce Generator Tag
- */
-remove_action( 'wp_head', [ $GLOBALS['woocommerce'], 'generator' ] );
-
 
 /**
  * WooCommerce
