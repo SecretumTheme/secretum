@@ -16,35 +16,51 @@ namespace Secretum;
 /**
  * Customized Bootstrap 4 Navigation Walker For WordPress
  *
+ * @since 1.0.0
+ *
  * @source WP Bootstrap Navwalker
  * @version 4.2.0
  * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+ *
+ * @see Walker_Nav_Menu
+ * @link https://developer.wordpress.org/reference/classes/walker_nav_menu/
+ *
+ * @param string $setting_base Setting Base Name.
+ * @param string $dropdown_classes Dropdown Class Names.
+ * @param string $textual_classes Textual Class names.
  */
 class Navwalker extends \Walker_Nav_Menu {
 	/**
 	 * Setting Base Name
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $setting_base
 	 */
 	public $setting_base;
+
 
 	/**
 	 * Dropdown Class Names
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $dropdown_classes
 	 */
 	public $dropdown_classes;
+
 
 	/**
 	 * Textual Class names
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $textual_classes
 	 */
 	public $textual_classes;
 
 
 	/**
 	 * Inject Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $setting_base Setting Base Name.
 	 * @param string $dropdown_classes Dropdown Class Names.
@@ -60,7 +76,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	/**
 	 * Starts the list before the elements are added.
 	 *
-	 * @since WP 3.0.0
+	 * @since 1.0.0
 	 *
 	 * @see Walker_Nav_Menu::start_lvl()
 	 *
@@ -121,8 +137,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	/**
 	 * Starts the element output.
 	 *
-	 * @since WP 3.0.0
-	 * @since WP 4.4.0 The {@see 'nav_menu_item_args'} filter was added.
+	 * @since 1.0.0
 	 *
 	 * @see Walker_Nav_Menu::start_el()
 	 *
@@ -349,6 +364,7 @@ class Navwalker extends \Walker_Nav_Menu {
 
 	}
 
+
 	/**
 	 * Traverse elements to create list from elements.
 	 *
@@ -359,7 +375,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * This method should not be called directly, use the walk() method instead.
 	 *
-	 * @since WP 2.5.0
+	 * @since 1.0.0
 	 *
 	 * @see Walker::start_lvl()
 	 *
@@ -380,13 +396,16 @@ class Navwalker extends \Walker_Nav_Menu {
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
 
+
 	/**
 	 * Menu Fallback
-	 * =============
+	 *
 	 * If this function is assigned to the wp_nav_menu's fallback_cb variable
 	 * and a menu has not been assigned to the theme location in the WordPress
 	 * menu manager the function with display nothing to a non-logged in user,
 	 * and will add a link to the WordPress menu manager if logged in as an admin.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args passed from the wp_nav_menu function.
 	 */
@@ -433,6 +452,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}// End if().
 	}
 
+
 	/**
 	 * Find any custom linkmod or icon classes and store in their holder
 	 * arrays then remove them from the main classes array.
@@ -442,7 +462,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * NOTE: This accepts the linkmod and icon arrays by reference.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param array   $classes         an array of classes currently assigned to the item.
 	 * @param array   $linkmod_classes an array to hold linkmod classes.
@@ -479,11 +499,12 @@ class Navwalker extends \Walker_Nav_Menu {
 		return $classes;
 	}
 
+
 	/**
 	 * Return a string containing a linkmod type and update $atts array
 	 * accordingly depending on the decided.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param array $linkmod_classes array of any link modifier classes.
 	 *
@@ -510,10 +531,11 @@ class Navwalker extends \Walker_Nav_Menu {
 		return $linkmod_type;
 	}
 
+
 	/**
 	 * Update the attributes of a nav item depending on the limkmod classes.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param array $atts            array of atts for the current link in nav item.
 	 * @param array $linkmod_classes an array of classes that modify link or nav item behaviors or displays.
@@ -545,10 +567,11 @@ class Navwalker extends \Walker_Nav_Menu {
 		return $atts;
 	}
 
+
 	/**
 	 * Wraps the passed text in a screen reader only class.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param string $text the string of text to be wrapped in a screen reader class.
 	 * @return string      the string wrapped in a span with the class.
@@ -560,10 +583,11 @@ class Navwalker extends \Walker_Nav_Menu {
 		return $text;
 	}
 
+
 	/**
 	 * Returns the correct opening element and attributes for a linkmod.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param string $linkmod_type a sting containing a linkmod type flag.
 	 * @param string $attributes   a string of attributes to add to the element.
@@ -585,14 +609,15 @@ class Navwalker extends \Walker_Nav_Menu {
 		return $output;
 	}
 
+
 	/**
 	 * Return the correct closing tag for the linkmod element.
 	 *
-	 * @since 4.0.0
+	 * @since 1.0.0
 	 *
 	 * @param string $linkmod_type a string containing a special linkmod type.
 	 *
-	 * @return string              a string with the closing tag for this linkmod type.
+	 * @return string $output      a string with the closing tag for this linkmod type.
 	 */
 	private function linkmod_element_close( $linkmod_type ) {
 		$output = '';

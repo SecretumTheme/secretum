@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Font Style
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_styles() {
 	return [
@@ -33,7 +35,9 @@ function secretum_customizer_font_styles() {
 /**
  * Text Transform
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_transform() {
 	return [
@@ -48,7 +52,9 @@ function secretum_customizer_text_transform() {
 /**
  * Font Families
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_families() {
 	return [

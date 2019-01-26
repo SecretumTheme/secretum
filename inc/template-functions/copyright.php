@@ -16,6 +16,8 @@ namespace Secretum;
 
 /**
  * Default Copyright Statement
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_statement() {
 	$copy = __( 'Copyright', 'secretum' );
@@ -42,6 +44,8 @@ function secretum_copyright_statement() {
 
 /**
  * Copyright Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'copyright' );
@@ -54,6 +58,8 @@ function secretum_copyright_wrapper() {
 
 /**
  * Copyright Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_container() {
 	$container 	= \Secretum\Container::classes( 'copyright' );
@@ -66,6 +72,8 @@ function secretum_copyright_container() {
 
 /**
  * Alignment
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_text_alignment() {
 	echo esc_html( apply_filters( 'secretum_copyright_text_alignment', secretum_mod( 'copyright_text_alignment', 'attr', true ), 10, 1 ) );
@@ -75,6 +83,8 @@ function secretum_copyright_text_alignment() {
 
 /**
  * Copyright Text/Front Classes
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_textuals() {
 	$textuals 	= \Secretum\Textuals::classes( 'copyright' );

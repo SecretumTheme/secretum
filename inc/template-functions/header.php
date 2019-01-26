@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Inject Content After Header
+ *
+ * @since 1.0.0
  */
 add_action( 'secretum_after_header', function() {
 	// Display Featured Image If Allowed.
@@ -26,6 +28,8 @@ add_action( 'secretum_after_header', function() {
 
 /**
  * Header Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_header_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'header' );
@@ -38,6 +42,8 @@ function secretum_header_wrapper() {
 
 /**
  * Header Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_header_container() {
 	$container = \Secretum\Container::classes( 'header' );
@@ -50,6 +56,8 @@ function secretum_header_container() {
 
 /**
  * Render Branded Graphic Logo
+ *
+ * @since 1.0.0
  */
 function secretum_render_brand_logo() {
 	$href_link 			= esc_url( get_home_url( '/' ) );
@@ -93,6 +101,8 @@ function secretum_render_brand_logo() {
 
 /**
  * Render h1 Frontpage Textual Brand Logo
+ *
+ * @since 1.0.0
  */
 function secretum_render_heading_logo() {
 	$heading_classes 	= secretum_site_identity_title_container();
@@ -122,6 +132,8 @@ function secretum_render_heading_logo() {
 
 /**
  * Render Textual Link Brand Logo
+ *
+ * @since 1.0.0
  */
 function secretum_render_link_logo() {
 	$href_link 			= esc_url( get_home_url( '/' ) );

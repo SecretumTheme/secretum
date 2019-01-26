@@ -15,26 +15,25 @@ namespace Secretum;
 
 /**
  * Initilize Customizer Features
+ *
+ * @since 1.0.0
+ *
+ * @param object $wp_customize WP_Customize_Manager Instance.
  */
 class Customizer {
-
-	/**
-	 * Customizer Default Settings
-	 *
-	 * @var array
-	public $defaults;
-	 */
-
 	/**
 	 * WP_Customize_Manager Instance
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var object $wp_customize
 	 */
 	public $wp_customize;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $wp_customize WP_Customize_Manager Instance.
 	 */
@@ -48,6 +47,8 @@ class Customizer {
 
 	/**
 	 * Create Panel
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Shortname for setting name/section name.
 	 * @param string $title Title of section.
@@ -63,6 +64,8 @@ class Customizer {
 
 	/**
 	 * Create Section
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
 	 * @param string $panel_name Short panel name.
@@ -83,6 +86,8 @@ class Customizer {
 	/**
 	 * Add Partial
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $selector Class/Selector Name.
 	 */
@@ -99,6 +104,8 @@ class Customizer {
 
 	/**
 	 * Checkbox
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
@@ -126,6 +133,8 @@ class Customizer {
 
 	/**
 	 * Background Image Control
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
@@ -160,6 +169,8 @@ class Customizer {
 	/**
 	 * Number Input
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $label Label for Control.
@@ -188,6 +199,8 @@ class Customizer {
 
 	/**
 	 * Radio Select
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
@@ -218,6 +231,8 @@ class Customizer {
 	/**
 	 * Dropdown Select
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $label Label for Control.
@@ -247,6 +262,8 @@ class Customizer {
 	/**
 	 * Text Input Field
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $label Label for Control.
@@ -273,6 +290,8 @@ class Customizer {
 
 	/**
 	 * Textarea
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
@@ -301,6 +320,8 @@ class Customizer {
 	/**
 	 * Textarea For Scripts
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section_name Short section name.
 	 * @param string $setting_name Name of he setting to save.
 	 * @param string $label Label for Control.
@@ -328,7 +349,7 @@ class Customizer {
 	/**
 	 * Reset Field
 	 *
-	 * @return void
+	 * @since 1.0.0
 	 */
 	final public function reset() {
 		$this->wp_customize->add_setting( 'secretum[reset]', [

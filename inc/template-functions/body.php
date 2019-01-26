@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_body_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'body' );
@@ -27,6 +29,8 @@ function secretum_body_wrapper() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_body_container() {
 	$container = \Secretum\Container::classes( 'body' );

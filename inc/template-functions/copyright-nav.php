@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_copyright_nav_wrapper() {
 	$wrapper 	= \Secretum\Wrapper::classes( 'copyright_nav' );
@@ -29,6 +31,8 @@ function secretum_copyright_nav_wrapper() {
 /**
  * Alignment
  *
+ * @since 1.0.0
+ *
  * @return string Classe Name.
  */
 function secretum_copyright_nav_alignment() {
@@ -41,6 +45,8 @@ function secretum_copyright_nav_alignment() {
 
 /**
  * Menu Item Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */

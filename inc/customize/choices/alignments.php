@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Object Margin Alignment
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_alignments() {
 	return [
@@ -32,7 +34,9 @@ function secretum_customizer_margin_alignments() {
 /**
  * Text Alignment
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_alignments() {
 	return [

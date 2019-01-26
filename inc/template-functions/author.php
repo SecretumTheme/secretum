@@ -17,6 +17,8 @@ namespace Secretum;
 
 /**
  * Author List Item Link List
+ *
+ * @since 1.0.0
  */
 function secretum_author_post_list() {
 	$post_text 	= secretum_text( 'author_posted_text', false );

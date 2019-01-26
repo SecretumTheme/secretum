@@ -16,6 +16,8 @@ namespace Secretum;
 /**
  * Prepare Theme Mod Setting Value For Display/Use
  *
+ * @since 1.0.0
+ *
  * @example secretum_mod( 'setting_name' );
  * @example secretum_mod( 'setting_name', false, true );
  * @example secretum_mod( 'setting_name', 'html' );

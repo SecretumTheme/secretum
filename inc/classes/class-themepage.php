@@ -15,53 +15,63 @@ namespace Secretum;
 
 /**
  * Display Theme Admin Page
+ *
+ * @since 1.0.0
  */
 class ThemePage {
 	/**
 	 * Instance Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $instance
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Tab Names
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_tabs
 	 */
 	private $_tabs;
 
 	/**
 	 * Menu & Page Title
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $_title
 	 */
 	private $_title;
 
 	/**
 	 * Allowed Customizer Sections
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_sections
 	 */
 	private $_sections;
 
 	/**
 	 * Export Section Name
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $_section
 	 */
 	private $_section;
 
 	/**
 	 * Export Import Class
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $_ei
 	 */
 	private $_ei;
 
 
 	/**
 	 * Initize Class
+	 *
+	 * @since 1.0.0
 	 */
 	final public function init() {
 		// Tabs.
@@ -132,6 +142,8 @@ class ThemePage {
 
 	/**
 	 * Render Page Content
+	 *
+	 * @since 1.0.0
 	 */
 	final public function render_content() {
 		echo '<div class="wrap">';
@@ -177,6 +189,8 @@ class ThemePage {
 
 	/**
 	 * Render Home Tab Display
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _display_home_tab() {
 	?>
@@ -262,6 +276,8 @@ class ThemePage {
 
 	/**
 	 * Render Export/ Import Tab Display
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _display_heading_butons() {
 	?>
@@ -276,6 +292,8 @@ class ThemePage {
 
 	/**
 	 * Display Admin Area Tabs
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return string $html Tab Display
 	 */
@@ -306,6 +324,8 @@ class ThemePage {
 	/**
 	 * Get Query String Item
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $get Query String Get Item.
 	 *
 	 * @return string Query String Item Sanitized
@@ -321,6 +341,8 @@ class ThemePage {
 
 	/**
 	 * Validate Nonce
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _validate() {
 		if ( check_admin_referer( 'secretum_ei_action', 'secretum_ei_nonce' ) === false ) {
@@ -331,6 +353,8 @@ class ThemePage {
 
 	/**
 	 * Create Instance
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return object $instance Instance Object.
 	 */

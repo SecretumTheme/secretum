@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Text Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_colors() {
 	return [
@@ -66,7 +68,9 @@ function secretum_customizer_text_colors() {
 /**
  * Link Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_link_colors() {
 	return [
@@ -116,7 +120,9 @@ function secretum_customizer_link_colors() {
 /**
  * Link Hover Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_link_hover_colors() {
 	return [
@@ -166,7 +172,9 @@ function secretum_customizer_link_hover_colors() {
 /**
  * Background Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_background_colors() {
 	return [
@@ -218,7 +226,9 @@ function secretum_customizer_background_colors() {
 /**
  * Background Hover Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_background_hover_colors() {
 	return [
@@ -270,7 +280,9 @@ function secretum_customizer_background_hover_colors() {
 /**
  * Button Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_button_colors() {
 	return [

@@ -23,11 +23,9 @@ namespace Secretum;
  * Removes next html on first post
  * Filters HTML through wp_kses()
  *
- * @todo Move to class.
- *
- * @link https://github.com/SecretumTheme/secretum/blob/master/template-parts/nav/post-navigation.php
- *
  * @since 1.0.0
+ *
+ * @todo Move to class.
  */
 function secretum_post_navigation() {
 	// Get Prev/Next Post Objects.

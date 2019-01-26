@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Footer Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_footer_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'footer' );
@@ -27,6 +29,8 @@ function secretum_footer_wrapper() {
 
 /**
  * Footer Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_footer_container() {
 	$alignment = secretum_mod( 'footer_text_alignment', 'attr', true );
@@ -41,6 +45,8 @@ function secretum_footer_container() {
 
 /**
  * Font/Text/Link Classes
+ *
+ * @since 1.0.0
  *
  * @return string Pre-sanitized string of class names
  */

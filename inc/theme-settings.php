@@ -16,6 +16,8 @@ namespace Secretum;
 /**
  * WordPress Required Content Width
  *
+ * @since 1.0.0
+ *
  * @link https://codex.wordpress.org/Content_Width
  */
 if ( ! isset( $content_width ) ) {
@@ -25,6 +27,8 @@ if ( ! isset( $content_width ) ) {
 
 /**
  * WordPress Theme Settings
+ *
+ * @since 1.0.0
  */
 add_action( 'after_setup_theme', function() {
 	// Load Theme Translated Strings.
@@ -49,7 +53,13 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'responsive-embeds' );
 
 	// Header Image Panel.
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', [
+		'flex-width' 	=> true,
+		'width' 		=> 980,
+		'flex-height' 	=> true,
+		'height' 		=> 200,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+	] );
 
 	// Background Image Panel.
 	add_theme_support( 'custom-background' );

@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Container Types
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_container_types() {
 	return [

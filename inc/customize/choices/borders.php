@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Border Locations
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border() {
 	return [
@@ -35,7 +37,9 @@ function secretum_customizer_border() {
 /**
  * Border Locations
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_types() {
 	return [
@@ -53,7 +57,9 @@ function secretum_customizer_border_types() {
 /**
  * Border Radius
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_radius() {
 	return [
@@ -72,7 +78,9 @@ function secretum_customizer_border_radius() {
 /**
  * Border Colors
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_colors() {
 	return [

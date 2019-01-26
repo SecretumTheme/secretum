@@ -16,6 +16,8 @@ namespace Secretum;
 
 /**
  * Customizer Refresh Icon
+ *
+ * @since 1.0.0
  */
 function secretum_customizer_refresh() {
 	echo wp_kses(
@@ -39,6 +41,8 @@ function secretum_customizer_refresh() {
 /**
  * Reset Customzer Settings
  *
+ * @since 1.0.0
+ *
  * @param string $value Must equal reset to delete option.
  *
  * @return false
@@ -54,6 +58,8 @@ function secretum_customizer_reset( $value = '' ) {
 
 /**
  * Get Blog Name
+ *
+ * @since 1.0.0
  */
 function secretum_customizer_blog_name() {
 	bloginfo( 'name' );
@@ -62,6 +68,8 @@ function secretum_customizer_blog_name() {
 
 /**
  * Get Blog Description
+ *
+ * @since 1.0.0
  */
 function secretum_customizer_blog_desc() {
 	bloginfo( 'description' );
@@ -72,6 +80,8 @@ function secretum_customizer_blog_desc() {
  * Sanitize Everything From String
  * Strip all HTML tags including script and style
  * Convert all applicable characters to HTML entities
+ *
+ * @since 1.0.0
  *
  * @param string $string HTML String.
  *
@@ -84,6 +94,8 @@ function secretum_customizer_sanitize_all( $string ) {
 
 /**
  * Sanitize Checkbox Value
+ *
+ * @since 1.0.0
  *
  * @param bool $checked If value is selected.
  *
@@ -107,6 +119,8 @@ function secretum_customizer_sanitize_checkbox( $checked ) {
  * Sanitize content for allowed HTML tags
  * Convert HTML entities to corresponding characters
  *
+ * @since 1.0.0
+ *
  * @param string $string HTML String.
  *
  * @return string Cleaned HTML
@@ -118,6 +132,8 @@ function secretum_customizer_sanitize_html( $string ) {
 
 /**
  * Sanitize Interger
+ *
+ * @since 1.0.0
  *
  * @param int $int Interger Value.
  *
@@ -135,6 +151,8 @@ function secretum_customizer_sanitize_int( $int ) {
 /**
  * Encode Script For Database
  *
+ * @since 1.0.0
+ *
  * @param string $string Script String.
  *
  * @return string Encoded Script
@@ -146,6 +164,8 @@ function secretum_customizer_sanitize_script( $string ) {
 
 /**
  * Decode Script For Textarea
+ *
+ * @since 1.0.0
  *
  * @param string $string Script String.
  *

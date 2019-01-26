@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_scrolltop_container() {
 	$background = secretum_mod( 'scrolltop_background_color', 'attr', true ) . secretum_mod( 'scrolltop_background_hover_color', 'attr', true );
@@ -28,6 +30,8 @@ function secretum_scrolltop_container() {
 
 /**
  * Text/Front Classes
+ *
+ * @since 1.0.0
  */
 function secretum_scrolltop_textuals() {
 	$text_color = secretum_mod( 'scrolltop_text_color', 'attr', true );

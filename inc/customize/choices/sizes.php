@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Textual Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_sizes() {
 	return [
@@ -65,7 +67,9 @@ function secretum_customizer_font_sizes() {
 /**
  * Display Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_display_sizes() {
 	return [
@@ -81,7 +85,9 @@ function secretum_customizer_display_sizes() {
 /**
  * Heading Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_heading_sizes() {
 	return [

@@ -15,12 +15,18 @@ namespace Secretum;
 
 /**
  * Customizer Wrapper Grouping
+ *
+ * @since 1.0.0
+ *
+ * @param object $customizer Secretum Customizer Object.
+ * @param array  $defaults   Default Settings Array.
  */
 class Wrapper {
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -28,13 +34,16 @@ class Wrapper {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $customizer Secretum Customizer Object.
 	 * @param array  $defaults   Default Settings Array.
@@ -50,6 +59,8 @@ class Wrapper {
 
 	/**
 	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args [section (required), panel, title] Settings.
 	 */
@@ -130,6 +141,8 @@ class Wrapper {
 	/**
 	 * Build Unfiltered Class(es) String
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section Section Shortname.
 	 */
 	final public static function classes( $section ) {
@@ -145,6 +158,8 @@ class Wrapper {
 
 	/**
 	 * Build Section Title
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $title Alt Section Title.
 	 *
@@ -162,6 +177,8 @@ class Wrapper {
 
 	/**
 	 * Build Panel Name
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section Section Name.
 	 * @param string $panel Panel Name.

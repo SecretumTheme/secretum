@@ -15,10 +15,14 @@ namespace Secretum;
 
 /**
  * Custom Metabox for Sidebar Location Selection
+ *
+ * @since 1.0.0
  */
 class MetaboxSidebars {
 	/**
 	 * Admin Area
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		if ( is_admin() ) {
@@ -30,6 +34,8 @@ class MetaboxSidebars {
 
 	/**
 	 * Hook Add / Save Metabox
+	 *
+	 * @since 1.0.0
 	 */
 	public function init_metabox() {
 		add_action( 'add_meta_boxes', array( $this, 'add_metabox' ) );
@@ -39,6 +45,8 @@ class MetaboxSidebars {
 
 	/**
 	 * Add Metabox
+	 *
+	 * @since 1.0.0
 	 */
 	public function add_metabox() {
 		add_meta_box(
@@ -54,6 +62,8 @@ class MetaboxSidebars {
 
 	/**
 	 * Display Metabox
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $post WordPress Post Data.
 	 */
@@ -88,6 +98,8 @@ class MetaboxSidebars {
 
 	/**
 	 * Save Metabox Data
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param int    $post_id Current Post ID.
 	 * @param object $post WordPress Post Data.

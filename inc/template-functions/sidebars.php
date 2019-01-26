@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Sidebar Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_sidebar_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'sidebar' );
@@ -26,6 +28,8 @@ function secretum_sidebar_wrapper() {
 
 /**
  * Sidebar Container Classes
+ *
+ * @since 1.0.0
  *
  * @return string Pre-sanitized string of class names
  */
@@ -40,6 +44,8 @@ function secretum_sidebar_container() {
 /**
  * Font/Text/Link Classes
  *
+ * @since 1.0.0
+ *
  * @return string Pre-sanitized string of class names
  */
 function secretum_sidebar_textuals() {
@@ -51,6 +57,8 @@ function secretum_sidebar_textuals() {
 
 /**
  * Render Sidebar Based On Allowed Location
+ *
+ * @since 1.0.0
  *
  * @example secretum_sidebar_location( 'right' );
  * @example secretum_sidebar_location( 'left' );

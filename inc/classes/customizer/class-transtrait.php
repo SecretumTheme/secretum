@@ -15,10 +15,14 @@ namespace Secretum;
 
 /**
  * Text Translation Strings
+ *
+ * @since 1.0.0
  */
 trait TransTrait {
 	/**
 	 * Text Strings Labels & Default Values
+	 *
+	 * @since 1.0.0
 	 */
 	final public function defaults() {
 		return [

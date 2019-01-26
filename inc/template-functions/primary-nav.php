@@ -16,6 +16,8 @@ namespace Secretum;
 
 /**
  * Default Menu Fallback
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_fallback() {
 	$text = esc_html( apply_filters( 'secretum_create_menu_text', __( 'Create Menu', 'secretum' ) ) );
@@ -42,6 +44,8 @@ function secretum_primary_nav_fallback() {
 
 /**
  * Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'primary_nav' );
@@ -54,6 +58,8 @@ function secretum_primary_nav_wrapper() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_container() {
 	$container 	= \Secretum\Container::classes( 'primary_nav' );
@@ -67,6 +73,8 @@ function secretum_primary_nav_container() {
 
 /**
  * Navbar Base Color Theme: navbar-light navbar-dark
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_color_scheme() {
 	echo esc_html( apply_filters( 'secretum_primary_nav_color_scheme', secretum_mod( 'primary_nav_color_theme', 'attr', true ), 10, 1 ) );
@@ -76,6 +84,8 @@ function secretum_primary_nav_color_scheme() {
 
 /**
  * Alignment
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */
@@ -90,6 +100,8 @@ function secretum_primary_nav_alignment() {
 /**
  * Primary Menu Item Classes
  *
+ * @since 1.0.0
+ *
  * @return string Classes.
  */
 function secretum_primary_nav_items() {
@@ -102,6 +114,8 @@ function secretum_primary_nav_items() {
 
 /**
  * Primary Menu Dropdown Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */
@@ -119,6 +133,8 @@ function secretum_primary_nav_dropdown() {
 /**
  * Primary Menu Dropdown Classes
  *
+ * @since 1.0.0
+ *
  * @return string Classes.
  */
 function secretum_primary_nav_dropdown_textual() {
@@ -131,6 +147,8 @@ function secretum_primary_nav_dropdown_textual() {
 
 /**
  * Toggler Icon Wrapper
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_toggler_wrapper() {
 	$wrapper 	= \Secretum\Wrapper::classes( 'primary_nav_toggler' );
@@ -144,6 +162,8 @@ function secretum_primary_nav_toggler_wrapper() {
 
 /**
  * Toggler Icon
+ *
+ * @since 1.0.0
  */
 function secretum_primary_nav_toggler_icon() {
 	$background = secretum_mod( 'primary_nav_toggler_background_color', 'attr', true );
@@ -156,6 +176,8 @@ function secretum_primary_nav_toggler_icon() {
 
 /**
  * Primary Menu  Woo Cart Link Icon Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */
@@ -171,6 +193,8 @@ function secretum_primary_nav_cart_link_classes() {
 /**
  * Primary Menu Woo Cart Icon Classes
  *
+ * @since 1.0.0
+ *
  * @return string Classes.
  */
 function secretum_primary_nav_cart_icon_classes() {
@@ -184,6 +208,8 @@ function secretum_primary_nav_cart_icon_classes() {
 
 /**
  * Primary Menu Items In Woo Cart Count Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */

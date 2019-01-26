@@ -15,6 +15,11 @@ namespace Secretum;
 
 /**
  * Public Text Translation String Display
+ *
+ * @since 1.0.0
+ *
+ * @see  TransTrait
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
  */
 class Trans {
 
@@ -24,14 +29,16 @@ class Trans {
 	/**
 	 * Instance Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $instanc
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Secretum Settings Option
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_option
 	 */
 	private $_option;
 
@@ -39,13 +46,16 @@ class Trans {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Set Class Vars
+	 *
+	 * @since 1.0.0
 	 */
 	final public function init() {
 		// Get Secretum Option.
@@ -59,6 +69,8 @@ class Trans {
 
 	/**
 	 * Return Text Translation String
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $key  Array Key To Get Value Of.
 	 * @param bool   $echo True to echo results.
@@ -89,6 +101,8 @@ class Trans {
 
 	/**
 	 * Create Instance
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return object $instance Instance Object.
 	 */

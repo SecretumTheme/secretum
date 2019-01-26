@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Margin Top & Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_top_bottom() {
 	return [
@@ -35,7 +37,9 @@ function secretum_customizer_margin_top_bottom() {
 /**
  * Margin Top
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_top() {
 	return [
@@ -53,7 +57,9 @@ function secretum_customizer_margin_top() {
 /**
  * Margin Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_bottom() {
 	return [
@@ -71,7 +77,9 @@ function secretum_customizer_margin_bottom() {
 /**
  * Margin Left & Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_left_right() {
 	return [
@@ -90,7 +98,9 @@ function secretum_customizer_margin_left_right() {
 /**
  * Margin Left
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_left() {
 	return [
@@ -109,7 +119,9 @@ function secretum_customizer_margin_left() {
 /**
  * Margin Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_right() {
 	return [

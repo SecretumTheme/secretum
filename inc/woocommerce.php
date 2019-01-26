@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * WooCommerce
+ *
+ * @since 1.0.0
  */
 add_action( 'after_setup_theme', function() {
 	// Theme Support.
@@ -42,6 +44,8 @@ add_action( 'after_setup_theme', function() {
 
 /**
  * Bootstrap WooCommerce Product Search Form
+ *
+ * @since 1.0.0
  */
 add_filter( 'get_product_search_form' , function() {
 	return '<form method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" role="search">
@@ -59,6 +63,8 @@ add_filter( 'get_product_search_form' , function() {
 
 /**
  * Modify Password Strengh & Default Message
+ *
+ * @since 1.0.0
  *
  * @param array $params Passed in Params.
  * @param string $handle Data handle.
@@ -79,6 +85,8 @@ add_filter( 'woocommerce_get_script_data', function( $params, $handle ) {
 
 /**
  * Modify Password Strength Messages
+ *
+ * @since 1.0.0
  */
 add_action( 'wp_enqueue_scripts',  function() {
 	wp_localize_script( 'wc-password-strength-meter', 'pwsL10n', [
@@ -94,6 +102,8 @@ add_action( 'wp_enqueue_scripts',  function() {
 /**
  * WooCommerce Filter Hook - Add Bootstrap Classes To Place Order Button
  *
+ * @since 1.0.0
+ *
  * @param array $args Args array.
  */
 add_filter( 'woocommerce_order_button_html', function( $args ) {
@@ -103,6 +113,8 @@ add_filter( 'woocommerce_order_button_html', function( $args ) {
 
 /**
  * WooCommerce Filter Hook - Add Cart Icon To Primary Menu
+ *
+ * @since 1.0.0
  *
  * @param array $items Items array.
  * @param array $args Args array.
@@ -134,6 +146,8 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
 
 /**
  * WooCommerce Filter Hook - Add Bootstrap Classes To Checkout Form
+ *
+ * @since 1.0.0
  */
 add_filter( 'woocommerce_form_field_args', function( $args, $key, $value ) {
 	// Remove Woo Classes.
@@ -154,6 +168,8 @@ add_filter( 'woocommerce_form_field_args', function( $args, $key, $value ) {
 
 /**
  * WooCommerce Custom Variations Dropdown
+ *
+ * @since 1.0.0
  *
  * @source wp-content/plugins/woocommerce/includes/wc-template-functions.php
  *
@@ -239,6 +255,8 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 /**
  * WooCommerce Filter Hook - Update Cart Icon
  *
+ * @since 1.0.0
+ *
  * @param array $fragments Cart fragments.
 add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
 
@@ -253,6 +271,8 @@ add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
 /**
  * WooCommerce Remove Order Notes Field & Title
  *
+ * @since 1.0.0
+ *
  * @param array $fields Input Fields
 add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
 	unset( $fields['order']['order_comments'] );
@@ -263,6 +283,8 @@ add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
 
 /**
  * Remove Checkout Fields
+ *
+ * @since 1.0.0
  *
  * @param array $fields Input Fields
 add_filter( 'woocommerce_checkout_fields', function( $fields ) {
@@ -280,6 +302,8 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 
 /**
  * Remove Sku From All Product Pages
+ *
+ * @since 1.0.0
 add_filter( 'wc_product_sku_enabled', function() {
 	return ( ! is_admin() && is_product() ) ? false : true;
 } );
@@ -288,6 +312,8 @@ add_filter( 'wc_product_sku_enabled', function() {
 
 /**
  * Add To Cart Redirect To Checkout Page
+ *
+ * @since 1.0.0
 add_filter( 'woocommerce_add_to_cart_redirect', function() {
 	return get_permalink( get_option( 'woocommerce_checkout_page_id' ) );
 } );
@@ -296,5 +322,7 @@ add_filter( 'woocommerce_add_to_cart_redirect', function() {
 
 /**
  * WooCommerce Remove Order Notes Title
+ *
+ * @since 1.0.0
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
  */

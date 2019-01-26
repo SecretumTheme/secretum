@@ -17,6 +17,8 @@ namespace Secretum;
 /**
  * Translation Text Display
  *
+ * @since 1.0.0
+ *
  * @see class/customizer/class-trans.php
  * @see class/customizer/class-transcustomizer.php
  * @see class/customizer/class-transtrait.php
@@ -47,6 +49,8 @@ function secretum_text( $key = '', $echo = false ) {
 
 /**
  * Render Breadcrumbs
+ *
+ * @since 1.0.0
  *
  * @param string $taxonomy The taxonomy term.
  * @param bool 	 $top_link True to enable top return link.

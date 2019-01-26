@@ -17,6 +17,8 @@ namespace Secretum;
 /**
  * Replaces [...] In Archive Excerpts
  *
+ * @since 1.0.0
+ *
  * @param string $excerpt The Excerpt.
  *
  * @return string Updated Excerpt
@@ -33,6 +35,8 @@ add_filter( 'excerpt_more', function( $excerpt ) {
 /**
  * Replaces ( ... ) In <! --more--> Tagged Posts
  *
+ * @since 1.0.0
+ *
  * @return string Html Button & Text
  */
 add_filter( 'the_content_more_link', function() {
@@ -42,6 +46,8 @@ add_filter( 'the_content_more_link', function() {
 
 /**
  * Remove hentry class on pages
+ *
+ * @since 1.0.0
  *
  * @param array $classes List of body classes.
  *
@@ -58,6 +64,8 @@ add_filter( 'post_class', function( $classes ) {
 
 /**
  * Update WordPress classes in <body>
+ *
+ * @since 1.0.0
  *
  * @param array $classes WordPress <body> classes.
  *
@@ -105,6 +113,8 @@ add_filter( 'body_class', function( $classes ) {
 
 /**
  * Modify Default Comment Form Settings
+ *
+ * @since 1.0.0
  *
  * @param  array $defaults Comment Form Defaults.
  * @return array Updated Comment Form

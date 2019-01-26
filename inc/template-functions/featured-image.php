@@ -16,6 +16,8 @@ namespace Secretum;
 
 /**
  * Display Featured Image Post Thumbnail
+ *
+ * @since 1.0.0
  */
 function secretum_featured_image_display() {
 	echo get_the_post_thumbnail(
@@ -30,6 +32,8 @@ function secretum_featured_image_display() {
 
 /**
  * Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_featured_image_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'featured_image' );
@@ -40,6 +44,8 @@ function secretum_featured_image_wrapper() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_featured_image_container() {
 	$container = secretum_mod( 'featured_image_container_type', 'attr', false );

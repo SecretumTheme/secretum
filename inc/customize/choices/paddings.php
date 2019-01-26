@@ -17,7 +17,9 @@ namespace Secretum;
 /**
  * Padding Top & Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_top_bottom() {
 	return [
@@ -35,7 +37,9 @@ function secretum_customizer_padding_top_bottom() {
 /**
  * Padding Top
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_top() {
 	return [
@@ -53,7 +57,9 @@ function secretum_customizer_padding_top() {
 /**
  * Padding Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_bottom() {
 	return [
@@ -71,7 +77,9 @@ function secretum_customizer_padding_bottom() {
 /**
  * Padding Left & Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_left_right() {
 	return [
@@ -89,7 +97,9 @@ function secretum_customizer_padding_left_right() {
 /**
  * Padding Left
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_left() {
 	return [
@@ -107,7 +117,9 @@ function secretum_customizer_padding_left() {
 /**
  * Padding Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_padding_right() {
 	return [

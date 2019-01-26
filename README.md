@@ -9,7 +9,7 @@
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
-Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money!
+Secretum - A Highly Customizable Multi-Purpose WordPress Theme
 
 
 ## NOTE - Alpha Release
@@ -27,7 +27,7 @@ Theme is ready for public use and should only be developed on for testing purpos
 
 ## Description
 
-Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You Save Time & Money! Export & import (share) theme settings across any Secretum theme install. Mass rapid deploy child-themes that automatically setup upon activation. Very simple to use, no new interfaces to learn, no fancy page-builders needed.
+Secretum is a highly customizable multi-purpose WordPress theme created to save you time and money! Secretum is very simple to use, with no interfaces to learn and no fancy page-builders needed. Change styling and layout options without switching child themes. Export & Import (share) theme settings across any Secretum theme install. Mass rapid deploy websites that automatically setup Secretum theme upon activation.
 
 
 ## For Support, Bugs & Feature Requests
@@ -38,8 +38,6 @@ Secretum - The First Highly Flexible Multipurpose WordPress Theme Created To You
 
 
 ## Features
-
-100% WordPress Compliant: Theme Check Compliant, Core Rule Set Compliant, Best Practices Compliant, Documentation Standards Compliant, and Coding Standards Compliant.
 
 Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.com/WPTRT/theme-unit-test/blob/master/themeunittestdata.wordpress.xml) and [WooCommerce sample_products.xml](https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml)
 
@@ -90,6 +88,12 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 * Automatic Better Font Awesome detection & integration
 * Built-in simple to use lightbox
 	* Enable/disable feature within Customizer > :: Globals > Enqueue Management
+* Follows WordPress Standards
+	* Theme Check Compliant
+	* Core Rule Set Compliant
+	* Best Practices Compliant
+	* Documentation Standards Compliant
+	* Coding Standards Compliant
 
 ** Other Features
 
@@ -102,19 +106,6 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 	* Templates re-designed for improved booking flow
 * Contact Form 7 compatible
 	* Beautified
-
-
-** Features to do
-
-* Background images for everything and in customizer
-* Social media icons widget
-* Primary menus: mega, slideout, fullpage, etc
-* Switchable microdata values
-* Finish customizer settings...
-* Group related customizer blocks into classes
-* Customzer add active menu item for all navs
-* Dropdown / Textual classes for Top/Copy navs for Navwalker
-* Add customizer/prebuilds for jumbotron, carousels, headers, etc..
 
 
 ## Development

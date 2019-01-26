@@ -17,6 +17,8 @@ namespace Secretum;
 /**
  * Add the formats dropdown to visual editor
  *
+ * @since 1.0.0
+ *
  * @param array $buttons Registered buttons.
  * @return array
  */
@@ -31,6 +33,8 @@ add_filter( 'mce_buttons_2', function( $buttons ) {
 
 /**
  * Display advanced editor option in visual editor
+ *
+ * @since 1.0.0
  *
  * @param array $settings Editor settings.
  * @return string Updated Json Encoded Settings

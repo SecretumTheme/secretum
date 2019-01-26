@@ -16,6 +16,8 @@ namespace Secretum;
 
 /**
  * Inject Frontpage Inline BG Style
+ *
+ * @since 1.0.0
  */
 function secretum_frontpage_bg_style() {
 	// Get Background Image ID.
@@ -44,6 +46,8 @@ function secretum_frontpage_bg_style() {
 
 /**
  * Display Google Map
+ *
+ * @since 1.0.0
  */
 function secretum_display_google_map() {
 	$address = secretum_mod( 'frontpage_map_address', 'html' );
@@ -68,6 +72,8 @@ function secretum_display_google_map() {
 
 /**
  * Copyright Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_frontpage_wrapper() {
 	$background = secretum_mod( 'frontpage_wrapper_background_color', 'attr', true );

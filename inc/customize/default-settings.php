@@ -14,9 +14,11 @@
 namespace Secretum;
 
 /**
- * Customizer Default Settings
+ * Combined Default Settings
  *
- * @return array Merged Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Merged Settings
  */
 function secretum_customizer_default_settings() {
 	return array_merge(
@@ -40,9 +42,11 @@ function secretum_customizer_default_settings() {
 
 
 /**
- * Default Theme Settings
+ * Theme Style Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_theme_settings() {
 	return [
@@ -57,9 +61,11 @@ function secretum_customizer_theme_settings() {
 
 
 /**
- * Globals Customizer Settings
+ * Enqueue Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_globals_settings() {
 	return [
@@ -79,9 +85,11 @@ function secretum_customizer_globals_settings() {
 
 
 /**
- * Site Identity Customizer Settings
+ * Site Identity Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_site_identity_settings() {
 	return [
@@ -132,9 +140,11 @@ function secretum_customizer_site_identity_settings() {
 
 
 /**
- * Header Customizer Settings
+ * Header Top Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_header_top_settings() {
 	return [
@@ -184,9 +194,11 @@ function secretum_customizer_header_top_settings() {
 
 
 /**
- * Header Customizer Settings
+ * Header Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_header_settings() {
 	return [
@@ -218,9 +230,11 @@ function secretum_customizer_header_settings() {
 
 
 /**
- * Primary Navigation Customizer Settings
+ * Primary Navigation Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_primary_nav_settings() {
 	return [
@@ -305,9 +319,11 @@ function secretum_customizer_primary_nav_settings() {
 
 
 /**
- * Body Customizer Settings
+ * Body Customizer Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_body_settings() {
 	return [
@@ -335,9 +351,11 @@ function secretum_customizer_body_settings() {
 
 
 /**
- * Featured Image Customizer Settings
+ * Featured Image Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_featured_image_settings() {
 	return [
@@ -368,9 +386,11 @@ function secretum_customizer_featured_image_settings() {
 
 
 /**
- * Body Customizer Settings
+ * Body Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_entry_settings() {
 	return [
@@ -398,9 +418,11 @@ function secretum_customizer_entry_settings() {
 
 
 /**
- * Sidebar Customizer Settings
+ * Sidebar Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_sidebar_settings() {
 	return [
@@ -442,9 +464,11 @@ function secretum_customizer_sidebar_settings() {
 
 
 /**
- * Footer Customizer Settings
+ * Footer Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_footer_settings() {
 	return [
@@ -484,9 +508,11 @@ function secretum_customizer_footer_settings() {
 
 
 /**
- * Copyright Customizer Settings
+ * Copyright Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_copyright_settings() {
 	return [
@@ -527,9 +553,11 @@ function secretum_customizer_copyright_settings() {
 
 
 /**
- * Copyright Navigation Customizer Settings
+ * Copyright Navigation Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_copyright_nav_settings() {
 	return [
@@ -568,9 +596,11 @@ function secretum_customizer_copyright_nav_settings() {
 
 
 /**
- * Frontpage Customizer Settings
+ * Frontpage Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_frontpage_settings() {
 	return [
@@ -595,9 +625,11 @@ function secretum_customizer_frontpage_settings() {
 
 
 /**
- * Customizer Global Settings
+ * Extras Section
  *
- * @return array Customizer Setting Names
+ * @since 1.0.0
+ *
+ * @return array Secretum Customizer Settings
  */
 function secretum_customizer_extras_settings() {
 	return [

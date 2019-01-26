@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_header_top_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'header_top' );
@@ -27,6 +29,8 @@ function secretum_header_top_wrapper() {
 
 /**
  * Text Alignment Class
+ *
+ * @since 1.0.0
  */
 function secretum_header_top_text_alignment() {
 	$alignment = secretum_mod( 'header_top_text_alignment', 'attr', true );
@@ -38,6 +42,8 @@ function secretum_header_top_text_alignment() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_header_top_container() {
 	$container 	= \Secretum\Container::classes( 'header_top' );
@@ -51,6 +57,8 @@ function secretum_header_top_container() {
 
 /**
  * Primary Menu Item Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */

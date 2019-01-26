@@ -16,7 +16,9 @@ namespace Secretum;
 /**
  * Customizer Stylesheet Color Schemes Combined
  *
- * @return array Merged Stylesheet Color Schemes
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_stylesheets() {
 	return array_merge(
@@ -31,7 +33,9 @@ function secretum_customizer_stylesheets() {
 /**
  * Color: Blue
  *
- * @return array Stylesheet Name (key) & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_stylesheets_blue() {
 	return [

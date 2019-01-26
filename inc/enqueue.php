@@ -26,6 +26,8 @@ namespace Secretum;
 
 /**
  * Inject Analytics Code
+ *
+ * @since 1.0.0
  */
 add_action('init', function() {
 	// Get Theme Mods.
@@ -45,7 +47,11 @@ add_action('init', function() {
 } );
 
 
-// WordPress Enqueue Action.
+/**
+ * WordPress Enqueue Action
+ *
+ * @since 1.0.0
+ */
 add_action( 'wp_enqueue_scripts', function() {
 	// Get Theme Object.
 	$theme = wp_get_theme();

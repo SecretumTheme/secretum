@@ -15,6 +15,13 @@ namespace Secretum;
 
 /**
  * Customizer Text Translations
+ *
+ * @since 1.0.0
+ *
+ * @see  TransTrait
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
+ *
+ * @param object $customizer Secretum Customizer Object.
  */
 class TransCustomizer {
 
@@ -25,13 +32,16 @@ class TransCustomizer {
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var object $wp_customize
 	 */
 	protected $wp_customize;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $wp_customize Secretum Customizer Object.
 	 */
@@ -45,6 +55,8 @@ class TransCustomizer {
 
 	/**
 	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
@@ -105,6 +117,8 @@ class TransCustomizer {
 	 * Return a blank space if a space was provided
 	 * Strip all HTML tags including script and style
 	 * Convert all applicable characters to HTML entities
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $string HTML String.
 	 *

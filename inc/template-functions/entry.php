@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Inject Entry Content Before Post Content
+ *
+ * @since 1.0.0
  */
 add_action( 'secretum_before_content', function() {
 	// Display Featured Image If No Location Set or Forced.
@@ -25,6 +27,8 @@ add_action( 'secretum_before_content', function() {
 
 /**
  * Inject Entry Content Before Entry Content
+ *
+ * @since 1.0.0
  */
 add_action( 'secretum_before_entry_content', function() {
 	// Display Featured Image If allowed.
@@ -36,6 +40,8 @@ add_action( 'secretum_before_entry_content', function() {
 
 /**
  * Entry Wrapper Classes
+ *
+ * @since 1.0.0
  */
 function secretum_entry_wrapper() {
 	$columns = secretum_entry_columns();
@@ -48,6 +54,8 @@ function secretum_entry_wrapper() {
 
 /**
  * Columns Based On Sidebar Location
+ *
+ * @since 1.0.0
  *
  * @return string Columns value
  */
@@ -102,6 +110,8 @@ function secretum_entry_columns() {
 
 /**
  * Check if the content has been modified
+ *
+ * @since 1.0.0
  */
 function secretum_modified_date_check() {
 	return (get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ? true : false;
@@ -110,6 +120,8 @@ function secretum_modified_date_check() {
 
 /**
  * Get Post Category Listing
+ *
+ * @since 1.0.0
  */
 function secretum_categories_list() {
 	$get_the_category_list = get_the_category_list( ', ' );
@@ -130,6 +142,8 @@ function secretum_categories_list() {
 
 /**
  * Post Tags Listing
+ *
+ * @since 1.0.0
  */
 function secretum_tags_list() {
 	$get_the_tag_list = get_the_tag_list( '', ', ' );
@@ -151,6 +165,8 @@ function secretum_tags_list() {
 /**
  * Custom Edit Post Link
  *
+ * @since 1.0.0
+ *
  * @param int $post_id Current Post ID.
  */
 function secretum_edit_link( $post_id ) {
@@ -165,6 +181,8 @@ function secretum_edit_link( $post_id ) {
 
 /**
  * Password Protected Posts/Pages/Products Form
+ *
+ * @since 1.0.0
  */
 function secretum_post_password_form() {
 	echo wp_kses(

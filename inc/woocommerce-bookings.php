@@ -16,6 +16,8 @@ namespace Secretum;
 /**
  * Update Booking Expires Time For WooCommerce Bookings In Minutes
  *
+ * @since 1.0.0
+ *
  * @param int $minutes Expire time in minutes.
  * @return int New time
  *
@@ -28,6 +30,8 @@ add_filter( 'woocommerce_bookings_remove_inactive_cart_time', function( $minutes
 
 /**
  * Update Booking Field Order On Add-To-Cart
+ *
+ * @since 1.0.0
  *
  * @param array $fields Current booking fields.
  * @return array $new_order Updated booking field order
@@ -63,6 +67,8 @@ add_filter( 'booking_form_fields', function( $fields ) {
 
 /**
  * Inject sold-out tag on future sold-out times
+ *
+ * @since 1.0.0
  *
  * @param string  $block_html Current display times.
  * @param array   $available_blocks Full and partial blocks.
@@ -128,6 +134,8 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 /**
  * Update Woo Cart Session Expires Times In Seconds ( 1200s = 20m )
  *
+ * @since 1.0.0
+ *
  * @link https://docs.woocommerce.com/wc-apidocs/source-class-WC_Session_Handler.html
  *
  * @param int $seconds Time in Seconds.
@@ -139,6 +147,8 @@ add_filter( 'wc_session_expiring', function( $seconds ) {
 
 /**
  * Update Woo Cart Session Expires Times In Seconds ( 1200s = 20m )
+ *
+ * @since 1.0.0
  *
  * @link https://docs.woocommerce.com/wc-apidocs/source-class-WC_Session_Handler.html
  *
@@ -152,6 +162,8 @@ add_filter( 'wc_session_expiration' , function( $seconds ) {
 /**
  * Update Book Now Button
  *
+ * @since 1.0.0
+ *
  * @link https://docs.woocommerce.com/document/bookings-snippets/
  */
 add_filter( 'woocommerce_booking_single_add_to_cart_text', function() {
@@ -162,6 +174,8 @@ add_filter( 'woocommerce_booking_single_add_to_cart_text', function() {
 /**
  * Modify Checkout Page Pay Now Button
  *
+ * @since 1.0.0
+ *
  * @param string $order_button_text Old Text.
  */
 add_filter( 'woocommerce_order_button_text', function( $order_button_text ) {
@@ -171,12 +185,16 @@ add_filter( 'woocommerce_order_button_text', function( $order_button_text ) {
 
 /**
  * Modify Add To Cart Message
+ *
+ * @since 1.0.0
  */
 add_filter( 'wc_add_to_cart_message_html', '__return_null' );
 
 
 /**
  * Modify Add To Cart Message
+ *
+ * @since 1.0.0
  */
 add_filter( 'wc_add_to_cart_message_html', function() {
 	return sprintf(
@@ -191,6 +209,8 @@ add_filter( 'wc_add_to_cart_message_html', function() {
 /**
  * Modify Person( s ) to Players( s ) on Cart & Checkout
  *
+ * @since 1.0.0
+ *
  * @param array $labels Labels array.
  */
 add_filter( 'woocommerce_get_item_data', function( $labels ) {
@@ -204,6 +224,8 @@ add_filter( 'woocommerce_get_item_data', function( $labels ) {
 
 /**
  * Update Return Text
+ *
+ * @since 1.0.0
  *
  * @param string $translated_text Marker.
  * @param string $text Text to translate.

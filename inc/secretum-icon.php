@@ -16,6 +16,8 @@ namespace Secretum;
 /**
  * Returns either Foundation icon icon/svg or Font Awesome Icon if Better Font Awesome Plugin installed
  *
+ * @since 1.0.0
+ *
  * @example echo secretum_icon( [ 'fi' => 'icon-name', ] );
  * @example echo secretum_icon( [ 'fa' => 'icon-name', ] );
  * @example echo secretum_icon( [ 'png' => 'icon-name', ] );

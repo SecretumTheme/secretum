@@ -15,6 +15,8 @@ namespace Secretum;
 
 /**
  * Title/Desc Alignment
+ *
+ * @since 1.0.0
  */
 function secretum_site_identity_alignment() {
 	echo esc_html( apply_filters( 'secretum_site_identity_alignment', secretum_mod( 'site_identity_alignment', 'attr', true ), 10, 1 ) );
@@ -24,6 +26,8 @@ function secretum_site_identity_alignment() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  *
  * @return string Classes.
  */
@@ -39,6 +43,8 @@ function secretum_site_identity_title_container() {
 /**
  * Text/Front Classes
  *
+ * @since 1.0.0
+ *
  * @return string Classes.
  */
 function secretum_site_identity_title_textuals() {
@@ -51,6 +57,8 @@ function secretum_site_identity_title_textuals() {
 
 /**
  * Container Classes
+ *
+ * @since 1.0.0
  */
 function secretum_site_identity_desc_container() {
 	$container 	= \Secretum\Container::classes( 'site_identity_desc' );
@@ -63,6 +71,8 @@ function secretum_site_identity_desc_container() {
 
 /**
  * Text/Front Classes
+ *
+ * @since 1.0.0
  */
 function secretum_site_identity_desc_textuals() {
 	$textuals = \Secretum\Textuals::classes( 'site_identity_desc' );

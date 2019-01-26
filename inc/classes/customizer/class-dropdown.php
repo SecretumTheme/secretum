@@ -15,12 +15,18 @@ namespace Secretum;
 
 /**
  * Customizer Dropdown Menu Grouping
+ *
+ * @since 1.0.0
+ *
+ * @param object $customizer Secretum Customizer Object.
+ * @param array  $defaults   Default Settings Array.
  */
 class Dropdown {
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -28,13 +34,16 @@ class Dropdown {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $customizer Secretum Customizer Object.
 	 * @param array  $defaults   Default Settings Array.
@@ -50,6 +59,8 @@ class Dropdown {
 
 	/**
 	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args [section (required)] Settings.
 	 */
@@ -147,6 +158,8 @@ class Dropdown {
 
 	/**
 	 * Build Unfiltered Class(es) String
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $section Section Shortname.
 	 *

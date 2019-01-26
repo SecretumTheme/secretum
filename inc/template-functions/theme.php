@@ -16,7 +16,10 @@ namespace Secretum;
 /**
  * Color Classes
  *
- * @see inc/template-filters.php
+ * @since 1.0.0
+ *
+ * @see add_filter:body_class
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/template-filters.php
  *
  * @return string Pre-sanitized string of class names
  */
@@ -33,7 +36,10 @@ function secretum_theme_colors() {
 /**
  * Font Classes
  *
- * @see inc/template-filters.php
+ * @since 1.0.0
+ *
+ * @see add_filter:body_class
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/template-filters.php
  *
  * @return string Pre-sanitized string of class names
  */

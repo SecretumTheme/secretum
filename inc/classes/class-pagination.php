@@ -16,6 +16,8 @@ namespace Secretum;
 /**
  * Initilize Pagination
  *
+ * @since 1.0.0
+ *
  * @example \Secretum\Pagination::instance( $wp_query );
  * @example \Secretum\Pagination::instance( $wp_query, $nav_label, $previous_label, $next_label );
  * \Secretum\Pagination::instance(
@@ -29,55 +31,64 @@ class Pagination {
 	/**
 	 * Instance Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $instance
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Post Query Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $wp_query
 	 */
 	public $wp_query;
 
 	/**
 	 * Nav Aria Text Label
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $nav_label
 	 */
 	public $nav_label;
 
 	/**
 	 * Previous << Text Label
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $previous_label
 	 */
 	public $previous_label;
 
 	/**
 	 * Next >> Text Label
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $next_label
 	 */
 	public $next_label;
 
 	/**
 	 * Current Previous Post URL
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $previous_post_link
 	 */
 	public $previous_post_link;
 
 	/**
 	 * Current Next Post URL
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $next_post_link
 	 */
-	public $next_post_link ;
+	public $next_post_link;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $wp_query WordPress Post Object.
 	 * @param string $nav_label Nav Aria Text Label.
@@ -104,6 +115,8 @@ class Pagination {
 	/**
 	 * Open Nav
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return string HTML.
 	 */
 	final private function nav_open() {
@@ -114,6 +127,8 @@ class Pagination {
 
 	/**
 	 * Previous << Text Label
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return string HTML.
 	 */
@@ -130,6 +145,8 @@ class Pagination {
 
 	/**
 	 * Display Pagination Feature
+	 *
+	 * @since 1.0.0
 	 */
 	final public function paginate() {
 		// If Pages.
@@ -194,6 +211,8 @@ class Pagination {
 	/**
 	 * Check For Pages
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return bool
 	 */
 	final private function paginate_check() {
@@ -205,6 +224,8 @@ class Pagination {
 
 	/**
 	 * Page Number Link Items
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $paginate_links HTML Items.
 	 */
@@ -225,6 +246,8 @@ class Pagination {
 	/**
 	 * Next >> Text Label
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return string HTML.
 	 */
 	final private function next_posts() {
@@ -241,6 +264,8 @@ class Pagination {
 	/**
 	 * Close Nav
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return string HTML.
 	 */
 	final private function nav_close() {
@@ -251,6 +276,8 @@ class Pagination {
 
 	/**
 	 * Create Instance
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $wp_query WordPress Post Object.
 	 * @return object $instance Instance Object.
