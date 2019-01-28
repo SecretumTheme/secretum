@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If WooCommerce Active.
-if ( class_exists( 'woocommerce' ) ) {
+if ( true === secretum_is_woocomerce() ) {
 	// Product Page Widget Area.
 	register_sidebar( [
 		'name' 			=> __( '- WooCommerce Product Page', 'secretum' ),

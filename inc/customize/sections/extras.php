@@ -241,7 +241,7 @@ $customizer->checkbox(
 );
 
 
-if ( class_exists( 'woocommerce' ) === true ) {
+if ( true === secretum_is_woocomerce() ) {
 	// Checkbox.
 	$customizer->checkbox(
 		'enqueue',
@@ -251,7 +251,7 @@ if ( class_exists( 'woocommerce' ) === true ) {
 		$defaults['enqueue_woocommerce_status']
 	);
 
-	if ( class_exists( 'WC_Bookings' ) === true ) {
+	if ( true === secretum_is_woobookings() ) {
 		// Checkbox.
 		$customizer->checkbox(
 			'enqueue',
@@ -264,7 +264,7 @@ if ( class_exists( 'woocommerce' ) === true ) {
 }
 
 
-if ( class_exists( 'WPCF7' ) === true ) {
+if ( true === class_exists( 'WPCF7' ) ) {
 	// Input Text.
 	$customizer->input_text(
 		'enqueue',
