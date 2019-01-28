@@ -23,7 +23,7 @@ function secretum_copyright_nav_wrapper() {
 	$borders 	= \Secretum\Borders::classes( 'copyright_nav_wrapper' );
 	$textuals 	= \Secretum\Textuals::classes( 'copyright_nav' );
 
-	echo esc_html( $wrapper . $textuals . $borders );
+	echo esc_html( apply_filters( 'secretum_copyright_nav_wrapper', $wrapper . $textuals . $borders, 10, 1 ) );
 
 }//end secretum_copyright_nav_wrapper()
 
@@ -38,7 +38,7 @@ function secretum_copyright_nav_wrapper() {
 function secretum_copyright_nav_alignment() {
 	$alignment = secretum_mod( 'copyright_nav_items_alignment', 'attr', true );
 
-	return $alignment;
+	return apply_filters( 'secretum_copyright_nav_alignment', $alignment, 10, 1 );
 
 }//end secretum_copyright_nav_alignment()
 
@@ -53,6 +53,6 @@ function secretum_copyright_nav_alignment() {
 function secretum_copyright_nav_items() {
 	$nav_items = \Secretum\NavItems::classes( 'copyright_nav' );
 
-	return $nav_items;
+	return apply_filters( 'secretum_copyright_nav_items', $nav_items, 10, 1 );
 
 }//end secretum_copyright_nav_items()

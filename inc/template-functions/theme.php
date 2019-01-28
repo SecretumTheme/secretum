@@ -29,9 +29,9 @@ function secretum_theme_colors() {
 	$link_color 		= secretum_mod( 'theme_link_color', 'attr', true );
 	$link_hover_color 	= secretum_mod( 'theme_link_hover_color', 'attr', true );
 
-	return $background_color . $text_color . $link_color . $link_hover_color;
-}
+	return apply_filters( 'secretum_theme_colors', $background_color . $text_color . $link_color . $link_hover_color, 10, 1 );
 
+}//end secretum_theme_colors()
 
 /**
  * Font Classes
@@ -47,5 +47,6 @@ function secretum_theme_fonts() {
 	$font_family 	= secretum_mod( 'theme_font_family', 'attr', true );
 	$font_size 		= secretum_mod( 'theme_font_size', 'attr', true );
 
-	return $font_family . $font_size;
-}
+	return apply_filters( 'secretum_theme_fonts', $font_family . $font_size, 10, 1 );
+
+}//end secretum_theme_fonts()

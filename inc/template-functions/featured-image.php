@@ -20,14 +20,31 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_featured_image_display() {
-	echo get_the_post_thumbnail(
+	$thumbnail_html = get_the_post_thumbnail(
 		get_queried_object_id(),
 		'secretum-featured-image',
 		[
 			'class' => 'img-fluid',
 		]
 	);
-}
+
+	echo wp_kses(
+		apply_filters( 'secretum_featured_image_' . get_queried_object_id(), $thumbnail_html, 10, 1 ),
+		[
+			'div' => [
+				'class' 	=> true,
+			],
+			'img' => [
+				'width' 	=> true,
+				'height' 	=> true,
+				'src' 		=> true,
+				'class' 	=> true,
+				'alt' 		=> true,
+			],
+		]
+	);
+
+}//end secretum_featured_image_display()
 
 
 /**
@@ -38,8 +55,10 @@ function secretum_featured_image_display() {
 function secretum_featured_image_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'featured_image' );
 	$borders = \Secretum\Borders::classes( 'featured_image_wrapper' );
-	echo esc_html( $wrapper . $borders );
-}
+
+	echo esc_html( apply_filters( 'secretum_featured_image_wrapper', $wrapper . $borders, 10, 1 ) );
+
+}//end secretum_featured_image_wrapper()
 
 
 /**
@@ -55,4 +74,5 @@ function secretum_featured_image_container() {
 	$padding = secretum_mod( 'featured_image_container_padding_x', 'attr', true ) . secretum_mod( 'featured_image_container_padding_y', 'attr', true );
 
 	echo esc_html( apply_filters( 'secretum_featured_image_container', $container . $background . $border . $margin . $padding, 10, 1 ) );
-}
+
+}//end secretum_featured_image_container()

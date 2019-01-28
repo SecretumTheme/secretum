@@ -27,8 +27,11 @@ function secretum_copyright_statement() {
 	$text = __( 'All Rights Reserved.', 'secretum' );
 	$desc = __( 'Code is Poetry | Proudly Powered by WordPress!', 'secretum' );
 
+	// Build Statement.
+	$statement = "{$copy} {$year} &copy; <a href=\"{$home}\">{$name}</a> - {$text}<br /><small>{$desc}</small>";
+
 	echo wp_kses(
-		"{$copy} {$year} &copy;<a href=\"{$home}\">{$name}</a> - {$text}<br /><small>{$desc}</small>",
+		apply_filters( 'secretum_copyright_statement', $statement, 10, 1 ),
 		[
 			'a' => [
 				'href' => true,
@@ -51,7 +54,7 @@ function secretum_copyright_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'copyright' );
 	$borders = \Secretum\Borders::classes( 'copyright_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
+	echo esc_html( apply_filters( 'secretum_copyright_wrapper', $wrapper . $borders, 10, 1 ) );
 
 }//end secretum_copyright_wrapper()
 
@@ -65,7 +68,7 @@ function secretum_copyright_container() {
 	$container 	= \Secretum\Container::classes( 'copyright' );
 	$borders 	= \Secretum\Borders::classes( 'copyright_container' );
 
-	echo esc_html( $container . $borders );
+	echo esc_html( apply_filters( 'secretum_copyright_container', $container . $borders, 10, 1 ) );
 
 }//end secretum_copyright_container()
 
@@ -89,6 +92,6 @@ function secretum_copyright_text_alignment() {
 function secretum_copyright_textuals() {
 	$textuals 	= \Secretum\Textuals::classes( 'copyright' );
 
-	echo esc_html( $textuals );
+	echo esc_html( apply_filters( 'secretum_copyright_textuals', $textuals, 10, 1 ) );
 
 }//end secretum_copyright_textuals()

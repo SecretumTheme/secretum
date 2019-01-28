@@ -9,7 +9,6 @@
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/author.php
  * @since      1.0.0
- @
  */
 
 namespace Secretum;
@@ -44,4 +43,5 @@ function secretum_author_post_list() {
 			],
 		]
 	);
-}
+
+}//end secretum_author_post_list()

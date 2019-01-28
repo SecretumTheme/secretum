@@ -20,11 +20,12 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_primary_nav_fallback() {
-	$text = esc_html( apply_filters( 'secretum_create_menu_text', __( 'Create Menu', 'secretum' ) ) );
-	$url = esc_url( admin_url( 'nav-menus.php' ) );
+	$text 	= esc_html( apply_filters( 'secretum_create_menu_text', __( 'Create Menu', 'secretum' ) ) );
+	$url 	= esc_url( admin_url( 'nav-menus.php' ) );
+	$html 	= "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\">{$text}</a></li></ul>";
 
 	echo wp_kses(
-		"<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\">{$text}</a></li></ul>",
+		apply_filters( 'secretum_primary_nav_fallback', $html, 10, 1 ),
 		[
 			'ul' => [
 				'id' 	=> true,
@@ -51,7 +52,7 @@ function secretum_primary_nav_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'primary_nav' );
 	$borders = \Secretum\Borders::classes( 'primary_nav_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
+	echo esc_html( apply_filters( 'secretum_primary_nav_wrapper', $wrapper . $borders, 10, 1 ) );
 
 }//end secretum_primary_nav_wrapper()
 
@@ -66,7 +67,7 @@ function secretum_primary_nav_container() {
 	$borders 	= \Secretum\Borders::classes( 'primary_nav_container' );
 	$textuals 	= \Secretum\Textuals::classes( 'primary_nav' );
 
-	echo esc_html( $container . $borders . $textuals );
+	echo esc_html( apply_filters( 'secretum_primary_nav_container', $container . $borders . $textuals, 10, 1 ) );
 
 }//end secretum_primary_nav_container()
 
@@ -77,7 +78,9 @@ function secretum_primary_nav_container() {
  * @since 1.0.0
  */
 function secretum_primary_nav_color_scheme() {
-	echo esc_html( apply_filters( 'secretum_primary_nav_color_scheme', secretum_mod( 'primary_nav_color_theme', 'attr', true ), 10, 1 ) );
+	$color_scheme = secretum_mod( 'primary_nav_color_theme', 'attr', true );
+
+	echo esc_html( apply_filters( 'secretum_primary_nav_color_scheme', $color_scheme, 10, 1 ) );
 
 }//end secretum_primary_nav_color_scheme()
 
@@ -92,7 +95,7 @@ function secretum_primary_nav_color_scheme() {
 function secretum_primary_nav_alignment() {
 	$alignment = secretum_mod( 'primary_nav_alignment', 'attr', true );
 
-	return $alignment;
+	return apply_filters( 'secretum_primary_nav_alignment', $alignment, 10, 1 );
 
 }//end secretum_primary_nav_alignment()
 
@@ -107,7 +110,7 @@ function secretum_primary_nav_alignment() {
 function secretum_primary_nav_items() {
 	$nav_items = \Secretum\NavItems::classes( 'primary_nav' );
 
-	return $nav_items;
+	return apply_filters( 'secretum_primary_nav_items', $nav_items, 10, 1 );
 
 }//end secretum_primary_nav_items()
 
@@ -125,7 +128,7 @@ function secretum_primary_nav_dropdown() {
 	$margin = secretum_mod( 'primary_nav_dropdown_margin_y', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_margin_x', 'attr', true );
 	$padding = secretum_mod( 'primary_nav_dropdown_padding_y', 'attr', true ) . secretum_mod( 'primary_nav_dropdown_padding_x', 'attr', true );
 
-	return apply_filters( 'secretum_primary_nav_dropdown_classes', $background . $border . $margin . $padding, 10, 1 );
+	return apply_filters( 'secretum_primary_nav_dropdown', $background . $border . $margin . $padding, 10, 1 );
 
 }//end secretum_primary_nav_dropdown()
 
@@ -140,7 +143,7 @@ function secretum_primary_nav_dropdown() {
 function secretum_primary_nav_dropdown_textual() {
 	$textuals = \Secretum\Textuals::classes( 'primary_nav_dropdown' );
 
-	return $textuals;
+	return apply_filters( 'secretum_primary_nav_dropdown_textual', $textuals, 10, 1 );
 
 }//end secretum_primary_nav_dropdown_textual()
 

@@ -20,10 +20,11 @@ namespace Secretum;
  */
 add_action( 'secretum_before_content', function() {
 	// Display Featured Image If No Location Set or Forced.
-	if ( ! secretum_mod( 'featured_image_display_location' ) || 'before_content' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
+	if ( false === secretum_mod( 'featured_image_display_location' ) || 'before_content' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
 } );
+
 
 /**
  * Inject Entry Content Before Entry Content
@@ -48,8 +49,9 @@ function secretum_entry_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'entry' );
 	$borders = \Secretum\Borders::classes( 'entry_wrapper' );
 
-	echo esc_html( $columns . $wrapper . $borders );
-}
+	echo esc_html( apply_filters( 'secretum_entry_wrapper', $columns . $wrapper . $borders, 10, 1 ) );
+
+}//end secretum_entry_wrapper()
 
 
 /**
@@ -102,8 +104,9 @@ function secretum_entry_columns() {
 		}
 	}
 
-	return $columns;
-}
+	return apply_filters( 'secretum_entry_columns', $columns, 10, 1 );
+
+}//end secretum_entry_columns()
 
 
 
@@ -114,8 +117,9 @@ function secretum_entry_columns() {
  * @since 1.0.0
  */
 function secretum_modified_date_check() {
-	return (get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ? true : false;
-}
+	return ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ? true : false;
+
+}//end secretum_modified_date_check()
 
 
 /**
@@ -137,7 +141,8 @@ function secretum_categories_list() {
 			]
 		);
 	}
-}
+
+}//end secretum_categories_list()
 
 
 /**
@@ -159,24 +164,8 @@ function secretum_tags_list() {
 			]
 		);
 	}
-}
 
-
-/**
- * Custom Edit Post Link
- *
- * @since 1.0.0
- *
- * @param int $post_id Current Post ID.
- */
-function secretum_edit_link( $post_id ) {
-	edit_post_link(
-		__( 'Edit', 'secretum' ),
-		'<span class="screen-reader-text">' . __( 'Edit', 'secretum' ) . '</span><span class="edit-link">',
-		'</span>',
-		(int) $post_id
-	);
-}
+}//end secretum_tags_list()
 
 
 /**
@@ -186,7 +175,7 @@ function secretum_edit_link( $post_id ) {
  */
 function secretum_post_password_form() {
 	echo wp_kses(
-		get_the_password_form(),
+		apply_filters( 'secretum_post_password_form', get_the_password_form(), 10, 1 ),
 		[
 			'form' 	=> [
 				'action' 	=> true,
@@ -206,4 +195,46 @@ function secretum_post_password_form() {
 			'p' 	=> true,
 		]
 	);
-}
+
+}//end secretum_post_password_form()
+
+
+/**
+ * Custom Edit Post Link
+ *
+ * @since 1.0.0
+ *
+ * @param int $post_id Current Post ID.
+ */
+function secretum_edit_link( $post_id ) {
+	$edit  = __( 'Edit Entry', 'secretum' );
+	$link  = get_edit_post_link( $post_id );
+	$icon  = secretum_icon(
+		[
+			'fi' 	=> 'pencil',
+			'fa' 	=> 'fa-pencil',
+			'echo' 	=> false,
+		]
+	);
+	$html  = "<span class=\"screen-reader-text\">{$edit}</span>";
+	$html .= "&nbsp;&nbsp;&nbsp;<span class=\"edit-link\"><a class=\"post-edit-link\" href=\"{$link}\" title=\"{$edit}\">{$icon}</a></span>";
+
+	echo wp_kses(
+		apply_filters( 'secretum_edit_link', $html, 10, 1 ),
+		[
+			'a' => [
+				'class' 		=> true,
+				'href' 			=> true,
+				'title' 		=> true,
+			],
+			'span' => [
+				'class' 		=> true,
+			],
+			'i' => [
+				'class' 		=> true,
+				'aria-hidden' 	=> true,
+			],
+		]
+	);
+
+}//end secretum_edit_link()

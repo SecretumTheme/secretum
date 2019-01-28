@@ -119,10 +119,10 @@ if ( is_admin() ) {
 
 
 // WooCommerce Features.
-if ( class_exists( 'woocommerce' ) ) {
+if ( true === secretum_is_woocomerce() ) {
 	require_once SECRETUM_INC . '/woocommerce.php';
 
-	if ( class_exists( 'WC_Bookings' ) ) {
+	if ( true === secretum_is_woobookings() ) {
 		require_once SECRETUM_INC . '/woocommerce-bookings.php';
 	}
 }

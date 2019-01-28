@@ -22,7 +22,7 @@ function secretum_body_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'body' );
 	$borders = \Secretum\Borders::classes( 'body_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
+	echo esc_html( apply_filters( 'secretum_body_wrapper', $wrapper . $borders, 10, 1 ) );
 
 }//end secretum_body_wrapper()
 
@@ -36,6 +36,6 @@ function secretum_body_container() {
 	$container = \Secretum\Container::classes( 'body' );
 	$borders = \Secretum\Borders::classes( 'body_container' );
 
-	echo esc_html( $container . $borders );
+	echo esc_html( apply_filters( 'secretum_body_container', $container . $borders, 10, 1 ) );
 
 }//end secretum_body_container()

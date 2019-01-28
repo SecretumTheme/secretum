@@ -25,7 +25,8 @@ function secretum_scrolltop_container() {
 	$padding = secretum_mod( 'scrolltop_padding_x', 'attr', true ) . secretum_mod( 'scrolltop_padding_y', 'attr', true );
 
 	echo esc_html( apply_filters( 'secretum_scrolltop_container', $background . $border . $margin . $padding, 10, 1 ) );
-}
+
+}//end secretum_scrolltop_container()
 
 
 /**
@@ -38,4 +39,5 @@ function secretum_scrolltop_textuals() {
 	$font_size = secretum_mod( 'scrolltop_icon_size', 'attr', true );
 
 	echo esc_html( apply_filters( 'secretum_scrolltop_textuals', $text_color . $font_size, 10, 1 ) );
-}
+
+}//end secretum_scrolltop_textuals()

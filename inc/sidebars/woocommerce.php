@@ -59,4 +59,4 @@ if ( class_exists( 'woocommerce' ) ) {
 		'after_title'   => '</h3>',
 	] );
 
-}//end if
+}// End if().

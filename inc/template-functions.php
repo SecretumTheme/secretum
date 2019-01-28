@@ -35,7 +35,7 @@ function secretum_text( $key = '', $echo = false ) {
 	$translate = \Secretum\Trans::instance();
 
 	// Required.
-	if ( false === ( empty( $key ) ) ) {
+	if ( false === empty( $key ) ) {
 		if ( false === $echo ) {
 			// Return Text.
 			return $translate->get( $key, false );
@@ -43,6 +43,54 @@ function secretum_text( $key = '', $echo = false ) {
 			// Echo Text.
 			$translate->get( $key, true );
 		}
+	}
+}
+
+
+/**
+ * Check if WooCommerce is Active
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_woocomerce() {
+	if ( true === class_exists( 'woocommerce' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+/**
+ * Check if WooCommerce Product Exists
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_wooproduct() {
+	if ( true === class_exists( 'woocommerce' ) && true === function_exists( 'is_product' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+/**
+ * Check if Woo Bookings is Active
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_woobookings() {
+	if ( true === class_exists( 'WC_Bookings' ) ) {
+		return true;
+	} else {
+		return false;
 	}
 }
 

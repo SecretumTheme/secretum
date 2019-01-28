@@ -29,8 +29,8 @@ namespace Secretum;
  */
 function secretum_post_navigation() {
 	// Get Prev/Next Post Objects.
-	$prev_post = get_adjacent_post( false, '', true );
-	$next_post = get_adjacent_post( false, '', false );
+	$prev_post = get_previous_post();
+	$next_post = get_next_post();
 
 	// Text Strings.
 	$text_heading 	= __( 'Post navigation', 'secretum' );
@@ -38,7 +38,7 @@ function secretum_post_navigation() {
 	$text_next 		= __( 'Next Post', 'secretum' );
 
 	// Prev Post Link & Title.
-	if ( true == isset( $prev_post->ID ) && true === isset( $prev_post->post_title ) ) {
+	if ( true === isset( $prev_post->ID ) && true === isset( $prev_post->post_title ) ) {
 		// Left Arrow Icon.
 		$left_icon = secretum_icon( [
 			'fi' 	=> 'arrow-left',
@@ -50,10 +50,10 @@ function secretum_post_navigation() {
 		$prev_title = $prev_post->post_title;
 		$prev_icon 	= $left_icon;
 
-		$prev_html  = "<div class=\"nav-previous float-sm-left\">";
-		$prev_html .= "{$prev_icon} <a href=\"{$prev_link}\" rel=\"prev\"><span class=\"meta-nav\" aria-hidden=\"true\">{$text_prev}</span> <span class=\"screen-reader-text\">{$text_prev}: {$prev_title}</span></a>";
+		$prev_html  = '<div class="nav-previous float-sm-left">';
+		$prev_html .= "{$prev_icon} <a href=\"{$prev_link}\" rel=\"prev\"><span class=\"meta-nav\" aria-hidden=\"true\">{$text_prev}</span><span class=\"screen-reader-text\">{$text_prev}: {$prev_title}</span></a>";
 		$prev_html .= "<br /><a href=\"{$prev_link}\" rel=\"prev\"><span class=\"post-title\">{$prev_title}</span></a>";
-		$prev_html .= "</div><!-- .nav-previous -->";
+		$prev_html .= '</div><!-- .nav-previous -->';
 
 	} else {
 		// Home Icon.
@@ -67,16 +67,16 @@ function secretum_post_navigation() {
 		$prev_title = __( 'Return Home', 'secretum' );
 		$prev_icon 	= $home_icon;
 
-		$prev_html  = "<div class=\"nav-previous float-sm-left\">";
+		$prev_html  = '<div class="nav-previous float-sm-left">';
 		$prev_html .= "<br />{$prev_icon} <a href=\"{$prev_link}\" rel=\"prev\"><span class=\"screen-reader-text\">{$prev_title}:</span><span class=\"post-title\">{$prev_title}</span></a>";
-		$prev_html .= "</div><!-- .nav-previous -->";
+		$prev_html .= '</div><!-- .nav-previous -->';
 	}
 
 	// Clear.
 	$next_html = '';
 
 	// Next Post Link & Title.
-	if ( true == isset( $next_post->ID ) && true === isset( $next_post->post_title ) ) {
+	if ( true === isset( $next_post->ID ) && true === isset( $next_post->post_title ) ) {
 		// Right Arrow Icon.
 		$right_icon = secretum_icon( [
 			'fi' 	=> 'arrow-right',
@@ -88,21 +88,21 @@ function secretum_post_navigation() {
 		$next_title = $next_post->post_title;
 		$next_icon 	= $right_icon;
 
-		$next_html .= "<div class=\"nav-next float-sm-right\">";
-		$next_html .= "<a href=\"{$next_link}\" rel=\"next\"><span class=\"meta-nav\" aria-hidden=\"true\">{$text_next}</span> <span class=\"screen-reader-text\">{$text_next}: {$prev_title}</span> {$next_icon}";
-		$next_html .= "<br /><span class=\"post-title\">{$next_title}</span></a>";
-		$next_html .= "</div><!-- .nav-next -->";
+		$next_html .= '<div class="nav-next float-sm-right">';
+		$next_html .= "<a href=\"{$next_link}\" rel=\"next\"><span class=\"meta-nav\" aria-hidden=\"true\">{$text_next}</span><span class=\"screen-reader-text\">{$text_next}: {$prev_title}</span></a> {$next_icon}";
+		$next_html .= "<br /><a href=\"{$next_link}\" rel=\"next\"><span class=\"post-title\">{$next_title}</span></a>";
+		$next_html .= '</div><!-- .nav-next -->';
 	}
 
 	// HTML Output.
-	$navigation  = "<hr />";
-	$navigation .= "<nav class=\"navigation post-navigation clearfix\" role=\"navigation\">";
+	$navigation  = '<hr />';
+	$navigation .= '<nav class="navigation post-navigation clearfix" role="navigation">';
 	$navigation .= "<h2 class=\"screen-reader-text\">{$text_heading}</h2>";
-	$navigation .= "<div class=\"nav-links\">";
+	$navigation .= '<div class="nav-links">';
 	$navigation .= $prev_html;
 	$navigation .= $next_html;
-	$navigation .= "</div><!-- .nav-links -->";
-	$navigation .= "</nav><!-- .navigation.post-navigation -->";
+	$navigation .= '</div><!-- .nav-links -->';
+	$navigation .= '</nav><!-- .navigation.post-navigation -->';
 
 	// Filter HTML.
 	echo wp_kses(
@@ -134,4 +134,5 @@ function secretum_post_navigation() {
 			'hr' 				=> true,
 		]
 	);
-}
+
+}//end secretum_post_navigation()

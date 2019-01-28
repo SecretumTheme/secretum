@@ -22,7 +22,7 @@ function secretum_header_top_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'header_top' );
 	$borders = \Secretum\Borders::classes( 'header_top_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
+	echo esc_html( apply_filters( 'secretum_header_top_wrapper', $wrapper . $borders, 10, 1 ) );
 
 }//end secretum_header_top_wrapper()
 
@@ -35,7 +35,7 @@ function secretum_header_top_wrapper() {
 function secretum_header_top_text_alignment() {
 	$alignment = secretum_mod( 'header_top_text_alignment', 'attr', true );
 
-	echo esc_html( $alignment );
+	echo esc_html( apply_filters( 'secretum_header_top_text_alignment', $alignment, 10, 1 ) );
 
 }//end secretum_header_top_text_alignment()
 
@@ -50,7 +50,7 @@ function secretum_header_top_container() {
 	$borders 	= \Secretum\Borders::classes( 'header_top_container' );
 	$textuals 	= \Secretum\Textuals::classes( 'header_top' );
 
-	echo esc_html( $container . $borders . $textuals );
+	echo esc_html( apply_filters( 'secretum_header_top_container', $container . $borders . $textuals, 10, 1 ) );
 
 }//end secretum_header_top_container()
 
@@ -65,6 +65,6 @@ function secretum_header_top_container() {
 function secretum_header_top_items() {
 	$nav_items = \Secretum\NavItems::classes( 'header_top' );
 
-	return $nav_items;
+	return apply_filters( 'secretum_header_top_items', $nav_items, 10, 1 );
 
 }//end secretum_header_top_items()

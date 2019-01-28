@@ -22,8 +22,9 @@ function secretum_sidebar_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'sidebar' );
 	$borders = \Secretum\Borders::classes( 'sidebar_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
-}
+	echo esc_html( apply_filters( 'secretum_sidebar_wrapper', $wrapper . $borders, 10, 1 ) );
+
+}//end secretum_sidebar_wrapper()
 
 
 /**
@@ -37,8 +38,9 @@ function secretum_sidebar_container() {
 	$container = \Secretum\Container::classes( 'sidebar' );
 	$borders = \Secretum\Borders::classes( 'sidebar_container' );
 
-	return $container . $borders;
-}
+	return apply_filters( 'secretum_sidebar_container', $container . $borders, 10, 1 );
+
+}//end secretum_sidebar_container()
 
 
 /**
@@ -51,8 +53,9 @@ function secretum_sidebar_container() {
 function secretum_sidebar_textuals() {
 	$textuals = \Secretum\Textuals::classes( 'sidebar' );
 
-	return $textuals;
-}
+	return apply_filters( 'secretum_sidebar_textuals', $textuals, 10, 1 );
+
+}//end secretum_sidebar_textuals()
 
 
 /**
@@ -93,4 +96,5 @@ function secretum_sidebar_location( $location_check ) {
 	}
 
 	return ( $display ) ? true : false;
-}
+
+}//end secretum_sidebar_location()

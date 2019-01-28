@@ -22,7 +22,7 @@ function secretum_footer_wrapper() {
 	$wrapper = \Secretum\Wrapper::classes( 'footer' );
 	$borders = \Secretum\Borders::classes( 'footer_wrapper' );
 
-	echo esc_html( $wrapper . $borders );
+	echo esc_html( apply_filters( 'secretum_footer_wrapper', $wrapper . $borders, 10, 1 ) );
 
 }//end secretum_footer_wrapper()
 
@@ -38,7 +38,7 @@ function secretum_footer_container() {
 	$textuals = \Secretum\Textuals::classes( 'footer' );
 	$borders = \Secretum\Borders::classes( 'footer_container' );
 
-	echo esc_html( $alignment . $container . $textuals . $borders );
+	echo esc_html( apply_filters( 'secretum_footer_container', $alignment . $container . $textuals . $borders, 10, 1 ) );
 
 }//end secretum_footer_container()
 
@@ -54,6 +54,6 @@ function secretum_footer_textuals() {
 	$alignment = secretum_mod( 'footer_text_alignment', 'attr', true );
 	$textuals = \Secretum\Textuals::classes( 'footer' );
 
-	return $alignment . $textuals;
+	return apply_filters( 'secretum_footer_textuals', $alignment . $textuals, 10, 1 );
 
 }//end secretum_footer_textuals()
