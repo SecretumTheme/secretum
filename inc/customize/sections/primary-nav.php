@@ -201,7 +201,7 @@ $customizer->select(
 );
 
 
-if ( class_exists( 'woocommerce' ) ) {
+if ( true === secretum_is_woocomerce() ) {
 	// Menu Items.
 	$customizer->section(
 		'primary_nav_cart_icon',

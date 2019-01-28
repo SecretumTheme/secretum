@@ -69,37 +69,41 @@ function secretum_entry_columns() {
 	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
 
 	// Build Sidebar Location.
-	$sidebar_location = ! empty( $local_location[0] ) ? $local_location[0] : $global_location;
+	if ( true !== empty( $local_location[0] ) ) {
+		$sidebar_location = $local_location[0];
+	} else {
+		$sidebar_location = $global_location;
+	}
 
 	// Default Width.
 	$columns = '-12';
 
 	// Half Width.
-	if ( ! empty( $sidebar_location ) && 'both' === $sidebar_location ) {
+	if ( true !== empty( $sidebar_location ) && 'both' === $sidebar_location ) {
 		$columns = '-6';
 	}
 
 	// Normal Width.
-	if ( ! empty( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
+	if ( true !== empty( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
 		$columns = '-8';
 	}
 
 	// Full Width.
-	if ( ! empty( $sidebar_location ) && 'none' === $sidebar_location ) {
+	if ( true !== empty( $sidebar_location ) && 'none' === $sidebar_location ) {
 		$columns = '-12';
 	}
 
 	// Full Width.
-	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-right' ) && ! is_active_sidebar( 'sidebar-left' ) ) {
+	if ( false === is_active_sidebar( 'sidebar-1' ) && false === is_active_sidebar( 'sidebar-right' ) && false === is_active_sidebar( 'sidebar-left' ) ) {
 		$columns = '-12';
 	}
 
-	if ( class_exists( 'woocommerce' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+	if ( true === secretum_is_woocomerce() && true === function_exists( 'is_woocommerce' ) && true === is_woocommerce() ) {
 		$columns = '-12';
 
-		if ( ( is_active_sidebar( 'sidebar-woo-product' ) || is_active_sidebar( 'sidebar-woo-default' ) ) ) {
+		if ( ( true === is_active_sidebar( 'sidebar-woo-product' ) || true === is_active_sidebar( 'sidebar-woo-default' ) ) ) {
 			$columns = '-9';
-		} elseif ( class_exists( 'WC_Bookings' ) ) {
+		} elseif ( true === secretum_is_wooproduct() ) {
 			$columns = '';
 		}
 	}

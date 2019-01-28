@@ -9,6 +9,7 @@
  * @version     3.0.9
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-billing.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
