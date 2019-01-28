@@ -80,7 +80,11 @@ function secretum_sidebar_location( $location_check ) {
 	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
 
 	// Build Sidebar Location.
-	$sidebar_location = ! empty( $local_location[0] ) ? $local_location[0] : $global_location;
+	if ( true !== empty( $local_location[0] ) ) {
+		$sidebar_location = $local_location[0];
+	} else {
+		$sidebar_location = $global_location;
+	}
 
 	// Default No Sidebars.
 	$display = false;

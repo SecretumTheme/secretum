@@ -29,7 +29,8 @@ function secretum_customizer_font_styles() {
 		'font-weight-light' 	=> __( 'Weight: light', 'secretum' ),
 		'font-italic' 			=> __( 'Italics', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_font_styles()
 
 
 /**
@@ -46,7 +47,8 @@ function secretum_customizer_text_transform() {
 		'text-uppercase' 	=> __( 'Uppercase All Text', 'secretum' ),
 		'text-capitalize' 	=> __( 'Capitalize First Letter', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_text_transform()
 
 
 /**
@@ -87,4 +89,5 @@ function secretum_customizer_font_families() {
 		'webdings' 			=> __( 'Webdings, sans-serif', 'secretum' ),
 		'wingdings' 		=> __( 'Wingdings, Zapf Dingbats,  sans-serif', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_font_families()

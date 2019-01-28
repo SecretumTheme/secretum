@@ -80,7 +80,7 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 
 	// Build booking array from all blocks.
 	foreach ( $blocks as $key => $id ) {
-		if ( ! array_key_exists( $id, $available_blocks ) ) {
+		if ( false === array_key_exists( $id, $available_blocks ) ) {
 			$booked_blocks[ $id ] = array(
 				'booked'	=> 1,
 				'available' => 0,
@@ -92,10 +92,10 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 	}
 
 	// Maybe Build New Available Blocks.
-	$new_available_blocks = ( ! empty( $booked_blocks ) ) ? $booked_blocks + $available_blocks : '';
+	$new_available_blocks = ( true !== empty( $booked_blocks ) ) ? $booked_blocks + $available_blocks : '';
 
 	// Put Available Blocks In Proper Order.
-	if ( ! empty( $new_available_blocks ) ) {
+	if ( true !== empty( $new_available_blocks ) ) {
 		$keys = array_keys( $new_available_blocks );
 		natcasesort( $keys );
 

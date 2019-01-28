@@ -38,6 +38,7 @@ function secretum_customizer_default_settings() {
 		secretum_customizer_frontpage_settings(),
 		secretum_customizer_extras_settings()
 	);
+
 }//end secretum_customizer_default_settings()
 
 
@@ -57,6 +58,7 @@ function secretum_customizer_theme_settings() {
 		'theme_font_family' 									=> '',
 		'theme_font_size' 										=> '',
 	];
+
 }//end secretum_customizer_theme_settings()
 
 
@@ -81,6 +83,7 @@ function secretum_customizer_globals_settings() {
 		// Content Width.
 		'content_width' 										=> '640',
 	];
+
 }//end secretum_customizer_globals_settings()
 
 
@@ -136,6 +139,7 @@ function secretum_customizer_site_identity_settings() {
 		'site_identity_desc_textual_link_color' 			=> '',
 		'site_identity_desc_textual_link_hover_color' 		=> '',
 	];
+
 }//end secretum_customizer_site_identity_settings()
 
 
@@ -190,6 +194,7 @@ function secretum_customizer_header_top_settings() {
 		'header_top_items_border_radius' 					=> '',
 		'header_top_items_border_color' 					=> '',
 	];
+
 }//end secretum_customizer_header_top_settings()
 
 
@@ -226,6 +231,7 @@ function secretum_customizer_header_settings() {
 		'header_container_border_radius' 					=> '',
 		'header_container_border_color' 					=> '',
 	];
+
 }//end secretum_customizer_header_settings()
 
 
@@ -314,6 +320,7 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_cart_count_color' 						=> 'color-gray-500',
 		'primary_nav_cart_count_size' 						=> 'text-14',
 	];
+
 }//end secretum_customizer_primary_nav_settings()
 
 
@@ -347,6 +354,7 @@ function secretum_customizer_body_settings() {
 		'body_container_border_radius' 						=> '',
 		'body_container_border_color' 						=> '',
 	];
+
 }//end secretum_customizer_body_settings()
 
 
@@ -382,6 +390,7 @@ function secretum_customizer_featured_image_settings() {
 		'featured_image_container_border_radius' 			=> '',
 		'featured_image_container_border_color' 			=> '',
 	];
+
 }//end secretum_customizer_featured_image_settings()
 
 
@@ -414,6 +423,7 @@ function secretum_customizer_entry_settings() {
 		'entry_wrapper_border_radius' 						=> '',
 		'entry_wrapper_border_color' 						=> '',
 	];
+
 }//end secretum_customizer_entry_settings()
 
 
@@ -460,6 +470,7 @@ function secretum_customizer_sidebar_settings() {
 		'sidebar_textual_link_color' 						=> '',
 		'sidebar_textual_link_hover_color' 					=> '',
 	];
+
 }//end secretum_customizer_sidebar_settings()
 
 
@@ -504,6 +515,7 @@ function secretum_customizer_footer_settings() {
 		'footer_textual_link_color' 						=> '',
 		'footer_textual_link_hover_color' 					=> '',
 	];
+
 }//end secretum_customizer_footer_settings()
 
 
@@ -549,6 +561,7 @@ function secretum_customizer_copyright_settings() {
 		// Copyright Statement.
 		'copyright_text' 									=> '',
 	];
+
 }//end secretum_customizer_copyright_settings()
 
 
@@ -592,6 +605,7 @@ function secretum_customizer_copyright_nav_settings() {
 		'copyright_nav_items_border_radius' 				=> '',
 		'copyright_nav_items_border_color' 					=> '',
 	];
+
 }//end secretum_customizer_copyright_nav_settings()
 
 
@@ -620,6 +634,7 @@ function secretum_customizer_frontpage_settings() {
 		'frontpage_wrapper_border_radius' 					=> '',
 		'frontpage_wrapper_border_color' 					=> '',
 	];
+
 }//end secretum_customizer_frontpage_settings()
 
 
@@ -649,4 +664,5 @@ function secretum_customizer_extras_settings() {
 		'scrolltop_border_radius' 							=> 'rounded-circle',
 		'scrolltop_border_color' 							=> '',
 	];
+
 }//end secretum_customizer_extras_settings()

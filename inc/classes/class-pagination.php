@@ -109,7 +109,8 @@ class Pagination {
 			// Display Pagination Feature.
 			$this->paginate();
 		}
-	}
+
+	}//end init()
 
 
 	/**
@@ -122,7 +123,8 @@ class Pagination {
 	final private function nav_open() {
 		return "<nav aria-label=\"{$this->nav_label}\">
 					<ul class=\"pagination\">";
-	}
+
+	}//end nav_open()
 
 
 	/**
@@ -140,7 +142,8 @@ class Pagination {
 						</a>
 					</li><!-- .page-item -->";
 		}
-	}
+
+	}//end previous_posts()
 
 
 	/**
@@ -205,7 +208,8 @@ class Pagination {
 				]
 			);
 		}// End if().
-	}
+
+	}//end paginate()
 
 
 	/**
@@ -216,10 +220,11 @@ class Pagination {
 	 * @return bool
 	 */
 	final private function paginate_check() {
-		if ( ! empty( $this->wp_query ) && ! empty( $this->wp_query->max_num_pages ) && $this->wp_query->max_num_pages >= 1 ) {
+		if ( true !== empty( $this->wp_query ) && true !== empty( $this->wp_query->max_num_pages ) && $this->wp_query->max_num_pages >= 1 ) {
 			return true;
 		}
-	}
+
+	}//end paginate_check()
 
 
 	/**
@@ -230,7 +235,7 @@ class Pagination {
 	 * @param array $paginate_links HTML Items.
 	 */
 	final private function page_number_links( $paginate_links = array() ) {
-		if ( ! empty( $paginate_links ) ) {
+		if ( true !== empty( $paginate_links ) ) {
 			$html = '';
 
 			foreach ( $paginate_links as $page ) {
@@ -240,7 +245,8 @@ class Pagination {
 
 			return $html;
 		}
-	}
+
+	}//end page_number_links()
 
 
 	/**
@@ -258,7 +264,8 @@ class Pagination {
 						</a>
 					</li><!-- .page-item -->";
 		}
-	}
+
+	}//end next_posts()
 
 
 	/**
@@ -271,7 +278,8 @@ class Pagination {
 	final private function nav_close() {
 		return '</ul>
 			</nav>';
-	}
+
+	}//end nav_close()
 
 
 	/**
@@ -283,11 +291,13 @@ class Pagination {
 	 * @return object $instance Instance Object.
 	 */
 	public static function instance( $wp_query = null ) {
-		if ( ! self::$instance ) {
+		if ( false === self::$instance ) {
 			self::$instance = new self();
 			self::$instance->init( $wp_query );
 		}
 
 		return self::$instance;
-	}
-}
+
+	}//end instance()
+
+}//end class

@@ -62,7 +62,8 @@ function secretum_customizer_text_colors() {
 		'color-success' 		=> __( 'Success', 'secretum' ),
 		'color-warning' 		=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_text_colors()
 
 
 /**
@@ -114,7 +115,8 @@ function secretum_customizer_link_colors() {
 		'color-success-link' 		=> __( 'Success', 'secretum' ),
 		'color-warning-link' 		=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_link_colors()
 
 
 /**
@@ -166,7 +168,8 @@ function secretum_customizer_link_hover_colors() {
 		'color-success-hover' 			=> __( 'Success', 'secretum' ),
 		'color-warning-hover' 			=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_link_hover_colors()
 
 
 /**
@@ -220,7 +223,8 @@ function secretum_customizer_background_colors() {
 		'bg-success' 		=> __( 'Success', 'secretum' ),
 		'bg-warning' 		=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_background_colors()
 
 
 /**
@@ -274,7 +278,8 @@ function secretum_customizer_background_hover_colors() {
 		'bg-success-hover' 			=> __( 'Success', 'secretum' ),
 		'bg-warning-hover' 			=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_background_hover_colors()
 
 
 /**
@@ -324,4 +329,5 @@ function secretum_customizer_button_colors() {
 		'btn-success' 		=> __( 'Success', 'secretum' ),
 		'btn-warning' 		=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_button_colors()

@@ -66,7 +66,7 @@ function secretum_render_brand_logo() {
 	$blog_name 			= esc_html( get_bloginfo( 'name' ) );
 	$href_title 		= esc_html( get_bloginfo( 'description' ) );
 	$maxwidth 			= secretum_mod( 'custom_logo_maxwidth' ) ? secretum_mod( 'custom_logo_maxwidth', 'int', false ) : '';
-	$inlinecss 			= ! empty( $maxwidth ) ? ' style="max-width:' . $maxwidth . 'px;height:auto !important;"' : '';
+	$inlinecss 			= ( true !== empty( $maxwidth ) ) ? ' style="max-width:' . $maxwidth . 'px;height:auto !important;"' : '';
 	$image 				= wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full', false, array(
 		'class'		=> 'custom-logo img-fluid',
 		'title' 	=> $blog_name,

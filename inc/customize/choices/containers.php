@@ -26,4 +26,5 @@ function secretum_customizer_container_types() {
 		'' 			=> __( 'Responsive, fixed-width', 'secretum' ),
 		'-fluid' 	=> __( 'Fluid, full-width', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_container_types()

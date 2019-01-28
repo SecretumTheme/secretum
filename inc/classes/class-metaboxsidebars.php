@@ -29,7 +29,8 @@ class MetaboxSidebars {
 			add_action( 'load-post.php', array( $this, 'init_metabox' ) );
 			add_action( 'load-post-new.php', array( $this, 'init_metabox' ) );
 		}
-	}
+
+	}//end __construct()
 
 
 	/**
@@ -40,7 +41,8 @@ class MetaboxSidebars {
 	public function init_metabox() {
 		add_action( 'add_meta_boxes', array( $this, 'add_metabox' ) );
 		add_action( 'save_post', array( $this, 'save_metabox' ), 10, 2 );
-	}
+
+	}//end init_metabox()
 
 
 	/**
@@ -57,7 +59,8 @@ class MetaboxSidebars {
 			'advanced',
 			'default'
 		);
-	}
+
+	}//end add_metabox()
 
 
 	/**
@@ -93,7 +96,8 @@ class MetaboxSidebars {
 			</tr>
 		</table>
 	<?php
-	}
+
+	}//end render_metabox()
 
 
 	/**
@@ -111,17 +115,17 @@ class MetaboxSidebars {
 		$nonce = filter_input( INPUT_POST, 'secretum_meta_sidebars_nonce', FILTER_SANITIZE_SPECIAL_CHARS );
 
 		// Require & Verify Nonce.
-		if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, SECRETUM_THEME_BASE ) ) {
+		if ( false === isset( $nonce ) || false === wp_verify_nonce( $nonce, SECRETUM_THEME_BASE ) ) {
 			return $post_id;
 		}
 
 		// User Level Check.
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		if ( false === current_user_can( 'edit_post', $post_id ) ) {
 			return $post_id;
 		}
 
 		// Ignore if Autosave or Revision.
-		if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
+		if ( true === wp_is_post_autosave( $post_id ) || true === wp_is_post_revision( $post_id ) ) {
 			return $post_id;
 		}
 
@@ -134,5 +138,7 @@ class MetaboxSidebars {
 			'secretum_meta_sidebars',
 			isset( $meta_sidebars ) ? sanitize_html_class( $meta_sidebars ) : ''
 		);
-	}
-}
+
+	}//end save_metabox()
+
+}//end class

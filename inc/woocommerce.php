@@ -196,7 +196,7 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 	$show_option_none 		= $args['show_option_none'] ? true : false;
 	$show_option_none_text 	= $args['show_option_none'] ? $args['show_option_none'] : esc_html__( 'Choose an option', 'secretum' );
 
-	if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
+	if ( true == empty( $options ) && true !== empty( $product ) && true !== empty( $attribute ) ) {
 		$attributes = $product->get_variation_attributes();
 		$options	= $attributes[ $attribute ];
 	}
@@ -207,7 +207,7 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 
 	$html .= '<option value="">' . esc_html( $show_option_none_text ) . '</option>';
 
-	if ( ! empty( $options ) ) {
+	if ( true !== empty( $options ) ) {
 		if ( $product && taxonomy_exists( $attribute ) ) {
 			$terms = wc_get_product_terms( $product->get_id(), $attribute, [
 				'fields' => 'all',
@@ -249,7 +249,8 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 			],
 		]
 	);
-}
+
+}//end secretum_wc_dropdown_variation_attribute_options()
 
 
 /**
@@ -305,7 +306,7 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
  *
  * @since 1.0.0
 add_filter( 'wc_product_sku_enabled', function() {
-	return ( ! is_admin() && is_product() ) ? false : true;
+	return ( false === is_admin() && true === is_product() ) ? false : true;
 } );
  */
 

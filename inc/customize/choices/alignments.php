@@ -28,7 +28,8 @@ function secretum_customizer_margin_alignments() {
 		'mr-auto' 	=> __( 'Align Left', 'secretum' ),
 		'ml-auto' 	=> __( 'Align Right', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_alignments()
 
 
 /**
@@ -45,4 +46,5 @@ function secretum_customizer_text_alignments() {
 		'text-left' 	=> __( 'Align Left', 'secretum' ),
 		'text-right' 	=> __( 'Align Right', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_text_alignments()

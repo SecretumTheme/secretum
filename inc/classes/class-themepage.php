@@ -137,6 +137,7 @@ class ThemePage {
 				'render_content',
 			]
 		);
+
 	}//end init()
 
 
@@ -184,6 +185,7 @@ class ThemePage {
 		echo '</div><!-- .metabox-holder -->';
 		echo '</div><!-- #poststuff -->';
 		echo '</div><!-- .wrap -->';
+
 	}//end render_content()
 
 
@@ -196,6 +198,7 @@ class ThemePage {
 	?>
 		<p>content 1</p>
 	<?php
+
 	}//end _display_home_tab()
 
 
@@ -252,6 +255,7 @@ class ThemePage {
 
 	</form>
 	<?php
+
 	}//end _display_ei_tab()
 
 
@@ -271,6 +275,7 @@ class ThemePage {
 			</div><!-- end postbox -->
 		</div><!-- .postbox-container-1 -->
 	<?php
+
 	}//end _display_sidebar()
 
 
@@ -287,6 +292,7 @@ class ThemePage {
 
 		<hr />
 	<?php
+
 	}//end _display_heading_butons()
 
 
@@ -318,6 +324,7 @@ class ThemePage {
 		$html .= '</h2><br />';
 
 		return $html;
+
 	}//end _display_tabs()
 
 
@@ -336,6 +343,7 @@ class ThemePage {
 
 		// Return No Spaces/Tabs, Stripped/Cleaned String.
 		return sanitize_text_field( preg_replace( '/\s/', '', $filter ) );
+
 	}//end _query()
 
 
@@ -348,6 +356,7 @@ class ThemePage {
 		if ( check_admin_referer( 'secretum_ei_action', 'secretum_ei_nonce' ) === false ) {
 			wp_die( esc_html__( 'You are not authorized to perform this action.', 'secretum' ) );
 		}
+
 	}//end _validate()
 
 
@@ -365,5 +374,7 @@ class ThemePage {
 		}
 
 		return self::$instance;
+
 	}//end instance()
+
 }//end class

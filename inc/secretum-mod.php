@@ -46,17 +46,17 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 	$mod = false;
 
 	// If Mod & Escape Type Set.
-	if ( ! empty( $theme_mod ) && ! empty( $escape ) ) {
+	if ( true !== empty( $theme_mod ) && true !== empty( $escape ) ) {
 		// Switch on Type.
 		switch ( $escape ) {
 			// Attribute.
 			case 'attr':
-				$mod = ( ! empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
 				break;
 
 			// Interger.
 			case 'int':
-				$mod = ( ! empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
 				break;
 
 			// HTML.
@@ -79,10 +79,11 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 				$mod = esc_url( $theme_mod );
 				break;
 		}
-	} elseif ( ! empty( $theme_mod ) && empty( $escape ) ) {
+	} elseif ( true !== empty( $theme_mod ) && true === empty( $escape ) ) {
 		// Value Set.
 		$mod = true;
-	}// End if().
+	}//end if
 
 	return $mod;
-}
+
+}//end secretum_mod()

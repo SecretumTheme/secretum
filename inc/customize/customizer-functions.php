@@ -35,6 +35,7 @@ function secretum_customizer_refresh() {
 		],
 		'javascript'
 	);
+
 }//end secretum_customizer_refresh()
 
 
@@ -52,7 +53,9 @@ function secretum_customizer_reset( $value = '' ) {
 		// Delete Settings.
 		delete_option( 'secretum' );
 	}
+
 	return '';
+
 }//end secretum_customizer_reset()
 
 
@@ -63,6 +66,7 @@ function secretum_customizer_reset( $value = '' ) {
  */
 function secretum_customizer_blog_name() {
 	bloginfo( 'name' );
+
 }//end secretum_customizer_blog_name()
 
 
@@ -73,6 +77,7 @@ function secretum_customizer_blog_name() {
  */
 function secretum_customizer_blog_desc() {
 	bloginfo( 'description' );
+
 }//end secretum_customizer_blog_desc()
 
 
@@ -89,6 +94,7 @@ function secretum_customizer_blog_desc() {
  */
 function secretum_customizer_sanitize_all( $string ) {
 	return htmlentities( wp_strip_all_tags( $string, true ) );
+
 }//end secretum_customizer_sanitize_all()
 
 
@@ -111,6 +117,7 @@ function secretum_customizer_sanitize_checkbox( $checked ) {
 			return false;
 		}
 	}
+
 }//end secretum_customizer_sanitize_checkbox()
 
 
@@ -127,6 +134,7 @@ function secretum_customizer_sanitize_checkbox( $checked ) {
  */
 function secretum_customizer_sanitize_html( $string ) {
 	return html_entity_decode( wp_kses_post( $string ) );
+
 }//end secretum_customizer_sanitize_html()
 
 
@@ -145,6 +153,7 @@ function secretum_customizer_sanitize_int( $int ) {
 	} else {
 		return '';
 	}
+
 }//end secretum_customizer_sanitize_int()
 
 
@@ -159,6 +168,7 @@ function secretum_customizer_sanitize_int( $int ) {
  */
 function secretum_customizer_sanitize_script( $string ) {
 	return wp_json_encode( $string );
+
 }//end secretum_customizer_sanitize_script()
 
 
@@ -173,4 +183,5 @@ function secretum_customizer_sanitize_script( $string ) {
  */
 function secretum_customizer_decode_script( $string ) {
 	return json_decode( $string );
+
 }//end secretum_customizer_decode_script()

@@ -31,7 +31,8 @@ function secretum_customizer_margin_top_bottom() {
 		'my-4' 	=> __( '24px or 1.5em Margin (my-4)', 'secretum' ),
 		'my-5' 	=> __( '48px or 3em Margin (my-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_top_bottom()
 
 
 /**
@@ -51,7 +52,8 @@ function secretum_customizer_margin_top() {
 		'mt-4' 	=> __( '24px or 1.5em Margin (mt-4)', 'secretum' ),
 		'mt-5' 	=> __( '48px or 3em Margin (mt-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_top()
 
 
 /**
@@ -71,7 +73,8 @@ function secretum_customizer_margin_bottom() {
 		'mb-4' 	=> __( '24px or 1.5em Margin (mb-4)', 'secretum' ),
 		'mb-5' 	=> __( '48px or 3em Margin (mb-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_bottom()
 
 
 /**
@@ -92,7 +95,8 @@ function secretum_customizer_margin_left_right() {
 		'mx-5' 		=> __( '48px or 3em Margin (mx-5)', 'secretum' ),
 		'mx-auto' 	=> __( 'Auto Margin (mx-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_left_right()
 
 
 /**
@@ -113,7 +117,8 @@ function secretum_customizer_margin_left() {
 		'ml-5' 		=> __( '48px or 3em Margin (ml-5)', 'secretum' ),
 		'ml-auto' 	=> __( 'Auto Left Margin (ml-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_left()
 
 
 /**
@@ -134,4 +139,5 @@ function secretum_customizer_margin_right() {
 		'mr-5' 		=> __( '48px or 3em Margin (mr-5)', 'secretum' ),
 		'mr-auto' 	=> __( 'Auto Right Margin (mr-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_right()

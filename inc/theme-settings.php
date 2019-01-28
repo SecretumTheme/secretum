@@ -20,7 +20,7 @@ namespace Secretum;
  *
  * @link https://codex.wordpress.org/Content_Width
  */
-if ( ! isset( $content_width ) ) {
+if ( true !== isset( $content_width ) ) {
 	$content_width = secretum_mod( 'secretum_content_width' ) ? absint( secretum_mod( 'secretum_content_width', 'int' ) ) : 640;
 }
 

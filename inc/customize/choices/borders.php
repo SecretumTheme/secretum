@@ -31,7 +31,8 @@ function secretum_customizer_border() {
 		'border-left' 	=> __( 'Left Border', 'secretum' ),
 		'border-0' 		=> __( 'No Border', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_border()
 
 
 /**
@@ -51,7 +52,8 @@ function secretum_customizer_border_types() {
 		'border-left' 	=> __( 'Left Border', 'secretum' ),
 		'border-0' 		=> __( 'No Border', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_border_types()
 
 
 /**
@@ -72,7 +74,8 @@ function secretum_customizer_border_radius() {
 		'rounded-bottom' 	=> __( 'Rounded Bottom Borders', 'secretum' ),
 		'rounded-left' 		=> __( 'Rounded Left Borders', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_border_radius()
 
 
 /**
@@ -123,4 +126,5 @@ function secretum_customizer_border_colors() {
 		'border-success' 		=> __( 'Success', 'secretum' ),
 		'border-warning' 		=> __( 'Warning', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_border_colors()

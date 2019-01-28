@@ -44,7 +44,8 @@ function secretum_text( $key = '', $echo = false ) {
 			$translate->get( $key, true );
 		}
 	}
-}
+
+}//end secretum_text()
 
 
 /**
@@ -60,7 +61,8 @@ function secretum_is_woocomerce() {
 	} else {
 		return false;
 	}
-}
+
+}//end secretum_is_woocomerce()
 
 
 /**
@@ -76,7 +78,8 @@ function secretum_is_wooproduct() {
 	} else {
 		return false;
 	}
-}
+
+}//end secretum_is_wooproduct()
 
 
 /**
@@ -92,7 +95,8 @@ function secretum_is_woobookings() {
 	} else {
 		return false;
 	}
-}
+
+}//end secretum_is_woobookings()
 
 
 /**
@@ -137,10 +141,10 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		$home_text = __( 'Home', 'secretum' );
 
 		// Build Seperator.
-		if ( $seperator && $icons ) {
+		if ( true === $seperator && true === $icons ) {
 			$sep = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
 
-		} elseif ( $seperator && ! $icons ) {
+		} elseif ( true === $seperator && false === $icons ) {
 			$sep = wp_filter_nohtml_kses( $seperator );
 
 		} else {
@@ -149,10 +153,10 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		}
 
 		// Build Top Return Link.
-		if ( $top_link && $icons ) {
+		if ( true === $top_link && true === $icons ) {
 			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="Return to Top"></i></a>';
 
-		} elseif ( $top_link && ! $icons ) {
+		} elseif ( true === $top_link && false === $icons ) {
 			$top = ' | <a href="#top">top ^</a>';
 
 		} else {
@@ -162,5 +166,6 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 		// Return HTML.
 		return '<div class="breadcrumbs">' . $home . '<a href="' . $home_url . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
-	}// End if().
-}
+	}//end if
+
+}//end secretum_breadcrumbs()

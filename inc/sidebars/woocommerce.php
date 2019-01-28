@@ -8,7 +8,15 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/sidebars/woocommerce.php
- * @since      1.0.0
+ *
+ * @see        register_sidebar
+ * @link       https://codex.wordpress.org/Function_Reference/register_sidebar
+ *
+ * @see        secretum_sidebar_container
+ * @see        secretum_sidebar_textuals
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/sidebars.php
+ *
+ * @since 1.0.0
  */
 
 namespace Secretum;
@@ -59,4 +67,4 @@ if ( true === secretum_is_woocomerce() ) {
 		'after_title'   => '</h3>',
 	] );
 
-}// End if().
+}//end if

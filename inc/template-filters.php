@@ -85,7 +85,7 @@ add_filter( 'body_class', function( $classes ) {
 	}
 
 	// Add hfeed Class.
-	if ( ! is_singular() ) {
+	if ( false === is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 

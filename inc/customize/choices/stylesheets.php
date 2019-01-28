@@ -27,6 +27,7 @@ function secretum_customizer_stylesheets() {
 		],
 		secretum_customizer_stylesheets_blue()
 	);
+
 }//end secretum_customizer_stylesheets()
 
 
@@ -42,5 +43,6 @@ function secretum_customizer_stylesheets_blue() {
 		'bright-blue_bright-orange'	=> __( 'Bright Blue - Bright Orange', 'secretum' ),
 		'dark-blue_dark-magenta'	=> __( 'Dark Blue - Dark Magenta', 'secretum' ),
 	];
+
 }//end secretum_customizer_stylesheets_blue()
 

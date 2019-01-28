@@ -70,7 +70,8 @@ class Navwalker extends \Walker_Nav_Menu {
 		$this->setting_base 	= $setting_base;
 		$this->dropdown_classes = $dropdown_classes;
 		$this->textual_classes 	= $textual_classes;
-	}
+
+	}//end __construct()
 
 
 	/**
@@ -132,7 +133,8 @@ class Navwalker extends \Walker_Nav_Menu {
 			$labelledby = 'aria-labelledby="' . end( $matches[2] ) . '"';
 		}
 		$output .= "{$n}{$indent}<ul$class_names $labelledby role=\"menu\">{$n}";
-	}
+
+	}//end start_lvl()
 
 	/**
 	 * Starts the element output.
@@ -236,13 +238,13 @@ class Navwalker extends \Walker_Nav_Menu {
 		// Set title from item to the $atts array - if title is empty then
 		// default to item title.
 		if ( empty( $item->attr_title ) ) {
-			$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
+			$atts['title'] = ( true !== empty( $item->title ) ) ? strip_tags( $item->title ) : '';
 		} else {
 			$atts['title'] = $item->attr_title;
 		}
 
-		$atts['target'] = ! empty( $item->target ) ? $item->target : '';
-		$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
+		$atts['target'] = ( true !== empty( $item->target ) ) ? $item->target : '';
+		$atts['rel']    = ( true !== empty( $item->xfn ) ) ? $item->xfn : '';
 
 		// Divider Link Spacing.
 		$spacing_classes = isset( $args->divider ) ? ' ' . strip_tags( $args->divider ) : '';
@@ -257,7 +259,7 @@ class Navwalker extends \Walker_Nav_Menu {
 			$atts['href'] 			= '#';
 		} else {
 			// No Child: Set URL.
-			$atts['href'] = ! empty( $item->url ) ? esc_url( $item->url ) : '#';
+			$atts['href'] = ( true !== empty( $item->url ) ) ? esc_url( $item->url ) : '#';
 
 			// No Child: Dropdown, use .dropdown-item.
 			if ( $depth > 0 ) {
@@ -277,7 +279,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		// Build a string of html containing all the atts for the item.
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {
-			if ( ! empty( $value ) ) {
+			if ( ( true !== empty( $value ) ) ) {
 				$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
@@ -310,7 +312,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		 * output inside of the item before the $title ( the link text ).
 		 */
 		$icon_html = '';
-		if ( ! empty( $icon_class_string ) ) {
+		if ( true !== empty( $icon_class_string ) ) {
 			// append an <i> with the icon classes to what is output before links.
 			$icon_html = '<i class="' . esc_attr( $icon_class_string ) . '" aria-hidden="true"></i> ';
 		}
@@ -362,7 +364,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		 */
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 
-	}
+	}//end start_el()
 
 
 	/**
@@ -387,14 +389,20 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * @param string $output            Used to append additional content ( passed by reference ).
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-		if ( ! $element ) {
-			return; }
+		if ( true === isset( $element ) ) {
+			return;
+		}
+
 		$id_field = $this->db_fields['id'];
+
 		// Display this element.
-		if ( is_object( $args[0] ) ) {
-			$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] ); }
+		if ( true === is_object( $args[0] ) && true !== empty( $children_elements[ $element->$id_field ] ) ) {
+			$args[0]->has_children = $children_elements[ $element->$id_field ];
+		}
+
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-	}
+
+	}//end display_element()
 
 
 	/**
@@ -450,7 +458,8 @@ class Navwalker extends \Walker_Nav_Menu {
 				return $fallback_output;
 			}
 		}// End if().
-	}
+
+	}//end fallback()
 
 
 	/**
@@ -497,7 +506,8 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $classes;
-	}
+
+	}//end separate_linkmods_and_icons_from_classes()
 
 
 	/**
@@ -513,9 +523,9 @@ class Navwalker extends \Walker_Nav_Menu {
 	private function get_linkmod_type( $linkmod_classes = array() ) {
 		$linkmod_type = '';
 		// Loop through array of linkmod classes to handle their $atts.
-		if ( ! empty( $linkmod_classes ) ) {
+		if ( true !== empty( $linkmod_classes ) ) {
 			foreach ( $linkmod_classes as $link_class ) {
-				if ( ! empty( $link_class ) ) {
+				if ( true !== empty( $link_class ) ) {
 
 					// check for special class types and set a flag for them.
 					if ( 'dropdown-header' === $link_class ) {
@@ -529,7 +539,8 @@ class Navwalker extends \Walker_Nav_Menu {
 			}
 		}
 		return $linkmod_type;
-	}
+
+	}//end get_linkmod_type()
 
 
 	/**
@@ -543,9 +554,9 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * @return array                 maybe updated array of attributes for item.
 	 */
 	private function update_atts_for_linkmod_type( $atts = array(), $linkmod_classes = array() ) {
-		if ( ! empty( $linkmod_classes ) ) {
+		if ( true !== empty( $linkmod_classes ) ) {
 			foreach ( $linkmod_classes as $link_class ) {
-				if ( ! empty( $link_class ) ) {
+				if ( true !== empty( $link_class ) ) {
 					// update $atts with a space and the extra classname...
 					// so long as it's not a sr-only class.
 					if ( 'sr-only' !== $link_class ) {
@@ -565,7 +576,8 @@ class Navwalker extends \Walker_Nav_Menu {
 			}
 		}
 		return $atts;
-	}
+
+	}//end update_atts_for_linkmod_type()
 
 
 	/**
@@ -581,7 +593,8 @@ class Navwalker extends \Walker_Nav_Menu {
 			$text = '<span class="sr-only">' . $text . '</span>';
 		}
 		return $text;
-	}
+
+	}//end wrap_for_screen_reader()
 
 
 	/**
@@ -607,7 +620,8 @@ class Navwalker extends \Walker_Nav_Menu {
 			$output .= '<div class="test dropdown-divider"' . $attributes . '>';
 		}
 		return $output;
-	}
+
+	}//end linkmod_element_open()
 
 
 	/**
@@ -630,5 +644,7 @@ class Navwalker extends \Walker_Nav_Menu {
 			$output .= '</div>';
 		}
 		return $output;
-	}
-}
+
+	}//end linkmod_element_close()
+
+}//end class
