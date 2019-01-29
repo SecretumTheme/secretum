@@ -43,12 +43,12 @@ if ( ! secretum_mod( 'primary_nav_status' ) && $secretum_menu_status ) {
 		'menu_class' 		=> 'navbar-nav primary' . secretum_primary_nav_alignment(),
 		'menu_id' 			=> 'main-menu',
 		'divider'			=> secretum_primary_nav_items(),
-		'walker' 			=> new \Secretum\navwalker(
+		'walker' 			=> new \Secretum\Navwalker(
 			'primary_nav',
 			secretum_primary_nav_dropdown(),
 			secretum_primary_nav_dropdown_textual()
 		),
-		'fallback_cb' 		=> '\Secretum\secretum_primary_nav_fallback',
+		'fallback_cb' 		=> '\Secretum\Navwalker::fallback',
 		'echo'				=> true,
 	) );
 

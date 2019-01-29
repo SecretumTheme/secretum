@@ -15,35 +15,6 @@ namespace Secretum;
 
 
 /**
- * Default Menu Fallback
- *
- * @since 1.0.0
- */
-function secretum_primary_nav_fallback() {
-	$text 	= esc_html( apply_filters( 'secretum_create_menu_text', __( 'Create Menu', 'secretum' ) ) );
-	$url 	= esc_url( admin_url( 'nav-menus.php' ) );
-	$html 	= "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\">{$text}</a></li></ul>";
-
-	echo wp_kses(
-		apply_filters( 'secretum_primary_nav_fallback', $html, 10, 1 ),
-		[
-			'ul' => [
-				'id' 	=> true,
-				'class' => true,
-			],
-			'li' => [
-				'class' => true,
-			],
-			'a' => [
-				'href' => true,
-			],
-		]
-	);
-
-}//end secretum_primary_nav_fallback()
-
-
-/**
  * Wrapper Classes
  *
  * @since 1.0.0

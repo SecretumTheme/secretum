@@ -196,7 +196,7 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 	$show_option_none 		= $args['show_option_none'] ? true : false;
 	$show_option_none_text 	= $args['show_option_none'] ? $args['show_option_none'] : esc_html__( 'Choose an option', 'secretum' );
 
-	if ( true == empty( $options ) && true !== empty( $product ) && true !== empty( $attribute ) ) {
+	if ( true === empty( $options ) && true !== empty( $product ) && true !== empty( $attribute ) ) {
 		$attributes = $product->get_variation_attributes();
 		$options	= $attributes[ $attribute ];
 	}

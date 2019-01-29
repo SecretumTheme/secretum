@@ -67,4 +67,4 @@ if ( true === secretum_is_woocomerce() ) {
 		'after_title'   => '</h3>',
 	] );
 
-}//end if
+}// End if().

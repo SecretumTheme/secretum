@@ -166,6 +166,6 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 		// Return HTML.
 		return '<div class="breadcrumbs">' . $home . '<a href="' . $home_url . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
-	}//end if
+	}// End if().
 
 }//end secretum_breadcrumbs()

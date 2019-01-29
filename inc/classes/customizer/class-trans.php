@@ -107,7 +107,7 @@ class Trans {
 	 * @return object $instance Instance Object.
 	 */
 	public static function instance() {
-		if ( false === self::$instance ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 			self::$instance->init();
 		}

@@ -291,7 +291,7 @@ class Pagination {
 	 * @return object $instance Instance Object.
 	 */
 	public static function instance( $wp_query = null ) {
-		if ( false === self::$instance ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 			self::$instance->init( $wp_query );
 		}

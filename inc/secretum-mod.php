@@ -82,7 +82,7 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 	} elseif ( true !== empty( $theme_mod ) && true === empty( $escape ) ) {
 		// Value Set.
 		$mod = true;
-	}//end if
+	}// End if().
 
 	return $mod;
 

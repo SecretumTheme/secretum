@@ -31,7 +31,7 @@ if ( ! secretum_mod( 'primary_nav_status' ) && has_nav_menu( 'secretum-navbar-pr
 		'menu_class' 		=> 'navbar-nav primary' . secretum_primary_nav_alignment(),
 		'menu_id' 			=> 'main-menu',
 		'divider'			=> secretum_primary_nav_items(),
-		'walker' 			=> new \Secretum\navwalker(
+		'walker' 			=> new \Secretum\Navwalker(
 			'primary_nav',
 			secretum_primary_nav_dropdown(),
 			secretum_primary_nav_dropdown_textual()
