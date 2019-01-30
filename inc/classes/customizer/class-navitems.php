@@ -166,12 +166,12 @@ class NavItems {
 	 * @return string Classes.
 	 */
 	final public static function classes( $section ) {
-		$background 		= secretum_mod( $section . '_background_color', 'attr', true );
-		$background_hover 	= secretum_mod( $section . '_background_hover_color', 'attr', true );
-		$margin_y 			= secretum_mod( $section . '_margin_y', 'attr', true );
-		$margin_x 			= secretum_mod( $section . '_margin_x', 'attr', true );
-		$padding_y 			= secretum_mod( $section . '_padding_y', 'attr', true );
-		$padding_x 			= secretum_mod( $section . '_padding_x', 'attr', true );
+		$background 		= secretum_mod( $section . '_items_background_color', 'attr', true );
+		$background_hover 	= secretum_mod( $section . '_items_background_hover_color', 'attr', true );
+		$margin_y 			= secretum_mod( $section . '_items_margin_y', 'attr', true );
+		$margin_x 			= secretum_mod( $section . '_items_margin_x', 'attr', true );
+		$padding_y 			= secretum_mod( $section . '_items_padding_y', 'attr', true );
+		$padding_x 			= secretum_mod( $section . '_items_padding_x', 'attr', true );
 		return $background . $background_hover . $margin_y . $margin_x . $padding_y . $padding_x;
 
 	}//end classes()

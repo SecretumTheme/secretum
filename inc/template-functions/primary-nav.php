@@ -81,7 +81,7 @@ function secretum_primary_nav_alignment() {
 function secretum_primary_nav_items() {
 	$nav_items = \Secretum\NavItems::classes( 'primary_nav' );
 
-	return apply_filters( 'secretum_primary_nav_items', $nav_items, 10, 1 );
+	return $nav_items;
 
 }//end secretum_primary_nav_items()
 
