@@ -96,13 +96,13 @@ class Pagination {
 	 * @param string $next_label Next >> Text Label.
 	 */
 	final public function init( $wp_query = null, $nav_label = '', $previous_label = '', $next_label = '' ) {
-		// @ about Required Call.
+		// Required Call.
 		if ( null !== $wp_query ) {
 			// Set Vars.
 			$this->wp_query 			= $wp_query;
-			$this->nav_label 			= ( empty( $nav_label ) ) ? esc_html__( 'Posts Navigation', 'secretum' ) : esc_html( $nav_label );
-			$this->previous_label 		= ( empty( $previous_label ) ) ? esc_html__( 'Previous', 'secretum' ) : esc_html( $previous_label );
-			$this->next_label 			= ( empty( $next_label ) ) ? esc_html__( 'Next', 'secretum' ) : esc_html( $next_label );
+			$this->nav_label 			= $this->_get_nav_label( $nav_label );
+			$this->previous_label 		= $this->_get_previous_label( $previous_label );
+			$this->next_label 			= $this->_get_next_label( $next_label );
 			$this->previous_post_link 	= esc_url( get_previous_posts_page_link() );
 			$this->next_post_link 		= esc_url( get_next_posts_page_link() );
 
@@ -120,11 +120,11 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function nav_open() {
+	final private function _nav_open() {
 		return "<nav aria-label=\"{$this->nav_label}\">
 					<ul class=\"pagination\">";
 
-	}//end nav_open()
+	}//end _nav_open()
 
 
 	/**
@@ -134,7 +134,7 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function previous_posts() {
+	final private function _previous_posts() {
 		if ( get_previous_posts_link() ) {
 			return "<li class=\"page-item\">
 						<a class=\"page-link\" href=\"{$this->previous_post_link}\" aria-label=\"{$this->previous_label}\">
@@ -143,7 +143,7 @@ class Pagination {
 					</li><!-- .page-item -->";
 		}
 
-	}//end previous_posts()
+	}//end _previous_posts()
 
 
 	/**
@@ -153,37 +153,23 @@ class Pagination {
 	 */
 	final public function paginate() {
 		// If Pages.
-		if ( $this->paginate_check() ) {
+		if ( $this->_paginate_check() ) {
 			// Start Nav.
-			$html = $this->nav_open();
+			$html = $this->_nav_open();
 
 			// Previous << Link.
-			$html .= $this->previous_posts();
+			$html .= $this->_previous_posts();
 
 			// Build Link Items.
-			$html .= $this->page_number_links( paginate_links(
-				[
-					'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-					'format' 		=> '?paged=%#%',
-					'current' 		=> max( 1, get_query_var( 'paged' ) ),
-					'total' 		=> $this->wp_query->max_num_pages,
-					'type' 			=> 'array',
-					'show_all' 		=> false,
-					'end_size' 		=> 3,
-					'mid_size' 		=> 1,
-					'prev_next' 	=> false,
-					'add_args' 		=> false,
-					'add_fragment' 	=> '',
-				]
-			) );
+			$html .= $this->_page_number_links();
 
 			// Next >> Link.
-			$html .= $this->next_posts();
+			$html .= $this->_next_posts();
 
 			// End Nav.
-			$html .= $this->nav_close();
+			$html .= $this->_nav_close();
 
-			// @ About Sanitize HTML.
+			// Sanitize HTML.
 			echo wp_kses(
 				$html,
 				[
@@ -219,22 +205,34 @@ class Pagination {
 	 *
 	 * @return bool
 	 */
-	final private function paginate_check() {
+	final private function _paginate_check() {
 		if ( true !== empty( $this->wp_query ) && true !== empty( $this->wp_query->max_num_pages ) && $this->wp_query->max_num_pages >= 1 ) {
 			return true;
 		}
 
-	}//end paginate_check()
+	}//end _paginate_check()
 
 
 	/**
 	 * Page Number Link Items
 	 *
 	 * @since 1.0.0
-	 *
-	 * @param array $paginate_links HTML Items.
 	 */
-	final private function page_number_links( $paginate_links = array() ) {
+	final private function _page_number_links() {
+		 $paginate_links = paginate_links( [
+			'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+			'format' 		=> '?paged=%#%',
+			'current' 		=> max( 1, get_query_var( 'paged' ) ),
+			'total' 		=> $this->wp_query->max_num_pages,
+			'type' 			=> 'array',
+			'show_all' 		=> false,
+			'end_size' 		=> 3,
+			'mid_size' 		=> 1,
+			'prev_next' 	=> false,
+			'add_args' 		=> false,
+			'add_fragment' 	=> '',
+		] );
+
 		if ( true !== empty( $paginate_links ) ) {
 			$html = '';
 
@@ -246,7 +244,7 @@ class Pagination {
 			return $html;
 		}
 
-	}//end page_number_links()
+	}//end _page_number_links()
 
 
 	/**
@@ -256,7 +254,7 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function next_posts() {
+	final private function _next_posts() {
 		if ( get_next_posts_link() ) {
 			return "<li class=\"page-item\">
 						<a class=\"page-link\" href=\"{$this->next_post_link}\" aria-label=\"{$this->next_label}\">
@@ -265,7 +263,7 @@ class Pagination {
 					</li><!-- .page-item -->";
 		}
 
-	}//end next_posts()
+	}//end _next_posts()
 
 
 	/**
@@ -275,11 +273,68 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function nav_close() {
+	final private function _nav_close() {
 		return '</ul>
 			</nav>';
 
-	}//end nav_close()
+	}//end _nav_close()
+
+
+	/**
+	 * Get Nav Label
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $nav_label Text For Posts Navigation.
+	 *
+	 * @return string HTML.
+	 */
+	final private function _get_nav_label( $nav_label = '' ) {
+		if ( true !== empty( $nav_label ) ) {
+			return esc_html( $nav_label );
+		} else {
+			return esc_html__( 'Posts Navigation', 'secretum' );
+		}
+
+	}//end _get_nav_label()
+
+
+	/**
+	 * Get Previous Label
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $previous_label Text For Previous Page.
+	 *
+	 * @return string HTML.
+	 */
+	final private function _get_previous_label( $previous_label = '' ) {
+		if ( true !== empty( $previous_label ) ) {
+			return esc_html( $previous_label );
+		} else {
+			return esc_html__( 'Previous', 'secretum' );
+		}
+
+	}//end _get_previous_label()
+
+
+	/**
+	 * Get Next Label
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $next_label Text For Next Page.
+	 *
+	 * @return string HTML.
+	 */
+	final private function _get_next_label( $next_label = '' ) {
+		if ( true !== empty( $next_label ) ) {
+			return esc_html( $next_label );
+		} else {
+			return esc_html__( 'Next', 'secretum' );
+		}
+
+	}//end _get_next_label()
 
 
 	/**

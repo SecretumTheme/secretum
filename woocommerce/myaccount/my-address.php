@@ -19,14 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
-	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', [
 		'billing' 	=> esc_html__( 'Billing address', 'secretum' ),
 		'shipping' 	=> esc_html__( 'Shipping address', 'secretum' ),
-	), $customer_id );
+	], $customer_id );
 } else {
-	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', [
 		'billing' 	=> esc_html__( 'Billing address', 'secretum' ),
-	), $customer_id );
+	], $customer_id );
 }
 
 $oldcol = 1;

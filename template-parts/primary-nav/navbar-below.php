@@ -35,7 +35,7 @@ if ( ! secretum_mod( 'primary_nav_status' ) && $secretum_menu_status ) {
 	get_template_part( 'template-parts/primary-nav/toggler' );
 
 	// Display Nav.
-	wp_nav_menu( array(
+	wp_nav_menu( [
 		'depth' 			=> 2,
 		'theme_location' 	=> 'secretum-navbar-primary-below',
 		'container_class' 	=> 'collapse navbar-collapse',
@@ -50,7 +50,7 @@ if ( ! secretum_mod( 'primary_nav_status' ) && $secretum_menu_status ) {
 		),
 		'fallback_cb' 		=> '\Secretum\Navwalker::fallback',
 		'echo'				=> true,
-	) );
+	] );
 
 	// Navbar Search Form.
 	get_template_part( 'template-parts/primary-nav/search' );

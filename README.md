@@ -1,4 +1,4 @@
-# Secretum
+# WordPress Responsive Multipurpose Theme - Secretum
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
@@ -9,7 +9,7 @@
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
-Secretum - A Highly Customizable Multi-Purpose WordPress Theme
+Secretum is a highly customizable fluid-responsive multipurpose WordPress theme.
 
 
 ## NOTE - Alpha Release

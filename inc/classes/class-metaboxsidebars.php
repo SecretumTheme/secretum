@@ -26,8 +26,8 @@ class MetaboxSidebars {
 	 */
 	public function __construct() {
 		if ( is_admin() ) {
-			add_action( 'load-post.php', array( $this, 'init_metabox' ) );
-			add_action( 'load-post-new.php', array( $this, 'init_metabox' ) );
+			add_action( 'load-post.php', [ $this, 'init_metabox' ] );
+			add_action( 'load-post-new.php', [ $this, 'init_metabox' ] );
 		}
 
 	}//end __construct()
@@ -39,8 +39,8 @@ class MetaboxSidebars {
 	 * @since 1.0.0
 	 */
 	public function init_metabox() {
-		add_action( 'add_meta_boxes', array( $this, 'add_metabox' ) );
-		add_action( 'save_post', array( $this, 'save_metabox' ), 10, 2 );
+		add_action( 'add_meta_boxes', [ $this, 'add_metabox' ] );
+		add_action( 'save_post', [ $this, 'save_metabox' ], 10, 2 );
 
 	}//end init_metabox()
 
@@ -54,8 +54,15 @@ class MetaboxSidebars {
 		add_meta_box(
 			'secretum_meta_sidebars',
 			__( 'Sidebar Locations', 'secretum' ),
-			array( $this, 'render_metabox' ),
-			array( 'post', 'page', 'product' ),
+			[
+				$this,
+				'render_metabox',
+			],
+			[
+				'post',
+				'page',
+				'product',
+			],
 			'advanced',
 			'default'
 		);

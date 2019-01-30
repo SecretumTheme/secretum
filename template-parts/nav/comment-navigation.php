@@ -17,7 +17,7 @@ namespace Secretum;
 if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
 ?>
 <nav class="comment-navigation my-4 clearfix" id="comment-nav-above">
-	<h5 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'secretum' ); ?></h5>
+	<h3 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'secretum' ); ?></h3>
 
 	<?php if ( get_previous_comments_link() ) { ?>
 		<div class="nav-previous float-left"><?php previous_comments_link( secretum_text( 'comments_older', false ) ); ?></div>

@@ -18,7 +18,7 @@ get_header();
 <div class="wrapper<?php secretum_body_wrapper(); ?>" id="error-wrapper">
 	<div class="container<?php secretum_body_container(); ?>" id="content" tabindex="-1">
 		<div class="row">
-			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
+			<div class="col-md<?php secretum_error_wrapper(); ?> content-area" id="primary">
 				<main class="site-main" id="main">
 
 					<?php

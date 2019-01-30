@@ -59,7 +59,7 @@ class Trans {
 	 */
 	final public function init() {
 		// Get Secretum Option.
-		$this->_option = get_option( 'secretum', array() );
+		$this->_option = get_option( 'secretum', [] );
 
 		// Get Secretum Option.
 		$this->_default = $this->defaults();

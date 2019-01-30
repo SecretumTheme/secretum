@@ -85,6 +85,7 @@ require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';
 require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-filters.php';
+require_once SECRETUM_INC . '/template-functions/404.php';
 require_once SECRETUM_INC . '/template-functions/author.php';
 require_once SECRETUM_INC . '/template-functions/body.php';
 require_once SECRETUM_INC . '/template-functions/copyright.php';

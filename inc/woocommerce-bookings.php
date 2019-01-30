@@ -39,7 +39,7 @@ add_filter( 'woocommerce_bookings_remove_inactive_cart_time', function( $minutes
  * @link https://docs.woocommerce.com/document/bookings-snippets/
  */
 add_filter( 'booking_form_fields', function( $fields ) {
-	$new_order = array();
+	$new_order = [];
 
 	// Calendar.
 	if ( isset( $fields['wc_bookings_field_start_date'] ) ) {
@@ -81,13 +81,13 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 	// Build booking array from all blocks.
 	foreach ( $blocks as $key => $id ) {
 		if ( false === array_key_exists( $id, $available_blocks ) ) {
-			$booked_blocks[ $id ] = array(
+			$booked_blocks[ $id ] = [
 				'booked'	=> 1,
 				'available' => 0,
-				'resources' => array(
+				'resources' => [
 					'0'	 => 1,
-				),
-			);
+				],
+			];
 		}
 	}
 

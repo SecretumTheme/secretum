@@ -131,10 +131,11 @@ add_filter( 'comment_form_defaults', function( $defaults ) {
 	];
 
 	$defaults['comment_field'] 			= '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text( 'commenter_comment', false ) . ' <span class="required">*</span></label> <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
-	/* Translators: * Required field - 1) Astrick 2) see inc/secretum-text.php */
-	$defaults['comment_notes_before'] 	= sprintf( __( '%1$s %2$s', 'secretum' ), '<span class="required">*</span>', secretum_text( 'comments_required', false ) );
+	$defaults['comment_notes_before']	= '<span class="required">*</span> ' . secretum_text( 'comments_required', false );
 	$defaults['comment_notes_after'] 	= '<p class="comment-notes">' . secretum_text( 'comment_privacy', false ) . '</p>';
+	$defaults['title_reply_before'] 	= '<h2 id="reply-title" class="comment-reply-title">';
 	$defaults['title_reply'] 			= secretum_text( 'comment_add_title', false );
+	$defaults['title_reply_after'] 		= '</h2>';
 	$defaults['label_submit'] 			= secretum_text( 'comment_post_label', false );
 	$defaults['class_submit'] 			= 'btn btn-secondary';
 	$defaults['fields'] 				= apply_filters( 'comment_form_default_fields', $fields );

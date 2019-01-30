@@ -19,7 +19,7 @@ if ( has_nav_menu( 'secretum-navbar-copyright' ) && ! secretum_mod( 'copyright_n
 <div class="col-md">
 <nav class="navbar navbar-expand<?php secretum_copyright_nav_wrapper(); ?>">
 	<?php
-		wp_nav_menu( array(
+		wp_nav_menu( [
 			'depth' 			=> 0,
 			'theme_location' 	=> 'secretum-navbar-copyright',
 			'container_class' 	=> 'navbar-nav w-100',
@@ -30,7 +30,7 @@ if ( has_nav_menu( 'secretum-navbar-copyright' ) && ! secretum_mod( 'copyright_n
 			'walker' 			=> new \Secretum\Navwalker(),
 			'fallback_cb'       => false,
 			'echo'				=> true,
-		) );
+		] );
 	?>
 </nav><!-- .navbar -->
 </div><!-- .col-md -->
