@@ -41,7 +41,7 @@ function secretum_frontpage_bg_style() {
 	$class_string = ( isset( $image_src ) ) ? ' style="background-image:url( ' . $image_src . ' );' . $css . '"' : '';
 
 	// Return Class String.
-	echo esc_html( apply_filters( 'secretum_frontpage_bg_style', $class_string, 10, 1 ) );
+	echo wp_kses_post( apply_filters( 'secretum_frontpage_bg_style', $class_string, 10, 1 ) );
 
 }//end secretum_frontpage_bg_style()
 

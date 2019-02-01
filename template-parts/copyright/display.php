@@ -23,7 +23,7 @@ if ( ! secretum_mod( 'copyright_status' ) ) {
 				<?php
 				// Custom Copyright Statement.
 				if ( secretum_mod( 'copyright_text' ) ) {
-					secretum_mod( 'copyright_text', 'html', false );
+					echo wp_kses_post( secretum_mod( 'copyright_text', 'html', false ) );
 				} else {
 					// Default Copyright Statement.
 					secretum_copyright_statement();
