@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Active.
-if ( ! secretum_mod( 'copyright_status' ) ) {
+if ( true !== secretum_mod( 'copyright_status' ) ) {
 ?>
 <div class="wrapper copyright<?php secretum_copyright_wrapper(); ?>" id="wrapper-copyright">
 	<div class="container<?php secretum_copyright_container(); ?>">
@@ -22,7 +22,7 @@ if ( ! secretum_mod( 'copyright_status' ) ) {
 			<footer id="colophon"><div class="site-info<?php secretum_copyright_textuals(); ?><?php secretum_copyright_text_alignment(); ?>">
 				<?php
 				// Custom Copyright Statement.
-				if ( secretum_mod( 'copyright_text' ) ) {
+				if ( true === secretum_mod( 'copyright_text' ) ) {
 					echo wp_kses_post( secretum_mod( 'copyright_text', 'html', false ) );
 				} else {
 					// Default Copyright Statement.

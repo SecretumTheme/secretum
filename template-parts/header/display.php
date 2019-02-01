@@ -14,12 +14,12 @@
 namespace Secretum;
 
 // If Active.
-if ( ! secretum_mod( 'header_status' ) && ! secretum_mod( 'custom_headers' ) ) {
+if ( true !== secretum_mod( 'header_status' ) && true !== secretum_mod( 'custom_headers' ) ) {
 ?>
 <div class="header<?php secretum_header_wrapper(); ?>" id="wrapper-header" itemscope itemtype="http://schema.org/WebSite">
 <a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'secretum' ); ?></a>
 
-<?php if ( has_nav_menu( 'secretum-navbar-primary-left' ) || has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
+<?php if ( true === has_nav_menu( 'secretum-navbar-primary-left' ) || true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
 	<nav class="navbar navbar-expand-lg p-0">
 <?php } ?>
 
@@ -29,7 +29,7 @@ if ( ! secretum_mod( 'header_status' ) && ! secretum_mod( 'custom_headers' ) ) {
 		<?php get_template_part( 'template-parts/primary-nav/navbar-right' ); ?>
 	</div><!-- .container -->
 
-<?php if ( has_nav_menu( 'secretum-navbar-primary-left' ) || has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
+<?php if ( true === has_nav_menu( 'secretum-navbar-primary-left' ) || true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
 	</nav><!-- .navbar -->
 <?php } ?>
 

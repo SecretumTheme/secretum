@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Posts & Default Display Category Links.
-if ( 'post' === get_post_type() && ! secretum_mod( 'entry_meta_catlinks_status' ) ) {
+if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_catlinks_status' ) ) {
 ?>
 	<span class="cat-links">
 		<?php secretum_icon(

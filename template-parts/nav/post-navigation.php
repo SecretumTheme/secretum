@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Display Post Navigation If Allowed.
-if ( ! secretum_mod( 'entry_meta_post_navigation_links' ) ) {
+if ( true !== secretum_mod( 'entry_meta_post_navigation_links' ) ) {
 	/**
 	 * Display Post Navigation
 	 *

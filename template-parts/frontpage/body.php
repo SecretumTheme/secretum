@@ -13,8 +13,6 @@
 
 namespace Secretum;
 
-// If Custom Header Not Active.
-if ( ! secretum_mod( 'custom_headers' ) ) {
 ?>
 <div class="wrapper<?php secretum_body_wrapper(); ?>" id="index-wrapper">
 	<div class="container<?php secretum_body_container(); ?>" id="content" tabindex="-1">
@@ -61,4 +59,3 @@ if ( ! secretum_mod( 'custom_headers' ) ) {
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 <?php
-}// End if().

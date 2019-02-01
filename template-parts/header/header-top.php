@@ -14,10 +14,10 @@
 namespace Secretum;
 
 // If Header Top Status & Sidebar Active.
-if ( secretum_mod( 'header_top_status' ) && is_active_sidebar( 'sidebar-header-top' ) ) {
+if ( true === secretum_mod( 'header_top_status' ) && true === is_active_sidebar( 'sidebar-header-top' ) ) {
 	// Top Header Widget Area.
 	dynamic_sidebar( 'secretum-sidebar-header-top' );
-} elseif ( secretum_mod( 'header_top_status' ) && ( has_nav_menu( 'secretum-navbar-top-left' ) || has_nav_menu( 'secretum-navbar-top-right' ) ) ) {
+} elseif ( true === secretum_mod( 'header_top_status' ) && ( true === has_nav_menu( 'secretum-navbar-top-left' ) || true === has_nav_menu( 'secretum-navbar-top-right' ) ) ) {
 	// If Header Top Status Active & Has Navs.
 ?>
 <nav class="wrapper navbar navbar-expand-lg<?php secretum_header_top_wrapper(); ?>">

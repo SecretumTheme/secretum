@@ -14,19 +14,19 @@
 namespace Secretum;
 
 // No Active Menus Display Fallback.
-if ( ! has_nav_menu( 'secretum-navbar-primary-below' ) && ! has_nav_menu( 'secretum-navbar-primary-above' ) && ! has_nav_menu( 'secretum-navbar-primary-left' ) && ! has_nav_menu( 'secretum-navbar-primary-right' ) ) {
+if ( true !== has_nav_menu( 'secretum-navbar-primary-below' ) && true !== has_nav_menu( 'secretum-navbar-primary-above' ) && true !== has_nav_menu( 'secretum-navbar-primary-left' ) && true !== has_nav_menu( 'secretum-navbar-primary-right' ) ) {
 	$secretum_menu_status = true;
-} elseif ( has_nav_menu( 'secretum-navbar-primary-below' ) ) {
+} elseif ( true === has_nav_menu( 'secretum-navbar-primary-below' ) ) {
 	// Primary Below Nav Is Active.
 	$secretum_menu_status = true;
 } else {
-	// Do Not Display.
+	// Default - Do Not Display.
 	$secretum_menu_status = false;
 }
 
 
 // If Display Allowed & Menu Active.
-if ( ! secretum_mod( 'primary_nav_status' ) && $secretum_menu_status ) {
+if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_status ) {
 ?>
 <nav class="wrapper navbar navbar-expand-lg<?php secretum_primary_nav_color_scheme(); ?><?php secretum_primary_nav_wrapper(); ?>">
 <div class="container<?php secretum_primary_nav_container(); ?>">

@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Active.
-if ( ! secretum_mod( 'footer_display_status' ) && ! secretum_mod( 'custom_footers' ) && ( is_active_sidebar( 'footer-left' ) || is_active_sidebar( 'footer-center' ) || is_active_sidebar( 'footer-right' ) ) ) {
+if ( true !== secretum_mod( 'footer_display_status' ) && true !== secretum_mod( 'custom_footers' ) && ( true === is_active_sidebar( 'footer-left' ) || true === is_active_sidebar( 'footer-center' ) || true === is_active_sidebar( 'footer-right' ) ) ) {
 ?>
 <div class="wrapper footer<?php secretum_footer_wrapper(); ?>" id="wrapper-footer">
 	<div class="container<?php secretum_footer_container(); ?>">

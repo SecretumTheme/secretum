@@ -21,9 +21,11 @@ namespace Secretum;
 
 	<div class="entry-content">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) {
-			echo '<p>' . esc_html__( 'Ready to publish your first post?', 'secretum' ) . ' <a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">' . esc_html__( 'Get started here', 'secretum' ) . '</a>.</p>';
+		if ( true === is_home() && true === current_user_can( 'publish_posts' ) ) {
+			// Admin, Homepage, No Content.
+			echo wp_kses_post( '<p>' . __( 'Ready to publish your first post?', 'secretum' ) . ' <a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">' . __( 'Get started here', 'secretum' ) . '</a>.</p>' );
 		} else {
+			// Default No Content Text & Search Form.
 		?>
 			<p><?php secretum_text( 'nothing_found_text', true ); ?></p>
 			<?php get_search_form();

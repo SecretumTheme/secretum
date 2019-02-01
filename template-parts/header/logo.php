@@ -13,17 +13,17 @@
 
 namespace Secretum;
 
-if ( ! secretum_mod( 'site_identity_branding_status' ) ) {
+if ( true !== secretum_mod( 'site_identity_branding_status' ) ) {
 	// Get Current Blog ID.
 	$blog_id = get_current_blog_id();
 
-	if ( has_custom_logo() && ! secretum_mod( 'site_identity_logo_status' ) ) {
+	if ( true === has_custom_logo() && true !== secretum_mod( 'site_identity_logo_status' ) ) {
 		// Render Branded Graphic Logo.
 		secretum_render_brand_logo();
-	} elseif ( is_front_page() && is_home() && ! secretum_mod( 'site_identity_logo_status' ) ) {
+	} elseif ( true === is_front_page() && true === is_home() && true !== secretum_mod( 'site_identity_logo_status' ) ) {
 		// Render h1 Frontpage Textual Brand Logo.
 		secretum_render_heading_logo();
-	} elseif ( ! secretum_mod( 'site_identity_logo_status' ) ) {
+	} elseif ( true !== secretum_mod( 'site_identity_logo_status' ) ) {
 		// Render Textual Link Brand Logo.
 		secretum_render_link_logo();
 	}

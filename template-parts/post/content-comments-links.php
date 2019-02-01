@@ -14,8 +14,8 @@
 namespace Secretum;
 
 // If Posts & Comments Open Or Comments.
-if ( 'post' === get_post_type() && comments_open() || '0' !== get_comments_number() ) {
-	if ( ! secretum_mod( 'entry_meta_commentlink_status' ) ) { ?>
+if ( 'post' === get_post_type() && true === comments_open() || '0' !== get_comments_number() ) {
+	if ( true !== secretum_mod( 'entry_meta_commentlink_status' ) ) { ?>
 		<span class="comments-link">
 			<?php
 				secretum_icon( [

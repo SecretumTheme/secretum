@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Posts & Default Display.
-if ( 'post' === get_post_type() && ! secretum_mod( 'entry_meta_tagslinks_status' ) ) {
+if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_tagslinks_status' ) ) {
 ?>
 	<span class="tags-links">
 		<?php

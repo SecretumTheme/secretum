@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Display Allowed & Menu Active.
-if ( ! secretum_mod( 'primary_nav_status' ) && has_nav_menu( 'secretum-navbar-primary-right' ) ) {
+if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-right' ) ) {
 ?>
 <nav class="wrapper navbar navbar-expand-lg<?php secretum_primary_nav_color_scheme(); ?><?php secretum_primary_nav_wrapper(); ?>">
 <div class="container<?php secretum_primary_nav_container(); ?>">

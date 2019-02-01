@@ -13,7 +13,7 @@
 
 namespace Secretum;
 
-if ( secretum_mod( 'primary_nav_search_status' ) ) {
+if ( true === secretum_mod( 'primary_nav_search_status' ) ) {
 ?>
 <form method="get" class="navbar-form navbar-right" id="navbar-searchform" action="<?php echo esc_html( get_home_url( '/' ) ); ?>" role="search">
 	<div class="input-group">

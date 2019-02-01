@@ -17,10 +17,10 @@ namespace Secretum;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 		<?php
-		if ( is_single() ) {
+		if ( true === is_single() ) {
 			the_title( '<h1 class="entry-title mb-4">', '</h1>' );
 
-		} elseif ( is_front_page() && is_home() ) {
+		} elseif ( true === is_front_page() && true === is_home() ) {
 			the_title( '<h2 class="entry-title mb-4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 
 		} else {

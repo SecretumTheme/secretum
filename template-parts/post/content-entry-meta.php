@@ -17,10 +17,10 @@ namespace Secretum;
 if ( 'post' === get_post_type() ) {
 ?>
 <div class="entry-meta my-4">
-	<?php if ( is_single() ) { ?>
-		<?php if ( ! secretum_mod( 'entry_meta_published_status' ) || secretum_mod( 'entry_meta_updated_status' ) ) { ?>
+	<?php if ( true === is_single() ) { ?>
+		<?php if ( true !== secretum_mod( 'entry_meta_published_status' ) || true === secretum_mod( 'entry_meta_updated_status' ) ) { ?>
 			<span class="posted-on">
-				<?php if ( ! secretum_mod( 'entry_meta_published_status' ) ) { ?>
+				<?php if ( true !== secretum_mod( 'entry_meta_published_status' ) ) { ?>
 					<?php if ( secretum_mod( 'entry_meta_link', 'raw' ) === 'month' ) { ?>
 						<?php
 						secretum_icon( [
@@ -51,14 +51,14 @@ if ( 'post' === get_post_type() ) {
 					<?php }?>
 				<?php } ?>
 
-				<?php if ( secretum_modified_date_check() && secretum_mod( 'entry_meta_updated_status' ) ) { ?>
+				<?php if ( true === secretum_modified_date_check() && true === secretum_mod( 'entry_meta_updated_status' ) ) { ?>
 					<time class="updated" datetime="<?php echo esc_html( get_the_modified_date( DATE_W3C ) ); ?>">( <?php echo esc_html( get_the_modified_date() ); ?> )</time>
 				<?php } ?>
 
 			</span><!-- .posted-on -->
 		<?php }// End if(). ?>
 
-		<?php if ( ! secretum_mod( 'entry_meta_author_status' ) ) { ?>
+		<?php if ( true !== secretum_mod( 'entry_meta_author_status' ) ) { ?>
 			<span class="byline">
 				<?php if ( secretum_mod( 'entry_meta_author_link', 'raw' ) === 'author' ) { ?>
 					<?php
