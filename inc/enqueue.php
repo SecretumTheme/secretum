@@ -14,13 +14,27 @@
 namespace Secretum;
 
 
-// Enqueue Customizer Control Scripts.
 /**
- * Temp Removed
- * add_action( 'customize_controls_enqueue_scripts', function() {
- * 	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'customize-controls' ] );
- * 	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );
- * } );
+ * Preview Script For Post Message Transport Types
+ *
+ * @since 1.0.0
+add_action( 'customize_preview_init', function() {
+	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.js', [ 'jquery', 'customize-preview' ], null, true );
+} );
+ */
+
+
+/**
+ * Extend Customizer Controls and Sections
+ *
+ * @since 1.0.0
+add_action( 'customize_controls_enqueue_scripts', function() {
+	// Currently Empty.
+	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.js', [ 'jquery', 'customize-controls' ], null, true );
+	// Extend Custom Sections.
+	// Temp wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'jquery', 'customize-controls' ], null, true );.
+	// Temp wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );.
+} );
  */
 
 

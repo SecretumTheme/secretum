@@ -102,6 +102,16 @@ class Container {
 		// Select.
 		$this->_customizer->select(
 			$args['section'] . '_container',
+			$args['section'] . '_container_background_color',
+			__( 'Background Color', 'secretum' ),
+			'',
+			$this->_default[ $args['section'] . '_container_background_color' ],
+			secretum_customizer_background_colors()
+		);
+
+		// Select.
+		$this->_customizer->select(
+			$args['section'] . '_container',
 			$args['section'] . '_container_margin_top',
 			__( 'Margin - Top', 'secretum' ),
 			__( 'Spacing outside/above the container.', 'secretum' ),
@@ -144,6 +154,9 @@ class Container {
 
 	/**
 	 * Build Unfiltered Class(es) String
+	 *
+	 * Why is this method here? To ensure no settings are missed.
+	 * At some point it will be moved, probably to its own class.
 	 *
 	 * @since 1.0.0
 	 *

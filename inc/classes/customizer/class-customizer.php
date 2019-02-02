@@ -88,7 +88,7 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $selector Class/Selector Name.
 	 */
 	final public function partial( $setting_name, $selector ) {
@@ -108,7 +108,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
@@ -137,7 +137,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param int    $width Default width.
 	 * @param int    $height Default height.
 	 * @param string $label Label for Control.
@@ -172,7 +172,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param array  $input_attrs Min/Max attributes.
@@ -203,7 +203,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
@@ -234,7 +234,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
@@ -265,7 +265,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
@@ -294,7 +294,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 * @param string $default Default Display Value.
@@ -323,7 +323,7 @@ class Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Short section name.
-	 * @param string $setting_name Name of he setting to save.
+	 * @param string $setting_name Name of the setting to save.
 	 * @param string $label Label for Control.
 	 * @param string $description Description for Control.
 	 */

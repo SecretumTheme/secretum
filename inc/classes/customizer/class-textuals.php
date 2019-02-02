@@ -161,6 +161,9 @@ class Textuals {
 	/**
 	 * Build Unfiltered Class(es) String
 	 *
+	 * Why is this method here? To ensure no settings are missed.
+	 * At some point it will be moved, probably to its own class.
+	 *
 	 * @since 1.0.0
 	 *
 	 * @param string $section Section Shortname.

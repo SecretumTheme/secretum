@@ -51,7 +51,6 @@ $wrapper->settings( [
 	'section' => 'sidebar',
 ] );
 
-
 // Wrapper Borders.
 $borders->settings( [
 	'section' => 'sidebar_wrapper',
@@ -60,17 +59,34 @@ $borders->settings( [
 
 // Container.
 $container->settings( [
-	'section' => 'sidebar',
+	'section' 	=> 'sidebar',
+	'type' 		=> false,
 ] );
 
+$wp_customize->get_setting( 'secretum[sidebar_container_background_color]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_margin_top]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_margin_bottom]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_padding_x]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_padding_y]' )->transport  = 'postMessage';
 
 // Container Borders.
 $borders->settings( [
 	'section' => 'sidebar_container',
 ] );
 
+$wp_customize->get_setting( 'secretum[sidebar_container_border_type]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_border_radius]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_container_border_color]' )->transport  = 'postMessage';
 
 // Textuals.
 $textuals->settings( [
 	'section' => 'sidebar',
 ] );
+
+$wp_customize->get_setting( 'secretum[sidebar_textual_font_family]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_font_size]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_font_style]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_text_transform]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_text_color]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_link_color]' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'secretum[sidebar_textual_link_hover_color]' )->transport  = 'postMessage';

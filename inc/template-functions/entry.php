@@ -79,25 +79,26 @@ function secretum_entry_columns() {
 	$columns = '-12';
 
 	// Half Width.
-	if ( true !== empty( $sidebar_location ) && 'both' === $sidebar_location ) {
-		$columns = '-6';
+	if ( true === isset( $sidebar_location ) && 'both' === $sidebar_location ) {
+		$columns = '-7';
 	}
 
 	// Normal Width.
-	if ( true !== empty( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
+	if ( true === isset( $sidebar_location ) && ( 'left' === $sidebar_location || 'right' === $sidebar_location ) ) {
 		$columns = '-8';
 	}
 
 	// Full Width.
-	if ( true !== empty( $sidebar_location ) && 'none' === $sidebar_location ) {
+	if ( true === isset( $sidebar_location ) && 'none' === $sidebar_location ) {
 		$columns = '-12';
 	}
 
 	// Full Width.
-	if ( false === is_active_sidebar( 'sidebar-1' ) && false === is_active_sidebar( 'sidebar-right' ) && false === is_active_sidebar( 'sidebar-left' ) ) {
+	if ( true !== is_active_sidebar( 'sidebar-1' ) && true !== is_active_sidebar( 'sidebar-right' ) && true !== is_active_sidebar( 'sidebar-left' ) ) {
 		$columns = '-12';
 	}
 
+	// WooCommerce.
 	if ( true === secretum_is_woocomerce() && true === function_exists( 'is_woocommerce' ) && true === is_woocommerce() ) {
 		$columns = '-12';
 

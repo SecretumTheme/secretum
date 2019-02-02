@@ -86,19 +86,19 @@ function secretum_sidebar_location( $location_check ) {
 		$sidebar_location = $global_location;
 	}
 
-	// Default No Sidebars.
-	$display = false;
-
-	// Left or both.
-	if ( isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'left' === $sidebar_location ) && 'right' === $location_check ) {
-		$display = true;
+	// No Sidebars Selected.
+	if ( true === isset( $sidebar_location ) && 'none' === $sidebar_location ) {
+		return false;
 	}
 
-	// Right or both.
-	if ( isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'right' === $sidebar_location ) && 'right' === $location_check ) {
-		$display = true;
+	// Left or Both.
+	if ( true === isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'left' === $sidebar_location ) && 'left' === $location_check ) {
+		return true;
 	}
 
-	return ( $display ) ? true : false;
+	// Right or Both.
+	if ( true === isset( $sidebar_location ) && ( 'both' === $sidebar_location || 'right' === $sidebar_location ) && 'right' === $location_check ) {
+		return true;
+	}
 
 }//end secretum_sidebar_location()

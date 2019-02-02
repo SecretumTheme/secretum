@@ -29,7 +29,18 @@ var lineec      = require('gulp-line-ending-corrector');
 /**
  * Compile Theme Scripts
  */
-gulp.task('scripts', gulp.series('theme.js', 'theme.min.js', 'secretum.js', 'secretum.min.js', 'bootstrap.bundle.js', 'bootstrap.bundle.min.js', 'custom-sections.js', 'ekko-lightbox.js', 'ekko-lightbox.min.js'));
+gulp.task('scripts', gulp.series(
+    'theme.js',
+    'theme.min.js',
+    'secretum.js',
+    'secretum.min.js',
+    'bootstrap.bundle.js',
+    'bootstrap.bundle.min.js',
+    'customize-preview.js',
+    'customize-controls.js',
+    'ekko-lightbox.js',
+    'ekko-lightbox.min.js'
+));
 
 
 /**
@@ -119,16 +130,31 @@ gulp.task('bootstrap.bundle.min.js', function () {
 
 
 /**
- * Create js/customizer/custom-sections.js
+ * Create js/customizer/customize-preview.js
  */
-gulp.task('custom-sections.js', function () {
-    return gulp.src('./assets/js/customizer/custom-sections.js')
-    .pipe(concat('custom-sections.js'))
+gulp.task('customize-preview.js', function () {
+    return gulp.src('./assets/js/customizer/customize-preview.js')
+    .pipe(concat('customize-preview.js'))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
     .pipe(gulp.dest('./js/customizer'))
-    .pipe(notify({message: 'Created "custom-sections.js"', onLast: true}))
+    .pipe(notify({message: 'Created "customize-preview.js"', onLast: true}))
+    .on('error', console.error.bind(console))
+});
+
+
+/**
+ * Create js/customizer/customize-controls.js
+ */
+gulp.task('customize-controls.js', function () {
+    return gulp.src('./assets/js/customizer/customize-controls.js')
+    .pipe(concat('customize-controls.js'))
+    .pipe(noComments())
+    .pipe(lineec())
+    .pipe(uglify())
+    .pipe(gulp.dest('./js/customizer'))
+    .pipe(notify({message: 'Created "customize-controls.js"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
