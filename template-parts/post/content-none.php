@@ -16,7 +16,7 @@ namespace Secretum;
 ?>
 <article class="no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title mb-4"><?php secretum_text( 'nothing_found_title_text', true ); ?></h1>
+		<h1 class="entry-title mb-4 text-40"><?php secretum_text( 'nothing_found_title_text', true ); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

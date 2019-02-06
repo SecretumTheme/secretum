@@ -18,18 +18,18 @@ namespace Secretum;
 	<header class="entry-header">
 		<?php
 		if ( true === is_single() ) {
-			the_title( '<h1 class="entry-title mb-4">', '</h1>' );
+			the_title( '<h1 class="entry-title mb-4 text-40">', '</h1>' );
 
 		} elseif ( true === is_front_page() && true === is_home() ) {
-			the_title( '<h3 class="entry-title mb-4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			the_title( '<h3 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 
 		} else {
-			the_title( '<h2 class="entry-title mb-4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 		?>
 
 		<div class="entry-meta">
-			<?php get_template_part( 'template-parts/post/content', 'entry_meta' ); ?>
+			<?php get_template_part( 'template-parts/post/content', 'entry-meta' ); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

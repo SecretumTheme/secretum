@@ -32,7 +32,7 @@ get_header();
 
 					<section class="error-404 not-found">
 						<header class="entry-header">
-							<h1 class="page-title"><?php secretum_text( 'error_document_title', true ); ?></h1>
+							<h1 class="page-title text-40"><?php secretum_text( 'error_document_title', true ); ?></h1>
 						</header><!-- .entry-header -->
 
 						<div class="page-content">

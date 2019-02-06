@@ -123,7 +123,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_post_navigation_links',
 	__( 'Hide Post Navigation Links', 'secretum' ),
-	__( 'This feature is active when <!--nextpage--> is in use.', 'secretum' ),
+	__( 'Previous & Next Post Links.', 'secretum' ),
 	$defaults['entry_meta_post_navigation_links']
 );
 
