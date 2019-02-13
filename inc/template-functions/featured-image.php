@@ -45,34 +45,3 @@ function secretum_featured_image_display() {
 	);
 
 }//end secretum_featured_image_display()
-
-
-/**
- * Wrapper Classes
- *
- * @since 1.0.0
- */
-function secretum_featured_image_wrapper() {
-	$wrapper = \Secretum\Wrapper::classes( 'featured_image' );
-	$borders = \Secretum\Borders::classes( 'featured_image_wrapper' );
-
-	echo esc_html( apply_filters( 'secretum_featured_image_wrapper', $wrapper . $borders, 10, 1 ) );
-
-}//end secretum_featured_image_wrapper()
-
-
-/**
- * Container Classes
- *
- * @since 1.0.0
- */
-function secretum_featured_image_container() {
-	$container = secretum_mod( 'featured_image_container_type', 'attr', false );
-	$background = secretum_mod( 'featured_image_container_background_color', 'attr', true );
-	$border = secretum_mod( 'featured_image_container_border_type', 'attr', true ) . secretum_mod( 'featured_image_container_border_color', 'attr', true );
-	$margin = secretum_mod( 'featured_image_container_margin_x', 'attr', true ) . secretum_mod( 'featured_image_container_margin_y', 'attr', true );
-	$padding = secretum_mod( 'featured_image_container_padding_x', 'attr', true ) . secretum_mod( 'featured_image_container_padding_y', 'attr', true );
-
-	echo esc_html( apply_filters( 'secretum_featured_image_container', $container . $background . $border . $margin . $padding, 10, 1 ) );
-
-}//end secretum_featured_image_container()

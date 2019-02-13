@@ -27,42 +27,13 @@ add_action( 'secretum_after_header', function() {
 
 
 /**
- * Header Wrapper Classes
- *
- * @since 1.0.0
- */
-function secretum_header_wrapper() {
-	$wrapper = \Secretum\Wrapper::classes( 'header' );
-	$borders = \Secretum\Borders::classes( 'header_wrapper' );
-
-	echo esc_html( apply_filters( 'secretum_header_wrapper', $wrapper . $borders, 10, 1 ) );
-
-}//end secretum_header_wrapper()
-
-
-/**
- * Header Container Classes
- *
- * @since 1.0.0
- */
-function secretum_header_container() {
-	$container = \Secretum\Container::classes( 'header' );
-	$borders = \Secretum\Borders::classes( 'header_container' );
-
-	echo esc_html( apply_filters( 'secretum_header_container', $container . $borders, 10, 1 ) );
-
-}//end secretum_header_container()
-
-
-/**
  * Render Branded Graphic Logo
  *
  * @since 1.0.0
  */
 function secretum_render_brand_logo() {
 	$href_link 			= esc_url( get_home_url( '/' ) );
-	$heading_classes 	= secretum_site_identity_title_container();
-	$href_classes 		= secretum_site_identity_title_textuals();
+	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
 	$blog_name 			= esc_html( get_bloginfo( 'name' ) );
 	$href_title 		= esc_html( get_bloginfo( 'description' ) );
 	$maxwidth 			= secretum_mod( 'custom_logo_maxwidth' ) ? secretum_mod( 'custom_logo_maxwidth', 'int', false ) : '';
@@ -72,7 +43,7 @@ function secretum_render_brand_logo() {
 		'title' 	=> $blog_name,
 		'itemprop' 	=> 'logo',
 	] );
-	$html 				= "<a href=\"{$href_link}\" class=\"navbar-brand custom-logo-link{$heading_classes}{$href_classes}\" rel=\"home\" itemprop=\"url\" title=\"{$blog_name} {$href_title}\"{$inlinecss}>{$image}</a>";
+	$html 				= "<a href=\"{$href_link}\" class=\"navbar-brand custom-logo-link{$container_classes}\" rel=\"home\" itemprop=\"url\" title=\"{$blog_name} {$href_title}\"{$inlinecss}>{$image}</a>";
 
 	echo wp_kses(
 		apply_filters( 'secretum_render_brand_logo', $html, 10, 1 ),
@@ -106,15 +77,15 @@ function secretum_render_brand_logo() {
  * @since 1.0.0
  */
 function secretum_render_heading_logo() {
-	$heading_classes 	= secretum_site_identity_title_container();
+	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
 	$href_link 			= esc_url( get_home_url( '/' ) );
-	$href_classes 		= trim( secretum_site_identity_title_textuals() );
+	$textuals_classes 	= trim( secretum_textual( 'site_identity_title', 'return' ) );
 	$href_title 		= get_bloginfo( 'description' );
 	$blog_name 			= get_bloginfo( 'name' );
-	$html 				= "<h1 class=\"navbar-brand{$heading_classes}\"><a href=\"{$href_link}\" rel=\"home\" itemprop=\"url\" class=\"{$href_classes}\" title=\"{$href_title}\">{$blog_name}</a></h1>";
+	$html 				= "<h1 class=\"navbar-brand{$container_classes}\"><a href=\"{$href_link}\" rel=\"home\" itemprop=\"url\" class=\"{$textuals_classes}\" title=\"{$href_title}\">{$blog_name}</a></h1>";
 
 	echo wp_kses(
-		apply_filters( 'secretum_render_heading_logo', $html, 10, 1 ),
+		apply_filters( 'secretum_render_container_logo', $html, 10, 1 ),
 		[
 			'h1' => [
 				'class' => true,
@@ -139,11 +110,11 @@ function secretum_render_heading_logo() {
  */
 function secretum_render_link_logo() {
 	$href_link 			= esc_url( get_home_url( '/' ) );
-	$heading_classes 	= trim( secretum_site_identity_title_container() );
-	$href_classes 		= secretum_site_identity_title_textuals();
+	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
+	$textuals_classes 	= trim( secretum_textual( 'site_identity_title', 'return' ) );
 	$href_title 		= get_bloginfo( 'description' );
 	$blog_name 			= get_bloginfo( 'name' );
-	$html 				= "<a href=\"{$href_link}\" class=\"navbar-brand{$heading_classes}{$href_classes}\" rel=\"home\" itemprop=\"url\" title=\"{$href_title}\">{$blog_name}</a>";
+	$html 				= "<div class=\"navbar-brand{$container_classes}\"><a href=\"{$href_link}\" class=\"{$textuals_classes}\" rel=\"home\" itemprop=\"url\" title=\"{$href_title}\">{$blog_name}</a></div>";
 
 	echo wp_kses(
 		apply_filters( 'secretum_render_link_logo', $html, 10, 1 ),
@@ -154,6 +125,9 @@ function secretum_render_link_logo() {
 				'rel' 		=> true,
 				'itemprop' 	=> true,
 				'title' 	=> true,
+			],
+			'div' => [
+				'class'		=> true,
 			],
 		]
 	);

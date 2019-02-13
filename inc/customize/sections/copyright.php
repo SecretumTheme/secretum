@@ -65,7 +65,8 @@ $borders->settings( [
 
 // Textuals.
 $textuals->settings( [
-	'section' => 'copyright',
+	'section' 	=> 'copyright',
+	'alignment' => true,
 ] );
 
 

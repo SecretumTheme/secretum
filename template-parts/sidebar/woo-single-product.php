@@ -15,7 +15,7 @@ namespace Secretum;
 
 // If Sidebar Is Active.
 if ( true === is_active_sidebar( 'sidebar-single-product' ) ) { ?>
-	<div class="sidebar col-md widget-area<?php secretum_sidebar_wrapper(); ?>" id="sidebar-right" role="complementary">
+	<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-right" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-single-product' ); ?>
 	</div><!-- .sidebar -->
 <?php

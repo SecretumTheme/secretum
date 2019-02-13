@@ -80,9 +80,11 @@ $wp_customize->get_setting( 'secretum[sidebar_container_border_color]' )->transp
 
 // Textuals.
 $textuals->settings( [
-	'section' => 'sidebar',
+	'section' 	=> 'sidebar',
+	'alignment' => true,
 ] );
 
+$wp_customize->get_setting( 'secretum[sidebar_textual_alignment]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[sidebar_textual_font_family]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[sidebar_textual_font_size]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[sidebar_textual_font_style]' )->transport  = 'postMessage';

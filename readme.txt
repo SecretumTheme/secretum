@@ -12,7 +12,7 @@ WordPress Multipurpose Theme - Secretum is a highly customizable fluid-responsiv
 
 == Description ==
 
-Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 350 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. Secretum was created to save you time and money checkout the feature list below to see how!
+Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 375 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. The most novice of user can setup a Secretum website in seconds, while advanced users can rapid deploy multiple websites with different settings for every Website in seconds. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Build Faster, Build Better, Build Smarter - Secretum truly is not like any other theme in existence!
 
 
 == Installation ==
@@ -24,25 +24,44 @@ Secretum is a highly customizable fluid-responsive multipurpose WordPress theme 
 5. All of the panels names that start with :: belong to Secretum
 
 
+== Setup ==
+
+1. Set the Primary Menu: Customize > Menus.
+	* Create a new menu if needed
+	* Set the menu to the 'Primary Navbar Below Header' location
+2. Add Widgets: Customize > Widgets
+	* Add Widgets to Sidebar Right
+	* Add Widgets to Footer left, center, right.
+3) Select A Theme Design If Desired
+	* Customize > Theme Design > Base Color Palette
+4) Adjust the other Customizer features as needed
+
+
 == Changelog ==
 
-= 1.1.0 =
-* Released: Jan 31, 2019
+= 0.0.24 =
+* Released: 2019-02-11
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.24
 
-Feature: Name
-https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#Version_1.1.0
+= 0.0.20 =
+* Released: 2019-01-18
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.20
 
-= 1.0.1 =
-* Released: Jan 30, 2019
+= 0.0.19 =
+* Released: 2019-01-14
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.19
 
-Hotfix Name:
-https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#Version_1.0.1
+= 0.0.18 =
+* Released: 2019-01-10
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.18
 
-= 1.0.0 =
-* Released: Jan 29, 2019
+= 0.0.8 =
+* Released: 2018-12-20
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.8
 
-Release: Initial
-https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#Version_1.0.0
+= 0.0.1 =
+* Released: 2018-10-01
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.1
 
 
 == Licenses ==

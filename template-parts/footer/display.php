@@ -17,8 +17,8 @@ namespace Secretum;
 if ( true !== secretum_mod( 'footer_status' ) && true !== secretum_mod( 'custom_footers' ) ) {
 	if ( true === is_active_sidebar( 'footer-left' ) || true === is_active_sidebar( 'footer-center' ) || true === is_active_sidebar( 'footer-right' ) ) {
 ?>
-<div class="wrapper footer<?php secretum_footer_wrapper(); ?>" id="wrapper-footer">
-	<div class="container<?php secretum_footer_container(); ?>">
+<div class="wrapper footer<?php secretum_wrapper( 'footer' ); ?>" id="wrapper-footer">
+	<div class="container<?php secretum_container( 'footer' ); ?>">
 		<div class="row">
 			<?php if ( true === is_active_sidebar( 'footer-left' ) ) { ?>
 				<div class="col-md">

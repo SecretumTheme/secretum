@@ -14,11 +14,17 @@
 namespace Secretum;
 
 get_header();
+
+// Display If Allowed.
+if ( true !== secretum_mod( 'body_status' ) ) {
 ?>
-<div class="wrapper<?php secretum_body_wrapper(); ?>" id="error-wrapper">
-	<div class="container<?php secretum_body_container(); ?>" id="content" tabindex="-1">
+<div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="error-wrapper">
+	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
+	<?php
+	if ( true !== secretum_mod( 'entry_status' ) ) {
+	?>
 		<div class="row">
-			<div class="col-md<?php secretum_error_wrapper(); ?> content-area" id="primary">
+			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'error', 'echo', 'borders' ); ?> content-area" id="primary">
 				<main class="site-main" id="main">
 
 					<?php
@@ -68,7 +74,12 @@ get_header();
 				</main><!-- .site-main -->
 			</div><!-- .content-area -->
 		</div><!-- .row -->
+	<?php
+	}// End if().
+	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 <?php
+}// End if().
+
 get_footer();

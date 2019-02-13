@@ -61,11 +61,11 @@ function secretum_register_classes( $class ) {
 	];
 
 	// Build Class Name.
-	$relative_class = substr( $class, $len );
+	$relative_class = strtolower( str_replace( '_', '-', substr( $class, $len ) ) );
 
 	foreach ( $class_paths as $path ) {
 		// Replace Dir Separators and Replace Namespace with Base Dir.
-		$file = $path . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
+		$file = $path . 'class-' . str_replace( '\\', '/', $relative_class ) . '.php';
 
 		// Include File.
 		if ( file_exists( $file ) === true ) {
@@ -83,25 +83,17 @@ require_once SECRETUM_INC . '/secretum-mod.php';
 require_once SECRETUM_INC . '/secretum-icon.php';
 require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';
-require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-filters.php';
-require_once SECRETUM_INC . '/template-functions/404.php';
 require_once SECRETUM_INC . '/template-functions/author.php';
-require_once SECRETUM_INC . '/template-functions/body.php';
 require_once SECRETUM_INC . '/template-functions/copyright.php';
-require_once SECRETUM_INC . '/template-functions/copyright-nav.php';
 require_once SECRETUM_INC . '/template-functions/entry.php';
 require_once SECRETUM_INC . '/template-functions/featured-image.php';
-require_once SECRETUM_INC . '/template-functions/footer.php';
 require_once SECRETUM_INC . '/template-functions/frontpage.php';
 require_once SECRETUM_INC . '/template-functions/header.php';
-require_once SECRETUM_INC . '/template-functions/header-top.php';
 require_once SECRETUM_INC . '/template-functions/post-navigation.php';
-require_once SECRETUM_INC . '/template-functions/primary-nav.php';
-require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
-require_once SECRETUM_INC . '/template-functions/site-identity.php';
-require_once SECRETUM_INC . '/template-functions/theme.php';
+require_once SECRETUM_INC . '/template-functions.php';
+require_once SECRETUM_INC . '/template-classes.php';
 
 
 // WP Admin Only.
@@ -144,8 +136,6 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	// Remove Sections.
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'title_tagline' );
-	$wp_customize->remove_section( 'header_image' );
-	$wp_customize->remove_section( 'background_image' );
 
 	// Sanitizers and Helper Functions.
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';

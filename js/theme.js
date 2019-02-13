@@ -5539,4 +5539,10 @@
 		event.preventDefault();
 		$( this ).ekkoLightbox();
 	} );
+
+
+	$( document ).on( 'wp-custom-header-video-loaded', function() {
+		$( "body" ).addClass( 'has-header-video' );
+	} );
+
 }( jQuery );

@@ -40,8 +40,7 @@ add_action( 'after_setup_theme', function() {
 		'secretum-navbar-primary-above' => __( 'Primary Navbar Above Header', 'secretum' ),
 		'secretum-navbar-primary-left' 	=> __( 'Primary Navbar Left of Logo', 'secretum' ),
 		'secretum-navbar-primary-right' => __( 'Primary Navbar Right of Logo', 'secretum' ),
-		'secretum-navbar-top-left' 		=> __( 'Top Left Textual Menu', 'secretum' ),
-		'secretum-navbar-top-right' 	=> __( 'Top Right Textual Menu', 'secretum' ),
+		'secretum-navbar-top' 			=> __( 'Header Top Navbar (above header)', 'secretum' ),
 		'secretum-navbar-copyright' 	=> __( 'Copyright Textual Menu', 'secretum' ),
 	] );
 
@@ -58,7 +57,7 @@ add_action( 'after_setup_theme', function() {
 		'width' 		=> 980,
 		'flex-height' 	=> true,
 		'height' 		=> 200,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'video' 		=> true,
 	] );
 
 	// Background Image Panel.
@@ -81,6 +80,12 @@ add_action( 'after_setup_theme', function() {
 
 	// Customizer Support.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+
+	// Load default block styles.
+	add_theme_support( 'wp-block-styles' );
 
 	// HTML5 Markup Support.
 	add_theme_support( 'html5', [

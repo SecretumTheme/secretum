@@ -92,4 +92,13 @@
 		event.preventDefault();
 		$( this ).ekkoLightbox();
 	} );
+
+
+	/*!
+	 * Add Video Body Class If Custom Header Video
+	 */
+	$( document ).on( 'wp-custom-header-video-loaded', function() {
+		$( "body" ).addClass( 'has-header-video' );
+	} );
+
 }( jQuery );

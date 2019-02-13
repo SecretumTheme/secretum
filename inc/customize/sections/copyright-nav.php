@@ -28,6 +28,16 @@ $customizer->section(
 	''
 );
 
+// Select.
+$customizer->select(
+	'copyright_nav_display',
+	'copyright_nav_alignment',
+	__( 'Alignment', 'secretum' ),
+	'',
+	$defaults['copyright_nav_alignment'],
+	secretum_customizer_margin_alignments()
+);
+
 
 // Checkbox.
 $customizer->checkbox(

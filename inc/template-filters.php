@@ -89,23 +89,18 @@ add_filter( 'body_class', function( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Add has-header-image to custom header.
-	if ( has_header_image() ) {
-		$classes[] = 'has-header-image';
-	}
-
-	// Add has-header-image to custom header.
-	if ( has_header_image() ) {
-		$classes[] = 'has-header-image';
-	}
-
-	// Add secretum-front-page class to front .
-	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
+	// Add secretum-front-page class to front.
+	if ( is_front_page() ) {
 		$classes[] = 'secretum-front-page';
 	}
 
-	$classes[] = secretum_theme_colors();
-	$classes[] = secretum_theme_fonts();
+	// Add has-header-image to custom header.
+	if ( has_header_image() ) {
+		$classes[] = 'has-header-image';
+	}
+
+	// Inject Theme Background Color.
+	$classes[] = secretum_theme_background_color();
 
 	return $classes;
 }, 20, 2 );

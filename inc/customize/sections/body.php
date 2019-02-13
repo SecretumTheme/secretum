@@ -20,6 +20,25 @@ $customizer->panel(
 );
 
 
+// Section.
+$customizer->section(
+	'body_display',
+	'body',
+	__( 'Display Settings', 'secretum' ),
+	''
+);
+
+
+// Checkbox.
+$customizer->checkbox(
+	'body_display',
+	'body_status',
+	__( 'Select To Hide Entire Body Area', 'secretum' ),
+	'',
+	$defaults['body_status']
+);
+
+
 // Wrapper.
 $wrapper->settings( [
 	'section' => 'body',

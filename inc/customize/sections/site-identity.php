@@ -244,6 +244,7 @@ $textuals->settings( [
 	'panel' 	=> 'site_identity',
 	'section' 	=> 'site_identity_title',
 	'title' 	=> __( 'Title Textuals', 'secretum' ),
+	'alignment' => true,
 ] );
 
 
@@ -267,4 +268,5 @@ $textuals->settings( [
 	'panel' 	=> 'site_identity',
 	'section' 	=> 'site_identity_desc',
 	'title' 	=> __( 'Tagline Textuals', 'secretum' ),
+	'alignment' => true,
 ] );

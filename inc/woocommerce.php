@@ -134,8 +134,8 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
 	if ( ( isset( $ajax ) && $ajax ) || ( property_exists( $args, 'theme_location' ) && in_array( $args->theme_location, $theme_locations, true ) ) ) {
 		$active = ( is_cart() ) ? ' current-menu-item' : '';
 		$icon .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="woocommerce-cart-icon" class="menu-item' . $active . '">';
-		$icon .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_primary_nav_cart_link_classes() . '">';
-		$icon .= '<span class="fi-shopping-cart' . secretum_primary_nav_cart_icon_classes() . '"></span><span class="' . secretum_primary_nav_cart_count_classes() . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
+		$icon .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_nav_cart_link( 'primary_nav' ) . '">';
+		$icon .= '<span class="fi-shopping-cart' . secretum_nav_cart_textual( 'primary_nav', 'return', [ 'type' => 'icon' ] ) . '"></span><span class="' . secretum_nav_cart_textual( 'primary_nav', 'return', [ 'type' => 'icon' ] ) . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
 		$icon .= '</a>';
 		$icon .= '</li>';
 	}

@@ -2485,10 +2485,25 @@ a.linkhover:hover, a.link-hover:hover, a.linkhover:focus, a.link-hover:focus { c
 .collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
 @media screen and (prefers-reduced-motion: reduce) { .collapsing { -webkit-transition: none; transition: none; } }
 .header { position: relative; }
-.header .navbar-brand { white-space: normal; }
+.header .navbar-brand { margin-bottom: 0; white-space: normal; }
 .header .navbar-brand img { width: 100%; }
 .header a.navbar-brand, .header .navbar-brand a:link { height: auto !important; padding: 0; margin: 0; max-width: 100%; text-decoration: none; }
 .header .site-description { margin: 0; padding: 0; }
+.header .custom-header { display: table; height: 300px; height: 75vh; width: 100%; position: relative; }
+.header .custom-header-media { bottom: 0; left: 0; height: 1200px; height: 100vh; max-height: 100%; overflow: hidden; position: absolute; right: 0; top: 0; width: 100%; z-index: -1; }
+.header .custom-header-media img, .header .custom-header-media video, .header .custom-header-media iframe { position: fixed; height: auto; left: 50%; max-width: 1000%; min-height: 100%; min-width: 100%; min-width: 100vw; width: auto; top: 50%; padding-bottom: 1px; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); }
+.header .wp-custom-header .wp-custom-header-video-button { background-color: rgba(34, 34, 34, 0.5); border: 1px solid rgba(255, 255, 255, 0.6); color: rgba(255, 255, 255, 0.6); height: 45px; overflow: hidden; padding: 0; position: fixed; right: 30px; top: 30px; -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; width: 45px; }
+.header .wp-custom-header .wp-custom-header-video-button:hover, .header .wp-custom-header .wp-custom-header-video-button:focus { border-color: rgba(255, 255, 255, 0.8); background-color: rgba(34, 34, 34, 0.8); color: #fff; }
+.header .admin-bar .wp-custom-header-video-button { top: 62px; }
+.header .has-header-image:not(.secretum-front-page):not(.home) .custom-header-media img { bottom: 0; position: absolute; top: auto; -ms-transform: translateX(-50%) translateY(0); -webkit-transform: translateX(-50%) translateY(0); transform: translateX(-50%) translateY(0); }
+@supports ((-o-object-fit: cover) or (object-fit: cover)) { .header .has-header-image .custom-header-media img, .header .has-header-video .custom-header-media video, .header .has-header-video .custom-header-media iframe, .header .has-header-image:not(.secretum-front-page):not(.home) .custom-header-media img { height: 100%; left: 0; -o-object-fit: cover; object-fit: cover; top: 0; -ms-transform: none; -webkit-transform: none; transform: none; width: 100%; } }
+.header body:not(.has-header-image):not(.has-header-video) .custom-header-media { display: none; }
+.header .has-header-image.secretum-front-page .navbar-brand, .header .has-header-video.secretum-front-page .navbar-brand, .header .has-header-image.home.blog .navbar-brand, .header .has-header-video.home.blog .navbar-brand { display: table-cell; height: 100%; vertical-align: bottom; }
+.header .has-header-image.secretum-front-page .navbar-brand, .header .has-header-video.secretum-front-page .navbar-brand, .header .has-header-image.home.blog .navbar-brand, .header .has-header-video.home.blog .navbar-brand { bottom: 0; display: block; left: 0; height: auto; padding-top: 0; position: absolute; width: 100%; }
+.header .has-header-image.secretum-front-page .custom-header, .header .has-header-video.secretum-front-page .custom-header, .header .has-header-image.home.blog .custom-header, .header .has-header-video.home.blog .custom-header { display: block; height: auto; }
+.header .secretum-front-page.has-header-image .custom-header-media, .header .secretum-front-page.has-header-video .custom-header-media, .header .home.blog.has-header-image .custom-header-media, .header .home.blog.has-header-video .custom-header-media { height: 0; position: relative; }
+.header .has-header-image:not(.secretum-front-page):not(.home) .custom-header-media, .header .has-header-video:not(.secretum-front-page):not(.home) .custom-header-media { height: 165px; }
+.header .admin-bar .custom-header-media { height: calc(100vh - 32px); }
 .content-area .sticky { -webkit-box-shadow: 0 0 8px 3px #b3b7bc; box-shadow: 0 0 8px 3px #b3b7bc; padding: 20px 20px 0 20px; margin-bottom: 50px; }
 .content-area article.has-post-thumbnail { margin-bottom: 1em; max-width: 100%; }
 .content-area article.has-post-thumbnail img { max-width: 100%; height: auto; -webkit-backface-visibility: hidden; -webkit-transition: opacity 0.2s; transition: opacity 0.2s; }

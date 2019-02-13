@@ -26,7 +26,7 @@ class Dropdown {
 	 * Secretum Customizer Object
 	 *
 	 * @since 1.0.0
-	 * @var array $_customizer
+	 * @var object $_customizer
 	 */
 	private $_customizer;
 
@@ -81,16 +81,6 @@ class Dropdown {
 			$args['section'],
 			__( 'Dropdown Container', 'secretum' ),
 			__( 'Customize the properties of menus dropdown.', 'secretum' )
-		);
-
-		// Select.
-		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_text_alignment',
-			__( 'Alignment', 'secretum' ),
-			'',
-			$this->_default[ $args['section'] . '_dropdown_text_alignment' ],
-			secretum_customizer_margin_alignments()
 		);
 
 		// Select.
@@ -153,31 +143,7 @@ class Dropdown {
 			secretum_customizer_padding_left_right()
 		);
 
+
 	}//end settings()
-
-
-	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * Why is this method here? To ensure no settings are missed.
-	 * At some point it will be moved, probably to its own class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$background 		= secretum_mod( $section . '_dropdown_background_color', 'attr', true );
-		$background_hover 	= secretum_mod( $section . '_dropdown_background_hover_color', 'attr', true );
-		$margin_y 			= secretum_mod( $section . '_dropdown_margin_y', 'attr', true );
-		$margin_x 			= secretum_mod( $section . '_dropdown_margin_x', 'attr', true );
-		$padding_y 			= secretum_mod( $section . '_dropdown_padding_y', 'attr', true );
-		$padding_x 			= secretum_mod( $section . '_dropdown_padding_x', 'attr', true );
-		return $background . $background_hover . $margin_y . $margin_x . $padding_y . $padding_x;
-
-	}//end classes()
-
 
 }//end class

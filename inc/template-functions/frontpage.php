@@ -45,6 +45,7 @@ function secretum_frontpage_bg_style() {
 
 }//end secretum_frontpage_bg_style()
 
+
 /**
  * Display Google Map
  *
@@ -71,19 +72,3 @@ function secretum_display_google_map() {
 	);
 
 }//end secretum_display_google_map()
-
-
-/**
- * Copyright Wrapper Classes
- *
- * @since 1.0.0
- */
-function secretum_frontpage_wrapper() {
-	$background = secretum_mod( 'frontpage_wrapper_background_color', 'attr', true );
-	$border = secretum_mod( 'frontpage_wrapper_border_type', 'attr', true ) . secretum_mod( 'frontpage_wrapper_border_color', 'attr', true );
-	$margin = secretum_mod( 'frontpage_wrapper_margin_top', 'attr', true ) . secretum_mod( 'frontpage_wrapper_margin_bottom', 'attr', true );
-	$padding = secretum_mod( 'frontpage_wrapper_padding_x', 'attr', true ) . secretum_mod( 'frontpage_wrapper_padding_y', 'attr', true );
-
-	echo esc_html( apply_filters( 'secretum_frontpage_wrapper', $background . $border . $margin . $padding, 10, 1 ) );
-
-}//end secretum_frontpage_wrapper()

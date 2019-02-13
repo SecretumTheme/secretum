@@ -27,10 +27,9 @@ if ( true !== has_nav_menu( 'secretum-navbar-primary-below' ) && true !== has_na
 
 // If Display Allowed & Menu Active.
 if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_status ) {
-?>
-<nav class="wrapper navbar navbar-expand-lg<?php secretum_primary_nav_color_scheme(); ?><?php secretum_primary_nav_wrapper(); ?>">
-<div class="container<?php secretum_primary_nav_container(); ?>">
-<?php
+	echo '<nav class="wrapper navbar navbar-expand-lg' . secretum_wrapper( 'primary_nav', 'return' ) . '">';
+	echo '<div class="container' . secretum_container( 'primary_nav', 'return', [ 'textuals' => true ] ) . '">';
+
 	// Display Toggler.
 	get_template_part( 'template-parts/primary-nav/toggler' );
 
@@ -40,13 +39,13 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_st
 		'theme_location' 	=> 'secretum-navbar-primary-below',
 		'container_class' 	=> 'collapse navbar-collapse',
 		'container_id' 		=> 'navbarNavDropdown',
-		'menu_class' 		=> 'navbar-nav primary' . secretum_primary_nav_alignment(),
+		'menu_class' 		=> 'navbar-nav primary' . secretum_alignment( 'copyright_nav', 'return', [ 'text' => 'items' ] ),
 		'menu_id' 			=> 'main-menu',
-		'divider'			=> secretum_primary_nav_items(),
+		'divider'			=> secretum_nav_item( 'primary_nav' ),
 		'walker' 			=> new \Secretum\Navwalker(
 			'primary_nav',
-			secretum_primary_nav_dropdown(),
-			secretum_primary_nav_dropdown_textual()
+			secretum_nav_dropdown( 'primary_nav' ),
+			secretum_textual( 'primary_nav_dropdown', 'return' )
 		),
 		'fallback_cb' 		=> '\Secretum\Navwalker::fallback',
 		'echo'				=> true,
@@ -54,8 +53,7 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_st
 
 	// Navbar Search Form.
 	get_template_part( 'template-parts/primary-nav/search' );
-?>
-</div><!-- .container -->
-</nav><!-- .navbar -->
-<?php
+
+	echo '</div><!-- .container -->';
+	echo '</nav><!-- .navbar -->';
 }

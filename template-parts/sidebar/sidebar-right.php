@@ -15,7 +15,7 @@ namespace Secretum;
 
 // If Sidebar Right Active && Sidebar Right Location Set.
 if ( true === is_active_sidebar( 'sidebar-right' ) && true === secretum_sidebar_location( 'right' ) ) { ?>
-<div class="sidebar col-md widget-area<?php secretum_sidebar_wrapper(); ?>" id="sidebar-right" role="complementary">
+<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-right" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-right' ); ?>
 </div><!-- .sidebar -->
 <?php
@@ -23,7 +23,7 @@ if ( true === is_active_sidebar( 'sidebar-right' ) && true === secretum_sidebar_
 
 // Default : Sidebar 1 Set - No Sidebar Right.
 if ( true !== is_active_sidebar( 'sidebar-right' ) && true === is_active_sidebar( 'sidebar-1' ) && true === secretum_sidebar_location( 'right' ) ) { ?>
-<div class="sidebar col-md widget-area<?php secretum_sidebar_wrapper(); ?>" id="sidebar-right" role="complementary">
+<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-right" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- .sidebar -->
 <?php

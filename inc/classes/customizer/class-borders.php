@@ -107,26 +107,4 @@ class Borders {
 
 	}//end settings()
 
-
-	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * Why is this method here? To ensure no settings are missed.
-	 * At some point it will be moved, probably to its own class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$type 	= secretum_mod( $section . '_border_type', 'attr', true );
-		$color 	= secretum_mod( $section . '_border_color', 'attr', true );
-		$radius = secretum_mod( $section . '_border_radius', 'attr', true );
-		return $type . $color . $radius;
-
-	}//end classes()
-
-
 }//end class

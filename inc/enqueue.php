@@ -18,10 +18,10 @@ namespace Secretum;
  * Preview Script For Post Message Transport Types
  *
  * @since 1.0.0
+ */
 add_action( 'customize_preview_init', function() {
 	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.js', [ 'jquery', 'customize-preview' ], null, true );
 } );
- */
 
 
 /**

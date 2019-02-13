@@ -16,10 +16,10 @@ namespace Secretum;
 // If Active.
 if ( true !== secretum_mod( 'copyright_status' ) ) {
 ?>
-<div class="wrapper copyright<?php secretum_copyright_wrapper(); ?>" id="wrapper-copyright">
-	<div class="container<?php secretum_copyright_container(); ?>">
+<div class="wrapper copyright<?php secretum_wrapper( 'copyright' ); ?>" id="wrapper-copyright">
+	<div class="container<?php secretum_container( 'copyright' ); ?>">
 		<div class="row"><div class="col-md">
-			<footer id="colophon"><div class="site-info<?php secretum_copyright_textuals(); ?><?php secretum_copyright_text_alignment(); ?>">
+			<footer id="colophon"><div class="site-info<?php secretum_textual( 'copyright' ); ?>">
 				<?php
 				// Custom Copyright Statement.
 				if ( true === secretum_mod( 'copyright_text' ) ) {

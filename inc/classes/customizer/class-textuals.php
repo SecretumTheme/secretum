@@ -70,6 +70,7 @@ class Textuals {
 			'section' 	=> '',
 			'panel' 	=> '',
 			'title' 	=> '',
+			'alignment' => false,
 		] );
 
 		// Required.
@@ -84,6 +85,18 @@ class Textuals {
 			$this->_title( $args['title'] ),
 			__( 'Customize fonts, text and link colors.', 'secretum' )
 		);
+
+		if ( true === $args['alignment'] ) {
+			// Select.
+			$this->_customizer->select(
+				$args['section'] . '_textuals',
+				$args['section'] . '_textual_alignment',
+				__( 'Text Alignment', 'secretum' ),
+				'',
+				$this->_default[ $args['section'] . '_textual_alignment' ],
+				secretum_customizer_text_alignments()
+			);
+		}
 
 		// Select.
 		$this->_customizer->select(
@@ -159,29 +172,6 @@ class Textuals {
 
 
 	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * Why is this method here? To ensure no settings are missed.
-	 * At some point it will be moved, probably to its own class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $section Section Shortname.
-	 */
-	final public static function classes( $section ) {
-		$font_family 		= secretum_mod( $section . '_textual_font_family', 'attr', true );
-		$font_size 			= secretum_mod( $section . '_textual_font_size', 'attr', true );
-		$font_style 		= secretum_mod( $section . '_textual_font_style', 'attr', true );
-		$text_color 		= secretum_mod( $section . '_textual_text_color', 'attr', true );
-		$link_color 		= secretum_mod( $section . '_textual_link_color', 'attr', true );
-		$link_hover_color 	= secretum_mod( $section . '_textual_link_hover_color', 'attr', true );
-		$text_transform 	= secretum_mod( $section . '_textual_text_transform', 'attr', true );
-		return $font_family . $font_size . $font_style . $text_color . $link_color . $link_hover_color . $text_transform;
-
-	}//end classes()
-
-
-	/**
 	 * Build Section Title
 	 *
 	 * @since 1.0.0
@@ -191,7 +181,7 @@ class Textuals {
 	 * @return string Alt Section Title.
 	 */
 	final private function _title( $title = '' ) {
-		if ( empty( $title ) ) {
+		if ( true === empty( $title ) ) {
 			$title = __( 'Textuals', 'secretum' );
 		}
 
@@ -211,7 +201,7 @@ class Textuals {
 	 * @return string Alt Section Title.
 	 */
 	final private function _panel( $section, $panel = '' ) {
-		if ( empty( $panel ) ) {
+		if ( true === empty( $panel ) ) {
 			$panel = $section;
 		} else {
 			$panel = $panel;

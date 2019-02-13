@@ -64,20 +64,20 @@ $customizer->section(
 // Checkbox.
 $customizer->checkbox(
 	'scrolltop_icon',
-	'scrolltop',
+	'scrolltop_status',
 	__( 'Hide Scroll To Top Icon', 'secretum' ),
 	__( 'Select to disable the scroll to top icon.', 'secretum' ),
-	$defaults['scrolltop']
+	$defaults['scrolltop_status']
 );
 
 
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_text_color',
+	'scrolltop_textual_text_color',
 	__( 'Icon Color', 'secretum' ),
 	'',
-	$defaults['scrolltop_text_color'],
+	$defaults['scrolltop_textual_text_color'],
 	secretum_customizer_text_colors()
 );
 
@@ -85,10 +85,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_icon_size',
+	'scrolltop_textual_font_size',
 	__( 'Icon Size', 'secretum' ),
 	'',
-	$defaults['scrolltop_icon_size'],
+	$defaults['scrolltop_textual_font_size'],
 	secretum_customizer_font_sizes()
 );
 
@@ -96,10 +96,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_background_color',
+	'scrolltop_container_background_color',
 	__( 'Background Color', 'secretum' ),
 	'',
-	$defaults['scrolltop_background_color'],
+	$defaults['scrolltop_container_background_color'],
 	secretum_customizer_background_colors()
 );
 
@@ -107,10 +107,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_background_hover_color',
+	'scrolltop_container_background_hover_color',
 	__( 'Background Hover Color', 'secretum' ),
 	'',
-	$defaults['scrolltop_background_hover_color'],
+	$defaults['scrolltop_container_background_hover_color'],
 	secretum_customizer_background_hover_colors()
 );
 
@@ -118,10 +118,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_border_type',
+	'scrolltop_container_border_type',
 	__( 'Border Type', 'secretum' ),
 	'',
-	$defaults['scrolltop_border_type'],
+	$defaults['scrolltop_container_border_type'],
 	secretum_customizer_border_types()
 );
 
@@ -129,10 +129,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_border_radius',
+	'scrolltop_container_border_radius',
 	__( 'Border Radius', 'secretum' ),
 	'',
-	$defaults['scrolltop_border_radius'],
+	$defaults['scrolltop_container_border_radius'],
 	secretum_customizer_border_radius()
 );
 
@@ -140,10 +140,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_border_color',
+	'scrolltop_container_border_color',
 	__( 'Border Color', 'secretum' ),
 	'',
-	$defaults['scrolltop_border_color'],
+	$defaults['scrolltop_container_border_color'],
 	secretum_customizer_border_colors()
 );
 
@@ -151,10 +151,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_margin_bottom',
+	'scrolltop_container_margin_bottom',
 	__( 'Bottom Margin', 'secretum' ),
 	__( 'Spacing around the container.', 'secretum' ),
-	$defaults['scrolltop_margin_bottom'],
+	$defaults['scrolltop_container_margin_bottom'],
 	secretum_customizer_margin_bottom()
 );
 
@@ -162,10 +162,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_margin_right',
+	'scrolltop_container_margin_right',
 	__( 'Right Margin', 'secretum' ),
 	__( 'Spacing around the container.', 'secretum' ),
-	$defaults['scrolltop_margin_right'],
+	$defaults['scrolltop_container_margin_right'],
 	secretum_customizer_margin_right()
 );
 
@@ -173,10 +173,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_padding_x',
+	'scrolltop_container_padding_x',
 	__( 'Padding - Left & Right', 'secretum' ),
 	__( 'Spacing within the container.', 'secretum' ),
-	$defaults['scrolltop_padding_x'],
+	$defaults['scrolltop_container_padding_x'],
 	secretum_customizer_padding_left_right()
 );
 
@@ -184,10 +184,10 @@ $customizer->select(
 // Select.
 $customizer->select(
 	'scrolltop_icon',
-	'scrolltop_padding_y',
+	'scrolltop_container_padding_y',
 	__( 'Padding - Top & Bottom', 'secretum' ),
 	__( 'Spacing within the container.', 'secretum' ),
-	$defaults['scrolltop_padding_y'],
+	$defaults['scrolltop_container_padding_y'],
 	secretum_customizer_padding_top_bottom()
 );
 

@@ -83,9 +83,11 @@ $wp_customize->get_setting( 'secretum[footer_container_border_color]' )->transpo
 
 // Textuals.
 $textuals->settings( [
-	'section' => 'footer',
+	'section' 	=> 'footer',
+	'alignment' => true,
 ] );
 
+$wp_customize->get_setting( 'secretum[footer_textual_alignment]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[footer_textual_font_family]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[footer_textual_font_size]' )->transport  = 'postMessage';
 $wp_customize->get_setting( 'secretum[footer_textual_font_style]' )->transport  = 'postMessage';

@@ -32,6 +32,16 @@ $customizer->section(
 // Checkbox.
 $customizer->checkbox(
 	'entry_display',
+	'entry_status',
+	__( 'Select To Hide Entire Entry Area', 'secretum' ),
+	'',
+	$defaults['entry_status']
+);
+
+
+// Checkbox.
+$customizer->checkbox(
+	'entry_display',
 	'entry_meta_published_status',
 	__( 'Hide Published Date', 'secretum' ),
 	'',

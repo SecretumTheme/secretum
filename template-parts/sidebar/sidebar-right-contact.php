@@ -15,7 +15,7 @@ namespace Secretum;
 
 // If Sidebar Active.
 if ( true === is_active_sidebar( 'sidebar-right-contact' ) ) { ?>
-<div class="sidebar col-md widget-area<?php secretum_sidebar_wrapper(); ?>" id="sidebar-right-contact" role="complementary">
+<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-right-contact" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-right-contact' ); ?>
 </div><!-- .sidebar -->
 <?php

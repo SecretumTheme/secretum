@@ -86,11 +86,11 @@ class NavItems {
 		// Select.
 		$this->_customizer->select(
 			$args['section'] . '_items',
-			$args['section'] . '_items_alignment',
-			__( 'Alignment', 'secretum' ),
+			$args['section'] . '_items_text_alignment',
+			__( 'Text Alignment', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_items_alignment' ],
-			secretum_customizer_margin_alignments()
+			$this->_default[ $args['section'] . '_items_text_alignment' ],
+			secretum_customizer_text_alignments()
 		);
 
 		// Select.
@@ -154,30 +154,5 @@ class NavItems {
 		);
 
 	}//end settings()
-
-
-	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * Why is this method here? To ensure no settings are missed.
-	 * At some point it will be moved, probably to its own class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$background 		= secretum_mod( $section . '_items_background_color', 'attr', true );
-		$background_hover 	= secretum_mod( $section . '_items_background_hover_color', 'attr', true );
-		$margin_y 			= secretum_mod( $section . '_items_margin_y', 'attr', true );
-		$margin_x 			= secretum_mod( $section . '_items_margin_x', 'attr', true );
-		$padding_y 			= secretum_mod( $section . '_items_padding_y', 'attr', true );
-		$padding_x 			= secretum_mod( $section . '_items_padding_x', 'attr', true );
-		return $background . $background_hover . $margin_y . $margin_x . $padding_y . $padding_x;
-
-	}//end classes()
-
 
 }//end class

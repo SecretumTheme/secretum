@@ -139,27 +139,6 @@ class Wrapper {
 
 
 	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * Why is this method here? To ensure no settings are missed.
-	 * At some point it will be moved, probably to its own class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $section Section Shortname.
-	 */
-	final public static function classes( $section ) {
-		$background 	= secretum_mod( $section . '_wrapper_background_color', 'attr', true );
-		$margin_top 	= secretum_mod( $section . '_wrapper_margin_top', 'attr', true );
-		$margin_bottom 	= secretum_mod( $section . '_wrapper_margin_bottom', 'attr', true );
-		$padding_y 		= secretum_mod( $section . '_wrapper_padding_y', 'attr', true );
-		$padding_x 		= secretum_mod( $section . '_wrapper_padding_x', 'attr', true );
-		return $background . $margin_top . $margin_bottom . $padding_y . $padding_x;
-
-	}//end classes()
-
-
-	/**
 	 * Build Section Title
 	 *
 	 * @since 1.0.0

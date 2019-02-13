@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Author List Item Link List
  *

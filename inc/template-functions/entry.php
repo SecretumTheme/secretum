@@ -40,21 +40,6 @@ add_action( 'secretum_before_entry_content', function() {
 
 
 /**
- * Entry Wrapper Classes
- *
- * @since 1.0.0
- */
-function secretum_entry_wrapper() {
-	$columns = secretum_entry_columns();
-	$wrapper = \Secretum\Wrapper::classes( 'entry' );
-	$borders = \Secretum\Borders::classes( 'entry_wrapper' );
-
-	echo esc_html( apply_filters( 'secretum_entry_wrapper', $columns . $wrapper . $borders, 10, 1 ) );
-
-}//end secretum_entry_wrapper()
-
-
-/**
  * Columns Based On Sidebar Location
  *
  * @since 1.0.0
@@ -109,7 +94,7 @@ function secretum_entry_columns() {
 		}
 	}
 
-	return apply_filters( 'secretum_entry_columns', $columns, 10, 1 );
+	echo esc_html( apply_filters( 'secretum_entry_columns', $columns, 10, 1 ) );
 
 }//end secretum_entry_columns()
 

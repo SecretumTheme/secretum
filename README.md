@@ -9,37 +9,20 @@
 * **Tags:** two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
-Secretum is a highly customizable fluid-responsive multipurpose WordPress theme.
-
-
-## NOTE - Alpha Release
-
-Theme is ready for public use and should only be developed on for testing purposes. Templates, actions, filters, and setting naming structures have been standardized, however they could change due to error or whatever reason...
-
-* Most of what you need can be found within the Customizer, try to find it first
-* Dev for testing only!
-* No standards have been created for devs
-* Please report any bugs / issues that you find
-* The master branch is stable, it is running live on Websites
-* Anything can change and most changes are not logged during Alpha. We know what needs to be done, and it's being done.
-* Use at your own risk, no support is provided.
+Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users.
 
 
 ## Description
 
-Secretum is a highly customizable multi-purpose WordPress theme created to save you time and money! Secretum is very simple to use, with no interfaces to learn and no fancy page-builders needed. Change styling and layout options without switching child themes. Export & Import (share) theme settings across any Secretum theme install. Mass rapid deploy websites that automatically setup Secretum theme upon activation.
+Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 350 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. The most novice of user can setup a Secretum website in seconds, while advanced users can rapid deploy multiple websites with different settings for every Website in seconds. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Build Faster, Build Better, Build Smarter - Secretum truly is not like any other theme in existence!
 
 
 ## For Support, Bugs & Feature Requests
-
-** During alpha release reporting issues is not needed & no support is provided. Use at your own risk.
 
 [Submit an Issue](https://github.com/SecretumTheme/secretum/issues) if you need assistance, found a bug, or if you would to request a feature!
 
 
 ## Features
-
-Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.com/WPTRT/theme-unit-test/blob/master/themeunittestdata.wordpress.xml) and [WooCommerce sample_products.xml](https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml)
 
 ** Trying to keep a list of features
 
@@ -50,53 +33,49 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 	* Advanced developers can create whatever they desire (dev via gulp)
 		* Child-theme ready
 		* Customize based on WordPress theming standards
-		* Customize with filters and/or function replication
+		* Customize with filters
 	* No page builders to learn, they're not needed with Secretum
-		* Secretum works with most 3rd-party page builders
+		* Yes, Secretum works with most 3rd-party page builders
 	* Simple to use copy+paste examples for settings and HTML display
-* Rapid theme deployment & setting replication
-	* Export settings globally or for a unique feature
-	* Import settings globally or for a unique feature
-	* Sharing settings across any Secretum Theme
-	* Automatic setting replication via custom filters
-	* Instant replication ability upon theme activation
-* Works with Gutenberg - Does Not Need Gutenberg
-	* Compatible with all Gutenberg block plugins
-* Bootstrap 4 SCSS / CSS
-	* Highly compatible, mobile first, responsive, modern features, continually updated
-	* Major browser compatibility
-	* Major portable device compatibility
-	* Enable/Disable Bootstrap Scripts within Customizer > :: Globals > Enqueue Management
-* Bootstrap 4 Extended Features
-	* Bootstrap 4 color class naming standards for all expanded colors
-* WordPress adapted SCSS / CSS
-	* Standard WordPress classes and selectors used
-	* Minimal new class names to learn and remember
-	* Higher compatibility chances when moving to Secretum Theme
-* JavaScript/jQuery is enabled by default
-	* Secretum is fully functional without JavaScript, assuming no other Plugins require JavaScript
-	* Enable/Disable bundled scripts, theme scripts, Bootstrap scripts, jQuery, and others
-* WordPress Customizer
-	* Currently over 350 unique settings
+* WordPress Customizer Features
+	* Currently over 350 unique settings and growing
 	* No CSS rendering in document headers for most features
 	* Enable / disable all major theme areas (header, footer, sidebars, post author, etc)
 	* Adjust all front-end Theme/WordPress text (Translations via Customizer)
 	* Adjust the color, font, spacing of most theme elements/features
 	* Switch themes in the Customizer > :: Globals > Enqueue Management
 		* Swap themes without changing child themes
+* Built using Bootstrap 4 SCSS / CSS
+	* Highly compatible, mobile first, responsive, modern features, continually updated
+	* Major browser compatibility
+	* Major portable device compatibility
+	* Enable/Disable Bootstrap Scripts within Customizer > :: Globals > Enqueue Management
+* Bootstrap 4 Extended Features for WordPress
+	* WordPress adapted SCSS / CSS
+	* Standard WordPress classes and selectors used
+	* Minimal new class names to learn and remember
+* Works with Gutenberg - Does Not Need Gutenberg
+	* Compatible with Gutenberg block plugins
+	* Higher compatibility chances when moving to Secretum Theme
+* JavaScript/jQuery is enabled by default
+	* Secretum is fully functional without JavaScript, assuming no other Plugins require JavaScript
+	* Enable/Disable bundled scripts, theme scripts, Bootstrap scripts, jQuery, and others
 * Foundation Icon Fonts (283 Icons)
 * Automatic Better Font Awesome detection & integration
-* Built-in simple to use lightbox
+* Built-in simple to use lightbox (disabled by default)
 	* Enable/disable feature within Customizer > :: Globals > Enqueue Management
-* Follows WordPress Standards
+* Code Follows WordPress Standards
 	* Theme Check Compliant
 	* Core Rule Set Compliant
 	* Best Practices Compliant
 	* Documentation Standards Compliant
 	* Coding Standards Compliant
 
+Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.com/WPTRT/theme-unit-test/blob/master/themeunittestdata.wordpress.xml) and [WooCommerce sample_products.xml](https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml)
+
 ** Other Features
 
+* WooCommerce Compatiable
 * Automatic WooCommerce detection & integration
 	* Product & Review Microdata ready
 	* Templates designed for improved conversion rates over flare
@@ -106,59 +85,80 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 	* Templates re-designed for improved booking flow
 * Contact Form 7 compatible
 	* Beautified
+* Rapid theme deployment & setting replication
+	* Export settings globally or for a unique feature
+	* Import settings globally or for a unique feature
+	* Sharing settings across any Secretum Theme
+	* Automatic setting replication via custom filters
+	* Instant replication ability upon theme activation
 
 
-## Development
+## Installation
 
-The gulp file is looking better...maybe.
-
-
-## Frequently Asked Questions
-
-### Q) Does it work?
-
-A) Please.... of course it works, like a champ!
+1) In your admin panel, go to Appearance -> Themes and click the 'Add New' button
+2) Type in Secretum in the search form and press the 'Enter' key in your keyboard
+3) Click on the 'Activate' button to use your new theme right away
+4) To customize navigate to Appearance > Customize in your admin panel
+5) All of the panels names that start with :: belong to Secretum
 
 
-## Copyright
+## Setup
 
-2018 Secretum LLC
-
-**Third-party resources:**
-
-Coming soon...
+1) Set the Primary Menu: Customize > Menus.
+	* Create a new menu if needed
+	* Set the menu to the 'Primary Navbar Below Header' location
+2) Add Widgets: Customize > Widgets
+	* Add Widgets to Sidebar Right
+	* Add Widgets to Footer left, center, right.
+3) Select A Theme Design If Desired
+	* Customize > Theme Design > Base Color Palette
+4) Adjust the other Customizer features as needed
 
 
 ## Changelog
 
-### 0x0x1 2018-10-01
-* Alpha
+### 0.0.24
+* Released: 2019-02-11
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.24
 
-### 0x0x8 2018-12-20
-* Major customizer upgrade
+### 0.0.20
+* Released: 2019-01-18
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.20
 
-### 0x0x18 2019-01-10
-* WordPress/Code Compliance Update
-* Pre-Release Final Check
+### 0.0.19
+* Released: 2019-01-14
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.19
 
-### 0x0x19 2019-01-14
-* Composer correction
-* Commented out custom customizer sections
-	* Created new branch for feature build
-* Commented out customizer export/import
-	* Created new branch for feature
+### 0.0.18
+* Released: 2019-01-10
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.18
 
-### 0x0x20 2019-01-18
-* Reduced php memory footprint
-* Corrected base color palette styles icon use
-* Changed how palette styles load in the customizer
-* Minor adjustments from compliance update
+### 0.0.8
+* Released: 2018-12-20
+Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.8
+
+### 0.0.1
+* Released: 2018-10-01
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.1
+
 
 ## Screenshots
 
 1. [Title 1](https://#)
 
 2. [Title 2](https://#)
+
+
+## Licenses
+
+MIT Licensed Resources packaged with Secretum. Due to GDPR compliancy reasons Secretum does not use externally linked resources.
+
+* Bootstrap 4 https://getbootstrap.com/
+	MIT License https://opensource.org/licenses/MIT
+* Foundation Icon Fonts 3 https://zurb.com/playground/foundation-icon-fonts-3
+	MIT License https://opensource.org/licenses/MIT
+* Lightbox For Bootstrap https://github.com/ashleydw/lightbox
+	MIT License https://opensource.org/licenses/MIT
 
 
 ## Built With / Credits

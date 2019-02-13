@@ -29,12 +29,23 @@ $customizer->section(
 );
 
 
+// Select.
+$customizer->select(
+	'header_top_display',
+	'header_top_alignment',
+	__( 'Alignment', 'secretum' ),
+	'',
+	$defaults['header_top_alignment'],
+	secretum_customizer_margin_alignments()
+);
+
+
 // Checkbox.
 $customizer->checkbox(
 	'header_top_display',
 	'header_top_status',
-	__( 'Select To Display Top Header Area', 'secretum' ),
-	__( 'Create and assign custom menus to "Top Navbar Left" and/or "Top Navbar Right" to activate menus =OR= use the "Top Header Widget Area" widget for unlimited HTML control over the content area. A menu or widget must be defined for the top header area to display.', 'secretum' ),
+	__( 'Select To Hide Top Header Area', 'secretum' ),
+	'',
 	$defaults['header_top_status']
 );
 

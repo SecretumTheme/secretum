@@ -18,11 +18,7 @@ namespace Secretum;
  *
  * @since 1.0.0
  *
- * @example echo secretum_icon( [ 'fi' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'fa' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'png' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'svg' => 'icon-name', ] );
- * @example echo secretum_icon( [ fi' => 'icon-name', 'fa' => 'icon-name', 'alt' => 'Text', 'size' => 'text-14', ], false );
+ * @example echo secretum_icon( array( 'fi' => 'play', 'fa' => 'fa-play', ) );
  *
  * @param array $args [fi( string ), fa( string ), svg( string ), alt( string ), size( string ), echo( bool )].
  * @return string HTML

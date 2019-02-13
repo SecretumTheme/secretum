@@ -76,7 +76,8 @@ $borders->settings( [
 
 // Container.
 $container->settings( [
-	'section' => 'featured_image',
+	'section' 	=> 'featured_image',
+	'type' 		=> false,
 ] );
 
 

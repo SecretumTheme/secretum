@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Translation Text Display
  *

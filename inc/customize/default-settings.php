@@ -114,6 +114,7 @@ function secretum_customizer_site_identity_settings() {
 		'site_identity_title_container_border_radius' 		=> '',
 		'site_identity_title_container_border_color' 		=> '',
 		// Title Textuals.
+		'site_identity_title_textual_alignment' 			=> '',
 		'site_identity_title_textual_font_family' 			=> '',
 		'site_identity_title_textual_font_size' 			=> 'text-32',
 		'site_identity_title_textual_font_style' 			=> '',
@@ -131,6 +132,7 @@ function secretum_customizer_site_identity_settings() {
 		'site_identity_desc_container_border_radius' 		=> '',
 		'site_identity_desc_container_border_color' 		=> '',
 		// Desc Textuals.
+		'site_identity_desc_textual_alignment' 				=> '',
 		'site_identity_desc_textual_font_family' 			=> '',
 		'site_identity_desc_textual_font_size' 				=> '',
 		'site_identity_desc_textual_font_style' 			=> '',
@@ -154,17 +156,18 @@ function secretum_customizer_header_top_settings() {
 	return [
 		// Display Status.
 		'header_top_status' 								=> '',
+		'header_top_alignment' 								=> 'ml-auto',
 		// Wrapper.
-		'header_top_wrapper_background_color' 				=> '',
+		'header_top_wrapper_background_color' 				=> 'bg-whiteish',
 		'header_top_wrapper_margin_top' 					=> '',
 		'header_top_wrapper_margin_bottom' 					=> '',
-		'header_top_wrapper_padding_y' 						=> '',
 		'header_top_wrapper_padding_x' 						=> '',
+		'header_top_wrapper_padding_y' 						=> '',
 		'header_top_wrapper_border_type' 					=> '',
 		'header_top_wrapper_border_radius' 					=> '',
 		'header_top_wrapper_border_color' 					=> '',
 		// Container.
-		'header_top_container_type' 						=> '',
+		'header_top_container_type' 						=> '-fluid',
 		'header_top_container_background_color'				=> '',
 		'header_top_container_margin_top' 					=> '',
 		'header_top_container_margin_bottom' 				=> '',
@@ -174,22 +177,21 @@ function secretum_customizer_header_top_settings() {
 		'header_top_container_border_radius' 				=> '',
 		'header_top_container_border_color' 				=> '',
 		// Textuals.
-		'header_top_text_alignment'							=> '',
-		'header_top_textual_font_size' 						=> '',
 		'header_top_textual_font_family' 					=> '',
+		'header_top_textual_font_size' 						=> 'text-13',
 		'header_top_textual_font_style' 					=> '',
 		'header_top_textual_text_transform' 				=> '',
 		'header_top_textual_text_color' 					=> '',
-		'header_top_textual_link_color' 					=> '',
-		'header_top_textual_link_hover_color' 				=> '',
+		'header_top_textual_link_color' 					=> 'color-gray-600-link',
+		'header_top_textual_link_hover_color' 				=> 'color-gray-600-hover',
 		// Items.
-		'header_top_items_alignment'						=> '',
+		'header_top_items_text_alignment'					=> 'text-center',
 		'header_top_items_background_color' 				=> '',
 		'header_top_items_background_hover_color' 			=> '',
-		'header_top_items_margin_x' 						=> '',
+		'header_top_items_margin_x' 						=> 'mx-2',
 		'header_top_items_margin_y' 						=> '',
-		'header_top_items_padding_x' 						=> '',
-		'header_top_items_padding_y' 						=> '',
+		'header_top_items_padding_x' 						=> 'px-2',
+		'header_top_items_padding_y' 						=> 'py-1',
 		'header_top_items_border_type' 						=> '',
 		'header_top_items_border_radius' 					=> '',
 		'header_top_items_border_color' 					=> '',
@@ -214,7 +216,7 @@ function secretum_customizer_header_settings() {
 		// Wrapper.
 		'header_wrapper_background_color' 					=> '',
 		'header_wrapper_padding_x' 							=> '',
-		'header_wrapper_padding_y' 							=> 'py-4',
+		'header_wrapper_padding_y' 							=> 'py-3',
 		'header_wrapper_margin_top' 						=> '',
 		'header_wrapper_margin_bottom' 						=> '',
 		'header_wrapper_border_type' 						=> '',
@@ -247,6 +249,7 @@ function secretum_customizer_primary_nav_settings() {
 		// Display Status.
 		'primary_nav_status' 								=> '',
 		'primary_nav_search_status' 						=> '',
+		'primary_nav_alignment' 							=> '',
 		// Wrapper.
 		'primary_nav_wrapper_background_color' 				=> 'bg-primary',
 		'primary_nav_wrapper_margin_bottom' 				=> '',
@@ -275,7 +278,7 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_textual_link_color' 					=> 'color-whiteish-link',
 		'primary_nav_textual_link_hover_color' 				=> 'color-white-hover',
 		// Nav Items.
-		'primary_nav_items_alignment' 						=> '',
+		'primary_nav_items_text_alignment' 					=> '',
 		'primary_nav_items_background_color' 				=> '',
 		'primary_nav_items_background_hover_color' 			=> '',
 		'primary_nav_items_border_type' 					=> 'border-left',
@@ -286,17 +289,17 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_items_padding_y' 						=> 'py-3',
 		'primary_nav_items_padding_x' 						=> 'px-3',
 		// Dropdown.
-		'primary_nav_dropdown_text_alignment' 				=> '',
 		'primary_nav_dropdown_background_color' 			=> 'bg-primary',
 		'primary_nav_dropdown_background_hover_color' 		=> 'bg-primary-light-hover',
-		'primary_nav_dropdown_border_type' 					=> '',
-		'primary_nav_dropdown_border_radius' 				=> '',
-		'primary_nav_dropdown_border_color' 				=> '',
 		'primary_nav_dropdown_margin_y' 					=> '',
 		'primary_nav_dropdown_margin_x' 					=> '',
 		'primary_nav_dropdown_padding_y' 					=> '',
 		'primary_nav_dropdown_padding_x' 					=> '',
+		'primary_nav_dropdown_border_type' 					=> '',
+		'primary_nav_dropdown_border_radius' 				=> '',
+		'primary_nav_dropdown_border_color' 				=> '',
 		// Dropdown Textual.
+		'primary_nav_dropdown_textual_alignment'			=> '',
 		'primary_nav_dropdown_textual_text_transform'		=> '',
 		'primary_nav_dropdown_textual_font_family'			=> '',
 		'primary_nav_dropdown_textual_font_size'			=> 'text-14',
@@ -305,14 +308,14 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_dropdown_textual_link_color'			=> 'color-whiteish-link',
 		'primary_nav_dropdown_textual_link_hover_color' 	=> 'color-white-hover',
 		// Toggler.
-		'primary_nav_toggler_icon_alignment' 				=> '',
-		'primary_nav_toggler_font_size' 					=> '',
-		'primary_nav_toggler_background_color' 				=> 'bg-whiteish',
-		'primary_nav_toggler_margin_x' 						=> 'mx-3',
-		'primary_nav_toggler_margin_y' 						=> 'my-3',
-		'primary_nav_toggler_border_type' 					=> null,
-		'primary_nav_toggler_border_radius' 				=> 'rounded-0',
-		'primary_nav_toggler_border_color' 					=> 'border-whiteish',
+		'primary_nav_toggler_alignment' 					=> 'mr-auto',
+		'primary_nav_toggler_font_size' 					=> 'text-22',
+		'primary_nav_toggler_background_color' 				=> 'bg-white',
+		'primary_nav_toggler_margin_x' 						=> 'mx-0',
+		'primary_nav_toggler_margin_y' 						=> 'my-2',
+		'primary_nav_toggler_border_type' 					=> 'border-0',
+		'primary_nav_toggler_border_radius' 				=> '',
+		'primary_nav_toggler_border_color' 					=> '',
 		// Woo Cart Icon.
 		'primary_nav_cart_link_padding_t' 					=> 'pt-2',
 		'primary_nav_cart_icon_color' 						=> 'color-light',
@@ -334,6 +337,8 @@ function secretum_customizer_primary_nav_settings() {
  */
 function secretum_customizer_body_settings() {
 	return [
+		// Display.
+		'body_status' 										=> '',
 		// Wrapper.
 		'body_wrapper_background_color' 					=> 'bg-whiteish',
 		'body_wrapper_padding_x' 							=> '',
@@ -403,6 +408,8 @@ function secretum_customizer_featured_image_settings() {
  */
 function secretum_customizer_entry_settings() {
 	return [
+		// Display.
+		'entry_status' 										=> '',
 		// Display Settings.
 		'entry_meta_link'									=> '',
 		'entry_meta_author_link'							=> '',
@@ -460,6 +467,7 @@ function secretum_customizer_sidebar_settings() {
 		'sidebar_container_border_radius' 					=> '',
 		'sidebar_container_border_color' 					=> '',
 		// Textuals.
+		'sidebar_textual_alignment' 						=> '',
 		'sidebar_textual_font_family' 						=> '',
 		'sidebar_textual_font_size' 						=> '',
 		'sidebar_textual_font_style' 						=> '',
@@ -504,7 +512,7 @@ function secretum_customizer_footer_settings() {
 		'footer_container_border_radius' 					=> '',
 		'footer_container_border_color' 					=> '',
 		// Textuals.
-		'footer_text_alignment' 							=> '',
+		'footer_textual_alignment' 							=> '',
 		'footer_textual_font_family' 						=> '',
 		'footer_textual_font_size' 							=> '',
 		'footer_textual_font_style' 						=> '',
@@ -548,7 +556,7 @@ function secretum_customizer_copyright_settings() {
 		'copyright_container_border_radius' 				=> '',
 		'copyright_container_border_color' 					=> '',
 		// Textual.
-		'copyright_text_alignment' 							=> '',
+		'copyright_textual_alignment' 						=> '',
 		'copyright_textual_text_transform' 					=> '',
 		'copyright_textual_font_family' 					=> '',
 		'copyright_textual_font_size' 						=> '',
@@ -574,31 +582,32 @@ function secretum_customizer_copyright_nav_settings() {
 	return [
 		// Display Status.
 		'copyright_nav_status' 								=> '',
+		'copyright_nav_alignment' 							=> 'mx-auto',
 		// Wrapper.
 		'copyright_nav_wrapper_background_color' 			=> '',
 		'copyright_nav_wrapper_margin_bottom' 				=> '',
 		'copyright_nav_wrapper_margin_top' 					=> '',
-		'copyright_nav_wrapper_padding_x' 					=> '',
-		'copyright_nav_wrapper_padding_y' 					=> '',
+		'copyright_nav_wrapper_padding_x' 					=> 'px-0',
+		'copyright_nav_wrapper_padding_y' 					=> 'py-2',
 		'copyright_nav_wrapper_border_type' 				=> '',
 		'copyright_nav_wrapper_border_radius' 				=> '',
 		'copyright_nav_wrapper_border_color' 				=> '',
 		// Textual.
 		'copyright_nav_textual_text_transform' 				=> '',
 		'copyright_nav_textual_font_family' 				=> '',
-		'copyright_nav_textual_font_size' 					=> '',
+		'copyright_nav_textual_font_size' 					=> 'text-13',
 		'copyright_nav_textual_font_style' 					=> '',
 		'copyright_nav_textual_text_color' 					=> '',
-		'copyright_nav_textual_link_color' 					=> '',
+		'copyright_nav_textual_link_color' 					=> 'color-gray-600-link',
 		'copyright_nav_textual_link_hover_color' 			=> '',
 		// Nav Items.
-		'copyright_nav_items_alignment' 					=> '',
+		'copyright_nav_items_text_alignment' 				=> 'text-center',
 		'copyright_nav_items_background_color' 				=> '',
 		'copyright_nav_items_background_hover_color' 		=> '',
-		'copyright_nav_items_margin_y' 						=> '',
-		'copyright_nav_items_margin_x' 						=> '',
-		'copyright_nav_items_padding_y' 					=> '',
-		'copyright_nav_items_padding_x' 					=> '',
+		'copyright_nav_items_margin_y' 						=> 'my-0',
+		'copyright_nav_items_margin_x' 						=> 'mx-1',
+		'copyright_nav_items_padding_y' 					=> 'py-2',
+		'copyright_nav_items_padding_x' 					=> 'px-2',
 		'copyright_nav_items_border_type' 					=> '',
 		'copyright_nav_items_border_radius' 				=> '',
 		'copyright_nav_items_border_color' 					=> '',
@@ -649,18 +658,18 @@ function secretum_customizer_extras_settings() {
 		// Analytics.
 		'analytics_location' 								=> '',
 		// Scroll Top.
-		'scrolltop' 										=> '',
-		'scrolltop_text_color' 								=> 'color-primary',
-		'scrolltop_icon_size' 								=> 'text-16',
-		'scrolltop_background_color' 						=> 'bg-gray-200',
-		'scrolltop_background_hover_color' 					=> 'bg-gray-300-hover',
-		'scrolltop_margin_right' 							=> '',
-		'scrolltop_margin_bottom' 							=> '',
-		'scrolltop_padding_x' 								=> 'px-3',
-		'scrolltop_padding_y' 								=> 'py-2',
-		'scrolltop_border_type' 							=> '',
-		'scrolltop_border_radius' 							=> 'rounded-circle',
-		'scrolltop_border_color' 							=> '',
+		'scrolltop_status' 									=> '',
+		'scrolltop_textual_text_color' 						=> 'color-primary',
+		'scrolltop_textual_font_size' 						=> 'text-16',
+		'scrolltop_container_background_color' 				=> 'bg-gray-200',
+		'scrolltop_container_background_hover_color' 		=> 'bg-gray-300-hover',
+		'scrolltop_container_margin_right' 					=> '',
+		'scrolltop_container_margin_bottom' 				=> '',
+		'scrolltop_container_padding_x' 					=> 'px-3',
+		'scrolltop_container_padding_y' 					=> 'py-2',
+		'scrolltop_container_border_type' 					=> '',
+		'scrolltop_container_border_radius' 				=> 'rounded-circle',
+		'scrolltop_container_border_color' 					=> '',
 	];
 
 }//end secretum_customizer_extras_settings()

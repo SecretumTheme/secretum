@@ -13,50 +13,6 @@
 
 namespace Secretum;
 
-/**
- * Sidebar Wrapper Classes
- *
- * @since 1.0.0
- */
-function secretum_sidebar_wrapper() {
-	$wrapper = \Secretum\Wrapper::classes( 'sidebar' );
-	$borders = \Secretum\Borders::classes( 'sidebar_wrapper' );
-
-	echo esc_html( apply_filters( 'secretum_sidebar_wrapper', $wrapper . $borders, 10, 1 ) );
-
-}//end secretum_sidebar_wrapper()
-
-
-/**
- * Sidebar Container Classes
- *
- * @since 1.0.0
- *
- * @return string Pre-sanitized string of class names
- */
-function secretum_sidebar_container() {
-	$container = \Secretum\Container::classes( 'sidebar' );
-	$borders = \Secretum\Borders::classes( 'sidebar_container' );
-
-	return apply_filters( 'secretum_sidebar_container', $container . $borders, 10, 1 );
-
-}//end secretum_sidebar_container()
-
-
-/**
- * Font/Text/Link Classes
- *
- * @since 1.0.0
- *
- * @return string Pre-sanitized string of class names
- */
-function secretum_sidebar_textuals() {
-	$textuals = \Secretum\Textuals::classes( 'sidebar' );
-
-	return apply_filters( 'secretum_sidebar_textuals', $textuals, 10, 1 );
-
-}//end secretum_sidebar_textuals()
-
 
 /**
  * Render Sidebar Based On Allowed Location

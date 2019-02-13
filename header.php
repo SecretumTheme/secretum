@@ -29,7 +29,7 @@ namespace Secretum;
 
 <body <?php body_class(); ?>>
 
-<div class="hfeed site" id="page">
+<div class="hfeed site<?php secretum_theme_textual(); ?><?php secretum_theme_text_link(); ?>" id="page">
 
 <?php
 // Top Navbar Above Header.
