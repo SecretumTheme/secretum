@@ -14,10 +14,12 @@
 namespace Secretum;
 
 // If Display Allowed & Menu Active.
-if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-left' ) ) {
-	echo '<nav class="wrapper navbar navbar-expand-lg' . secretum_wrapper( 'primary_nav', 'return' ) . '">';
-	echo '<div class="container' . secretum_container( 'primary_nav', 'return', [ 'textuals' => true ] ) . '">';
-
+if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-left' ) ) { ?>
+	<nav class="wrapper navbar navbar-expand-lg<?php secretum_wrapper( 'primary_nav', 'return' ); ?>">
+	<div class="container<?php secretum_container( 'primary_nav', 'return', [
+		'textuals' => true,
+	] ); ?>">
+<?php
 	// Display Toggler.
 	get_template_part( 'template-parts/primary-nav/toggler' );
 
@@ -27,7 +29,9 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'se
 		'theme_location' 	=> 'secretum-navbar-primary-left',
 		'container_class' 	=> 'collapse navbar-collapse',
 		'container_id' 		=> 'navbarNavDropdown',
-		'menu_class' 		=> 'navbar-nav primary' . secretum_alignment( 'primary_nav', 'return', [ 'text' => 'items' ] ),
+		'menu_class' 		=> 'navbar-nav primary' . secretum_alignment( 'primary_nav', 'return', [
+			'text' => 'items',
+		] ),
 		'menu_id' 			=> 'main-menu',
 		'divider'			=> secretum_nav_item( 'primary_nav' ),
 		'walker' 			=> new \Secretum\Navwalker(
@@ -38,7 +42,9 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'se
 		'fallback_cb' 		=> false,
 		'echo'				=> true,
 	] );
+?>
+	</nav><!-- .navbar -->
+	</div><!-- .col-md -->;
 
-	echo '</div><!-- .container -->';
-	echo '</nav><!-- .navbar -->';
-}
+<?php
+}// End if().

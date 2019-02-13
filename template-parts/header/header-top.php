@@ -17,39 +17,55 @@ namespace Secretum;
 if ( true !== secretum_mod( 'header_top_status' ) ) {
 	// If Header Top Sidebar Active.
 	if ( true === is_active_sidebar( 'secretum-sidebar-header-top' ) ) {
-		echo '<div class="wrapper' . secretum_wrapper( 'header_top', 'return' ) . '">';
-		echo '<div class="container' . secretum_container( 'header_top', 'return', [ 'textuals' => true ] ) . '">';
+?>
+		<div class="wrapper<?php secretum_wrapper( 'header_top', 'return' ); ?>">
+		<div class="container<?php secretum_container( 'header_top', 'return', [
+			'textuals' => true,
+		] ); ?>">
 
-		// Header Top Sidebar Widget Area.
-		dynamic_sidebar( 'secretum-sidebar-header-top' );
+		<?php
+			// Header Top Sidebar Widget Area.
+			dynamic_sidebar( 'secretum-sidebar-header-top' );
+		?>
 
-		echo '</div><!-- .container -->';
-		echo '</div><!-- .wrapper -->';
+		</div><!-- .container -->
+		</div><!-- .wrapper -->
+<?php
 	}
 
 	// If Header Top Menu Active.
 	if ( true === has_nav_menu( 'secretum-navbar-top' ) && true !== is_active_sidebar( 'secretum-sidebar-header-top' ) ) {
-		echo '<div class="wrapper' . secretum_wrapper( 'header_top', 'return' ) . '">';
-		echo '<div class="container' . secretum_container( 'header_top', 'return', [ 'textuals' => true ] ) . '">';
-		echo '<nav class="navbar navbar-expand">';
+?>
+		<div class="wrapper<?php secretum_wrapper( 'header_top', 'return' ); ?>">
+		<div class="container<?php secretum_container( 'header_top', 'return', [
+			'textuals' => true,
+		] ); ?>">
+		<nav class="navbar navbar-expand">
 
-		// Display Navbar Top Nav.
-		wp_nav_menu( [
-			'depth' 			=> 0,
-			'theme_location' 	=> 'secretum-navbar-top',
-			'container_class' 	=> secretum_alignment( 'header_top', 'return', [ 'margin' => true ] ),
-			'container_id' 		=> 'navTopContainer',
-			'menu_class' 		=> 'navbar-nav' . secretum_alignment( 'header_top', 'return', [ 'text' => 'items' ] ),
-			'menu_id' 			=> 'navTopMenuId',
-			'divider'			=> secretum_nav_item( 'header_top' ),
-			'walker' 			=> new \Secretum\Navwalker(),
-			'fallback_cb'	   	=> false,
-			'echo'				=> true,
-		] );
+		<?php
+			// Display Navbar Top Nav.
+			wp_nav_menu( [
+				'depth' 			=> 0,
+				'theme_location' 	=> 'secretum-navbar-top',
+				'container_class' 	=> secretum_alignment( 'header_top', 'return', [
+					'margin' => true,
+				] ),
+				'container_id' 		=> 'navTopContainer',
+				'menu_class' 		=> 'navbar-nav' . secretum_alignment( 'header_top', 'return', [
+					'text' => 'items',
+				] ),
+				'menu_id' 			=> 'navTopMenuId',
+				'divider'			=> secretum_nav_item( 'header_top' ),
+				'walker' 			=> new \Secretum\Navwalker(),
+				'fallback_cb'	   	=> false,
+				'echo'				=> true,
+			] );
+		?>
 
-		echo '</nav><!-- .navbar -->';
-		echo '</div><!-- .container -->';
-		echo '</div><!-- .wrapper -->';
-	}
+		</nav><!-- .navbar -->
+		</div><!-- .container -->
+		</div><!-- .wrapper -->
 
+<?php
+	}// End if().
 }// End if().

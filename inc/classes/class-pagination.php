@@ -219,19 +219,21 @@ class Pagination {
 	 * @since 1.0.0
 	 */
 	final private function _page_number_links() {
-		 $paginate_links = paginate_links( [
-			'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-			'format' 		=> '?paged=%#%',
-			'current' 		=> max( 1, get_query_var( 'paged' ) ),
-			'total' 		=> $this->wp_query->max_num_pages,
-			'type' 			=> 'array',
-			'show_all' 		=> false,
-			'end_size' 		=> 3,
-			'mid_size' 		=> 1,
-			'prev_next' 	=> false,
-			'add_args' 		=> false,
-			'add_fragment' 	=> '',
-		] );
+		$paginate_links = paginate_links(
+			[
+				'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'format' 		=> '?paged=%#%',
+				'current' 		=> max( 1, get_query_var( 'paged' ) ),
+				'total' 		=> $this->wp_query->max_num_pages,
+				'type' 			=> 'array',
+				'show_all' 		=> false,
+				'end_size' 		=> 3,
+				'mid_size' 		=> 1,
+				'prev_next' 	=> false,
+				'add_args' 		=> false,
+				'add_fragment' 	=> '',
+			]
+		);
 
 		if ( true !== empty( $paginate_links ) ) {
 			$html = '';

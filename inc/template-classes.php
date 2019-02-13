@@ -23,7 +23,9 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_theme_background_color() {
-	return Classes_Theme::instance()->classes( 'return', [ 'bg_colors' => true ] );
+	return Classes_Theme::instance()->classes( 'return', [
+		'bg_colors' => true,
+	] );
 
 }//end secretum_theme_background_color()
 
@@ -37,7 +39,9 @@ function secretum_theme_background_color() {
  * @since 1.0.0
  */
 function secretum_theme_textual() {
-	return Classes_Theme::instance()->classes( 'echo', [ 'textuals' => true ] );
+	return Classes_Theme::instance()->classes( 'echo', [
+		'textuals' => true,
+	] );
 
 }//end secretum_theme_textual()
 
@@ -51,7 +55,9 @@ function secretum_theme_textual() {
  * @since 1.0.0
  */
 function secretum_theme_text_link() {
-	return Classes_Theme::instance()->classes( 'echo', [ 'text_link' => true ] );
+	return Classes_Theme::instance()->classes( 'echo', [
+		'text_link' => true,
+	] );
 
 }//end secretum_theme_text_link()
 
@@ -85,7 +91,9 @@ function secretum_wrapper( $section, $return = 'echo', $args = [] ) {
  * @param array  $args    [ 'borders' => true, 'textuals' => true ].
  *
  * @example secretum_container( 'header' );
- * @example secretum_container( 'header_top', 'return', [ 'textuals' => true ] );
+ * @example secretum_container( 'header_top', 'return', [
+			'textuals' => true
+		] );
  *
  * @see inc/classes/class-classes-containers.php
  *
@@ -105,7 +113,9 @@ function secretum_container( $section, $return = 'echo', $args = [] ) {
  * @param string $return  Required Valid Values: 'return' or 'echo'.
  *
  * @example secretum_textuals( 'header' );
- * @example secretum_textuals( 'header_top', 'return', [ 'textuals' => true ] );
+ * @example secretum_textuals( 'header_top', 'return', [
+			'textuals' => true
+		] );
  *
  * @see inc/classes/class-classes-textuals.php
  *
@@ -126,8 +136,12 @@ function secretum_textual( $section, $return = 'echo' ) {
  * @param array  $args    [ 'margins' => true, 'text' => true || 'text' => 'sub-section' ].
  *
  * @example secretum_alignments( 'header' );
- * @example secretum_alignments( 'header_top', 'return', [ 'margins' => true, 'text' => true ] );
- * @example secretum_alignments( 'header_top', 'return', [ 'margins' => true, 'text' => 'items' ] );
+ * @example secretum_alignments( 'header_top', 'return', [
+			'margins' => true, 'text' => true
+		] );
+ * @example secretum_alignments( 'header_top', 'return', [
+			'margins' => true, 'text' => 'items'
+		] );
  *
  * @see inc/classes/class-classes-alignments.php
  *
@@ -242,8 +256,12 @@ function secretum_nav_cart_link( $section, $return = 'return' ) {
  * @param string $return  Required Valid Values: 'return' or 'echo'.
  * @param array  $args    [ 'type' => 'icon' || 'type' => 'count' ].
  *
- * @example secretum_nav_cart_textuals( 'primary_nav', 'return', [ 'type' => 'icon' ] );
- * @example secretum_nav_cart_textuals( 'primary_nav', 'return', [ 'type' => 'count' ] );
+ * @example secretum_nav_cart_textuals( 'primary_nav', 'return', [
+			'type' => 'icon'
+		] );
+ * @example secretum_nav_cart_textuals( 'primary_nav', 'return', [
+			'type' => 'count'
+		] );
  *
  * @see inc/classes/class-classes-nav-cart-textuals.php
  *

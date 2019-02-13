@@ -105,7 +105,7 @@ $dropdown->settings( [
 
 // Nav Dropdown Borders.
 $borders->settings( [
-	'section' => 'primary_nav_dropdown'
+	'section' => 'primary_nav_dropdown',
 ] );
 
 // Nav Dropdown Textuals.

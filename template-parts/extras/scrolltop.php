@@ -20,7 +20,9 @@ if ( true === secretum_mod( 'scrolltop_status' ) ) {
 ?>
 
 <div class="scrolltop">
-	<div class="scroll<?php secretum_container( 'scrolltop', 'echo', [ 'textuals' => true ] ); ?>">
+	<div class="scroll<?php secretum_container( 'scrolltop', 'echo', [
+		'textuals' => true,
+	] ); ?>">
 		<i class="fi-arrow-up" aria-hidden="true"></i>
 	</div>
 </div>

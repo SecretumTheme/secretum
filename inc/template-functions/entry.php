@@ -43,8 +43,6 @@ add_action( 'secretum_before_entry_content', function() {
  * Columns Based On Sidebar Location
  *
  * @since 1.0.0
- *
- * @return string Columns value
  */
 function secretum_entry_columns() {
 	// Global Sidebar Location.

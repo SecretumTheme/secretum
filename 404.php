@@ -79,6 +79,7 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
+
 <?php
 }// End if().
 

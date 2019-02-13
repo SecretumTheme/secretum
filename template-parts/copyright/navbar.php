@@ -14,23 +14,30 @@
 namespace Secretum;
 
 // If Nav Menu Has Items.
-if ( true === has_nav_menu( 'secretum-navbar-copyright' ) && true !== secretum_mod( 'copyright_nav_status' ) ) {
-	echo '<div class="col-md">';
-	echo '<nav class="navbar navbar-expand' . secretum_wrapper( 'copyright_nav', 'return', [ 'textuals' => true ] ) . '">';
-
+if ( true === has_nav_menu( 'secretum-navbar-copyright' ) && true !== secretum_mod( 'copyright_nav_status' ) ) { ?>
+	<div class="col-md">
+	<nav class="navbar navbar-expand<?php secretum_wrapper( 'copyright_nav', 'echo', [
+		'textuals' => true,
+	] ); ?>">
+<?php
 	wp_nav_menu( [
 		'depth' 			=> 0,
 		'theme_location' 	=> 'secretum-navbar-copyright',
 		'container_class' 	=> 'navbar-nav w-100',
 		'container_id' 		=> 'navCopyright',
-		'menu_class' 		=> 'navbar-nav primary-copyright' . secretum_alignment( 'copyright_nav', 'return', [ 'margin' => true, 'text' => 'items' ] ),
+		'menu_class' 		=> 'navbar-nav primary-copyright' . secretum_alignment( 'copyright_nav', 'return', [
+			'margin' 	=> true,
+			'text' 		=> 'items',
+		] ),
 		'menu_id' 			=> 'navbarNavCopyright',
 		'divider'			=> secretum_nav_item( 'copyright_nav' ),
 		'walker' 			=> new \Secretum\Navwalker(),
 		'fallback_cb'       => false,
 		'echo'				=> true,
 	] );
+?>
+	</nav><!-- .navbar -->
+	</div><!-- .col-md -->;
 
-	echo '</nav><!-- .navbar -->';
-	echo '</div><!-- .col-md -->';
+<?php
 }

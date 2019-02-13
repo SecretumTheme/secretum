@@ -20,7 +20,9 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="search-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
-		<?php if ( true !== secretum_mod( 'entry_status' ) ) { ?>
+	<?php
+	if ( true !== secretum_mod( 'entry_status' ) ) {
+	?>
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
@@ -67,10 +69,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'right-blog' ); ?>
 
 		</div><!-- .row -->
-	<?php } ?>
+	<?php
+	}// End if().
+	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
+
 <?php
-}
+}// End if().
 
 get_footer();

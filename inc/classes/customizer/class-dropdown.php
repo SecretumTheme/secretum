@@ -143,7 +143,6 @@ class Dropdown {
 			secretum_customizer_padding_left_right()
 		);
 
-
 	}//end settings()
 
 }//end class
