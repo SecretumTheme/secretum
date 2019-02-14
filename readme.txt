@@ -41,7 +41,7 @@ Secretum is a highly customizable fluid-responsive multipurpose WordPress theme 
 
 = 1.0.0 =
 * Released: 2018-14-02
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#1.0.0
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#100
 
 
 == Licenses ==
