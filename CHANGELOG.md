@@ -1,5 +1,10 @@
 # Changelog
 
+<a name="1.0.0"></a>
+# 1.0.0 - 2019-02-14 - WordPress Release
+
+* WordPress release
+
 <a name="0.0.24"></a>
 # 0.0.24 - 2019-02-11 - Major Update
 
@@ -8,7 +13,7 @@
 * Pre-launch build prep, code/comment cleanup
 * Populated WordPress readme.txt file
 * Created this CHANGELOG.md file
-* Preparing for WordPress Release
+* Preparing for WordPress release
 
 <a name="0.0.20"></a>
 # 0.0.20 - 2019-01-18 - Feature Update
