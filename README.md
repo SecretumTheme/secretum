@@ -14,7 +14,7 @@ Secretum is a highly customizable fluid-responsive multipurpose WordPress theme 
 
 ## Description
 
-Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 350 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. The most novice of user can setup a Secretum website in seconds, while advanced users can rapid deploy multiple websites with different settings for every Website in seconds. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Build Faster, Build Better, Build Smarter - Secretum truly is not like any other theme in existence!
+Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 350 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Build Faster, Build Better, Build Smarter - Secretum truly is not like any other theme in existence!
 
 
 ## For Support, Bugs & Feature Requests
@@ -117,29 +117,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 0.0.24
-* Released: 2019-02-11
-Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.24
-
-### 0.0.20
-* Released: 2019-01-18
-Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.20
-
-### 0.0.19
-* Released: 2019-01-14
-Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.19
-
-### 0.0.18
-* Released: 2019-01-10
-Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.18
-
-### 0.0.8
-* Released: 2018-12-20
-Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.8
-
-### 0.0.1
-* Released: 2018-10-01
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0.0.1
+### 1.0.0
+* Released: 2018-14-02
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#1.0.0
 
 
 ## Screenshots

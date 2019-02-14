@@ -25,7 +25,7 @@ get_header( 'shop' );
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
 				<?php woocommerce_breadcrumb(); ?>
 
-				<main class="site-main" id="main">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					while ( have_posts() ) { the_post();
 						if ( get_class( $product ) === 'WC_Product_Booking' ) {

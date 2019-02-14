@@ -42,6 +42,11 @@ function secretum_sidebar_location( $location_check ) {
 		$sidebar_location = $global_location;
 	}
 
+	// No Sidebars Setup, Default To Right Location.
+	if ( true === empty( $global_location ) && true === empty( $local_location ) && 'right' === $location_check ) {
+		return true;
+	}
+
 	// No Sidebars Selected.
 	if ( true === isset( $sidebar_location ) && 'none' === $sidebar_location ) {
 		return false;

@@ -1,0 +1,71 @@
+/**
+ * Secretum Theme Color Scheme
+ *
+ * Primary Color: Dodger Blue 2
+ * Secondary Color: Dark Grayish Blue
+ */
+
+// Color Shades
+$white:     				#fefefe;
+$gray-100: 					#f8f9fa;
+$gray-200: 					#e9ecef;
+$gray-300: 					#dee2e6;
+$gray-400: 					#ced4da;
+$gray-500: 					#adb5bd;
+$gray-600: 					#6c757d;
+$gray-700: 					#495057;
+$gray-800: 					#343a40;
+$gray-900: 					#212529;
+$black:    					#000000;
+
+ // Color Names
+$blue: 						#007bff;
+$indigo: 					#6610f2;
+$purple: 					#6f42c1;
+$pink: 						#e83e8c;
+$red: 						#dc3545;
+$orange: 					#fd7e14;
+$yellow: 					#ffc107;
+$green: 					#28a745;
+$teal: 						#20c997;
+$cyan: 						#17a2b8;
+$success: 					$green;
+$info: 						$cyan;
+$warning: 					$yellow;
+$danger: 					$red;
+
+// Color Themes
+$light: 					$gray-200;
+$dark: 						$gray-800;
+
+// Primary Colors
+$primary: 					#1c86ee;
+$primary-brand-color: 		$primary;
+$primary-brand-color-dark: 	#1179e0;
+$primary-brand-color-light: #3493f0;
+$primary-spacer-color: 		$gray-300;
+$primary-text-color: 		$gray-900;
+
+// Secondary Colors
+$secondary: 				$gray-600;
+$secondary-brand-color: 	$secondary;
+$secondary-text-color: 		$gray-800;
+
+// New Colors
+$whiteish:  				#f7f7f3;
+$blackish: 					#101112;
+
+// Background Colors
+$body-bg: 					$white;
+$content-bg: 				$whiteish;
+
+// Bootstrap Vars Text Colors
+$body-color: 				$blackish;
+$body-color-dark: 			$black;
+$body-color-light: 			$gray-900;
+
+// Link Color and Decor
+$link-color: 				$gray-900;
+$link-decoration: 			underline;
+$link-hover-color: 			$gray-700;
+$link-hover-decoration: 	none;

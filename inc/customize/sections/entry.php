@@ -148,3 +148,16 @@ $wrapper->settings( [
 $borders->settings( [
 	'section' => 'entry_wrapper',
 ] );
+
+
+// Container.
+$container->settings( [
+	'section' 	=> 'entry',
+	'type'		=> false,
+] );
+
+
+// Container Borders.
+$borders->settings( [
+	'section' => 'entry_container',
+] );

@@ -5,10 +5,14 @@
  *      theme.css
  *      theme.css.map
  *      theme.min.css
+ *      customizer.min.css
+ *      custom-sections.min.css
  *
  * @command gulp theme
  * @command gulp theme.css
  * @command gulp theme.min.css
+ * @command gulp customizer.min.css
+ * @command gulp custom-sections.min.css
  */
 var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
@@ -37,7 +41,12 @@ const autoprefixers = [
 /**
  * Compile Theme Stylesheets
  */
-gulp.task('theme', gulp.series('theme.css', 'theme.min.css'));
+gulp.task('theme', gulp.series(
+    'theme.css',
+    'theme.min.css',
+    'customizer.min.css',
+    'custom-sections.min.css',
+));
 
 
 /**
@@ -45,12 +54,12 @@ gulp.task('theme', gulp.series('theme.css', 'theme.min.css'));
  */
 gulp.task('theme.css', function () {
     return gulp.src('./assets/css/theme.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "theme.css"', onLast: true}))
@@ -63,13 +72,53 @@ gulp.task('theme.css', function () {
  */
 gulp.task('theme.min.css', function () {
     return gulp.src('./assets/css/theme.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "theme.min.css"', onLast: true}))
+    .on('error', console.error.bind(console))
+});
+
+
+/**
+ * Create customizer.min.css
+ */
+gulp.task('customizer.min.css', function () {
+    return gulp.src('./assets/css/customizer/customizer.css')
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle:'compressed'}))
+    .pipe(noComments())
+    .pipe(lineec())
+    .pipe(removeEmpty({removeComments: true}))
+    .pipe(autoprefixer(autoprefixers))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./css/customizer'))
+    .pipe(notify({message: 'Created "customizer.min.css"', onLast: true}))
+    .on('error', console.error.bind(console))
+});
+
+
+/**
+ * Create custom-sections.min.css
+ */
+gulp.task('custom-sections.min.css', function () {
+    return gulp.src('./assets/css/customizer/custom-sections.css')
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle:'compressed'}))
+    .pipe(noComments())
+    .pipe(lineec())
+    .pipe(removeEmpty({removeComments: true}))
+    .pipe(autoprefixer(autoprefixers))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./css/customizer'))
+    .pipe(notify({message: 'Created "custom-sections.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });

@@ -58,8 +58,8 @@ function secretum_entry_columns() {
 		$sidebar_location = $global_location;
 	}
 
-	// Default Width.
-	$columns = '-12';
+	// Default Width = 8.
+	$columns = '-' . secretum_default_column_width( '8' );
 
 	// Half Width.
 	if ( true === isset( $sidebar_location ) && 'both' === $sidebar_location ) {
@@ -92,11 +92,22 @@ function secretum_entry_columns() {
 		}
 	}
 
-	echo esc_html( apply_filters( 'secretum_entry_columns', $columns, 10, 1 ) );
+	echo esc_html( $columns );
 
 }//end secretum_entry_columns()
 
 
+/**
+ * Filters Interger For Layout Column Width
+ * Filter: secretum_default_column_width
+ *
+ * @param int $columns Column Number.
+ *
+ * @since 1.0.0
+ */
+function secretum_default_column_width( $columns ) {
+	return apply_filters( 'secretum_default_column_width', (int) filter_var( $columns, FILTER_SANITIZE_NUMBER_INT ), 10, 1 );
+}
 
 
 /**

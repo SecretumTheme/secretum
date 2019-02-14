@@ -40,7 +40,6 @@ $customizer->select(
 );
 
 
-
 // Section.
 $customizer->section(
 	'theme_website_colors',

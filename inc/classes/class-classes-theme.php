@@ -178,14 +178,14 @@ class Classes_Theme {
 		$classes = '';
 
 		// Build Class String With Spaces Between Classes.
-		$classes .= secretum_mod( $section . '_textual_alignment', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_font_family', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_font_size', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_font_style', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_text_color', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_link_color', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_link_hover_color', 'attr', true );
-		$classes .= secretum_mod( $section . '_textual_text_transform', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_alignment', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_font_family', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_font_size', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_font_style', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_text_color', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_link_color', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_link_hover_color', 'attr', true );
+		$classes .= secretum_mod( 'theme_textual_text_transform', 'attr', true );
 
 		return $classes;
 	}

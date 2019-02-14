@@ -15,8 +15,8 @@ namespace Secretum;
 
 // If Display Allowed & Menu Active.
 if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
-	<nav class="wrapper navbar navbar-expand-lg<?php secretum_wrapper( 'primary_nav', 'return' ); ?>">
-	<div class="container<?php secretum_container( 'primary_nav', 'return', [
+	<nav class="wrapper navbar navbar-expand-lg<?php secretum_wrapper( 'primary_nav' ); ?>">
+	<div class="container<?php secretum_container( 'primary_nav', 'echo', [
 		'textuals' => true,
 	] ); ?>">
 <?php
@@ -44,7 +44,7 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'se
 	] );
 ?>
 	</nav><!-- .navbar -->
-	</div><!-- .col-md -->;
+	</div><!-- .col-md -->
 
 <?php
 }// End if().

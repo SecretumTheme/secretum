@@ -34,6 +34,9 @@ define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' 
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
 
 
+
+
+
 /**
  * Register Secretum Classes
  *
@@ -72,6 +75,7 @@ function secretum_register_classes( $class ) {
 			require $file;
 		}
 	}
+
 }//end secretum_register_classes()
 
 spl_autoload_register( 'Secretum\secretum_register_classes' );

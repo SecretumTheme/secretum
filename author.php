@@ -28,7 +28,7 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
 
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main mb-5" id="main">
+				<main class="site-main <?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content

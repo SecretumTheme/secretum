@@ -13,29 +13,31 @@
 
 namespace Secretum;
 
-
 /**
  * Preview Script For Post Message Transport Types
  *
  * @since 1.0.0
  */
 add_action( 'customize_preview_init', function() {
-	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.js', [ 'jquery', 'customize-preview' ], null, true );
+	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.min.js', [ 'jquery', 'customize-preview' ], null, true );
 } );
 
 
 /**
- * Extend Customizer Controls and Sections
+ * Extend Custom Customizer Controls and Sections
  *
  * @since 1.0.0
-add_action( 'customize_controls_enqueue_scripts', function() {
-	// Currently Empty.
-	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.js', [ 'jquery', 'customize-controls' ], null, true );
-	// Extend Custom Sections.
-	// Temp wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.js', [ 'jquery', 'customize-controls' ], null, true );.
-	// Temp wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.css' );.
-} );
  */
+add_action( 'customize_controls_enqueue_scripts', function() {
+	if ( isset( $tested ) ) {
+		// Placeholder: Extend Custom Controls.
+		wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.min.js', [ 'jquery', 'customize-controls' ], null, true );
+
+		// Placeholder: Extend Custom Sections.
+		wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.min.js', [ 'jquery', 'customize-controls' ], null, true );
+		wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.min.css' );
+	}
+} );
 
 
 /**

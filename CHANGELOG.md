@@ -3,8 +3,12 @@
 <a name="0.0.24"></a>
 # 0.0.24 - 2019-02-11 - Major Update
 
-* Major Customizer Upgrade
-* Added Transients For Class Builds
+* Moved builds for CSS classes to custom PHP clases
+* Added transients for all CSS class list builds
+* Pre-launch build prep, code/comment cleanup
+* Populated WordPress readme.txt file
+* Created this CHANGELOG.md file
+* Preparing for WordPress Release
 
 <a name="0.0.20"></a>
 # 0.0.20 - 2019-01-18 - Feature Update
@@ -26,14 +30,14 @@
 <a name="0.0.18"></a>
 # 0.0.18 - 2019-01-10 - Major Update
 
-* WordPress/Code Compliance Update
+* WordPress/Code compliance update
 
 <a name="0.0.8"></a>
 # 0.0.8 - 2018-12-20 - Major Update
 
-* Major Customizer Upgrade
+* Major customizer upgrade
 
 <a name="0.0.1"></a>
 # 0.0.1 - 2018-10-01 - Release
 
-* Alpha Public Release
+* Alpha public release

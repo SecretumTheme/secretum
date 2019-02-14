@@ -2,11 +2,10 @@
  * Custom Customizer Preview
  *
  * @package Secretum
- *
  */
 
 ( function( $ ) {
-	// Live Preview postMessage For Sidebar Widget Areas
+	// Live Preview postMessage For Sidebar Widget Areas.
 	$.each( [
 		'secretum[sidebar_container_background_color]',
 		'secretum[sidebar_container_margin_top]',
@@ -23,19 +22,20 @@
 		'secretum[sidebar_textual_text_color]',
 		'secretum[sidebar_textual_link_color]',
 		'secretum[sidebar_textual_link_hover_color]',
-	], function( index, settingName ) {
-		wp.customize( settingName, function( value ) {
-			value.bind( function( to, from ) {
-				$( '.sidebar .widget' ).addClass( to );
+		], function( index, settingName ) {
+			wp.customize( settingName, function( value ) {
+				value.bind( function( to, from ) {
+					$( '.sidebar .widget' ).addClass( to );
 
-				if ( '' !== from ) {
-					$( '.sidebar .widget' ).removeClass( from )
-				}
+					if ( '' !== from ) {
+						$( '.sidebar .widget' ).removeClass( from )
+					}
+				});
 			});
-		});
-	} );
+		}
+	);
 
-	// Live Preview postMessage For Footer Widget Areas
+	// Live Preview postMessage For Footer Widget Areas.
 	$.each( [
 		'secretum[footer_container_background_color]',
 		'secretum[footer_container_margin_top]',
@@ -52,16 +52,17 @@
 		'secretum[footer_textual_text_color]',
 		'secretum[footer_textual_link_color]',
 		'secretum[footer_textual_link_hover_color]',
-	], function( index, settingName ) {
-		wp.customize( settingName, function( value ) {
-			value.bind( function( to, from ) {
-				$( '.footer .widget' ).addClass( to );
+		], function( index, settingName ) {
+			wp.customize( settingName, function( value ) {
+				value.bind( function( to, from ) {
+					$( '.footer .widget' ).addClass( to );
 
-				if ( '' !== from ) {
-					$( '.footer .widget' ).removeClass( from )
-				}
+					if ( '' !== from ) {
+						$( '.footer .widget' ).removeClass( from )
+					}
+				});
 			});
-		});
-	} );
+		}
+	);
 
 } )( jQuery );

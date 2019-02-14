@@ -18,8 +18,8 @@ if ( true !== secretum_mod( 'header_top_status' ) ) {
 	// If Header Top Sidebar Active.
 	if ( true === is_active_sidebar( 'secretum-sidebar-header-top' ) ) {
 ?>
-		<div class="wrapper<?php secretum_wrapper( 'header_top', 'return' ); ?>">
-		<div class="container<?php secretum_container( 'header_top', 'return', [
+		<div class="wrapper<?php secretum_wrapper( 'header_top' ); ?>">
+		<div class="container<?php secretum_container( 'header_top', 'echo', [
 			'textuals' => true,
 		] ); ?>">
 
@@ -36,8 +36,8 @@ if ( true !== secretum_mod( 'header_top_status' ) ) {
 	// If Header Top Menu Active.
 	if ( true === has_nav_menu( 'secretum-navbar-top' ) && true !== is_active_sidebar( 'secretum-sidebar-header-top' ) ) {
 ?>
-		<div class="wrapper<?php secretum_wrapper( 'header_top', 'return' ); ?>">
-		<div class="container<?php secretum_container( 'header_top', 'return', [
+		<div class="wrapper<?php secretum_wrapper( 'header_top' ); ?>">
+		<div class="container<?php secretum_container( 'header_top', 'echo', [
 			'textuals' => true,
 		] ); ?>">
 		<nav class="navbar navbar-expand">

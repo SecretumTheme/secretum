@@ -31,6 +31,7 @@ namespace Secretum;
  * @return bool/string Sanitized Class Name
  */
 function secretum_mod( $setting_name, $escape = '', $space = '' ) {
+
 	// Build Settings Array.
 	$settings_array = wp_parse_args(
 		// Remove Blank Values From Setting Option.
