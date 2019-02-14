@@ -2,9 +2,14 @@
 /**
  * The template used for number fields in the booking form, such as persons or durations.
  *
- * @package 	WooCommerce-Bookings/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce-Bookings\Booking-Form
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	1.8.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/booking-form/number.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;

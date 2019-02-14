@@ -19,6 +19,7 @@ readme.html
 README.html
 composer.phar
 CONTRIBUTING.md
+TODO.md
 
 node_modules/*
 vendor/*

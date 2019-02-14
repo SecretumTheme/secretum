@@ -2,9 +2,14 @@
 /**
  * My Account Dashboard
  *
- * @package     WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\MyAccount
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     2.6.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/dashboard.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -23,7 +28,7 @@ namespace Secretum;
 		esc_url( wc_get_endpoint_url( 'orders' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-account' ) ),
-		( class_exists( 'WC_Bookings' ) ) ? '<a href="' . esc_url( wc_get_endpoint_url( 'bookings' ) ) . '">' . esc_html__( 'bookings','secretum' ) . '</a>, ' : ''
+		( true === secretum_is_woobookings() ) ? '<a href="' . esc_url( wc_get_endpoint_url( 'bookings' ) ) . '">' . esc_html__( 'bookings','secretum' ) . '</a>, ' : ''
 	);
 ?></p>
 <?php

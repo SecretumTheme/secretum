@@ -2,7 +2,13 @@
 /**
  * Display Icon Markup
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Secretum-Icon
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/secretum-icon.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -10,17 +16,15 @@ namespace Secretum;
 /**
  * Returns either Foundation icon icon/svg or Font Awesome Icon if Better Font Awesome Plugin installed
  *
- * @example echo secretum_icon( [ 'fi' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'fa' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'png' => 'icon-name', ] );
- * @example echo secretum_icon( [ 'svg' => 'icon-name', ] );
- * @example echo secretum_icon( [ fi' => 'icon-name', 'fa' => 'icon-name', 'alt' => 'Text', 'size' => 'text-14', ], false );
+ * @since 1.0.0
+ *
+ * @example echo secretum_icon( array( 'fi' => 'play', 'fa' => 'fa-play', ) );
  *
  * @param array $args [fi( string ), fa( string ), svg( string ), alt( string ), size( string ), echo( bool )].
  * @return string HTML
  */
 function secretum_icon( $args = [] ) {
-	// @about Parse args.
+	// Parse args.
 	$args = wp_parse_args( $args, [
 		'fi' 	=> '',
 		'fa' 	=> '',
@@ -30,31 +34,32 @@ function secretum_icon( $args = [] ) {
 		'echo' 	=> true,
 	] );
 
-	// @about Build Alt Tag
-	$alt = ( ! empty( $args['alt'] ) ) ? ' alt="' . esc_html( $args['alt'] ) . '"' : '';
+	// Build Alt Tag.
+	$alt = ( true !== empty( $args['alt'] ) ) ? ' alt="' . esc_html( $args['alt'] ) . '"' : '';
 
-	// @about Text Size
-	$text_size = ( ! empty( $args['size'] ) ) ? esc_attr( $args['size'] ) : '';
+	// Text Size.
+	$text_size = ( true !== empty( $args['size'] ) ) ? esc_attr( $args['size'] ) : '';
 
-	// @about Default Output
+	// Default Output.
 	$html = '';
 
-	// @about Display Font Awesome Icon If Plugin Enabled
-	if ( class_exists( 'Better_Font_Awesome_Plugin' ) && ! empty( $args['fa'] ) ) {
+	// Display Font Awesome Icon If Plugin Enabled.
+	if ( true === class_exists( 'Better_Font_Awesome_Plugin' ) && true !== empty( $args['fa'] ) ) {
 		$html .= '<i class="fa ' . esc_attr( $args['fa'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
-	} elseif ( ! empty( $args['fi'] ) ) {
-		// @about Display Foundation Icon
+	} elseif ( true !== empty( $args['fi'] ) ) {
+		// Display Foundation Icon.
 		$html .= '<i class="fi-' . esc_attr( $args['fi'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
-	} elseif ( ! empty( $args['svg'] ) ) {
-		// @about Display SVG Icon
+	} elseif ( true !== empty( $args['svg'] ) ) {
+		// Display SVG Icon.
 		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_attr( $args['svg'] ) . '.svg" class="' . $text_size . '"' . $alt . '/>';
 	}
 
 	if ( true === $args['echo'] ) {
-		// @about Sanitize Echo
+		// Sanitize Echo.
 		echo wp_kses_post( $html );
 	} else {
-		// @about Return String
+		// Return String.
 		return $html;
 	}
-}
+
+}//end secretum_icon()

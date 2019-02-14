@@ -2,7 +2,13 @@
 /**
  * HTML <head> and document body heading
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Header
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/header.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -23,28 +29,41 @@ namespace Secretum;
 
 <body <?php body_class(); ?>>
 
-<div class="hfeed site" id="page">
+<div class="hfeed site<?php secretum_theme_textual(); ?><?php secretum_theme_text_link(); ?>" id="page">
 
 <?php
-// @about Top Navbar Above Header
+// Top Navbar Above Header.
 get_template_part( 'template-parts/header/header-top' );
 
-// @about Hookable Action
+/**
+ * Hook: secretum_before_header
+ *
+ * @since 1.0.0
+ */
 do_action( 'secretum_before_header' );
 
-// @about Navbar Menu Above Header
+// Navbar Menu Above Header.
 get_template_part( 'template-parts/primary-nav/navbar-above' );
 
-// @about Display Header Area
+// Display Header Area.
 get_template_part( 'template-parts/header/display' );
 
-// @about Secretum Custom Headers & Footers Plugin
+// Secretum Custom Headers & Footers Plugin.
 if ( secretum_mod( 'custom_headers' ) ) {
+	/**
+	 * Hook: secretum_hf
+	 *
+	 * @since 1.0.0
+	 */
 	do_action( 'secretum_hf', 'headers' );
 }
 
-// @about Navbar Menu Below Header
+// Navbar Menu Below Header.
 get_template_part( 'template-parts/primary-nav/navbar-below' );
 
-// @about Hookable Action
+/**
+ * Hook: secretum_after_header
+ *
+ * @since 1.0.0
+ */
 do_action( 'secretum_after_header' );

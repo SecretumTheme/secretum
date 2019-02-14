@@ -2,7 +2,13 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Customize\Choices\Colors
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/colors.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -11,19 +17,22 @@ namespace Secretum;
 /**
  * Text Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_colors() {
-	return array(
+	return [
 		'' 						=> __( 'Theme Default', 'secretum' ),
+		'none' 					=> __( 'Force No Color', 'secretum' ),
 		'color-primary-text' 	=> __( 'Primary Text Color', 'secretum' ),
 		'color-secondary-text' 	=> __( 'Secondary Text Color', 'secretum' ),
-		'color-light' 			=> __( 'Light Theme Color Base', 'secretum' ),
-		'color-dark' 			=> __( 'Dark Theme Color Base', 'secretum' ),
 		'color-primary'			=> __( 'Primary Theme Color', 'secretum' ),
 		'color-primary-dark' 	=> __( 'Primary "Dark" Theme Color', 'secretum' ),
 		'color-primary-light' 	=> __( 'Primary "Light" Theme Color', 'secretum' ),
 		'color-secondary' 		=> __( 'Secondary Theme Color', 'secretum' ),
+		'color-light' 			=> __( 'Light Theme Color', 'secretum' ),
+		'color-dark' 			=> __( 'Dark Theme Color', 'secretum' ),
 		'color-white' 			=> __( 'White', 'secretum' ),
 		'color-whiteish' 		=> __( 'Whiteish', 'secretum' ),
 		'color-black' 			=> __( 'Black', 'secretum' ),
@@ -53,27 +62,30 @@ function secretum_customizer_text_colors() {
 		'color-info' 			=> __( 'Info', 'secretum' ),
 		'color-success' 		=> __( 'Success', 'secretum' ),
 		'color-warning' 		=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_text_colors()
 
 
 /**
  * Link Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_link_colors() {
-	return array(
+	return [
 		'' 							=> __( 'Theme Default', 'secretum' ),
 		'color-linkcolor' 			=> __( 'Theme Link Color', 'secretum' ),
-		'color-light-link' 			=> __( 'Light Theme Color Base', 'secretum' ),
-		'color-dark-link' 			=> __( 'Dark Theme Color Base', 'secretum' ),
 		'color-primary-link'		=> __( 'Primary Theme Color', 'secretum' ),
 		'color-primary-dark-link' 	=> __( 'Primary "Dark" Theme Color', 'secretum' ),
 		'color-primary-light-link' 	=> __( 'Primary "Light" Theme Color', 'secretum' ),
 		'color-secondary-link' 		=> __( 'Secondary Theme Color', 'secretum' ),
 		'color-primary-text-link' 	=> __( 'Primary Text Color', 'secretum' ),
 		'color-secondary-text-link' => __( 'Secondary Text Color', 'secretum' ),
+		'color-light-link' 			=> __( 'Light Theme Color', 'secretum' ),
+		'color-dark-link' 			=> __( 'Dark Theme Color', 'secretum' ),
 		'color-white-link' 			=> __( 'White', 'secretum' ),
 		'color-whiteish-link' 		=> __( 'Whiteish', 'secretum' ),
 		'color-black-link' 			=> __( 'Black', 'secretum' ),
@@ -103,27 +115,30 @@ function secretum_customizer_link_colors() {
 		'color-info-link' 			=> __( 'Info', 'secretum' ),
 		'color-success-link' 		=> __( 'Success', 'secretum' ),
 		'color-warning-link' 		=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_link_colors()
 
 
 /**
  * Link Hover Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_link_hover_colors() {
-	return array(
+	return [
 		'' 								=> __( 'Theme Default', 'secretum' ),
 		'color-linkhover' 				=> __( 'Theme Link Hover Color', 'secretum' ),
-		'color-light-hover' 			=> __( 'Light Theme Color Base', 'secretum' ),
-		'color-dark-hover' 				=> __( 'Dark Theme Color Base', 'secretum' ),
 		'color-primary-hover'			=> __( 'Primary Theme Color', 'secretum' ),
 		'color-primary-dark-hover' 		=> __( 'Primary "Dark" Theme Color', 'secretum' ),
 		'color-primary-light-hover' 	=> __( 'Primary "Light" Theme Color', 'secretum' ),
 		'color-secondary-hover' 		=> __( 'Secondary Theme Color', 'secretum' ),
 		'color-primary-text-hover' 		=> __( 'Primary Text Color', 'secretum' ),
 		'color-secondary-text-hover' 	=> __( 'Secondary Text Color', 'secretum' ),
+		'color-light-hover' 			=> __( 'Light Theme Color', 'secretum' ),
+		'color-dark-hover' 				=> __( 'Dark Theme Color', 'secretum' ),
 		'color-white-hover' 			=> __( 'White', 'secretum' ),
 		'color-whiteish-hover' 			=> __( 'Whiteish', 'secretum' ),
 		'color-black-hover' 			=> __( 'Black', 'secretum' ),
@@ -153,23 +168,24 @@ function secretum_customizer_link_hover_colors() {
 		'color-info-hover' 				=> __( 'Info', 'secretum' ),
 		'color-success-hover' 			=> __( 'Success', 'secretum' ),
 		'color-warning-hover' 			=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_link_hover_colors()
 
 
 /**
  * Background Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_background_colors() {
-	return array(
+	return [
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'bg-transparent' 	=> __( 'Transparent Background', 'secretum' ),
 		'content-bg' 		=> __( 'Default Content Background', 'secretum' ),
 		'body-bg' 			=> __( 'Default Body Background', 'secretum' ),
-		'bg-light' 			=> __( 'Light Theme Color Base', 'secretum' ),
-		'bg-dark' 			=> __( 'Dark Theme Color Base', 'secretum' ),
 		'bg-primary'		=> __( 'Primary Theme Color', 'secretum' ),
 		'bg-primary-dark' 	=> __( 'Primary "Dark" Theme Color', 'secretum' ),
 		'bg-primary-light' 	=> __( 'Primary "Light" Theme Color', 'secretum' ),
@@ -205,23 +221,24 @@ function secretum_customizer_background_colors() {
 		'bg-info' 			=> __( 'Info', 'secretum' ),
 		'bg-success' 		=> __( 'Success', 'secretum' ),
 		'bg-warning' 		=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_background_colors()
 
 
 /**
  * Background Hover Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_background_hover_colors() {
-	return array(
+	return [
 		'' 							=> __( 'Theme Default', 'secretum' ),
 		'bg-transparent-hover' 		=> __( 'Transparent Background', 'secretum' ),
 		'content-bg-hover' 			=> __( 'Default Content Background', 'secretum' ),
 		'body-bg-hover' 			=> __( 'Default Body Background', 'secretum' ),
-		'bg-light-hover' 			=> __( 'Light Theme Color Base', 'secretum' ),
-		'bg-dark-hover' 			=> __( 'Dark Theme Color Base', 'secretum' ),
 		'bg-primary-hover'			=> __( 'Primary Theme Color', 'secretum' ),
 		'bg-primary-dark-hover' 	=> __( 'Primary "Dark" Theme Color', 'secretum' ),
 		'bg-primary-light-hover' 	=> __( 'Primary "Light" Theme Color', 'secretum' ),
@@ -257,21 +274,22 @@ function secretum_customizer_background_hover_colors() {
 		'bg-info-hover' 			=> __( 'Info', 'secretum' ),
 		'bg-success-hover' 			=> __( 'Success', 'secretum' ),
 		'bg-warning-hover' 			=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_background_hover_colors()
 
 
 /**
  * Button Colors
  *
- * @return array Color key and values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_button_colors() {
-	return array(
+	return [
 		'' 					=> __( 'Default Theme Color', 'secretum' ),
 		'btn-transparent' 	=> __( 'Transparent Background', 'secretum' ),
-		'btn-light' 		=> __( 'Light Button Color Base', 'secretum' ),
-		'btn-dark' 			=> __( 'Dark Button Color Base', 'secretum' ),
 		'btn-primary'		=> __( 'Primary Button Color', 'secretum' ),
 		'btn-primary-dark' 	=> __( 'Primary "Dark" Button Color', 'secretum' ),
 		'btn-primary-light' => __( 'Primary "Light" Button Color', 'secretum' ),
@@ -305,5 +323,6 @@ function secretum_customizer_button_colors() {
 		'btn-info' 			=> __( 'Info', 'secretum' ),
 		'btn-success' 		=> __( 'Success', 'secretum' ),
 		'btn-warning' 		=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_button_colors()

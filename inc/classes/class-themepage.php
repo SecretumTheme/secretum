@@ -3,64 +3,75 @@
  * Theme Admin Page Manager
  *
  * @package    Secretum
- * @subpackage Secretum\ThemePage
+ * @subpackage Core\Classes\ThemePage
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-themepage.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Display Theme Admin Page
+ *
+ * @since 1.0.0
  */
 class ThemePage {
 	/**
 	 * Instance Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $instance
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Tab Names
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_tabs
 	 */
 	private $_tabs;
 
 	/**
 	 * Menu & Page Title
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $_title
 	 */
 	private $_title;
 
 	/**
 	 * Allowed Customizer Sections
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_sections
 	 */
 	private $_sections;
 
 	/**
 	 * Export Section Name
 	 *
-	 * @var string
+	 * @since 1.0.0
+	 * @var string $_section
 	 */
 	private $_section;
 
 	/**
 	 * Export Import Class
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $_ei
 	 */
 	private $_ei;
 
 
 	/**
 	 * Initize Class
+	 *
+	 * @since 1.0.0
 	 */
 	final public function init() {
 		// Tabs.
@@ -126,11 +137,14 @@ class ThemePage {
 				'render_content',
 			]
 		);
+
 	}//end init()
 
 
 	/**
 	 * Render Page Content
+	 *
+	 * @since 1.0.0
 	 */
 	final public function render_content() {
 		echo '<div class="wrap">';
@@ -171,16 +185,20 @@ class ThemePage {
 		echo '</div><!-- .metabox-holder -->';
 		echo '</div><!-- #poststuff -->';
 		echo '</div><!-- .wrap -->';
+
 	}//end render_content()
 
 
 	/**
 	 * Render Home Tab Display
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _display_home_tab() {
 	?>
 		<p>content 1</p>
 	<?php
+
 	}//end _display_home_tab()
 
 
@@ -237,6 +255,7 @@ class ThemePage {
 
 	</form>
 	<?php
+
 	}//end _display_ei_tab()
 
 
@@ -256,11 +275,14 @@ class ThemePage {
 			</div><!-- end postbox -->
 		</div><!-- .postbox-container-1 -->
 	<?php
+
 	}//end _display_sidebar()
 
 
 	/**
 	 * Render Export/ Import Tab Display
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _display_heading_butons() {
 	?>
@@ -270,11 +292,14 @@ class ThemePage {
 
 		<hr />
 	<?php
+
 	}//end _display_heading_butons()
 
 
 	/**
 	 * Display Admin Area Tabs
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return string $html Tab Display
 	 */
@@ -299,11 +324,14 @@ class ThemePage {
 		$html .= '</h2><br />';
 
 		return $html;
+
 	}//end _display_tabs()
 
 
 	/**
 	 * Get Query String Item
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $get Query String Get Item.
 	 *
@@ -315,30 +343,38 @@ class ThemePage {
 
 		// Return No Spaces/Tabs, Stripped/Cleaned String.
 		return sanitize_text_field( preg_replace( '/\s/', '', $filter ) );
+
 	}//end _query()
 
 
 	/**
 	 * Validate Nonce
+	 *
+	 * @since 1.0.0
 	 */
 	final private function _validate() {
 		if ( check_admin_referer( 'secretum_ei_action', 'secretum_ei_nonce' ) === false ) {
 			wp_die( esc_html__( 'You are not authorized to perform this action.', 'secretum' ) );
 		}
+
 	}//end _validate()
 
 
 	/**
 	 * Create Instance
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return object $instance Instance Object.
 	 */
 	public static function instance() {
-		if ( false === self::$instance ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 			self::$instance->init();
 		}
 
 		return self::$instance;
+
 	}//end instance()
+
 }//end class

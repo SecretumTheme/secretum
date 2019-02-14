@@ -2,9 +2,14 @@
 /**
  * The template for displaying the booking form and calendar with time blocks to customers.
  *
- * @package 	WooCommerce-Bookings/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce-Bookings\Booking-Form
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	1.10.8
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/booking-form/datetime-picker.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -12,7 +17,6 @@ namespace Secretum;
 wp_enqueue_script( 'wc-bookings-date-picker' );
 wp_enqueue_script( 'wc-bookings-time-picker' );
 
-// @about Check if this is in original template: extract( $field );
 $month_before_day = strpos( 'F j, Y', 'F' ) < strpos( 'F j, Y', 'j' );
 ?>
 <fieldset class="wc-bookings-date-picker <?php echo esc_attr( implode( ' ', $class ) ); ?>">

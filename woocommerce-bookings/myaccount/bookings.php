@@ -2,9 +2,14 @@
 /**
  * Shows customer bookings on the My Account > Bookings page
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce-Bookings\MyAccount
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	1.10.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/myaccount/bookings.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;

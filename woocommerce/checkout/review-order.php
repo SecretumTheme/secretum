@@ -2,9 +2,14 @@
 /**
  * Review order table
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Checkout
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     3.3.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/review-order.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -15,7 +20,7 @@ namespace Secretum;
 	<tr>
 		<th class="product-name">
 			<?php
-			if ( class_exists( 'WC_Bookings' ) ) {
+			if ( true === secretum_is_woobookings() ) {
 				echo esc_html_e( 'Booking', 'secretum' );
 			} else {
 				echo esc_html_e( 'Product', 'secretum' );

@@ -45,12 +45,12 @@ gulp.task('themes', gulp.series('themes.css', 'themes.min.css'));
  */
 gulp.task('themes.css', function () {
     return gulp.src('./assets/css/secretum/themes/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/themes'))
     .pipe(notify({message: 'Created Custom Color Themes', onLast: true}))
@@ -63,12 +63,14 @@ gulp.task('themes.css', function () {
  */
 gulp.task('themes.min.css', function () {
     return gulp.src('./assets/css/secretum/themes/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/themes'))
     .pipe(notify({message: 'Created Minimized Custom Color Themes', onLast: true}))
     .on('error', console.error.bind(console))

@@ -2,15 +2,20 @@
 /**
  * Empty cart page
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Cart
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version 	3.5.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart-empty.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
 
-// @about WooCommerce Bookings
-if ( class_exists( 'WC_Bookings' ) ) {
+// WooCommerce Bookings.
+if ( true === secretum_is_woobookings() ) {
 ?>
 	<p class="cart-empty text-center">
 		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'You currently have no temporarily reserved bookings in your cart.', 'secretum' ), 10, 1 ) );?>
@@ -24,7 +29,7 @@ if ( class_exists( 'WC_Bookings' ) ) {
 		</p>
 	<?php }
 } else {
-	// @about WooCommerce Default
+	// WooCommerce Default.
 ?>
 	<p class="cart-empty text-center">
 		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'Your cart is currently empty.', 'secretum' ), 10, 1 ) );?>

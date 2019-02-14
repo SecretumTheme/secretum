@@ -3,7 +3,13 @@
  * Template Name: Template (Contact Us) Sidebar Right
  * Template Post Type: page
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Page-Templates
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/page-templates/contact-us-sidebar-right.php
+ * @since      1.0.0
  */
 
 namespace Secretum;

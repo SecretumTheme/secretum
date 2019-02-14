@@ -2,9 +2,14 @@
 /**
  * My Addresses
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\MyAccount
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     2.6.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/my-address.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -14,14 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
-	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', [
 		'billing' 	=> esc_html__( 'Billing address', 'secretum' ),
 		'shipping' 	=> esc_html__( 'Shipping address', 'secretum' ),
-	), $customer_id );
+	], $customer_id );
 } else {
-	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', [
 		'billing' 	=> esc_html__( 'Billing address', 'secretum' ),
-	), $customer_id );
+	], $customer_id );
 }
 
 $oldcol = 1;

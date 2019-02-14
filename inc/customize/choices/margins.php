@@ -2,7 +2,13 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Customize\Choices\Margins
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/margins.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -11,7 +17,9 @@ namespace Secretum;
 /**
  * Margin Top & Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_top_bottom() {
 	return [
@@ -23,13 +31,16 @@ function secretum_customizer_margin_top_bottom() {
 		'my-4' 	=> __( '24px or 1.5em Margin (my-4)', 'secretum' ),
 		'my-5' 	=> __( '48px or 3em Margin (my-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_top_bottom()
 
 
 /**
  * Margin Top
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_top() {
 	return [
@@ -41,13 +52,16 @@ function secretum_customizer_margin_top() {
 		'mt-4' 	=> __( '24px or 1.5em Margin (mt-4)', 'secretum' ),
 		'mt-5' 	=> __( '48px or 3em Margin (mt-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_top()
 
 
 /**
  * Margin Bottom
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_bottom() {
 	return [
@@ -59,13 +73,16 @@ function secretum_customizer_margin_bottom() {
 		'mb-4' 	=> __( '24px or 1.5em Margin (mb-4)', 'secretum' ),
 		'mb-5' 	=> __( '48px or 3em Margin (mb-5)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_bottom()
 
 
 /**
  * Margin Left & Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_left_right() {
 	return [
@@ -78,13 +95,16 @@ function secretum_customizer_margin_left_right() {
 		'mx-5' 		=> __( '48px or 3em Margin (mx-5)', 'secretum' ),
 		'mx-auto' 	=> __( 'Auto Margin (mx-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_left_right()
 
 
 /**
  * Margin Left
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_left() {
 	return [
@@ -97,13 +117,16 @@ function secretum_customizer_margin_left() {
 		'ml-5' 		=> __( '48px or 3em Margin (ml-5)', 'secretum' ),
 		'ml-auto' 	=> __( 'Auto Left Margin (ml-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_left()
 
 
 /**
  * Margin Right
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_right() {
 	return [
@@ -116,4 +139,5 @@ function secretum_customizer_margin_right() {
 		'mr-5' 		=> __( '48px or 3em Margin (mr-5)', 'secretum' ),
 		'mr-auto' 	=> __( 'Auto Right Margin (mr-auto)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_right()

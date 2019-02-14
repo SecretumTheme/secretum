@@ -2,7 +2,13 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Customize\Choices\Font-Control
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/font-control.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -11,41 +17,49 @@ namespace Secretum;
 /**
  * Font Style
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_styles() {
-	return array(
+	return [
 		'' 						=> __( 'Theme Default', 'secretum' ),
 		'font-weight-bold' 		=> __( 'Weight: bold', 'secretum' ),
 		'font-weight-normal' 	=> __( 'Weight: normal', 'secretum' ),
 		'font-weight-light' 	=> __( 'Weight: light', 'secretum' ),
 		'font-italic' 			=> __( 'Italics', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_font_styles()
 
 
 /**
  * Text Transform
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_transform() {
-	return array(
+	return [
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'text-lowercase' 	=> __( 'Lowercase All Text', 'secretum' ),
 		'text-uppercase' 	=> __( 'Uppercase All Text', 'secretum' ),
 		'text-capitalize' 	=> __( 'Capitalize First Letter', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_text_transform()
 
 
 /**
  * Font Families
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_families() {
-	return array(
+	return [
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'arial' 			=> __( 'Arial, Helvetica, sans-serif', 'secretum' ),
 		'arialblack' 		=> __( 'Arial Black, Gadget, sans-serif', 'secretum' ),
@@ -74,5 +88,6 @@ function secretum_customizer_font_families() {
 		'verdana' 			=> __( 'Verdana, Geneva, sans-serif', 'secretum' ),
 		'webdings' 			=> __( 'Webdings, sans-serif', 'secretum' ),
 		'wingdings' 		=> __( 'Wingdings, Zapf Dingbats,  sans-serif', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_font_families()

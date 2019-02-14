@@ -2,9 +2,14 @@
 /**
  * Cart Page
  *
- * @package 	WooCommerce/Templates
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce\Cart
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
  * @version     3.5.0
- * @subpackage 	Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -95,13 +100,13 @@ do_action( 'woocommerce_before_cart' );
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 							} else {
-								$product_quantity = woocommerce_quantity_input( array(
+								$product_quantity = woocommerce_quantity_input( [
 									'input_name'    => "cart[{$cart_item_key}][qty]",
 									'input_value'   => $cart_item['quantity'],
 									'max_value'     => $_product->get_max_purchase_quantity(),
 									'min_value'     => '0',
 									'product_name'  => $_product->get_name(),
-								), $_product, false );
+								], $_product, false );
 
 							}
 

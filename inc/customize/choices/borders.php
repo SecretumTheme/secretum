@@ -2,7 +2,13 @@
 /**
  * WordPress Customizer add_control 'choices' Arrays
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Core\Customize\Choices\Borders
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/borders.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -11,10 +17,12 @@ namespace Secretum;
 /**
  * Border Locations
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border() {
-	return array(
+	return [
 		'' 				=> __( 'Theme Default', 'secretum' ),
 		'border' 		=> __( 'Solid Border', 'secretum' ),
 		'border-top' 	=> __( 'Top Border', 'secretum' ),
@@ -22,17 +30,20 @@ function secretum_customizer_border() {
 		'border-bottom' => __( 'Bottom Border', 'secretum' ),
 		'border-left' 	=> __( 'Left Border', 'secretum' ),
 		'border-0' 		=> __( 'No Border', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_border()
 
 
 /**
  * Border Locations
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_types() {
-	return array(
+	return [
 		'' 				=> __( 'Theme Default', 'secretum' ),
 		'border' 		=> __( 'Solid Border', 'secretum' ),
 		'border-top' 	=> __( 'Top Border', 'secretum' ),
@@ -40,17 +51,20 @@ function secretum_customizer_border_types() {
 		'border-bottom' => __( 'Bottom Border', 'secretum' ),
 		'border-left' 	=> __( 'Left Border', 'secretum' ),
 		'border-0' 		=> __( 'No Border', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_border_types()
 
 
 /**
  * Border Radius
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_radius() {
-	return array(
+	return [
 		'' 					=> __( 'Theme Default', 'secretum' ),
 		'rounded-circle' 	=> __( 'Circle', 'secretum' ),
 		'rounded-0' 		=> __( 'Square Borders', 'secretum' ),
@@ -59,17 +73,20 @@ function secretum_customizer_border_radius() {
 		'rounded-right' 	=> __( 'Rounded Right Borders', 'secretum' ),
 		'rounded-bottom' 	=> __( 'Rounded Bottom Borders', 'secretum' ),
 		'rounded-left' 		=> __( 'Rounded Left Borders', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_border_radius()
 
 
 /**
  * Border Colors
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_border_colors() {
-	return array(
+	return [
 		'' 						=> __( 'Theme Default', 'secretum' ),
 		'border-light' 			=> __( 'Light Theme Color Base', 'secretum' ),
 		'border-dark' 			=> __( 'Dark Theme Color Base', 'secretum' ),
@@ -108,5 +125,6 @@ function secretum_customizer_border_colors() {
 		'border-info' 			=> __( 'Info', 'secretum' ),
 		'border-success' 		=> __( 'Success', 'secretum' ),
 		'border-warning' 		=> __( 'Warning', 'secretum' ),
-	);
-}
+	];
+
+}//end secretum_customizer_border_colors()
