@@ -8,23 +8,37 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/404.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 get_header();
-?>
-<div class="wrapper<?php secretum_body_wrapper(); ?>" id="error-wrapper">
-	<div class="container<?php secretum_body_container(); ?>" id="content" tabindex="-1">
-		<div class="row">
-			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
-				<main class="site-main" id="main">
 
-					<?php do_action( 'secretum_before_content' ); ?>
+// Display If Allowed.
+if ( true !== secretum_mod( 'body_status' ) ) {
+?>
+<div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="error-wrapper">
+	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
+	<?php
+	if ( true !== secretum_mod( 'entry_status' ) ) {
+	?>
+		<div class="row">
+			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'error', 'echo', 'borders' ); ?> content-area" id="primary">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
+
+					<?php
+					/**
+					 * Hook: secretum_before_content
+					 *
+					 * @since 1.0.0
+					 */
+					do_action( 'secretum_before_content' );
+					?>
 
 					<section class="error-404 not-found">
 						<header class="entry-header">
-							<h1 class="page-title"><?php secretum_text( 'error_document_title', true ); ?></h1>
+							<h1 class="page-title text-40"><?php secretum_text( 'error_document_title', true ); ?></h1>
 						</header><!-- .entry-header -->
 
 						<div class="page-content">
@@ -48,12 +62,25 @@ get_header();
 						</footer><!-- .entry-footer -->
 					</section>
 
-					<?php do_action( 'secretum_after_content' ); ?>
+					<?php
+					/**
+					 * Hook: secretum_after_content
+					 *
+					 * @since 1.0.0
+					 */
+					do_action( 'secretum_after_content' );
+					?>
 
 				</main><!-- .site-main -->
 			</div><!-- .content-area -->
 		</div><!-- .row -->
+	<?php
+	}// End if().
+	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
+
 <?php
+}// End if().
+
 get_footer();

@@ -8,21 +8,22 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/nav/comment-navigation.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 // If comments and comments allowed.
-if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
+if ( get_comment_pages_count() > 1 && true === get_option( 'page_comments' ) ) {
 ?>
 <nav class="comment-navigation my-4 clearfix" id="comment-nav-above">
-	<h5 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'secretum' ); ?></h5>
+	<h3 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'secretum' ); ?></h3>
 
-	<?php if ( get_previous_comments_link() ) { ?>
+	<?php if ( true === get_previous_comments_link() ) { ?>
 		<div class="nav-previous float-left"><?php previous_comments_link( secretum_text( 'comments_older', false ) ); ?></div>
 	<?php } ?>
 
-	<?php if ( get_next_comments_link() ) { ?>
+	<?php if ( true === get_next_comments_link() ) { ?>
 		<div class="nav-next float-right"><?php next_comments_link( secretum_text( 'comments_newer', false ) ); ?></div>
 	<?php } ?>
 </nav><!-- .comment-navigation -->

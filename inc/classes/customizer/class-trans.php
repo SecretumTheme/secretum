@@ -8,12 +8,18 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-trans.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Public Text Translation String Display
+ *
+ * @since 1.0.0
+ *
+ * @see  TransTrait
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
  */
 class Trans {
 
@@ -23,14 +29,16 @@ class Trans {
 	/**
 	 * Instance Object
 	 *
-	 * @var object
+	 * @since 1.0.0
+	 * @var object $instanc
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Secretum Settings Option
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_option
 	 */
 	private $_option;
 
@@ -38,17 +46,20 @@ class Trans {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Set Class Vars
+	 *
+	 * @since 1.0.0
 	 */
 	final public function init() {
 		// Get Secretum Option.
-		$this->_option = get_option( 'secretum', array() );
+		$this->_option = get_option( 'secretum', [] );
 
 		// Get Secretum Option.
 		$this->_default = $this->defaults();
@@ -58,6 +69,8 @@ class Trans {
 
 	/**
 	 * Return Text Translation String
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $key  Array Key To Get Value Of.
 	 * @param bool   $echo True to echo results.
@@ -89,10 +102,12 @@ class Trans {
 	/**
 	 * Create Instance
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return object $instance Instance Object.
 	 */
 	public static function instance() {
-		if ( ! self::$instance ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 			self::$instance->init();
 		}

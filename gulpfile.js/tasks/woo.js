@@ -50,12 +50,12 @@ gulp.task('woocommerce', gulp.series('woocommerce.css', 'woocommerce.min.css', '
  */
 gulp.task('woocommerce.css', function () {
     return gulp.src('./assets/css/secretum/woocommerce.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.css"', onLast: true}))
@@ -68,12 +68,14 @@ gulp.task('woocommerce.css', function () {
  */
 gulp.task('woocommerce.min.css', function () {
     return gulp.src('./assets/css/secretum/woocommerce.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -85,12 +87,12 @@ gulp.task('woocommerce.min.css', function () {
  */
 gulp.task('woocommerce-bookings.css', function () {
     return gulp.src('./assets/css/secretum/woocommerce-bookings.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.css"', onLast: true}))
@@ -103,12 +105,14 @@ gulp.task('woocommerce-bookings.css', function () {
  */
 gulp.task('woocommerce-bookings.min.css', function () {
     return gulp.src('./assets/css/secretum/woocommerce-bookings.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

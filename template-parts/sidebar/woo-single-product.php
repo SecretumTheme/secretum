@@ -2,14 +2,20 @@
 /**
  * Sidebar Template Part
  *
- * @package Secretum
+ * @package    Secretum
+ * @subpackage Theme\Template-Parts\Sidebar
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/sidebar/woo-sidebar-product.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-// @about If Sidebar Is Active
-if ( is_active_sidebar( 'sidebar-single-product' ) ) { ?>
-	<div class="sidebar col-md widget-area<?php secretum_sidebar_wrapper(); ?>" id="sidebar-right" role="complementary">
+// If Sidebar Is Active.
+if ( true === is_active_sidebar( 'sidebar-single-product' ) ) { ?>
+	<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-right" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-single-product' ); ?>
 	</div><!-- .sidebar -->
 <?php

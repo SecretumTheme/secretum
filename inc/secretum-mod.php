@@ -8,12 +8,15 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/secretum-mod.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Prepare Theme Mod Setting Value For Display/Use
+ *
+ * @since 1.0.0
  *
  * @example secretum_mod( 'setting_name' );
  * @example secretum_mod( 'setting_name', false, true );
@@ -28,10 +31,11 @@ namespace Secretum;
  * @return bool/string Sanitized Class Name
  */
 function secretum_mod( $setting_name, $escape = '', $space = '' ) {
+
 	// Build Settings Array.
 	$settings_array = wp_parse_args(
 		// Remove Blank Values From Setting Option.
-		array_filter( get_option( 'secretum', array() ), 'strlen' ),
+		array_filter( get_option( 'secretum', [] ), 'strlen' ),
 		// Remove Blank Values From Default Settings.
 		array_filter( secretum_customizer_default_settings(), 'strlen' )
 	);
@@ -43,17 +47,17 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 	$mod = false;
 
 	// If Mod & Escape Type Set.
-	if ( ! empty( $theme_mod ) && ! empty( $escape ) ) {
+	if ( true !== empty( $theme_mod ) && true !== empty( $escape ) ) {
 		// Switch on Type.
 		switch ( $escape ) {
 			// Attribute.
 			case 'attr':
-				$mod = ( ! empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
 				break;
 
 			// Interger.
 			case 'int':
-				$mod = ( ! empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
 				break;
 
 			// HTML.
@@ -76,10 +80,11 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 				$mod = esc_url( $theme_mod );
 				break;
 		}
-	} elseif ( ! empty( $theme_mod ) && empty( $escape ) ) {
+	} elseif ( true !== empty( $theme_mod ) && true === empty( $escape ) ) {
 		// Value Set.
 		$mod = true;
 	}// End if().
 
 	return $mod;
-}
+
+}//end secretum_mod()

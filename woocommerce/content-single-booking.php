@@ -2,12 +2,13 @@
 /**
  * WooCommerce Bookings Template
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce
- * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
- * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-booking.php
+ * @package 	Secretum
+ * @subpackage 	Theme\WooCommerce
+ * @author 		SecretumTheme <author@secretumtheme.com>
+ * @copyright 	2018-2019 Secretum
+ * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-booking.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -20,13 +21,13 @@ namespace Secretum;
  */
 do_action( 'woocommerce_before_single_product' );
 
-// @about Maybe Required
+// Maybe Required.
 if ( post_password_required() ) {
 	secretum_post_password_form();
 	return;
 }
 
-// @about Get Globals
+// Get Globals.
 global $post, $product;
 ?>
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>

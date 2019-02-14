@@ -8,18 +8,25 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-borders.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Customizer Borders Grouping
+ *
+ * @since 1.0.0
+ *
+ * @param object $customizer Secretum Customizer Object.
+ * @param array  $defaults   Default Settings Array.
  */
 class Borders {
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -27,13 +34,16 @@ class Borders {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $customizer Secretum Customizer Object.
 	 * @param array  $defaults   Default Settings Array.
@@ -49,6 +59,8 @@ class Borders {
 
 	/**
 	 * Display Secretum Cusomizer Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args [section (required)] Settings.
 	 */
@@ -94,22 +106,5 @@ class Borders {
 		);
 
 	}//end settings()
-
-
-	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$type 	= secretum_mod( $section . '_border_type', 'attr', true );
-		$color 	= secretum_mod( $section . '_border_color', 'attr', true );
-		$radius = secretum_mod( $section . '_border_radius', 'attr', true );
-		return $type . $color . $radius;
-
-	}//end classes()
-
 
 }//end class

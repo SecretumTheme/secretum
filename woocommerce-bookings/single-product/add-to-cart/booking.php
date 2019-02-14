@@ -9,6 +9,7 @@
  * @version 	1.10.0
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/single-product/add-to-cart/booking.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -33,7 +34,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( is_callable( array( $product, 'get_id' ) ) ? $product->get_id() : $product->id ); ?>" class="wc-booking-product-id" />
+		<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( is_callable( [ $product, 'get_id' ] ) ? $product->get_id() : $product->id ); ?>" class="wc-booking-product-id" />
 		<button type="submit" class="wc-bookings-booking-form-button single_add_to_cart_button button alt disabled" style="display:none"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</div><!-- .form-group -->

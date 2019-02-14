@@ -9,12 +9,13 @@
  * @version 	3.4.0
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-login.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
 
 
-if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) { return; }
+if ( true === is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) { return; }
 ?>
 
 <div class="woocommerce-form-login-toggle">
@@ -22,7 +23,7 @@ if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_lo
 </div>
 
 <?php
-if ( class_exists( 'WC_Bookings' ) ) {
+if ( true === secretum_is_woobookings() ) {
 	// WooCommerce Bookings.
 	woocommerce_login_form(
 		array(

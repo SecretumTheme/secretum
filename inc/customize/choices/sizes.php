@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/sizes.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -16,7 +17,9 @@ namespace Secretum;
 /**
  * Textual Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_font_sizes() {
 	return [
@@ -58,13 +61,16 @@ function secretum_customizer_font_sizes() {
 		'text-90' 	=> __( '90px / 5.625rem', 'secretum' ),
 		'text-100' 	=> __( '100px / 6.25rem', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_font_sizes()
 
 
 /**
  * Display Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_display_sizes() {
 	return [
@@ -74,13 +80,16 @@ function secretum_customizer_display_sizes() {
 		'display-3' => __( 'Display Size 3', 'secretum' ),
 		'display-4' => __( 'Display Size 4 (large)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_display_sizes()
 
 
 /**
  * Heading Sizing
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_heading_sizes() {
 	return [
@@ -92,4 +101,5 @@ function secretum_customizer_heading_sizes() {
 		'h5' 	=> __( 'Heading Size 5', 'secretum' ),
 		'h6' 	=> __( 'Heading Size 6 (smallest)', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_heading_sizes()

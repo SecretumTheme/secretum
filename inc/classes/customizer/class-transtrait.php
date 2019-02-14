@@ -8,16 +8,21 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Text Translation Strings
+ *
+ * @since 1.0.0
  */
 trait TransTrait {
 	/**
 	 * Text Strings Labels & Default Values
+	 *
+	 * @since 1.0.0
 	 */
 	final public function defaults() {
 		return [

@@ -8,11 +8,16 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/footer.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-// Hookable Action.
+/**
+ * Hook: secretum_footer_before
+ *
+ * @since 1.0.0
+ */
 do_action( 'secretum_footer_before' );
 
 // Display Footer Area.
@@ -20,16 +25,29 @@ get_template_part( 'template-parts/footer/display' );
 
 // Secretum Custom Headers & Footers Plugin.
 if ( secretum_mod( 'custom_footers' ) ) {
+	/**
+	 * Hook: secretum_hf
+	 *
+	 * @since 1.0.0
+	 */
 	do_action( 'secretum_hf', 'footers' );
 }
 
-// Hookable Action.
+/**
+ * Hook: secretum_footer_after
+ *
+ * @since 1.0.0
+ */
 do_action( 'secretum_footer_after' );
 
 // Copyright Area.
 get_template_part( 'template-parts/copyright/display' );
 
-// Hookable Action.
+/**
+ * Hook: secretum_copyright_after
+ *
+ * @since 1.0.0
+ */
 do_action( 'secretum_copyright_after' );
 
 // Scroll To Top Icon.

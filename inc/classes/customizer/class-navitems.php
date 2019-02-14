@@ -8,18 +8,25 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-navitems.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Customizer NavItems Grouping
+ *
+ * @since 1.0.0
+ *
+ * @param object $customizer Secretum Customizer Object.
+ * @param array  $defaults   Default Settings Array.
  */
 class NavItems {
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -27,13 +34,16 @@ class NavItems {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $customizer Secretum Customizer Object.
 	 * @param array  $defaults   Default Settings Array.
@@ -49,6 +59,8 @@ class NavItems {
 
 	/**
 	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args [section (required)] Settings.
 	 */
@@ -74,11 +86,11 @@ class NavItems {
 		// Select.
 		$this->_customizer->select(
 			$args['section'] . '_items',
-			$args['section'] . '_items_alignment',
-			__( 'Alignment', 'secretum' ),
+			$args['section'] . '_items_text_alignment',
+			__( 'Text Alignment', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_items_alignment' ],
-			secretum_customizer_margin_alignments()
+			$this->_default[ $args['section'] . '_items_text_alignment' ],
+			secretum_customizer_text_alignments()
 		);
 
 		// Select.
@@ -142,25 +154,5 @@ class NavItems {
 		);
 
 	}//end settings()
-
-
-	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$background 		= secretum_mod( $section . '_background_color', 'attr', true );
-		$background_hover 	= secretum_mod( $section . '_background_hover_color', 'attr', true );
-		$margin_y 			= secretum_mod( $section . '_margin_y', 'attr', true );
-		$margin_x 			= secretum_mod( $section . '_margin_x', 'attr', true );
-		$padding_y 			= secretum_mod( $section . '_padding_y', 'attr', true );
-		$padding_x 			= secretum_mod( $section . '_padding_x', 'attr', true );
-		return $background . $background_hover . $margin_y . $margin_x . $padding_y . $padding_x;
-
-	}//end classes()
-
 
 }//end class

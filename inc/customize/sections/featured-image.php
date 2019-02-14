@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/featured-image.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -75,7 +76,8 @@ $borders->settings( [
 
 // Container.
 $container->settings( [
-	'section' => 'featured_image',
+	'section' 	=> 'featured_image',
+	'type' 		=> false,
 ] );
 
 

@@ -15,7 +15,7 @@ var imagemin 	= require('gulp-imagemin');
  * Minify Images
  */
 gulp.task('images', function() {
-    return gulp.src(['./assets/images/*.{.jpg,.gif,.png,.svg}', './assets/images/**/*.{.jpg,.gif,.png,.svg}'])
+    return gulp.src(['./assets/images/*.{jpg,gif,.ng,svg}', './assets/images/**/*.{jpg,gif,png,svg}'])
     .pipe(imagemin({progressive: true, optimizationLevel: 3, interlaced: true, svgoPlugins: [{removeViewBox: false}]}))
     .pipe(gulp.dest('./images'))
     .pipe(notify({message: 'Task "images" completed!', onLast: true}))

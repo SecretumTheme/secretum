@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/choices/alignments.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -16,7 +17,9 @@ namespace Secretum;
 /**
  * Object Margin Alignment
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_margin_alignments() {
 	return [
@@ -25,13 +28,16 @@ function secretum_customizer_margin_alignments() {
 		'mr-auto' 	=> __( 'Align Left', 'secretum' ),
 		'ml-auto' 	=> __( 'Align Right', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_margin_alignments()
 
 
 /**
  * Text Alignment
  *
- * @return array Keys & Values
+ * @since 1.0.0
+ *
+ * @return array Keys & Values For Select Options
  */
 function secretum_customizer_text_alignments() {
 	return [
@@ -40,4 +46,5 @@ function secretum_customizer_text_alignments() {
 		'text-left' 	=> __( 'Align Left', 'secretum' ),
 		'text-right' 	=> __( 'Align Right', 'secretum' ),
 	];
-}
+
+}//end secretum_customizer_text_alignments()

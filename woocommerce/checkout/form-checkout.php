@@ -9,6 +9,7 @@
  * @version     3.5.0
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-checkout.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
@@ -35,7 +36,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			<div class="col-md border">
 				<h3 id="order_review_heading">
 					<?php
-					if ( class_exists( 'WC_Bookings' ) ) {
+					if ( true === secretum_is_woobookings() ) {
 						secretum_icon( [
 							'fi' => 'lock',
 							'fa' => 'fa-lock',

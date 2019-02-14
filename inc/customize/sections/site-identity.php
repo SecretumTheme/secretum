@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/site-identity.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -243,6 +244,7 @@ $textuals->settings( [
 	'panel' 	=> 'site_identity',
 	'section' 	=> 'site_identity_title',
 	'title' 	=> __( 'Title Textuals', 'secretum' ),
+	'alignment' => true,
 ] );
 
 
@@ -266,4 +268,5 @@ $textuals->settings( [
 	'panel' 	=> 'site_identity',
 	'section' 	=> 'site_identity_desc',
 	'title' 	=> __( 'Tagline Textuals', 'secretum' ),
+	'alignment' => true,
 ] );

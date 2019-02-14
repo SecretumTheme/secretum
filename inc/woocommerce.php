@@ -8,18 +8,15 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/woocommerce.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
- * Remove WooCommerce Generator Tag
- */
-remove_action( 'wp_head', [ $GLOBALS['woocommerce'], 'generator' ] );
-
-
-/**
  * WooCommerce
+ *
+ * @since 1.0.0
  */
 add_action( 'after_setup_theme', function() {
 	// Theme Support.
@@ -47,6 +44,8 @@ add_action( 'after_setup_theme', function() {
 
 /**
  * Bootstrap WooCommerce Product Search Form
+ *
+ * @since 1.0.0
  */
 add_filter( 'get_product_search_form' , function() {
 	return '<form method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" role="search">
@@ -64,6 +63,8 @@ add_filter( 'get_product_search_form' , function() {
 
 /**
  * Modify Password Strengh & Default Message
+ *
+ * @since 1.0.0
  *
  * @param array $params Passed in Params.
  * @param string $handle Data handle.
@@ -84,6 +85,8 @@ add_filter( 'woocommerce_get_script_data', function( $params, $handle ) {
 
 /**
  * Modify Password Strength Messages
+ *
+ * @since 1.0.0
  */
 add_action( 'wp_enqueue_scripts',  function() {
 	wp_localize_script( 'wc-password-strength-meter', 'pwsL10n', [
@@ -99,6 +102,8 @@ add_action( 'wp_enqueue_scripts',  function() {
 /**
  * WooCommerce Filter Hook - Add Bootstrap Classes To Place Order Button
  *
+ * @since 1.0.0
+ *
  * @param array $args Args array.
  */
 add_filter( 'woocommerce_order_button_html', function( $args ) {
@@ -108,6 +113,8 @@ add_filter( 'woocommerce_order_button_html', function( $args ) {
 
 /**
  * WooCommerce Filter Hook - Add Cart Icon To Primary Menu
+ *
+ * @since 1.0.0
  *
  * @param array $items Items array.
  * @param array $args Args array.
@@ -125,10 +132,20 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
 
 	// If Allowed To Display.
 	if ( ( isset( $ajax ) && $ajax ) || ( property_exists( $args, 'theme_location' ) && in_array( $args->theme_location, $theme_locations, true ) ) ) {
+		// Get Classes.
+		$textual_icon = secretum_nav_cart_textual( 'primary_nav', 'return', [
+			'type' => 'icon',
+		] );
+
+		// Get Classes.
+		$textual_count = secretum_nav_cart_textual( 'primary_nav', 'return', [
+			'type' => 'count',
+		] );
+
 		$active = ( is_cart() ) ? ' current-menu-item' : '';
 		$icon .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="woocommerce-cart-icon" class="menu-item' . $active . '">';
-		$icon .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_primary_nav_cart_link_classes() . '">';
-		$icon .= '<span class="fi-shopping-cart' . secretum_primary_nav_cart_icon_classes() . '"></span><span class="' . secretum_primary_nav_cart_count_classes() . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
+		$icon .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_nav_cart_link( 'primary_nav' ) . '">';
+		$icon .= '<span class="fi-shopping-cart' . $textual_icon . '"></span><span class="' . $textual_count . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
 		$icon .= '</a>';
 		$icon .= '</li>';
 	}
@@ -139,6 +156,8 @@ add_filter( 'wp_nav_menu_items', function( $items, $args, $ajax = false ) {
 
 /**
  * WooCommerce Filter Hook - Add Bootstrap Classes To Checkout Form
+ *
+ * @since 1.0.0
  */
 add_filter( 'woocommerce_form_field_args', function( $args, $key, $value ) {
 	// Remove Woo Classes.
@@ -159,6 +178,8 @@ add_filter( 'woocommerce_form_field_args', function( $args, $key, $value ) {
 
 /**
  * WooCommerce Custom Variations Dropdown
+ *
+ * @since 1.0.0
  *
  * @source wp-content/plugins/woocommerce/includes/wc-template-functions.php
  *
@@ -185,7 +206,7 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 	$show_option_none 		= $args['show_option_none'] ? true : false;
 	$show_option_none_text 	= $args['show_option_none'] ? $args['show_option_none'] : esc_html__( 'Choose an option', 'secretum' );
 
-	if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
+	if ( true === empty( $options ) && true !== empty( $product ) && true !== empty( $attribute ) ) {
 		$attributes = $product->get_variation_attributes();
 		$options	= $attributes[ $attribute ];
 	}
@@ -196,7 +217,7 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 
 	$html .= '<option value="">' . esc_html( $show_option_none_text ) . '</option>';
 
-	if ( ! empty( $options ) ) {
+	if ( true !== empty( $options ) ) {
 		if ( $product && taxonomy_exists( $attribute ) ) {
 			$terms = wc_get_product_terms( $product->get_id(), $attribute, [
 				'fields' => 'all',
@@ -238,11 +259,14 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 			],
 		]
 	);
-}
+
+}//end secretum_wc_dropdown_variation_attribute_options()
 
 
 /**
  * WooCommerce Filter Hook - Update Cart Icon
+ *
+ * @since 1.0.0
  *
  * @param array $fragments Cart fragments.
 add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
@@ -258,6 +282,8 @@ add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
 /**
  * WooCommerce Remove Order Notes Field & Title
  *
+ * @since 1.0.0
+ *
  * @param array $fields Input Fields
 add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
 	unset( $fields['order']['order_comments'] );
@@ -268,6 +294,8 @@ add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
 
 /**
  * Remove Checkout Fields
+ *
+ * @since 1.0.0
  *
  * @param array $fields Input Fields
 add_filter( 'woocommerce_checkout_fields', function( $fields ) {
@@ -285,14 +313,18 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 
 /**
  * Remove Sku From All Product Pages
+ *
+ * @since 1.0.0
 add_filter( 'wc_product_sku_enabled', function() {
-	return ( ! is_admin() && is_product() ) ? false : true;
+	return ( false === is_admin() && true === is_product() ) ? false : true;
 } );
  */
 
 
 /**
  * Add To Cart Redirect To Checkout Page
+ *
+ * @since 1.0.0
 add_filter( 'woocommerce_add_to_cart_redirect', function() {
 	return get_permalink( get_option( 'woocommerce_checkout_page_id' ) );
 } );
@@ -301,5 +333,7 @@ add_filter( 'woocommerce_add_to_cart_redirect', function() {
 
 /**
  * WooCommerce Remove Order Notes Title
+ *
+ * @since 1.0.0
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
  */

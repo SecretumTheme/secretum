@@ -8,13 +8,15 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-
 /**
  * Translation Text Display
+ *
+ * @since 1.0.0
  *
  * @see class/customizer/class-trans.php
  * @see class/customizer/class-transcustomizer.php
@@ -32,7 +34,7 @@ function secretum_text( $key = '', $echo = false ) {
 	$translate = \Secretum\Trans::instance();
 
 	// Required.
-	if ( false === ( empty( $key ) ) ) {
+	if ( false === empty( $key ) ) {
 		if ( false === $echo ) {
 			// Return Text.
 			return $translate->get( $key, false );
@@ -41,11 +43,65 @@ function secretum_text( $key = '', $echo = false ) {
 			$translate->get( $key, true );
 		}
 	}
-}
+
+}//end secretum_text()
+
+
+/**
+ * Check if WooCommerce is Active
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_woocomerce() {
+	if ( true === class_exists( 'woocommerce' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+
+}//end secretum_is_woocomerce()
+
+
+/**
+ * Check if WooCommerce Product Exists
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_wooproduct() {
+	if ( true === class_exists( 'woocommerce' ) && true === function_exists( 'is_product' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+
+}//end secretum_is_wooproduct()
+
+
+/**
+ * Check if Woo Bookings is Active
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function secretum_is_woobookings() {
+	if ( true === class_exists( 'WC_Bookings' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+
+}//end secretum_is_woobookings()
 
 
 /**
  * Render Breadcrumbs
+ *
+ * @since 1.0.0
  *
  * @param string $taxonomy The taxonomy term.
  * @param bool 	 $top_link True to enable top return link.
@@ -84,10 +140,10 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		$home_text = __( 'Home', 'secretum' );
 
 		// Build Seperator.
-		if ( $seperator && $icons ) {
+		if ( true === $seperator && true === $icons ) {
 			$sep = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
 
-		} elseif ( $seperator && ! $icons ) {
+		} elseif ( true === $seperator && false === $icons ) {
 			$sep = wp_filter_nohtml_kses( $seperator );
 
 		} else {
@@ -96,10 +152,10 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		}
 
 		// Build Top Return Link.
-		if ( $top_link && $icons ) {
+		if ( true === $top_link && true === $icons ) {
 			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="Return to Top"></i></a>';
 
-		} elseif ( $top_link && ! $icons ) {
+		} elseif ( true === $top_link && false === $icons ) {
 			$top = ' | <a href="#top">top ^</a>';
 
 		} else {
@@ -110,4 +166,5 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		// Return HTML.
 		return '<div class="breadcrumbs">' . $home . '<a href="' . $home_url . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
 	}// End if().
-}
+
+}//end secretum_breadcrumbs()

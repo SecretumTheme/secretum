@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/theme-settings.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -15,15 +16,19 @@ namespace Secretum;
 /**
  * WordPress Required Content Width
  *
+ * @since 1.0.0
+ *
  * @link https://codex.wordpress.org/Content_Width
  */
-if ( ! isset( $content_width ) ) {
+if ( true !== isset( $content_width ) ) {
 	$content_width = secretum_mod( 'secretum_content_width' ) ? absint( secretum_mod( 'secretum_content_width', 'int' ) ) : 640;
 }
 
 
 /**
  * WordPress Theme Settings
+ *
+ * @since 1.0.0
  */
 add_action( 'after_setup_theme', function() {
 	// Load Theme Translated Strings.
@@ -35,8 +40,7 @@ add_action( 'after_setup_theme', function() {
 		'secretum-navbar-primary-above' => __( 'Primary Navbar Above Header', 'secretum' ),
 		'secretum-navbar-primary-left' 	=> __( 'Primary Navbar Left of Logo', 'secretum' ),
 		'secretum-navbar-primary-right' => __( 'Primary Navbar Right of Logo', 'secretum' ),
-		'secretum-navbar-top-left' 		=> __( 'Top Left Textual Menu', 'secretum' ),
-		'secretum-navbar-top-right' 	=> __( 'Top Right Textual Menu', 'secretum' ),
+		'secretum-navbar-top' 			=> __( 'Header Top Navbar (above header)', 'secretum' ),
 		'secretum-navbar-copyright' 	=> __( 'Copyright Textual Menu', 'secretum' ),
 	] );
 
@@ -48,7 +52,13 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'responsive-embeds' );
 
 	// Header Image Panel.
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', [
+		'flex-width' 	=> true,
+		'width' 		=> 980,
+		'flex-height' 	=> true,
+		'height' 		=> 200,
+		'video' 		=> true,
+	] );
 
 	// Background Image Panel.
 	add_theme_support( 'custom-background' );
@@ -70,6 +80,12 @@ add_action( 'after_setup_theme', function() {
 
 	// Customizer Support.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+
+	// Load default block styles.
+	add_theme_support( 'wp-block-styles' );
 
 	// HTML5 Markup Support.
 	add_theme_support( 'html5', [
@@ -93,8 +109,8 @@ add_action( 'after_setup_theme', function() {
 
 	// Enable Custom Logo Support.
 	add_theme_support( 'custom-logo', [
-		'height' 		=> secretum_mod( 'custom_logo_height' ) ? secretum_mod( 'custom_logo_height', 'int' ) : 75,
-		'width' 		=> secretum_mod( 'custom_logo_width' ) ? secretum_mod( 'custom_logo_width', 'int' ) : 300,
+		'height' 		=> secretum_mod( 'custom_logo_height' ) ? secretum_mod( 'custom_logo_height', 'int' ) : '',
+		'width' 		=> secretum_mod( 'custom_logo_width' ) ? secretum_mod( 'custom_logo_width', 'int' ) : '',
 		'header-text' 	=> [ 'site-title', 'site-description' ],
 		'flex-height' 	=> true,
 		'flex-width' 	=> true,

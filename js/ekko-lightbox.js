@@ -1,3 +1,9 @@
+/*!
+ * Lightbox for Bootstrap by @ashleydw
+ * https://github.com/ashleydw/lightbox
+ *
+ * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
+ */
 +function ($) {
 
 'use strict';
@@ -16,11 +22,11 @@ var Lightbox = (function ($) {
 		footer: '',
 		maxWidth: 9999,
 		maxHeight: 9999,
-		showArrows: true, 
-		wrapping: true, 
-		type: null, 
-		alwaysShowClose: false, 
-		loadingMessage: '<div class="ekko-lightbox-loader"><div><div></div><div></div></div></div>', 
+		showArrows: true, //display the left / right arrows or not
+		wrapping: true, //if true, gallery loops infinitely
+		type: null, //force the lightbox into image / youtube mode. if null, or not image|youtube|vimeo; detect it
+		alwaysShowClose: false, //always show the close button, even if there is no title
+		loadingMessage: '<div class="ekko-lightbox-loader"><div><div></div><div></div></div></div>', // http://tobiasahlin.com/spinkit/
 		leftArrow: '<span>&#10094;</span>',
 		rightArrow: '<span>&#10095;</span>',
 		strings: {
@@ -28,7 +34,7 @@ var Lightbox = (function ($) {
 			fail: 'Failed to load image:',
 			type: 'Could not detect remote target type. Force the type using data-type'
 		},
-		doc: document, 
+		doc: document, // if in an iframe can specify top.document
 		onShow: function onShow() {},
 		onShown: function onShown() {},
 		onHide: function onHide() {},
@@ -41,6 +47,26 @@ var Lightbox = (function ($) {
 		_createClass(Lightbox, null, [{
 			key: 'Default',
 
+			/**
+       Class properties:
+   	 _$element: null -> the <a> element currently being displayed
+    _$modal: The bootstrap modal generated
+       _$modalDialog: The .modal-dialog
+       _$modalContent: The .modal-content
+       _$modalBody: The .modal-body
+       _$modalHeader: The .modal-header
+       _$modalFooter: The .modal-footer
+    _$lightboxContainerOne: Container of the first lightbox element
+    _$lightboxContainerTwo: Container of the second lightbox element
+    _$lightboxBody: First element in the container
+    _$modalArrows: The overlayed arrows container
+   	 _$galleryItems: Other <a>'s available for this gallery
+    _galleryName: Name of the current data('gallery') showing
+    _galleryIndex: The current index of the _$galleryItems being shown
+   	 _config: {} the options for the modal
+    _modalId: unique id for the current lightbox
+    _padding / _border: CSS properties for the modal container; these are used to calculate the available space for the content
+   	 */
 
 			get: function get() {
 				return Default;
@@ -99,6 +125,7 @@ var Lightbox = (function ($) {
 				this._galleryIndex = this._$galleryItems.index(this._$element);
 				$(document).on('keydown.ekkoLightbox', this._navigationalBinder.bind(this));
 
+				// add the directional arrows to the modal
 				if (this._config.showArrows && this._$galleryItems.length > 1) {
 					this._$lightboxContainer.append('<div class="ekko-lightbox-nav-overlay"><a href="#">' + this._config.leftArrow + '</a><a href="#">' + this._config.rightArrow + '</a></div>');
 					this._$modalArrows = this._$lightboxContainer.find('div.ekko-lightbox-nav-overlay').first();
@@ -171,7 +198,7 @@ var Lightbox = (function ($) {
 
 				if (this._galleryIndex === 0) {
 					if (this._config.wrapping) this._galleryIndex = this._$galleryItems.length - 1;else return;
-				} else 
+				} else //circular
 					this._galleryIndex--;
 
 				this._config.onNavigate.call(this, 'left', this._galleryIndex);
@@ -187,7 +214,7 @@ var Lightbox = (function ($) {
 
 				if (this._galleryIndex === this._$galleryItems.length - 1) {
 					if (this._config.wrapping) this._galleryIndex = 0;else return;
-				} else 
+				} else //circular
 					this._galleryIndex++;
 
 				this._config.onNavigate.call(this, 'right', this._galleryIndex);
@@ -209,6 +236,7 @@ var Lightbox = (function ($) {
 				return this._$modal.modal('hide');
 			}
 
+			// helper private methods
 		}, {
 			key: '_navigationalBinder',
 			value: function _navigationalBinder(event) {
@@ -217,6 +245,7 @@ var Lightbox = (function ($) {
 				if (event.keyCode === 37) return this.navigateLeft();
 			}
 
+			// type detection private methods
 		}, {
 			key: '_detectRemoteType',
 			value: function _detectRemoteType(src, type) {
@@ -258,6 +287,7 @@ var Lightbox = (function ($) {
 			value: function _containerToUse() {
 				var _this2 = this;
 
+				// if currently showing an image, fade it out and remove
 				var $toUse = this._$lightboxBodyTwo;
 				var $current = this._$lightboxBodyOne;
 
@@ -305,6 +335,7 @@ var Lightbox = (function ($) {
 						this._showHtml5Media(currentRemote, $toUse);
 						break;
 					default:
+						// url
 						this._loadRemoteContent(currentRemote, $toUse);
 						break;
 				}
@@ -329,6 +360,7 @@ var Lightbox = (function ($) {
 				return string && string.indexOf('instagram') > 0 ? string : false;
 			}
 
+			// layout private methods
 		}, {
 			key: '_toggleLoading',
 			value: function _toggleLoading(show) {
@@ -408,13 +440,14 @@ var Lightbox = (function ($) {
 		}, {
 			key: '_showInstagramVideo',
 			value: function _showInstagramVideo(id, $containerForElement) {
+				// instagram load their content into iframe's so this can be put straight into the element
 				var width = this._$element.data('width') || 612;
 				var height = width + 80;
-				id = id.substr(-1) !== '/' ? id + '/' : id; 
+				id = id.substr(-1) !== '/' ? id + '/' : id; // ensure id has trailing slash
 				$containerForElement.html('<iframe width="' + width + '" height="' + height + '" src="' + id + 'embed/" frameborder="0" allowfullscreen></iframe>');
 				this._resize(width, height);
 				this._config.onContentLoaded.call(this);
-				if (this._$modalArrows) 
+				if (this._$modalArrows) //hide the arrows when showing video
 					this._$modalArrows.css('display', 'none');
 				this._toggleLoading(false);
 				return this;
@@ -422,17 +455,19 @@ var Lightbox = (function ($) {
 		}, {
 			key: '_showVideoIframe',
 			value: function _showVideoIframe(url, width, height, $containerForElement) {
-				height = height || width; 
+				// should be used for videos only. for remote content use loadRemoteContent (data-type=url)
+				height = height || width; // default to square
 				$containerForElement.html('<div class="embed-responsive embed-responsive-16by9"><iframe width="' + width + '" height="' + height + '" src="' + url + '" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe></div>');
 				this._resize(width, height);
 				this._config.onContentLoaded.call(this);
-				if (this._$modalArrows) this._$modalArrows.css('display', 'none'); 
+				if (this._$modalArrows) this._$modalArrows.css('display', 'none'); //hide the arrows when showing video
 				this._toggleLoading(false);
 				return this;
 			}
 		}, {
 			key: '_showHtml5Media',
 			value: function _showHtml5Media(url, $containerForElement) {
+				// should be used for videos only. for remote content use loadRemoteContent (data-type=url)
 				var contentType = this._getRemoteContentType(url);
 				if (!contentType) {
 					return this._error(this._config.strings.type);
@@ -448,7 +483,7 @@ var Lightbox = (function ($) {
 				$containerForElement.html('<div class="embed-responsive embed-responsive-16by9"><' + mediaType + ' width="' + width + '" height="' + height + '" preload="auto" autoplay controls class="embed-responsive-item"><source src="' + url + '" type="' + contentType + '">' + this._config.strings.type + '</' + mediaType + '></div>');
 				this._resize(width, height);
 				this._config.onContentLoaded.call(this);
-				if (this._$modalArrows) this._$modalArrows.css('display', 'none'); 
+				if (this._$modalArrows) this._$modalArrows.css('display', 'none'); //hide the arrows when showing video
 				this._toggleLoading(false);
 				return this;
 			}
@@ -463,6 +498,8 @@ var Lightbox = (function ($) {
 				var disableExternalCheck = this._$element.data('disableExternalCheck') || false;
 				this._toggleLoading(false);
 
+				// external urls are loading into an iframe
+				// local ajax can be loaded into the container itself
 				if (!disableExternalCheck && !this._isExternal(url)) {
 					$containerForElement.load(url, $.proxy(function () {
 						return _this3._$element.trigger('loaded.bs.modal');l;
@@ -472,7 +509,7 @@ var Lightbox = (function ($) {
 					this._config.onContentLoaded.call(this);
 				}
 
-				if (this._$modalArrows) 
+				if (this._$modalArrows) //hide the arrows when remote content
 					this._$modalArrows.css('display', 'none');
 
 				this._resize(width, height);
@@ -524,6 +561,7 @@ var Lightbox = (function ($) {
 				if ($containerForImage) {
 					(function () {
 
+						// if loading takes > 200ms show a loader
 						var loadingTimeout = setTimeout(function () {
 							$containerForImage.append(_this4._config.loadingMessage);
 						}, 200);
@@ -535,10 +573,11 @@ var Lightbox = (function ($) {
 							image.attr('src', img.src);
 							image.addClass('img-fluid');
 
+							// backward compatibility for bootstrap v3
 							image.css('width', '100%');
 
 							$containerForImage.html(image);
-							if (_this4._$modalArrows) _this4._$modalArrows.css('display', ''); 
+							if (_this4._$modalArrows) _this4._$modalArrows.css('display', ''); // remove display to default to css property
 
 							_this4._resize(img.width, img.height);
 							_this4._toggleLoading(false);
@@ -574,8 +613,10 @@ var Lightbox = (function ($) {
 
 				var imageAspecRatio = width / height;
 
+				// if width > the available space, scale down the expected width and height
 				var widthBorderAndPadding = this._padding.left + this._padding.right + this._border.left + this._border.right;
 
+				// force 10px margin if window size > 575px
 				var addMargin = this._config.doc.body.clientWidth > 575 ? 20 : 0;
 				var discountMargin = this._config.doc.body.clientWidth > 575 ? 0 : 20;
 
@@ -589,17 +630,21 @@ var Lightbox = (function ($) {
 				var headerHeight = 0,
 				    footerHeight = 0;
 
+				// as the resize is performed the modal is show, the calculate might fail
+				// if so, default to the default sizes
 				if (this._footerIsShown) footerHeight = this._$modalFooter.outerHeight(true) || 55;
 
 				if (this._titleIsShown) headerHeight = this._$modalHeader.outerHeight(true) || 67;
 
 				var borderPadding = this._padding.top + this._padding.bottom + this._border.bottom + this._border.top;
 
+				//calculated each time as resizing the window can cause them to change due to Bootstraps fluid margins
 				var margins = parseFloat(this._$modalDialog.css('margin-top')) + parseFloat(this._$modalDialog.css('margin-bottom'));
 
 				var maxHeight = Math.min(height, $(window).height() - borderPadding - margins - headerHeight - footerHeight, this._config.maxHeight - borderPadding - headerHeight - footerHeight);
 
 				if (height > maxHeight) {
+					// if height > the available height, scale down the width
 					width = Math.ceil(maxHeight * imageAspecRatio) + widthBorderAndPadding;
 				}
 
@@ -608,6 +653,7 @@ var Lightbox = (function ($) {
 
 				var modal = this._$modal.data('bs.modal');
 				if (modal) {
+					// v4 method is mistakenly protected
 					try {
 						modal._handleUpdate();
 					} catch (Exception) {
@@ -643,5 +689,6 @@ var Lightbox = (function ($) {
 
 	return Lightbox;
 })(jQuery);
+//# sourceMappingURL=ekko-lightbox.js.map
 
 }(jQuery);

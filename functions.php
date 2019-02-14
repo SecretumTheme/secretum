@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/functions.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -33,10 +34,15 @@ define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' 
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
 
 
+
+
+
 /**
  * Register Secretum Classes
  *
  * @param string $class Loaded Classes.
+ *
+ * @since 1.0.0
  */
 function secretum_register_classes( $class ) {
 	// Namespace Prefix.
@@ -58,17 +64,18 @@ function secretum_register_classes( $class ) {
 	];
 
 	// Build Class Name.
-	$relative_class = substr( $class, $len );
+	$relative_class = strtolower( str_replace( '_', '-', substr( $class, $len ) ) );
 
 	foreach ( $class_paths as $path ) {
 		// Replace Dir Separators and Replace Namespace with Base Dir.
-		$file = $path . 'class-' . str_replace( '\\', '/', strtolower( $relative_class ) ) . '.php';
+		$file = $path . 'class-' . str_replace( '\\', '/', $relative_class ) . '.php';
 
 		// Include File.
 		if ( file_exists( $file ) === true ) {
 			require $file;
 		}
 	}
+
 }//end secretum_register_classes()
 
 spl_autoload_register( 'Secretum\secretum_register_classes' );
@@ -80,24 +87,17 @@ require_once SECRETUM_INC . '/secretum-mod.php';
 require_once SECRETUM_INC . '/secretum-icon.php';
 require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';
-require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-filters.php';
 require_once SECRETUM_INC . '/template-functions/author.php';
-require_once SECRETUM_INC . '/template-functions/body.php';
 require_once SECRETUM_INC . '/template-functions/copyright.php';
-require_once SECRETUM_INC . '/template-functions/copyright-nav.php';
 require_once SECRETUM_INC . '/template-functions/entry.php';
 require_once SECRETUM_INC . '/template-functions/featured-image.php';
-require_once SECRETUM_INC . '/template-functions/footer.php';
 require_once SECRETUM_INC . '/template-functions/frontpage.php';
 require_once SECRETUM_INC . '/template-functions/header.php';
-require_once SECRETUM_INC . '/template-functions/header-top.php';
 require_once SECRETUM_INC . '/template-functions/post-navigation.php';
-require_once SECRETUM_INC . '/template-functions/primary-nav.php';
-require_once SECRETUM_INC . '/template-functions/scrolltop.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
-require_once SECRETUM_INC . '/template-functions/site-identity.php';
-require_once SECRETUM_INC . '/template-functions/theme.php';
+require_once SECRETUM_INC . '/template-functions.php';
+require_once SECRETUM_INC . '/template-classes.php';
 
 
 // WP Admin Only.
@@ -116,10 +116,10 @@ if ( is_admin() ) {
 
 
 // WooCommerce Features.
-if ( class_exists( 'woocommerce' ) ) {
+if ( true === secretum_is_woocomerce() ) {
 	require_once SECRETUM_INC . '/woocommerce.php';
 
-	if ( class_exists( 'WC_Bookings' ) ) {
+	if ( true === secretum_is_woobookings() ) {
 		require_once SECRETUM_INC . '/woocommerce-bookings.php';
 	}
 }
@@ -140,8 +140,6 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	// Remove Sections.
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'title_tagline' );
-	$wp_customize->remove_section( 'header_image' );
-	$wp_customize->remove_section( 'background_image' );
 
 	// Sanitizers and Helper Functions.
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';

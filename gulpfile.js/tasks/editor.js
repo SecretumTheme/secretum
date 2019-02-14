@@ -45,12 +45,12 @@ gulp.task('editor', gulp.series('editor.css', 'editor.min.css'));
  */
 gulp.task('editor.css', function () {
     return gulp.src('./assets/css/theme_editor.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.css"', onLast: true}))
@@ -63,12 +63,14 @@ gulp.task('editor.css', function () {
  */
 gulp.task('editor.min.css', function () {
     return gulp.src('./assets/css/theme_editor.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

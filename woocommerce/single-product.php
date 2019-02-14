@@ -9,22 +9,23 @@
  * @version 	1.6.4
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;
 
 get_header( 'shop' );
 ?>
-<div class="wrapper<?php secretum_body_wrapper(); ?>" id="woocommerce-wrapper">
-	<div class="container<?php secretum_body_container(); ?>" id="content" tabindex="-1">
+<div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="woocommerce-wrapper">
+	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/woo', 'sidebar-left' ); ?>
 
-			<div class="col-md<?php secretum_entry_wrapper(); ?> content-area" id="primary">
+			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
 				<?php woocommerce_breadcrumb(); ?>
 
-				<main class="site-main" id="main">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					while ( have_posts() ) { the_post();
 						if ( get_class( $product ) === 'WC_Product_Booking' ) {

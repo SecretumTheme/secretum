@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/primary-nav.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -27,6 +28,15 @@ $customizer->section(
 	''
 );
 
+// Select.
+$customizer->select(
+	'primary_nav_display',
+	'primary_nav_alignment',
+	__( 'Alignment', 'secretum' ),
+	'',
+	$defaults['primary_nav_alignment'],
+	secretum_customizer_margin_alignments()
+);
 
 // Checkbox.
 $customizer->checkbox(
@@ -36,7 +46,6 @@ $customizer->checkbox(
 	'',
 	$defaults['primary_nav_status']
 );
-
 
 // Checkbox.
 $customizer->checkbox(
@@ -83,7 +92,6 @@ $navitems->settings( [
 	'section' => 'primary_nav',
 ] );
 
-
 // Nav Items Borders.
 $borders->settings( [
 	'section' => 'primary_nav_items',
@@ -100,10 +108,12 @@ $borders->settings( [
 	'section' => 'primary_nav_dropdown',
 ] );
 
-
 // Nav Dropdown Textuals.
 $textuals->settings( [
-	'section' => 'primary_nav_dropdown',
+	'title'   	=> __( 'Dropdown Textuals', 'secretum' ),
+	'panel'   	=> 'primary_nav',
+	'section' 	=> 'primary_nav_dropdown',
+	'alignment' => true,
 ] );
 
 
@@ -119,10 +129,10 @@ $customizer->section(
 // Select.
 $customizer->select(
 	'primary_nav_toggler',
-	'primary_nav_toggler_icon_alignment',
+	'primary_nav_toggler_alignment',
 	__( 'Alignment', 'secretum' ),
 	'',
-	$defaults['primary_nav_toggler_icon_alignment'],
+	$defaults['primary_nav_toggler_alignment'],
 	secretum_customizer_margin_alignments()
 );
 
@@ -178,29 +188,13 @@ $customizer->select(
 );
 
 
-// Select.
-$customizer->select(
-	'primary_nav_toggler',
-	'primary_nav_toggler_border_radius',
-	__( 'Border Radius', 'secretum' ),
-	'',
-	$defaults['primary_nav_toggler_border_radius'],
-	secretum_customizer_border_radius()
-);
+// Toggler Borders.
+$borders->settings( [
+	'section' => 'primary_nav_toggler',
+] );
 
 
-// Select.
-$customizer->select(
-	'primary_nav_toggler',
-	'primary_nav_toggler_border_color',
-	__( 'Border Color', 'secretum' ),
-	'',
-	$defaults['primary_nav_toggler_border_color'],
-	secretum_customizer_border_colors()
-);
-
-
-if ( class_exists( 'woocommerce' ) ) {
+if ( true === secretum_is_woocomerce() ) {
 	// Menu Items.
 	$customizer->section(
 		'primary_nav_cart_icon',

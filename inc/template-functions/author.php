@@ -8,13 +8,15 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions/author.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-
 /**
  * Author List Item Link List
+ *
+ * @since 1.0.0
  */
 function secretum_author_post_list() {
 	$post_text 	= secretum_text( 'author_posted_text', false );
@@ -40,4 +42,5 @@ function secretum_author_post_list() {
 			],
 		]
 	);
-}
+
+}//end secretum_author_post_list()

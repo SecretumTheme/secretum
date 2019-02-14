@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/editor.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -16,11 +17,13 @@ namespace Secretum;
 /**
  * Add the formats dropdown to visual editor
  *
+ * @since 1.0.0
+ *
  * @param array $buttons Registered buttons.
  * @return array
  */
 add_filter( 'mce_buttons_2', function( $buttons ) {
-	if ( ! in_array( 'styleselect', $buttons, true ) ) {
+	if ( false === in_array( 'styleselect', $buttons, true ) ) {
 		$buttons[] = 'styleselect';
 	}
 
@@ -30,6 +33,8 @@ add_filter( 'mce_buttons_2', function( $buttons ) {
 
 /**
  * Display advanced editor option in visual editor
+ *
+ * @since 1.0.0
  *
  * @param array $settings Editor settings.
  * @return string Updated Json Encoded Settings
@@ -392,7 +397,7 @@ add_filter( 'tiny_mce_before_init', function( $settings ) {
 	$merged_formats = ( isset( $settings['style_formats'] ) ) ? array_merge( $style_formats, json_decode( $settings['style_formats'] ) ) : '';
 
 	// Json Encode Formats.
-	$settings['style_formats'] = ( ! empty( $merged_formats ) ) ? wp_json_encode( $merged_formats ) : wp_json_encode( $style_formats );
+	$settings['style_formats'] = ( true !== empty( $merged_formats ) ) ? wp_json_encode( $merged_formats ) : wp_json_encode( $style_formats );
 
 	return $settings;
 } );

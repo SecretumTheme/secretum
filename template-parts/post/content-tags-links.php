@@ -8,12 +8,13 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/post/content-tag-links.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 // If Posts & Default Display.
-if ( 'post' === get_post_type() && ! secretum_mod( 'entry_meta_tagslinks_status' ) ) {
+if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_tagslinks_status' ) ) {
 ?>
 	<span class="tags-links">
 		<?php

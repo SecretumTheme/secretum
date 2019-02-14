@@ -9,6 +9,7 @@
  * @version     3.4.1
  * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product/add-to-cart/variable.php
+ * @since 		1.0.0
  */
 
 namespace Secretum;

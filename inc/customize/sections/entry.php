@@ -8,6 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/entry.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -25,6 +26,16 @@ $customizer->section(
 	'entry',
 	__( 'Display Settings', 'secretum' ),
 	''
+);
+
+
+// Checkbox.
+$customizer->checkbox(
+	'entry_display',
+	'entry_status',
+	__( 'Select To Hide Entire Entry Area', 'secretum' ),
+	'',
+	$defaults['entry_status']
 );
 
 
@@ -122,7 +133,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_post_navigation_links',
 	__( 'Hide Post Navigation Links', 'secretum' ),
-	__( 'This feature is active when <!--nextpage--> is in use.', 'secretum' ),
+	__( 'Previous & Next Post Links.', 'secretum' ),
 	$defaults['entry_meta_post_navigation_links']
 );
 
@@ -136,4 +147,17 @@ $wrapper->settings( [
 // Wrapper Borders.
 $borders->settings( [
 	'section' => 'entry_wrapper',
+] );
+
+
+// Container.
+$container->settings( [
+	'section' 	=> 'entry',
+	'type'		=> false,
+] );
+
+
+// Container Borders.
+$borders->settings( [
+	'section' => 'entry_container',
 ] );

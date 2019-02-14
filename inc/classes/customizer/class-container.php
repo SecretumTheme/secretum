@@ -8,19 +8,26 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-container.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
  * Customizer Container Grouping
+ *
+ * @since 1.0.0
+ *
+ * @param object $customizer Secretum Customizer Object.
+ * @param array  $defaults   Default Settings Array.
  */
 class Container {
 
 	/**
 	 * Secretum Customizer Object
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -28,13 +35,16 @@ class Container {
 	/**
 	 * Customizer Default Settings
 	 *
-	 * @var array
+	 * @since 1.0.0
+	 * @var array $_default
 	 */
 	private $_default;
 
 
 	/**
 	 * Start Class
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param object $customizer Secretum Customizer Object.
 	 * @param array  $defaults   Default Settings Array.
@@ -50,6 +60,8 @@ class Container {
 
 	/**
 	 * Display Secretum Cusomizer Section & Settings
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args [section (required), panel, title] Settings.
 	 */
@@ -86,6 +98,16 @@ class Container {
 				secretum_customizer_container_types()
 			);
 		}
+
+		// Select.
+		$this->_customizer->select(
+			$args['section'] . '_container',
+			$args['section'] . '_container_background_color',
+			__( 'Background Color', 'secretum' ),
+			'',
+			$this->_default[ $args['section'] . '_container_background_color' ],
+			secretum_customizer_background_colors()
+		);
 
 		// Select.
 		$this->_customizer->select(
@@ -131,26 +153,9 @@ class Container {
 
 
 	/**
-	 * Build Unfiltered Class(es) String
-	 *
-	 * @param string $section Section Shortname.
-	 *
-	 * @return string Classes.
-	 */
-	final public static function classes( $section ) {
-		$type 			= secretum_mod( $section . '_container_type', 'attr' );
-		$background 	= secretum_mod( $section . '_container_background_color', 'attr', true );
-		$margin_top 	= secretum_mod( $section . '_container_margin_top', 'attr', true );
-		$margin_bottom 	= secretum_mod( $section . '_container_margin_bottom', 'attr', true );
-		$padding_y 		= secretum_mod( $section . '_container_padding_y', 'attr', true );
-		$padding_x 		= secretum_mod( $section . '_container_padding_x', 'attr', true );
-		return $type . $background . $margin_top . $margin_bottom . $padding_y . $padding_x;
-
-	}//end classes()
-
-
-	/**
 	 * Build Section Title
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string $title Alt Section Title.
 	 *
@@ -169,6 +174,8 @@ class Container {
 	/**
 	 * Build Panel Name
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $section Section Name.
 	 * @param string $panel Panel Name.
 	 *
@@ -184,6 +191,5 @@ class Container {
 		return $panel;
 
 	}//end _panels()
-
 
 }//end class
