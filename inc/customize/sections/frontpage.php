@@ -55,8 +55,8 @@ $customizer->textarea(
 	'<div class="container-fluid py-5" id="container-heading">
 	<div class="row">
 		<div class="col-md">
-			<div class="display-4 text-center text-capitalize text-center font-weight-bold color-whitish">' . secretum_customizer_blog_name() . '</div>
-			<div class="text-22 text-center text-capitalize text-center color-secondary">' . secretum_customizer_blog_desc() . '</div>
+			<div class="display-4 text-center text-capitalize text-center font-weight-bold color-whitish">' . get_bloginfo( 'name' ) . '</div>
+			<div class="text-22 text-center text-capitalize text-center color-secondary">' . get_bloginfo( 'description' ) . '</div>
 		</div>
 	</div><!-- .row -->
 
