@@ -424,9 +424,10 @@ class Navwalker extends \Walker_Nav_Menu {
 				'menu_text' => __( 'Create Menu', 'secretum' ),
 			] );
 
-			$text 	= esc_html( $args['menu_text'] );
-			$url 	= esc_url( admin_url( 'nav-menus.php' ) );
-			$html 	= "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\">{$text}</a></li></ul>";
+			$text 		= esc_html( $args['menu_text'] );
+			$url 		= esc_url( admin_url( 'nav-menus.php' ) );
+			$classes 	= secretum_textual( 'primary_nav_dropdown', 'return' );
+			$html 		= "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
 
 			$filtered = apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 );
 
@@ -442,6 +443,7 @@ class Navwalker extends \Walker_Nav_Menu {
 					],
 					'a' => [
 						'href' 	=> true,
+						'class' => true,
 					],
 				]
 			);

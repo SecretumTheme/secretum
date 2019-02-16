@@ -38,6 +38,13 @@ $customizer->select(
 	secretum_customizer_margin_alignments()
 );
 
+// Partial.
+$customizer->partial(
+	'primary_nav_alignment',
+	'#main-menu'
+);
+
+
 // Checkbox.
 $customizer->checkbox(
 	'primary_nav_display',

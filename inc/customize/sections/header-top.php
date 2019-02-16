@@ -39,6 +39,12 @@ $customizer->select(
 	secretum_customizer_margin_alignments()
 );
 
+// Partial.
+$customizer->partial(
+	'header_top_alignment',
+	'#navTopMenuId'
+);
+
 
 // Checkbox.
 $customizer->checkbox(

@@ -20,7 +20,7 @@ namespace Secretum;
  * @example Classes_Alignments::instance()->classes( 'header_top', 'return', [ 'margin' => true, 'text' => true || 'text' => 'sub-section' ] );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-cache.php
+ * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *
@@ -28,11 +28,11 @@ namespace Secretum;
  */
 class Classes_Alignments {
 	/**
-	 * Transient Cache.
+	 * Classes Transient.
 	 *
 	 * @since 1.0.0
 	 */
-	use Trait_Cache;
+	use Trait_Transient;
 
 	/**
 	 * Echo or Return Results.
@@ -98,7 +98,7 @@ class Classes_Alignments {
 		}
 
 		// Get Classes From Cache If Set.
-		$classes = $this->get_cache( 'secretum_' . $setting );
+		$classes = $this->get_transient( 'secretum_' . $setting );
 
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
@@ -106,7 +106,7 @@ class Classes_Alignments {
 			$classes = secretum_mod( $setting, 'attr', true );
 
 			// Set Classes Cache.
-			$this->set_cache( 'secretum_' . $setting, $classes );
+			$this->set_transient( 'secretum_' . $setting, $classes );
 		}
 
 		// Echo or Return Classes.

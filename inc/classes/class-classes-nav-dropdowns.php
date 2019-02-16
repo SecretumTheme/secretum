@@ -19,7 +19,7 @@ namespace Secretum;
  * @example Classes_Nav_Dropdowns::instance()->classes( $section, $return );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-cache.php
+ * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *
@@ -27,11 +27,11 @@ namespace Secretum;
  */
 class Classes_Nav_Dropdowns {
 	/**
-	 * Transient Cache.
+	 * Classes Transient.
 	 *
 	 * @since 1.0.0
 	 */
-	use Trait_Cache;
+	use Trait_Transient;
 
 	/**
 	 * Echo or Return Results.
@@ -68,7 +68,7 @@ class Classes_Nav_Dropdowns {
 		$setting = 'secretum_' . $section . '_dropdown';
 
 		// Get Classes From Cache If Set.
-		$classes = $this->get_cache( $setting );
+		$classes = $this->get_transient( $setting );
 
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
@@ -85,7 +85,7 @@ class Classes_Nav_Dropdowns {
 			$classes .= secretum_mod( $section . '_dropdown_border_radius', 'attr', true );
 
 			// Set Classes Cache.
-			$this->set_cache( $setting, $classes );
+			$this->set_transient( $setting, $classes );
 		}
 
 		// Echo or Return Classes.
