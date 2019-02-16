@@ -19,66 +19,26 @@ $customizer->panel(
 	__( 'Frontpage', 'secretum' )
 );
 
-
-// Section.
+// Content.
 $customizer->section(
-	'frontpage_display',
+	'frontpage_heading',
 	'frontpage',
-	__( 'Display', 'secretum' ),
-	''
+	__( 'Heading Content', 'secretum' ),
+	__( 'Content container below header/navbar and above the content body area.', 'secretum' )
 );
-/**
+
 // Checkbox.
 $customizer->checkbox(
-	'frontpage_display',
-	'custom_frontpages',
-	__( 'Enable Custom Frontpage Feature', 'secretum' ),
-	__( 'Before enabling set all default frontpage and other design related settings. A custom frontpage must be published before it will display.', 'secretum' ),
-	$defaults['custom_frontpages']
-);
-*/
-// Checkbox.
-$customizer->checkbox(
-	'frontpage_display',
+	'frontpage_heading',
 	'frontpage_header_status',
 	__( 'Enable Frontpage Heading Area', 'secretum' ),
 	'',
 	$defaults['frontpage_header_status']
 );
 
-
-// Checkbox.
-$customizer->checkbox(
-	'frontpage_display',
-	'frontpage_map_status',
-	__( 'Enable Frontpage Google Map Area', 'secretum' ),
-	'',
-	$defaults['frontpage_map_status']
-);
-
-
-// Text Input.
-$customizer->input_text(
-	'frontpage_display',
-	'frontpage_map_address',
-	__( 'Google Map Business Name & Address', 'secretum' ),
-	__( 'Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum' ),
-	$defaults['frontpage_map_address']
-);
-
-
-// Content.
-$customizer->section(
-	'frontpage_content',
-	'frontpage',
-	__( 'Content', 'secretum' ),
-	__( 'Frontpage content management.', 'secretum' )
-);
-
-
 // Background Image.
 $customizer->background_image(
-	'frontpage_content',
+	'frontpage_heading',
 	'frontpage_heading_bg',
 	1900,
 	400,
@@ -86,17 +46,17 @@ $customizer->background_image(
 	__( 'Image will expand from center. 1900px or wider will limit the stretch.', 'secretum' )
 );
 
-
 // Textarea.
 $customizer->textarea(
-	'frontpage_content',
+	'frontpage_heading',
 	'frontpage_heading_html',
 	__( 'Frontpage Heading HTML', 'secretum' ),
 	__( 'Full HTML control of the heading area. HTML will not display until a modification is made and published.', 'secretum' ),
-	'<div class="container p-5" id="container-heading">
+	'<div class="container-fluid py-5" id="container-heading">
 	<div class="row">
-		<div class="col">
-			<h1 class="text-center text-uppercase">Big Title Area</h1>
+		<div class="col-md">
+			<div class="display-4 text-center text-capitalize text-center font-weight-bold color-whitish">' . secretum_customizer_blog_name() . '</div>
+			<div class="text-22 text-center text-capitalize text-center color-secondary">' . secretum_customizer_blog_desc() . '</div>
 		</div>
 	</div><!-- .row -->
 
@@ -104,7 +64,7 @@ $customizer->textarea(
 
 	<div class="row">
 		<div class="col mt-1 text-center">
-			<a href="#" class="btn btn-secondary"><span class="screen-reader-text">Click Here!</span>Click Here!</a>
+			<a href="#" class="btn btn-primary-light">' . __( 'Code is Poetry!', 'secretum' ) . '</a>
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->',
@@ -114,5 +74,33 @@ $customizer->textarea(
 
 // Wrapper.
 $wrapper->settings( [
-	'section' => 'frontpage',
+	'section' 	=> 'frontpage',
+	'title' 	=> __( 'Heading Wrapper', 'secretum' ),
 ] );
+
+
+// Section.
+$customizer->section(
+	'frontpage_map',
+	'frontpage',
+	__( 'Google Map', 'secretum' ),
+	''
+);
+
+// Checkbox.
+$customizer->checkbox(
+	'frontpage_map',
+	'frontpage_map_status',
+	__( 'Enable Frontpage Google Map Area', 'secretum' ),
+	'',
+	$defaults['frontpage_map_status']
+);
+
+// Text Input.
+$customizer->input_text(
+	'frontpage_map',
+	'frontpage_map_address',
+	__( 'Google Map Business Name & Address', 'secretum' ),
+	__( 'Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum' ),
+	$defaults['frontpage_map_address']
+);

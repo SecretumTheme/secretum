@@ -47,14 +47,14 @@ add_action( 'customize_controls_enqueue_scripts', function() {
  */
 add_action('init', function() {
 	// Get Theme Mods.
-	$location = secretum_mod( 'analytics_location', 'attr' );
-	$analytics = secretum_mod( 'analytics_code' );
+	$location = secretum_mod( 'javascript_location', 'attr' );
+	$analytics = secretum_mod( 'javascript_script' );
 
 	if ( true === isset( $location ) && 'header' === $location && false === empty( $analytics ) ) {
 		// Add To Header.
 		add_action( 'wp_head', function() {
 			echo wp_kses(
-				json_decode( secretum_mod( 'analytics_code', 'raw' ) ),
+				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
 				[
 					'script' => [
 						'async' 	=> true,
@@ -67,7 +67,7 @@ add_action('init', function() {
 		// Add To Footer.
 		add_action( 'wp_footer', function() {
 			echo wp_kses(
-				json_decode( secretum_mod( 'analytics_code', 'raw' ) ),
+				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
 				[
 					'script' => [
 						'async' 	=> true,
