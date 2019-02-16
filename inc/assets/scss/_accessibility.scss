@@ -6,7 +6,7 @@
     @include sr-only();
     word-wrap: normal !important;
     &:focus {
-		background-color: $whiteish;
+		background-color: $whitish;
 		-webkit-border-radius: 3px;
 		border-radius: 3px;
 		-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);

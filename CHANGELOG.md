@@ -1,9 +1,11 @@
 # Changelog
 
-# 1.0.0
-**2019-02-14 - WordPress Release**
+# 0.0.25
+**2019-02-15 - Feature Update**
 
-* WordPress release
+* Adjusted Customizer Extras & Frontpage Sections
+* Adjusted Default Sidebars When No Sidebars Set
+* Set All Vars To !default In Theme Color Palettes
 
 # 0.0.24
 **2019-02-11 - Major Update**

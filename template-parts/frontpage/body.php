@@ -12,9 +12,6 @@
  */
 
 namespace Secretum;
-
-// Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) {
 ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="index-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
@@ -66,6 +63,3 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
-
-<?php
-}// End if().

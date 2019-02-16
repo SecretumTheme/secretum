@@ -22,15 +22,26 @@ get_header();
  */
 do_action( 'secretum_frontpage_before' );
 
+
 // Frontpage Heading.
 get_template_part( 'template-parts/frontpage/heading' );
 
-// Frontpage Body.
-get_template_part( 'template-parts/frontpage/body' );
 
-// Secretum Custom Frontpage Plugin.
-if ( secretum_mod( 'custom_frontpage' ) ) {
+/**
+ * Hook: secretum_frontpage_before_body
+ *
+ * @since 1.0.0
+ */
+do_action( 'secretum_frontpage_before_body' );
+
+
+// Display If Allowed.
+if ( true !== secretum_mod( 'body_status' ) ) {
+	// Frontpage Body.
+	get_template_part( 'template-parts/frontpage/body' );
+} elseif ( secretum_mod( 'custom_frontpage' ) ) {
 	/**
+	 * Secretum Custom Frontpage Active.
 	 * Hook: secretum_frontpage
 	 *
 	 * @since 1.0.0
@@ -38,8 +49,18 @@ if ( secretum_mod( 'custom_frontpage' ) ) {
 	do_action( 'secretum_frontpage' );
 }
 
+
+/**
+ * Hook: secretum_frontpage_after_body
+ *
+ * @since 1.0.0
+ */
+do_action( 'secretum_frontpage_after_body' );
+
+
 // Frontpage Map.
 get_template_part( 'template-parts/frontpage/map' );
+
 
 /**
  * Hook: secretum_frontpage_after
