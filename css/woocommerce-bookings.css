@@ -7,7 +7,7 @@
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker .ui-datepicker-next { right: 0; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker table { width: 100%; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker tbody { border-left: 1px solid #dee2e6; border-right: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; }
-.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th { background: #edede4; border-left: 1px solid #dee2e6; border-right: 1px solid #dee2e6; border-top: none; color: #adb5bd; }
+.wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th { background: #edede4; border-left: 1px solid #dee2e6; border-right: 1px solid #dee2e6; border-top: none; color: #6c757d; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td { background: #baba97; color: #6e6e4a; text-align: center; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td a { display: block; width: 100%; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a { background-color: #f7f7f3 !important; color: #343a40 !important; }
@@ -19,11 +19,11 @@
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable.ui-datepicker-current-day { font-weight: bold; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable.ui-datepicker-current-day a.ui-state-active { background-color: rgba(52, 58, 64, 0.8) !important; color: #b2bac1 !important; }
 .wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.partial_booked a:before { border-top: none; }
-.wc-bookings-booking-form .block-picker li a { background-color: #f7f7f3; border: 1px solid #c0d890; color: #212529; margin: 1px 1px; }
+.wc-bookings-booking-form .block-picker li a { background-color: #f7f7f3; border: 1px solid #c0d890; color: #e9ecef; margin: 1px 1px; }
 .wc-bookings-booking-form .block-picker li a:hover { background-color: #343a40; color: #b2bac1; }
 .wc-bookings-booking-form .block-picker li a.selected { background: rgba(52, 58, 64, 0.8) !important; color: #b2bac1; font-weight: bold; }
-.wc-bookings-booking-form .block-picker li:nth-child(even) a, .wc-bookings-booking-form .block-picker li:nth-child(even) a, .wc-bookings-booking-form .block-picker li:nth-child(odd) a, .wc-bookings-booking-form .block-picker li:nth-child(odd) a { background-color: #f7f7f3; color: #212529; }
-.wc-bookings-booking-form .block-picker li:nth-child(even) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(even) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(odd) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(odd) a.sold-out { background-color: #e9ecef; border: 1px solid #c0392b; }
+.wc-bookings-booking-form .block-picker li:nth-child(even) a, .wc-bookings-booking-form .block-picker li:nth-child(even) a, .wc-bookings-booking-form .block-picker li:nth-child(odd) a, .wc-bookings-booking-form .block-picker li:nth-child(odd) a { background-color: #f7f7f3; color: #e9ecef; }
+.wc-bookings-booking-form .block-picker li:nth-child(even) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(even) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(odd) a.sold-out, .wc-bookings-booking-form .block-picker li:nth-child(odd) a.sold-out { background-color: #f8f9fa; border: 1px solid #c0392b; }
 .wc-bookings-booking-form .block-picker li:nth-child(even) a:focus, .wc-bookings-booking-form .block-picker li:nth-child(even) a:hover, .wc-bookings-booking-form .block-picker li:nth-child(odd) a:focus, .wc-bookings-booking-form .block-picker li:nth-child(odd) a:hover { background-color: #343a40; color: #b2bac1; }
 .wc-bookings-booking-form .block-picker li a.selected { background: rgba(52, 58, 64, 0.8) !important; color: #b2bac1; font-weight: bold; }
 .wc-bookings-booking-form .block-help li { display: block; width: 100%; }
