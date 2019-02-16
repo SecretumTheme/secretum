@@ -3,7 +3,7 @@ Contributors: SecretumTheme
 Requires at least: WordPress 4.8
 Tested up to: 5.0.4
 Requires PHP: 5.6
-Version: 0.0.25
+Version: 0.0.26
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,31 +26,71 @@ Secretum is a highly customizable fluid-responsive multipurpose WordPress theme 
 
 == Setup ==
 
-1. Set the Primary Menu: Customize > Menus.
+**Getting started:**
+
+1) Set the Primary Menu
+	* Open: Appearance Menu > Menus Link
 	* Create a new menu if needed
-	* Set the menu to the 'Primary Navbar Below Header' location
-2. Add Widgets: Customize > Widgets
+	* Set the menu to the 'Primary Navbar' location or another preset location
+2) Add Widgets
+	* Open: Appearance Menu > Widgets Link
 	* Add Widgets to Sidebar Right
-	* Add Widgets to Footer left, center, right.
-3) Select A Theme Design If Desired
-	* Customize > Theme Design > Base Color Palette
-4) Adjust the other Customizer features as needed
+	* Add Widgets to Footer Left, Footer Center, Footer Right.
+3) Set Base Color Palette
+	* Open: Appearance Menu > Customize Link > :: Theme Design > Base Color Palette
+	* Select a base color palette the theme should use
+
+**To further customize start with:**
+
+1) Adding a Logo
+	* Open: Appearance Menu > Customize Link > :: Site Identity > Branding
+2) Adjusting the Primary Nav
+	* Customizer > :: Primary Nav
+3) Seting a Header & Footer Background Color
+	* Customizer > :: Header > Wrapper > Background Color
+	* Customizer > :: Footer > Wrapper > Background Color
+4) Adjusting the Copyright Area
+	* Customizer > :: Copyright > Copyright Statement
+	* Customizer > :: Copyright > Wrapper > Background Color
+
+**Setup a custom Blog:**
+
+1) Pages menu > Add New - Name the Page & Slug: Blog
+	* No content body is needed
+2) Set the Post page to the newly created Blog page
+	* Settings > Reading
+	* Under "Your homepage displays" > Select "A static page (select below)"
+	* In the Post page dropdown select Blog
+
+**Setup a custom Front Page:**
+
+1) Pages menu > Add New - Name the Page & Slug: Front Page
+	* Add temporary text content as a placeholder
+2) Set the Homepage to the newly created Front Page, page
+	* Settings > Reading
+	* Under "Your homepage displays" > Select "A static page (select below)"
+	* In the Homepage dropdown select Front Page
+3) Add Front Page Features
+	* Customizer > :: Frontpage
+	* Add Custom Heading Content and adjust container
+	* Enable a Google Map
+
+Return to the Pages admin and customize the Front Page page as desired.
 
 
 == Changelog ==
 
-= 1.0.0 =
-* Released: 2018-14-02
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#100
+= 0.0.26 =
+* Released: 2018-16-02
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0026
 
 
 == Licenses ==
 
 MIT Licensed Resources packaged with Secretum. Due to GDPR compliancy reasons Secretum does not use externally linked resources.
 
-* Bootstrap 4 https://getbootstrap.com/
-	MIT License https://opensource.org/licenses/MIT
-* Foundation Icon Fonts 3 https://zurb.com/playground/foundation-icon-fonts-3
-	MIT License https://opensource.org/licenses/MIT
-* Lightbox For Bootstrap https://github.com/ashleydw/lightbox
-	MIT License https://opensource.org/licenses/MIT
+* [Bootstrap 4](https://getbootstrap.com/) - [MIT License](https://opensource.org/licenses/MIT)
+* [Foundation Icon Fonts 3](https://zurb.com/playground/foundation-icon-fonts-3) - [MIT License]( https://opensource.org/licenses/MIT)
+* [Lightbox For Bootstrap](https://github.com/ashleydw/lightbox) - [MIT License](https://opensource.org/licenses/MIT)
+* [Gulpfile for WordPress](https://github.com/ChrisWinters/gulpfile) - [MIT License](https://opensource.org/licenses/MIT)
+* [WP Bootstrap Navwalker](https://github.com/wp-bootstrap/wp-bootstrap-navwalker) - [GNU License](https://www.gnu.org/licenses/gpl.html)

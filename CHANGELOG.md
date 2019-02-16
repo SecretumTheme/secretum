@@ -1,5 +1,10 @@
 # Changelog
 
+# 0.0.26
+**2019-02-16 - Hotfix**
+
+* Corrected customizer feature echoing example to previewer
+
 # 0.0.25
 **2019-02-15 - Feature Update**
 

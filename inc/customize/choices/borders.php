@@ -97,7 +97,7 @@ function secretum_customizer_border_colors() {
 		'border-primary-text' 	=> __( 'Primary Text Color', 'secretum' ),
 		'border-secondary-text' => __( 'Secondary Text Color', 'secretum' ),
 		'border-white' 			=> __( 'White', 'secretum' ),
-		'border-whiteish' 		=> __( 'Whiteish', 'secretum' ),
+		'border-whitish' 		=> __( 'Whitish', 'secretum' ),
 		'border-black' 			=> __( 'Black', 'secretum' ),
 		'border-blackish' 		=> __( 'Blackish', 'secretum' ),
 		'border-gray' 			=> __( 'Gray', 'secretum' ),
