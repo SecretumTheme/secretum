@@ -20,7 +20,7 @@ namespace Secretum;
  * @example Classes_Theme::instance()->classes( 'return', [ 'bg' => true, 'textuals' => true, 'fonts' => true ] );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-cache.php
+ * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *
@@ -28,11 +28,11 @@ namespace Secretum;
  */
 class Classes_Theme {
 	/**
-	 * Transient Cache.
+	 * Classes Transient.
 	 *
 	 * @since 1.0.0
 	 */
-	use Trait_Cache;
+	use Trait_Transient;
 
 	/**
 	 * Echo or Return Results.
@@ -88,7 +88,7 @@ class Classes_Theme {
 		}
 
 		// Get Classes From Cache If Set.
-		$classes = $this->get_cache( $setting );
+		$classes = $this->get_transient( $setting );
 
 		// No Cached Classes.
 		if ( true === empty( $classes ) ) {
@@ -102,7 +102,7 @@ class Classes_Theme {
 			$classes .= $this->_build_textuals( $args['text_link'] );
 
 			// Set Classes Cache.
-			$this->set_cache( $setting, $classes );
+			$this->set_transient( $setting, $classes );
 		}
 
 		// Echo or Return Classes.

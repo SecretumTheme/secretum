@@ -3,11 +3,11 @@
  * Display Text Translation Strings
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Trans
+ * @subpackage Core\Classes\Customizer\Translate
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-trans.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-translate.php
  * @since      1.0.0
  */
 
@@ -16,15 +16,22 @@ namespace Secretum;
 /**
  * Public Text Translation String Display
  *
- * @since 1.0.0
+ * @see  secretum_text()
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/template-functions.php
  *
- * @see  TransTrait
- * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
+ * @see  Trait_Translations
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-trait-translations.php
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-translations.php
+ *
+ * @since 1.0.0
  */
-class Trans {
-
-	// Default Text Strings.
-	use TransTrait;
+class Translate {
+	/**
+	 * Default Text Translation Strings.
+	 *
+	 * @since 1.0.0
+	 */
+	use Trait_Translations;
 
 	/**
 	 * Instance Object

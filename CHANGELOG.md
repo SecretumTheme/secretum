@@ -1,5 +1,11 @@
 # Changelog
 
+# 0.0.27
+**2019-02-16 - Hotfix**
+
+* Changed default settings to set on theme change if not set
+* Added partials to several Customizer settings
+
 # 0.0.26
 **2019-02-16 - Hotfix**
 

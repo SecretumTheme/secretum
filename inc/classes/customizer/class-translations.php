@@ -7,7 +7,7 @@
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/wp_customize/class-transcustomizer.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/wp_customize/class-translations.php
  * @since      1.0.0
  */
 
@@ -16,18 +16,20 @@ namespace Secretum;
 /**
  * Customizer Text Translations
  *
- * @since 1.0.0
+ * @param object $customizer Secretum Customizer Object.
  *
- * @see  TransTrait
+ * @see  Trait_Translations
  * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
  *
- * @param object $customizer Secretum Customizer Object.
+ * @since 1.0.0
  */
-class TransCustomizer {
-
-	// Labels & Default Text Strings.
-	use TransTrait;
-
+class Translations {
+	/**
+	 * Default Text Translation Strings.
+	 *
+	 * @since 1.0.0
+	 */
+	use Trait_Translations;
 
 	/**
 	 * Secretum Customizer Object
