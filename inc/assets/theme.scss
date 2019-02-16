@@ -67,19 +67,20 @@
 @import "bootstrap4/media";
 @import "bootstrap4/pagination";
 
-//@import "bootstrap4/jumbotron";
-//@import "secretum/jumbotron";
-//@import "bootstrap4/alert";
-//@import "secretum/alert";
-//@import "bootstrap4/card";
-//@import "bootstrap4/badge";
-//@import "bootstrap4/progress";
-//@import "bootstrap4/close";
-//@import "bootstrap4/modal";
-//@import "bootstrap4/tooltip";
-//@import "bootstrap4/popover";
-//@import "bootstrap4/carousel";
+@import "bootstrap4/jumbotron";
+@import "secretum/jumbotron";
 
+@import "bootstrap4/alert";
+@import "secretum/alert";
+
+@import "bootstrap4/card";
+@import "bootstrap4/badge";
+@import "bootstrap4/progress";
+@import "bootstrap4/close";
+@import "bootstrap4/modal";
+@import "bootstrap4/tooltip";
+@import "bootstrap4/popover";
+@import "bootstrap4/carousel";
 @import "bootstrap4/transitions";
 
 @import "secretum/header";

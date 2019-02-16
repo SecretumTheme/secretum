@@ -22,33 +22,33 @@ $customizer->panel(
 
 // Section.
 $customizer->section(
-	'analytics',
+	'javascript',
 	'extras',
-	__( 'Google Analytics', 'secretum' ),
+	__( 'Inject JavaScript <script>', 'secretum' ),
 	''
 );
 
 
 // Radio.
 $customizer->select(
-	'analytics',
-	'analytics_location',
-	__( 'Analytics Code Location', 'secretum' ),
+	'javascript',
+	'javascript_location',
+	__( 'JavaScript Code Location', 'secretum' ),
 	'',
-	$defaults['analytics_location'],
+	$defaults['javascript_location'],
 	[
-		'' 			=> __( 'Footer (best performance)', 'secretum' ),
-		'header' 	=> __( 'Header (best tracking)', 'secretum' ),
+		'' 			=> __( 'Footer (default)', 'secretum' ),
+		'header' 	=> __( 'Header', 'secretum' ),
 	]
 );
 
 
 // Textarea Script.
 $customizer->textarea_script(
-	'analytics',
-	'analytics_code',
-	__( 'Analytics Tracking Code', 'secretum' ),
-	__( 'Include all opening and closing script tags.', 'secretum' )
+	'javascript',
+	'javascript_script',
+	__( 'JavaScript <script> Code', 'secretum' ),
+	__( 'Include opening <script async src=""> and closing </script> script elments, the attributes "async" and "src" are allowed.', 'secretum' )
 );
 
 

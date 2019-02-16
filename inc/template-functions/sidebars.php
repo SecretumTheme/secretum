@@ -43,7 +43,7 @@ function secretum_sidebar_location( $location_check ) {
 	}
 
 	// No Sidebars Setup, Default To Right Location.
-	if ( true === empty( $global_location ) && true === empty( $local_location ) && 'right' === $location_check ) {
+	if ( true === empty( $sidebar_location ) && 'right' === $location_check ) {
 		return true;
 	}
 
