@@ -19,7 +19,7 @@ define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.26' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.27' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -184,7 +184,7 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	require_once SECRETUM_INC . '/customize/sections/extras.php';
 
 	// Text Translations.
-	$translate = new \Secretum\TransCustomizer( $wp_customize );
+	$translate = new \Secretum\Translations( $wp_customize );
 	$translate->settings();
 } );
 

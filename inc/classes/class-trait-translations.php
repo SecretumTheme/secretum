@@ -7,7 +7,7 @@
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-trait-translations.php
  * @since      1.0.0
  */
 
@@ -18,7 +18,7 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-trait TransTrait {
+trait Trait_Translations {
 	/**
 	 * Text Strings Labels & Default Values
 	 *

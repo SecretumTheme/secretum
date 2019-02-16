@@ -24,7 +24,6 @@ namespace Secretum;
 function secretum_customizer_text_colors() {
 	return [
 		'' 						=> __( 'Theme Default', 'secretum' ),
-		'none' 					=> __( 'Force No Color', 'secretum' ),
 		'color-primary-text' 	=> __( 'Primary Text Color', 'secretum' ),
 		'color-secondary-text' 	=> __( 'Secondary Text Color', 'secretum' ),
 		'color-primary'			=> __( 'Primary Theme Color', 'secretum' ),

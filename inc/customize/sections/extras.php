@@ -70,6 +70,12 @@ $customizer->checkbox(
 	$defaults['scrolltop_status']
 );
 
+// Partial.
+$customizer->partial(
+	'scrolltop_status',
+	'.scrolltop .scroll'
+);
+
 
 // Select.
 $customizer->select(

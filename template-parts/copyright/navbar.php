@@ -37,7 +37,7 @@ if ( true === has_nav_menu( 'secretum-navbar-copyright' ) && true !== secretum_m
 	] );
 ?>
 	</nav><!-- .navbar -->
-	</div><!-- .col-md -->;
+	</div><!-- .col-md -->
 
 <?php
 }

@@ -122,7 +122,7 @@ function secretum_customizer_site_identity_settings() {
 		'site_identity_title_textual_font_style' 			=> '',
 		'site_identity_title_textual_text_transform' 		=> '',
 		'site_identity_title_textual_text_color' 			=> '',
-		'site_identity_title_textual_link_color' 			=> 'color-primary-link',
+		'site_identity_title_textual_link_color' 			=> '',
 		'site_identity_title_textual_link_hover_color' 		=> '',
 		// Desc Container.
 		'site_identity_desc_container_background_color' 	=> '',
@@ -139,7 +139,7 @@ function secretum_customizer_site_identity_settings() {
 		'site_identity_desc_textual_font_size' 				=> '',
 		'site_identity_desc_textual_font_style' 			=> '',
 		'site_identity_desc_textual_text_transform' 		=> '',
-		'site_identity_desc_textual_text_color' 			=> 'color-secondary',
+		'site_identity_desc_textual_text_color' 			=> '',
 		'site_identity_desc_textual_link_color' 			=> '',
 		'site_identity_desc_textual_link_hover_color' 		=> '',
 	];

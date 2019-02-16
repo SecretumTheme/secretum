@@ -16,22 +16,22 @@ namespace Secretum;
 /**
  * Translation Text Display
  *
- * @since 1.0.0
+ * @param string $key Array Key To Get Value Of.
+ * @param bool   $echo True to return.
  *
- * @see class/customizer/class-trans.php
- * @see class/customizer/class-transcustomizer.php
- * @see class/customizer/class-transtrait.php
+ * @see class/customizer/class-translate.php
+ * @see class/customizer/class-translations.php
+ * @see class/customizer/class-trait-translations.php
  *
  * @example (echo) secretum_text( 'read_more_text', true );
  * @example (return) secretum_text( 'read_more_text' );
  *
- * @param string $key Array Key To Get Value Of.
- * @param bool   $echo True to return.
- *
  * @return string Text String
+ *
+ * @since 1.0.0
  */
 function secretum_text( $key = '', $echo = false ) {
-	$translate = \Secretum\Trans::instance();
+	$translate = \Secretum\Translate::instance();
 
 	// Required.
 	if ( false === empty( $key ) ) {
