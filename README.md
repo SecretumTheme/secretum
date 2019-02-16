@@ -33,7 +33,7 @@ The 'master' and 'develop' branches (Github releases) are stable, the most updat
 
 ## WordPress Install & Updates
 
-The 'wordpress' branch (WordPress releases) is the most stable release.
+The 'wordpress' branch (WordPress releases) mirrors the Github releases. The published version at WordPress.org is typically behind the WordPress release on Github.
 
 1) In your admin panel, go to Appearance -> Themes and click the 'Add New' button
 2) Type in Secretum in the search form and press the 'Enter' key in your keyboard
@@ -151,9 +151,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 0.0.26
+### 0.0.27
 * Released: 2018-16-02
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0026
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0027
 
 
 ## Licenses
