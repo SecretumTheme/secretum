@@ -80,9 +80,9 @@ Return to the Pages admin and customize the Front Page page as desired.
 
 == Changelog ==
 
-= 0.0.26 =
+= 0.0.27 =
 * Released: 2018-16-02
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0026
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0027
 
 
 == Licenses ==
