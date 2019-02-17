@@ -172,17 +172,3 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	$translate = new \Secretum\Customize_Translations( $wp_customize );
 	$translate->settings();
 } );
-
-
-// Secretum Updater Plugin.
-if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) === true ) {
-	if ( class_exists( 'Puc_v4p4_Autoloader' ) === false ) {
-		require_once SECRETUM_UPDATER;
-	}
-
-	$secretum_theme_updater = \Puc_v4_Factory::buildUpdateChecker(
-		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-		SECRETUM_THEME_FILE,
-		'secretum'
-	);
-}
