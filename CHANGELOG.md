@@ -1,5 +1,13 @@
 # Changelog
 
+# 0.0.28
+**2019-02-17 - Hotfix**
+
+* Corrected page templates wrapper, container, and edit page function calls
+* Corrected sidebar metabox not pre-selecting selected option after saving
+* Removed all but widget partials from customizer for greatly improved page speed
+* Renamed/moved a few classes to make them easier to read
+
 # 0.0.27
 **2019-02-16 - Hotfix**
 

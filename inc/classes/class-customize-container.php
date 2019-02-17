@@ -3,25 +3,29 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Wrapper
+ * @subpackage Core\Classes\Customize_Container
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-wrapper.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-container.php
  * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
- * Customizer Wrapper Grouping
- *
- * @since 1.0.0
+ * Customizer Container Grouping
  *
  * @param object $customizer Secretum Customizer Object.
  * @param array  $defaults   Default Settings Array.
+ *
+ * @see     functions.php
+ * @example $container = new \Secretum\Customize_Container( $customizer, $defaults );
+ *
+ * @since 1.0.0
  */
-class Wrapper {
+class Customize_Container {
+
 	/**
 	 * Secretum Customizer Object
 	 *
@@ -70,68 +74,81 @@ class Wrapper {
 			'section' 	=> '',
 			'panel' 	=> '',
 			'title' 	=> '',
+			'type' 		=> true,
 		] );
 
 		// Required.
 		if ( empty( $args['section'] ) ) {
-			wp_die( esc_html__( 'Section name is required in Wrapper $args array.', 'secretum' ) );
+			wp_die( esc_html__( 'Section name is required in Container $args array.', 'secretum' ) );
 		}
 
 		// Section.
 		$this->_customizer->section(
-			$args['section'] . '_wrapper',
-			$this->_panel( $args['section'], $args['panel'] ),
+			$args['section'] . '_container',
+			$this->_panels( $args['section'], $args['panel'] ),
 			$this->_title( $args['title'] ),
-			__( 'Wraps around all other containers, elements, and features related to this section.', 'secretum' )
+			__( 'A container that holds other related elements, features, content, etc. (Wrapper > Container > Other Stuff)', 'secretum' )
 		);
+
+		if ( true === $args['type'] ) {
+			// Radio.
+			$this->_customizer->radio(
+				$args['section'] . '_container',
+				$args['section'] . '_container_type',
+				__( 'Container Type', 'secretum' ),
+				'',
+				$this->_default[ $args['section'] . '_container_type' ],
+				secretum_customizer_container_types()
+			);
+		}
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_wrapper',
-			$args['section'] . '_wrapper_background_color',
+			$args['section'] . '_container',
+			$args['section'] . '_container_background_color',
 			__( 'Background Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_wrapper_background_color' ],
+			$this->_default[ $args['section'] . '_container_background_color' ],
 			secretum_customizer_background_colors()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_wrapper',
-			$args['section'] . '_wrapper_margin_top',
+			$args['section'] . '_container',
+			$args['section'] . '_container_margin_top',
 			__( 'Margin - Top', 'secretum' ),
-			__( 'Spacing outside/above the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_margin_top' ],
+			__( 'Spacing outside/above the container.', 'secretum' ),
+			$this->_default[ $args['section'] . '_container_margin_top' ],
 			secretum_customizer_margin_top()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_wrapper',
-			$args['section'] . '_wrapper_margin_bottom',
+			$args['section'] . '_container',
+			$args['section'] . '_container_margin_bottom',
 			__( 'Margin - Bottom', 'secretum' ),
-			__( 'Spacing outside/below the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_margin_bottom' ],
+			__( 'Spacing outside/below the container.', 'secretum' ),
+			$this->_default[ $args['section'] . '_container_margin_bottom' ],
 			secretum_customizer_margin_bottom()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_wrapper',
-			$args['section'] . '_wrapper_padding_y',
+			$args['section'] . '_container',
+			$args['section'] . '_container_padding_y',
 			__( 'Padding - Top & Bottom', 'secretum' ),
-			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_padding_y' ],
+			__( 'Spacing inside the container.', 'secretum' ),
+			$this->_default[ $args['section'] . '_container_padding_y' ],
 			secretum_customizer_padding_top_bottom()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_wrapper',
-			$args['section'] . '_wrapper_padding_x',
+			$args['section'] . '_container',
+			$args['section'] . '_container_padding_x',
 			__( 'Padding - Left & Right', 'secretum' ),
-			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_padding_x' ],
+			__( 'Spacing inside the container.', 'secretum' ),
+			$this->_default[ $args['section'] . '_container_padding_x' ],
 			secretum_customizer_padding_left_right()
 		);
 
@@ -149,7 +166,7 @@ class Wrapper {
 	 */
 	final private function _title( $title = '' ) {
 		if ( empty( $title ) ) {
-			$title = __( 'Wrapper', 'secretum' );
+			$title = __( 'Container', 'secretum' );
 		}
 
 		return $title;
@@ -167,7 +184,7 @@ class Wrapper {
 	 *
 	 * @return string Alt Section Title.
 	 */
-	final private function _panel( $section, $panel = '' ) {
+	final private function _panels( $section, $panel = '' ) {
 		if ( empty( $panel ) ) {
 			$panel = $section;
 		} else {
@@ -176,7 +193,6 @@ class Wrapper {
 
 		return $panel;
 
-	}//end _panel()
-
+	}//end _panels()
 
 }//end class

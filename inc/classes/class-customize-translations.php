@@ -3,11 +3,11 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\TransCustomizer
+ * @subpackage Core\Classes\Customize_Translations
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/wp_customize/class-translations.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-translations.php
  * @since      1.0.0
  */
 
@@ -18,12 +18,16 @@ namespace Secretum;
  *
  * @param object $customizer Secretum Customizer Object.
  *
+ * @see     functions.php
+ * @example $translate = new \Secretum\Customize_Translations( $wp_customize );
+ * @example $translate->settings();
+ *
  * @see  Trait_Translations
- * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-transtrait.php
+ * @link https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-trait-translations.php
  *
  * @since 1.0.0
  */
-class Translations {
+class Customize_Translations {
 	/**
 	 * Default Text Translation Strings.
 	 *

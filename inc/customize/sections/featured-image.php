@@ -39,13 +39,6 @@ $customizer->checkbox(
 );
 
 
-// Partial.
-$customizer->partial(
-	'featured_image_status',
-	'.featured-image-header'
-);
-
-
 // Select.
 $customizer->select(
 	'featured_image_display',
