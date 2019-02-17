@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.0.0
+**2019-02-17 - Release**
+
+* WordPress Release
+
 # 0.0.28
 **2019-02-17 - Hotfix**
 
