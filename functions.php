@@ -13,13 +13,12 @@
 
 namespace Secretum;
 
-
 // Constants.
 define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_VERSION', 	'0.0.27' );
+define( 'SECRETUM_THEME_VERSION', 	'0.0.28' );
 define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
@@ -32,9 +31,6 @@ define( 'SECRETUM_MENU_NAME', 		__( 'Theme Admin', 'secretum' ) );
 define( 'SECRETUM_PAGE_NAME', 		__( 'Secretum Theme', 'secretum' ) );
 define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' ) );
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
-
-
-
 
 
 /**
@@ -54,26 +50,15 @@ function secretum_register_classes( $class ) {
 		return;
 	}
 
-	// Base Dir For Namespace Prefix.
-	$base_dir = __DIR__ . '/inc/classes/';
-
-	// Class directories.
-	$class_paths = [
-		$base_dir,
-		$base_dir . 'customizer/',
-	];
-
 	// Build Class Name.
 	$relative_class = strtolower( str_replace( '_', '-', substr( $class, $len ) ) );
 
-	foreach ( $class_paths as $path ) {
-		// Replace Dir Separators and Replace Namespace with Base Dir.
-		$file = $path . 'class-' . str_replace( '\\', '/', $relative_class ) . '.php';
+	// Replace Dir Separators and Replace Namespace with Base Dir.
+	$file = __DIR__ . '/inc/classes/class-' . str_replace( '\\', '/', $relative_class ) . '.php';
 
-		// Include File.
-		if ( file_exists( $file ) === true ) {
-			require $file;
-		}
+	// Include File.
+	if ( true === file_exists( $file ) ) {
+		require $file;
 	}
 
 }//end secretum_register_classes()
@@ -105,7 +90,7 @@ if ( is_admin() ) {
 	// Initialize Admin Features.
 	add_action( 'admin_init', function() {
 		// Add Metabox Sidebars.
-		new MetaboxSidebars;
+		new Metabox_Sidebars;
 	} );
 
 	// Tiny Mce Editor Features.
@@ -159,13 +144,13 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	$defaults = secretum_customizer_default_settings();
 
 	// Start Secretum Customizer.
-	$customizer = new \Secretum\Customizer( $wp_customize );
-	$wrapper 	= new \Secretum\Wrapper( $customizer, $defaults );
-	$container 	= new \Secretum\Container( $customizer, $defaults );
-	$textuals 	= new \Secretum\Textuals( $customizer, $defaults );
-	$borders 	= new \Secretum\Borders( $customizer, $defaults );
-	$navitems 	= new \Secretum\NavItems( $customizer, $defaults );
-	$dropdown 	= new \Secretum\Dropdown( $customizer, $defaults );
+	$customizer = new \Secretum\Customize_Customizer( $wp_customize );
+	$wrapper 	= new \Secretum\Customize_Wrapper( $customizer, $defaults );
+	$container 	= new \Secretum\Customize_Container( $customizer, $defaults );
+	$textuals 	= new \Secretum\Customize_Textuals( $customizer, $defaults );
+	$borders 	= new \Secretum\Customize_Borders( $customizer, $defaults );
+	$navitems 	= new \Secretum\Customize_NavItems( $customizer, $defaults );
+	$dropdown 	= new \Secretum\Customize_Dropdown( $customizer, $defaults );
 
 	// Include Panels, Sections, and Settings.
 	require_once SECRETUM_INC . '/customize/sections/theme.php';
@@ -184,7 +169,7 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	require_once SECRETUM_INC . '/customize/sections/extras.php';
 
 	// Text Translations.
-	$translate = new \Secretum\Translations( $wp_customize );
+	$translate = new \Secretum\Customize_Translations( $wp_customize );
 	$translate->settings();
 } );
 

@@ -16,11 +16,11 @@ namespace Secretum;
 
 get_header();
 ?>
-<div class="wrapper<?php secretum_body_wrapper(); ?>" id="page-wrapper">
-	<div class="container<?php secretum_body_container(); ?> tpl-fullwidth-title-off" id="content" tabindex="-1">
+<div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="page-wrapper">
+	<div class="container<?php secretum_container( 'body' ); ?> tpl-fullwidth-title-off" id="content" tabindex="-1">
 		<div class="row">
-			<div class="col-md content-area" id="primary">
-				<main class="site-main" id="main">
+			<div class="col-md content-area<?php secretum_wrapper( 'entry' ); ?>" id="primary">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					while ( have_posts() ) {
 						the_post();

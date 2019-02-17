@@ -38,12 +38,6 @@ $customizer->select(
 	secretum_customizer_margin_alignments()
 );
 
-// Partial.
-$customizer->partial(
-	'copyright_nav_alignment',
-	'#navbarNavCopyright'
-);
-
 
 // Checkbox.
 $customizer->checkbox(

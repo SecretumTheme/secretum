@@ -3,11 +3,11 @@
  * WordPress Metaboxes
  *
  * @package    Secretum
- * @subpackage Core\Classes\MetaboxSidebars
+ * @subpackage Core\Classes\Metabox_Sidebars
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-metaboxsidebars.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-metabox-sidebars.php
  * @since      1.0.0
  */
 
@@ -18,7 +18,7 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-class MetaboxSidebars {
+class Metabox_Sidebars {
 	/**
 	 * Admin Area
 	 *
@@ -82,7 +82,7 @@ class MetaboxSidebars {
 		$meta_sidebars = get_post_meta( $post->ID, 'secretum_meta_sidebars', true );
 
 		// Set default values.
-		if ( empty( $meta_sidebars ) ) {
+		if ( true !== isset( $meta_sidebars ) || true === empty( $meta_sidebars ) ) {
 			$meta_sidebars = '';
 		}
 
@@ -93,11 +93,11 @@ class MetaboxSidebars {
 			<tr>
 				<td>
 					<select id="secretum_meta_sidebars" name="secretum_meta_sidebars" class="meta_sidebars_field">
-					<option value="" <?php selected( $meta_sidebars, '', false ); ?>> <?php esc_html_e( 'Default / Template', 'secretum' ); ?>
-					<option value="none" <?php selected( $meta_sidebars, 'none', false ); ?>> <?php esc_html_e( 'No Sidebars', 'secretum' ); ?>
-					<option value="left" <?php selected( $meta_sidebars, 'left', false ); ?>> <?php esc_html_e( 'Left Sidebar', 'secretum' ); ?>
-					<option value="right" <?php selected( $meta_sidebars, 'right', false ); ?>> <?php esc_html_e( 'Right Sidebar', 'secretum' ); ?>
-					<option value="both" <?php selected( $meta_sidebars, 'both', false ); ?>> <?php esc_html_e( 'Both Sidebars', 'secretum' ); ?>
+					<option value="" <?php selected( $meta_sidebars, '' ); ?>> <?php esc_html_e( 'Default / Template', 'secretum' ); ?>
+					<option value="none" <?php selected( $meta_sidebars, 'none' ); ?>> <?php esc_html_e( 'No Sidebars', 'secretum' ); ?>
+					<option value="left" <?php selected( $meta_sidebars, 'left' ); ?>> <?php esc_html_e( 'Left Sidebar', 'secretum' ); ?>
+					<option value="right" <?php selected( $meta_sidebars, 'right' ); ?>> <?php esc_html_e( 'Right Sidebar', 'secretum' ); ?>
+					<option value="both" <?php selected( $meta_sidebars, 'both' ); ?>> <?php esc_html_e( 'Both Sidebars', 'secretum' ); ?>
 					</select>
 				</td>
 			</tr>

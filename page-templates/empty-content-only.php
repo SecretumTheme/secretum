@@ -28,7 +28,7 @@ namespace Secretum;
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
-<body class="tpl-content-only">
+<body <?php body_class( 'tpl-content-only' ); ?>>
 
 	<?php while ( have_posts() ) { the_post(); ?>
 		<?php get_template_part( 'template-parts/post/content', 'blank' ); ?>

@@ -35,7 +35,7 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-trait Trait_transient {
+trait Trait_Transient {
 	/**
 	 * Get Transient Transient
 	 *

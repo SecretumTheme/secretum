@@ -3,30 +3,33 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Dropdown
+ * @subpackage Core\Classes\Customize_NavItems
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-dropdown.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-navitems.php
  * @since      1.0.0
  */
 
 namespace Secretum;
 
 /**
- * Customizer Dropdown Menu Grouping
- *
- * @since 1.0.0
+ * Customizer NavItems Grouping
  *
  * @param object $customizer Secretum Customizer Object.
  * @param array  $defaults   Default Settings Array.
+ *
+ * @see     functions.php
+ * @example $navitems = new \Secretum\Customize_NavItems( $customizer, $defaults );
+ *
+ * @since 1.0.0
  */
-class Dropdown {
+class Customize_NavItems {
 	/**
 	 * Secretum Customizer Object
 	 *
 	 * @since 1.0.0
-	 * @var object $_customizer
+	 * @var array $_customizer
 	 */
 	private $_customizer;
 
@@ -67,79 +70,89 @@ class Dropdown {
 	final public function settings( array $args ) {
 		// Build Args.
 		$args = wp_parse_args( $args, [
-			'section' => '',
+			'section' 	=> '',
 		] );
 
 		// Required.
 		if ( empty( $args['section'] ) ) {
-			wp_die( esc_html__( 'Section name is required in Dropdown $args array.', 'secretum' ) );
+			wp_die( esc_html__( 'Section name is required in NavItems $args array.', 'secretum' ) );
 		}
 
 		// Section.
 		$this->_customizer->section(
-			$args['section'] . '_dropdown',
+			$args['section'] . '_items',
 			$args['section'],
-			__( 'Dropdown Container', 'secretum' ),
-			__( 'Customize the properties of menus dropdown.', 'secretum' )
+			__( 'Menu Items', 'secretum' ),
+			__( 'Customize the properties of items within the menu.', 'secretum' )
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_background_color',
+			$args['section'] . '_items',
+			$args['section'] . '_items_text_alignment',
+			__( 'Text Alignment', 'secretum' ),
+			'',
+			$this->_default[ $args['section'] . '_items_text_alignment' ],
+			secretum_customizer_text_alignments()
+		);
+
+		// Select.
+		$this->_customizer->select(
+			$args['section'] . '_items',
+			$args['section'] . '_items_background_color',
 			__( 'Background Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_dropdown_background_color' ],
+			$this->_default[ $args['section'] . '_items_background_color' ],
 			secretum_customizer_background_colors()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_background_hover_color',
+			$args['section'] . '_items',
+			$args['section'] . '_items_background_hover_color',
 			__( 'Background Hover Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_dropdown_background_hover_color' ],
+			$this->_default[ $args['section'] . '_items_background_hover_color' ],
 			secretum_customizer_background_hover_colors()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_margin_y',
+			$args['section'] . '_items',
+			$args['section'] . '_items_margin_y',
 			__( 'Margin - Top & Bottom', 'secretum' ),
 			__( 'Spacing outside/around the container.', 'secretum' ),
-			$this->_default[ $args['section'] . '_dropdown_margin_y' ],
+			$this->_default[ $args['section'] . '_items_margin_y' ],
 			secretum_customizer_margin_top_bottom()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_margin_x',
+			$args['section'] . '_items',
+			$args['section'] . '_items_margin_x',
 			__( 'Margin - Left & Right', 'secretum' ),
 			__( 'Spacing outside/around the container.', 'secretum' ),
-			$this->_default[ $args['section'] . '_dropdown_margin_x' ],
+			$this->_default[ $args['section'] . '_items_margin_x' ],
 			secretum_customizer_margin_left_right()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_padding_y',
+			$args['section'] . '_items',
+			$args['section'] . '_items_padding_y',
 			__( 'Padding - Top & Bottom', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
-			$this->_default[ $args['section'] . '_dropdown_padding_y' ],
+			$this->_default[ $args['section'] . '_items_padding_y' ],
 			secretum_customizer_padding_top_bottom()
 		);
 
 		// Select.
 		$this->_customizer->select(
-			$args['section'] . '_dropdown',
-			$args['section'] . '_dropdown_padding_x',
+			$args['section'] . '_items',
+			$args['section'] . '_items_padding_x',
 			__( 'Padding - Left & Right', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
-			$this->_default[ $args['section'] . '_dropdown_padding_x' ],
+			$this->_default[ $args['section'] . '_items_padding_x' ],
 			secretum_customizer_padding_left_right()
 		);
 

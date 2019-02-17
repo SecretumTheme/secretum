@@ -47,8 +47,8 @@ $customizer->select(
 $customizer->textarea_script(
 	'javascript',
 	'javascript_script',
-	__( 'JavaScript <script> Code', 'secretum' ),
-	__( 'Include opening <script async src=""> and closing </script> script elments, the attributes "async" and "src" are allowed.', 'secretum' )
+	__( 'JavaScript < script > Code', 'secretum' ),
+	__( 'Include opening < script async src="" > and closing </script> script elments, the attributes "async" and "src" are allowed.', 'secretum' )
 );
 
 
@@ -68,12 +68,6 @@ $customizer->checkbox(
 	__( 'Hide Scroll To Top Icon', 'secretum' ),
 	__( 'Select to disable the scroll to top icon.', 'secretum' ),
 	$defaults['scrolltop_status']
-);
-
-// Partial.
-$customizer->partial(
-	'scrolltop_status',
-	'.scrolltop .scroll'
 );
 
 

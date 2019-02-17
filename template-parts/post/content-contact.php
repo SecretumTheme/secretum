@@ -24,6 +24,6 @@ namespace Secretum;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php secretum_edit_link(); ?>
+		<?php secretum_edit_link( get_the_ID() ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

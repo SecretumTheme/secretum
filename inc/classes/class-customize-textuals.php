@@ -3,11 +3,11 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Textuals
+ * @subpackage Core\Classes\aCustomize_Textuals
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-textuals.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-textuals.php
  * @since      1.0.0
  */
 
@@ -16,12 +16,15 @@ namespace Secretum;
 /**
  * Customizer Textuals Grouping
  *
- * @since 1.0.0
- *
  * @param object $customizer Secretum Customizer Object.
  * @param array  $defaults   Default Settings Array.
+ *
+ * @see     functions.php
+ * @example $textuals = new \Secretum\Customize_Textuals( $customizer, $defaults );
+ *
+ * @since 1.0.0
  */
-class Textuals {
+class Customize_Textuals {
 	/**
 	 * Secretum Customizer Object
 	 *
