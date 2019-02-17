@@ -96,15 +96,6 @@ $wp_customize->add_control( 'blogname', [
 	'priority'  => 10,
 ] );
 
-$wp_customize->selective_refresh->add_partial( 'blogname',
-	[
-	'settings'				=> [ 'blogname' ],
-	'selector' 				=> '.navbar-brand a',
-	'render_callback' 		=> '\Secretum\secretum_customizer_blog_name',
-	'container_inclusive' 	=> false,
-	'fallback_refresh' 		=> true,
-	]
-);
 
 // Setting :: Tagline.
 $wp_customize->add_setting( 'blogdescription', [
@@ -121,14 +112,6 @@ $wp_customize->add_control( 'blogdescription', [
 	'label'	 	=> __( 'Tagline', 'secretum' ),
 	'section'   => 'secretum_site_identity_branding_section',
 	'priority'  => 10,
-] );
-
-$wp_customize->selective_refresh->add_partial( 'blogdescription', [
-	'settings'				=> [ 'blogdescription' ],
-	'selector' 				=> '.site-description',
-	'render_callback' 		=> '\Secretum\secretum_customizer_blog_desc',
-	'container_inclusive' 	=> false,
-	'fallback_refresh' 		=> true,
 ] );
 
 

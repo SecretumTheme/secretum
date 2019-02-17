@@ -26,7 +26,8 @@ namespace Secretum;
 				 )
 			);
 
-			secretum_edit_link();
+			// Edit Link.
+			secretum_edit_link( get_the_ID() );
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

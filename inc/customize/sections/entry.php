@@ -48,12 +48,6 @@ $customizer->checkbox(
 	$defaults['entry_meta_published_status']
 );
 
-// Partial.
-$customizer->partial(
-	'entry_meta_published_status',
-	'.entry-date'
-);
-
 
 // Radio.
 $customizer->radio(
@@ -80,12 +74,6 @@ $customizer->checkbox(
 	$defaults['entry_meta_updated_status']
 );
 
-// Partial.
-$customizer->partial(
-	'entry_meta_updated_status',
-	'.updated'
-);
-
 
 // Checkbox.
 $customizer->checkbox(
@@ -94,12 +82,6 @@ $customizer->checkbox(
 	__( 'Hide Author Name', 'secretum' ),
 	'',
 	$defaults['entry_meta_author_status']
-);
-
-// Partial.
-$customizer->partial(
-	'entry_meta_author_status',
-	'.byline'
 );
 
 
@@ -125,12 +107,6 @@ $customizer->checkbox(
 	$defaults['entry_meta_catlinks_status']
 );
 
-// Partial.
-$customizer->partial(
-	'entry_meta_catlinks_status',
-	'.cat-links'
-);
-
 
 // Checkbox.
 $customizer->checkbox(
@@ -139,12 +115,6 @@ $customizer->checkbox(
 	__( 'Hide Tag Links', 'secretum' ),
 	'',
 	$defaults['entry_meta_tagslinks_status']
-);
-
-// Partial.
-$customizer->partial(
-	'entry_meta_tagslinks_status',
-	'.tags-links'
 );
 
 
@@ -157,12 +127,6 @@ $customizer->checkbox(
 	$defaults['entry_meta_commentlink_status']
 );
 
-// Partial.
-$customizer->partial(
-	'entry_meta_commentlink_status',
-	'.comments-link'
-);
-
 
 // Checkbox.
 $customizer->checkbox(
@@ -171,12 +135,6 @@ $customizer->checkbox(
 	__( 'Hide Post Navigation Links', 'secretum' ),
 	__( 'Previous & Next Post Links.', 'secretum' ),
 	$defaults['entry_meta_post_navigation_links']
-);
-
-// Partial.
-$customizer->partial(
-	'entry_meta_post_navigation_links',
-	'.nav-links'
 );
 
 

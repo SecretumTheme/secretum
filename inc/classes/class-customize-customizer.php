@@ -3,11 +3,11 @@
  * Wordpress Customizer Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Customizer
+ * @subpackage Core\Classes\Customize_Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-customizer.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-customizer.php
  * @since      1.0.0
  */
 
@@ -16,11 +16,14 @@ namespace Secretum;
 /**
  * Initilize Customizer Features
  *
- * @since 1.0.0
- *
  * @param object $wp_customize WP_Customize_Manager Instance.
+ *
+ * @see     functions.php
+ * @example $customizer = new \Secretum\Customize_Customizer( $wp_customize );
+ *
+ * @since 1.0.0
  */
-class Customizer {
+class Customize_Customizer {
 	/**
 	 * WP_Customize_Manager Instance
 	 *

@@ -38,12 +38,6 @@ $customizer->select(
 	secretum_customizer_margin_alignments()
 );
 
-// Partial.
-$customizer->partial(
-	'primary_nav_alignment',
-	'#main-menu'
-);
-
 
 // Checkbox.
 $customizer->checkbox(
@@ -144,13 +138,6 @@ $customizer->select(
 );
 
 
-// Partial.
-$customizer->partial(
-	'primary_nav_toggler_icon',
-	'.navbar-toggler-icon'
-);
-
-
 // Select.
 $customizer->select(
 	'primary_nav_toggler',
@@ -219,13 +206,6 @@ if ( true === secretum_is_woocomerce() ) {
 		'',
 		$defaults['primary_nav_cart_link_padding_t'],
 		secretum_customizer_padding_top()
-	);
-
-
-	// Partial.
-	$customizer->partial(
-		'primary_nav_cart_link_padding_t',
-		'#woocommerce-cart-icon'
 	);
 
 

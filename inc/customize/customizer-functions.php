@@ -49,7 +49,7 @@ function secretum_customizer_refresh() {
  * @return false
  */
 function secretum_customizer_reset( $value = '' ) {
-	if ( empty( $value ) === false && 'RESET' === $value ) {
+	if ( false === empty( $value ) && 'RESET' === $value ) {
 		// Delete Settings.
 		delete_option( 'secretum' );
 	}

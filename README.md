@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
 * **Tested up to:** 5.0.4
-* **Version:** 0.0.27
+* **Version:** 0.0.28
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.23html
 * **Tags:** one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, sticky-post, full-width-template, threaded-comments, theme-options, blog, e-commerce, translation-ready
@@ -23,17 +23,19 @@ Secretum is a highly customizable fluid-responsive multipurpose WordPress theme 
 
 ## Github Install & Updates
 
-The 'master' and 'develop' branches (Github releases) are stable, the most updated, and will contain the newest features. The 'wordpress' branch (WordPress releases) is the most stable release and will typically lag several versions behind the Github releases unless a bug or issue was found that effects both releases. Updates for Github releases work exactly like any other WordPress theme, other than the theme zip file comes from the Github repo instead of WordPress.
+Once installed Secretum will update exactly like any other WordPress theme, other than the update will come from Github.
 
-1) Open [releases](https://github.com/SecretumTheme/secretum/releases) and download the current version of Secretum
-2) Unzip the secretum-#.#.#.zip file, rename the directory to 'secretum' (all lowercase), then re-zip the secretum directory naming the zip file secretum.zip
+1) Open [releases](https://github.com/SecretumTheme/secretum/releases) and download the current version of Secretum Github Release
+2) Unzipthe secretum-#.#.#.zip file and open, rename the (secretum-#.#.#) directory to 'secretum' (all lowercase), then re-zip the secretum directory naming the zip file secretum.zip
 3) In your admin panel, go to Appearance -> Themes and click the 'Add New' button, then click the Upload Theme button and upload the secretu.zip file
 4) Click on the 'Activate' button to use Secretum
 
 
 ## WordPress Install & Updates
 
-The 'wordpress' branch (WordPress releases) mirrors the Github releases. The published version at WordPress.org is typically behind the WordPress release on Github.
+The 'wordpress' branch is a mirror of the 'master' and 'develop' branches with the Github updater removed.
+
+The best way to install the WordPress release of Secretum is through the WordPress admin.
 
 1) In your admin panel, go to Appearance -> Themes and click the 'Add New' button
 2) Type in Secretum in the search form and press the 'Enter' key in your keyboard
@@ -151,9 +153,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 0.0.27
-* Released: 2018-16-02
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0027
+### 0.0.28
+* Released: 2018-17-02
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0028
 
 
 ## Licenses

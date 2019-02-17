@@ -36,11 +36,6 @@ $customizer->checkbox(
 	$defaults['frontpage_header_status']
 );
 
-// Partial.
-$customizer->partial(
-	'frontpage_header_status',
-	'.frontpage-heading'
-);
 
 // Background Image.
 $customizer->background_image(

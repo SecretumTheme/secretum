@@ -213,5 +213,5 @@ add_action( 'after_switch_theme', function() {
 			'scrolltop_container_padding_y'					=> 'py-2',
 			'scrolltop_container_border_radius'				=> 'rounded-circle',
 		] );
-	}
+	}// End if().
 } );

@@ -3,11 +3,11 @@
  * Secretum Customizer Settings Interface
  *
  * @package    Secretum
- * @subpackage Core\Classes\Customizer\Borders
+ * @subpackage Core\Classes\Customize_Borders
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/customizer/class-borders.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-customize-borders.php
  * @since      1.0.0
  */
 
@@ -16,12 +16,15 @@ namespace Secretum;
 /**
  * Customizer Borders Grouping
  *
- * @since 1.0.0
- *
  * @param object $customizer Secretum Customizer Object.
  * @param array  $defaults   Default Settings Array.
+ *
+ * @see     functions.php
+ * @example $borders = new \Secretum\Customize_Borders( $customizer, $defaults );
+ *
+ * @since 1.0.0
  */
-class Borders {
+class Customize_Borders {
 	/**
 	 * Secretum Customizer Object
 	 *
