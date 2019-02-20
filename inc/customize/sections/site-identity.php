@@ -19,6 +19,28 @@ $customizer->panel(
 	__( 'Site Identity', 'secretum' )
 );
 
+// Display Title/Tag Lines.
+$wp_customize->add_section( 'colors', array(
+	'panel' 		=> 'site_identity',
+	'title' 		=> __( 'Display Site Title and Tagline', 'secretum' ),
+	'priority' 		=> 40,
+) );
+
+$wp_customize->add_control( 'display_header_text', array(
+	'settings' 		=> 'header_textcolor',
+	'label'    		=> __( 'Display Site Title and Tagline', 'secretum' ),
+	'section'  		=> 'colors',
+	'type'     		=> 'checkbox',
+	'priority' 		=> 40,
+) );
+
+$wp_customize->add_setting( 'header_textcolor', array(
+	'theme_supports' 		=> array( 'custom-header', 'header-text' ),
+	'default'        		=> get_theme_support( 'custom-header', 'default-text-color' ),
+	'sanitize_callback'    	=> 'absint',
+	'sanitize_js_callback' 	=> 'maybe_hash_hex_color',
+) );
+
 
 // Section.
 $customizer->section(

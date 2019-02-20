@@ -35,7 +35,7 @@ add_action( 'secretum_after_header', 'Secretum\secretum_after_header' );
  * @since 1.0.0
  */
 function secretum_render_brand_logo() {
-	$href_link 			= esc_url( get_home_url( '/' ) );
+	$href_link 			= esc_url( SECRETUM_BASE_URL );
 	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
 	$blog_name 			= esc_html( get_bloginfo( 'name' ) );
 	$href_title 		= esc_html( get_bloginfo( 'description' ) );
@@ -81,7 +81,7 @@ function secretum_render_brand_logo() {
  */
 function secretum_render_heading_logo() {
 	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
-	$href_link 			= esc_url( get_home_url( '/' ) );
+	$href_link 			= esc_url( SECRETUM_BASE_URL );
 	$textuals_classes 	= trim( secretum_textual( 'site_identity_title', 'return' ) );
 	$href_title 		= get_bloginfo( 'description' );
 	$blog_name 			= get_bloginfo( 'name' );
@@ -112,7 +112,7 @@ function secretum_render_heading_logo() {
  * @since 1.0.0
  */
 function secretum_render_link_logo() {
-	$href_link 			= esc_url( get_home_url( '/' ) );
+	$href_link 			= esc_url( SECRETUM_BASE_URL );
 	$container_classes 	= secretum_container( 'site_identity_title', 'return' );
 	$textuals_classes 	= trim( secretum_textual( 'site_identity_title', 'return' ) );
 	$href_title 		= get_bloginfo( 'description' );

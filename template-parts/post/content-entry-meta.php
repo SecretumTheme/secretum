@@ -40,7 +40,7 @@ if ( 'post' === get_post_type() ) {
 						secretum_icon( [
 							'fi' => 'clock',
 							'fa' => 'fa-clock-o',
-						] ); ?> <a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark"><time class="entry-date published updated" datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></a>
+						] ); ?> <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><time class="entry-date published updated" datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></a>
 
 					<?php } else { ?>
 						<?php

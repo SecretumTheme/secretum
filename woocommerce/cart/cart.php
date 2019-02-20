@@ -70,7 +70,7 @@ do_action( 'woocommerce_before_cart' );
 							}
 							?>
 							</td>
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'secretum' ); ?>">
+							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'secretum' ); ?>">
 							<?php
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' ); // PHPCS: XSS ok.
@@ -90,12 +90,12 @@ do_action( 'woocommerce_before_cart' );
 
 							?>
 							</td>
-							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'secretum' ); ?>">
+							<td class="product-price" data-title="<?php esc_html_e( 'Price', 'secretum' ); ?>">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 								?>
 							</td>
-							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'secretum' ); ?>">
+							<td class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'secretum' ); ?>">
 							<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -113,7 +113,7 @@ do_action( 'woocommerce_before_cart' );
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 							?>
 							</td>
-							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'secretum' ); ?>">
+							<td class="product-subtotal" data-title="<?php esc_html_e( 'Total', 'secretum' ); ?>">
 
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
@@ -131,17 +131,17 @@ do_action( 'woocommerce_before_cart' );
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon row">
 							<div class="col-xs pr-2">
-								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'secretum' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'secretum' ); ?>" />
+								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'secretum' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'secretum' ); ?>" />
 							</div>
 							<div class="col-xs">
-								<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'secretum' ); ?>"><?php esc_attr_e( 'Apply coupon', 'secretum' ); ?></button>
+								<button type="submit" class="button" name="apply_coupon" value="<?php esc_html_e( 'Apply coupon', 'secretum' ); ?>"><?php esc_html_e( 'Apply coupon', 'secretum' ); ?></button>
 							</div>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 					</td>
 					<td colspan="2" class="actions">
-						<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'secretum' ); ?>"><?php esc_html_e( 'Update cart', 'secretum' ); ?></button>
+						<button type="submit" class="button" name="update_cart" value="<?php esc_html_e( 'Update cart', 'secretum' ); ?>"><?php esc_html_e( 'Update cart', 'secretum' ); ?></button>
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 

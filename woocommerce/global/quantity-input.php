@@ -34,7 +34,7 @@ if ( $max_value && $min_value === $max_value ) { ?>
 			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 			name="<?php echo esc_attr( $input_name ); ?>"
 			value="<?php echo esc_attr( $input_value ); ?>"
-			title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'secretum' ); ?>"
+			title="<?php echo esc_html_x( 'Qty', 'Product quantity input tooltip', 'secretum' ); ?>"
 			size="4"
 			pattern="<?php echo esc_attr( $pattern ); ?>"
 			inputmode="<?php echo esc_attr( $inputmode ); ?>"

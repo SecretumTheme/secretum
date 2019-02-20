@@ -14,12 +14,11 @@
 namespace Secretum;
 
 // Constants.
+define( 'SECRETUM_THEME_VERSION', 	'1.1.1' );
+
 define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
-
-define( 'SECRETUM_THEME_VERSION', 	'1.1.0' );
-define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
 define( 'SECRETUM_THEME_DIR', 		dirname( __FILE__ ) );
@@ -31,6 +30,10 @@ define( 'SECRETUM_MENU_NAME', 		__( 'Theme Admin', 'secretum' ) );
 define( 'SECRETUM_PAGE_NAME', 		__( 'Secretum Theme', 'secretum' ) );
 define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' ) );
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
+
+
+// PHP & WordPress Version Compare Checks.
+require_once SECRETUM_INC . '/versions.php';
 
 
 /**
@@ -84,6 +87,7 @@ require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-classes.php';
 
+
 // Include Tiny Mce Editor Features.
 if ( true === is_admin() && false === is_customize_preview() ) {
 	require_once SECRETUM_INC . '/editor.php';
@@ -124,10 +128,6 @@ add_action( 'widgets_init', 'Secretum\secretum_widgets_init' );
  * @since 1.0.0
  */
 function secretum_customize_register( $wp_customize ) {
-	// Remove Sections.
-	$wp_customize->remove_section( 'colors' );
-	$wp_customize->remove_section( 'title_tagline' );
-
 	// Sanitizers and Helper Functions.
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';
 

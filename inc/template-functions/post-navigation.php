@@ -23,9 +23,9 @@ namespace Secretum;
  * Removes next html on first post
  * Filters HTML through wp_kses()
  *
- * @since 1.0.0
- *
  * @todo Move to class.
+ *
+ * @since 1.0.0
  */
 function secretum_post_navigation() {
 	// Get Prev/Next Post Objects.
@@ -33,9 +33,9 @@ function secretum_post_navigation() {
 	$next_post = get_next_post();
 
 	// Text Strings.
-	$text_heading 	= __( 'Post navigation', 'secretum' );
-	$text_prev 		= __( 'Previous Post', 'secretum' );
-	$text_next 		= __( 'Next Post', 'secretum' );
+	$text_heading 	= secretum_text( 'post_navigation_screenreader' );
+	$text_prev 		= secretum_text( 'post_navigation_prev_text' );
+	$text_next 		= secretum_text( 'post_navigation_next_text' );
 
 	// Prev Post Link & Title.
 	if ( true === isset( $prev_post->ID ) && true === isset( $prev_post->post_title ) ) {

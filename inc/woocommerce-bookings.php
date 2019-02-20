@@ -126,9 +126,9 @@ function secretum_wc_bookings_get_time_slots_html( $block_html, $available_block
 		if ( $quantity['available'] > 0 ) {
 			if ( $quantity['booked'] ) {
 				/* translators: 1: quantity available */
-				$block_html .= '<li class="block" data-block="' . esc_attr( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . ' <small class="booking-spaces-left">( ' . sprintf( __( '%d Remain', 'secretum' ), $quantity['available'] ) . ' )</small></a></li>';
+				$block_html .= '<li class="block" data-block="' . esc_html( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . ' <small class="booking-spaces-left">( ' . sprintf( __( '%d Remain', 'secretum' ), $quantity['available'] ) . ' )</small></a></li>';
 			} else {
-				$block_html .= '<li class="block" data-block="' . esc_attr( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . '</a></li>';
+				$block_html .= '<li class="block" data-block="' . esc_html( date( 'Hi', $block ) ) . '"><a href="#" data-value="' . date( 'G:i', $block ) . '">' . date_i18n( get_option( 'time_format' ), $block ) . '</a></li>';
 			}
 		}
 	}
@@ -202,19 +202,6 @@ function secretum_woocommerce_order_button_text( $order_button_text ) {
 }//end secretum_woocommerce_order_button_text()
 
 add_filter( 'woocommerce_order_button_text', 'Secretum\secretum_woocommerce_order_button_text' );
-
-
-/**
- * Modify Add To Cart Message
- *
- * @since 1.0.0
- */
-function secretum_no_add_to_cart_message_html() {
-	return;
-
-}//end secretum_no_add_to_cart_message_html()
-
-add_filter( 'no_add_to_cart_message_html', 'Secretum\secretum_no_add_to_cart_message_html' );
 
 
 /**

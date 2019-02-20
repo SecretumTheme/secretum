@@ -48,7 +48,7 @@ if ( ! $load_address ) {
 			<input type="hidden" name="action" value="edit_address" />
 
 			<p class="form-group mt-5 mb-5">
-				<button type="submit" class="btn btn-primary btn-lg" name="save_address" value="<?php esc_attr_e( 'Save address', 'secretum' ); ?>"><?php esc_html_e( 'Save address', 'secretum' ); ?></button>
+				<button type="submit" class="btn btn-primary btn-lg" name="save_address" value="<?php esc_html_e( 'Save address', 'secretum' ); ?>"><?php esc_html_e( 'Save address', 'secretum' ); ?></button>
 			</p>
 		</div>
 	</form>

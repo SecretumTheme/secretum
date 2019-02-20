@@ -13,32 +13,6 @@
 
 namespace Secretum;
 
-
-/**
- * Customizer Refresh Icon
- *
- * @since 1.0.0
- */
-function secretum_customizer_refresh() {
-	echo wp_kses(
-		'<a href="javascript:void(0);" onclick="document.location.reload(true)" title="' . __( 'Refresh Preview', 'secretum' ) . '"><i class="secretum-customizer-icon fi-refresh" aria-hidden="true"></i></a>',
-		[
-			'a' => [
-				'href' 			=> true,
-				'onclick' 		=> true,
-				'title' 		=> true,
-			],
-			'i' => [
-				'class' 		=> true,
-				'aria-hidden' 	=> true,
-			],
-		],
-		'javascript'
-	);
-
-}//end secretum_customizer_refresh()
-
-
 /**
  * Reset Customzer Settings
  *

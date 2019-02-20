@@ -1,9 +1,6 @@
 *~
-*.db
-*.log
-*.tgz
-*.zip
-
+.db
+.log
 .git
 .sass-cache
 .svn
@@ -12,20 +9,17 @@
 .Trash-*
 
 access_log
-config.rb
 error_log
+config.rb
 phpunit.xml
 readme.html
 README.html
 composer.phar
 CONTRIBUTING.md
 TODO.md
+stage.sh
 
 node_modules/*
 vendor/*
 assets/*
 psds/*
-
-stage.sh
-styles.sh
-sync.sh

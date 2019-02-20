@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', 'Secretum\secretum_after_setup_theme' );
  * @since 1.0.0
  */
 function secretum_get_product_search_form() {
-	return '<form method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" role="search">
+	return '<form method="get" id="searchform" action="' . SECRETUM_BASE_URL . '/" role="search">
 	<div class="input-group">
 		<label class="screen-reader-text" for="s">' . esc_html__( 'Search for', 'secretum' ) . '</label>
 		<input class="field form-control" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_html__( 'Search products...', 'secretum' ) . '" />
@@ -80,8 +80,8 @@ function secretum_woocommerce_get_script_data( $params, $handle ) {
 		case 'wc-password-strength-meter':
 			$params = [
 				'min_password_strength' => apply_filters( 'woocommerce_min_password_strength', 1 ),
-				'i18n_password_error'   => apply_filters( 'secretum_password_error_text', esc_attr__( 'Create a Secure Password You Will Remember.', 'secretum' ) ),
-				'i18n_password_hint'	=> apply_filters( 'secretum_password_hint_text', esc_attr__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
+				'i18n_password_error'   => apply_filters( 'secretum_password_error_text', esc_html__( 'Create a Secure Password You Will Remember.', 'secretum' ) ),
+				'i18n_password_hint'	=> apply_filters( 'secretum_password_hint_text', esc_html__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
 			];
 	}
 
@@ -99,14 +99,14 @@ add_filter( 'woocommerce_get_script_data', 'Secretum\secretum_woocommerce_get_sc
  */
 function secretum_woo_enqueue_scripts() {
 	wp_localize_script( 'wc-password-strength-meter', 'pwsL10n', [
-		'short' 	=> apply_filters( 'secretum_password_strength_short_text', esc_attr__( 'Keep Going! ', 'secretum' ) ),
-		'bad' 		=> apply_filters( 'secretum_password_strength_bad_text', esc_attr__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
-		'good' 		=> apply_filters( 'secretum_password_strength_good_text', esc_attr__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
-		'strong' 	=> apply_filters( 'secretum_password_strength_strong_text', esc_attr__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
-		'mismatch' 	=> apply_filters( 'secretum_password_mismatch_text', esc_attr__( 'Passwords Do Not Match! ', 'secretum' ) ),
+		'short' 	=> apply_filters( 'secretum_password_strength_short_text', esc_html__( 'Keep Going! ', 'secretum' ) ),
+		'bad' 		=> apply_filters( 'secretum_password_strength_bad_text', esc_html__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
+		'good' 		=> apply_filters( 'secretum_password_strength_good_text', esc_html__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
+		'strong' 	=> apply_filters( 'secretum_password_strength_strong_text', esc_html__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
+		'mismatch' 	=> apply_filters( 'secretum_password_mismatch_text', esc_html__( 'Passwords Do Not Match! ', 'secretum' ) ),
 	] );
 
-}//end secretum_wp_enqueue_scripts()
+}//end secretum_woo_enqueue_scripts()
 
 add_action( 'wp_enqueue_scripts',  'Secretum\secretum_woo_enqueue_scripts', 9999 );
 
@@ -286,79 +286,3 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 	);
 
 }//end secretum_wc_dropdown_variation_attribute_options()
-
-
-/**
- * WooCommerce Filter Hook - Update Cart Icon
- *
- * @since 1.0.0
- *
- * @param array $fragments Cart fragments.
-add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
-
-	//$fragments['li.menu-item-type-woocommerce-cart'] = my_wp_nav_menu_items( '', new stdClass(), true );
-
-	return $fragments;
-
-}, 10, 1 );
- */
-
-
-/**
- * WooCommerce Remove Order Notes Field & Title
- *
- * @since 1.0.0
- *
- * @param array $fields Input Fields
-add_filter( 'woocommerce_checkout_fields' , function( $fields ) {
-	unset( $fields['order']['order_comments'] );
-	return $fields;
-} );
- */
-
-
-/**
- * Remove Checkout Fields
- *
- * @since 1.0.0
- *
- * @param array $fields Input Fields
-add_filter( 'woocommerce_checkout_fields', function( $fields ) {
-	unset( $fields['billing']['billing_company'] );
-	unset( $fields['billing']['billing_country'] );
-	unset( $fields['billing']['billing_address_1'] );
-	unset( $fields['billing']['billing_address_2'] );
-	unset( $fields['billing']['billing_city'] );
-	unset( $fields['billing']['billing_state'] );
-
-	return $fields;
-} );
- */
-
-
-/**
- * Remove Sku From All Product Pages
- *
- * @since 1.0.0
-add_filter( 'wc_product_sku_enabled', function() {
-	return ( false === is_admin() && true === is_product() ) ? false : true;
-} );
- */
-
-
-/**
- * Add To Cart Redirect To Checkout Page
- *
- * @since 1.0.0
-add_filter( 'woocommerce_add_to_cart_redirect', function() {
-	return get_permalink( get_option( 'woocommerce_checkout_page_id' ) );
-} );
- */
-
-
-/**
- * WooCommerce Remove Order Notes Title
- *
- * @since 1.0.0
-add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
- */
