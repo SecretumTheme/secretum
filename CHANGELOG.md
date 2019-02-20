@@ -1,5 +1,11 @@
 # Changelog
 
+# 1.1.0
+**201902-19 - Feature Update**
+
+* Moved all public actions and filters to functions
+* Added Contact Form 7 Recaptcha To inc/enqueue.php
+
 # 1.0.0
 **2019-02-17 - Release**
 

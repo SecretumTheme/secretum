@@ -30,7 +30,7 @@ if ( true !== isset( $content_width ) ) {
  *
  * @since 1.0.0
  */
-add_action( 'after_setup_theme', function() {
+function secretum_setup_theme() {
 	// Load Theme Translated Strings.
 	load_theme_textdomain( 'secretum', SECRETUM_THEME_DIR . '/lang' );
 
@@ -109,13 +109,16 @@ add_action( 'after_setup_theme', function() {
 
 	// Enable Custom Logo Support.
 	add_theme_support( 'custom-logo', [
-		'height' 		=> secretum_mod( 'custom_logo_height' ) ? secretum_mod( 'custom_logo_height', 'int' ) : '',
-		'width' 		=> secretum_mod( 'custom_logo_width' ) ? secretum_mod( 'custom_logo_width', 'int' ) : '',
+		'height' 		=> secretum_mod( 'custom_logo_height', 'int' ),
+		'width' 		=> secretum_mod( 'custom_logo_width', 'int' ),
 		'header-text' 	=> [ 'site-title', 'site-description' ],
 		'flex-height' 	=> true,
 		'flex-width' 	=> true,
 	] );
-} );
+
+}//end secretum_setup_theme()
+
+add_action( 'after_setup_theme', 'Secretum\secretum_setup_theme' );
 
 
 /**
@@ -123,7 +126,7 @@ add_action( 'after_setup_theme', function() {
  *
  * @since 1.0.0
  */
-add_action( 'after_switch_theme', function() {
+function secretum_after_switch_theme() {
 	// Fresh Install, Setup Secretum Customizer.
 	if ( false === get_option( 'secretum' ) ) {
 		update_option( 'secretum', [
@@ -214,4 +217,7 @@ add_action( 'after_switch_theme', function() {
 			'scrolltop_container_border_radius'				=> 'rounded-circle',
 		] );
 	}// End if().
-} );
+
+}//end secretum_after_switch_theme()
+
+add_action( 'after_switch_theme', 'Secretum\secretum_after_switch_theme' );

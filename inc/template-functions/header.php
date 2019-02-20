@@ -18,12 +18,15 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-add_action( 'secretum_after_header', function() {
+function secretum_after_header() {
 	// Display Featured Image If Allowed.
 	if ( 'after_header' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
-} );
+
+}//end secretum_after_header()
+
+add_action( 'secretum_after_header', 'Secretum\secretum_after_header' );
 
 
 /**

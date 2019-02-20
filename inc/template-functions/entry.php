@@ -18,12 +18,14 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-add_action( 'secretum_before_content', function() {
+function secretum_before_content() {
 	// Display Featured Image If No Location Set or Forced.
 	if ( false === secretum_mod( 'featured_image_display_location' ) || 'before_content' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
-} );
+}//end secretum_before_content()
+
+add_action( 'secretum_before_content', 'Secretum\secretum_before_content' );
 
 
 /**
@@ -31,12 +33,14 @@ add_action( 'secretum_before_content', function() {
  *
  * @since 1.0.0
  */
-add_action( 'secretum_before_entry_content', function() {
+function secretum_before_entry_content() {
 	// Display Featured Image If allowed.
 	if ( 'before_entry' === secretum_mod( 'featured_image_display_location', 'raw' ) ) {
 		get_template_part( 'template-parts/header/featured-image' );
 	}
-} );
+}//end secretum_before_entry_content()
+
+add_action( 'secretum_before_entry_content', 'Secretum\secretum_before_entry_content' );
 
 
 /**
