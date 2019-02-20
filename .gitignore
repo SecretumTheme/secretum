@@ -2,7 +2,6 @@
 *.db
 *.log
 *.tgz
-*.zip
 
 .git
 .sass-cache
