@@ -26,6 +26,14 @@ trait Trait_Translations {
 	 */
 	final public function defaults() {
 		return [
+			'return_to_top_default'			=> [
+				'label' 	=> __( 'Default Return To Top Text', 'secretum' ),
+				'default' 	=> __( 'top ^', 'secretum' ),
+			],
+			'return_to_top_title'			=> [
+				'label' 	=> __( 'Return To Top Icon Title Attribute', 'secretum' ),
+				'default' 	=> __( 'Return to Top', 'secretum' ),
+			],
 			'continue_reading_text'			=> [
 				'label' 	=> __( 'Archive Continue Reading Text', 'secretum' ),
 				'default' 	=> __( 'Continue Reading...', 'secretum' ),
@@ -58,13 +66,29 @@ trait Trait_Translations {
 				'label' 	=> __( 'Posts With Pages Text', 'secretum' ),
 				'default' 	=> __( 'Pages:', 'secretum' ),
 			],
-			'prev_text'						=> [
+			'post_navigation_screenreader' 	=> [
+				'label' 	=> __( 'Post Navigation Screen Reader Text', 'secretum' ),
+				'default' 	=> __( 'Post navigation', 'secretum' ),
+			],
+			'post_navigation_prev_text' 	=> [
 				'label' 	=> __( 'Previous Post Text', 'secretum' ),
 				'default' 	=> __( 'Previous Post', 'secretum' ),
 			],
-			'next_text'						=> [
+			'post_navigation_next_text' 	=> [
 				'label' 	=> __( 'Next Post Text', 'secretum' ),
 				'default' 	=> __( 'Next Post', 'secretum' ),
+			],
+			'pagination_screenreader' 		=> [
+				'label' 	=> __( 'Pagination Screen Reader Text', 'secretum' ),
+				'default' 	=> __( 'Page navigation', 'secretum' ),
+			],
+			'pagination_prev_text' 			=> [
+				'label' 	=> __( 'Previous Page Text', 'secretum' ),
+				'default' 	=> __( 'Previous', 'secretum' ),
+			],
+			'pagination_next_text' 			=> [
+				'label' 	=> __( 'Next Page Text', 'secretum' ),
+				'default' 	=> __( 'Next', 'secretum' ),
 			],
 			'search_button_placeholder'		=> [
 				'label' 	=> __( 'Search Button Placeholder Text', 'secretum' ),

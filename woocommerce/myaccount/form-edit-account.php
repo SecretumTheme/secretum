@@ -21,23 +21,23 @@ do_action( 'woocommerce_before_edit_account_form' );
 	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 	<p class="woocommerce-form-row woocommerce-form-row--first form-group mb-4">
 		<label for="account_first_name"><?php esc_html_e( 'First name', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_html( $user->first_name ); ?>" />
 	</p>
 
 	<p class="woocommerce-form-row woocommerce-form-row--last form-group mb-4">
 		<label for="account_last_name"><?php esc_html_e( 'Last name', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_last_name" id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr( $user->last_name ); ?>" />
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_last_name" id="account_last_name" autocomplete="family-name" value="<?php echo esc_html( $user->last_name ); ?>" />
 	</p>
 
 	<p class="woocommerce-form-row woocommerce-form-row--wide form-group mb-4">
 		<label for="account_display_name"><?php esc_html_e( 'Display name', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_display_name" id="account_display_name" value="<?php echo esc_attr( $user->display_name ); ?>" />
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="account_display_name" id="account_display_name" value="<?php echo esc_html( $user->display_name ); ?>" />
 		<small class="form-text text-muted"><?php esc_html_e( 'This will be how your name will be displayed in the account section and in reviews.', 'secretum' ); ?></small>
 	</p>
 
 	<p class="woocommerce-form-row woocommerce-form-row--wide form-group mb-4">
 		<label for="account_email"><?php esc_html_e( 'Email address', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text form-control form-control-lg" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
+		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text form-control form-control-lg" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_html( $user->user_email ); ?>" />
 	</p>
 
 	<fieldset>

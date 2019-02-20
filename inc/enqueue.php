@@ -18,9 +18,12 @@ namespace Secretum;
  *
  * @since 1.0.0
  */
-add_action( 'customize_preview_init', function() {
+function secretum_enqueue_preview() {
 	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.min.js', [ 'jquery', 'customize-preview' ], null, true );
-} );
+
+}//end secretum_enqueue_preview()
+
+add_action( 'customize_preview_init', 'Secretum\secretum_enqueue_preview' );
 
 
 /**
@@ -28,56 +31,17 @@ add_action( 'customize_preview_init', function() {
  *
  * @since 1.0.0
  */
-add_action( 'customize_controls_enqueue_scripts', function() {
-	if ( isset( $tested ) ) {
-		// Placeholder: Extend Custom Controls.
-		wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.min.js', [ 'jquery', 'customize-controls' ], null, true );
+function secretum_enqueue_customize_controls() {
+	// Extend Custom Controls.
+	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.min.js', [ 'jquery', 'customize-controls' ], null, true );
 
-		// Placeholder: Extend Custom Sections.
-		wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.min.js', [ 'jquery', 'customize-controls' ], null, true );
-		wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.min.css' );
-	}
-} );
+	// Extend Custom Sections.
+	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.min.js', [ 'jquery', 'customize-controls' ], null, true );
+	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.min.css' );
 
+}//end secretum_enqueue_customize_controls()
 
-/**
- * Inject Analytics Code Into Website Header or Footer
- *
- * @since 1.0.0
- */
-add_action('init', function() {
-	// Get Theme Mods.
-	$location = secretum_mod( 'javascript_location', 'attr' );
-	$analytics = secretum_mod( 'javascript_script' );
-
-	if ( true === isset( $location ) && 'header' === $location && false === empty( $analytics ) ) {
-		// Add To Header.
-		add_action( 'wp_head', function() {
-			echo wp_kses(
-				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
-				[
-					'script' => [
-						'async' 	=> true,
-						'src' 		=> true,
-					],
-				]
-			);
-		} );
-	} elseif ( true === empty( $location ) && false === empty( $analytics ) ) {
-		// Add To Footer.
-		add_action( 'wp_footer', function() {
-			echo wp_kses(
-				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
-				[
-					'script' => [
-						'async' 	=> true,
-						'src' 		=> true,
-					],
-				]
-			);
-		} );
-	}
-} );
+add_action( 'customize_controls_enqueue_scripts', 'Secretum\secretum_enqueue_customize_controls' );
 
 
 /**
@@ -85,7 +49,7 @@ add_action('init', function() {
  *
  * @since 1.0.0
  */
-add_action( 'wp_enqueue_scripts', function() {
+function secretum_enqueue_scripts() {
 	// Get Theme Object.
 	$theme = wp_get_theme();
 
@@ -98,7 +62,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	if ( true === secretum_mod( 'theme_color_palette' ) ) {
 		wp_enqueue_style(
 			'secretum',
-			SECRETUM_STYLE_URL . '/css/themes/' . esc_attr( secretum_mod( 'theme_color_palette', 'raw' ) ) . '/theme.min.css',
+			SECRETUM_STYLE_URL . '/css/themes/' . secretum_mod( 'theme_color_palette', 'attr', false ) . '/theme.min.css',
 			[],
 			$theme->get( 'Version' ),
 			'all'
@@ -209,6 +173,11 @@ add_action( 'wp_enqueue_scripts', function() {
 		if ( true === isset( $array_page_ids ) && true === is_array( $array_page_ids ) && false === is_page( $array_page_ids ) ) {
 			wp_dequeue_style( 'contact-form-7' );
 			wp_dequeue_script( 'contact-form-7' );
+			wp_dequeue_script( 'google-recaptcha' );
+			wp_dequeue_script( 'wpcf7_recaptcha_enqueue_scripts' );
 		}
 	}
-} );
+
+}//end secretum_enqueue_scripts()
+
+add_action( 'wp_enqueue_scripts', 'Secretum\secretum_enqueue_scripts' );

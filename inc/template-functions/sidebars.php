@@ -13,11 +13,21 @@
 
 namespace Secretum;
 
+/**
+ * Render Sidebar Metaboxes
+ *
+ * @since 1.0.0
+ */
+function secretum_metaboxes() {
+	// Add Metabox Sidebars.
+	new Metabox_Sidebars;
+}
+
+add_action( 'admin_init', 'Secretum\secretum_metaboxes' );
+
 
 /**
  * Render Sidebar Based On Allowed Location
- *
- * @since 1.0.0
  *
  * @example secretum_sidebar_location( 'right' );
  * @example secretum_sidebar_location( 'left' );
@@ -27,6 +37,8 @@ namespace Secretum;
  *
  * @param string $location_check Sidebar display location.
  * @return bool Defaults to false
+ *
+ * @since 1.0.0
  */
 function secretum_sidebar_location( $location_check ) {
 	// Global Sidebar Location.

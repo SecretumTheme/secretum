@@ -14,12 +14,11 @@
 namespace Secretum;
 
 // Constants.
+define( 'SECRETUM_THEME_VERSION', 	'1.1.1' );
+
 define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
 define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
-
-define( 'SECRETUM_THEME_VERSION', 	'1.0.0' );
-define( 'SECRETUM_WP_MIN_VERSION', 	'3.8' );
 
 define( 'SECRETUM_THEME_FILE', 		__FILE__ );
 define( 'SECRETUM_THEME_DIR', 		dirname( __FILE__ ) );
@@ -31,6 +30,10 @@ define( 'SECRETUM_MENU_NAME', 		__( 'Theme Admin', 'secretum' ) );
 define( 'SECRETUM_PAGE_NAME', 		__( 'Secretum Theme', 'secretum' ) );
 define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' ) );
 define( 'SECRETUM_THEME_NAME', 		'secretum' );
+
+
+// PHP & WordPress Version Compare Checks.
+require_once SECRETUM_INC . '/versions.php';
 
 
 /**
@@ -85,20 +88,10 @@ require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-classes.php';
 
 
-// WP Admin Only.
-if ( is_admin() ) {
-	// Initialize Admin Features.
-	add_action( 'admin_init', function() {
-		// Add Metabox Sidebars.
-		new Metabox_Sidebars;
-	} );
-
-	// Tiny Mce Editor Features.
-	if ( false === is_customize_preview() ) {
-		require_once SECRETUM_INC . '/editor.php';
-	}
+// Include Tiny Mce Editor Features.
+if ( true === is_admin() && false === is_customize_preview() ) {
+	require_once SECRETUM_INC . '/editor.php';
 }
-
 
 // WooCommerce Features.
 if ( true === secretum_is_woocomerce() ) {
@@ -110,22 +103,31 @@ if ( true === secretum_is_woocomerce() ) {
 }
 
 
-// Initialize Theme Widgets.
-add_action( 'widgets_init', function() {
+/**
+ * Initialize Theme Widgets.
+ *
+ * @since 1.0.0
+ */
+function secretum_widgets_init() {
 	require_once SECRETUM_INC . '/sidebars/primary.php';
 	require_once SECRETUM_INC . '/sidebars/header.php';
 	require_once SECRETUM_INC . '/sidebars/footer.php';
 	require_once SECRETUM_INC . '/sidebars/woocommerce.php';
 	require_once SECRETUM_INC . '/sidebars/backup.php';
-} );
+
+}//end secretum_widgets_init()
+
+add_action( 'widgets_init', 'Secretum\secretum_widgets_init' );
 
 
-// WordPress Customizer.
-add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize ) {
-	// Remove Sections.
-	$wp_customize->remove_section( 'colors' );
-	$wp_customize->remove_section( 'title_tagline' );
-
+/**
+ * WordPress Customizer.
+ *
+ * @param object $wp_customize WordPress Customize Object.
+ *
+ * @since 1.0.0
+ */
+function secretum_customize_register( $wp_customize ) {
 	// Sanitizers and Helper Functions.
 	require_once SECRETUM_INC . '/customize/customizer-functions.php';
 
@@ -171,4 +173,21 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	// Text Translations.
 	$translate = new \Secretum\Customize_Translations( $wp_customize );
 	$translate->settings();
-} );
+
+}//end secretum_customize_register()
+
+add_action( 'customize_register', 'Secretum\secretum_customize_register' );
+
+
+// Secretum Updater Plugin.
+if ( true === defined( 'SECRETUM_UPDATER' ) && true === file_exists( SECRETUM_UPDATER ) ) {
+	if ( false === class_exists( 'Puc_v4p4_Autoloader' ) ) {
+		require_once SECRETUM_UPDATER;
+	}
+
+	$secretum_theme_updater = \Puc_v4_Factory::buildUpdateChecker(
+		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
+		SECRETUM_THEME_FILE,
+		'secretum'
+	);
+}

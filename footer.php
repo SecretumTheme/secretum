@@ -56,7 +56,7 @@ get_template_part( 'template-parts/extras/scrolltop' );
 </div><!-- #page -->
 <?php
 // Customizer Refresh Icon.
-if ( is_customize_preview() ) {
+if ( true === is_customize_preview() ) {
 	secretum_customizer_refresh();
 }
 

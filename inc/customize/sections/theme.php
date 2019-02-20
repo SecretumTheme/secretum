@@ -122,3 +122,10 @@ $customizer->select(
 	$defaults['theme_font_size'],
 	secretum_customizer_font_sizes()
 );
+
+// Colors Section.
+$wp_customize->add_section( 'colors', array(
+	'panel' 		=> 'theme',
+	'title' 		=> __( 'WordPress Colors', 'secretum' ),
+	'priority' 		=> 40,
+) );

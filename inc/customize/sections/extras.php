@@ -22,38 +22,6 @@ $customizer->panel(
 
 // Section.
 $customizer->section(
-	'javascript',
-	'extras',
-	__( 'Inject JavaScript <script>', 'secretum' ),
-	''
-);
-
-
-// Radio.
-$customizer->select(
-	'javascript',
-	'javascript_location',
-	__( 'JavaScript Code Location', 'secretum' ),
-	'',
-	$defaults['javascript_location'],
-	[
-		'' 			=> __( 'Footer (default)', 'secretum' ),
-		'header' 	=> __( 'Header', 'secretum' ),
-	]
-);
-
-
-// Textarea Script.
-$customizer->textarea_script(
-	'javascript',
-	'javascript_script',
-	__( 'JavaScript < script > Code', 'secretum' ),
-	__( 'Include opening < script async src="" > and closing </script> script elments, the attributes "async" and "src" are allowed.', 'secretum' )
-);
-
-
-// Section.
-$customizer->section(
 	'scrolltop_icon',
 	'extras',
 	__( 'Scroll To Top Icon', 'secretum' ),

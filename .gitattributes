@@ -8,5 +8,3 @@ package-lock.json export-ignore
 README.md export-ignore
 CONTRIBUTING.md export-ignore
 LICENSE export-ignore
-gulpfile.js export-ignore
-updates.json export-ignore
