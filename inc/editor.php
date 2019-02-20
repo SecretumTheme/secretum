@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Add the formats dropdown to visual editor
  *
@@ -22,13 +21,16 @@ namespace Secretum;
  * @param array $buttons Registered buttons.
  * @return array
  */
-add_filter( 'mce_buttons_2', function( $buttons ) {
+function secretum_mce_buttons_2( $buttons ) {
 	if ( false === in_array( 'styleselect', $buttons, true ) ) {
 		$buttons[] = 'styleselect';
 	}
 
 	return $buttons;
-} );
+
+}//end secretum_mce_buttons_2()
+
+add_filter( 'mce_buttons_2', 'Secretum\secretum_mce_buttons_2' );
 
 
 /**
@@ -39,7 +41,7 @@ add_filter( 'mce_buttons_2', function( $buttons ) {
  * @param array $settings Editor settings.
  * @return string Updated Json Encoded Settings
  */
-add_filter( 'tiny_mce_before_init', function( $settings ) {
+function secretum_tiny_mce_before_init( $settings ) {
 	// Inject Disable.
 	$settings['wordpress_adv_hidden'] = false;
 
@@ -400,4 +402,7 @@ add_filter( 'tiny_mce_before_init', function( $settings ) {
 	$settings['style_formats'] = ( true !== empty( $merged_formats ) ) ? wp_json_encode( $merged_formats ) : wp_json_encode( $style_formats );
 
 	return $settings;
-} );
+
+}//end secretum_tiny_mce_before_init()
+
+add_filter( 'tiny_mce_before_init', 'Secretum\secretum_tiny_mce_before_init' );
