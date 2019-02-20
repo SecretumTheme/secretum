@@ -45,49 +45,6 @@ add_action( 'customize_controls_enqueue_scripts', 'Secretum\secretum_enqueue_cus
 
 
 /**
- * Inject JavaScript Into Website Header or Footer
- *
- * @since 1.0.0
- */
-function secretum_enqueue_javascripts() {
-	// Get Theme Mods.
-	$location = secretum_mod( 'javascript_location', 'attr' );
-	$javascript = secretum_mod( 'javascript_script' );
-
-	if ( true === isset( $location ) && 'header' === $location && false === empty( $javascript ) ) {
-		// Add To Header.
-		add_action( 'wp_head', function() {
-			echo wp_kses(
-				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
-				[
-					'script' => [
-						'async' 	=> true,
-						'src' 		=> true,
-					],
-				]
-			);
-		} );
-	} elseif ( true === empty( $location ) && false === empty( $javascript ) ) {
-		// Add To Footer.
-		add_action( 'wp_footer', function() {
-			echo wp_kses(
-				json_decode( secretum_mod( 'javascript_script', 'raw' ) ),
-				[
-					'script' => [
-						'async' 	=> true,
-						'src' 		=> true,
-					],
-				]
-			);
-		} );
-	}
-
-}//end secretum_enqueue_javascripts()
-
-add_action( 'init', 'Secretum\secretum_enqueue_javascripts' );
-
-
-/**
  * WordPress Enqueue Action
  *
  * @since 1.0.0
@@ -105,7 +62,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_mod( 'theme_color_palette' ) ) {
 		wp_enqueue_style(
 			'secretum',
-			SECRETUM_STYLE_URL . '/css/themes/' . esc_attr( secretum_mod( 'theme_color_palette', 'raw' ) ) . '/theme.min.css',
+			SECRETUM_STYLE_URL . '/css/themes/' . esc_url( secretum_mod( 'theme_color_palette', 'raw' ) ) . '/theme.min.css',
 			[],
 			$theme->get( 'Version' ),
 			'all'

@@ -130,8 +130,7 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		$category_slug = sanitize_html_class( $terms[0]->slug );
 
 		// Build Category URL.
-		// Testing Dont Use $category_url = xget_term_link( $category_slug, sanitize_html_class( $taxonomy ) );.
-		$category_url = '#';
+		$category_url = xget_term_link( $category_slug, sanitize_html_class( $taxonomy ) );
 
 		// Home Icon.
 		$home = ( $icons ) ? '<i class="fa fa-home" aria-hidden="true"></i> ' : '';
@@ -153,10 +152,12 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 		// Build Top Return Link.
 		if ( true === $top_link && true === $icons ) {
-			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="Return to Top"></i></a>';
+			$title = secretum_text( 'return_to_top_title' ) ;
+			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="' . $title . '"></i></a>';
 
 		} elseif ( true === $top_link && false === $icons ) {
-			$top = ' | <a href="#top">top ^</a>';
+			$title = secretum_text( 'return_to_top_default' ) ;
+			$top = ' | <a href="#top">' . $title . '</a>';
 
 		} else {
 			$top = '';

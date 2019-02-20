@@ -37,21 +37,21 @@ function secretum_icon( $args = [] ) {
 	// Build Alt Tag.
 	$alt = ( true !== empty( $args['alt'] ) ) ? ' alt="' . esc_html( $args['alt'] ) . '"' : '';
 
-	// Text Size.
-	$text_size = ( true !== empty( $args['size'] ) ) ? esc_attr( $args['size'] ) : '';
+	// Text Size Class Name.
+	$text_size_class = ( true !== empty( $args['size'] ) ) ? esc_attr( $args['size'] ) : '';
 
 	// Default Output.
 	$html = '';
 
 	// Display Font Awesome Icon If Plugin Enabled.
 	if ( true === class_exists( 'Better_Font_Awesome_Plugin' ) && true !== empty( $args['fa'] ) ) {
-		$html .= '<i class="fa ' . esc_attr( $args['fa'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
+		$html .= '<i class="fa ' . esc_attr( $args['fa'] ) . ' ' . $text_size_class . '" aria-hidden="true"' . $alt . '></i>';
 	} elseif ( true !== empty( $args['fi'] ) ) {
 		// Display Foundation Icon.
-		$html .= '<i class="fi-' . esc_attr( $args['fi'] ) . ' ' . $text_size . '" aria-hidden="true"' . $alt . '></i>';
+		$html .= '<i class="fi-' . esc_attr( $args['fi'] ) . ' ' . $text_size_class . '" aria-hidden="true"' . $alt . '></i>';
 	} elseif ( true !== empty( $args['svg'] ) ) {
 		// Display SVG Icon.
-		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_attr( $args['svg'] ) . '.svg" class="' . $text_size . '"' . $alt . '/>';
+		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_url( $args['svg'] ) . '.svg" class="' . $text_size_class . '"' . $alt . '/>';
 	}
 
 	if ( true === $args['echo'] ) {

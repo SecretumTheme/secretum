@@ -31,7 +31,7 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 			<label for="username"><?php esc_html_e( 'Username or email address', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-			<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'username' ) ) ) ? esc_attr( filter_input( INPUT_POST, 'username', FILTER_SANITIZE_ENCODED ) ) : ''; ?>" />
+			<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control form-control-lg" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'username' ) ) ) ? esc_html( filter_input( INPUT_POST, 'username', FILTER_SANITIZE_ENCODED ) ) : ''; ?>" />
 		</p>
 
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
@@ -42,7 +42,7 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 		<?php do_action( 'woocommerce_login_form' ); ?>
 
 		<p class="form-group m-3">
-			<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="login" value="<?php esc_attr_e( 'Log in', 'secretum' ); ?>"><?php esc_html_e( 'Log in', 'secretum' ); ?></button>
+			<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="login" value="<?php esc_html_e( 'Log in', 'secretum' ); ?>"><?php esc_html_e( 'Log in', 'secretum' ); ?></button>
 		</p>
 
 		<p class="form-check m-3">
@@ -75,14 +75,14 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 
 					<label for="reg_username"><?php esc_html_e( 'Username', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'username' ) ) ) ? esc_attr( filter_input( INPUT_POST, 'username', FILTER_SANITIZE_ENCODED ) ) : ''; ?>" />
+					<input type="text" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'username' ) ) ) ? esc_html( filter_input( INPUT_POST, 'username', FILTER_SANITIZE_ENCODED ) ) : ''; ?>" />
 
 				</p>
 			<?php } ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 				<label for="reg_email"><?php esc_html_e( 'Email address', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'email' ) ) ) ? esc_attr( filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) ) : ''; ?>" />
+				<input type="email" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( filter_input( INPUT_POST, 'email' ) ) ) ? esc_html( filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) ) : ''; ?>" />
 			</p>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) { ?>
@@ -93,7 +93,7 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 			<?php } ?>
 
 			<p class="woocommerce-FormRow form-group m-3">
-				<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="register" value="<?php esc_attr_e( 'Register', 'secretum' ); ?>"><?php esc_html_e( 'Register', 'secretum' ); ?></button>
+				<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="register" value="<?php esc_html_e( 'Register', 'secretum' ); ?>"><?php esc_html_e( 'Register', 'secretum' ); ?></button>
 			</p>
 
 			<?php do_action( 'woocommerce_register_form' ); ?>

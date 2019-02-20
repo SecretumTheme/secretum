@@ -1,5 +1,17 @@
 # Changelog
 
+# 1.1.1
+**201902-19 - WordPress Compliance**
+
+* Removed JavaScript injector from Customizer
+* Removed default settings, moving to theme admin default layouts in next version
+* Removed remove_section for color and tagline
+* Adjusted excerpt more filter to return default excerpt in admin view
+* Adjusted several escaping functions
+* Added missing translation strings to translations trait
+* Added WordPress & PHP version requirement checks
+* Removed all development files from zip
+
 # 1.1.0
 **201902-19 - Feature Update**
 

@@ -80,8 +80,8 @@ function secretum_woocommerce_get_script_data( $params, $handle ) {
 		case 'wc-password-strength-meter':
 			$params = [
 				'min_password_strength' => apply_filters( 'woocommerce_min_password_strength', 1 ),
-				'i18n_password_error'   => apply_filters( 'secretum_password_error_text', esc_attr__( 'Create a Secure Password You Will Remember.', 'secretum' ) ),
-				'i18n_password_hint'	=> apply_filters( 'secretum_password_hint_text', esc_attr__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
+				'i18n_password_error'   => apply_filters( 'secretum_password_error_text', esc_html__( 'Create a Secure Password You Will Remember.', 'secretum' ) ),
+				'i18n_password_hint'	=> apply_filters( 'secretum_password_hint_text', esc_html__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
 			];
 	}
 
@@ -99,11 +99,11 @@ add_filter( 'woocommerce_get_script_data', 'Secretum\secretum_woocommerce_get_sc
  */
 function secretum_woo_enqueue_scripts() {
 	wp_localize_script( 'wc-password-strength-meter', 'pwsL10n', [
-		'short' 	=> apply_filters( 'secretum_password_strength_short_text', esc_attr__( 'Keep Going! ', 'secretum' ) ),
-		'bad' 		=> apply_filters( 'secretum_password_strength_bad_text', esc_attr__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
-		'good' 		=> apply_filters( 'secretum_password_strength_good_text', esc_attr__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
-		'strong' 	=> apply_filters( 'secretum_password_strength_strong_text', esc_attr__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
-		'mismatch' 	=> apply_filters( 'secretum_password_mismatch_text', esc_attr__( 'Passwords Do Not Match! ', 'secretum' ) ),
+		'short' 	=> apply_filters( 'secretum_password_strength_short_text', esc_html__( 'Keep Going! ', 'secretum' ) ),
+		'bad' 		=> apply_filters( 'secretum_password_strength_bad_text', esc_html__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
+		'good' 		=> apply_filters( 'secretum_password_strength_good_text', esc_html__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
+		'strong' 	=> apply_filters( 'secretum_password_strength_strong_text', esc_html__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
+		'mismatch' 	=> apply_filters( 'secretum_password_mismatch_text', esc_html__( 'Passwords Do Not Match! ', 'secretum' ) ),
 	] );
 
 }//end secretum_wp_enqueue_scripts()

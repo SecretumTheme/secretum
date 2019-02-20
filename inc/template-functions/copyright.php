@@ -21,9 +21,9 @@ namespace Secretum;
  */
 function secretum_copyright_statement() {
 	$copy = __( 'Copyright', 'secretum' );
-	$year = date( 'Y', time() );
-	$home = get_home_url( '/' );
-	$name = get_bloginfo( 'name' );
+	$year = esc_html( date( 'Y', time() ) );
+	$home = esc_url( get_home_url( '/' ) );
+	$name = esc_html( get_bloginfo( 'name' ) );
 	$text = __( 'All Rights Reserved.', 'secretum' );
 	$desc = __( 'Code is Poetry | Proudly Powered by WordPress!', 'secretum' );
 

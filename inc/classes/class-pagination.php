@@ -16,7 +16,7 @@ namespace Secretum;
 /**
  * Initilize Pagination
  *
- * @since 1.0.0
+ * @see template-parts/nav/posts-pagination.php
  *
  * @example \Secretum\Pagination::instance( $wp_query );
  * @example \Secretum\Pagination::instance( $wp_query, $nav_label, $previous_label, $next_label );
@@ -26,6 +26,8 @@ namespace Secretum;
  * 	$previous_label, 	(string Previous << Text Label.)
  * 	$next_label 		(string Next >> Text Label.)
  * );
+ *
+ * @since 1.0.0
  */
 class Pagination {
 	/**
@@ -295,7 +297,7 @@ class Pagination {
 		if ( true !== empty( $nav_label ) ) {
 			return esc_html( $nav_label );
 		} else {
-			return esc_html__( 'Posts Navigation', 'secretum' );
+			return secretum_text( 'pagination_screenreader' );
 		}
 
 	}//end _get_nav_label()
@@ -314,7 +316,7 @@ class Pagination {
 		if ( true !== empty( $previous_label ) ) {
 			return esc_html( $previous_label );
 		} else {
-			return esc_html__( 'Previous', 'secretum' );
+			return secretum_text( 'pagination_prev_text' );
 		}
 
 	}//end _get_previous_label()
@@ -333,7 +335,7 @@ class Pagination {
 		if ( true !== empty( $next_label ) ) {
 			return esc_html( $next_label );
 		} else {
-			return esc_html__( 'Next', 'secretum' );
+			return secretum_text( 'pagination_next_text' );
 		}
 
 	}//end _get_next_label()

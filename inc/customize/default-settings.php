@@ -666,8 +666,6 @@ function secretum_customizer_frontpage_settings() {
  */
 function secretum_customizer_extras_settings() {
 	return [
-		// JavaScript.
-		'javascript_location' 								=> '',
 		// Scroll Top.
 		'scrolltop_status' 									=> '',
 		'scrolltop_textual_text_color' 						=> '',

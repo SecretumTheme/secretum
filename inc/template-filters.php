@@ -23,6 +23,12 @@ namespace Secretum;
  * @return string Updated Excerpt
  */
 function secretum_excerpt_more( $excerpt ) {
+	// Return Default If Within Admin.
+	if ( true === is_admin() ) {
+		return $excerpt;
+	}
+
+	// Frontend.
 	return str_replace(
 		' [&hellip;]',
 		'<p class="text-right"><span class="screen-reader-text">' . secretum_text( 'continue_reading_text' ) . ' ' . get_the_title() . '</span><a class="btn btn-secondary continue-reading" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text' ) . '</a></p>',
@@ -131,9 +137,9 @@ function secretum_comment_form_defaults( $defaults ) {
 	$aria_req 	= ( $req ? " aria-required='true'" : '' );
 
 	$fields = [
-		'author' => '<p class="form-group comment-form-author"><label for="author">' . secretum_text( 'commenter_name', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p class="form-group comment-form-email"><label for="email">' . secretum_text( 'commenter_email', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'	=> '<p class="form-group comment-form-url"><label for="url">' . secretum_text( 'commenter_website', false ) . '</label> <input class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		'author' => '<p class="form-group comment-form-author"><label for="author">' . secretum_text( 'commenter_name', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="author" name="author" type="text" value="' . esc_html( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'email'  => '<p class="form-group comment-form-email"><label for="email">' . secretum_text( 'commenter_email', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="email" name="email" type="email" value="' . esc_html( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'url'	=> '<p class="form-group comment-form-url"><label for="url">' . secretum_text( 'commenter_website', false ) . '</label> <input class="form-control" id="url" name="url" type="url" value="' . esc_url( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	];
 
 	$defaults['comment_field'] 			= '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text( 'commenter_comment', false ) . ' <span class="required">*</span></label> <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';

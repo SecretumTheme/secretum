@@ -42,7 +42,7 @@ if ( is_user_logged_in() ) { return; }
 
 	<p class="form-row form-group">
 		<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-		<button type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'secretum' ); ?>"><?php esc_html_e( 'Login', 'secretum' ); ?></button>
+		<button type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'secretum' ); ?>"><?php esc_html_e( 'Login', 'secretum' ); ?></button>
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
 	</p>
 
