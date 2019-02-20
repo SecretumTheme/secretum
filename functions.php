@@ -177,17 +177,3 @@ function secretum_customize_register( $wp_customize ) {
 }//end secretum_customize_register()
 
 add_action( 'customize_register', 'Secretum\secretum_customize_register' );
-
-
-// Secretum Updater Plugin.
-if ( true === defined( 'SECRETUM_UPDATER' ) && true === file_exists( SECRETUM_UPDATER ) ) {
-	if ( false === class_exists( 'Puc_v4p4_Autoloader' ) ) {
-		require_once SECRETUM_UPDATER;
-	}
-
-	$secretum_theme_updater = \Puc_v4_Factory::buildUpdateChecker(
-		'https://raw.githubusercontent.com/SecretumTheme/secretum/master/updates.json',
-		SECRETUM_THEME_FILE,
-		'secretum'
-	);
-}
