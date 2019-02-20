@@ -23,9 +23,12 @@ namespace Secretum;
  *
  * @link https://docs.woocommerce.com/document/bookings-snippets/
  */
-add_filter( 'woocommerce_bookings_remove_inactive_cart_time', function( $minutes ) {
+function secretum_woocommerce_bookings_remove_inactive_cart_time( $minutes ) {
 	return 20;
-} );
+
+}//end secretum_woocommerce_bookings_remove_inactive_cart_time()
+
+add_filter( 'woocommerce_bookings_remove_inactive_cart_time', 'Secretum\secretum_woocommerce_bookings_remove_inactive_cart_time' );
 
 
 /**
@@ -38,7 +41,7 @@ add_filter( 'woocommerce_bookings_remove_inactive_cart_time', function( $minutes
  *
  * @link https://docs.woocommerce.com/document/bookings-snippets/
  */
-add_filter( 'booking_form_fields', function( $fields ) {
+function secretum_booking_form_fields( $fields ) {
 	$new_order = [];
 
 	// Calendar.
@@ -62,7 +65,10 @@ add_filter( 'booking_form_fields', function( $fields ) {
 	}
 
 	return $new_order;
-} );
+
+}//end secretum_booking_form_fields()
+
+add_filter( 'booking_form_fields', 'Secretum\secretum_booking_form_fields' );
 
 
 /**
@@ -70,12 +76,12 @@ add_filter( 'booking_form_fields', function( $fields ) {
  *
  * @since 1.0.0
  *
- * @param string  $block_html Current display times.
- * @param array   $available_blocks Full and partial blocks.
- * @param string  $blocks All future blocks.
+ * @param  string $block_html Current display times.
+ * @param  array  $available_blocks Full and partial blocks.
+ * @param  string $blocks All future blocks.
  * @return string $block_html Updated times with sold-out injected.
  */
-add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available_blocks, $blocks ) {
+function secretum_wc_bookings_get_time_slots_html( $block_html, $available_blocks, $blocks ) {
 	$booked_blocks  = '';
 
 	// Build booking array from all blocks.
@@ -128,7 +134,10 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
 	}
 
 	return $block_html;
-}, 10, 3 );
+
+}//end secretum_wc_bookings_get_time_slots_html()
+
+add_filter( 'wc_bookings_get_time_slots_html', 'Secretum\secretum_wc_bookings_get_time_slots_html', 10, 3 );
 
 
 /**
@@ -140,9 +149,12 @@ add_filter( 'wc_bookings_get_time_slots_html', function( $block_html, $available
  *
  * @param int $seconds Time in Seconds.
  */
-add_filter( 'wc_session_expiring', function( $seconds ) {
+function secretum_wc_session_expiring( $seconds ) {
 	return 1200;
-} );
+
+}//end secretum_wc_session_expiring()
+
+add_filter( 'wc_session_expiring', 'Secretum\secretum_wc_session_expiring' );
 
 
 /**
@@ -154,9 +166,12 @@ add_filter( 'wc_session_expiring', function( $seconds ) {
  *
  * @param int $seconds Time in Seconds.
  */
-add_filter( 'wc_session_expiration' , function( $seconds ) {
+function secretum_wc_session_expiration( $seconds ) {
 	return 1200;
-} );
+
+}//end secretum_wc_session_expiration()
+
+add_filter( 'wc_session_expiration' , 'Secretum\secretum_wc_session_expiration' );
 
 
 /**
@@ -166,9 +181,12 @@ add_filter( 'wc_session_expiration' , function( $seconds ) {
  *
  * @link https://docs.woocommerce.com/document/bookings-snippets/
  */
-add_filter( 'woocommerce_booking_single_add_to_cart_text', function() {
+function secretum_woocommerce_booking_single_add_to_cart_text() {
 	return __( 'Continue', 'secretum' ) . ' <i class="fa fa-long-arrow-right" aria-hidden="true"></i>';
-} );
+
+}//end secretum_woocommerce_booking_single_add_to_cart_text()
+
+add_filter( 'woocommerce_booking_single_add_to_cart_text', 'Secretum\secretum_woocommerce_booking_single_add_to_cart_text' );
 
 
 /**
@@ -178,9 +196,12 @@ add_filter( 'woocommerce_booking_single_add_to_cart_text', function() {
  *
  * @param string $order_button_text Old Text.
  */
-add_filter( 'woocommerce_order_button_text', function( $order_button_text ) {
+function secretum_woocommerce_order_button_text( $order_button_text ) {
 	return __( 'Pay Now To Secure Your Booking! ', 'secretum' );
-} );
+
+}//end secretum_woocommerce_order_button_text()
+
+add_filter( 'woocommerce_order_button_text', 'Secretum\secretum_woocommerce_order_button_text' );
 
 
 /**
@@ -188,7 +209,12 @@ add_filter( 'woocommerce_order_button_text', function( $order_button_text ) {
  *
  * @since 1.0.0
  */
-add_filter( 'wc_add_to_cart_message_html', '__return_null' );
+function secretum_no_add_to_cart_message_html() {
+	return;
+
+}//end secretum_no_add_to_cart_message_html()
+
+add_filter( 'no_add_to_cart_message_html', 'Secretum\secretum_no_add_to_cart_message_html' );
 
 
 /**
@@ -196,14 +222,17 @@ add_filter( 'wc_add_to_cart_message_html', '__return_null' );
  *
  * @since 1.0.0
  */
-add_filter( 'wc_add_to_cart_message_html', function() {
+function secretum_wc_add_to_cart_message_html() {
 	return sprintf(
 		'<a href="%s" class="button wc-forwards">%s</a> %s',
 		esc_url( wc_get_page_permalink( 'checkout' ) ),
 		__( 'Checkout To Secure Booking! ', 'secretum' ),
 		__( 'Booking successfully added to your cart.', 'secretum' )
 	);
-} );
+
+}
+
+add_filter( 'wc_add_to_cart_message_html', 'Secretum\secretum_wc_add_to_cart_message_html' );
 
 
 /**
@@ -213,13 +242,16 @@ add_filter( 'wc_add_to_cart_message_html', function() {
  *
  * @param array $labels Labels array.
  */
-add_filter( 'woocommerce_get_item_data', function( $labels ) {
+function secretum_woocommerce_get_item_data( $labels ) {
 	if ( isset( $labels[2]['name'] ) && 'Persons' === $labels[2]['name'] ) {
 		$labels[2]['name'] = __( 'Player( s )', 'secretum' );
 	}
 
 	return $labels;
-} );
+
+}//end secretum_woocommerce_get_item_data()
+
+add_filter( 'woocommerce_get_item_data', 'Secretum\secretum_woocommerce_get_item_data' );
 
 
 /**
@@ -231,7 +263,7 @@ add_filter( 'woocommerce_get_item_data', function( $labels ) {
  * @param string $text Text to translate.
  * @param string $domain Text domain.
  */
-add_filter( 'gettext', function( $translated_text, $text, $domain ) {
+function secretum_get_store_text( $translated_text, $text, $domain ) {
 	switch ( $translated_text ) {
 		case 'Return to shop' :
 			$translated_text = __( 'Return to Store', 'secretum' );
@@ -239,4 +271,7 @@ add_filter( 'gettext', function( $translated_text, $text, $domain ) {
 	}
 
 	return $translated_text;
-}, 20, 3 );
+
+}//end secretum_get_store_text()
+
+add_filter( 'gettext', 'Secretum\secretum_get_store_text', 20, 3 );

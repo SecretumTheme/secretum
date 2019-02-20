@@ -84,21 +84,10 @@ require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-classes.php';
 
-
-// WP Admin Only.
-if ( is_admin() ) {
-	// Initialize Admin Features.
-	add_action( 'admin_init', function() {
-		// Add Metabox Sidebars.
-		new Metabox_Sidebars;
-	} );
-
-	// Tiny Mce Editor Features.
-	if ( false === is_customize_preview() ) {
-		require_once SECRETUM_INC . '/editor.php';
-	}
+// Include Tiny Mce Editor Features.
+if ( true === is_admin() && false === is_customize_preview() ) {
+	require_once SECRETUM_INC . '/editor.php';
 }
-
 
 // WooCommerce Features.
 if ( true === secretum_is_woocomerce() ) {
@@ -110,18 +99,31 @@ if ( true === secretum_is_woocomerce() ) {
 }
 
 
-// Initialize Theme Widgets.
-add_action( 'widgets_init', function() {
+/**
+ * Initialize Theme Widgets.
+ *
+ * @since 1.0.0
+ */
+function secretum_widgets_init() {
 	require_once SECRETUM_INC . '/sidebars/primary.php';
 	require_once SECRETUM_INC . '/sidebars/header.php';
 	require_once SECRETUM_INC . '/sidebars/footer.php';
 	require_once SECRETUM_INC . '/sidebars/woocommerce.php';
 	require_once SECRETUM_INC . '/sidebars/backup.php';
-} );
+
+}//end secretum_widgets_init()
+
+add_action( 'widgets_init', 'Secretum\secretum_widgets_init' );
 
 
-// WordPress Customizer.
-add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize ) {
+/**
+ * WordPress Customizer.
+ *
+ * @param object $wp_customize WordPress Customize Object.
+ *
+ * @since 1.0.0
+ */
+function secretum_customize_register( $wp_customize ) {
 	// Remove Sections.
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'title_tagline' );
@@ -171,12 +173,15 @@ add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize 
 	// Text Translations.
 	$translate = new \Secretum\Customize_Translations( $wp_customize );
 	$translate->settings();
-} );
+
+}//end secretum_customize_register()
+
+add_action( 'customize_register', 'Secretum\secretum_customize_register' );
 
 
 // Secretum Updater Plugin.
-if ( defined( 'SECRETUM_UPDATER' ) === true && file_exists( SECRETUM_UPDATER ) === true ) {
-	if ( class_exists( 'Puc_v4p4_Autoloader' ) === false ) {
+if ( true === defined( 'SECRETUM_UPDATER' ) && true === file_exists( SECRETUM_UPDATER ) ) {
+	if ( false === class_exists( 'Puc_v4p4_Autoloader' ) ) {
 		require_once SECRETUM_UPDATER;
 	}
 
