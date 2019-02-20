@@ -48,6 +48,31 @@ function secretum_text( $key = '', $echo = false ) {
 
 
 /**
+ * Customizer Refresh Icon
+ *
+ * @since 1.0.0
+ */
+function secretum_customizer_refresh() {
+	echo wp_kses(
+		'<a href="javascript:void(0);" onclick="document.location.reload(true)" title="' . __( 'Refresh Preview', 'secretum' ) . '"><i class="secretum-customizer-icon fi-refresh" aria-hidden="true"></i></a>',
+		[
+			'a' => [
+				'href' 			=> true,
+				'onclick' 		=> true,
+				'title' 		=> true,
+			],
+			'i' => [
+				'class' 		=> true,
+				'aria-hidden' 	=> true,
+			],
+		],
+		'javascript'
+	);
+
+}//end secretum_customizer_refresh()
+
+
+/**
  * Check if WooCommerce is Active
  *
  * @since 1.0.0
@@ -120,9 +145,6 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 	// If Items Set.
 	if ( isset( $terms[0]->name ) && isset( $terms[0]->slug ) ) {
-		// Get Home URL.
-		$home_url = esc_url( home_url() );
-
 		// Get Category Name.
 		$category_name = sanitize_text_field( $terms[0]->name );
 
@@ -152,11 +174,11 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 		// Build Top Return Link.
 		if ( true === $top_link && true === $icons ) {
-			$title = secretum_text( 'return_to_top_title' ) ;
+			$title = secretum_text( 'return_to_top_title' );
 			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="' . $title . '"></i></a>';
 
 		} elseif ( true === $top_link && false === $icons ) {
-			$title = secretum_text( 'return_to_top_default' ) ;
+			$title = secretum_text( 'return_to_top_default' );
 			$top = ' | <a href="#top">' . $title . '</a>';
 
 		} else {
@@ -165,7 +187,7 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		}
 
 		// Return HTML.
-		return '<div class="breadcrumbs">' . $home . '<a href="' . $home_url . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
+		return '<div class="breadcrumbs">' . $home . '<a href="' . SECRETUM_BASE_URL . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
 	}// End if().
 
 }//end secretum_breadcrumbs()

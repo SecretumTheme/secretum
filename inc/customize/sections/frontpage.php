@@ -78,30 +78,3 @@ $wrapper->settings( [
 	'section' 	=> 'frontpage',
 	'title' 	=> __( 'Heading Wrapper', 'secretum' ),
 ] );
-
-
-// Section.
-$customizer->section(
-	'frontpage_map',
-	'frontpage',
-	__( 'Google Map', 'secretum' ),
-	''
-);
-
-// Checkbox.
-$customizer->checkbox(
-	'frontpage_map',
-	'frontpage_map_status',
-	__( 'Enable Frontpage Google Map Area', 'secretum' ),
-	'',
-	$defaults['frontpage_map_status']
-);
-
-// Text Input.
-$customizer->input_text(
-	'frontpage_map',
-	'frontpage_map_address',
-	__( 'Google Map Business Name & Address', 'secretum' ),
-	__( 'Use the exact address that Google has for your business in this format: Business Name, 000 W Something St Suite 1, City, ST 00000', 'secretum' ),
-	$defaults['frontpage_map_address']
-);

@@ -40,7 +40,7 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 					<header class="page-header author-header clearfix mb-5">
 						<?php $curauth = ( filter_input( INPUT_GET, 'author_name', FILTER_SANITIZE_SPECIAL_CHARS ) ) ? get_user_by( 'slug', filter_input( INPUT_GET, 'author_name', FILTER_SANITIZE_SPECIAL_CHARS ) ) : get_userdata( intval( $author ) ); ?>
 
-						<h1 class="page-title border-bottom pb-3 mb-5"><?php secretum_text( 'author_about_text', true ); ?> <?php esc_html( $curauth->nickname ); ?></h1>
+						<h1 class="page-title border-bottom pb-3 mb-5"><?php secretum_text( 'author_about_text', true ); ?> <?php echo esc_html( $curauth->nickname ); ?></h1>
 
 						<?php if ( ! empty( $curauth->ID ) && ( ! empty( $curauth->user_url ) || ! empty( $curauth->user_description ) ) ) { ?>
 							<div class="float-left mr-3">
@@ -52,12 +52,12 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 							<dl>
 								<?php if ( ! empty( $curauth->user_url ) ) { ?>
 									<dt><?php secretum_text( 'author_website_text', true ); ?></dt>
-									<dd><a href="<?php esc_url( $curauth->user_url ); ?>"><?php esc_html( $curauth->user_url ); ?></a></dd>
+									<dd><a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a></dd>
 								<?php } ?>
 
 								<?php if ( ! empty( $curauth->user_description ) ) { ?>
 									<dt><?php secretum_text( 'author_profile_text', true ); ?></dt>
-									<dd><?php esc_html( $curauth->user_description ); ?></dd>
+									<dd><?php echo esc_html( $curauth->user_description ); ?></dd>
 								<?php } ?>
 							</dl>
 						<?php } ?>
@@ -65,7 +65,7 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 
 					<?php
 					if ( have_posts() ) { ?>
-						<h2 class="pb-3 border-bottom"><?php secretum_text( 'author_posts_by_text', true ); ?> <?php esc_html( $curauth->nickname ); ?>:</h2>
+						<h2 class="pb-3 border-bottom"><?php secretum_text( 'author_posts_by_text', true ); ?> <?php echo esc_html( $curauth->nickname ); ?>:</h2>
 						<ul>
 							<?php while ( have_posts() ) { the_post(); ?>
 								<li class="py-3 border-bottom"><strong><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></strong> <?php secretum_author_post_list(); ?></li>

@@ -51,7 +51,7 @@ function secretum_icon( $args = [] ) {
 		$html .= '<i class="fi-' . esc_attr( $args['fi'] ) . ' ' . $text_size_class . '" aria-hidden="true"' . $alt . '></i>';
 	} elseif ( true !== empty( $args['svg'] ) ) {
 		// Display SVG Icon.
-		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_url( $args['svg'] ) . '.svg" class="' . $text_size_class . '"' . $alt . '/>';
+		$html .= '<img src="' . SECRETUM_THEME_URL . '/images/svg/' . esc_attr( $args['svg'] ) . '.svg" class="' . $text_size_class . '"' . $alt . '/>';
 	}
 
 	if ( true === $args['echo'] ) {

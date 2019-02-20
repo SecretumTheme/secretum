@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', 	'1.1.0' );
+define( 'SECRETUM_THEME_VERSION', 	'1.1.1' );
 
 define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
@@ -86,6 +86,7 @@ require_once SECRETUM_INC . '/template-functions/post-navigation.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions.php';
 require_once SECRETUM_INC . '/template-classes.php';
+
 
 // Include Tiny Mce Editor Features.
 if ( true === is_admin() && false === is_customize_preview() ) {

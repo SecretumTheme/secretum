@@ -44,31 +44,3 @@ function secretum_frontpage_bg_style() {
 	echo wp_kses_post( apply_filters( 'secretum_frontpage_bg_style', $class_string, 10, 1 ) );
 
 }//end secretum_frontpage_bg_style()
-
-
-/**
- * Display Google Map
- *
- * @since 1.0.0
- */
-function secretum_display_google_map() {
-	$address 	= secretum_mod( 'frontpage_map_address', 'html' );
-	$mapssrc 	= esc_url( "https://maps.google.com/maps?&q={$address}&output=embed&iwloc" );
-	$element 	= str_replace( '_', '', 'i_f_rame' );
-	$html 		= "<{$element} class=\"google_map w-100\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"{$mapssrc}\"></{$element}>";
-
-	echo wp_kses(
-		apply_filters( 'secretum_display_google_map', $html, 10, 1 ),
-		[
-			'iframe' => [
-				'class' => true,
-				'frameborder' => true,
-				'scrolling' => true,
-				'marginheight' => true,
-				'marginwidth' => true,
-				'src' => true,
-			],
-		]
-	);
-
-}//end secretum_display_google_map()

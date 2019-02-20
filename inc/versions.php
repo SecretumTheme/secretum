@@ -3,7 +3,7 @@
  * PHP & WordPress Version Compare Checks
  *
  * @package    Secretum
- * @subpackage Core\Versons
+ * @subpackage Core\Versions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -19,7 +19,7 @@ namespace Secretum;
  * @since 1.1.1
  */
 function secretum_admin_notice_php_support() {
-	$current = __( 'You are using PHP version');
+	$current = __( 'You are using PHP version', 'secretum' );
 	$version = PHP_VERSION;
 	$message = __( 'Secretum requires PHP 5.6 or greater. Please upgrade PHP and try again.', 'secretum' );
 
@@ -52,7 +52,7 @@ if ( true === version_compare( PHP_VERSION, '5.6', '<' ) ) {
  * @since 1.1.1
  */
 function secretum_wordpress_support_message() {
-	$current = __( 'You are using WordPress version');
+	$current = __( 'You are using WordPress version', 'secretum' );
 	$version = $GLOBALS['wp_version'];
 	$message = __( 'Secretum requires WordPress 4.8 or greater. Please upgrade WordPress and try again.', 'secretum' );
 
@@ -89,7 +89,7 @@ function secretum_admin_notice_wordpress_support() {
  */
 function secretum_admin_notice_customizer() {
 	wp_die(
-		secretum_wordpress_support_message(),
+		esc_html( secretum_wordpress_support_message() ),
 		'',
 		array(
 			'back_link' => true,
@@ -105,8 +105,10 @@ function secretum_admin_notice_customizer() {
  * @since 1.1.1
  */
 function secretum_admin_notice_previewer() {
-	if ( true === isset( $_GET['preview'] ) ) {
-		wp_die( secretum_wordpress_support_message() );
+	if ( true === filter_input( INPUT_GET, 'preview' ) ) {
+		wp_die(
+			esc_html( secretum_wordpress_support_message() )
+		);
 	}
 
 }//end secretum_admin_notice_previewer()

@@ -1,22 +1,25 @@
 # Changelog
 
 # 1.1.1
-**201902-19 - WordPress Compliance**
+**2019-02-19 - WordPress Compliance**
 
-* Removed JavaScript injector from Customizer
-* Removed default settings, moving to theme admin default layouts in next version
+* Removed JavaScript injector from customizer
 * Removed remove_section for color and tagline
+* Removed html5 search-form support in favor of searchform.php
+* Removed all development files from zip
+* Moved customizer colors, background image to theme design panel
+* Moved site identity show title/desc to theme site identity panel
+* Adjusted default settings to load settings like a child theme
 * Adjusted excerpt more filter to return default excerpt in admin view
 * Adjusted several escaping functions
 * Added missing translation strings to translations trait
 * Added WordPress & PHP version requirement checks
-* Removed all development files from zip
 
 # 1.1.0
-**201902-19 - Feature Update**
+**2019-02-19 - Feature Update**
 
 * Moved all public actions and filters to functions
-* Added Contact Form 7 Recaptcha To inc/enqueue.php
+* Added Contact Form 7 recaptcha to inc/enqueue.php
 
 # 1.0.0
 **2019-02-17 - Release**

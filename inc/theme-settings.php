@@ -119,3 +119,108 @@ function secretum_setup_theme() {
 }//end secretum_setup_theme()
 
 add_action( 'after_setup_theme', 'Secretum\secretum_setup_theme' );
+
+
+/**
+ * Setup Secretum Theme
+ *
+ * @param array $settings Secretum Default Settings Array.
+ *
+ * @see secretum/inc/customize/default-settings.php
+ *
+ * @return array
+ *
+ * @since 1.1.1
+ */
+function secretum_load_default_settings( $settings ) {
+	$settings['site_identity_title_container_margin_bottom']	= 'mb-0';
+	$settings['site_identity_title_container_padding_y']		= 'py-0';
+	$settings['site_identity_title_textual_font_size']			= 'text-32';
+	$settings['site_identity_title_textual_link_color']			= 'color-primary-link';
+	$settings['site_identity_desc_textual_text_color']			= 'color-secondary';
+	$settings['header_top_alignment']							= 'ml-auto';
+	$settings['header_top_wrapper_background_color']			= 'bg-whitish';
+	$settings['header_top_container_type']						= '-fluid';
+	$settings['header_top_textual_font_size']					= 'text-13';
+	$settings['header_top_textual_link_color']					= 'color-gray-600-link';
+	$settings['header_top_textual_link_hover_color']			= 'color-gray-600-hover';
+	$settings['header_top_items_text_alignment']				= 'text-center';
+	$settings['header_top_items_margin_x']						= 'mx-2';
+	$settings['header_top_items_padding_x']						= 'px-2';
+	$settings['header_top_items_padding_y']						= 'py-1';
+	$settings['header_wrapper_padding_y']						= 'py-3';
+	$settings['primary_nav_wrapper_background_color']			= 'bg-primary';
+	$settings['primary_nav_wrapper_padding_y']					= 'py-0';
+	$settings['primary_nav_textual_font_size']					= 'text-14';
+	$settings['primary_nav_textual_link_color']					= 'color-whitish-link';
+	$settings['primary_nav_textual_link_hover_color']			= 'color-white-hover';
+	$settings['primary_nav_items_border_type']					= 'border-left';
+	$settings['primary_nav_items_border_color']					= 'border-primary-light';
+	$settings['primary_nav_items_padding_y']					= 'py-3';
+	$settings['primary_nav_items_padding_x']					= 'px-3';
+	$settings['primary_nav_dropdown_background_color'] 			= 'bg-primary';
+	$settings['primary_nav_dropdown_background_hover_color']	= 'bg-primary-light-hover';
+	$settings['primary_nav_dropdown_textual_font_size']			= 'text-14';
+	$settings['primary_nav_dropdown_textual_link_color']		= 'color-whitish-link';
+	$settings['primary_nav_dropdown_textual_link_hover_color']	= 'color-white-hover';
+	$settings['primary_nav_toggler_alignment']					= 'mr-auto';
+	$settings['primary_nav_toggler_font_size']					= 'text-22';
+	$settings['primary_nav_toggler_background_color']			= 'bg-white';
+	$settings['primary_nav_toggler_margin_x']					= 'mx-0';
+	$settings['primary_nav_toggler_margin_y']					= 'my-2';
+	$settings['primary_nav_toggler_border_type']				= 'border-0';
+	$settings['primary_nav_cart_link_padding_t']				= 'pt-2';
+	$settings['primary_nav_cart_icon_color']					= 'color-light';
+	$settings['primary_nav_cart_icon_size']						= 'text-22';
+	$settings['primary_nav_cart_count_color']					= 'color-gray-500';
+	$settings['primary_nav_cart_count_size']					= 'text-14';
+	$settings['body_wrapper_background_color']					= 'bg-whitish';
+	$settings['featured_image_wrapper_margin_bottom']			= 'mb-4';
+	$settings['entry_meta_tagslinks_status']					= '1';
+	$settings['entry_wrapper_background_color']					= 'bg-white';
+	$settings['entry_wrapper_padding_x']						= 'px-4';
+	$settings['entry_wrapper_padding_y']						= 'py-4';
+	$settings['entry_wrapper_margin_top']						= 'mt-4';
+	$settings['entry_wrapper_margin_bottom']					= 'mb-4';
+	$settings['sidebar_location']								= 'right';
+	$settings['sidebar_wrapper_background_color']				= 'bg-white';
+	$settings['sidebar_wrapper_padding_x']						= 'px-4';
+	$settings['sidebar_wrapper_padding_y']						= 'py-4';
+	$settings['sidebar_wrapper_margin_top']						= 'mt-4';
+	$settings['sidebar_wrapper_margin_bottom']					= 'mb-4';
+	$settings['sidebar_container_margin_bottom']				= 'mb-5';
+	$settings['footer_wrapper_background_color']				= 'bg-gray-100';
+	$settings['footer_wrapper_padding_y']						= 'py-4';
+	$settings['footer_wrapper_border_type']						= 'border-top';
+	$settings['footer_wrapper_border_color']					= 'border-gray-300';
+	$settings['copyright_wrapper_background_color']				= 'bg-white';
+	$settings['copyright_wrapper_padding_y']					= 'py-3';
+	$settings['copyright_wrapper_border_type']					= 'border-top';
+	$settings['copyright_wrapper_border_color']					= 'border-gray-300';
+	$settings['copyright_textual_text_color']					= 'color-gray-600';
+	$settings['copyright_textual_link_color']					= 'color-gray-700-link';
+	$settings['copyright_textual_link_hover_color']				= 'color-gray-800-hover';
+	$settings['copyright_nav_alignment']						= 'mx-auto';
+	$settings['copyright_nav_wrapper_padding_x']				= 'px-0';
+	$settings['copyright_nav_wrapper_padding_y']				= 'py-2';
+	$settings['copyright_nav_textual_font_size']				= 'text-13';
+	$settings['copyright_nav_textual_link_color']				= 'color-gray-600-link';
+	$settings['copyright_nav_items_text_alignment']				= 'text-center';
+	$settings['copyright_nav_items_margin_y']					= 'my-0';
+	$settings['copyright_nav_items_margin_x']					= 'mx-1';
+	$settings['copyright_nav_items_padding_y']					= 'py-2';
+	$settings['copyright_nav_items_padding_x']					= 'px-2';
+	$settings['frontpage_wrapper_background_color']				= 'bg-gray-900';
+	$settings['scrolltop_textual_text_color']					= 'color-primary';
+	$settings['scrolltop_textual_font_size']					= 'text-16';
+	$settings['scrolltop_container_background_color']			= 'bg-gray-200';
+	$settings['scrolltop_container_background_hover_color']		= 'bg-gray-300-hover';
+	$settings['scrolltop_container_padding_x']					= 'px-3';
+	$settings['scrolltop_container_padding_y']					= 'py-2';
+	$settings['scrolltop_container_border_radius']				= 'rounded-circle';
+
+	return $settings;
+
+}//end secretum_load_default_settings()
+
+add_filter( 'secretum_customizer_default_settings', 'Secretum\secretum_load_default_settings' );

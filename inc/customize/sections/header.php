@@ -67,3 +67,10 @@ $container->settings( [
 $borders->settings( [
 	'section' => 'header_container',
 ] );
+
+$wp_customize->add_section( 'header_image', [
+	'panel' 			=> 'secretum_header_panel',
+	'title' 			=> __( 'Header Media', 'secretum' ),
+	'theme_supports' 	=> 'custom-header',
+	'priority' 			=> 10,
+] );

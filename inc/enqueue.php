@@ -62,7 +62,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_mod( 'theme_color_palette' ) ) {
 		wp_enqueue_style(
 			'secretum',
-			SECRETUM_STYLE_URL . '/css/themes/' . esc_url( secretum_mod( 'theme_color_palette', 'raw' ) ) . '/theme.min.css',
+			SECRETUM_STYLE_URL . '/css/themes/' . secretum_mod( 'theme_color_palette', 'attr', false ) . '/theme.min.css',
 			[],
 			$theme->get( 'Version' ),
 			'all'

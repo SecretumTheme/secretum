@@ -15,7 +15,6 @@ namespace Secretum;
 
 // If Header Active.
 if ( true !== secretum_mod( 'header_status' ) && true !== secretum_mod( 'custom_headers' ) ) {
-
 	// Custom Image/Video Header.
 	if ( get_custom_header_markup() ) { ?>
 		<div class="custom-header">

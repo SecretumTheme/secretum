@@ -209,19 +209,6 @@ add_filter( 'woocommerce_order_button_text', 'Secretum\secretum_woocommerce_orde
  *
  * @since 1.0.0
  */
-function secretum_no_add_to_cart_message_html() {
-	return;
-
-}//end secretum_no_add_to_cart_message_html()
-
-add_filter( 'no_add_to_cart_message_html', 'Secretum\secretum_no_add_to_cart_message_html' );
-
-
-/**
- * Modify Add To Cart Message
- *
- * @since 1.0.0
- */
 function secretum_wc_add_to_cart_message_html() {
 	return sprintf(
 		'<a href="%s" class="button wc-forwards">%s</a> %s',
