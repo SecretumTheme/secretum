@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Inject Frontpage Inline BG Style
  *

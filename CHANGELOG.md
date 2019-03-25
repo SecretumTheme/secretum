@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.1.2
+**2019-03-25 - Hotfix/WordPress Compliance**
+
+* Updated WooCommerce add-to-cart variable template
+* Corrected namespace function call in woocommerce.php
+* Theme Sniffer compliance updates
+
 # 1.1.1
 **2019-02-19 - WordPress Compliance**
 

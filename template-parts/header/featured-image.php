@@ -17,7 +17,7 @@ namespace Secretum;
 if ( false === secretum_mod( 'featured_image_status' ) ) {
 	// If Single or Page, Has Thumbnail, and Not a Woo Product.
 	if ( ( true === is_single() || true === is_page() ) && true === has_post_thumbnail( get_queried_object_id() ) && false === secretum_is_wooproduct() ) {
-	?>
+		?>
 		<div class="wrapper<?php secretum_wrapper( 'featured_image' ); ?>">
 			<div class="container<?php secretum_container( 'featured_image' ); ?>">
 				<div class="featured-image-header">
@@ -25,6 +25,6 @@ if ( false === secretum_mod( 'featured_image_status' ) ) {
 				</div><!-- .featured-image-header -->
 			</div><!-- .featured-image-header -->
 		</div><!-- .featured-image-header -->
-	<?php
+		<?php
 	}
 }

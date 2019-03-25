@@ -25,14 +25,17 @@ namespace Secretum;
  */
 function secretum_icon( $args = [] ) {
 	// Parse args.
-	$args = wp_parse_args( $args, [
-		'fi' 	=> '',
-		'fa' 	=> '',
-		'svg' 	=> '',
-		'alt' 	=> '',
-		'size' 	=> '',
-		'echo' 	=> true,
-	] );
+	$args = wp_parse_args(
+		$args,
+		[
+			'fi'   => '',
+			'fa'   => '',
+			'svg'  => '',
+			'alt'  => '',
+			'size' => '',
+			'echo' => true,
+		]
+	);
 
 	// Build Alt Tag.
 	$alt = ( true !== empty( $args['alt'] ) ) ? ' alt="' . esc_html( $args['alt'] ) . '"' : '';

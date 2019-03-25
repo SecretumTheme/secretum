@@ -15,14 +15,13 @@ namespace Secretum;
 
 // If Posts & Default Display Category Links.
 if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_catlinks_status' ) ) {
-?>
+	$secretum_cat_links_icon = [
+		'fi' => 'folder',
+		'fa' => 'fa-folder-open',
+	];
+	?>
 	<span class="cat-links">
-		<?php secretum_icon(
-			array(
-				'fi' => 'folder',
-				'fa' => 'fa-folder-open',
-			)
-		); ?> <?php secretum_text( 'meta_categories_text', true ); ?> <?php secretum_categories_list(); ?>
+		<?php secretum_icon( $secretum_cat_links_icon ); ?> <?php secretum_text( 'meta_categories_text', true ); ?> <?php secretum_categories_list(); ?>
 	</span><!-- .cat-links -->
-<?php
+	<?php
 }

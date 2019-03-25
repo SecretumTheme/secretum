@@ -67,10 +67,13 @@ class Classes_Alignments {
 		}
 
 		// Parse Args To Vars.
-		$args = wp_parse_args( $args, [
-			'margin' => '',
-			'text' => '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'margin' => '',
+				'text'   => '',
+			]
+		);
 
 		// Either Margin Or Text Is Required.
 		if ( true === empty( $args['margin'] ) && true === empty( $args['text'] ) ) {

@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Container Types
  *
@@ -23,8 +22,8 @@ namespace Secretum;
  */
 function secretum_customizer_container_types() {
 	return [
-		'' 			=> __( 'Responsive, fixed-width', 'secretum' ),
-		'-fluid' 	=> __( 'Fluid, full-width', 'secretum' ),
+		''       => __( 'Responsive, fixed-width', 'secretum' ),
+		'-fluid' => __( 'Fluid, full-width', 'secretum' ),
 	];
 
 }//end secretum_customizer_container_types()

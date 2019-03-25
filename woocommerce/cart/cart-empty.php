@@ -2,23 +2,22 @@
 /**
  * Empty cart page
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Cart
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.5.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart-empty.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Cart
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.5.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart-empty.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-// WooCommerce Bookings.
 if ( true === secretum_is_woobookings() ) {
-?>
+	?>
 	<p class="cart-empty text-center">
-		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'You currently have no temporarily reserved bookings in your cart.', 'secretum' ), 10, 1 ) );?>
+		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'You currently have no temporarily reserved bookings in your cart.', 'secretum' ), 10, 1 ) ); ?>
 	</p>
 
 	<?php if ( wc_get_page_id( 'shop' ) > 0 ) { ?>
@@ -27,12 +26,12 @@ if ( true === secretum_is_woobookings() ) {
 				<?php echo wp_kses_post( apply_filters( 'secretum_return_to_shop_text', __( 'Return To Shop', 'secretum' ), 10, 1 ) ); ?>
 			</a>
 		</p>
-	<?php }
+		<?php
+	}
 } else {
-	// WooCommerce Default.
-?>
+	?>
 	<p class="cart-empty text-center">
-		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'Your cart is currently empty.', 'secretum' ), 10, 1 ) );?>
+		<?php echo wp_kses_post( apply_filters( 'secretum_cart_is_empty_text', __( 'Your cart is currently empty.', 'secretum' ), 10, 1 ) ); ?>
 	</p>
 
 	<?php if ( wc_get_page_id( 'shop' ) > 0 ) { ?>
@@ -41,5 +40,6 @@ if ( true === secretum_is_woobookings() ) {
 				<?php echo wp_kses_post( apply_filters( 'secretum_return_to_shop_text', __( 'Return to shop', 'secretum' ), 10, 1 ) ); ?>
 			</a>
 		</p>
-	<?php }
+		<?php
+	}
 }

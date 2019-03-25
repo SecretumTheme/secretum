@@ -124,8 +124,11 @@ $customizer->select(
 );
 
 // Colors Section.
-$wp_customize->add_section( 'colors', array(
-	'panel' 		=> 'theme',
-	'title' 		=> __( 'WordPress Colors', 'secretum' ),
-	'priority' 		=> 40,
-) );
+$wp_customize->add_section(
+	'colors',
+	[
+		'panel'    => 'theme',
+		'title'    => __( 'WordPress Colors', 'secretum' ),
+		'priority' => 40,
+	]
+);

@@ -50,30 +50,40 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'copyright_nav',
-] );
+$wrapper->settings(
+	[
+		'section' => 'copyright_nav',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'copyright_nav_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'copyright_nav_wrapper',
+	]
+);
 
 
 // Textuals.
-$textuals->settings( [
-	'section' => 'copyright_nav',
-] );
+$textuals->settings(
+	[
+		'section' => 'copyright_nav',
+	]
+);
 
 
 // Nav Items.
-$navitems->settings( [
-	'section' => 'copyright_nav',
-] );
+$navitems->settings(
+	[
+		'section' => 'copyright_nav',
+	]
+);
 
 
 // Nav Items Borders.
-$borders->settings( [
-	'section' => 'copyright_nav_items',
-] );
+$borders->settings(
+	[
+		'section' => 'copyright_nav_items',
+	]
+);

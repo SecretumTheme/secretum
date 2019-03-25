@@ -14,22 +14,22 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', 	'1.1.1' );
+define( 'SECRETUM_THEME_VERSION', '1.1.2' );
 
-define( 'SECRETUM_DIR', 			dirname( __FILE__ ) );
-define( 'SECRETUM_BASE_URL', 		esc_url( home_url() ) );
-define( 'SECRETUM_INC', 			SECRETUM_DIR . '/inc' );
+define( 'SECRETUM_DIR', dirname( __FILE__ ) );
+define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
+define( 'SECRETUM_INC', SECRETUM_DIR . '/inc' );
 
-define( 'SECRETUM_THEME_FILE', 		__FILE__ );
-define( 'SECRETUM_THEME_DIR', 		dirname( __FILE__ ) );
-define( 'SECRETUM_THEME_BASE', 		plugin_basename( __FILE__ ) );
-define( 'SECRETUM_THEME_URL', 		get_template_directory_uri() );
-define( 'SECRETUM_STYLE_URL', 		get_stylesheet_directory_uri() );
+define( 'SECRETUM_THEME_FILE', __FILE__ );
+define( 'SECRETUM_THEME_DIR', dirname( __FILE__ ) );
+define( 'SECRETUM_THEME_BASE', plugin_basename( __FILE__ ) );
+define( 'SECRETUM_THEME_URL', get_template_directory_uri() );
+define( 'SECRETUM_STYLE_URL', get_stylesheet_directory_uri() );
 
-define( 'SECRETUM_MENU_NAME', 		__( 'Theme Admin', 'secretum' ) );
-define( 'SECRETUM_PAGE_NAME', 		__( 'Secretum Theme', 'secretum' ) );
-define( 'SECRETUM_PAGE_ABOUT', 		__( 'A Custom Theme For WordPress', 'secretum' ) );
-define( 'SECRETUM_THEME_NAME', 		'secretum' );
+define( 'SECRETUM_MENU_NAME', __( 'Theme Admin', 'secretum' ) );
+define( 'SECRETUM_PAGE_NAME', __( 'Secretum Theme', 'secretum' ) );
+define( 'SECRETUM_PAGE_ABOUT', __( 'A Custom Theme For WordPress', 'secretum' ) );
+define( 'SECRETUM_THEME_NAME', 'secretum' );
 
 
 // PHP & WordPress Version Compare Checks.
@@ -147,12 +147,12 @@ function secretum_customize_register( $wp_customize ) {
 
 	// Start Secretum Customizer.
 	$customizer = new \Secretum\Customize_Customizer( $wp_customize );
-	$wrapper 	= new \Secretum\Customize_Wrapper( $customizer, $defaults );
-	$container 	= new \Secretum\Customize_Container( $customizer, $defaults );
-	$textuals 	= new \Secretum\Customize_Textuals( $customizer, $defaults );
-	$borders 	= new \Secretum\Customize_Borders( $customizer, $defaults );
-	$navitems 	= new \Secretum\Customize_NavItems( $customizer, $defaults );
-	$dropdown 	= new \Secretum\Customize_Dropdown( $customizer, $defaults );
+	$wrapper    = new \Secretum\Customize_Wrapper( $customizer, $defaults );
+	$container  = new \Secretum\Customize_Container( $customizer, $defaults );
+	$textuals   = new \Secretum\Customize_Textuals( $customizer, $defaults );
+	$borders    = new \Secretum\Customize_Borders( $customizer, $defaults );
+	$navitems   = new \Secretum\Customize_NavItems( $customizer, $defaults );
+	$dropdown   = new \Secretum\Customize_Dropdown( $customizer, $defaults );
 
 	// Include Panels, Sections, and Settings.
 	require_once SECRETUM_INC . '/customize/sections/theme.php';

@@ -53,8 +53,8 @@ class Customize_Wrapper {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer 	= $customizer;
-			$this->_default 	= $defaults;
+			$this->_customizer = $customizer;
+			$this->_default    = $defaults;
 		}
 
 	}//end __construct()
@@ -69,11 +69,14 @@ class Customize_Wrapper {
 	 */
 	final public function settings( array $args ) {
 		// Build Args.
-		$args = wp_parse_args( $args, [
-			'section' 	=> '',
-			'panel' 	=> '',
-			'title' 	=> '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'section' => '',
+				'panel'   => '',
+				'title'   => '',
+			]
+		);
 
 		// Required.
 		if ( empty( $args['section'] ) ) {
@@ -83,8 +86,8 @@ class Customize_Wrapper {
 		// Section.
 		$this->_customizer->section(
 			$args['section'] . '_wrapper',
-			$this->_panel( $args['section'], $args['panel'] ),
-			$this->_title( $args['title'] ),
+			$this->panel( $args['section'], $args['panel'] ),
+			$this->title( $args['title'] ),
 			__( 'Wraps around all other containers, elements, and features related to this section.', 'secretum' )
 		);
 
@@ -150,14 +153,14 @@ class Customize_Wrapper {
 	 *
 	 * @return string Alt Section Title.
 	 */
-	final private function _title( $title = '' ) {
+	final private function title( $title = '' ) {
 		if ( empty( $title ) ) {
 			$title = __( 'Wrapper', 'secretum' );
 		}
 
 		return $title;
 
-	}//end _title()
+	}//end title()
 
 
 	/**
@@ -170,7 +173,7 @@ class Customize_Wrapper {
 	 *
 	 * @return string Alt Section Title.
 	 */
-	final private function _panel( $section, $panel = '' ) {
+	final private function panel( $section, $panel = '' ) {
 		if ( empty( $panel ) ) {
 			$panel = $section;
 		} else {
@@ -179,7 +182,7 @@ class Customize_Wrapper {
 
 		return $panel;
 
-	}//end _panel()
+	}//end panel()
 
 
 }//end class

@@ -57,10 +57,10 @@ $customizer->radio(
 	'',
 	$defaults['entry_meta_link'],
 	array(
-		'' 		=> __( 'No Archive Link', 'secretum' ),
+		''      => __( 'No Archive Link', 'secretum' ),
 		'month' => __( 'Link To Monthly Archive', 'secretum' ),
-		'day' 	=> __( 'Link To Daily Archive', 'secretum' ),
-		'post' 	=> __( 'Link To Current Post', 'secretum' ),
+		'day'   => __( 'Link To Daily Archive', 'secretum' ),
+		'post'  => __( 'Link To Current Post', 'secretum' ),
 	)
 );
 
@@ -88,12 +88,13 @@ $customizer->checkbox(
 // Radio Select.
 $customizer->radio(
 	'entry_display',
-	'entry_meta_author_link', __( 'Author Link', 'secretum' ),
+	'entry_meta_author_link',
+	__( 'Author Link', 'secretum' ),
 	'',
 	$defaults['entry_meta_author_link'],
 	array(
-		'' 			=> __( 'No Archive Link', 'secretum' ),
-		'author' 	=> __( 'Link To Author Archive', 'secretum' ),
+		''       => __( 'No Archive Link', 'secretum' ),
+		'author' => __( 'Link To Author Archive', 'secretum' ),
 	)
 );
 
@@ -139,25 +140,33 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'entry',
-] );
+$wrapper->settings(
+	[
+		'section' => 'entry',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'entry_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'entry_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' 	=> 'entry',
-	'type'		=> false,
-] );
+$container->settings(
+	[
+		'section' => 'entry',
+		'type'    => false,
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'entry_container',
-] );
+$borders->settings(
+	[
+		'section' => 'entry_container',
+	]
+);

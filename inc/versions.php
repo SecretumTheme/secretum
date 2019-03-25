@@ -26,8 +26,8 @@ function secretum_admin_notice_php_support() {
 	echo wp_kses(
 		"<div class=\"error\"><p>{$current} {$version} - {$message}</p></div>",
 		[
-			'p' 	=> true,
-			'div' 	=> [
+			'p'   => true,
+			'div' => [
 				'class' => true,
 			],
 		]
@@ -72,8 +72,8 @@ function secretum_admin_notice_wordpress_support() {
 	echo wp_kses(
 		"<div class=\"error\"><p>{$message}</p></div>",
 		[
-			'p' 	=> true,
-			'div' 	=> [
+			'p'   => true,
+			'div' => [
 				'class' => true,
 			],
 		]

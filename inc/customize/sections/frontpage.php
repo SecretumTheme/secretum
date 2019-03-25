@@ -74,7 +74,9 @@ $customizer->textarea(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' 	=> 'frontpage',
-	'title' 	=> __( 'Heading Wrapper', 'secretum' ),
-] );
+$wrapper->settings(
+	[
+		'section' => 'frontpage',
+		'title'   => __( 'Heading Wrapper', 'secretum' ),
+	]
+);

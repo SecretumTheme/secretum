@@ -2,42 +2,49 @@
 /**
  * Order details
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Order
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.5.2
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Order
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.5.2
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
 
-$order = wc_get_order( $order_id );
-if ( ! isset( $order_id ) && $order_id !== $order ) { return; }
+$secretum_order = wc_get_order( $order_id );
+if ( ! isset( $order_id ) && $order_id !== $secretum_order ) {
+	return;
+}
 
-$order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-$show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', [
-	'completed',
-	'processing',
-] ) );
-$show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
-$downloads             = $order->get_downloadable_items();
-$show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
+$secretum_order_items           = $secretum_order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
+$secretum_show_purchase_note    = $secretum_order->has_status(
+	apply_filters(
+		'woocommerce_purchase_note_order_statuses',
+		[
+			'completed',
+			'processing',
+		]
+	)
+);
+$secretum_show_customer_details = is_user_logged_in() && $secretum_order->get_user_id() === get_current_user_id();
+$secretum_downloads             = $secretum_order->get_downloadable_items();
+$secretum_show_downloads        = $secretum_order->has_downloadable_item() && $secretum_order->is_download_permitted();
 
-if ( $show_downloads ) {
+if ( $secretum_show_downloads ) {
 	wc_get_template(
 		'order/order-downloads.php',
 		[
-			'downloads' => $downloads,
+			'downloads'  => $secretum_downloads,
 			'show_title' => true,
 		]
 	);
 }
 ?>
 <section class="woocommerce-order-details">
-	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
+	<?php do_action( 'woocommerce_order_details_before_order_table', $secretum_order ); ?>
 
 	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'secretum' ); ?></h2>
 
@@ -50,57 +57,64 @@ if ( $show_downloads ) {
 		</thead>
 		<tbody>
 			<?php
-			do_action( 'woocommerce_order_details_before_order_table_items', $order );
+			do_action( 'woocommerce_order_details_before_order_table_items', $secretum_order );
 
-			foreach ( $order_items as $item_id => $item ) {
-				$product = $item->get_product();
+			foreach ( $secretum_order_items as $secretum_item_id => $secretum_item ) {
+				$secretum_product = $secretum_item->get_product();
 
-				wc_get_template( 'order/order-details-item.php', [
-					'order'			     => $order,
-					'item_id'		     => $item_id,
-					'item'			     => $item,
-					'show_purchase_note' => $show_purchase_note,
-					'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-					'product'	         => $product,
-				] );
+				wc_get_template(
+					'order/order-details-item.php',
+					[
+						'order'              => $secretum_order,
+						'item_id'            => $secretum_item_id,
+						'item'               => $secretum_item,
+						'show_purchase_note' => $secretum_show_purchase_note,
+						'purchase_note'      => $secretum_product ? $secretum_product->get_purchase_note() : '',
+						'product'            => $secretum_product,
+					]
+				);
 			}
 
-			do_action( 'woocommerce_order_details_after_order_table_items', $order );
+			do_action( 'woocommerce_order_details_after_order_table_items', $secretum_order );
 			?>
 
 		</tbody>
 
 		<tfoot>
 			<?php
-			foreach ( $order->get_order_item_totals() as $key => $total ) {
-			?>
+			foreach ( $secretum_order->get_order_item_totals() as $secretum_key => $secretum_total ) {
+				?>
 				<tr>
-					<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
-					<td><?php if ( isset( $total['value'] ) ) { echo wp_kses_post( $total['value'] ); } ?></td>
+					<th scope="row"><?php echo esc_html( $secretum_total['label'] ); ?></th>
+					<?php
+					if ( isset( $secretum_total['value'] ) ) {
+						echo wp_kses_post( '<td>' . $secretum_total['value'] . '</td>' );
+					}
+					?>
 				</tr>
-			<?php
+				<?php
 			}
-			if ( $order->get_customer_note() ) {
-			?>
+			if ( $secretum_order->get_customer_note() ) {
+				?>
 				<tr>
 					<th><?php esc_html_e( 'Note:', 'secretum' ); ?></th>
-					<td><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></td>
+					<td><?php echo wp_kses_post( wptexturize( $secretum_order->get_customer_note() ) ); ?></td>
 				</tr>
-			<?php
+				<?php
 			}
 			?>
 		</tfoot>
 	</table>
 
-	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
+	<?php do_action( 'woocommerce_order_details_after_order_table', $secretum_order ); ?>
 </section>
 
 <?php
-if ( $show_customer_details ) {
+if ( $secretum_show_customer_details ) {
 	wc_get_template(
 		'order/order-details-customer.php',
 		[
-			'order' => $order,
+			'order' => $secretum_order,
 		]
 	);
 }

@@ -2,18 +2,17 @@
 /**
  * The template for displaying product content in the single-product.php template
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.4.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-product.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.4.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-product.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
-
 
 /**
  * Hook Woocommerce_before_single_product.

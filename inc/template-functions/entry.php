@@ -138,8 +138,8 @@ function secretum_categories_list() {
 			$get_the_category_list,
 			[
 				'a' => [
-					'href' 	=> true,
-					'rel' 	=> true,
+					'href' => true,
+					'rel'  => true,
 				],
 			]
 		);
@@ -161,8 +161,8 @@ function secretum_tags_list() {
 			$get_the_tag_list,
 			[
 				'a' => [
-					'href' 	=> true,
-					'rel' 	=> true,
+					'href' => true,
+					'rel'  => true,
 				],
 			]
 		);
@@ -180,22 +180,22 @@ function secretum_post_password_form() {
 	echo wp_kses(
 		apply_filters( 'secretum_post_password_form', get_the_password_form(), 10, 1 ),
 		[
-			'form' 	=> [
-				'action' 	=> true,
-				'class' 	=> true,
-				'method' 	=> true,
+			'form'  => [
+				'action' => true,
+				'class'  => true,
+				'method' => true,
 			],
 			'label' => [
-				'for' 		=> true,
+				'for' => true,
 			],
 			'input' => [
-				'name' 		=> true,
-				'id' 		=> true,
-				'type' 		=> true,
-				'size' 		=> true,
-				'value' 	=> true,
+				'name'  => true,
+				'id'    => true,
+				'type'  => true,
+				'size'  => true,
+				'value' => true,
 			],
-			'p' 	=> true,
+			'p'     => true,
 		]
 	);
 
@@ -214,9 +214,9 @@ function secretum_edit_link( $post_id ) {
 	$link  = get_edit_post_link( $post_id );
 	$icon  = secretum_icon(
 		[
-			'fi' 	=> 'pencil',
-			'fa' 	=> 'fa-pencil',
-			'echo' 	=> false,
+			'fi'   => 'pencil',
+			'fa'   => 'fa-pencil',
+			'echo' => false,
 		]
 	);
 	$html  = "<span class=\"screen-reader-text\">{$edit}</span>";
@@ -225,17 +225,17 @@ function secretum_edit_link( $post_id ) {
 	echo wp_kses(
 		apply_filters( 'secretum_edit_link', $html, 10, 1 ),
 		[
-			'a' => [
-				'class' 		=> true,
-				'href' 			=> true,
-				'title' 		=> true,
+			'a'    => [
+				'class' => true,
+				'href'  => true,
+				'title' => true,
 			],
 			'span' => [
-				'class' 		=> true,
+				'class' => true,
 			],
-			'i' => [
-				'class' 		=> true,
-				'aria-hidden' 	=> true,
+			'i'    => [
+				'class'       => true,
+				'aria-hidden' => true,
 			],
 		]
 	);

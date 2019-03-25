@@ -20,13 +20,15 @@ namespace Secretum;
 // If Header Top Allowed To Dipslay.
 if ( true !== secretum_mod( 'header_top_status' ) ) {
 	// Register Sidebar Header Top.
-	register_sidebar( [
-		'name'		  	=> __( '- Top Header Widget Area', 'secretum' ),
-		'id' 			=> 'secretum-sidebar-header-top',
-		'description' 	=> __( 'Overrides top bar header menu if a widget is defined.', 'secretum' ),
-		'before_widget' => '',
-		'after_widget' 	=> '',
-		'before_title'  => '',
-		'after_title'   => '',
-	] );
+	register_sidebar(
+		[
+			'name'          => __( '- Top Header Widget Area', 'secretum' ),
+			'id'            => 'secretum-sidebar-header-top',
+			'description'   => __( 'Overrides top bar header menu if a widget is defined.', 'secretum' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		]
+	);
 }

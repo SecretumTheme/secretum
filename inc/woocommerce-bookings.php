@@ -82,16 +82,16 @@ add_filter( 'booking_form_fields', 'Secretum\secretum_booking_form_fields' );
  * @return string $block_html Updated times with sold-out injected.
  */
 function secretum_wc_bookings_get_time_slots_html( $block_html, $available_blocks, $blocks ) {
-	$booked_blocks  = '';
+	$booked_blocks = '';
 
 	// Build booking array from all blocks.
 	foreach ( $blocks as $key => $id ) {
 		if ( false === array_key_exists( $id, $available_blocks ) ) {
 			$booked_blocks[ $id ] = [
-				'booked'	=> 1,
+				'booked'    => 1,
 				'available' => 0,
 				'resources' => [
-					'0'	 => 1,
+					'0' => 1,
 				],
 			];
 		}
@@ -119,7 +119,7 @@ function secretum_wc_bookings_get_time_slots_html( $block_html, $available_block
 	foreach ( $available_blocks as $block => $quantity ) {
 		// Inject Sold-out Marker.
 		if ( 0 === $quantity['available'] ) {
-			$block_html .= '<li class="block"><a href="#" class="sold-out">' . __( 'booked','secretum' ) . '</a></li>';
+			$block_html .= '<li class="block"><a href="#" class="sold-out">' . __( 'booked', 'secretum' ) . '</a></li>';
 		}
 
 		// Original Block HTML.
@@ -171,7 +171,7 @@ function secretum_wc_session_expiration( $seconds ) {
 
 }//end secretum_wc_session_expiration()
 
-add_filter( 'wc_session_expiration' , 'Secretum\secretum_wc_session_expiration' );
+add_filter( 'wc_session_expiration', 'Secretum\secretum_wc_session_expiration' );
 
 
 /**
@@ -252,9 +252,9 @@ add_filter( 'woocommerce_get_item_data', 'Secretum\secretum_woocommerce_get_item
  */
 function secretum_get_store_text( $translated_text, $text, $domain ) {
 	switch ( $translated_text ) {
-		case 'Return to shop' :
+		case 'Return to shop':
 			$translated_text = __( 'Return to Store', 'secretum' );
-		break;
+			break;
 	}
 
 	return $translated_text;

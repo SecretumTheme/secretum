@@ -19,8 +19,7 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_metaboxes() {
-	// Add Metabox Sidebars.
-	new Metabox_Sidebars;
+	new \Secretum\Metabox_Sidebars();
 }
 
 add_action( 'admin_init', 'Secretum\secretum_metaboxes' );

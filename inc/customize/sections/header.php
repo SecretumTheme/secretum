@@ -26,16 +26,7 @@ $customizer->section(
 	__( 'Display Settings', 'secretum' ),
 	''
 );
-/**
-// Checkbox
-$customizer->checkbox(
-	'header_display',
-	'custom_headers',
-	__( 'Enable Custom Headers Feature', 'secretum' ),
-	__( 'Before enabling set all default header settings. A custom header must be published before it will display.', 'secretum' ),
-	$defaults['custom_headers']
-);
-*/
+
 // Checkbox.
 $customizer->checkbox(
 	'header_display',
@@ -46,31 +37,42 @@ $customizer->checkbox(
 );
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'header',
-] );
+$wrapper->settings(
+	[
+		'section' => 'header',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'header_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'header_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' => 'header',
-] );
+$container->settings(
+	[
+		'section' => 'header',
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'header_container',
-] );
+$borders->settings(
+	[
+		'section' => 'header_container',
+	]
+);
 
-$wp_customize->add_section( 'header_image', [
-	'panel' 			=> 'secretum_header_panel',
-	'title' 			=> __( 'Header Media', 'secretum' ),
-	'theme_supports' 	=> 'custom-header',
-	'priority' 			=> 10,
-] );
+$wp_customize->add_section(
+	'header_image',
+	[
+		'panel'          => 'secretum_header_panel',
+		'title'          => __( 'Header Media', 'secretum' ),
+		'theme_supports' => 'custom-header',
+		'priority'       => 10,
+	]
+);

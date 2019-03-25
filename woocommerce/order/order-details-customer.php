@@ -2,26 +2,25 @@
 /**
  * Order Customer Details
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Order
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.4.4
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details-customer.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Order
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.4.4
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details-customer.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
 
-
-$show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_address();
+$secretum_show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_address();
 ?>
 
 <hr />
 
 <section class="woocommerce-customer-details">
-<?php if ( $show_shipping ) { ?>
+<?php if ( $secretum_show_shipping ) { ?>
 	<section class="woocommerce-columns woocommerce-columns--2 woocommerce-columns--addresses col2-set addresses">
 		<div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-1">
 <?php } ?>
@@ -39,7 +38,7 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 		<?php } ?>
 	</address>
 
-<?php if ( $show_shipping ) { ?>
+<?php if ( $secretum_show_shipping ) { ?>
 		</div><!-- .col-1 -->
 
 		<div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2">
@@ -49,7 +48,7 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 			</address>
 		</div><!-- .col-2 -->
 	</section><!-- .col2-set -->
-<?php
+	<?php
 }
 
 do_action( 'woocommerce_order_details_after_customer_details', $order );

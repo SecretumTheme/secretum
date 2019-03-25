@@ -17,17 +17,17 @@ namespace Secretum;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<div class="entry-content">
 		<?php
-			the_content();
+		the_content();
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links py-3 mt-5 text-center">' . secretum_text( 'content_pages_text', false ),
-					'after'  => '</div>',
-				 )
-			);
+		wp_link_pages(
+			[
+				'before' => '<div class="page-links py-3 mt-5 text-center">' . secretum_text( 'content_pages_text', false ),
+				'after'  => '</div>',
+			]
+		);
 
-			// Edit Link.
-			secretum_edit_link( get_the_ID() );
+		// Edit Link.
+		secretum_edit_link( get_the_ID() );
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
