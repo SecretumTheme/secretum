@@ -66,9 +66,12 @@ class Classes_Nav_Cart_Textuals {
 		}
 
 		// Parse Args To Vars.
-		$args = wp_parse_args( $args, [
-			'type' => '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'type' => '',
+			]
+		);
 
 		// Type Required.
 		if ( true !== isset( $args['type'] ) || true === empty( $args['type'] ) ) {
@@ -87,7 +90,7 @@ class Classes_Nav_Cart_Textuals {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Nav Cart Textuals Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_cart' . $type . '_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_cart' . $type . '_size', 'attr', true );
 

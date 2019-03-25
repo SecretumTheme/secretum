@@ -15,9 +15,9 @@ namespace Secretum;
 
 // If Active.
 if ( true === secretum_mod( 'frontpage_header_status' ) ) {
-?>
-<div class="frontpage-heading w-100<?php secretum_wrapper( 'frontpage' ); ?>" id="frontpage-heading"<?php secretum_frontpage_bg_style(); ?>>
-	<?php echo wp_kses_post( secretum_mod( 'frontpage_heading_html', 'html' ) ); ?>
-</div><!-- .frontpage-heading -->
-<?php
+	?>
+	<div class="frontpage-heading w-100<?php secretum_wrapper( 'frontpage' ); ?>" id="frontpage-heading"<?php secretum_frontpage_bg_style(); ?>>
+		<?php echo wp_kses_post( secretum_mod( 'frontpage_heading_html', 'html' ) ); ?>
+	</div><!-- .frontpage-heading -->
+	<?php
 }

@@ -2,19 +2,21 @@
 /**
  * Login form
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Global
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Global
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
  * @version     3.3.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/form-login.php
- * @since 		1.0.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/form-login.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-if ( is_user_logged_in() ) { return; }
+if ( is_user_logged_in() ) {
+	return;
+}
 ?>
 
 <form class="woocommerce-form woocommerce-form-login login" method="post" <?php echo ( $hidden ) ? 'style="display:none;"' : ''; ?>>
@@ -43,7 +45,7 @@ if ( is_user_logged_in() ) { return; }
 	<p class="form-row form-group">
 		<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 		<button type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'secretum' ); ?>"><?php esc_html_e( 'Login', 'secretum' ); ?></button>
-		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
+		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ); ?>" />
 	</p>
 
 	<p class="form-check">

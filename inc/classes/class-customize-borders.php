@@ -53,8 +53,8 @@ class Customize_Borders {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer 	= $customizer;
-			$this->_default 	= $defaults;
+			$this->_customizer = $customizer;
+			$this->_default    = $defaults;
 		}
 
 	}//end __construct()
@@ -69,9 +69,12 @@ class Customize_Borders {
 	 */
 	final public function settings( $args = [] ) {
 		// Build Args.
-		$args = wp_parse_args( $args, [
-			'section' 	=> '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'section' => '',
+			]
+		);
 
 		// Required.
 		if ( empty( $args['section'] ) ) {

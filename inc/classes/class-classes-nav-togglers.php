@@ -73,7 +73,7 @@ class Classes_Nav_Togglers {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Nav Togglers Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_toggler_background_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_toggler_margin_top', 'attr', true );
 			$classes .= secretum_mod( $section . '_toggler_margin_bottom', 'attr', true );

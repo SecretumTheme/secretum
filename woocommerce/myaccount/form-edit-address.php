@@ -2,41 +2,38 @@
 /**
  * Edit address form
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\MyAccount
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.4.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-edit-address.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\MyAccount
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.4.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-edit-address.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
 
-$page_title = ( 'billing' === $load_address ) ? __( 'Billing address', 'secretum' ) : __( 'Shipping address', 'secretum' );
+$secretum_page_title = ( 'billing' === $load_address ) ? __( 'Billing address', 'secretum' ) : __( 'Shipping address', 'secretum' );
 
 do_action( 'woocommerce_before_edit_account_address_form' );
 
 if ( ! $load_address ) {
 	wc_get_template( 'myaccount/my-address.php' );
 } else {
-?>
+	?>
 	<form method="post">
-		<h3><?php
-			// @codingStandardsIgnoreLine
-			echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title, $load_address );
-		?></h3>
+		<h3><?php echo wp_kses_post( apply_filters( 'woocommerce_my_account_edit_address_title', $secretum_page_title, $load_address ) ); ?></h3>
 		<div class="woocommerce-address-fields">
 			<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
 			<div class="woocommerce-address-fields__field-wrapper">
 				<?php
-				foreach ( $address as $key => $field ) {
-					if ( isset( $field['country_field'], $address[ $field['country_field'] ] ) ) {
-						$field['country'] = wc_get_post_data_by_key( $field['country_field'], $address[ $field['country_field'] ]['value'] );
+				foreach ( $address as $secretum_key => $secretum_field ) {
+					if ( isset( $secretum_field['country_field'], $address[ $secretum_field['country_field'] ] ) ) {
+						$secretum_field['country'] = wc_get_post_data_by_key( $secretum_field['country_field'], $address[ $secretum_field['country_field'] ]['value'] );
 					}
 
-					woocommerce_form_field( $key, $field, wc_get_post_data_by_key( $key, $field['value'] ) );
+					woocommerce_form_field( $secretum_key, $secretum_field, wc_get_post_data_by_key( $secretum_key, $secretum_field['value'] ) );
 				}
 				?>
 			</div>
@@ -52,6 +49,7 @@ if ( ! $load_address ) {
 			</p>
 		</div>
 	</form>
-<?php }
+	<?php
+}
 
 do_action( 'woocommerce_after_edit_account_address_form' );

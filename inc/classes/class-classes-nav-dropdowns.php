@@ -73,7 +73,7 @@ class Classes_Nav_Dropdowns {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Nav Dropdowns Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_dropdown_background_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_dropdown_background_hover_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_dropdown_margin_y', 'attr', true );

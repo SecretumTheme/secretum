@@ -18,14 +18,7 @@ namespace Secretum;
  *
  * @see template-parts/nav/posts-pagination.php
  *
- * @example \Secretum\Pagination::instance( $wp_query );
- * @example \Secretum\Pagination::instance( $wp_query, $nav_label, $previous_label, $next_label );
- * \Secretum\Pagination::instance(
- * 	$wp_query, 			(object WordPress Post Object.)
- * 	$nav_label, 		(string Nav Aria Text Label.)
- * 	$previous_label, 	(string Previous << Text Label.)
- * 	$next_label 		(string Next >> Text Label.)
- * );
+ * @example \Secretum\Pagination::instance($params);
  *
  * @since 1.0.0
  */
@@ -101,12 +94,12 @@ class Pagination {
 		// Required Call.
 		if ( null !== $wp_query ) {
 			// Set Vars.
-			$this->wp_query 			= $wp_query;
-			$this->nav_label 			= $this->_get_nav_label( $nav_label );
-			$this->previous_label 		= $this->_get_previous_label( $previous_label );
-			$this->next_label 			= $this->_get_next_label( $next_label );
-			$this->previous_post_link 	= esc_url( get_previous_posts_page_link() );
-			$this->next_post_link 		= esc_url( get_next_posts_page_link() );
+			$this->wp_query           = $wp_query;
+			$this->nav_label          = $this->get_nav_label( $nav_label );
+			$this->previous_label     = $this->get_previous_label( $previous_label );
+			$this->next_label         = $this->get_next_label( $next_label );
+			$this->previous_post_link = esc_url( get_previous_posts_page_link() );
+			$this->next_post_link     = esc_url( get_next_posts_page_link() );
 
 			// Display Pagination Feature.
 			$this->paginate();
@@ -122,11 +115,11 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _nav_open() {
+	final private function nav_open() {
 		return "<nav aria-label=\"{$this->nav_label}\">
 					<ul class=\"pagination\">";
 
-	}//end _nav_open()
+	}//end nav_open()
 
 
 	/**
@@ -136,7 +129,7 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _previous_posts() {
+	final private function previous_posts() {
 		if ( get_previous_posts_link() ) {
 			return "<li class=\"page-item\">
 						<a class=\"page-link\" href=\"{$this->previous_post_link}\" aria-label=\"{$this->previous_label}\">
@@ -145,7 +138,7 @@ class Pagination {
 					</li><!-- .page-item -->";
 		}
 
-	}//end _previous_posts()
+	}//end previous_posts()
 
 
 	/**
@@ -155,47 +148,47 @@ class Pagination {
 	 */
 	final public function paginate() {
 		// If Pages.
-		if ( $this->_paginate_check() ) {
+		if ( $this->paginate_check() ) {
 			// Start Nav.
-			$html = $this->_nav_open();
+			$html = $this->nav_open();
 
 			// Previous << Link.
-			$html .= $this->_previous_posts();
+			$html .= $this->previous_posts();
 
 			// Build Link Items.
-			$html .= $this->_page_number_links();
+			$html .= $this->page_number_links();
 
 			// Next >> Link.
-			$html .= $this->_next_posts();
+			$html .= $this->next_posts();
 
 			// End Nav.
-			$html .= $this->_nav_close();
+			$html .= $this->nav_close();
 
 			// Sanitize HTML.
 			echo wp_kses(
 				$html,
 				[
-					'ul' 	=> [
-						'class' 		=> true,
+					'ul'   => [
+						'class' => true,
 					],
-					'li' 	=> [
-						'class' 		=> true,
+					'li'   => [
+						'class' => true,
 					],
-					'a' 	=> [
-						'href' 			=> true,
-						'class' 		=> true,
-						'aria-label' 	=> true,
+					'a'    => [
+						'href'       => true,
+						'class'      => true,
+						'aria-label' => true,
 					],
-					'span' 	=> [
-						'aria-hidden' 	=> true,
-						'class' 		=> true,
+					'span' => [
+						'aria-hidden' => true,
+						'class'       => true,
 					],
-					'nav' 	=> [
-						'aria-label' 	=> true,
+					'nav'  => [
+						'aria-label' => true,
 					],
 				]
 			);
-		}// End if().
+		}
 
 	}//end paginate()
 
@@ -207,12 +200,12 @@ class Pagination {
 	 *
 	 * @return bool
 	 */
-	final private function _paginate_check() {
+	final private function paginate_check() {
 		if ( true !== empty( $this->wp_query ) && true !== empty( $this->wp_query->max_num_pages ) && $this->wp_query->max_num_pages >= 1 ) {
 			return true;
 		}
 
-	}//end _paginate_check()
+	}//end paginate_check()
 
 
 	/**
@@ -220,20 +213,20 @@ class Pagination {
 	 *
 	 * @since 1.0.0
 	 */
-	final private function _page_number_links() {
+	final private function page_number_links() {
 		$paginate_links = paginate_links(
 			[
-				'base' 			=> str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-				'format' 		=> '?paged=%#%',
-				'current' 		=> max( 1, get_query_var( 'paged' ) ),
-				'total' 		=> $this->wp_query->max_num_pages,
-				'type' 			=> 'array',
-				'show_all' 		=> false,
-				'end_size' 		=> 3,
-				'mid_size' 		=> 1,
-				'prev_next' 	=> false,
-				'add_args' 		=> false,
-				'add_fragment' 	=> '',
+				'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'format'       => '?paged=%#%',
+				'current'      => max( 1, get_query_var( 'paged' ) ),
+				'total'        => $this->wp_query->max_num_pages,
+				'type'         => 'array',
+				'show_all'     => false,
+				'end_size'     => 3,
+				'mid_size'     => 1,
+				'prev_next'    => false,
+				'add_args'     => false,
+				'add_fragment' => '',
 			]
 		);
 
@@ -241,14 +234,14 @@ class Pagination {
 			$html = '';
 
 			foreach ( $paginate_links as $page ) {
-				$item = str_replace( 'page-numbers', 'page-link', $page );
+				$item  = str_replace( 'page-numbers', 'page-link', $page );
 				$html .= "<li class=\"page-item\">{$item}</li>";
 			}
 
 			return $html;
 		}
 
-	}//end _page_number_links()
+	}//end page_number_links()
 
 
 	/**
@@ -258,7 +251,7 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _next_posts() {
+	final private function next_posts() {
 		if ( get_next_posts_link() ) {
 			return "<li class=\"page-item\">
 						<a class=\"page-link\" href=\"{$this->next_post_link}\" aria-label=\"{$this->next_label}\">
@@ -267,7 +260,7 @@ class Pagination {
 					</li><!-- .page-item -->";
 		}
 
-	}//end _next_posts()
+	}//end next_posts()
 
 
 	/**
@@ -277,11 +270,11 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _nav_close() {
+	final private function nav_close() {
 		return '</ul>
 			</nav>';
 
-	}//end _nav_close()
+	}//end nav_close()
 
 
 	/**
@@ -293,14 +286,14 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _get_nav_label( $nav_label = '' ) {
+	final private function get_nav_label( $nav_label = '' ) {
 		if ( true !== empty( $nav_label ) ) {
 			return esc_html( $nav_label );
 		} else {
 			return secretum_text( 'pagination_screenreader' );
 		}
 
-	}//end _get_nav_label()
+	}//end get_nav_label()
 
 
 	/**
@@ -312,14 +305,14 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _get_previous_label( $previous_label = '' ) {
+	final private function get_previous_label( $previous_label = '' ) {
 		if ( true !== empty( $previous_label ) ) {
 			return esc_html( $previous_label );
 		} else {
 			return secretum_text( 'pagination_prev_text' );
 		}
 
-	}//end _get_previous_label()
+	}//end get_previous_label()
 
 
 	/**
@@ -331,14 +324,14 @@ class Pagination {
 	 *
 	 * @return string HTML.
 	 */
-	final private function _get_next_label( $next_label = '' ) {
+	final private function get_next_label( $next_label = '' ) {
 		if ( true !== empty( $next_label ) ) {
 			return esc_html( $next_label );
 		} else {
 			return secretum_text( 'pagination_next_text' );
 		}
 
-	}//end _get_next_label()
+	}//end get_next_label()
 
 
 	/**

@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Default Copyright Statement
  *
@@ -33,11 +32,11 @@ function secretum_copyright_statement() {
 	echo wp_kses(
 		apply_filters( 'secretum_copyright_statement', $statement, 10, 1 ),
 		[
-			'a' => [
+			'a'     => [
 				'href' => true,
 			],
-			'p' 	=> true,
-			'br' 	=> true,
+			'p'     => true,
+			'br'    => true,
 			'small' => true,
 		]
 	);

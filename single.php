@@ -16,17 +16,16 @@ namespace Secretum;
 get_header();
 
 // Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) {
-?>
+if ( true !== secretum_mod( 'body_status' ) ) { ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="single-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
 	<?php
 	if ( true !== secretum_mod( 'entry_status' ) ) {
-	?>
+		?>
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
-			
+
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
 				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
@@ -37,14 +36,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 					 */
 					do_action( 'secretum_before_content' );
 
-					while ( have_posts() ) { the_post();
-						// Post Content.
+					while ( have_posts() ) {
+						the_post();
+
 						get_template_part( 'template-parts/post/content', get_post_format() );
 
-						// Post Navigation Links.
 						get_template_part( 'template-parts/nav/post', 'navigation' );
 
-						// Comments Template.
 						if ( comments_open() || get_comments_number() ) {
 							comments_template();
 						}
@@ -65,13 +63,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 			get_template_part( 'template-parts/sidebar/sidebar', 'right' );
 			?>
 		</div><!-- .row -->
-	<?php
-	}// End if().
+		<?php
+	}
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 
-<?php
-}// End if().
+	<?php
+}
 
 get_footer();

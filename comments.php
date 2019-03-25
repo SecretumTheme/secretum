@@ -14,23 +14,23 @@
 namespace Secretum;
 
 // Ignore If Password Required.
-if ( post_password_required() ) { return; }
+if ( post_password_required() ) {
+	return;
+}
 
 // Hookable Action.
-do_action( 'secretum_before_comments' );
-?>
+do_action( 'secretum_before_comments' ); ?>
 <div class="comments-area my-5 py-5 border-top" id="comments">
 	<?php if ( have_comments() ) { ?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
+			$secretum_comments_number = get_comments_number();
 
-			if ( true === isset( $comments_number ) && 1 === (int) $comments_number ) {
+			if ( true === isset( $secretum_comments_number ) && 1 === (int) $secretum_comments_number ) {
 				secretum_text( 'comments_title_single', true ) . ' "<span>' . get_the_title() . '</span>"';
 
-			} elseif ( true === isset( $comments_number ) && $comments_number > 1 ) {
-				echo absint( number_format_i18n( $comments_number ) ); ?> <?php secretum_text( 'comments_title_thoughts', true ); ?> <span><?php echo esc_html( get_the_title() ); ?></span>
-			<?php
+			} elseif ( true === isset( $secretum_comments_number ) && $secretum_comments_number > 1 ) {
+				echo absint( number_format_i18n( $secretum_comments_number ) ) . ' ' . esc_html( secretum_text( 'comments_title_thoughts', false ) ) . esc_html( '<span>' . get_the_title() . '</span>' );
 			} else {
 				secretum_text( 'meta_comments_text', true );
 			}
@@ -39,10 +39,12 @@ do_action( 'secretum_before_comments' );
 
 		<ol class="comment-list mb-5">
 			<?php
-			wp_list_comments( [
-				'style' 		=> 'ol',
-				'short_ping' 	=> true,
-			] );
+				wp_list_comments(
+					[
+						'style'      => 'ol',
+						'short_ping' => true,
+					]
+				);
 			?>
 		</ol><!-- .comment-list -->
 

@@ -51,42 +51,56 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'header_top',
-] );
+$wrapper->settings(
+	[
+		'section' => 'header_top',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'header_top_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'header_top_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' => 'header_top',
-] );
+$container->settings(
+	[
+		'section' => 'header_top',
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'header_top_container',
-] );
+$borders->settings(
+	[
+		'section' => 'header_top_container',
+	]
+);
 
 
 // Textuals.
-$textuals->settings( [
-	'section' => 'header_top',
-] );
+$textuals->settings(
+	[
+		'section' => 'header_top',
+	]
+);
 
 
 // Nav Items.
-$navitems->settings( [
-	'section' => 'header_top',
-] );
+$navitems->settings(
+	[
+		'section' => 'header_top',
+	]
+);
 
 
 // Nav Items Borders.
-$borders->settings( [
-	'section' => 'header_top_items',
-] );
+$borders->settings(
+	[
+		'section' => 'header_top_items',
+	]
+);

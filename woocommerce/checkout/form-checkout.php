@@ -2,14 +2,14 @@
 /**
  * Checkout Form
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Checkout
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Checkout
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
  * @version     3.5.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-checkout.php
- * @since 		1.0.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-checkout.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -36,18 +36,17 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			<div class="col-md border">
 				<h3 id="order_review_heading">
 					<?php
-					if ( true === secretum_is_woobookings() ) {
-						secretum_icon( [
-							'fi' => 'lock',
-							'fa' => 'fa-lock',
-						] ); ?> <?php esc_html_e( 'Your Booking', 'secretum' );
-					} else {
-						secretum_icon( [
-							'fi' => 'lock',
-							'fa' => 'fa-lock',
-						] ); ?> <?php esc_html_e( 'Your Order', 'secretum' );
-					}
+					$secretum_checkout_lock_icon = [
+						'fi' => 'lock',
+						'fa' => 'fa-lock',
+					];
 					?>
+
+					<?php if ( true === secretum_is_woobookings() ) { ?>
+						<?php secretum_icon( $secretum_checkout_lock_icon ); ?> <?php esc_html_e( 'Your Booking', 'secretum' ); ?>
+					<?php } else { ?>
+						<?php secretum_icon( $secretum_checkout_lock_icon ); ?> <?php esc_html_e( 'Your Order', 'secretum' ); ?>
+					<?php } ?>
 				</h3>
 
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
@@ -63,7 +62,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-	<?php }// End if(). ?>
+	<?php } ?>
 </form>
 
 <?php

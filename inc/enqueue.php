@@ -19,7 +19,16 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_enqueue_preview() {
-	wp_enqueue_script( 'secretum-customizer-preview', SECRETUM_THEME_URL . '/js/customizer/customize-preview.min.js', [ 'jquery', 'customize-preview' ], null, true );
+	wp_enqueue_script(
+		'secretum-customizer-preview',
+		SECRETUM_THEME_URL . '/js/customizer/customize-preview.min.js',
+		[
+			'jquery',
+			'customize-preview',
+		],
+		SECRETUM_THEME_VERSION,
+		true
+	);
 
 }//end secretum_enqueue_preview()
 
@@ -32,12 +41,35 @@ add_action( 'customize_preview_init', 'Secretum\secretum_enqueue_preview' );
  * @since 1.0.0
  */
 function secretum_enqueue_customize_controls() {
-	// Extend Custom Controls.
-	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/customize-controls.min.js', [ 'jquery', 'customize-controls' ], null, true );
+	wp_enqueue_script(
+		'secretum-customizer-controls',
+		SECRETUM_THEME_URL . '/js/customizer/customize-controls.min.js',
+		[
+			'jquery',
+			'customize-controls',
+		],
+		SECRETUM_THEME_VERSION,
+		true
+	);
 
-	// Extend Custom Sections.
-	wp_enqueue_script( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/js/customizer/custom-sections.min.js', [ 'jquery', 'customize-controls' ], null, true );
-	wp_enqueue_style( 'secretum-customizer-controls', SECRETUM_THEME_URL . '/css/customizer/custom-sections.min.css' );
+	wp_enqueue_script(
+		'secretum-customizer-controls',
+		SECRETUM_THEME_URL . '/js/customizer/custom-sections.min.js',
+		[
+			'jquery',
+			'customize-controls',
+		],
+		SECRETUM_THEME_VERSION,
+		true
+	);
+
+	wp_enqueue_style(
+		'secretum-customizer-controls',
+		SECRETUM_THEME_URL . '/css/customizer/custom-sections.min.css',
+		[],
+		SECRETUM_THEME_VERSION,
+		'all'
+	);
 
 }//end secretum_enqueue_customize_controls()
 
@@ -50,12 +82,15 @@ add_action( 'customize_controls_enqueue_scripts', 'Secretum\secretum_enqueue_cus
  * @since 1.0.0
  */
 function secretum_enqueue_scripts() {
-	// Get Theme Object.
-	$theme = wp_get_theme();
-
 	// Customizer Preview Styles.
 	if ( true === is_customize_preview() ) {
-		wp_enqueue_style( 'secretum-customizer-css', SECRETUM_THEME_URL . '/css/customizer/customizer.css' );
+		wp_enqueue_style(
+			'secretum-customizer-css',
+			SECRETUM_THEME_URL . '/css/customizer/customizer.css',
+			[],
+			SECRETUM_THEME_VERSION,
+			'all'
+		);
 	}
 
 	// Selected Style.
@@ -64,7 +99,7 @@ function secretum_enqueue_scripts() {
 			'secretum',
 			SECRETUM_STYLE_URL . '/css/themes/' . secretum_mod( 'theme_color_palette', 'attr', false ) . '/theme.min.css',
 			[],
-			$theme->get( 'Version' ),
+			SECRETUM_THEME_VERSION,
 			'all'
 		);
 	} else {
@@ -73,7 +108,7 @@ function secretum_enqueue_scripts() {
 			'secretum',
 			SECRETUM_STYLE_URL . '/css/theme.min.css',
 			[],
-			$theme->get( 'Version' ),
+			SECRETUM_THEME_VERSION,
 			'all'
 		);
 	}
@@ -84,7 +119,7 @@ function secretum_enqueue_scripts() {
 			'secretum',
 			SECRETUM_STYLE_URL . '/js/theme.min.js',
 			[ 'jquery' ],
-			$theme->get( 'Version' ),
+			SECRETUM_THEME_VERSION,
 			true
 		);
 	} elseif ( true === secretum_mod( 'enqueue_bootstrap_bundle_javascript_status' ) ) {
@@ -106,7 +141,7 @@ function secretum_enqueue_scripts() {
 				'secretum',
 				SECRETUM_STYLE_URL . '/js/secretum.min.js',
 				[ 'jquery' ],
-				$theme->get( 'Version' ),
+				SECRETUM_THEME_VERSION,
 				true
 			);
 		}
@@ -137,7 +172,7 @@ function secretum_enqueue_scripts() {
 			'secretum-woocommerce',
 			SECRETUM_STYLE_URL . '/css/woocommerce.min.css',
 			[],
-			$theme->get( 'Version' ),
+			SECRETUM_THEME_VERSION,
 			'all'
 		);
 	}
@@ -148,7 +183,7 @@ function secretum_enqueue_scripts() {
 			'secretum-woocommerce-bookings',
 			SECRETUM_STYLE_URL . '/css/woocommerce-bookings.min.css',
 			[],
-			$theme->get( 'Version' ),
+			SECRETUM_THEME_VERSION,
 			'all'
 		);
 	}

@@ -54,8 +54,8 @@ class Customize_Container {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer 	= $customizer;
-			$this->_default 	= $defaults;
+			$this->_customizer = $customizer;
+			$this->_default    = $defaults;
 		}
 
 	}//end __construct()
@@ -70,12 +70,15 @@ class Customize_Container {
 	 */
 	final public function settings( array $args ) {
 		// Build Args.
-		$args = wp_parse_args( $args, [
-			'section' 	=> '',
-			'panel' 	=> '',
-			'title' 	=> '',
-			'type' 		=> true,
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'section' => '',
+				'panel'   => '',
+				'title'   => '',
+				'type'    => true,
+			]
+		);
 
 		// Required.
 		if ( empty( $args['section'] ) ) {
@@ -85,8 +88,8 @@ class Customize_Container {
 		// Section.
 		$this->_customizer->section(
 			$args['section'] . '_container',
-			$this->_panels( $args['section'], $args['panel'] ),
-			$this->_title( $args['title'] ),
+			$this->panels( $args['section'], $args['panel'] ),
+			$this->title( $args['title'] ),
 			__( 'A container that holds other related elements, features, content, etc. (Wrapper > Container > Other Stuff)', 'secretum' )
 		);
 
@@ -164,14 +167,14 @@ class Customize_Container {
 	 *
 	 * @return string Alt Section Title.
 	 */
-	final private function _title( $title = '' ) {
+	final private function title( $title = '' ) {
 		if ( empty( $title ) ) {
 			$title = __( 'Container', 'secretum' );
 		}
 
 		return $title;
 
-	}//end _title()
+	}//end title()
 
 
 	/**
@@ -184,7 +187,7 @@ class Customize_Container {
 	 *
 	 * @return string Alt Section Title.
 	 */
-	final private function _panels( $section, $panel = '' ) {
+	final private function panels( $section, $panel = '' ) {
 		if ( empty( $panel ) ) {
 			$panel = $section;
 		} else {
@@ -193,6 +196,6 @@ class Customize_Container {
 
 		return $panel;
 
-	}//end _panels()
+	}//end panels()
 
 }//end class

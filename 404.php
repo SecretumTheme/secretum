@@ -8,7 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/404.php
- * @since      1.0.0
+ * @since      1.1.2
  */
 
 namespace Secretum;
@@ -16,13 +16,10 @@ namespace Secretum;
 get_header();
 
 // Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) {
-?>
+if ( true !== secretum_mod( 'body_status' ) ) { ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="error-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
-	<?php
-	if ( true !== secretum_mod( 'entry_status' ) ) {
-	?>
+	<?php if ( true !== secretum_mod( 'entry_status' ) ) { ?>
 		<div class="row">
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'error', 'echo', 'borders' ); ?> content-area" id="primary">
 				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
@@ -74,13 +71,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 				</main><!-- .site-main -->
 			</div><!-- .content-area -->
 		</div><!-- .row -->
-	<?php
-	}// End if().
+		<?php
+	}
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 
-<?php
-}// End if().
+	<?php
+}
 
 get_footer();

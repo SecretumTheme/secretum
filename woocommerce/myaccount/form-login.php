@@ -2,14 +2,14 @@
 /**
  * Login Form
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\MyAccount
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.5.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-login.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\MyAccount
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.5.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-login.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -17,11 +17,10 @@ namespace Secretum;
 do_action( 'woocommerce_before_customer_login_form' );
 
 if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
-?>
+	?>
 <div class="row" id="customer_login">
 	<div class="col-sm">
-<?php }
-?>
+<?php } ?>
 	<h2><?php esc_html_e( 'Login', 'secretum' ); ?></h2>
 
 	<form class="woocommerce-form woocommerce-form-login login" method="post">
@@ -61,8 +60,8 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 
 <?php
 if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
-?>
-	</div>
+	?>
+	</div><!-- .col-sm -->
 	<div class="col-sm">
 		<h2><?php esc_html_e( 'Register', 'secretum' ); ?></h2>
 
@@ -99,9 +98,9 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 		</form>
-	</div>
-</div>
-<?php
-}// End if().
+	</div><!-- .col-sm -->
+</div><!-- .row -->
+	<?php
+}
 
 do_action( 'woocommerce_after_customer_login_form' );

@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Theme Base Background Color
  *
@@ -23,9 +22,12 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_theme_background_color() {
-	return Classes_Theme::instance()->classes( 'return', [
-		'bg_colors' => true,
-	] );
+	return Classes_Theme::instance()->classes(
+		'return',
+		[
+			'bg_colors' => true,
+		]
+	);
 
 }//end secretum_theme_background_color()
 
@@ -39,9 +41,12 @@ function secretum_theme_background_color() {
  * @since 1.0.0
  */
 function secretum_theme_textual() {
-	return Classes_Theme::instance()->classes( 'echo', [
-		'textuals' => true,
-	] );
+	return Classes_Theme::instance()->classes(
+		'echo',
+		[
+			'textuals' => true,
+		]
+	);
 
 }//end secretum_theme_textual()
 
@@ -55,9 +60,12 @@ function secretum_theme_textual() {
  * @since 1.0.0
  */
 function secretum_theme_text_link() {
-	return Classes_Theme::instance()->classes( 'echo', [
-		'text_link' => true,
-	] );
+	return Classes_Theme::instance()->classes(
+		'echo',
+		[
+			'text_link' => true,
+		]
+	);
 
 }//end secretum_theme_text_link()
 
