@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.1.3
+**2019-03-25 - Version Bump**
+
+* WordPress Version Bump
+
 # 1.1.2
 **2019-03-25 - Hotfix/WordPress Compliance**
 
