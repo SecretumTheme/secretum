@@ -17,12 +17,12 @@ get_header();
 
 // Display If Allowed.
 if ( true !== secretum_mod( 'body_status' ) ) {
-?>
+	?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="index-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
 	<?php
 	if ( true !== secretum_mod( 'entry_status' ) ) {
-	?>
+		?>
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
@@ -39,7 +39,8 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 
 					// If Posts.
 					if ( have_posts() ) {
-						while ( have_posts() ) { the_post();
+						while ( have_posts() ) {
+							the_post();
 							get_template_part( 'template-parts/post/content' );
 						}
 					} else {
@@ -63,13 +64,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'right' ); ?>
 
 		</div><!-- .row -->
-	<?php
-	}// End if().
+		<?php
+	}
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 
-<?php
-}// End if().
+	<?php
+}
 
 get_footer();

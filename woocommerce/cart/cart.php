@@ -2,18 +2,17 @@
 /**
  * Cart Page
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Cart
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Cart
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
  * @version     3.5.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
- * @since 		1.0.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
-
 
 do_action( 'woocommerce_before_cart' );
 ?>
@@ -39,90 +38,146 @@ do_action( 'woocommerce_before_cart' );
 				<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 				<?php
-				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-					$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-					$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+				foreach ( WC()->cart->get_cart() as $secretum_cart_item_key => $secretum_cart_item ) {
+					$secretum_product    = apply_filters( 'woocommerce_cart_item_product', $secretum_cart_item['data'], $secretum_cart_item, $secretum_cart_item_key );
+					$secretum_product_id = apply_filters( 'woocommerce_cart_item_product_id', $secretum_cart_item['product_id'], $secretum_cart_item, $secretum_cart_item_key );
 
-					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+					if ( $secretum_product && $secretum_product->exists() && $secretum_cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $secretum_cart_item, $secretum_cart_item_key ) ) {
+						$secretum_product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $secretum_product->is_visible() ? $secretum_product->get_permalink( $secretum_cart_item ) : '', $secretum_cart_item, $secretum_cart_item_key );
 						?>
-						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $secretum_cart_item, $secretum_cart_item_key ) ); ?>">
 							<td class="product-remove">
 								<?php
-									// @codingStandardsIgnoreLine
-									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+								$secretum_woo_cart_item_remove_link = apply_filters(
+									'woocommerce_cart_item_remove_link',
+									sprintf(
 										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+										esc_url( wc_get_cart_remove_url( $secretum_cart_item_key ) ),
 										__( 'Remove this item', 'secretum' ),
-										esc_attr( $product_id ),
-										esc_attr( $_product->get_sku() )
-									), $cart_item_key );
+										esc_attr( $secretum_product_id ),
+										esc_attr( $secretum_product->get_sku() )
+									),
+									$secretum_cart_item_key
+								);
+
+								echo wp_kses(
+									$secretum_woo_cart_item_remove_link,
+									[
+										'a' => [
+											'href'       => true,
+											'class'      => true,
+											'aria-label' => true,
+											'data-product_id' => true,
+											'data-product_sku' => true,
+										],
+									]
+								);
 								?>
 							</td>
 							<td class="product-thumbnail">
 							<?php
-							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+							$secretum_woo_thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $secretum_product->get_image(), $secretum_cart_item, $secretum_cart_item_key );
 
-							if ( ! $product_permalink ) {
-								echo $thumbnail; // PHPCS: XSS ok.
+							if ( ! $secretum_product_permalink ) {
+								echo wp_kses(
+									$secretum_woo_thumbnail,
+									[
+										'img' => [
+											'role'  => true,
+											'alt'   => true,
+											'src'   => true,
+											'style' => true,
+										],
+									]
+								);
 							} else {
-								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post( $thumbnail ) ); // PHPCS: XSS ok.
+								echo wp_kses(
+									sprintf( '<a href="%s">%s</a>', esc_url( $secretum_product_permalink ), $secretum_woo_thumbnail ),
+									[
+										'a'   => [
+											'href' => true,
+										],
+										'img' => [
+											'role'  => true,
+											'alt'   => true,
+											'src'   => true,
+											'style' => true,
+										],
+									]
+								);
 							}
 							?>
 							</td>
 							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'secretum' ); ?>">
 							<?php
-							if ( ! $product_permalink ) {
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' ); // PHPCS: XSS ok.
+							if ( ! $secretum_product_permalink ) {
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $secretum_product->get_name(), $secretum_cart_item, $secretum_cart_item_key ) . '&nbsp;' );
 							} else {
-								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $secretum_product_permalink ), $secretum_product->get_name() ), $secretum_cart_item, $secretum_cart_item_key ) );
 							}
 
-							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+							do_action( 'woocommerce_after_cart_item_name', $secretum_cart_item, $secretum_cart_item_key );
 
-							// @about Meta data.
-							echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+							echo wp_kses_post( wc_get_formatted_cart_item_data( $secretum_cart_item ) );
 
 							// @about Backorder notification.
-							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'secretum' ) . '</p>', $product_id ) );
+							if ( $secretum_product->backorders_require_notification() && $secretum_product->is_on_backorder( $secretum_cart_item['quantity'] ) ) {
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'secretum' ) . '</p>', $secretum_product_id ) );
 							}
 
 							?>
 							</td>
 							<td class="product-price" data-title="<?php esc_html_e( 'Price', 'secretum' ); ?>">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-								?>
+								<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $secretum_product ), $secretum_cart_item, $secretum_cart_item_key ) ); ?>
 							</td>
 							<td class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'secretum' ); ?>">
 							<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+							if ( $secretum_product->is_sold_individually() ) {
+								$secretum_product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $secretum_cart_item_key );
 							} else {
-								$product_quantity = woocommerce_quantity_input( [
-									'input_name'    => "cart[{$cart_item_key}][qty]",
-									'input_value'   => $cart_item['quantity'],
-									'max_value'     => $_product->get_max_purchase_quantity(),
-									'min_value'     => '0',
-									'product_name'  => $_product->get_name(),
-								], $_product, false );
-
+								$secretum_product_quantity = woocommerce_quantity_input(
+									[
+										'input_name'   => "cart[{$secretum_cart_item_key}][qty]",
+										'input_value'  => $secretum_cart_item['quantity'],
+										'max_value'    => $secretum_product->get_max_purchase_quantity(),
+										'min_value'    => '0',
+										'product_name' => $secretum_product->get_name(),
+									],
+									$secretum_product,
+									false
+								);
 							}
 
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+							echo wp_kses(
+								apply_filters( 'woocommerce_cart_item_quantity', $secretum_product_quantity, $secretum_cart_item_key, $secretum_cart_item ),
+								[
+									'input' => [
+										'type'            => true,
+										'id'              => true,
+										'class'           => true,
+										'step'            => true,
+										'min'             => true,
+										'max'             => true,
+										'name'            => true,
+										'value'           => true,
+										'title'           => true,
+										'size'            => true,
+										'pattern'         => true,
+										'inputmode'       => true,
+										'aria-labelledby' => true,
+									],
+								]
+							);
 							?>
 							</td>
 							<td class="product-subtotal" data-title="<?php esc_html_e( 'Total', 'secretum' ); ?>">
-
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-								?>
-
+								<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $secretum_product, $secretum_cart_item['quantity'] ), $secretum_cart_item, $secretum_cart_item_key ) ); ?>
 							</td>
 						</tr>
-					<?php }// End if().
-				}// End foreach(). ?>
+						<?php
+					}
+				}
+				?>
 
 				<?php do_action( 'woocommerce_cart_contents' ); ?>
 

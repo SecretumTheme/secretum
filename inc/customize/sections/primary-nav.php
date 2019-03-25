@@ -59,63 +59,83 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'primary_nav',
-] );
+$wrapper->settings(
+	[
+		'section' => 'primary_nav',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'primary_nav_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'primary_nav_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' => 'primary_nav',
-] );
+$container->settings(
+	[
+		'section' => 'primary_nav',
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'primary_nav_container',
-] );
+$borders->settings(
+	[
+		'section' => 'primary_nav_container',
+	]
+);
 
 
 // Textuals.
-$textuals->settings( [
-	'section' => 'primary_nav',
-] );
+$textuals->settings(
+	[
+		'section' => 'primary_nav',
+	]
+);
 
 
 // Nav Items.
-$navitems->settings( [
-	'section' => 'primary_nav',
-] );
+$navitems->settings(
+	[
+		'section' => 'primary_nav',
+	]
+);
 
 // Nav Items Borders.
-$borders->settings( [
-	'section' => 'primary_nav_items',
-] );
+$borders->settings(
+	[
+		'section' => 'primary_nav_items',
+	]
+);
 
 
 // Nav Dropdown.
-$dropdown->settings( [
-	'section' => 'primary_nav',
-] );
+$dropdown->settings(
+	[
+		'section' => 'primary_nav',
+	]
+);
 
 // Nav Dropdown Borders.
-$borders->settings( [
-	'section' => 'primary_nav_dropdown',
-] );
+$borders->settings(
+	[
+		'section' => 'primary_nav_dropdown',
+	]
+);
 
 // Nav Dropdown Textuals.
-$textuals->settings( [
-	'title'   	=> __( 'Dropdown Textuals', 'secretum' ),
-	'panel'   	=> 'primary_nav',
-	'section' 	=> 'primary_nav_dropdown',
-	'alignment' => true,
-] );
+$textuals->settings(
+	[
+		'title'     => __( 'Dropdown Textuals', 'secretum' ),
+		'panel'     => 'primary_nav',
+		'section'   => 'primary_nav_dropdown',
+		'alignment' => true,
+	]
+);
 
 
 // Toggler Icon.
@@ -183,9 +203,11 @@ $customizer->select(
 
 
 // Toggler Borders.
-$borders->settings( [
-	'section' => 'primary_nav_toggler',
-] );
+$borders->settings(
+	[
+		'section' => 'primary_nav_toggler',
+	]
+);
 
 
 if ( true === secretum_is_woocomerce() ) {
@@ -251,4 +273,4 @@ if ( true === secretum_is_woocomerce() ) {
 		$defaults['primary_nav_cart_count_size'],
 		secretum_customizer_font_sizes()
 	);
-}// End if().
+}

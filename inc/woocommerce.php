@@ -20,17 +20,18 @@ namespace Secretum;
  */
 function secretum_after_setup_theme() {
 	// Theme Support.
-	add_theme_support( 'woocommerce',
+	add_theme_support(
+		'woocommerce',
 		[
 			'thumbnail_image_width' => 250,
-			'single_image_width' 	=> 700,
-			'product_grid' => [
-				'default_rows' 		=> 3,
-				'min_rows' 			=> 2,
-				'max_rows' 			=> 8,
-				'default_columns' 	=> 3,
-				'min_columns' 		=> 2,
-				'max_columns' 		=> 5,
+			'single_image_width'    => 700,
+			'product_grid'          => [
+				'default_rows'    => 3,
+				'min_rows'        => 2,
+				'max_rows'        => 8,
+				'default_columns' => 3,
+				'min_columns'     => 2,
+				'max_columns'     => 5,
 			],
 		]
 	);
@@ -64,7 +65,7 @@ function secretum_get_product_search_form() {
 
 }//end secretum_get_product_search_form()
 
-add_filter( 'get_product_search_form' , 'Secretum\secretum_get_product_search_form' );
+add_filter( 'get_product_search_form', 'Secretum\secretum_get_product_search_form' );
 
 
 /**
@@ -81,7 +82,7 @@ function secretum_woocommerce_get_script_data( $params, $handle ) {
 			$params = [
 				'min_password_strength' => apply_filters( 'woocommerce_min_password_strength', 1 ),
 				'i18n_password_error'   => apply_filters( 'secretum_password_error_text', esc_html__( 'Create a Secure Password You Will Remember.', 'secretum' ) ),
-				'i18n_password_hint'	=> apply_filters( 'secretum_password_hint_text', esc_html__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
+				'i18n_password_hint'    => apply_filters( 'secretum_password_hint_text', esc_html__( 'Passwords should be at least five characters long or longer. We recommend using a mixture of upper and lower case letters, numbers and symbols like ! " ? $ % ^ & ).', 'secretum' ) ),
 			];
 	}
 
@@ -98,17 +99,21 @@ add_filter( 'woocommerce_get_script_data', 'Secretum\secretum_woocommerce_get_sc
  * @since 1.0.0
  */
 function secretum_woo_enqueue_scripts() {
-	wp_localize_script( 'wc-password-strength-meter', 'pwsL10n', [
-		'short' 	=> apply_filters( 'secretum_password_strength_short_text', esc_html__( 'Keep Going! ', 'secretum' ) ),
-		'bad' 		=> apply_filters( 'secretum_password_strength_bad_text', esc_html__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
-		'good' 		=> apply_filters( 'secretum_password_strength_good_text', esc_html__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
-		'strong' 	=> apply_filters( 'secretum_password_strength_strong_text', esc_html__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
-		'mismatch' 	=> apply_filters( 'secretum_password_mismatch_text', esc_html__( 'Passwords Do Not Match! ', 'secretum' ) ),
-	] );
+	wp_localize_script(
+		'wc-password-strength-meter',
+		'pwsL10n',
+		[
+			'short'    => apply_filters( 'secretum_password_strength_short_text', esc_html__( 'Keep Going! ', 'secretum' ) ),
+			'bad'      => apply_filters( 'secretum_password_strength_bad_text', esc_html__( 'Nice! An Easy To Remember Password! ', 'secretum' ) ),
+			'good'     => apply_filters( 'secretum_password_strength_good_text', esc_html__( 'Wow! The World Needs More Passwords Like That! ', 'secretum' ) ),
+			'strong'   => apply_filters( 'secretum_password_strength_strong_text', esc_html__( 'That Some Mighty Fine Security You Have! ', 'secretum' ) ),
+			'mismatch' => apply_filters( 'secretum_password_mismatch_text', esc_html__( 'Passwords Do Not Match! ', 'secretum' ) ),
+		]
+	);
 
 }//end secretum_woo_enqueue_scripts()
 
-add_action( 'wp_enqueue_scripts',  'Secretum\secretum_woo_enqueue_scripts', 9999 );
+add_action( 'wp_enqueue_scripts', 'Secretum\secretum_woo_enqueue_scripts', 9999 );
 
 
 /**
@@ -119,11 +124,11 @@ add_action( 'wp_enqueue_scripts',  'Secretum\secretum_woo_enqueue_scripts', 9999
  * @param array $args Args array.
  */
 function secretum_woocommerce_order_button_html( $args ) {
-	return str_replace( 'button alt','btn btn-primary w-100', $args );
+	return str_replace( 'button alt', 'btn btn-primary w-100', $args );
 
 }//end secretum_woocommerce_order_button_html()
 
-add_filter( 'woocommerce_order_button_html', 'Secretum\x', 10, 1 );
+add_filter( 'woocommerce_order_button_html', 'Secretum\secretum_woocommerce_order_button_html', 10, 1 );
 
 
 /**
@@ -148,21 +153,29 @@ function secretum_wp_nav_menu_items( $items, $args, $ajax = false ) {
 	// If Allowed To Display.
 	if ( ( isset( $ajax ) && $ajax ) || ( property_exists( $args, 'theme_location' ) && in_array( $args->theme_location, $theme_locations, true ) ) ) {
 		// Get Classes.
-		$textual_icon = secretum_nav_cart_textual( 'primary_nav', 'return', [
-			'type' => 'icon',
-		] );
+		$textual_icon = secretum_nav_cart_textual(
+			'primary_nav',
+			'return',
+			[
+				'type' => 'icon',
+			]
+		);
 
 		// Get Classes.
-		$textual_count = secretum_nav_cart_textual( 'primary_nav', 'return', [
-			'type' => 'count',
-		] );
+		$textual_count = secretum_nav_cart_textual(
+			'primary_nav',
+			'return',
+			[
+				'type' => 'count',
+			]
+		);
 
 		$active = ( is_cart() ) ? ' current-menu-item' : '';
-		$icon .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="woocommerce-cart-icon" class="menu-item' . $active . '">';
-		$icon .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_nav_cart_link( 'primary_nav' ) . '">';
-		$icon .= '<span class="fi-shopping-cart' . $textual_icon . '"></span><span class="' . $textual_count . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
-		$icon .= '</a>';
-		$icon .= '</li>';
+		$icon  .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="woocommerce-cart-icon" class="menu-item' . $active . '">';
+		$icon  .= '<a href="' . esc_url( wc_get_cart_url() ) . '" class="nav-link' . secretum_nav_cart_link( 'primary_nav' ) . '">';
+		$icon  .= '<span class="fi-shopping-cart' . $textual_icon . '"></span><span class="' . $textual_count . '">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>';
+		$icon  .= '</a>';
+		$icon  .= '</li>';
 	}
 
 	return ( WC()->cart->get_cart_contents_count() > 0 ) ? $items . $icon : $items;
@@ -190,7 +203,7 @@ function secretum_woocommerce_form_field_args( $args, $key, $value ) {
 	}
 
 	// Add Bootstrap 4 Classes.
-	$args['class'][]	 = 'form-group';
+	$args['class'][]     = 'form-group';
 	$args['label_class'] = [ 'col-form-label-lg mt-1' ];
 	$args['input_class'] = [ 'form-control', 'form-control-lg' ];
 
@@ -211,42 +224,48 @@ add_filter( 'woocommerce_form_field_args', 'Secretum\secretum_woocommerce_form_f
  * @param array $args Args.
  */
 function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
-	$args = wp_parse_args( apply_filters( 'woocommerce_dropdown_variation_attribute_options_args', $args ), [
-		'options' 			=> false,
-		'attribute' 		=> false,
-		'product' 			=> false,
-		'selected' 			=> false,
-		'name' 				=> '',
-		'id' 				=> '',
-		'class' 			=> '',
-		'show_option_none' 	=> esc_html__( 'Choose an option', 'secretum' ),
-	] );
+	$args = wp_parse_args(
+		apply_filters( 'woocommerce_dropdown_variation_attribute_options_args', $args ),
+		[
+			'options'          => false,
+			'attribute'        => false,
+			'product'          => false,
+			'selected'         => false,
+			'name'             => '',
+			'id'               => '',
+			'class'            => '',
+			'show_option_none' => esc_html__( 'Choose an option', 'secretum' ),
+		]
+	);
 
-	$options 				= $args['options'];
-	$product 				= $args['product'];
-	$attribute 				= $args['attribute'];
-	$name 					= $args['name'] ? $args['name'] : 'attribute_' . sanitize_title( $attribute );
-	$id 					= $args['id'] ? $args['id'] : sanitize_title( $attribute );
-	$class 					= $args['class'];
-	$show_option_none 		= $args['show_option_none'] ? true : false;
-	$show_option_none_text 	= $args['show_option_none'] ? $args['show_option_none'] : esc_html__( 'Choose an option', 'secretum' );
+	$options               = $args['options'];
+	$product               = $args['product'];
+	$attribute             = $args['attribute'];
+	$name                  = $args['name'] ? $args['name'] : 'attribute_' . sanitize_title( $attribute );
+	$id                    = $args['id'] ? $args['id'] : sanitize_title( $attribute );
+	$class                 = $args['class'];
+	$show_option_none      = $args['show_option_none'] ? true : false;
+	$show_option_none_text = $args['show_option_none'] ? $args['show_option_none'] : esc_html__( 'Choose an option', 'secretum' );
 
 	if ( true === empty( $options ) && true !== empty( $product ) && true !== empty( $attribute ) ) {
 		$attributes = $product->get_variation_attributes();
-		$options	= $attributes[ $attribute ];
+		$options    = $attributes[ $attribute ];
 	}
 
 	$html  = '<div class="form-group">';
-
 	$html .= '<select id="' . esc_attr( $id ) . '" class="' . esc_attr( $class ) . ' form-control" name="' . esc_attr( $name ) . '" data-attribute_name="attribute_' . esc_attr( sanitize_title( $attribute ) ) . '" data-show_option_none="' . ( $show_option_none ? 'yes' : 'no' ) . '">';
 
 	$html .= '<option value="">' . esc_html( $show_option_none_text ) . '</option>';
 
 	if ( true !== empty( $options ) ) {
 		if ( $product && taxonomy_exists( $attribute ) ) {
-			$terms = wc_get_product_terms( $product->get_id(), $attribute, [
-				'fields' => 'all',
-			] );
+			$terms = wc_get_product_terms(
+				$product->get_id(),
+				$attribute,
+				[
+					'fields' => 'all',
+				]
+			);
 
 			foreach ( $terms as $term ) {
 				if ( in_array( $term->slug, $options, true ) ) {
@@ -268,19 +287,19 @@ function secretum_wc_dropdown_variation_attribute_options( $args = [] ) {
 	echo wp_kses(
 		$html,
 		[
-			'div' 		=> [
+			'div'    => [
 				'class' => true,
 			],
-			'select' 	=> [
-				'id' 					=> true,
-				'class' 				=> true,
-				'name' 					=> true,
-				'data-attribute_name' 	=> true,
+			'select' => [
+				'id'                    => true,
+				'class'                 => true,
+				'name'                  => true,
+				'data-attribute_name'   => true,
 				'data-show_option_none' => true,
 			],
-			'option' 	=> [
-				'value' 				=> true,
-				'selected' 				=> true,
+			'option' => [
+				'value'    => true,
+				'selected' => true,
 			],
 		]
 	);

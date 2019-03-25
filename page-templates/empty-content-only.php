@@ -30,11 +30,14 @@ namespace Secretum;
 </head>
 <body <?php body_class( 'tpl-content-only' ); ?>>
 
-	<?php while ( have_posts() ) { the_post(); ?>
-		<?php get_template_part( 'template-parts/post/content', 'blank' ); ?>
-	<?php } ?>
+<?php
+while ( have_posts() ) {
+	the_post();
+	get_template_part( 'template-parts/post/content', 'blank' );
+}
 
-<?php wp_footer(); ?>
+wp_footer();
+?>
 
 </body>
 </html>

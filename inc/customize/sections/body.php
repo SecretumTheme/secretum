@@ -40,24 +40,32 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'body',
-] );
+$wrapper->settings(
+	[
+		'section' => 'body',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'body_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'body_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' => 'body',
-] );
+$container->settings(
+	[
+		'section' => 'body',
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'body_container',
-] );
+$borders->settings(
+	[
+		'section' => 'body_container',
+	]
+);

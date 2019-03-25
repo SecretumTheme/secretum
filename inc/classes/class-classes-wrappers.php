@@ -67,10 +67,13 @@ class Classes_Wrappers {
 		}
 
 		// Parse Args To Vars.
-		$args = wp_parse_args( $args, [
-			'borders' => true,
-			'textuals' => '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'borders'  => true,
+				'textuals' => '',
+			]
+		);
 
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_wrapper';
@@ -81,13 +84,13 @@ class Classes_Wrappers {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Wrapper Classes.
-			$wrappers = $this->_build_wrappers( $section );
+			$wrappers = $this->build_wrappers( $section );
 
 			// Build Border Classes.
-			$borders = $this->_build_borders( $section, $args['borders'] );
+			$borders = $this->build_borders( $section, $args['borders'] );
 
 			// Build Textual Classes.
-			$textuals = $this->_build_textuals( $section, $args['textuals'] );
+			$textuals = $this->build_textuals( $section, $args['textuals'] );
 
 			// Build New Classes String.
 			$classes = $wrappers . $borders . $textuals;
@@ -109,7 +112,7 @@ class Classes_Wrappers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_wrappers( $section ) {
+	final private function build_wrappers( $section ) {
 		// Clear String.
 		$classes = '';
 
@@ -133,7 +136,7 @@ class Classes_Wrappers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_borders( $section, $borders ) {
+	final private function build_borders( $section, $borders ) {
 		// Clear String.
 		$classes = '';
 
@@ -158,7 +161,7 @@ class Classes_Wrappers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_textuals( $section, $textuals ) {
+	final private function build_textuals( $section, $textuals ) {
 		// Clear String.
 		$classes = '';
 

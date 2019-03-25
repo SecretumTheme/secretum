@@ -73,7 +73,7 @@ class Classes_Nav_Cart_Link {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Nav Cart Link Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_items_border_type', 'attr', true );
 			$classes .= secretum_mod( $section . '_items_border_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_items_border_radius', 'attr', true );

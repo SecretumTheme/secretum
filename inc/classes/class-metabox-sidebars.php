@@ -88,7 +88,7 @@ class Metabox_Sidebars {
 
 		// Add Nonce.
 		wp_nonce_field( SECRETUM_THEME_BASE, 'secretum_meta_sidebars_nonce' );
-	?>
+		?>
 		<table class="form-table"></table>
 			<tr>
 				<td>
@@ -102,7 +102,7 @@ class Metabox_Sidebars {
 				</td>
 			</tr>
 		</table>
-	<?php
+		<?php
 
 	}//end render_metabox()
 

@@ -66,11 +66,14 @@ class Classes_Theme {
 		}
 
 		// Parse Args To Vars.
-		$args = wp_parse_args( $args, [
-			'bg_colors' => '',
-			'textuals' 	=> '',
-			'text_link' => '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'bg_colors' => '',
+				'textuals'  => '',
+				'text_link' => '',
+			]
+		);
 
 		// Default Setting Name.
 		$setting = 'secretum_theme';
@@ -93,13 +96,13 @@ class Classes_Theme {
 		// No Cached Classes.
 		if ( true === empty( $classes ) ) {
 			// Build Theme Classes.
-			$classes .= $this->_build_background_colors( $args['bg_colors'] );
+			$classes .= $this->build_background_colors( $args['bg_colors'] );
 
 			// Build Textual Classes.
-			$classes .= $this->_build_text_link( $args['textuals'] );
+			$classes .= $this->build_text_link( $args['textuals'] );
 
 			// Build Text/Link Classes.
-			$classes .= $this->_build_textuals( $args['text_link'] );
+			$classes .= $this->build_textuals( $args['text_link'] );
 
 			// Set Classes Cache.
 			$this->set_transient( $setting, $classes );
@@ -118,7 +121,7 @@ class Classes_Theme {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_background_colors( $display_status ) {
+	final private function build_background_colors( $display_status ) {
 		// Ignore If Not Being Called.
 		if ( true === empty( $display_status ) || true !== $display_status ) {
 			return;
@@ -142,7 +145,7 @@ class Classes_Theme {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_text_link( $display_status ) {
+	final private function build_text_link( $display_status ) {
 		// Ignore If Not Being Called.
 		if ( true === empty( $display_status ) || true !== $display_status ) {
 			return;
@@ -168,7 +171,7 @@ class Classes_Theme {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_textuals( $display_status ) {
+	final private function build_textuals( $display_status ) {
 		// Ignore If Not Being Called.
 		if ( true === empty( $display_status ) || true !== $display_status ) {
 			return;

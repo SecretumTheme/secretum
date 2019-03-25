@@ -2,28 +2,30 @@
 /**
  * Booking product add to cart.
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce-Bookings\Single-Product\Add-To-Cart
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	1.10.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/single-product/add-to-cart/booking.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce-Bookings\Single-Product\Add-To-Cart
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    1.10.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/single-product/add-to-cart/booking.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
 
 global $product;
 
-if ( ! $product->is_purchasable() ) { return; }
+if ( true !== $product->is_purchasable() ) {
+	return;
+}
 
-$nonce = wp_create_nonce( 'find-booked-day-blocks' );
+$secretum_nonce = wp_create_nonce( 'find-booked-day-blocks' );
 
 do_action( 'woocommerce_before_add_to_cart_form' );
 ?>
 <noscript><?php esc_html_e( 'Your browser must support JavaScript in order to make a booking.', 'secretum' ); ?></noscript>
-<form class="cart" method="post" enctype='multipart/form-data'data-nonce="<?php echo esc_attr( $nonce ); ?>">
+<form class="cart" method="post" enctype='multipart/form-data'data-nonce="<?php echo esc_attr( $secretum_nonce ); ?>">
 	<div class="form-group">
 		<div id="wc-bookings-booking-form" class="wc-bookings-booking-form" style="display:none">
 			<h3 class="widget-title"><?php secretum_text( 'booking_cart_title', true ); ?></h3>

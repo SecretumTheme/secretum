@@ -72,33 +72,45 @@ class Customize_Translations {
 		}
 
 		// Panel.
-		$this->wp_customize->add_panel( 'secretum_wordpress_text_panel', [
-			'title' 	=> ':: ' . esc_html__( 'Translations', 'secretum' ),
-			'priority'  => 8,
-		] );
+		$this->wp_customize->add_panel(
+			'secretum_wordpress_text_panel',
+			[
+				'title'    => ':: ' . esc_html__( 'Translations', 'secretum' ),
+				'priority' => 8,
+			]
+		);
 
 		// Section.
-		$this->wp_customize->add_section( 'secretum_wordpress_text_section', [
-			'panel' 		=> 'secretum_wordpress_text_panel',
-			'title' 		=> esc_html__( 'WordPress Text', 'secretum' ),
-			'description' 	=> esc_html__( 'HTML Allowed! To reset: delete the text from the input, then publish. To remove from display: delete the text and add a single empty space, then publish.', 'secretum' ),
-			'priority' 		=> 10,
-		] );
+		$this->wp_customize->add_section(
+			'secretum_wordpress_text_section',
+			[
+				'panel'       => 'secretum_wordpress_text_panel',
+				'title'       => esc_html__( 'WordPress Text', 'secretum' ),
+				'description' => esc_html__( 'HTML Allowed! To reset: delete the text from the input, then publish. To remove from display: delete the text and add a single empty space, then publish.', 'secretum' ),
+				'priority'    => 10,
+			]
+		);
 
 		foreach ( (array) $this->defaults() as $key => $items ) {
 			// Add Setting.
-			$this->wp_customize->add_setting( 'secretum[' . sanitize_key( $key ) . ']', [
-				'default' 			=> esc_html( $items['default'] ),
-				'sanitize_callback' => [ $this, 'sanitize' ],
-				'type' 				=> 'option',
-			] );
+			$this->wp_customize->add_setting(
+				'secretum[' . sanitize_key( $key ) . ']',
+				[
+					'default'           => esc_html( $items['default'] ),
+					'sanitize_callback' => [ $this, 'sanitize' ],
+					'type'              => 'option',
+				]
+			);
 
 			// Add Control.
-			$this->wp_customize->add_control( 'secretum[' . sanitize_key( $key ) . ']', [
-				'section' 	=> 'secretum_wordpress_text_section',
-				'label' 	=> esc_html( $items['label'] ),
-				'type' 		=> 'text',
-			] );
+			$this->wp_customize->add_control(
+				'secretum[' . sanitize_key( $key ) . ']',
+				[
+					'section' => 'secretum_wordpress_text_section',
+					'label'   => esc_html( $items['label'] ),
+					'type'    => 'text',
+				]
+			);
 
 			// Build Render Callback.
 			if ( true === isset( $this->_option[ $key ] ) ) {
@@ -108,11 +120,14 @@ class Customize_Translations {
 			}
 
 			// Add Partial Refresh.
-			$this->wp_customize->selective_refresh->add_partial( 'secretum[' . sanitize_key( $key ) . ']', [
-				'render_callback' 		=> $render_callback,
-				'container_inclusive' 	=> true,
-				'fallback_refresh' 		=> true,
-			] );
+			$this->wp_customize->selective_refresh->add_partial(
+				'secretum[' . sanitize_key( $key ) . ']',
+				[
+					'render_callback'     => $render_callback,
+					'container_inclusive' => true,
+					'fallback_refresh'    => true,
+				]
+			);
 		}
 
 	}//end settings()

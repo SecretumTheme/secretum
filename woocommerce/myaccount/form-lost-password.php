@@ -2,26 +2,22 @@
 /**
  * Lost password form
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\MyAccount
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	3.5.2
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-lost-password.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\MyAccount
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    3.5.2
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-lost-password.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
 
-
 do_action( 'woocommerce_before_lost_password_form' );
 ?>
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
-	<p><?php
-		// @codingStandardsIgnoreLine
-		echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Need to reset your login credentials? Enter the Username or Email Address associated with your account below then click Reset Password button to receive an email containing a unique link allowing you to reset your password.', 'secretum' ) );
-	?></p>
+	<p><?php echo esc_html( apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Need to reset your login credentials? Enter the Username or Email Address associated with your account below then click Reset Password button to receive an email containing a unique link allowing you to reset your password.', 'secretum' ) ) ); ?></p>
 
 	<p class="form-group">
 		<label for="user_login" class="font-weight-bold"><?php esc_html_e( 'Username or Email Address', 'secretum' ); ?></label>

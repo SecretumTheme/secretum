@@ -47,34 +47,42 @@ $customizer->select(
 	'',
 	$defaults['featured_image_display_location'],
 	[
-		'' 					=> __( 'Theme Default', 'secretum' ),
-		'before_content' 	=> __( 'Before Post Title', 'secretum' ),
-		'before_entry' 		=> __( 'Before Post Content', 'secretum' ),
-		'after_header' 		=> __( 'After Theme Header Area', 'secretum' ),
+		''               => __( 'Theme Default', 'secretum' ),
+		'before_content' => __( 'Before Post Title', 'secretum' ),
+		'before_entry'   => __( 'Before Post Content', 'secretum' ),
+		'after_header'   => __( 'After Theme Header Area', 'secretum' ),
 	]
 );
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'featured_image',
-] );
+$wrapper->settings(
+	[
+		'section' => 'featured_image',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'featured_image_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'featured_image_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' 	=> 'featured_image',
-	'type' 		=> false,
-] );
+$container->settings(
+	[
+		'section' => 'featured_image',
+		'type'    => false,
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'featured_image_container',
-] );
+$borders->settings(
+	[
+		'section' => 'featured_image_container',
+	]
+);

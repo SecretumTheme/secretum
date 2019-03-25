@@ -18,12 +18,14 @@
 namespace Secretum;
 
 // Register Backup Widget.
-register_sidebar( [
-	'name'		  	=> __( '== Backup Area', 'secretum' ),
-	'id' 			=> 'backup-widget',
-	'description'   => __( 'Widgets stored here will not be displayed.', 'secretum' ),
-	'before_widget' => '',
-	'after_widget' 	=> '',
-	'before_title'  => '',
-	'after_title'   => '',
-] );
+register_sidebar(
+	[
+		'name'          => __( '== Backup Area', 'secretum' ),
+		'id'            => 'backup-widget',
+		'description'   => __( 'Widgets stored here will not be displayed.', 'secretum' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	]
+);

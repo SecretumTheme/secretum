@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Display Featured Image Post Thumbnail
  *
@@ -32,14 +31,14 @@ function secretum_featured_image_display() {
 		apply_filters( 'secretum_featured_image_' . get_queried_object_id(), $thumbnail_html, 10, 1 ),
 		[
 			'div' => [
-				'class' 	=> true,
+				'class' => true,
 			],
 			'img' => [
-				'width' 	=> true,
-				'height' 	=> true,
-				'src' 		=> true,
-				'class' 	=> true,
-				'alt' 		=> true,
+				'width'  => true,
+				'height' => true,
+				'src'    => true,
+				'class'  => true,
+				'alt'    => true,
 			],
 		]
 	);

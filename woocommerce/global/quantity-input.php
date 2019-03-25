@@ -2,14 +2,14 @@
 /**
  * Product quantity inputs
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce\Global
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce\Global
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
  * @version     3.4.0
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/quantity-input.php
- * @since 		1.0.0
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/quantity-input.php
+ * @since      1.1.2
  */
 
 namespace Secretum;
@@ -18,11 +18,11 @@ if ( $max_value && $min_value === $max_value ) { ?>
 	<div class="quantity hidden form-group row mb-3">
 		<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty form-control form-control-sm mr-1" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" /> <label for="<?php echo esc_attr( $input_id ); ?> class="col-sm-2 col-form-label col-form-label-sm"> <?php esc_html_e( 'Quantity', 'secretum' ); ?></label>
 	</div>
-<?php
+	<?php
 } else {
 	/* Translators: %s number of items in a shopping cart */
-	$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'secretum' ), strip_tags( $args['product_name'] ) ) : '';
-?>
+	$secretum_labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'secretum' ), wp_strip_all_tags( $args['product_name'] ) ) : '';
+	?>
 	<div class="quantity form-group row mb-3">
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'secretum' ); ?></label>
 		<input
@@ -38,8 +38,8 @@ if ( $max_value && $min_value === $max_value ) { ?>
 			size="4"
 			pattern="<?php echo esc_attr( $pattern ); ?>"
 			inputmode="<?php echo esc_attr( $inputmode ); ?>"
-			aria-labelledby="<?php echo esc_attr( $labelledby ); ?>"
+			aria-labelledby="<?php echo esc_attr( $secretum_labelledby ); ?>"
 		/> <label for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'secretum' ); ?></label>
 	</div>
-<?php
+	<?php
 }

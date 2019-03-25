@@ -13,15 +13,14 @@
 
 namespace Secretum;
 
-// If Posts & Default Display.
 if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_tagslinks_status' ) ) {
-?>
+	$secretum_tags_links_icon = [
+		'fi' => 'price-tag',
+		'fa' => 'fa fa-tags',
+	];
+	?>
 	<span class="tags-links">
-		<?php
-		secretum_icon( [
-			'fi' => 'price-tag',
-			'fa' => 'fa fa-tags',
-		] ); ?> <?php secretum_text( 'meta_tags_text', true ); ?> <?php secretum_tags_list(); ?>
+		<?php secretum_icon( $secretum_tags_links_icon ); ?> <?php secretum_text( 'meta_tags_text', true ); ?> <?php secretum_tags_list(); ?>
 	</span><!-- .tags-links -->
-<?php
+	<?php
 }

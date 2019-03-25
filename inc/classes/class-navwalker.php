@@ -62,9 +62,9 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * @param string $textual_classes Textual Class names.
 	 */
 	public function __construct( $setting_base = '', $dropdown_classes = '', $textual_classes = '' ) {
-		$this->setting_base 	= $setting_base;
+		$this->setting_base     = $setting_base;
 		$this->dropdown_classes = $dropdown_classes;
-		$this->textual_classes 	= $textual_classes;
+		$this->textual_classes  = $textual_classes;
 
 	}//end __construct()
 
@@ -98,8 +98,11 @@ class Navwalker extends \Walker_Nav_Menu {
 		// Default class to add to the file.
 		$classes = [ 'dropdown-menu' . $this->dropdown_classes ];
 
-		// Filters the CSS class( es ) applied to a menu list element.
-		// Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		/*
+			* // Filters the CSS class( es ) applied to a menu list element.
+			* // Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		*/
+
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 
 		if ( true === isset( $class_names ) ) {
@@ -196,7 +199,7 @@ class Navwalker extends \Walker_Nav_Menu {
 
 		// Inject List Items Class.
 		if ( true === isset( $args->items_class ) ) {
-			$classes[] = strip_tags( $args->items_class );
+			$classes[] = wp_strip_all_tags( $args->items_class );
 		}
 
 		// Allow filtering the classes.
@@ -240,19 +243,19 @@ class Navwalker extends \Walker_Nav_Menu {
 
 		// Divider Link Spacing.
 		if ( true === isset( $args->divider ) ) {
-			$spacing_classes = ' ' . strip_tags( $args->divider );
+			$spacing_classes = ' ' . wp_strip_all_tags( $args->divider );
 		} else {
 			$spacing_classes = '';
 		}
 
 		// Item has_children add atts.
 		if ( true !== empty( $args->has_children ) && 0 === $depth && $args->depth > 1 ) {
-			$atts['id'] 			= 'menu-item-dropdown-' . $item->ID;
-			$atts['class'] 			= 'dropdown-toggle nav-link' . $spacing_classes;
-			$atts['data-toggle'] 	= 'dropdown';
-			$atts['aria-expanded'] 	= 'false';
-			$atts['aria-haspopup'] 	= 'true';
-			$atts['href'] 			= '#';
+			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
+			$atts['class']         = 'dropdown-toggle nav-link' . $spacing_classes;
+			$atts['data-toggle']   = 'dropdown';
+			$atts['aria-expanded'] = 'false';
+			$atts['aria-haspopup'] = 'true';
+			$atts['href']          = '#';
 		} else {
 			// No Child: Set URL.
 			$atts['href'] = ( true !== empty( $item->url ) ) ? esc_url( $item->url ) : '#';
@@ -400,11 +403,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @example \Secretum\Navwalker::fallback
-	 * @example \Secretum\Navwalker::fallback( [
-	 *		'menu_name' => 'copyright_nav',
-	 *		'menu_text' => __( 'Add a menu', 'secretum' ),
-	 *	] )
+	 * @example \Secretum\Navwalker::fallback();
 	 *
 	 * @see \Secretum\Navwalker::fallback
 	 * @link https://github.com/SecretumTheme/secretum/blob/master/template-parts/primary-nav/navbar-below.php
@@ -419,15 +418,18 @@ class Navwalker extends \Walker_Nav_Menu {
 	public static function fallback( $args = [] ) {
 		if ( true === current_user_can( 'edit_theme_options' ) ) {
 			// Build Args.
-			$args = wp_parse_args( $args, [
-				'menu_name' => 'menu',
-				'menu_text' => __( 'Create Menu', 'secretum' ),
-			] );
+			$args = wp_parse_args(
+				$args,
+				[
+					'menu_name' => 'menu',
+					'menu_text' => __( 'Create Menu', 'secretum' ),
+				]
+			);
 
-			$text 		= esc_html( $args['menu_text'] );
-			$url 		= esc_url( admin_url( 'nav-menus.php' ) );
-			$classes 	= secretum_textual( 'primary_nav_dropdown', 'return' );
-			$html 		= "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+			$text    = esc_html( $args['menu_text'] );
+			$url     = esc_url( admin_url( 'nav-menus.php' ) );
+			$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
+			$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
 
 			$filtered = apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 );
 
@@ -435,19 +437,19 @@ class Navwalker extends \Walker_Nav_Menu {
 				$filtered,
 				[
 					'ul' => [
-						'id' 	=> true,
+						'id'    => true,
 						'class' => true,
 					],
 					'li' => [
 						'class' => true,
 					],
-					'a' => [
-						'href' 	=> true,
+					'a'  => [
+						'href'  => true,
 						'class' => true,
 					],
 				]
 			);
-		}// End if().
+		}
 
 	}//end fallback()
 
@@ -493,7 +495,7 @@ class Navwalker extends \Walker_Nav_Menu {
 				$icon_classes[] = $class;
 				unset( $classes[ $key ] );
 			}
-		}// End foreach().
+		}
 
 		return $classes;
 
@@ -564,7 +566,7 @@ class Navwalker extends \Walker_Nav_Menu {
 					}
 				}
 			}
-		}// End if().
+		}
 
 		return $atts;
 

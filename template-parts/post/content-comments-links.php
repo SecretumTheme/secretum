@@ -13,23 +13,16 @@
 
 namespace Secretum;
 
-// If Posts & Comments Open Or Comments.
 if ( 'post' === get_post_type() && true === comments_open() || '0' !== get_comments_number() ) {
-	if ( true !== secretum_mod( 'entry_meta_commentlink_status' ) ) { ?>
+	if ( true !== secretum_mod( 'entry_meta_commentlink_status' ) ) {
+		$secretum_comments_link_icon = [
+			'fi' => 'comments',
+			'fa' => 'fa-comments',
+		];
+		?>
 		<span class="comments-link">
-			<?php
-				secretum_icon( [
-					'fi' => 'comments',
-					'fa' => 'fa-comments',
-				] );
-			?> <?php
-				comments_popup_link(
-					secretum_text( 'meta_leave_comment_text', false ),
-					secretum_text( 'meta_one_comment_text', false ),
-					'% ' . secretum_text( 'meta_comments_text', false )
-				);
-			?>
+			<?php secretum_icon( $secretum_comments_link_icon ); ?> <?php comments_popup_link( secretum_text( 'meta_leave_comment_text', false ), secretum_text( 'meta_one_comment_text', false ), '% ' . secretum_text( 'meta_comments_text', false ) ); ?>
 		</span><!-- .comments-links -->
-	<?php
+		<?php
 	}
 }

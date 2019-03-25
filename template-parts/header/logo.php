@@ -8,15 +8,12 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/template-parts/header/logo.php
- * @since      1.0.0
+ * @since      1.1.2
  */
 
 namespace Secretum;
 
 if ( true !== secretum_mod( 'site_identity_branding_status' ) ) {
-	// Get Current Blog ID.
-	$blog_id = get_current_blog_id();
-
 	if ( true === has_custom_logo() && true !== secretum_mod( 'site_identity_logo_status' ) ) {
 		// Render Branded Graphic Logo.
 		secretum_render_brand_logo();

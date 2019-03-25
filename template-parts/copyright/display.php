@@ -14,8 +14,7 @@
 namespace Secretum;
 
 // If Active.
-if ( true !== secretum_mod( 'copyright_status' ) ) {
-?>
+if ( true !== secretum_mod( 'copyright_status' ) ) { ?>
 <div class="wrapper copyright<?php secretum_wrapper( 'copyright' ); ?>" id="wrapper-copyright">
 	<div class="container<?php secretum_container( 'copyright' ); ?>">
 		<div class="row"><div class="col-md">
@@ -37,5 +36,5 @@ if ( true !== secretum_mod( 'copyright_status' ) ) {
 		</div><!-- .row -->
 	</div><!-- .container -->
 </div><!-- .wrapper -->
-<?php
+	<?php
 }

@@ -8,7 +8,7 @@
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/arhive.php
- * @since      1.0.0
+ * @since      1.1.2
  */
 
 namespace Secretum;
@@ -16,13 +16,12 @@ namespace Secretum;
 get_header();
 
 // Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) {
-?>
+if ( true !== secretum_mod( 'body_status' ) ) { ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="archive-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
 	<?php
 	if ( true !== secretum_mod( 'entry_status' ) ) {
-	?>
+		?>
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
@@ -37,7 +36,8 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 					 */
 					do_action( 'secretum_before_content' );
 
-					if ( have_posts() ) { ?>
+					if ( have_posts() ) {
+						?>
 						<header class="page-header border-bottom mb-5">
 							<?php
 								the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -45,11 +45,17 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 							?>
 						</header><!-- .page-header -->
 
-						<?php while ( have_posts() ) { the_post(); ?>
+						<?php
+						while ( have_posts() ) {
+							the_post();
+							?>
+
 							<div class="content-archive mb-5">
 								<?php get_template_part( 'template-parts/post/content', 'excerpt' ); ?>
 							</div><!-- .content-archive -->
-						<?php }
+
+							<?php
+						}
 					} else {
 						get_template_part( 'template-parts/post/content', 'none' );
 					}
@@ -69,13 +75,13 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'right-blog' ); ?>
 
 		</div><!-- .row -->
-	<?php
-	}// End if().
+		<?php
+	}
 	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 
-<?php
-}// End if().
+	<?php
+}
 
 get_footer();

@@ -67,10 +67,13 @@ class Classes_Containers {
 		}
 
 		// Parse Args To Vars.
-		$args = wp_parse_args( $args, [
-			'borders' => true,
-			'textuals' => '',
-		] );
+		$args = wp_parse_args(
+			$args,
+			[
+				'borders'  => true,
+				'textuals' => '',
+			]
+		);
 
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_container';
@@ -81,13 +84,13 @@ class Classes_Containers {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Container Classes.
-			$containers = $this->_build_containers( $section );
+			$containers = $this->build_containers( $section );
 
 			// Build Border Classes.
-			$borders = $this->_build_borders( $section, $args['borders'] );
+			$borders = $this->build_borders( $section, $args['borders'] );
 
 			// Build Textual Classes.
-			$textuals = $this->_build_textuals( $section, $args['textuals'] );
+			$textuals = $this->build_textuals( $section, $args['textuals'] );
 
 			// Build New Classes String.
 			$classes = $containers . $borders . $textuals;
@@ -109,7 +112,7 @@ class Classes_Containers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_containers( $section ) {
+	final private function build_containers( $section ) {
 		// Clear String.
 		$classes = '';
 
@@ -128,7 +131,7 @@ class Classes_Containers {
 		// Scrolltop Rebuild Container Classes.
 		if ( 'scrolltop' === $section ) {
 			// Build Scrolltop Container Classes String.
-			$classes = $this->_build_scrolltop( $section );
+			$classes = $this->build_scrolltop( $section );
 		}
 
 		return $classes;
@@ -143,7 +146,7 @@ class Classes_Containers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_scrolltop( $section ) {
+	final private function build_scrolltop( $section ) {
 		// Clear String.
 		$classes = '';
 
@@ -167,7 +170,7 @@ class Classes_Containers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_borders( $section, $borders ) {
+	final private function build_borders( $section, $borders ) {
 		// Clear String.
 		$classes = '';
 
@@ -192,7 +195,7 @@ class Classes_Containers {
 	 * @return string Class Names.
 	 * @since 1.0.0
 	 */
-	final private function _build_textuals( $section, $textuals ) {
+	final private function build_textuals( $section, $textuals ) {
 		// Clear String.
 		$classes = '';
 

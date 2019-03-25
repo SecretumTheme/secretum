@@ -132,25 +132,25 @@ add_filter( 'body_class', 'Secretum\secretum_body_class', 20, 2 );
  * @return array Updated Comment Form
  */
 function secretum_comment_form_defaults( $defaults ) {
-	$commenter 	= wp_get_current_commenter();
-	$req 		= get_option( 'require_name_email' );
-	$aria_req 	= ( $req ? " aria-required='true'" : '' );
+	$commenter = wp_get_current_commenter();
+	$req       = get_option( 'require_name_email' );
+	$aria_req  = ( $req ? " aria-required='true'" : '' );
 
 	$fields = [
 		'author' => '<p class="form-group comment-form-author"><label for="author">' . secretum_text( 'commenter_name', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="author" name="author" type="text" value="' . esc_html( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
 		'email'  => '<p class="form-group comment-form-email"><label for="email">' . secretum_text( 'commenter_email', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="email" name="email" type="email" value="' . esc_html( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'	=> '<p class="form-group comment-form-url"><label for="url">' . secretum_text( 'commenter_website', false ) . '</label> <input class="form-control" id="url" name="url" type="url" value="' . esc_url( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		'url'    => '<p class="form-group comment-form-url"><label for="url">' . secretum_text( 'commenter_website', false ) . '</label> <input class="form-control" id="url" name="url" type="url" value="' . esc_url( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	];
 
-	$defaults['comment_field'] 			= '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text( 'commenter_comment', false ) . ' <span class="required">*</span></label> <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
-	$defaults['comment_notes_before']	= '<span class="required">*</span> ' . secretum_text( 'comments_required', false );
-	$defaults['comment_notes_after'] 	= '<p class="comment-notes">' . secretum_text( 'comment_privacy', false ) . '</p>';
-	$defaults['title_reply_before'] 	= '<h2 id="reply-title" class="comment-reply-title">';
-	$defaults['title_reply'] 			= secretum_text( 'comment_add_title', false );
-	$defaults['title_reply_after'] 		= '</h2>';
-	$defaults['label_submit'] 			= secretum_text( 'comment_post_label', false );
-	$defaults['class_submit'] 			= 'btn btn-secondary';
-	$defaults['fields'] 				= apply_filters( 'comment_form_default_fields', $fields );
+	$defaults['comment_field']        = '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text( 'commenter_comment', false ) . ' <span class="required">*</span></label> <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
+	$defaults['comment_notes_before'] = '<span class="required">*</span> ' . secretum_text( 'comments_required', false );
+	$defaults['comment_notes_after']  = '<p class="comment-notes">' . secretum_text( 'comment_privacy', false ) . '</p>';
+	$defaults['title_reply_before']   = '<h2 id="reply-title" class="comment-reply-title">';
+	$defaults['title_reply']          = secretum_text( 'comment_add_title', false );
+	$defaults['title_reply_after']    = '</h2>';
+	$defaults['label_submit']         = secretum_text( 'comment_post_label', false );
+	$defaults['class_submit']         = 'btn btn-secondary';
+	$defaults['fields']               = apply_filters( 'comment_form_default_fields', $fields );
 
 	return $defaults;
 

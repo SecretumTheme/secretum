@@ -74,7 +74,7 @@ class Classes_Nav_Items {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Nav Items Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_items_background_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_items_background_hover_color', 'attr', true );
 			$classes .= secretum_mod( $section . '_items_margin_y', 'attr', true );

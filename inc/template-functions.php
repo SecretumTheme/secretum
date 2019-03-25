@@ -57,13 +57,13 @@ function secretum_customizer_refresh() {
 		'<a href="javascript:void(0);" onclick="document.location.reload(true)" title="' . __( 'Refresh Preview', 'secretum' ) . '"><i class="secretum-customizer-icon fi-refresh" aria-hidden="true"></i></a>',
 		[
 			'a' => [
-				'href' 			=> true,
-				'onclick' 		=> true,
-				'title' 		=> true,
+				'href'    => true,
+				'onclick' => true,
+				'title'   => true,
 			],
 			'i' => [
-				'class' 		=> true,
-				'aria-hidden' 	=> true,
+				'class'       => true,
+				'aria-hidden' => true,
 			],
 		],
 		'javascript'
@@ -129,14 +129,16 @@ function secretum_is_woobookings() {
  * @since 1.0.0
  *
  * @param string $taxonomy The taxonomy term.
- * @param bool 	 $top_link True to enable top return link.
- * @param bool 	 $icons True to enable Font Awesome icons.
+ * @param bool   $top_link True to enable top return link.
+ * @param bool   $icons True to enable Font Awesome icons.
  * @param string $seperator Text only, icons will override, defaults to ' > '.
  * @return string Breadcrumbs HTML
  */
 function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false, $seperator = false ) {
 	// Required.
-	if ( empty( $taxonomy ) ) { return; }
+	if ( empty( $taxonomy ) ) {
+		return;
+	}
 
 	global $post;
 
@@ -175,11 +177,11 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 		// Build Top Return Link.
 		if ( true === $top_link && true === $icons ) {
 			$title = secretum_text( 'return_to_top_title' );
-			$top = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="' . $title . '"></i></a>';
+			$top   = '<a href="#top" class="ml-2 p-2"><i class="fa fa-caret-up" aria-hidden="true" title="' . $title . '"></i></a>';
 
 		} elseif ( true === $top_link && false === $icons ) {
 			$title = secretum_text( 'return_to_top_default' );
-			$top = ' | <a href="#top">' . $title . '</a>';
+			$top   = ' | <a href="#top">' . $title . '</a>';
 
 		} else {
 			$top = '';
@@ -188,6 +190,6 @@ function secretum_breadcrumbs( $taxonomy = '', $top_link = false, $icons = false
 
 		// Return HTML.
 		return '<div class="breadcrumbs">' . $home . '<a href="' . SECRETUM_BASE_URL . '">' . $home_text . '</a> ' . $sep . ' <a href="' . $category_url . '">' . $category_name . '</a>' . $top . '</div>';
-	}// End if().
+	}
 
 }//end secretum_breadcrumbs()

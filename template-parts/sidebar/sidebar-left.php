@@ -13,10 +13,10 @@
 
 namespace Secretum;
 
-// If Sidebars Active && Sidebar Location Set.
-if ( true === is_active_sidebar( 'sidebar-left' ) && true === secretum_sidebar_location( 'left' ) ) { ?>
-<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-left" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-left' ); ?>
-</div><!-- .sidebar -->
-<?php
+if ( true === is_active_sidebar( 'sidebar-left' ) && true === secretum_sidebar_location( 'left' ) ) {
+	?>
+	<div class="sidebar col-md widget-area<?php secretum_wrapper( 'sidebar' ); ?>" id="sidebar-left" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-left' ); ?>
+	</div><!-- .sidebar -->
+	<?php
 }

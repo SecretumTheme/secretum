@@ -2,14 +2,14 @@
 /**
  * The Template for displaying all single products & bookings
  *
- * @package 	Secretum
- * @subpackage 	Theme\WooCommerce
- * @author 		SecretumTheme <author@secretumtheme.com>
- * @copyright 	2018-2019 Secretum
- * @version 	1.6.4
- * @license 	https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link 		https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product.php
- * @since 		1.0.0
+ * @package    Secretum
+ * @subpackage Theme\WooCommerce
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @version    1.6.4
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product.php
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -27,9 +27,11 @@ get_header( 'shop' );
 
 				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
-					while ( have_posts() ) { the_post();
+					while ( have_posts() ) {
+						the_post();
+
 						if ( get_class( $product ) === 'WC_Product_Booking' ) {
-						?>
+							?>
 							<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<div class="row">
 									<?php wc_get_template( 'single-product/title.php' ); ?>

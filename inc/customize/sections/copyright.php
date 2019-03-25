@@ -40,34 +40,44 @@ $customizer->checkbox(
 
 
 // Wrapper.
-$wrapper->settings( [
-	'section' => 'copyright',
-] );
+$wrapper->settings(
+	[
+		'section' => 'copyright',
+	]
+);
 
 
 // Wrapper Borders.
-$borders->settings( [
-	'section' => 'copyright_wrapper',
-] );
+$borders->settings(
+	[
+		'section' => 'copyright_wrapper',
+	]
+);
 
 
 // Container.
-$container->settings( [
-	'section' => 'copyright',
-] );
+$container->settings(
+	[
+		'section' => 'copyright',
+	]
+);
 
 
 // Container Borders.
-$borders->settings( [
-	'section' => 'copyright_container',
-] );
+$borders->settings(
+	[
+		'section' => 'copyright_container',
+	]
+);
 
 
 // Textuals.
-$textuals->settings( [
-	'section' 	=> 'copyright',
-	'alignment' => true,
-] );
+$textuals->settings(
+	[
+		'section'   => 'copyright',
+		'alignment' => true,
+	]
+);
 
 
 // Display.
@@ -91,13 +101,16 @@ $customizer->textarea(
 
 
 // Refresh Partial :: Copyright Statement.
-$wp_customize->selective_refresh->add_partial( 'copyright_text_partial', [
-	'settings'         => [
-		'secretum[copyright_text]'
-	],
-	'selector'         => '.site-info',
-	'render_callback'  => function() {
-		return wp_kses_post( $defaults['copyright_text'] );
-	},
-	'container_inclusive' => false,
-] );
+$wp_customize->selective_refresh->add_partial(
+	'copyright_text_partial',
+	[
+		'settings'            => [
+			'secretum[copyright_text]',
+		],
+		'selector'            => '.site-info',
+		'render_callback'     => function() {
+			return wp_kses_post( $defaults['copyright_text'] );
+		},
+		'container_inclusive' => false,
+	]
+);

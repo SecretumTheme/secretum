@@ -43,10 +43,10 @@ namespace Secretum;
 		the_content();
 
 		wp_link_pages(
-			array(
+			[
 				'before' => '<div class="page-links py-3 mt-5 text-center">' . secretum_text( 'content_pages_text', false ),
 				'after'  => '</div>',
-			 )
+			]
 		);
 
 		/**

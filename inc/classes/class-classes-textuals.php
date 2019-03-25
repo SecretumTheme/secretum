@@ -74,7 +74,7 @@ class Classes_Textuals {
 		// No Classes Set, Build Fresh Classes String.
 		if ( true === empty( $classes ) ) {
 			// Build Textuals Classes.
-			$classes = '';
+			$classes  = '';
 			$classes .= secretum_mod( $section . '_textual_alignment', 'attr', true );
 			$classes .= secretum_mod( $section . '_textual_font_family', 'attr', true );
 			$classes .= secretum_mod( $section . '_textual_font_size', 'attr', true );
