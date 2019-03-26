@@ -9,7 +9,7 @@
  * @version    1.10.8
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/booking-form/datetime-picker.php
- * @since      1.1.2
+ * @since      1.0.0
  */
 
 namespace Secretum;

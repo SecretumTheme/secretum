@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.1.3' );
+define( 'SECRETUM_THEME_VERSION', '1.1.4' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
