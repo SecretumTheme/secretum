@@ -6,10 +6,10 @@
  * @subpackage Theme\WooCommerce\Checkout
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version     3.0.9
+ * @version    3.0.9
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-billing.php
- * @since      1.1.2
+ * @since      1.0.0
  */
 
 namespace Secretum;
@@ -17,12 +17,13 @@ namespace Secretum;
 ?>
 <div class="woocommerce-billing-fields">
 	<?php
+	$secretum_billing_lock_icon = [
+		'fi' => 'lock',
+		'fa' => 'fa-lock',
+	];
+
 	if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) {
-		$secretum_billing_lock_icon = [
-			'fi' => 'lock',
-			'fa' => 'fa-lock',
-		];
-		?>
+	?>
 		<h3><?php secretum_icon( $secretum_billing_lock_icon ); ?> <?php esc_html_e( 'Billing &amp; Shipping', 'secretum' ); ?></h3>
 	<?php } else { ?>
 		<h3><?php secretum_icon( $secretum_billing_lock_icon ); ?> <?php esc_html_e( 'Billing Details', 'secretum' ); ?></h3>

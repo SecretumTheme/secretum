@@ -9,7 +9,7 @@
  * @version     3.1.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product/rating.php
- * @since      1.1.2
+ * @since      1.0.0
  */
 
 namespace Secretum;
