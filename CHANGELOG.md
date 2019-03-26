@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.1.4
+**2019-03-26 - Hotfix**
+
+* Corrected variable call in form-billing.php
+
 # 1.1.3
 **2019-03-25 - Version Bump**
 
