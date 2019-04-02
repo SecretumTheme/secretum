@@ -23,7 +23,7 @@ namespace Secretum;
 	];
 
 	if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) {
-	?>
+		?>
 		<h3><?php secretum_icon( $secretum_billing_lock_icon ); ?> <?php esc_html_e( 'Billing &amp; Shipping', 'secretum' ); ?></h3>
 	<?php } else { ?>
 		<h3><?php secretum_icon( $secretum_billing_lock_icon ); ?> <?php esc_html_e( 'Billing Details', 'secretum' ); ?></h3>

@@ -29,18 +29,18 @@ class Customize_Borders {
 	 * Secretum Customizer Object
 	 *
 	 * @since 1.0.0
-	 * @var array $_customizer
+	 * @var array $customizer
 	 */
-	private $_customizer;
+	private $customizer;
 
 
 	/**
 	 * Customizer Default Settings
 	 *
 	 * @since 1.0.0
-	 * @var array $_default
+	 * @var array $default
 	 */
-	private $_default;
+	private $default;
 
 
 	/**
@@ -53,8 +53,8 @@ class Customize_Borders {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer = $customizer;
-			$this->_default    = $defaults;
+			$this->customizer = $customizer;
+			$this->default    = $defaults;
 		}
 
 	}//end __construct()
@@ -82,33 +82,33 @@ class Customize_Borders {
 		}
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'],
 			$args['section'] . '_border_type',
 			__( 'Border Type', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_border_type' ],
-			secretum_customizer_border_types()
+			$this->default[ $args['section'] . '_border_type' ],
+			secretumcustomizer_border_types()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'],
 			$args['section'] . '_border_radius',
 			__( 'Border Radius', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_border_radius' ],
-			secretum_customizer_border_radius()
+			$this->default[ $args['section'] . '_border_radius' ],
+			secretumcustomizer_border_radius()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'],
 			$args['section'] . '_border_color',
 			__( 'Border Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_border_color' ],
-			secretum_customizer_border_colors()
+			$this->default[ $args['section'] . '_border_color' ],
+			secretumcustomizer_border_colors()
 		);
 
 	}//end settings()

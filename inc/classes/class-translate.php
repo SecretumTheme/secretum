@@ -45,18 +45,18 @@ class Translate {
 	 * Secretum Settings Option
 	 *
 	 * @since 1.0.0
-	 * @var array $_option
+	 * @var array $option
 	 */
-	private $_option;
+	private $option;
 
 
 	/**
 	 * Customizer Default Settings
 	 *
 	 * @since 1.0.0
-	 * @var array $_default
+	 * @var array $default
 	 */
-	private $_default;
+	private $default;
 
 
 	/**
@@ -66,10 +66,10 @@ class Translate {
 	 */
 	final public function init() {
 		// Get Secretum Option.
-		$this->_option = get_option( 'secretum', [] );
+		$this->option = get_option( 'secretum', [] );
 
 		// Get Secretum Option.
-		$this->_default = $this->defaults();
+		$this->default = $this->defaults();
 
 	}//end init()
 
@@ -86,9 +86,9 @@ class Translate {
 	 */
 	final public function get( $key, $echo = false ) {
 		// Option Set.
-		if ( true === isset( $this->_option[ $key ] ) ) {
+		if ( true === isset( $this->option[ $key ] ) ) {
 			// Get String From DB.
-			$string = filter_var( html_entity_decode( $this->_option[ $key ] ), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
+			$string = filter_var( html_entity_decode( $this->option[ $key ] ), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 		} else {
 			// Default To Defaults.
 			$defaults = $this->defaults();

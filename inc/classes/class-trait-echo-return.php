@@ -40,6 +40,8 @@ trait Trait_Echo_Return {
 	 * @since 1.0.0
 	 */
 	final public function echo_return( $setting, $return, $classes = '' ) {
+		$clean_setting_name = str_replace( 'secretum_', '', $setting );
+
 		// Classes Could Be Empty, Ignore If Empty.
 		if ( true === isset( $classes ) && true === empty( $classes ) ) {
 			return;
@@ -47,12 +49,12 @@ trait Trait_Echo_Return {
 
 		// Echo Results.
 		if ( 'echo' === $return ) {
-			echo esc_html( apply_filters( $setting, $classes, 10, 1 ) );
+			echo esc_html( apply_filters( 'secretum_' . $clean_setting_name, $classes, 10, 1 ) );
 		}
 
 		// Return Results.
 		if ( 'return' === $return ) {
-			return esc_html( apply_filters( $setting, $classes, 10, 1 ) );
+			return esc_html( apply_filters( 'secretum_' . $clean_setting_name, $classes, 10, 1 ) );
 		}
 
 	}//end echo_return()
