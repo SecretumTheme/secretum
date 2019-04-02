@@ -29,18 +29,18 @@ class Customize_Wrapper {
 	 * Secretum Customizer Object
 	 *
 	 * @since 1.0.0
-	 * @var array $_customizer
+	 * @var array $customizer
 	 */
-	private $_customizer;
+	private $customizer;
 
 
 	/**
 	 * Customizer Default Settings
 	 *
 	 * @since 1.0.0
-	 * @var array $_default
+	 * @var array $default
 	 */
-	private $_default;
+	private $default;
 
 
 	/**
@@ -53,8 +53,8 @@ class Customize_Wrapper {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer = $customizer;
-			$this->_default    = $defaults;
+			$this->customizer = $customizer;
+			$this->default    = $defaults;
 		}
 
 	}//end __construct()
@@ -84,7 +84,7 @@ class Customize_Wrapper {
 		}
 
 		// Section.
-		$this->_customizer->section(
+		$this->customizer->section(
 			$args['section'] . '_wrapper',
 			$this->panel( $args['section'], $args['panel'] ),
 			$this->title( $args['title'] ),
@@ -92,53 +92,53 @@ class Customize_Wrapper {
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_background_color',
 			__( 'Background Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_wrapper_background_color' ],
-			secretum_customizer_background_colors()
+			$this->default[ $args['section'] . '_wrapper_background_color' ],
+			secretumcustomizer_background_colors()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_margin_top',
 			__( 'Margin - Top', 'secretum' ),
 			__( 'Spacing outside/above the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_margin_top' ],
-			secretum_customizer_margin_top()
+			$this->default[ $args['section'] . '_wrapper_margin_top' ],
+			secretumcustomizer_margin_top()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_margin_bottom',
 			__( 'Margin - Bottom', 'secretum' ),
 			__( 'Spacing outside/below the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_margin_bottom' ],
-			secretum_customizer_margin_bottom()
+			$this->default[ $args['section'] . '_wrapper_margin_bottom' ],
+			secretumcustomizer_margin_bottom()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_padding_y',
 			__( 'Padding - Top & Bottom', 'secretum' ),
 			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_padding_y' ],
-			secretum_customizer_padding_top_bottom()
+			$this->default[ $args['section'] . '_wrapper_padding_y' ],
+			secretumcustomizer_padding_top_bottom()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_wrapper',
 			$args['section'] . '_wrapper_padding_x',
 			__( 'Padding - Left & Right', 'secretum' ),
 			__( 'Spacing inside the wrapper.', 'secretum' ),
-			$this->_default[ $args['section'] . '_wrapper_padding_x' ],
-			secretum_customizer_padding_left_right()
+			$this->default[ $args['section'] . '_wrapper_padding_x' ],
+			secretumcustomizer_padding_left_right()
 		);
 
 	}//end settings()

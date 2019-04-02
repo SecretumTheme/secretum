@@ -3,7 +3,7 @@ Contributors: SecretumTheme
 Requires at least: WordPress 4.8
 Tested up to: 5.1.1
 Requires PHP: 5.6
-Version: 1.1.4
+Version: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,9 +80,9 @@ Return to the Pages admin and customize the Front Page page as desired.
 
 == Changelog ==
 
-= 1.1.4 =
-* Released: 2019-03-26
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0114
+= 1.1.5 =
+* Released: 2019-04-02
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0115
 
 
 == Licenses ==

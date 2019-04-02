@@ -25,7 +25,7 @@ if ( $related_products ) {
 			setup_postdata( get_post( $secretum_related_product->get_id() ) );
 			wc_get_template_part( 'content', 'product' );
 		}
-		
+
 		woocommerce_product_loop_end();
 		?>
 	</section>
