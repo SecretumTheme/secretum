@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.1.5
+**2019-04-02 - Hotfix**
+
+* Adjusted default content width function
+* Adjusted private variable names in customizer & translate classes
+* Adjusted echo return trait to use prefix on filter rather than passing it in
+
 # 1.1.4
 **2019-03-26 - Hotfix**
 

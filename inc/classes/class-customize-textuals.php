@@ -29,18 +29,18 @@ class Customize_Textuals {
 	 * Secretum Customizer Object
 	 *
 	 * @since 1.0.0
-	 * @var array $_customizer
+	 * @var array $customizer
 	 */
-	private $_customizer;
+	private $customizer;
 
 
 	/**
 	 * Customizer Default Settings
 	 *
 	 * @since 1.0.0
-	 * @var array $_default
+	 * @var array $default
 	 */
-	private $_default;
+	private $default;
 
 
 	/**
@@ -53,8 +53,8 @@ class Customize_Textuals {
 	 */
 	public function __construct( $customizer, $defaults ) {
 		if ( true === isset( $customizer ) && true === is_object( $customizer ) ) {
-			$this->_customizer = $customizer;
-			$this->_default    = $defaults;
+			$this->customizer = $customizer;
+			$this->default    = $defaults;
 		}
 
 	}//end __construct()
@@ -85,7 +85,7 @@ class Customize_Textuals {
 		}
 
 		// Section.
-		$this->_customizer->section(
+		$this->customizer->section(
 			$args['section'] . '_textuals',
 			$this->panel( $args['section'], $args['panel'] ),
 			$this->title( $args['title'] ),
@@ -94,84 +94,84 @@ class Customize_Textuals {
 
 		if ( true === $args['alignment'] ) {
 			// Select.
-			$this->_customizer->select(
+			$this->customizer->select(
 				$args['section'] . '_textuals',
 				$args['section'] . '_textual_alignment',
 				__( 'Text Alignment', 'secretum' ),
 				'',
-				$this->_default[ $args['section'] . '_textual_alignment' ],
-				secretum_customizer_text_alignments()
+				$this->default[ $args['section'] . '_textual_alignment' ],
+				secretumcustomizer_text_alignments()
 			);
 		}
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_font_family',
 			__( 'Font Family', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_font_family' ],
-			secretum_customizer_font_families()
+			$this->default[ $args['section'] . '_textual_font_family' ],
+			secretumcustomizer_font_families()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_font_size',
 			__( 'Font Size', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_font_size' ],
-			secretum_customizer_font_sizes()
+			$this->default[ $args['section'] . '_textual_font_size' ],
+			secretumcustomizer_font_sizes()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_font_style',
 			__( 'Font Style', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_font_style' ],
-			secretum_customizer_font_styles()
+			$this->default[ $args['section'] . '_textual_font_style' ],
+			secretumcustomizer_font_styles()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_text_transform',
 			__( 'Text Transform', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_text_transform' ],
-			secretum_customizer_text_transform()
+			$this->default[ $args['section'] . '_textual_text_transform' ],
+			secretumcustomizer_text_transform()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_text_color',
 			__( 'Text Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_text_color' ],
-			secretum_customizer_text_colors()
+			$this->default[ $args['section'] . '_textual_text_color' ],
+			secretumcustomizer_text_colors()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_link_color',
 			__( 'Link Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_link_color' ],
-			secretum_customizer_link_colors()
+			$this->default[ $args['section'] . '_textual_link_color' ],
+			secretumcustomizer_link_colors()
 		);
 
 		// Select.
-		$this->_customizer->select(
+		$this->customizer->select(
 			$args['section'] . '_textuals',
 			$args['section'] . '_textual_link_hover_color',
 			__( 'Link Hover Color', 'secretum' ),
 			'',
-			$this->_default[ $args['section'] . '_textual_link_hover_color' ],
-			secretum_customizer_link_hover_colors()
+			$this->default[ $args['section'] . '_textual_link_hover_color' ],
+			secretumcustomizer_link_hover_colors()
 		);
 
 	}//end settings()
