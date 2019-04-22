@@ -2,8 +2,8 @@
 /**
  * Shows customer bookings on the My Account > Bookings page
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce-Bookings\MyAccount
+ * @package    WooCommerce-Bookings
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    1.10.0
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/myaccount/bookings.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;

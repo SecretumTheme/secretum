@@ -2,8 +2,8 @@
 /**
  * Variable product add to cart
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce\Single-Product\Add-To-Cart
+ * @package    WooCommerce
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    3.5.5
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product/add-to-cart/variable.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;

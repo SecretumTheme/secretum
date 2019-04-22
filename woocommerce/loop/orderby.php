@@ -2,8 +2,8 @@
 /**
  * Show options for ordering
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce\Loop
+ * @package    WooCommerce
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    3.6.0
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/loop/orderby.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
