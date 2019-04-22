@@ -2,8 +2,8 @@
 /**
  * Login form
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce\Global
+ * @package    WooCommerce
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    3.6.0
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/form-login.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;

@@ -2,8 +2,8 @@
 /**
  * The template for displaying the booking form and calendar with time blocks to customers.
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce-Bookings\Booking-Form
+ * @package    WooCommerce-Bookings
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    1.10.8
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/booking-form/datetime-picker.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;

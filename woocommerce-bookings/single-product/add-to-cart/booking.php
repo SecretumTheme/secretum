@@ -2,8 +2,8 @@
 /**
  * Booking product add to cart.
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce-Bookings\Single-Product\Add-To-Cart
+ * @package    WooCommerce-Bookings
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    1.10.0
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce-bookings/single-product/add-to-cart/booking.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;

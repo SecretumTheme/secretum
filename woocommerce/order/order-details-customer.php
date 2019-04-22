@@ -2,8 +2,8 @@
 /**
  * Order Customer Details
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce\Order
+ * @package    WooCommerce
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @version    3.4.4
@@ -11,6 +11,8 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details-customer.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;
