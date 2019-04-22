@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( true === is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) {
 	return;

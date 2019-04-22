@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 wc_print_notices();
 

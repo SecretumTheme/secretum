@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $secretum_show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_address();
 ?>

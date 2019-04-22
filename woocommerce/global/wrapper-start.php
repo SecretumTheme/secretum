@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 ?>
 <div class="wrapper<?php secretum_body_wrapper(); ?>" id="woocommerce-wrapper">
