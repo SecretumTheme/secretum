@@ -6,13 +6,15 @@
  * @subpackage Theme\WooCommerce\Loop
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version     3.3.0
+ * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/loop/orderby.php
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 ?>
 <form class="woocommerce-ordering" method="get">

@@ -6,17 +6,19 @@
  * @subpackage Theme\WooCommerce\MyAccount
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.5.0
+ * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-login.php
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 do_action( 'woocommerce_before_customer_login_form' );
 
-if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
+if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 	?>
 <div class="row" id="customer_login">
 	<div class="col-sm">
@@ -59,7 +61,7 @@ if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 	<hr class="d-md-none" />
 
 <?php
-if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
+if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 	?>
 	</div><!-- .col-sm -->
 	<div class="col-sm">

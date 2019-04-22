@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 wp_enqueue_script( 'wc-bookings-date-picker' );
 wp_enqueue_script( 'wc-bookings-time-picker' );
