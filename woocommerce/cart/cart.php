@@ -2,15 +2,17 @@
 /**
  * Cart Page
  *
- * @package    Secretum
- * @subpackage Theme\WooCommerce\Cart
+ * @package    WooCommerce
+ * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version     3.5.0
+ * @version    3.5.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
  * @since      1.0.0
  */
+
+namespace Secretum;
 
 if ( true !== defined( 'ABSPATH' ) ) {
 	exit;
