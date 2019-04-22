@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $secretum_after = isset( $field['after'] ) ? $field['after'] : null;
 $secretum_class = $field['class'];

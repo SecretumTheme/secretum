@@ -6,13 +6,17 @@
  * @subpackage Theme\WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.4.0
+ * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/content-single-product.php
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+global $product;
 
 /**
  * Hook Woocommerce_before_single_product.
@@ -27,7 +31,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="row">
 		<div class="col-md-7">
 			<?php
@@ -56,6 +60,10 @@ if ( post_password_required() ) {
 
 			wc_get_template( 'single-product/meta.php' );
 			wc_get_template( 'single-product/share.php' );
+
+			if ( true === class_exists( '\WC_Structured_Data::generate_product_data' ) ) {
+				\WC_Structured_Data::generate_product_data();
+			}
 			?>
 		</div>
 	</div>

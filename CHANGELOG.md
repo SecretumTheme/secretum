@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.2.0
+**2019-04-22 - Feature Update**
+
+* WooCommerce templates updated to match current release.
+
 # 1.1.5
 **2019-04-02 - Hotfix**
 

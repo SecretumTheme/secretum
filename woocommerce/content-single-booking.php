@@ -11,7 +11,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Hook Woocommerce_before_single_product.

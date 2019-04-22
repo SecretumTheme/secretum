@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $secretum_downloads     = WC()->customer->get_downloadable_products();
 $secretum_has_downloads = (bool) $secretum_downloads;

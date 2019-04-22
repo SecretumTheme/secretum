@@ -6,17 +6,19 @@
  * @subpackage Theme\WooCommerce\Single-Product
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version     3.1.0
+ * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/single-product/rating.php
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 global $product;
 
-if ( 'no' === get_option( 'woocommerce_enable_review_rating' ) ) {
+if ( ! wc_review_ratings_enabled() ) {
 	return;
 }
 

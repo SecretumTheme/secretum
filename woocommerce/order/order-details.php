@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $secretum_order = wc_get_order( $order_id );
 if ( ! isset( $order_id ) && $order_id !== $secretum_order ) {

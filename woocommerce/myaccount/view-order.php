@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 ?>
 <p class="font-weight-bold"><?php wp_kses_post( /* Translators: Notice 1) Order Number 2) Date 3) Status */ sprintf( esc_html__( 'Order #%1$s was placed on %2$s and is currently %3$s.', 'secretum' ), '<mark class="order-number">' . esc_html( $order->get_order_number() ) . '</mark>', '<mark class="order-date">' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</mark>', '<mark class="order-status">' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</mark>' ) ); ?></p>

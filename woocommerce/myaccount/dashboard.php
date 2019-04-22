@@ -12,7 +12,9 @@
  * @since      1.0.0
  */
 
-namespace Secretum;
+if ( true !== defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 ?>
 <p class="font-weight-bold"><?php wp_kses_post( /* Translators: Login hello text 1) Username 2) URL */ sprintf( __( 'Hello %1$s ( not %1$s? <a href="%2$s">Log out</a> )', 'secretum' ) ), esc_html( $current_user->display_name ), esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) ) ); ?></p>
