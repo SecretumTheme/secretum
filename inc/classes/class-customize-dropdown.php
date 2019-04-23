@@ -96,7 +96,7 @@ class Customize_Dropdown {
 			__( 'Background Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_dropdown_background_color' ],
-			secretumcustomizer_background_colors()
+			secretum_customizer_background_colors()
 		);
 
 		// Select.
@@ -106,7 +106,7 @@ class Customize_Dropdown {
 			__( 'Background Hover Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_dropdown_background_hover_color' ],
-			secretumcustomizer_background_hover_colors()
+			secretum_customizer_background_hover_colors()
 		);
 
 		// Select.
@@ -116,7 +116,7 @@ class Customize_Dropdown {
 			__( 'Margin - Top & Bottom', 'secretum' ),
 			__( 'Spacing outside/around the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_dropdown_margin_y' ],
-			secretumcustomizer_margin_top_bottom()
+			secretum_customizer_margin_top_bottom()
 		);
 
 		// Select.
@@ -126,7 +126,7 @@ class Customize_Dropdown {
 			__( 'Margin - Left & Right', 'secretum' ),
 			__( 'Spacing outside/around the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_dropdown_margin_x' ],
-			secretumcustomizer_margin_left_right()
+			secretum_customizer_margin_left_right()
 		);
 
 		// Select.
@@ -136,7 +136,7 @@ class Customize_Dropdown {
 			__( 'Padding - Top & Bottom', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_dropdown_padding_y' ],
-			secretumcustomizer_padding_top_bottom()
+			secretum_customizer_padding_top_bottom()
 		);
 
 		// Select.
@@ -146,7 +146,7 @@ class Customize_Dropdown {
 			__( 'Padding - Left & Right', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_dropdown_padding_x' ],
-			secretumcustomizer_padding_left_right()
+			secretum_customizer_padding_left_right()
 		);
 
 	}//end settings()

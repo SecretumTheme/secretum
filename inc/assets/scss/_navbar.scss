@@ -2,6 +2,10 @@
  * Secretum - Navbar
  */
 
+.navbar-brand {
+    white-space: normal;
+}
+
 .navbar {
     .navbar-nav li {
         border-bottom-color: transparent;
@@ -31,6 +35,16 @@
     margin: .125rem 0 0;
     font-size: 1rem;
     border-radius: .25rem;
+}
+
+.dropdown-menu li > .dropdown-menu {
+    left: 100%;
+    top: 0;
+}
+
+.dropdown-menu li:hover > .dropdown-menu,
+.dropdown-menu li:focus > .dropdown-menu {
+    display: block
 }
 
 .dropdown-item {

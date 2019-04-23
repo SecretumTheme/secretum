@@ -101,7 +101,7 @@ class Customize_Container {
 				__( 'Container Type', 'secretum' ),
 				'',
 				$this->default[ $args['section'] . '_container_type' ],
-				secretumcustomizer_container_types()
+				secretum_customizer_container_types()
 			);
 		}
 
@@ -112,7 +112,7 @@ class Customize_Container {
 			__( 'Background Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_container_background_color' ],
-			secretumcustomizer_background_colors()
+			secretum_customizer_background_colors()
 		);
 
 		// Select.
@@ -122,7 +122,7 @@ class Customize_Container {
 			__( 'Margin - Top', 'secretum' ),
 			__( 'Spacing outside/above the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_container_margin_top' ],
-			secretumcustomizer_margin_top()
+			secretum_customizer_margin_top()
 		);
 
 		// Select.
@@ -132,7 +132,7 @@ class Customize_Container {
 			__( 'Margin - Bottom', 'secretum' ),
 			__( 'Spacing outside/below the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_container_margin_bottom' ],
-			secretumcustomizer_margin_bottom()
+			secretum_customizer_margin_bottom()
 		);
 
 		// Select.
@@ -142,7 +142,7 @@ class Customize_Container {
 			__( 'Padding - Top & Bottom', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_container_padding_y' ],
-			secretumcustomizer_padding_top_bottom()
+			secretum_customizer_padding_top_bottom()
 		);
 
 		// Select.
@@ -152,7 +152,7 @@ class Customize_Container {
 			__( 'Padding - Left & Right', 'secretum' ),
 			__( 'Spacing inside the container.', 'secretum' ),
 			$this->default[ $args['section'] . '_container_padding_x' ],
-			secretumcustomizer_padding_left_right()
+			secretum_customizer_padding_left_right()
 		);
 
 	}//end settings()

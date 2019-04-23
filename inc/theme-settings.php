@@ -46,10 +46,10 @@ function secretum_setup_theme() {
 	// Register Navigation Menus.
 	register_nav_menus(
 		[
-			'secretum-navbar-primary-below' => __( 'Primary Navbar Below Header', 'secretum' ),
-			'secretum-navbar-primary-above' => __( 'Primary Navbar Above Header', 'secretum' ),
-			'secretum-navbar-primary-left'  => __( 'Primary Navbar Left of Logo', 'secretum' ),
-			'secretum-navbar-primary-right' => __( 'Primary Navbar Right of Logo', 'secretum' ),
+			'secretum-navbar-primary-below' => __( 'Primary Navbar Below Header <small>(select 1 primary only)</small>', 'secretum' ),
+			'secretum-navbar-primary-above' => __( 'Primary Navbar Above Header <small>(select 1 primary only)</small>', 'secretum' ),
+			'secretum-navbar-primary-left'  => __( 'Primary Navbar Left of Logo <small>(select 1 primary only)</small>', 'secretum' ),
+			'secretum-navbar-primary-right' => __( 'Primary Navbar Right of Logo <small>(select 1 primary only)</small>', 'secretum' ),
 			'secretum-navbar-top'           => __( 'Header Top Navbar (above header)', 'secretum' ),
 			'secretum-navbar-copyright'     => __( 'Copyright Textual Menu', 'secretum' ),
 		]
