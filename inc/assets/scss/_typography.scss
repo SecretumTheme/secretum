@@ -2,6 +2,28 @@
  * Secretum - Typography
  */
 
+blockquote {
+	margin-left: 0;
+	padding: 0 0 0 .75rem;
+
+	> p {
+		margin: 0 0 .5rem;
+
+		cite {
+			font-weight: bold;
+		}
+	}
+
+	cite {
+		font-weight: bold;
+	}
+}
+
+dd {
+    display: block;
+    margin-inline-start: 40px;
+}
+
 button,
 input,
 select,

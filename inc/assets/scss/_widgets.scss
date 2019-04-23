@@ -99,7 +99,7 @@
 		a:visited {
 			background: $gray-200;
 			border-radius: 0.1875rem 0 0 0.1875rem;
-			color: $gray-600;
+			color: $link-color;
 			display: inline-block;
 			height: 1.875rem;
 			line-height: 1.625rem;
@@ -122,7 +122,7 @@
 			}
 
 			&::after {
-				background: $white;
+				background: $content-bg;
 				border-bottom: 0.9375rem solid transparent;
 				border-left: 0.625rem solid $gray-200;
 				border-top: 0.9375rem solid transparent;

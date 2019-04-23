@@ -1,5 +1,13 @@
 # Changelog
 
+# 1.2.1
+**2019-04-23 - Hotfix**
+
+* Adjusted primary menu Navwalker to support multiple dropdowns.
+* Adjusted comments header to use printf to keep span wrap.
+* Corrected missing paged comments navigation.
+* Corrected prefix names on customizer varaible names.
+
 # 1.2.0
 **2019-04-22 - Feature Update**
 
