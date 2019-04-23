@@ -100,7 +100,7 @@ class Customize_Textuals {
 				__( 'Text Alignment', 'secretum' ),
 				'',
 				$this->default[ $args['section'] . '_textual_alignment' ],
-				secretumcustomizer_text_alignments()
+				secretum_customizer_text_alignments()
 			);
 		}
 
@@ -111,7 +111,7 @@ class Customize_Textuals {
 			__( 'Font Family', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_font_family' ],
-			secretumcustomizer_font_families()
+			secretum_customizer_font_families()
 		);
 
 		// Select.
@@ -121,7 +121,7 @@ class Customize_Textuals {
 			__( 'Font Size', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_font_size' ],
-			secretumcustomizer_font_sizes()
+			secretum_customizer_font_sizes()
 		);
 
 		// Select.
@@ -131,7 +131,7 @@ class Customize_Textuals {
 			__( 'Font Style', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_font_style' ],
-			secretumcustomizer_font_styles()
+			secretum_customizer_font_styles()
 		);
 
 		// Select.
@@ -141,7 +141,7 @@ class Customize_Textuals {
 			__( 'Text Transform', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_text_transform' ],
-			secretumcustomizer_text_transform()
+			secretum_customizer_text_transform()
 		);
 
 		// Select.
@@ -151,7 +151,7 @@ class Customize_Textuals {
 			__( 'Text Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_text_color' ],
-			secretumcustomizer_text_colors()
+			secretum_customizer_text_colors()
 		);
 
 		// Select.
@@ -161,7 +161,7 @@ class Customize_Textuals {
 			__( 'Link Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_link_color' ],
-			secretumcustomizer_link_colors()
+			secretum_customizer_link_colors()
 		);
 
 		// Select.
@@ -171,7 +171,7 @@ class Customize_Textuals {
 			__( 'Link Hover Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_textual_link_hover_color' ],
-			secretumcustomizer_link_hover_colors()
+			secretum_customizer_link_hover_colors()
 		);
 
 	}//end settings()

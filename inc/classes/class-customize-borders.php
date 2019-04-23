@@ -88,7 +88,7 @@ class Customize_Borders {
 			__( 'Border Type', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_border_type' ],
-			secretumcustomizer_border_types()
+			secretum_customizer_border_types()
 		);
 
 		// Select.
@@ -98,7 +98,7 @@ class Customize_Borders {
 			__( 'Border Radius', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_border_radius' ],
-			secretumcustomizer_border_radius()
+			secretum_customizer_border_radius()
 		);
 
 		// Select.
@@ -108,7 +108,7 @@ class Customize_Borders {
 			__( 'Border Color', 'secretum' ),
 			'',
 			$this->default[ $args['section'] . '_border_color' ],
-			secretumcustomizer_border_colors()
+			secretum_customizer_border_colors()
 		);
 
 	}//end settings()
