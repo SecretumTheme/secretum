@@ -49,7 +49,7 @@ gulp.task('assets', function(done) {
     // Vendor Ekko Lightbox
     gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.min.css')).pipe(gulp.dest('./css'))
 
-    // Vendor Bootstrap
+    // Vendor Bootstrap4
     gulp.src('./node_modules/bootstrap/scss/**/*.scss').pipe(gulp.dest('./assets/css/bootstrap4'))
     gulp.src('./node_modules/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest('./assets/js'))
 
@@ -69,7 +69,7 @@ gulp.task('assets', function(done) {
     // Vendor Foundation Open Iconic
     gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/secretum'))
     gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../../../fonts/")).pipe(concat('_foundation-icons.scss')).pipe(gulp.dest('./assets/css/themes'))
-    gulp.src('./node_modules/foundation-icons/svgs/*.svg').pipe(gulp.dest('./images/svg'))
+    //gulp.src('./node_modules/foundation-icons/svgs/*.svg').pipe(gulp.dest('./images/svg'))
     gulp.src('./node_modules/foundation-icons/*.{eot,svg,ttf,woff}').pipe(gulp.dest('./fonts'))
 
     .pipe(notify({message: 'Assets Moved', onLast: true}))
