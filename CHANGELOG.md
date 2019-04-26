@@ -1,9 +1,17 @@
 # Changelog
 
+# 1.2.2
+**2019-04-26 - Hotfix**
+
+* Adjusted Bootstrap primary nav to link primary menu items.
+* Adjusted primary nav to default to top-level menu if a menu is not set.
+* Added date linked to the post when a post title is not used.
+* Adjusted archives to display the excerpt if used, else full content displays. 
+
 # 1.2.1
 **2019-04-23 - Hotfix**
 
-* Adjusted primary menu Navwalker to support multiple dropdowns.
+* Adjusted primary menu navwalker to support multiple dropdowns.
 * Adjusted comments header to use printf to keep span wrap.
 * Corrected missing paged comments navigation.
 * Corrected prefix names on customizer varaible names.

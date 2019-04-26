@@ -115,6 +115,26 @@ function secretum_default_column_width( $columns ) {
 
 
 /**
+ * Failsafe: Display Date Linked To Post If Missing Title
+ *
+ * @param string $title Post Title.
+ *
+ * @since 1.2.2
+ */
+function secretum_post_date_linked_to_post( $title = '' ) {
+	if ( true === empty( $title ) && ( true === is_front_page() || true === is_home() ) ) {
+		secretum_icon(
+			[
+				'fi' => 'clock',
+				'fa' => 'fa-clock-o',
+			]
+		); ?> <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><time class="entry-date published" datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></a>
+		<?php
+	}
+}
+
+
+/**
  * Check if the content has been modified
  *
  * @since 1.0.0

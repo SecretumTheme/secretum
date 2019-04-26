@@ -6919,6 +6919,12 @@
 		$( 'body' ).addClass( 'has-header-video' );
 	} );
 
+	/*!
+	 * Make Dropdown Navbar Links Clickable
+	 */
+    $( '.navbar .dropdown > a' ).click( function() {
+      location.href = this.href;
+    } );
 }( jQuery );
 
 //# sourceMappingURL=theme.js.map

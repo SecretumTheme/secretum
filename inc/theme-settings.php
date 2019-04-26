@@ -180,7 +180,6 @@ function secretum_load_default_settings( $settings ) {
 	$settings['primary_nav_items_padding_y']                   = 'py-3';
 	$settings['primary_nav_items_padding_x']                   = 'px-3';
 	$settings['primary_nav_dropdown_background_color']         = 'bg-primary';
-	$settings['primary_nav_dropdown_background_hover_color']   = 'bg-primary-light-hover';
 	$settings['primary_nav_dropdown_textual_font_size']        = 'text-14';
 	$settings['primary_nav_dropdown_textual_link_color']       = 'color-whitish-link';
 	$settings['primary_nav_dropdown_textual_link_hover_color'] = 'color-white-hover';
@@ -226,7 +225,6 @@ function secretum_load_default_settings( $settings ) {
 	$settings['copyright_nav_wrapper_padding_y']               = 'py-2';
 	$settings['copyright_nav_textual_font_size']               = 'text-13';
 	$settings['copyright_nav_textual_link_color']              = 'color-gray-600-link';
-	$settings['copyright_nav_items_text_alignment']            = 'text-center';
 	$settings['copyright_nav_items_margin_y']                  = 'my-0';
 	$settings['copyright_nav_items_margin_x']                  = 'mx-1';
 	$settings['copyright_nav_items_padding_y']                 = 'py-2';

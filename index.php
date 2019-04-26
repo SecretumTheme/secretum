@@ -37,14 +37,12 @@ if ( true !== secretum_mod( 'body_status' ) ) {
 					 */
 					do_action( 'secretum_before_content' );
 
-					// If Posts.
 					if ( have_posts() ) {
 						while ( have_posts() ) {
 							the_post();
 							get_template_part( 'template-parts/post/content' );
 						}
 					} else {
-						// No Content Found.
 						get_template_part( 'template-parts/post/content', 'none' );
 					}
 
