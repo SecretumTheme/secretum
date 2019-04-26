@@ -32,10 +32,10 @@ do_action( 'secretum_before_comments' ); ?>
 			} elseif ( true === isset( $secretum_comments_number ) && $secretum_comments_number > 1 ) {
 				/* Translators: 1) comment count 2) already translated text 3) post title */
 				printf(
-					__( '%1$s %2$s <span>%3$s</span>', 'secretum' ),
+					'%1$s %2$s <span>%3$s</span>',
 					absint( number_format_i18n( $secretum_comments_number ) ),
-					secretum_text( 'comments_title_thoughts', false ),
-					get_the_title()
+					esc_html( secretum_text( 'comments_title_thoughts', false ) ),
+					esc_html( get_the_title() )
 				);
 			} else {
 				secretum_text( 'meta_comments_text', true );

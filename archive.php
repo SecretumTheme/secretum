@@ -51,7 +51,14 @@ if ( true !== secretum_mod( 'body_status' ) ) { ?>
 							?>
 
 							<div class="content-archive mb-5">
-								<?php get_template_part( 'template-parts/post/content', 'excerpt' ); ?>
+								<?php
+								if ( true === has_excerpt() ) {
+									get_template_part( 'template-parts/post/content', 'excerpt' );
+								} else {
+									get_template_part( 'template-parts/post/content' );
+								}
+
+								?>
 							</div><!-- .content-archive -->
 
 							<?php
@@ -59,6 +66,7 @@ if ( true !== secretum_mod( 'body_status' ) ) { ?>
 					} else {
 						get_template_part( 'template-parts/post/content', 'none' );
 					}
+
 					/**
 					 * Hook: secretum_after_content
 					 *

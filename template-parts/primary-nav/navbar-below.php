@@ -34,7 +34,7 @@ if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_st
 
 		wp_nav_menu(
 			[
-				'depth'           => 100,
+				'depth'           => 5,
 				'theme_location'  => 'secretum-navbar-primary-below',
 				'container_class' => 'collapse navbar-collapse',
 				'container_id'    => 'navbarNavDropdown',

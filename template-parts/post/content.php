@@ -60,6 +60,8 @@ namespace Secretum;
 
 	<footer class="entry-footer py-4">
 		<?php
+		secretum_post_date_linked_to_post( get_the_title() );
+
 		// Category Links.
 		get_template_part( 'template-parts/post/content', 'cat-links' );
 
