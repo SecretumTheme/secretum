@@ -1,7 +1,7 @@
 # Changelog
 
-# 1.2.3
-**2019-05-06 - Feature Update**
+# 1.3.0
+**2019-05-06 - Feature Release**
 
 * Adjusted Bootstrap SCSS builds to exclude unused features.
 * Created new style enqueues for split stylesheets.
