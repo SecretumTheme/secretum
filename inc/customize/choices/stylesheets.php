@@ -3,7 +3,7 @@
  * WordPress Customizer add_control 'choices' Arrays
  *
  * @package    Secretum
- * @subpackage Core\Customize\Choices\Stylesheets
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -43,6 +43,7 @@ function secretum_customizer_stylesheets_blue() {
 		'bright-blue_bright-orange'     => __( 'Bright Blue - Bright Orange', 'secretum' ),
 		'dark-blue_dark-magenta'        => __( 'Dark Blue - Dark Magenta', 'secretum' ),
 		'dodger-blue_dark-grayish-blue' => __( 'Doger Blue 2 - Dark Grayish Blue', 'secretum' ),
+		'vivid-blue-dark-theme'         => __( 'Vivid Blue - Dark Theme', 'secretum' ),
 	];
 
 }//end secretum_customizer_stylesheets_blue()

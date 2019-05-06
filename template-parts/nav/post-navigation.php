@@ -3,7 +3,7 @@
  * Template part for post navigation links
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Nav
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Display Post Navigation If Allowed.
-if ( true !== secretum_mod( 'entry_meta_post_navigation_links' ) ) {
+if ( false !== secretum_mod( 'entry_meta_post_navigation_links' ) ) {
 	/**
 	 * Display Post Navigation
 	 *

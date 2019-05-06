@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Sidebar
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -25,7 +25,7 @@ $customizer->section(
 	'sidebar_display',
 	'sidebar',
 	__( 'Sidebar Display', 'secretum' ),
-	__( 'A widget must be assigned to a sidebar location before the sidebar will display.', 'secretum' )
+	__( 'A widget must be assigned to a sidebar location before the widget will display.', 'secretum' )
 );
 
 

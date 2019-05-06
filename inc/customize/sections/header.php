@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Header
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -31,8 +31,8 @@ $customizer->section(
 $customizer->checkbox(
 	'header_display',
 	'header_status',
-	__( 'Hide Header Area', 'secretum' ),
-	__( 'Select to disable the entire header area.', 'secretum' ),
+	__( 'Header Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['header_status']
 );
 

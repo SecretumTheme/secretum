@@ -3,7 +3,7 @@
  * Display Header Area
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Header
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Header Active.
-if ( true !== secretum_mod( 'header_status' ) && true !== secretum_mod( 'custom_headers' ) ) {
+if ( false !== secretum_mod( 'header_status' ) ) {
 	// Custom Image/Video Header.
 	if ( get_custom_header_markup() ) {
 		?>

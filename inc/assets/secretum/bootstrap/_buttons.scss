@@ -1,0 +1,35 @@
+/**
+ * Secretum - Buttons
+ */
+
+.btn-primary.search {
+    color: $search-button-text-color;
+    background-color: $search-button-bg-color;
+    border-color: $search-button-border-color;
+    &:focus,
+    &:hover {
+        background-color: $search-button-bg-hover-color;
+    }
+}
+
+button.icon-search {
+    background: url($search-button-icon-path) no-repeat scroll;
+    background-size: contain;
+    height: 30px;
+    position: relative;
+    top: 7px;
+    left: 7px;
+    z-index: 1;
+}
+
+a.btn-primary,
+a.btn-secondary,
+a.btn-success,
+a.btn-info,
+a.btn-warning,
+a.btn-danger,
+a.btn-light,
+a.btn-dark {
+    position: relative;
+    text-decoration: none;
+}

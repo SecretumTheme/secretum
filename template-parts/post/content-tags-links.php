@@ -3,7 +3,7 @@
  * Template part for displaying content footer tag links
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Post
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -13,7 +13,7 @@
 
 namespace Secretum;
 
-if ( 'post' === get_post_type() && true !== secretum_mod( 'entry_meta_tagslinks_status' ) ) {
+if ( 'post' === get_post_type() && false !== secretum_mod( 'entry_meta_tagslinks_status' ) ) {
 	$secretum_tags_links_icon = [
 		'fi' => 'price-tag',
 		'fa' => 'fa fa-tags',

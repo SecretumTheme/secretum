@@ -20,22 +20,34 @@ function browserReload(done) {
 /**
  * Default Task
  */
-gulp.task('default', gulp.series('assets', 'theme'));
+gulp.task('default', gulp.series('theme'));
 
 
 /**
  * Run All Builder Tasks
  */
-gulp.task('all', gulp.series('assets', 'editor', 'images', 'scripts', 'theme', 'themes', 'woocommerce', 'translate'));
+gulp.task('all', gulp.series(
+	'assets',
+	['customizer',
+	'editor',
+	'images',
+	'plugins',
+	'scripts',
+	'theme',
+	'themes',
+	'translate',
+	'vendors']
+));
 
 
 /**
  * Watch For File Changes & Run Tasks
  */
-gulp.task('watch', gulp.series('assets', 'theme', 'scripts', function() {
+gulp.task('watch', gulp.series('theme', 'themes', 'scripts', function() {
     gulp.watch(['!/node_modules', './**/*.php', './*.php'], gulp.series(browserReload))
-    gulp.watch(['./inc/assets/*.scss', './inc/assets/scss/*.scss', './inc/assets/scss/themes/**/*.scss'], gulp.series('assets', 'theme', browserReload))
-    gulp.watch(['./inc/assets/secretum.js'], gulp.series('assets', 'scripts', browserReload))
+    gulp.watch(['./inc/assets/*.scss', './inc/assets/secretum/*.scss', './inc/assets/secretum/**/*.scss'], gulp.series('theme', browserReload))
+    gulp.watch(['./inc/assets/secretum/themes/**/*.scss'], gulp.series('themes', browserReload))
+    gulp.watch(['./inc/assets/secretum/secretum.js', './inc/assets/customizer/*.js'], gulp.series('scripts', browserReload))
     browserSync.init({proxy: project_url, injectChanges: true, open: true})
 }));
 

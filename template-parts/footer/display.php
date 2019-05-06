@@ -3,7 +3,7 @@
  * Display Footer Area
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Footer
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Active.
-if ( true !== secretum_mod( 'footer_status' ) && true !== secretum_mod( 'custom_footers' ) ) {
+if ( false !== secretum_mod( 'footer_status' ) ) {
 	if ( true === is_active_sidebar( 'footer-left' ) || true === is_active_sidebar( 'footer-center' ) || true === is_active_sidebar( 'footer-right' ) ) {
 		?>
 		<div class="wrapper footer<?php secretum_wrapper( 'footer' ); ?>" id="wrapper-footer">

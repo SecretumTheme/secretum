@@ -1,0 +1,58 @@
+/**
+ * Secretum Styling Variables
+ *
+ * Primary Color: Bright Blue
+ * Secondary Color: Bright Orange
+ *
+ * @package    Secretum
+ * @subpackage Theme-SCSS
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/themes/bright-blue_bright-orange/_variables.scss
+ */
+
+// Localized Image/Font Paths Within Rendered CSS
+$localized_path:					'../../../';
+
+// Bootstrap4: Color Values
+$primary: 							#1a6ce9 !default;
+$secondary: 						#eba131 !default;
+
+$gray-100: 							#bec1c5 !default;
+$gray-200: 							#b3b7bc !default;
+$gray-300: 							#a9aeb2 !default;
+$gray-400: 							#9ea4a9 !default;
+$gray-500: 							#949aa0 !default;
+$gray-600: 							#8a9097 !default;
+$gray-700: 							#7f868e !default;
+$gray-800: 							#757d84 !default;
+$gray-900: 							#6c737a !default;
+
+$blue:    							#1976d2 !default;
+$indigo:  							#536dfe !default;
+$purple:  							#7b1fa2 !default;
+$pink:    							#ff4081 !default;
+$red:     							#d32f2f !default;
+$orange:  							#ff5722 !default;
+$yellow:  							#fbc02d !default;
+$green:   							#28a745 !default;
+$teal:    							#00796b !default;
+$cyan:    							#0097A7 !default;
+
+$body-bg: 							#fcfcfa !default;
+$body-color: 						#212529 !default;
+
+$link-color: 						$gray-900 !default;
+$link-decoration: 					underline !default;
+$link-hover-color: 					$gray-700 !default;
+$link-hover-decoration: 			none !default;
+
+// Secretum: New Colors
+$content-bg: 						#f2f2f3 !default;
+$text-primary: 						$body-color !default;
+$text-secondary: 					#060707 !default;
+$spacer-color: 						$gray-300 !default;
+$whitish:  							#f7f7f3 !default;
+$blackish: 							#101112 !default;
+$gray: 								#666666 !default;

@@ -5,14 +5,17 @@
  *      theme.css
  *      theme.css.map
  *      theme.min.css
- *      customizer.min.css
- *      custom-sections.min.css
+ *      theme.min.css.map
+ *      secretum.css
+ *      secretum.css.map
+ *      secretum.min.css
+ *      secretum.min.css.map
  *
  * @command gulp theme
  * @command gulp theme.css
  * @command gulp theme.min.css
- * @command gulp customizer.min.css
- * @command gulp custom-sections.min.css
+ * @command gulp secretum.css
+ * @command gulp secretum.min.css
  */
 var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
@@ -44,8 +47,8 @@ const autoprefixers = [
 gulp.task('theme', gulp.series(
     'theme.css',
     'theme.min.css',
-    'customizer.min.css',
-    'custom-sections.min.css',
+    //'secretum.css',
+    //'secretum.min.css',
 ));
 
 
@@ -53,7 +56,7 @@ gulp.task('theme', gulp.series(
  * Create theme.css
  */
 gulp.task('theme.css', function () {
-    return gulp.src('./assets/css/theme.scss')
+    return gulp.src('./inc/assets/secretum/theme.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
@@ -71,7 +74,7 @@ gulp.task('theme.css', function () {
  * Create theme.min.css
  */
 gulp.task('theme.min.css', function () {
-    return gulp.src('./assets/css/theme.scss')
+    return gulp.src('./inc/assets/secretum/theme.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
@@ -87,29 +90,28 @@ gulp.task('theme.min.css', function () {
 
 
 /**
- * Create customizer.min.css
+ * Create secretum.css
  */
-gulp.task('customizer.min.css', function () {
-    return gulp.src('./assets/css/customizer/customizer.css')
+gulp.task('secretum.css', function () {
+    return gulp.src('./inc/assets/secretum/secretum.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle:'compressed'}))
+    .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/customizer'))
-    .pipe(notify({message: 'Created "customizer.min.css"', onLast: true}))
+    .pipe(gulp.dest('./css'))
+    .pipe(notify({message: 'Created "secretum.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });
 
 
 /**
- * Create custom-sections.min.css
+ * Create secretum.min.css
  */
-gulp.task('custom-sections.min.css', function () {
-    return gulp.src('./assets/css/customizer/custom-sections.css')
+gulp.task('secretum.min.css', function () {
+    return gulp.src('./inc/assets/secretum/secretum.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
@@ -118,7 +120,7 @@ gulp.task('custom-sections.min.css', function () {
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/customizer'))
-    .pipe(notify({message: 'Created "custom-sections.min.css"', onLast: true}))
+    .pipe(gulp.dest('./css'))
+    .pipe(notify({message: 'Created "secretum.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
 });

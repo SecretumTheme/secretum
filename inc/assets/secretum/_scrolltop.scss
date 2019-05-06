@@ -1,0 +1,43 @@
+/**
+ * Secretum - Scroll To Top Icon
+ */
+
+.scrolltop {
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;    
+    width: 100%;
+}
+
+.scroll {
+    background: $scrolltop-bg-color;
+    background: rgba( $scrolltop-bg-color, 0.7 );
+    cursor: pointer;
+    margin: 0;
+    padding: 0 8px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+
+    &:hover {
+        background: $scrolltop-bg-hover-color;
+        background: rgba( $scrolltop-bg-hover-color, 0.7 );
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+
+    .scroll-icon {
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+}

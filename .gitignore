@@ -20,6 +20,5 @@ TODO.md
 stage.sh
 
 node_modules/*
-vendor/*
-assets/*
+inc/assets/vendors
 psds/*

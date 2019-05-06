@@ -44,7 +44,7 @@ gulp.task('scripts', gulp.series(
  * Create theme.js
  */
 gulp.task('theme.js', function () {
-    return gulp.src(['./assets/js/*.js'])
+    return gulp.src(['./js/bootstrap.bundle.js', './js/secretum.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('theme.js'))
     .pipe(sourcemaps.write('./'))
@@ -58,7 +58,7 @@ gulp.task('theme.js', function () {
  * Create theme.min.js
  */
 gulp.task('theme.min.js', function () {
-    return gulp.src(['./assets/js/*.js'])
+    return gulp.src(['./js/bootstrap.bundle.js', './js/secretum.js'])
     .pipe(concat('theme.min.js'))
     .pipe(sourcemaps.init())
     .pipe(noComments())
@@ -75,7 +75,7 @@ gulp.task('theme.min.js', function () {
  * Create secretum.min.js
  */
 gulp.task('secretum.min.js', function () {
-    return gulp.src('./assets/js/secretum.js')
+    return gulp.src('./js/secretum.js')
     .pipe(concat('secretum.min.js'))
     .pipe(sourcemaps.init())
     .pipe(noComments())
@@ -92,7 +92,7 @@ gulp.task('secretum.min.js', function () {
  * Create js/customizer/customize-preview.js
  */
 gulp.task('customize-preview.min.js', function () {
-    return gulp.src('./assets/js/customizer/customize-preview.js')
+    return gulp.src('./inc/assets/secretum/customizer/customize-preview.js')
     .pipe(concat('customize-preview.min.js'))
     .pipe(sourcemaps.init())
     .pipe(noComments())
@@ -109,7 +109,7 @@ gulp.task('customize-preview.min.js', function () {
  * Create js/customizer/customize-controls.js
  */
 gulp.task('customize-controls.min.js', function () {
-    return gulp.src('./assets/js/customizer/customize-controls.js')
+    return gulp.src('./inc/assets/secretum/customizer/customize-controls.js')
     .pipe(concat('customize-controls.min.js'))
     .pipe(sourcemaps.init())
     .pipe(noComments())
@@ -126,7 +126,7 @@ gulp.task('customize-controls.min.js', function () {
  * Create js/customizer/customize-sections.js
  */
 gulp.task('customize-sections.min.js', function () {
-    return gulp.src('./assets/js/customizer/customize-sections.js')
+    return gulp.src('./inc/assets/secretum/customizer/customize-sections.js')
     .pipe(concat('customize-sections.min.js'))
     .pipe(sourcemaps.init())
     .pipe(noComments())

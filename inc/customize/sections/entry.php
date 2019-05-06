@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Entry
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -16,7 +16,8 @@ namespace Secretum;
 // Panel.
 $customizer->panel(
 	'entry',
-	__( 'Entry', 'secretum' )
+	__( 'Content Area', 'secretum' ),
+	__( 'Content entry area for posts and pages. Includes post titles, date, author, categories, tags, and all post content.', 'secretum' )
 );
 
 
@@ -25,7 +26,7 @@ $customizer->section(
 	'entry_display',
 	'entry',
 	__( 'Display Settings', 'secretum' ),
-	''
+	'Post/page content entry area. Open any post to view the entry area.'
 );
 
 
@@ -33,8 +34,8 @@ $customizer->section(
 $customizer->checkbox(
 	'entry_display',
 	'entry_status',
-	__( 'Select To Hide Entire Entry Area', 'secretum' ),
-	'',
+	__( 'Entry Area', 'secretum' ),
+	'Select to display. Uncheck to remove all html markup.',
 	$defaults['entry_status']
 );
 
@@ -43,8 +44,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_published_status',
-	__( 'Hide Published Date', 'secretum' ),
-	'',
+	__( 'Published Date', 'secretum' ),
+	'Select to display. Uncheck to hide.',
 	$defaults['entry_meta_published_status']
 );
 
@@ -53,11 +54,11 @@ $customizer->checkbox(
 $customizer->radio(
 	'entry_display',
 	'entry_meta_link',
-	__( 'Archive Link', 'secretum' ),
+	__( 'Published Date Link', 'secretum' ),
 	'',
 	$defaults['entry_meta_link'],
 	array(
-		''      => __( 'No Archive Link', 'secretum' ),
+		''      => __( 'No Link', 'secretum' ),
 		'month' => __( 'Link To Monthly Archive', 'secretum' ),
 		'day'   => __( 'Link To Daily Archive', 'secretum' ),
 		'post'  => __( 'Link To Current Post', 'secretum' ),
@@ -69,8 +70,8 @@ $customizer->radio(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_updated_status',
-	__( 'Show Updated Date', 'secretum' ),
-	__( 'Only shows if an post has updated.', 'secretum' ),
+	__( 'Post Updated Date', 'secretum' ),
+	__( 'Displays only if the post has updated. Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_updated_status']
 );
 
@@ -79,8 +80,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_author_status',
-	__( 'Hide Author Name', 'secretum' ),
-	'',
+	__( 'Author Name', 'secretum' ),
+	'Select to display. Uncheck to hide.',
 	$defaults['entry_meta_author_status']
 );
 
@@ -89,11 +90,11 @@ $customizer->checkbox(
 $customizer->radio(
 	'entry_display',
 	'entry_meta_author_link',
-	__( 'Author Link', 'secretum' ),
+	__( 'Author Name Link', 'secretum' ),
 	'',
 	$defaults['entry_meta_author_link'],
 	array(
-		''       => __( 'No Archive Link', 'secretum' ),
+		''       => __( 'No Link', 'secretum' ),
 		'author' => __( 'Link To Author Archive', 'secretum' ),
 	)
 );
@@ -103,8 +104,8 @@ $customizer->radio(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_catlinks_status',
-	__( 'Hide Category Links', 'secretum' ),
-	'',
+	__( 'Category Links', 'secretum' ),
+	'Select to display. Uncheck to hide.',
 	$defaults['entry_meta_catlinks_status']
 );
 
@@ -113,8 +114,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_tagslinks_status',
-	__( 'Hide Tag Links', 'secretum' ),
-	'',
+	__( 'Tag Links', 'secretum' ),
+	'Select to display. Uncheck to hide.',
 	$defaults['entry_meta_tagslinks_status']
 );
 
@@ -123,8 +124,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_commentlink_status',
-	__( 'Hide Comment Link', 'secretum' ),
-	'',
+	__( 'Comment Link', 'secretum' ),
+	'Select to display. Uncheck to hide.',
 	$defaults['entry_meta_commentlink_status']
 );
 
@@ -133,8 +134,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'entry_display',
 	'entry_meta_post_navigation_links',
-	__( 'Hide Post Navigation Links', 'secretum' ),
-	__( 'Previous & Next Post Links.', 'secretum' ),
+	__( 'Post Navigation Links (Previous & Next Post)', 'secretum' ),
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_post_navigation_links']
 );
 
@@ -159,7 +160,6 @@ $borders->settings(
 $container->settings(
 	[
 		'section' => 'entry',
-		'type'    => false,
 	]
 );
 
@@ -168,5 +168,14 @@ $container->settings(
 $borders->settings(
 	[
 		'section' => 'entry_container',
+	]
+);
+
+
+// Textuals.
+$textuals->settings(
+	[
+		'section'   => 'entry',
+		'alignment' => false,
 	]
 );
