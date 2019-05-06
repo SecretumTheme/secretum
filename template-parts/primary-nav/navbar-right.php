@@ -3,7 +3,7 @@
  * Primary Navbar - Right
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Primary-Nav
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Display Allowed & Menu Active.
-if ( true !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
+if ( false !== secretum_mod( 'primary_nav_status' ) && true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
 	<nav class="wrapper navbar navbar-expand-lg<?php secretum_wrapper( 'primary_nav' ); ?>">
 	<div class="container<?php secretum_container( 'primary_nav', 'echo', [ 'textuals' => true ] ); ?>">
 	<?php

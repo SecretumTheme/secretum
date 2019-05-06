@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Site-Identity
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -64,8 +64,8 @@ $customizer->section(
 $customizer->checkbox(
 	'site_identity_display',
 	'site_identity_branding_status',
-	__( 'Hide Brand Logo / Tagline Area', 'secretum' ),
-	'',
+	__( 'Brand Logo / Tagline Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['site_identity_branding_status']
 );
 
@@ -74,8 +74,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'site_identity_display',
 	'site_identity_logo_status',
-	__( 'Hide Logo / Title', 'secretum' ),
-	'',
+	__( 'Logo / Website Title', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['site_identity_logo_status']
 );
 
@@ -84,8 +84,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'site_identity_display',
 	'site_identity_tagline_status',
-	__( 'Hide Tagline / Desc Text', 'secretum' ),
-	'',
+	__( 'Tagline / Description Text', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['site_identity_tagline_status']
 );
 

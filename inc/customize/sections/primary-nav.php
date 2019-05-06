@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Primary-Nav
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -25,7 +25,7 @@ $customizer->section(
 	'primary_nav_display',
 	'primary_nav',
 	__( 'Display Settings', 'secretum' ),
-	''
+	__( 'A menu must be assigned to a primary menu location for the navigation menu to display.', 'secretum' )
 );
 
 // Select.
@@ -43,8 +43,8 @@ $customizer->select(
 $customizer->checkbox(
 	'primary_nav_display',
 	'primary_nav_status',
-	__( 'Select To Hide Navigation Menu', 'secretum' ),
-	'',
+	__( 'Primary Navigation Menu', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['primary_nav_status']
 );
 
@@ -52,8 +52,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'primary_nav_display',
 	'primary_nav_search_status',
-	__( 'Show Search Form Within Navbar', 'secretum' ),
-	'',
+	__( 'Search Form Within Navbar', 'secretum' ),
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['primary_nav_search_status']
 );
 

@@ -3,7 +3,7 @@
  * Customizer Fallback & Sanitize Functions
  *
  * @package    Secretum
- * @subpackage Core\Customize\Customizer-Functions
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -82,15 +82,10 @@ function secretum_customizer_sanitize_all( $string ) {
  * @return bool Return true if selected
  */
 function secretum_customizer_sanitize_checkbox( $checked ) {
-	if ( ( isset( $checked ) === true ) ) {
-		if ( true === $checked ) {
-			return true;
-		}
-
-		if ( false === $checked ) {
-			return false;
-		}
+	if ( true === isset( $checked ) && ( 1 === $checked || true === $checked ) ) {
+		return true;
 	}
+	return 0;
 
 }//end secretum_customizer_sanitize_checkbox()
 

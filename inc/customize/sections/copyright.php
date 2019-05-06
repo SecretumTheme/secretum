@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Copyright
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -33,8 +33,8 @@ $customizer->section(
 $customizer->checkbox(
 	'copyright_display',
 	'copyright_status',
-	__( 'Select To Hide Copyright Area', 'secretum' ),
-	'',
+	__( 'Copyright Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['copyright_status']
 );
 

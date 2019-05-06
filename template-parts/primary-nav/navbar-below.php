@@ -3,7 +3,7 @@
  * Primary Navbar - Below
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Primary-Nav
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -26,7 +26,7 @@ if ( true !== has_nav_menu( 'secretum-navbar-primary-below' ) && true !== has_na
 
 
 // If Display Allowed & Menu Active.
-if ( true !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_status ) { ?>
+if ( false !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_status ) { ?>
 	<nav class="wrapper navbar navbar-expand-lg<?php secretum_wrapper( 'primary_nav' ); ?>">
 	<div class="container<?php secretum_container( 'primary_nav', 'echo', [ 'textuals' => true ] ); ?>">
 	<?php

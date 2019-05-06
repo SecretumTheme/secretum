@@ -113,8 +113,17 @@ function secretum_enqueue_scripts() {
 		);
 	}
 
+	// Foundation Icons.
+	wp_enqueue_style(
+		'foundation',
+		SECRETUM_STYLE_URL . '/css/foundation-icons.min.css',
+		[],
+		'3.0',
+		'all'
+	);
+
 	// Primary Theme Script.
-	if ( false === secretum_mod( 'enqueue_primary_javascript_status' ) ) {
+	if ( false !== secretum_mod( 'enqueue_primary_javascript_status' ) ) {
 		wp_enqueue_script(
 			'secretum',
 			SECRETUM_STYLE_URL . '/js/theme.min.js',
@@ -167,7 +176,7 @@ function secretum_enqueue_scripts() {
 	}
 
 	// WooCommerce.
-	if ( true === secretum_is_woocomerce() && false === secretum_mod( 'enqueue_woocommerce_status' ) ) {
+	if ( true === secretum_is_woocomerce() && false !== secretum_mod( 'enqueue_woocommerce_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce',
 			SECRETUM_STYLE_URL . '/css/woocommerce.min.css',
@@ -178,7 +187,7 @@ function secretum_enqueue_scripts() {
 	}
 
 	// WooCommerce Bookings.
-	if ( false === secretum_is_woobookings() && false === secretum_mod( 'enqueue_woocommerce_bookings_status' ) ) {
+	if ( true === secretum_is_woobookings() && false !== secretum_mod( 'enqueue_woocommerce_bookings_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce-bookings',
 			SECRETUM_STYLE_URL . '/css/woocommerce-bookings.min.css',
@@ -191,6 +200,19 @@ function secretum_enqueue_scripts() {
 	// Comments Form Scripts.
 	if ( true === is_singular() && true === comments_open() && true === get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	// Custom Contact Form 7 Styles.
+	if ( true === defined( 'WPCF7_PLUGIN' ) ) {
+		wp_dequeue_style( 'contact-form-7' );
+
+		wp_enqueue_style(
+			'secretum-contact-form-7',
+			SECRETUM_STYLE_URL . '/css/contact-form-7.min.css',
+			[],
+			SECRETUM_THEME_VERSION,
+			'all'
+		);
 	}
 
 	// If Contact Page IDs Set.
@@ -206,10 +228,8 @@ function secretum_enqueue_scripts() {
 
 		// Dequeue on all other than allowed pages.
 		if ( true === isset( $array_page_ids ) && true === is_array( $array_page_ids ) && false === is_page( $array_page_ids ) ) {
-			wp_dequeue_style( 'contact-form-7' );
+			wp_dequeue_style( 'secretum-contact-form-7' );
 			wp_dequeue_script( 'contact-form-7' );
-			wp_dequeue_script( 'google-recaptcha' );
-			wp_dequeue_script( 'wpcf7_recaptcha_enqueue_scripts' );
 		}
 	}
 

@@ -44,7 +44,7 @@ gulp.task('editor', gulp.series('editor.css', 'editor.min.css'));
  * Create editor.css
  */
 gulp.task('editor.css', function () {
-    return gulp.src('./assets/css/theme_editor.scss')
+    return gulp.src('./inc/assets/secretum/theme_editor.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
@@ -62,7 +62,7 @@ gulp.task('editor.css', function () {
  * Create editor.min.css
  */
 gulp.task('editor.min.css', function () {
-    return gulp.src('./assets/css/theme_editor.scss')
+    return gulp.src('./inc/assets/secretum/theme_editor.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())

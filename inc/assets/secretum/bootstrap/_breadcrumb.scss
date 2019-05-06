@@ -1,0 +1,20 @@
+/**
+ * Secretum - Breadcrumbs
+ */
+
+.breadcrumbs {
+	color: $text-secondary;
+
+	a:link,
+	a:active,
+	a:visited,
+	a:hover {
+		color: $text-secondary;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+

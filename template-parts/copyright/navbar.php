@@ -3,7 +3,7 @@
  * Copyright Navbar
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Copyright
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Nav Menu Has Items.
-if ( true === has_nav_menu( 'secretum-navbar-copyright' ) && true !== secretum_mod( 'copyright_nav_status' ) ) { ?>
+if ( true === has_nav_menu( 'secretum-navbar-copyright' ) && false !== secretum_mod( 'copyright_nav_status' ) ) { ?>
 	<div class="col-md">
 	<nav class="navbar navbar-expand<?php secretum_wrapper( 'copyright_nav', 'echo', [ 'textuals' => true ] ); ?>">
 	<?php

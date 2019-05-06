@@ -54,15 +54,26 @@ class Customize_Customizer {
 	 * @since 1.0.0
 	 *
 	 * @param string $section_name Shortname for setting name/section name.
-	 * @param string $title Title of section.
+	 * @param string $title        Title of panel.
+	 * @param string $description  Description of panel.
 	 */
-	final public function panel( $section_name, $title ) {
+	final public function panel( $section_name, $title, $description = '' ) {
+		$settings_array = [
+			'title'    => ':: ' . esc_html( $title ),
+			'priority' => 8,
+		];
+
+		if ( true !== empty( $description ) ) {
+			$settings_array = [
+				'title'       => ':: ' . esc_html( $title ),
+				'priority'    => 8,
+				'description' => $description,
+			];
+		}
+
 		$this->wp_customize->add_panel(
 			'secretum_' . sanitize_key( $section_name ) . '_panel',
-			[
-				'title'    => ':: ' . esc_html( $title ),
-				'priority' => 8,
-			]
+			$settings_array
 		);
 
 	}//end panel()

@@ -3,7 +3,7 @@
  * Header Top Area
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Header
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Header Top Not Hidden.
-if ( true !== secretum_mod( 'header_top_status' ) ) {
+if ( false !== secretum_mod( 'header_top_status' ) ) {
 	// If Header Top Sidebar Active.
 	if ( true === is_active_sidebar( 'secretum-sidebar-header-top' ) ) {
 		?>

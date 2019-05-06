@@ -1,0 +1,160 @@
+/**
+ * Secretum Styling Variables
+ *
+ * Primary Color: Very Dark Grayish Blue
+ * Secondary Color: Grayish Blue
+ *
+ * @package    Secretum
+ * @subpackage Theme-SCSS
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/secretum/_variables.scss
+ */
+
+// Localized Image/Font Paths Within Rendered CSS
+$localized_path:					'../';
+//$localized_path:					'../../../';
+
+// Bootstrap4: Options
+$enable-caret:                      true !default;
+$enable-rounded:                    true !default;
+$enable-shadows:                    true !default;
+$enable-gradients:                  true !default;
+$enable-transitions:                true !default;
+$enable-print-styles:               true !default;
+$enable-grid-classes:               true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-responsive-font-sizes:      false !default;
+$enable-validation-icons:           true !default;
+$enable-deprecation-messages:       false !default;
+
+// Bootstrap4: Color Values
+$primary: 							#343a40 !default;
+$secondary: 						#6c757d !default;
+
+$white:     						#ffffff !default;
+$gray-100: 							#f8f9fa !default;
+$gray-200: 							#e9ecef !default;
+$gray-300: 							#dee2e6 !default;
+$gray-400: 							#ced4da !default;
+$gray-500: 							#adb5bd !default;
+$gray-600: 							#6c757d !default;
+$gray-700: 							#495057 !default;
+$gray-800: 							#343a40 !default;
+$gray-900: 							#212529 !default;
+$black:    							#000000 !default;
+
+$blue: 								#007bff !default;
+$indigo: 							#6610f2 !default;
+$purple: 							#6f42c1 !default;
+$pink: 								#e83e8c !default;
+$red: 								#dc3545 !default;
+$orange: 							#fd7e14 !default;
+$yellow: 							#ffc107 !default;
+$green: 							#28a745 !default;
+$teal: 								#20c997 !default;
+$cyan: 								#17a2b8 !default;
+
+$success: 							$green !default;
+$info: 								$cyan !default;
+$warning: 							$yellow !default;
+$danger: 							$red !default;
+
+$light: 							$gray-100 !default;
+$dark: 								$gray-800 !default;
+
+$body-bg: 							#fcfcfa !default;
+$body-color: 						#212529 !default;
+
+$link-color: 						$gray-900 !default;
+$link-decoration: 					underline !default;
+$link-hover-color: 					$gray-700 !default;
+$link-hover-decoration: 			none !default;
+
+// Secretum: New Colors
+$content-bg: 						#f7f7f7 !default;
+$text-primary: 						$body-color !default;
+$text-secondary: 					#495057 !default;
+$primary-light: 					lighten($primary, 5%) !default;
+$primary-dark: 						darken($primary, 5%) !default;
+$spacer-color: 						$gray-600 !default;
+$whitish:  							#f7f7f3 !default;
+$blackish: 							#101112 !default;
+$gray: 								#666666 !default;
+
+// Localized Path To Icons Once CSS File Is Rendered
+$foundation-icons-path:             $localized_path + 'fonts/';
+
+// Header Hamburger Menu
+$header-navbar-hamburger-color: 	$gray-500 !default;
+
+// Navmenu Dropdown Hover Color
+$dropdown-link-hover-bg:            transparent !default;
+
+// Content Entry Heading Sizes
+$h1-font-size: 						2.2rem !default;
+$h2-font-size: 						1.75rem !default;
+$h3-font-size: 						1.5rem !default;
+$h4-font-size: 						1.25rem !default;
+$h5-font-size: 						1.15rem !default;
+$h6-font-size: 						1rem !default;
+
+// Scroll To Top Icon
+$scrolltop-bg-color: 				$gray-600 !default;
+$scrolltop-bg-hover-color: 			$gray-500 !default;
+
+// Primary Button
+$primary-button-bg-color: 			$primary !default;
+$primary-button-bg-hover-color: 	$primary-dark !default;
+$primary-button-border-color: 		$primary !default;
+$primary-button-text-color: 		$white !default;
+
+// Secondary Button
+$secondary-button-bg-color: 		$gray-600 !default;
+$secondary-button-bg-hover-color: 	$primary-dark !default;
+$secondary-button-border-color: 	$gray-600 !default;
+$secondary-button-text-color: 		$white !default;
+
+// Search Button
+$search-button-icon-path: 			$localized_path + 'images/search.png';
+$search-button-bg-color: 			$primary !default;
+$search-button-bg-hover-color: 		$primary-dark !default;
+$search-button-border-color: 		$primary !default;
+$search-button-text-color: 			$white !default;
+
+// Sidebar Area Titles
+$sidebar-widget-li-line-color: 		darken($spacer-color, 20%);
+
+// Footer Widget Titles
+$footer-widget-li-line-color: 		darken($spacer-color, 20%);
+
+// WooCommerce Bookings Calendar
+$calendar-primary-bg-color: 		$primary !default;
+$calendar-secondary-bg-color: 		$whitish !default;
+$calendar-border-color: 			$spacer-color !default;
+
+// Pagination
+$pagination-color:                  $link-color !default;
+$pagination-bg:                     $content-bg !default;
+$pagination-border-color:           $spacer-color !default;
+$pagination-hover-color:            $link-hover-color !default;
+$pagination-hover-bg:               darken($content-bg, 10%) !default;
+$pagination-hover-border-color:     $gray-500;
+$pagination-active-color:           $secondary !default;
+$pagination-active-bg:              $gray-800 !default;
+$pagination-active-border-color:    $gray-900 !default;
+$pagination-disabled-color:         $spacer-color !default;
+$pagination-disabled-bg:            $blackish !default;
+$pagination-disabled-border-color:  $content-bg !default;
+$calendar-border-color: 			$gray-800 !default;
+
+// WP Widget - Calendar
+$wp-calendar-heading-bg-color:      $content-bg !default;
+$wp-calendar-heading-text-color:    $text-secondary !default;
+$wp-calendar-cell-bg-color:         $body-bg !default;
+$wp-calendar-cell-text-color:       $text-primary;
+$wp-calendar-td-hover:              darken($body-bg, 10%) !default;
+$wp-calendar-link-color:            $link-color !default;
+$wp-calendar-link-hover-color:      $link-hover-color !default;
+$wp-calendar-border-color:          $spacer-color !default;

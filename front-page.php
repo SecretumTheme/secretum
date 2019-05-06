@@ -36,7 +36,7 @@ do_action( 'secretum_frontpage_before_body' );
 
 
 // Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) {
+if ( false !== secretum_mod( 'body_status' ) ) {
 	// Frontpage Body.
 	get_template_part( 'template-parts/frontpage/body' );
 } elseif ( secretum_mod( 'custom_frontpage' ) ) {

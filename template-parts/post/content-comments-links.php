@@ -3,7 +3,7 @@
  * Template part for displaying content footer comment( s ) links
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Post
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 if ( 'post' === get_post_type() && true === comments_open() || '0' !== get_comments_number() ) {
-	if ( true !== secretum_mod( 'entry_meta_commentlink_status' ) ) {
+	if ( false !== secretum_mod( 'entry_meta_commentlink_status' ) ) {
 		$secretum_comments_link_icon = [
 			'fi' => 'comments',
 			'fa' => 'fa-comments',

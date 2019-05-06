@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Featured-Image
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -25,16 +25,15 @@ $customizer->section(
 	'featured_image_display',
 	'featured_image',
 	__( 'Display Settings', 'secretum' ),
-	''
+	__( 'A post or page must have a feature image already selected for the featured image to display. To view: open any post or page that already has a featured image set.', 'secretum' )
 );
-
 
 // Checkbox.
 $customizer->checkbox(
 	'featured_image_display',
 	'featured_image_status',
-	__( 'Disable Featured Images', 'secretum' ),
-	'',
+	__( 'Featured Image', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['featured_image_status']
 );
 

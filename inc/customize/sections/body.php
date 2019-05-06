@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Body
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -25,7 +25,7 @@ $customizer->section(
 	'body_display',
 	'body',
 	__( 'Display Settings', 'secretum' ),
-	''
+	__( 'This setting includes the entire page body and the left-right sidebar(s), and excludes the website header and footer areas.', 'secretum' )
 );
 
 
@@ -33,8 +33,8 @@ $customizer->section(
 $customizer->checkbox(
 	'body_display',
 	'body_status',
-	__( 'Select To Hide Entire Body Area', 'secretum' ),
-	'',
+	__( 'Page Body Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['body_status']
 );
 

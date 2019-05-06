@@ -3,7 +3,7 @@
  * Template part for displaying content entra meta details
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Post
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -18,10 +18,10 @@ if ( 'post' === get_post_type() ) {
 	?>
 	<div class="entry-meta my-4">
 		<?php if ( true === is_single() ) { ?>
-			<?php if ( true !== secretum_mod( 'entry_meta_published_status' ) || true === secretum_mod( 'entry_meta_updated_status' ) ) { ?>
+			<?php if ( false !== secretum_mod( 'entry_meta_published_status' ) || false !== secretum_mod( 'entry_meta_updated_status' ) ) { ?>
 				<span class="posted-on">
 					<?php
-					if ( true !== secretum_mod( 'entry_meta_published_status' ) ) {
+					if ( false !== secretum_mod( 'entry_meta_published_status' ) ) {
 						$secretum_entry_meta_link_icon = [
 							'fi' => 'clock',
 							'fa' => 'fa-clock-o',
@@ -45,7 +45,7 @@ if ( 'post' === get_post_type() ) {
 					}
 					?>
 
-					<?php if ( true === secretum_modified_date_check() && true === secretum_mod( 'entry_meta_updated_status' ) ) { ?>
+					<?php if ( true === secretum_modified_date_check() && false !== secretum_mod( 'entry_meta_updated_status' ) ) { ?>
 						<time class="updated" datetime="<?php echo esc_html( get_the_modified_date( DATE_W3C ) ); ?>">( <?php echo esc_html( get_the_modified_date() ); ?> )</time>
 					<?php } ?>
 
@@ -53,7 +53,7 @@ if ( 'post' === get_post_type() ) {
 			<?php } ?>
 
 			<?php
-			if ( true !== secretum_mod( 'entry_meta_author_status' ) ) {
+			if ( false !== secretum_mod( 'entry_meta_author_status' ) ) {
 				$secretum_entry_meta_author_link_icon = [
 					'fi' => 'torso',
 					'fa' => 'fa fa-user',

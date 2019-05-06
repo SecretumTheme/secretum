@@ -3,7 +3,7 @@
  * Template part for comment navigation links
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Nav
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0

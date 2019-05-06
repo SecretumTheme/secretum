@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Header-Top
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -25,7 +25,7 @@ $customizer->section(
 	'header_top_display',
 	'header_top',
 	__( 'Display Settings', 'secretum' ),
-	''
+	__( 'A menu must be assigned to a header top location for the navigation menu to display.', 'secretum' )
 );
 
 
@@ -44,8 +44,8 @@ $customizer->select(
 $customizer->checkbox(
 	'header_top_display',
 	'header_top_status',
-	__( 'Select To Hide Top Header Area', 'secretum' ),
-	'',
+	__( 'Header Top Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['header_top_status']
 );
 

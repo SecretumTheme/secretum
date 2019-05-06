@@ -3,7 +3,7 @@
  * WordPress Customizer Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Default-Settings
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -436,6 +436,7 @@ function secretum_customizer_entry_settings() {
 		'entry_wrapper_border_radius'      => '',
 		'entry_wrapper_border_color'       => '',
 		// Container.
+		'entry_container_type'             => '',
 		'entry_container_background_color' => '',
 		'entry_container_padding_x'        => '',
 		'entry_container_padding_y'        => '',
@@ -444,6 +445,14 @@ function secretum_customizer_entry_settings() {
 		'entry_container_border_type'      => '',
 		'entry_container_border_radius'    => '',
 		'entry_container_border_color'     => '',
+		// Title Textuals.
+		'entry_textual_font_family'        => '',
+		'entry_textual_font_size'          => '',
+		'entry_textual_font_style'         => '',
+		'entry_textual_text_transform'     => '',
+		'entry_textual_text_color'         => '',
+		'entry_textual_link_color'         => '',
+		'entry_textual_link_hover_color'   => '',
 	];
 
 }//end secretum_customizer_entry_settings()

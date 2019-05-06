@@ -1,0 +1,44 @@
+/**
+ * Secretum - Link Management
+ */
+
+a {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    -webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
+    transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
+    transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+    transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
+
+    &:active,
+    &:hover,
+    &:visited {
+        outline: 0;
+    }
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &.skip-link {
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      z-index: 1000;
+    }
+
+    &.link-block {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    &.nav-link {
+        text-decoration: none;
+    }
+}

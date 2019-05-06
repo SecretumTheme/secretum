@@ -62,26 +62,29 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 
 			// HTML.
 			case 'html':
-				$mod = html_entity_decode( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . html_entity_decode( $theme_mod );
 				break;
 
 			// Script Output.
 			case 'script':
-				$mod = json_decode( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . json_decode( $theme_mod );
 				break;
 
 			// Raw Output.
 			case 'raw':
-				$mod = $theme_mod;
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . $theme_mod;
 				break;
 
 			// URL.
 			case 'url':
-				$mod = esc_url( $theme_mod );
+				$mod = ( true !== empty( $space ) ? ' ' : '' ) . esc_url( $theme_mod );
 				break;
 		}
+	} elseif ( true !== empty( $theme_mod ) && 'none' === $theme_mod ) {
+		// Set No Value.
+		$mod = '';
 	} elseif ( true !== empty( $theme_mod ) && true === empty( $escape ) ) {
-		// Value Set.
+		// Value Found.
 		$mod = true;
 	}
 
