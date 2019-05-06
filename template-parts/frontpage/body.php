@@ -3,7 +3,7 @@
  * Front-page Body Template
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Frontpage
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -16,15 +16,13 @@ namespace Secretum;
 ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="index-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
-	<?php
-	if ( true !== secretum_mod( 'entry_status' ) ) {
-		?>
 		<div class="row">
 
-			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
 
-			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
+		<?php if ( false !== secretum_mod( 'entry_status' ) ) { ?>
+			<div class="wrapper col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
+				<main class="site-main container<?php secretum_container( 'entry' ); ?><?php secretum_textual( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content
@@ -54,12 +52,10 @@ namespace Secretum;
 				<?php get_template_part( 'template-parts/nav/posts', 'pagination' ); ?>
 
 			</div><!-- .content-area -->
+		<?php } ?>
 
-			<?php get_template_part( 'template-parts/sidebar/sidebar', 'right' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar', 'right' ); ?>
 
 		</div><!-- .row -->
-		<?php
-	}
-	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->

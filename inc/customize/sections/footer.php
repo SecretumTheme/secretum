@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Footer
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -32,8 +32,8 @@ $customizer->section(
 $customizer->checkbox(
 	'footer_display',
 	'footer_status',
-	__( 'Hide Footer Area', 'secretum' ),
-	__( 'Select to disable the entire footer area.', 'secretum' ),
+	__( 'Footer Area', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup. A widget must be assigned one of the footer widget areas for the footer to display.', 'secretum' ),
 	$defaults['footer_status']
 );
 

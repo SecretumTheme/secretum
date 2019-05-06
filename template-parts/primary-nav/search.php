@@ -3,7 +3,7 @@
  * Navbar Search Form
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Primary-Nav
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -13,7 +13,7 @@
 
 namespace Secretum;
 
-if ( true === secretum_mod( 'primary_nav_search_status' ) ) {
+if ( false !== secretum_mod( 'primary_nav_search_status' ) ) {
 	?>
 	<form method="get" class="navbar-form navbar-right" id="navbar-searchform" action="<?php echo esc_html( get_home_url( '/' ) ); ?>" role="search">
 		<div class="input-group">

@@ -3,17 +3,16 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
 * **Tested up to:** 5.1.1
-* **Version:** 1.2.2
+* **Version:** 1.2.3
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.23html
 * **Tags:** one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, sticky-post, full-width-template, threaded-comments, theme-options, blog, e-commerce, translation-ready
 
-Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users.
-
+Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users.
 
 ## Description
 
-Secretum is a highly customizable fluid-responsive multipurpose WordPress theme for both beginner and advanced WordPress users. Customize over 350 individual customizer settings (with more under-development) all without adding CSS to the <head> of your website. This means all pages across your entire Website to have a smaller filesize, sometimes 50-75% smaller, allowing your Website pages to load faster, across more devices and Internet connection types. All Customizer settings are built using or extending the default WordPress customizer features, without 3rd party plugins or fancy scripts that slow your building experience down. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Build Faster, Build Better, Build Smarter - Secretum truly is not like any other theme in existence!
+Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users. Create beautifully unique websites with the 400+ individual customizer settings – all without injecting extra CSS into the <head> of your website. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Secretum - Build Faster, Better & Smarter!
 
 
 ## For Support, Bugs & Feature Requests
@@ -125,7 +124,7 @@ Return to the Pages admin and customize the Front Page page as desired.
 	* Enable/Disable bundled scripts, theme scripts, Bootstrap scripts, jQuery, and others
 * Foundation Icon Fonts (283 Icons)
 * Automatic Better Font Awesome detection & integration
-* Built-in simple to use lightbox (disabled by default)
+* Simple to use lightbox (disabled by default)
 	* Enable/disable feature within Customizer > :: Globals > Enqueue Management
 * Code Follows WordPress Standards
 	* Theme Check Compliant
@@ -151,9 +150,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 1.2.2
-* Released: 2019-04-26
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0122
+### 1.2.3
+* Released: 2019-05-06
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0123
 
 
 ## Licenses

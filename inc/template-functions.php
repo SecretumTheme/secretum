@@ -82,9 +82,9 @@ function secretum_customizer_refresh() {
 function secretum_is_woocomerce() {
 	if ( true === class_exists( 'woocommerce' ) ) {
 		return true;
-	} else {
-		return false;
 	}
+
+	return false;
 
 }//end secretum_is_woocomerce()
 
@@ -99,9 +99,9 @@ function secretum_is_woocomerce() {
 function secretum_is_wooproduct() {
 	if ( true === class_exists( 'woocommerce' ) && true === function_exists( 'is_product' ) ) {
 		return true;
-	} else {
-		return false;
 	}
+
+	return false;
 
 }//end secretum_is_wooproduct()
 
@@ -116,9 +116,9 @@ function secretum_is_wooproduct() {
 function secretum_is_woobookings() {
 	if ( true === class_exists( 'WC_Bookings' ) ) {
 		return true;
-	} else {
-		return false;
 	}
+
+	return false;
 
 }//end secretum_is_woobookings()
 

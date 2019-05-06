@@ -3,7 +3,7 @@
  * Display Copyright Area
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Copyright
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // If Active.
-if ( true !== secretum_mod( 'copyright_status' ) ) { ?>
+if ( false !== secretum_mod( 'copyright_status' ) ) { ?>
 <div class="wrapper copyright<?php secretum_wrapper( 'copyright' ); ?>" id="wrapper-copyright">
 	<div class="container<?php secretum_container( 'copyright' ); ?>">
 		<div class="row"><div class="col-md">

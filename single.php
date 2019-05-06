@@ -16,18 +16,16 @@ namespace Secretum;
 get_header();
 
 // Display If Allowed.
-if ( true !== secretum_mod( 'body_status' ) ) { ?>
+if ( false !== secretum_mod( 'body_status' ) ) { ?>
 <div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="single-wrapper">
 	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
-	<?php
-	if ( true !== secretum_mod( 'entry_status' ) ) {
-		?>
 		<div class="row">
 
 			<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
 
+			<?php if ( false !== secretum_mod( 'entry_status' ) ) { ?>
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
+				<main class="site-main container<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content
@@ -57,15 +55,13 @@ if ( true !== secretum_mod( 'body_status' ) ) { ?>
 					?>
 				</main><!-- .site-main -->
 			</div><!-- .content-area -->
-			<?php
+				<?php
+			}
 
 			// Right Sidebar.
 			get_template_part( 'template-parts/sidebar/sidebar', 'right' );
 			?>
 		</div><!-- .row -->
-		<?php
-	}
-	?>
 	</div><!-- .container -->
 </div><!-- .wrapper -->
 

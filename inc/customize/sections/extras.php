@@ -3,7 +3,7 @@
  * Panels, Sections, & Settings
  *
  * @package    Secretum
- * @subpackage Core\Customize\Sections\Extras
+ * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -33,8 +33,8 @@ $customizer->section(
 $customizer->checkbox(
 	'scrolltop_icon',
 	'scrolltop_status',
-	__( 'Hide Scroll To Top Icon', 'secretum' ),
-	__( 'Select to disable the scroll to top icon.', 'secretum' ),
+	__( 'Scroll To Top Icon', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['scrolltop_status']
 );
 
@@ -165,7 +165,7 @@ $customizer->section(
 	'enqueue',
 	'extras',
 	__( 'Enqueue Management', 'secretum' ),
-	''
+	__( 'Select a checkbox to enable / display / make the feature active. Unchecked items are not in use.', 'secretum' )
 );
 
 
@@ -173,8 +173,8 @@ $customizer->section(
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_primary_javascript_status',
-	__( 'Disable Primary JavaScript File', 'secretum' ),
-	__( 'This is the primary theme related JavaScript files for all scripts (ie: all Bootstrap, Secretum, etc. scripts)', 'secretum' ),
+	__( 'Theme JavaScript Bundle File', 'secretum' ),
+	__( 'Secretums primary JavaScript bundle file, includes the Bootstrap bundle and theme support scripts.', 'secretum' ),
 	$defaults['enqueue_primary_javascript_status']
 );
 
@@ -183,8 +183,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_bootstrap_bundle_javascript_status',
-	__( 'Enable Bootstrap JavaScript File', 'secretum' ),
-	__( 'The primary (all features) Bootstrap Bundle file. The primary JavaScript must be disabled to enable this feature.', 'secretum' ),
+	__( 'Bootstrap JavaScript Bundle File', 'secretum' ),
+	__( 'All Bootstrap related JavaScript files bundled together. Note: The "Theme JavaScript Bundle File" setting above must be disabled/unchecked.', 'secretum' ),
 	$defaults['enqueue_bootstrap_bundle_javascript_status']
 );
 
@@ -193,8 +193,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_secretum_javascript_status',
-	__( 'Enable Secretum JavaScript File', 'secretum' ),
-	__( 'Secretum uses a very small jQuery file (less than 900 bytes), which requires either the Primary or Bootstrap JavaScripts to be enabled. This allows for dropdown menus, sticky headers & menus, menu togglers, and the scroll to top icon to function correctly. If disabled these features will either disappear or reduce in functionality.', 'secretum' ),
+	__( 'Secretum JavaScript File', 'secretum' ),
+	__( 'Theme support scripts that interact with the Bootstrap JavaScript bundle. Adds support for: clickable top-level dropdown menu items, sticky headers & menus, the menu toggler, and the scroll to top icon. If disabled/unchecked the listed features will reduce in functionality or be removed from use. Note: The "Theme JavaScript Bundle File" setting above must be disabled/unchecked.', 'secretum' ),
 	$defaults['enqueue_secretum_javascript_status']
 );
 
@@ -203,8 +203,8 @@ $customizer->checkbox(
 $customizer->checkbox(
 	'enqueue',
 	'enqueue_ekko_lightbox_status',
-	__( 'Enable Ekko Lightbox', 'secretum' ),
-	__( 'Ekko Lightbox (built around Bootstrap Modal plugin) is not bundled with the theme assets as most websites will not use a lightbox. Enable to use one of the simplest to use, fastest, lightweight lightboxes around.', 'secretum' ),
+	__( 'Ekko Lightbox', 'secretum' ),
+	__( 'Ekko is a very lightweight easy to use lightbox built around the Bootstrap Modal. This script is not bundled with the theme assets as most websites will not use a lightbox. Enable to use one of the simplest to use, fastest, lightweight lightboxes around.', 'secretum' ),
 	$defaults['enqueue_ekko_lightbox_status']
 );
 

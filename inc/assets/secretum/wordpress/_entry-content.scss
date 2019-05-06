@@ -1,0 +1,208 @@
+/**
+ * Secretum - Entry Content
+ */
+
+.content-area {
+    .sticky {
+        -moz-box-shadow: 0 0 8px 3px rgba( 191, 191, 191, 0.5 );
+        -webkit-box-shadow: 0 0 8px 3px rgba( 191, 191, 191, 0.5 );
+        box-shadow: 0 0 8px 3px rgba( 191, 191, 191, 0.5 );
+        padding: 20px 20px 0 20px;
+        margin-bottom: 50px;
+    }
+
+    article.has-post-thumbnail {
+        margin-bottom: 1em;
+        max-width: 100%;
+
+        img {
+            @include img-fluid();
+            -webkit-backface-visibility: hidden;
+            -webkit-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+        }
+
+        img:hover,
+        img:focus {
+            opacity: 0.7;
+        }
+
+        //.attachment-thumbnail {}
+
+        //.attachment-medium {}
+
+        //.attachment-large {}
+
+        //.attachment-full {}
+    }
+
+    .entry-header {
+        h1.page-title,
+        h1.entry-title,
+        h2.entry-title,
+        h3.entry-title {
+            color: $secondary;
+            -ms-word-wrap: break-word;
+            word-wrap: break-word;
+
+            a:link {
+                color: $secondary;
+                text-decoration: none;
+            }
+        }
+
+        //.entry-meta {}
+    }
+
+    .entry-content {
+		&::after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+
+	    // Pre Code Container
+	    .example {
+	        border: 1px solid $spacer-color;
+	        border-bottom: 0;
+	        border-radius: 7px 7px 0 0;
+	        margin: 2rem 0 0 0;
+	        display: block;
+	        padding: 1rem 1rem;
+	    }
+
+        h1.entry-heading {
+            font-size: $h1-font-size;
+            padding-top: 2rem;
+        }
+
+        h2.entry-heading {
+            font-size: $h2-font-size;
+            padding-top: 2rem;
+        }
+
+        h3.entry-heading {
+            font-size: $h3-font-size;
+            padding-top: 2rem;
+        }
+
+        h4.entry-heading {
+            font-size: $h4-font-size;
+            padding-top: 2rem;
+        }
+
+        h5.entry-heading {
+            font-size: $h5-font-size;
+            padding-top: 2rem;
+        }
+
+        h6.entry-heading {
+            font-size: $h6-font-size;
+            padding-top: 2rem;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .page-links {
+            clear: both;
+            color: $text-secondary;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            word-spacing: 0.35em;
+
+            a {
+                color: $text-secondary;
+            }
+        }
+
+        // Pre-Code Container
+        .example {
+            border: 1px solid $spacer-color;
+            border-bottom: 0;
+            border-radius: 7px 7px 0 0;
+            margin: 2rem 0 0 0;
+            display: block;
+            padding: 1rem 1rem;
+        }
+
+        .breadcrumbs {
+            padding: 2rem 0;
+            text-align: right;
+        }
+
+        // Bootstrap
+        a.btn-dark {
+            color: $gray-100;
+
+            &:active {
+                outline: 0;
+                top: -1px;
+            }
+
+            &:hover {
+                color: $white;
+            }
+
+        }
+
+        // Bootstrap
+        a.btn-light {
+            color: $gray-900;
+
+            &:active {
+                outline: 0;
+                top: -1px;
+            }
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+
+    // Archive Pages Content Wrapper
+    //.content-archive{}
+
+    // Search Content Wrapper
+    //.content-search{}
+
+    // Entry Container
+    //.entry-footer {}
+
+    // Post Navigation Link Container
+    .post-navigation {
+        @include clearfix;
+
+        .nav-links {
+            .nav-previous {
+                text-align: left;
+
+                a .nav-title {
+                    color: $text-secondary;
+                }
+
+                a .nav-title .nav-subtitle {
+                    color: $text-primary;
+                }
+            }
+
+            .nav-next {
+                text-align: right;
+
+                a .nav-title {
+                    color: $text-secondary;
+                }
+
+                a .nav-title .nav-subtitle {
+                    color: $text-primary;
+                }
+            }
+        }
+    }
+}

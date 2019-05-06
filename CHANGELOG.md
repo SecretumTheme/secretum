@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.2.3
+**2019-05-06 - Feature Update**
+
+* Adjusted Bootstrap SCSS builds to exclude unused features.
+* Created new style enqueues for split stylesheets.
+* Adjusted customizer to use new styling calls.
+
 # 1.2.2
 **2019-04-26 - Hotfix**
 

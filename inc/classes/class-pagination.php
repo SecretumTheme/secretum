@@ -116,8 +116,8 @@ class Pagination {
 	 * @return string HTML.
 	 */
 	final private function nav_open() {
-		return "<nav aria-label=\"{$this->nav_label}\">
-					<ul class=\"pagination\">";
+		return "<nav aria-label=\"{$this->nav_label}\" class=\"clearfix\">
+					<ul class=\"pagination mt-4 float-right\">";
 
 	}//end nav_open()
 
@@ -185,6 +185,8 @@ class Pagination {
 					],
 					'nav'  => [
 						'aria-label' => true,
+						'class'      => true,
+						'style'      => true,
 					],
 				]
 			);

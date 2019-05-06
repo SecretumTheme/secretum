@@ -116,12 +116,8 @@ class Classes_Containers {
 		// Clear String.
 		$classes = '';
 
-		// Build Container Type String If Allowed.
-		if ( 'entry' !== $section ) {
-			$classes .= secretum_mod( $section . '_container_type', 'attr' );
-		}
-
 		// Build Class String With Spaces Between Classes.
+		$classes .= secretum_mod( $section . '_container_type', 'attr' );
 		$classes .= secretum_mod( $section . '_container_background_color', 'attr', true );
 		$classes .= secretum_mod( $section . '_container_margin_top', 'attr', true );
 		$classes .= secretum_mod( $section . '_container_margin_bottom', 'attr', true );

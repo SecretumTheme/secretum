@@ -3,7 +3,7 @@
  * Site Branding Description
  *
  * @package    Secretum
- * @subpackage Theme\Template-Parts\Header
+ * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -13,7 +13,7 @@
 
 namespace Secretum;
 
-if ( true !== secretum_mod( 'site_identity_tagline_status' ) && ( true !== has_nav_menu( 'secretum-navbar-primary-left' ) && true !== has_nav_menu( 'secretum-navbar-primary-right' ) ) ) {
+if ( false !== secretum_mod( 'site_identity_tagline_status' ) && ( true !== has_nav_menu( 'secretum-navbar-primary-left' ) && true !== has_nav_menu( 'secretum-navbar-primary-right' ) ) ) {
 	?>
 	<p class="site-description<?php secretum_container( 'site_identity_desc', 'echo', [ 'textuals' => true ] ); ?>"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
 	<?php
