@@ -2,6 +2,16 @@
  * Secretum - Link Colors
  */
 
+a.color-black-50 { color: color: rgba($black, .5) !important; !important; }
+a.color-black-50:hover { color: color: rgba($blackish, .5) !important; !important; }
+.color-black-50 a { color: color: rgba($black, .5) !important; !important; }
+.color-black-50 a:hover { color: color: rgba($blackish, .5) !important; !important; }
+
+a.color-white-50 { color: color: rgba($white, .5) !important; !important; }
+a.color-white-50:hover { color: color: rgba($whitish, .5) !important; !important; }
+.color-white-50 a { color: color: rgba($white, .5) !important; !important; }
+.color-white-50 a:hover { color: color: rgba($whitish, .5) !important; !important; }
+
 a.color-link { color: $link-color !important; }
 a.color-link-hover:hover { color: $link-hover-color !important; }
 .color-link a { color: $link-color !important; }

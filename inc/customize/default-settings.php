@@ -436,7 +436,6 @@ function secretum_customizer_entry_settings() {
 		'entry_wrapper_border_radius'      => '',
 		'entry_wrapper_border_color'       => '',
 		// Container.
-		'entry_container_type'             => '',
 		'entry_container_background_color' => '',
 		'entry_container_padding_x'        => '',
 		'entry_container_padding_y'        => '',

@@ -38,7 +38,7 @@ if ( false !== secretum_mod( 'primary_nav_status' ) && true === $secretum_menu_s
 				'theme_location'  => 'secretum-navbar-primary-below',
 				'container_class' => 'collapse navbar-collapse',
 				'container_id'    => 'navbarNavDropdown',
-				'menu_class'      => 'navbar-nav primary' . secretum_alignment( 'copyright_nav', 'return', [ 'text' => 'items' ] ),
+				'menu_class'      => 'navbar-nav' . secretum_alignment( 'primary_nav', 'return', [ 'margin' => true ] ),
 				'menu_id'         => 'main-menu',
 				'divider'         => secretum_nav_item( 'primary_nav' ),
 				'walker'          => new \Secretum\Navwalker(

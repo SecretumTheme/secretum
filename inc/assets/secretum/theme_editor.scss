@@ -11,13 +11,13 @@
 
 @import "../vendors/bootstrap4/functions";
 @import "../vendors/bootstrap4/variables";
-@import "../secretum/variables";
+@import "variables";
 @import "../theme_variables.scss";
 @import "../vendors/bootstrap4/mixins";
 //@import "../vendors/bootstrap4/root";
 //@import "../vendors/bootstrap4/reboot";
 
-//@import "../secretum/links";
+//@import "links";
 
 @import "../vendors/bootstrap4/type";
 @import "../vendors/bootstrap4/images";
@@ -26,7 +26,7 @@
 @import "../vendors/bootstrap4/tables";
 @import "../vendors/bootstrap4/forms";
 @import "../vendors/bootstrap4/buttons";
-@import "../secretum/bootstrap/buttons";
+@import "bootstrap/buttons";
 @import "../vendors/bootstrap4/transitions";
 @import "../vendors/bootstrap4/dropdown";
 @import "../vendors/bootstrap4/button-group";
@@ -34,15 +34,15 @@
 @import "../vendors/bootstrap4/custom-forms";
 //@import "../vendors/bootstrap4/nav";
 //@import "../vendors/bootstrap4/navbar";
-//@import "../secretum/bootstrap/navbar";
+//@import "bootstrap/navbar";
 @import "../vendors/bootstrap4/card";
-@import "../secretum/bootstrap/card";
+@import "bootstrap/card";
 //@import "../vendors/bootstrap4/breadcrumb";
-//@import "../secretum/bootstrap/breadcrumb";
+//@import "bootstrap/breadcrumb";
 @import "../vendors/bootstrap4/pagination";
 @import "../vendors/bootstrap4/badge";
 @import "../vendors/bootstrap4/jumbotron";
-@import "../secretum/bootstrap/jumbotron";
+@import "bootstrap/jumbotron";
 @import "../vendors/bootstrap4/alert";
 @import "../vendors/bootstrap4/progress";
 @import "../vendors/bootstrap4/media";
@@ -72,31 +72,31 @@
 @import "../vendors/bootstrap4/utilities/text";
 @import "../vendors/bootstrap4/utilities/visibility";
 
-@import "../secretum/backgrounds";
-@import "../secretum/borders";
-@import "../secretum/colors";
-@import "../secretum/font-families";
-@import "../secretum/font-sizes";
-@import "../secretum/html-tags";
-@import "../secretum/images";
-@import "../secretum/link-colors";
-@import "../secretum/scrolltop";
-@import "../secretum/svgs";
-@import "../secretum/text-colors";
+@import "backgrounds";
+@import "borders";
+@import "colors-links";
+@import "colors-text";
+@import "font-families";
+@import "font-sizes";
+@import "html-tags";
+@import "images";
+@import "scrolltop";
+@import "svgs";
+@import "text-colors";
 
-@import "../secretum/wordpress/accessibility";
-@import "../secretum/wordpress/align";
-@import "../secretum/wordpress/attachments";
-@import "../secretum/wordpress/caption";
-@import "../secretum/wordpress/comments";
-@import "../secretum/wordpress/copyright";
-@import "../secretum/wordpress/entry-content";
-@import "../secretum/wordpress/featured-image";
-@import "../secretum/wordpress/footer";
-@import "../secretum/wordpress/header";
-@import "../secretum/wordpress/sidebar";
-@import "../secretum/wordpress/sticky";
-@import "../secretum/wordpress/widgets";
+@import "wordpress/accessibility";
+@import "wordpress/align";
+@import "wordpress/attachments";
+@import "wordpress/caption";
+@import "wordpress/comments";
+@import "wordpress/copyright";
+@import "wordpress/entry-content";
+@import "wordpress/featured-image";
+@import "wordpress/footer";
+@import "wordpress/header";
+@import "wordpress/sidebar";
+@import "wordpress/sticky";
+@import "wordpress/widgets";
 
 //@import "../vendors/bootstrap4/print";
 
