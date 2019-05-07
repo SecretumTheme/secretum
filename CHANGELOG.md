@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.3.2
+**2019-05-07 - Hotfix**
+
+* Removed unused class from templates.
+
 # 1.3.1
 **2019-05-07 - Hotfix**
 
