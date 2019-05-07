@@ -16,8 +16,8 @@ namespace Secretum;
 // Panel.
 $customizer->panel(
 	'entry',
-	__( 'Content Area', 'secretum' ),
-	__( 'Content entry area for posts and pages. Includes post titles, date, author, categories, tags, and all post content.', 'secretum' )
+	__( 'Content Entry', 'secretum' ),
+	__( 'Content entry area contains all archive listings and content bodies for posts and pages. It includes post titles, date, author, categories, tags, and all related post content.', 'secretum' )
 );
 
 
@@ -160,6 +160,7 @@ $borders->settings(
 $container->settings(
 	[
 		'section' => 'entry',
+		'type'    => false,
 	]
 );
 
