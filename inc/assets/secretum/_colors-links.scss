@@ -1,0 +1,163 @@
+/**
+ * Secretum - Link Colors
+ */
+
+a.link { color: $primary !important; }
+a.link-hover:hover { color: $primary !important; }
+.link a { color: $primary !important; }
+.link-hover a:hover { color: $primary !important; }
+
+a.link-alt { color: $gray-800 !important; }
+a.link-alt-hover:hover { color: $gray-800 !important; }
+.link-alt a { color: $gray-800 !important; }
+.link-alt-hover a:hover { color: $gray-800 !important; }
+
+a.link-primary-light { color: $primary-light !important; }
+a.link-primary-light-hover:hover { color: $primary-light !important; }
+.link-primary-light a { color: $primary-light !important; }
+.link-primary-light-hover a:hover { color: $primary-light !important; }
+
+a.link-primary-dark { color: $primary-dark !important; }
+a.link-primary-dark-hover:hover { color: $primary-dark !important; }
+.link-primary-dark a { color: $primary-dark !important; }
+.link-primary-dark-hover a:hover { color: $primary-dark !important; }
+
+a.link-black-50 { color: rgba($black, .5) !important; }
+a.link-black-50:hover { color: rgba($blackish, .5) !important; }
+.link-black-50 a { color: rgba($black, .5) !important; }
+.link-black-50 a:hover { color: rgba($blackish, .5) !important; }
+
+a.link-white-50 { color: rgba($white, .5) !important; }
+a.link-white-50:hover { color: rgba($whitish, .5) !important; }
+.link-white-50 a { color: rgba($white, .5) !important; }
+.link-white-50 a:hover { color: rgba($whitish, .5) !important; }
+
+a.link-light { color: $gray-100 !important; }
+a.link-light-hover:hover { color: $gray-100 !important; }
+.link-light a { color: $gray-100 !important; }
+.link-light-hover a:hover { color: $gray-100 !important; }
+
+a.link-dark { color: $gray-800 !important; }
+a.link-dark-hover:hover { color: $gray-800 !important; }
+.link-dark a { color: $gray-800 !important; }
+.link-dark-hover a:hover { color: $gray-800 !important; }
+
+a.link-blue { color: $blue !important; }
+a.link-blue-hover:hover { color: $blue !important; }
+.link-blue a { color: $blue !important; }
+.link-blue-hover a:hover { color: $blue !important; }
+
+a.link-indigo { color: $indigo !important; }
+a.link-indigo-hover:hover { color: $indigo !important; }
+.link-indigo a { color: $indigo !important; }
+.link-indigo-hover a:hover { color: $indigo !important; }
+
+a.link-purple { color: $purple !important; }
+a.link-purple-hover:hover { color: $purple !important; }
+.link-purple a { color: $purple !important; }
+.link-purple-hover a:hover { color: $purple !important; }
+
+a.link-pink { color: $pink !important; }
+a.link-pink-hover:hover { color: $pink !important; }
+.link-pink a { color: $pink !important; }
+.link-pink-hover a:hover { color: $pink !important; }
+
+a.link-red { color: $red !important; }
+a.link-red-hover:hover { color: $red !important; }
+.link-red a { color: $red !important; }
+.link-red-hover a:hover { color: $red !important; }
+
+a.link-orange { color: $orange !important; }
+a.link-orange-hover:hover { color: $orange !important; }
+.link-orange a { color: $orange !important; }
+.link-orange-hover a:hover { color: $orange !important; }
+
+a.link-yellow { color: $yellow !important; }
+a.link-yellow-hover:hover { color: $yellow !important; }
+.link-yellow a { color: $yellow !important; }
+.link-yellow-hover a:hover { color: $yellow !important; }
+
+a.link-green { color: $green !important; }
+a.link-green-hover:hover { color: $green !important; }
+.link-green a { color: $green !important; }
+.link-green-hover a:hover { color: $green !important; }
+
+a.link-teal { color: $teal !important; }
+a.link-teal-hover:hover { color: $teal !important; }
+.link-teal a { color: $teal !important; }
+.link-teal-hover a:hover { color: $teal !important; }
+
+a.link-cyan { color: $cyan !important; }
+a.link-cyan-hover:hover { color: $cyan !important; }
+.link-cyan a { color: $cyan !important; }
+.link-cyan-hover a:hover { color: $cyan !important; }
+
+a.link-white { color: $white !important; }
+a.link-white-hover:hover { color: $white !important; }
+.link-white a { color: $white !important; }
+.link-white-hover a:hover { color: $white !important; }
+
+a.link-whitish { color: $whitish !important; }
+a.link-whitish-hover:hover { color: $whitish !important; }
+.link-whitish a { color: $whitish !important; }
+.link-whitish-hover a:hover { color: $whitish !important; }
+
+a.link-black { color: $black !important; }
+a.link-black-hover:hover { color: $black !important; }
+.link-black a { color: $black !important; }
+.link-black-hover a:hover { color: $black !important; }
+
+a.link-blackish { color: $blackish !important; }
+a.link-blackish-hover:hover { color: $blackish !important; }
+.link-blackish a { color: $blackish !important; }
+.link-blackish-hover a:hover { color: $blackish !important; }
+
+a.link-gray { color: $gray-600 !important; }
+a.link-gray-hover:hover { color: $gray-600 !important; }
+.link-gray a { color: $gray-600 !important; }
+.link-gray-hover a:hover { color: $gray-600 !important; }
+
+a.link-gray-100 { color: $gray-100 !important; }
+a.link-gray-100-hover:hover { color: $gray-100 !important; }
+.link-gray-100 a { color: $gray-100 !important; }
+.link-gray-100-hover a:hover { color: $gray-100 !important; }
+
+a.link-gray-200 { color: $gray-200 !important; }
+a.link-gray-200-hover:hover { color: $gray-200 !important; }
+.link-gray-200 a { color: $gray-200 !important; }
+.link-gray-200-hover a:hover { color: $gray-200 !important; }
+
+a.link-gray-300 { color: $gray-300 !important; }
+a.link-gray-300-hover:hover { color: $gray-300 !important; }
+.link-gray-300 a { color: $gray-300 !important; }
+.link-gray-300-hover a:hover { color: $gray-300 !important; }
+
+a.link-gray-400 { color: $gray-400 !important; }
+a.link-gray-400-hover:hover { color: $gray-400 !important; }
+.link-gray-400 a { color: $gray-400 !important; }
+.link-gray-400-hover a:hover { color: $gray-400 !important; }
+
+a.link-gray-500 { color: $gray-500 !important; }
+a.link-gray-500-hover:hover { color: $gray-500 !important; }
+.link-gray-500 a { color: $gray-500 !important; }
+.link-gray-500-hover a:hover { color: $gray-500 !important; }
+
+a.link-gray-600 { color: $gray-600 !important; }
+a.link-gray-600-hover:hover { color: $gray-600 !important; }
+.link-gray-600 a { color: $gray-600 !important; }
+.link-gray-600-hover a:hover { color: $gray-600 !important; }
+
+a.link-gray-700 { color: $gray-700 !important; }
+a.link-gray-700-hover:hover { color: $gray-700 !important; }
+.link-gray-700 a { color: $gray-700 !important; }
+.link-gray-700-hover a:hover { color: $gray-700 !important; }
+
+a.link-gray-800 { color: $gray-800 !important; }
+a.link-gray-800-hover:hover { color: $gray-800 !important; }
+.link-gray-800 a { color: $gray-800 !important; }
+.link-gray-800-hover a:hover { color: $gray-800 !important; }
+
+a.link-gray-900 { color: $gray-900 !important; }
+a.link-gray-900-hover:hover { color: $gray-900 !important; }
+.link-gray-900 a { color: $gray-900 !important; }
+.link-gray-900-hover a:hover { color: $gray-900 !important; }
