@@ -21,8 +21,8 @@ namespace Secretum;
 		<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
 
 		<?php if ( false !== secretum_mod( 'entry_status' ) ) { ?>
-			<div class="wrapper col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main container<?php secretum_container( 'entry' ); ?><?php secretum_textual( 'entry' ); ?>" id="main">
+			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
+				<main class="site-main<?php secretum_textual( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content

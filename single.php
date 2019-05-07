@@ -25,7 +25,7 @@ if ( false !== secretum_mod( 'body_status' ) ) { ?>
 
 			<?php if ( false !== secretum_mod( 'entry_status' ) ) { ?>
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main container<?php secretum_container( 'entry' ); ?>" id="main">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content
