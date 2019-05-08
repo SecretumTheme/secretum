@@ -46,10 +46,10 @@ function secretum_setup_theme() {
 	// Register Navigation Menus.
 	register_nav_menus(
 		[
-			'secretum-navbar-primary-below' => __( 'Primary Menu - Below Header <small>(select 1 primary only)</small>', 'secretum' ),
-			'secretum-navbar-primary-above' => __( 'Primary Menu - Above Header <small>(select 1 primary only)</small>', 'secretum' ),
-			'secretum-navbar-primary-left'  => __( 'Primary Menu - Left of Logo <small>(select 1 primary only)</small>', 'secretum' ),
-			'secretum-navbar-primary-right' => __( 'Primary Menu - Right of Logo <small>(select 1 primary only)</small>', 'secretum' ),
+			'secretum-navbar-primary-below' => __( 'Primary Menu - Below Header (select 1 primary only)', 'secretum' ),
+			'secretum-navbar-primary-above' => __( 'Primary Menu - Above Header (select 1 primary only)', 'secretum' ),
+			'secretum-navbar-primary-left'  => __( 'Primary Menu - Left of Logo (select 1 primary only)', 'secretum' ),
+			'secretum-navbar-primary-right' => __( 'Primary Menu - Right of Logo (select 1 primary only)', 'secretum' ),
 			'secretum-navbar-top'           => __( 'Header Top Menu (above header)', 'secretum' ),
 			'secretum-navbar-copyright'     => __( 'Copyright Menu', 'secretum' ),
 		]
@@ -169,6 +169,7 @@ function secretum_load_default_settings( $settings ) {
 	$settings['entry_meta_catlinks_status']                    = true;
 	$settings['entry_meta_published_status']                   = true;
 	$settings['entry_meta_author_status']                      = true;
+	$settings['entry_meta_post_navigation_links']              = true;
 	$settings['footer_status']                                 = true;
 	$settings['copyright_status']                              = true;
 	$settings['copyright_nav_status']                          = true;

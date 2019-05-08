@@ -31,7 +31,7 @@ var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
-var sourcemaps      = require('gulp-sourcemaps');
+//var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
@@ -71,13 +71,13 @@ gulp.task('plugins', gulp.series(
  */
 gulp.task('ekko-lightbox.css', function () {
     return gulp.src('./inc/assets/vendors/ekko-lightbox/ekko-lightbox.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "ekko-lightbox.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -89,14 +89,14 @@ gulp.task('ekko-lightbox.css', function () {
  */
 gulp.task('ekko-lightbox.min.css', function () {
     return gulp.src('./inc/assets/vendors/ekko-lightbox/ekko-lightbox.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "ekko-lightbox.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -108,13 +108,13 @@ gulp.task('ekko-lightbox.min.css', function () {
  */
 gulp.task('contact-form-7.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/contact-form-7.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "contact-form-7.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -126,14 +126,14 @@ gulp.task('contact-form-7.css', function () {
  */
 gulp.task('contact-form-7.min.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/contact-form-7.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "contact-form-7.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -145,13 +145,13 @@ gulp.task('contact-form-7.min.css', function () {
  */
 gulp.task('woocommerce.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/woocommerce.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -163,14 +163,14 @@ gulp.task('woocommerce.css', function () {
  */
 gulp.task('woocommerce.min.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/woocommerce.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -182,13 +182,13 @@ gulp.task('woocommerce.min.css', function () {
  */
 gulp.task('woocommerce-bookings.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/woocommerce-bookings.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -200,14 +200,14 @@ gulp.task('woocommerce-bookings.css', function () {
  */
 gulp.task('woocommerce-bookings.min.css', function () {
     return gulp.src('./inc/assets/secretum/plugins/woocommerce-bookings.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "woocommerce-bookings.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

@@ -99,7 +99,7 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section' => 'primary_nav',
@@ -136,10 +136,10 @@ $borders->settings(
 	]
 );
 
-// Nav Dropdown Textuals.
+// Nav Dropdown Typography.
 $textuals->settings(
 	[
-		'title'     => __( 'Dropdown Textuals', 'secretum' ),
+		'title'     => __( 'Dropdown Typography', 'secretum' ),
 		'panel'     => 'primary_nav',
 		'section'   => 'primary_nav_dropdown',
 		'alignment' => true,

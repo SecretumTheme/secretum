@@ -7121,5 +7121,3 @@
       location.href = this.href;
     } );
 }( jQuery );
-
-//# sourceMappingURL=theme.js.map

@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_text_colors() {
 	return [
-		''                   => __( 'Theme Default', 'secretum' ),
+		''                   => __( 'Stylesheet Default', 'secretum' ),
 		'none'               => __( 'Remove Default', 'secretum' ),
 		'text'               => __( 'Theme Text Color', 'secretum' ),
 		'text-alt'           => __( 'Theme Alt-Text Color', 'secretum' ),
@@ -73,7 +73,7 @@ function secretum_customizer_text_colors() {
  */
 function secretum_customizer_link_colors() {
 	return [
-		''                   => __( 'Theme Default', 'secretum' ),
+		''                   => __( 'Stylesheet Default', 'secretum' ),
 		'none'               => __( 'Remove Default', 'secretum' ),
 		'link'               => __( 'Theme Link Color', 'secretum' ),
 		'link-alt'           => __( 'Theme Alt-Link Color', 'secretum' ),
@@ -123,7 +123,7 @@ function secretum_customizer_link_colors() {
  */
 function secretum_customizer_link_hover_colors() {
 	return [
-		''                         => __( 'Theme Default', 'secretum' ),
+		''                         => __( 'Stylesheet Default', 'secretum' ),
 		'none'                     => __( 'Remove Default', 'secretum' ),
 		'link-hover'               => __( 'Theme Hover Color', 'secretum' ),
 		'link-alt-hover'           => __( 'Theme Alt-Hover Color', 'secretum' ),
@@ -173,7 +173,7 @@ function secretum_customizer_link_hover_colors() {
  */
 function secretum_customizer_background_colors() {
 	return [
-		''                 => __( 'Theme Default', 'secretum' ),
+		''                 => __( 'Stylesheet Default', 'secretum' ),
 		'none'             => __( 'Remove Default', 'secretum' ),
 		'bg-transparent'   => __( 'Transparent Background', 'secretum' ),
 		'body-bg'          => __( 'Body Background Color', 'secretum' ),
@@ -222,7 +222,7 @@ function secretum_customizer_background_colors() {
  */
 function secretum_customizer_background_hover_colors() {
 	return [
-		''                       => __( 'Theme Default', 'secretum' ),
+		''                       => __( 'Stylesheet Default', 'secretum' ),
 		'none'                   => __( 'Remove Default', 'secretum' ),
 		'bg-transparent-hover'   => __( 'Transparent Background', 'secretum' ),
 		'body-bg-hover'          => __( 'Body Background Color', 'secretum' ),

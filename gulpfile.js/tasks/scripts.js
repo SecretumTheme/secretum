@@ -22,7 +22,7 @@ var notify      = require('gulp-notify');
 var rename      = require('gulp-rename');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
-var sourcemaps  = require('gulp-sourcemaps');
+//var sourcemaps  = require('gulp-sourcemaps');
 var noComments  = require('gulp-strip-comments');
 var lineec      = require('gulp-line-ending-corrector');
 
@@ -45,9 +45,9 @@ gulp.task('scripts', gulp.series(
  */
 gulp.task('theme.js', function () {
     return gulp.src(['./js/bootstrap.bundle.js', './js/secretum.js'])
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(concat('theme.js'))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js'))
     .pipe(notify({message: 'Created "theme.js"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -60,11 +60,11 @@ gulp.task('theme.js', function () {
 gulp.task('theme.min.js', function () {
     return gulp.src(['./js/bootstrap.bundle.js', './js/secretum.js'])
     .pipe(concat('theme.min.js'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js'))
     .pipe(notify({message: 'Created "theme.min.js"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -77,11 +77,11 @@ gulp.task('theme.min.js', function () {
 gulp.task('secretum.min.js', function () {
     return gulp.src('./js/secretum.js')
     .pipe(concat('secretum.min.js'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js'))
     .pipe(notify({message: 'Created "secretum.min.js"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -94,11 +94,11 @@ gulp.task('secretum.min.js', function () {
 gulp.task('customize-preview.min.js', function () {
     return gulp.src('./inc/assets/secretum/customizer/customize-preview.js')
     .pipe(concat('customize-preview.min.js'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js/customizer'))
     .pipe(notify({message: 'Created "customize-preview.min.js"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -111,11 +111,11 @@ gulp.task('customize-preview.min.js', function () {
 gulp.task('customize-controls.min.js', function () {
     return gulp.src('./inc/assets/secretum/customizer/customize-controls.js')
     .pipe(concat('customize-controls.min.js'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js/customizer'))
     .pipe(notify({message: 'Created "customize-controls.min.js"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -128,11 +128,11 @@ gulp.task('customize-controls.min.js', function () {
 gulp.task('customize-sections.min.js', function () {
     return gulp.src('./inc/assets/secretum/customizer/customize-sections.js')
     .pipe(concat('customize-sections.min.js'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(noComments())
     .pipe(lineec())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js/customizer'))
     .pipe(notify({message: 'Created "customize-sections.min.js"', onLast: true}))
     .on('error', console.error.bind(console))

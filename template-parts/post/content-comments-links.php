@@ -13,6 +13,10 @@
 
 namespace Secretum;
 
+if ( false === is_page() || false === is_single() ) {
+	return;
+}
+
 if ( 'post' === get_post_type() && true === comments_open() || '0' !== get_comments_number() ) {
 	if ( false !== secretum_mod( 'entry_meta_commentlink_status' ) ) {
 		$secretum_comments_link_icon = [

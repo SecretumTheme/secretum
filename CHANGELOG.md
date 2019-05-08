@@ -1,9 +1,17 @@
 # Changelog
 
+# 1.3.4
+**2019-05-07 - Hotfix**
+
+* Adjusted footer cols to include all cols when less than 3 widgets are defined.
+* Removed comment link when a page with comments is set to the homepage.
+* Deleted css .map files.
+
 # 1.3.3
 **2019-05-07 - Hotfix**
 
 * Adjusted post edit link function to use edit_post_link().
+* Adjusted footer cols to include all cols when less than 3 widgets are defined.
 * Added customizer option to hide toggler in primary menu.
 * WordPress 5.2 Check.
 

@@ -14,7 +14,7 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
-var sourcemaps      = require('gulp-sourcemaps');
+//var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
@@ -45,13 +45,13 @@ gulp.task('editor', gulp.series('editor.css', 'editor.min.css'));
  */
 gulp.task('editor.css', function () {
     return gulp.src('./inc/assets/secretum/theme_editor.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -63,14 +63,14 @@ gulp.task('editor.css', function () {
  */
 gulp.task('editor.min.css', function () {
     return gulp.src('./inc/assets/secretum/theme_editor.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "editor.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

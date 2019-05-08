@@ -46,5 +46,3 @@
 .wpcf7 .wpcf7-validation-errors { color: #dc3545; border: 1px solid #e9ecef; }
 select.wpcf7 textarea:not([size]):not([multiple]), select.wpcf7 input:not([size]):not([multiple]) { height: calc(2.25rem + 2px); }
 select.wpcf7 textarea:focus::-ms-value, select.wpcf7 input:focus::-ms-value { color: #495057; background-color: #fff; }
-
-/*# sourceMappingURL=contact-form-7.css.map */

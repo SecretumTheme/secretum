@@ -79,5 +79,3 @@
 .widget .widget_shopping_cart_content .woocommerce-mini-cart__buttons a.button { text-align: center; width: 100%; }
 .widget .widget_shopping_cart_content .woocommerce-mini-cart__buttons a.button.checkout { background-color: rgba(108, 117, 125, 0.9); border-color: rgba(108, 117, 125, 0.9); color: #fff; text-align: center; width: 100%; }
 .widget.widget_product_search form { padding-top: 1rem; }
-
-/*# sourceMappingURL=woocommerce.css.map */

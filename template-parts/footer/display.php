@@ -20,23 +20,29 @@ if ( false !== secretum_mod( 'footer_status' ) ) {
 		<div class="wrapper footer<?php secretum_wrapper( 'footer' ); ?>" id="wrapper-footer">
 			<div class="container<?php secretum_container( 'footer' ); ?>">
 				<div class="row">
-					<?php if ( true === is_active_sidebar( 'footer-left' ) ) { ?>
 						<div class="col-md">
-							<?php dynamic_sidebar( 'footer-left' ); ?>
+						<?php
+						if ( true === is_active_sidebar( 'footer-left' ) ) {
+							dynamic_sidebar( 'footer-left' );
+						}
+						?>
 						</div><!-- .col-md -->
-					<?php } ?>
 
-					<?php if ( true === is_active_sidebar( 'footer-center' ) ) { ?>
 						<div class="col-md">
-							<?php dynamic_sidebar( 'footer-center' ); ?>
+						<?php
+						if ( true === is_active_sidebar( 'footer-center' ) ) {
+							dynamic_sidebar( 'footer-center' );
+						}
+						?>
 						</div><!-- .col-md -->
-					<?php } ?>
 
-					<?php if ( true === is_active_sidebar( 'footer-right' ) ) { ?>
 						<div class="col-md">
-							<?php dynamic_sidebar( 'footer-right' ); ?>
+						<?php
+						if ( true === is_active_sidebar( 'footer-right' ) ) {
+							dynamic_sidebar( 'footer-right' );
+						}
+						?>
 						</div><!-- .col-md -->
-					<?php } ?>
 				</div><!-- .row-->
 			</div><!-- .container -->
 		</div><!-- .wrapper -->
