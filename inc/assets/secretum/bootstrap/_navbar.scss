@@ -6,6 +6,11 @@
     white-space: normal;
 }
 
+nav.notoggler li {
+    display: inline !important;
+    text-align: -webkit-match-parent;
+}
+
 .navbar {
     ul {
         border: 0;

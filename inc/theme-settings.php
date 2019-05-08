@@ -161,6 +161,7 @@ function secretum_load_default_settings( $settings ) {
 	$settings['header_top_status']                             = true;
 	$settings['header_status']                                 = true;
 	$settings['primary_nav_status']                            = true;
+	$settings['primary_nav_toggler_status']                    = true;
 	$settings['body_status']                                   = true;
 	$settings['featured_image_status']                         = true;
 	$settings['entry_status']                                  = true;
