@@ -20,8 +20,10 @@ namespace Secretum;
 		if ( true === is_single() ) {
 			the_title( '<h1 class="entry-title mb-4 text-40">', '</h1>' );
 
-		} elseif ( true === is_front_page() && true === is_home() ) {
-			the_title( '<h2 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		} elseif ( true === is_front_page() || true === is_home() ) {
+			if ( false !== secretum_mod( 'frontpage_page_title_status' ) ) {
+				the_title( '<h2 class="entry-title mb-4 text-40">', '</h2>' );
+			}
 
 		} else {
 			the_title( '<h3 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );

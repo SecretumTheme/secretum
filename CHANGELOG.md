@@ -1,5 +1,14 @@
 # Changelog
 
+# 1.4.0
+**2019-05-08 - Feature Release**
+
+* Added do_shortcode() to frontpage heading output.
+* Added customizer setting to disable title on frontpage.
+* Created new color theme: very dark blue - vivid orange.
+* Corrected called to load theme woocommerce stylesheet.
+* Split apart Enqueue Management within customizer.
+
 # 1.3.4
 **2019-05-07 - Hotfix**
 

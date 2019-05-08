@@ -155,6 +155,8 @@ add_action( 'after_setup_theme', 'Secretum\secretum_setup_theme' );
  */
 function secretum_load_default_settings( $settings ) {
 	$settings['enqueue_primary_javascript_status']             = true;
+	$settings['enqueue_woocommerce_status']                    = true;
+	$settings['frontpage_page_title_status']                   = true;
 	$settings['site_identity_branding_status']                 = true;
 	$settings['site_identity_logo_status']                     = true;
 	$settings['site_identity_tagline_status']                  = true;
