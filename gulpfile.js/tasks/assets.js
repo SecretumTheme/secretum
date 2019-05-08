@@ -48,19 +48,19 @@ gulp.task('assets', function(done) {
         //'./node_modules/bootstrap/dist/js/bootstrap.bundle.js.map',
         './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         //'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map',
-        './node_modules/bootstrap/dist/js/bootstrap.js',
+    //    './node_modules/bootstrap/dist/js/bootstrap.js',
         //'./node_modules/bootstrap/dist/js/bootstrap.js.map',
-        './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    //    './node_modules/bootstrap/dist/js/bootstrap.min.js',
         //'./node_modules/bootstrap/dist/js/bootstrap.min.js.map',
     ]).pipe(gulp.dest('./js'))
 
     // Vendor: Popper.js
-    gulp.src([
-        './node_modules/popper.js/dist/popper.js',
-        //'./node_modules/popper.js/dist/popper.js.map',
-        './node_modules/popper.js/dist/popper.min.js',
-        //'./node_modules/popper.js/dist/popper.min.js.map',
-    ]).pipe(gulp.dest('./js'))
+    //gulp.src([
+    //    './node_modules/popper.js/dist/popper.js',
+    //    //'./node_modules/popper.js/dist/popper.js.map',
+    //    './node_modules/popper.js/dist/popper.min.js',
+    //    //'./node_modules/popper.js/dist/popper.min.js.map',
+    //]).pipe(gulp.dest('./js'))
 
     // Vendor: Foundation
     gulp.src('./node_modules/foundation-icons/foundation-icons.scss').pipe(replace("url('", "url('../fonts/")).pipe(gulp.dest('./inc/assets/vendors/foundation'))

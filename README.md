@@ -2,8 +2,8 @@
 
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
-* **Tested up to:** 5.1.1
-* **Version:** 1.3.4
+* **Tested up to:** 5.2
+* **Version:** 1.4.0
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.23html
 * **Tags:** one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, sticky-post, full-width-template, threaded-comments, theme-options, blog, e-commerce, translation-ready
@@ -150,9 +150,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 1.3.4
-* Released: 2019-05-07
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0134
+### 1.4.0
+* Released: 2019-05-08
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0140
 
 
 ## Licenses
@@ -160,6 +160,7 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 MIT Licensed Resources packaged with Secretum. Due to GDPR compliancy reasons Secretum does not use externally linked resources.
 
 * [Bootstrap 4](https://getbootstrap.com/) - [MIT License](https://opensource.org/licenses/MIT)
+* [Popper.js](https://popper.js.org/) - [MIT License](https://opensource.org/licenses/MIT)
 * [Foundation Icon Fonts 3](https://zurb.com/playground/foundation-icon-fonts-3) - [MIT License](https://opensource.org/licenses/MIT)
 * [Lightbox For Bootstrap](https://github.com/ashleydw/lightbox) - [MIT License](https://opensource.org/licenses/MIT)
 * [Gulpfile for WordPress](https://github.com/ChrisWinters/gulpfile) - [MIT License](https://opensource.org/licenses/MIT)

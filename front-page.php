@@ -39,14 +39,6 @@ do_action( 'secretum_frontpage_before_body' );
 if ( false !== secretum_mod( 'body_status' ) ) {
 	// Frontpage Body.
 	get_template_part( 'template-parts/frontpage/body' );
-} elseif ( secretum_mod( 'custom_frontpage' ) ) {
-	/**
-	 * Secretum Custom Frontpage Active.
-	 * Hook: secretum_frontpage
-	 *
-	 * @since 1.0.0
-	 */
-	do_action( 'secretum_frontpage' );
 }
 
 
