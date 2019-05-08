@@ -230,8 +230,6 @@ function secretum_post_password_form() {
  * @param int $post_id Current Post ID.
  */
 function secretum_edit_link( $post_id ) {
-	$edit  = __( 'Edit Entry', 'secretum' );
-	$link  = get_edit_post_link( $post_id );
 	$icon  = secretum_icon(
 		[
 			'fi'   => 'pencil',
@@ -239,25 +237,24 @@ function secretum_edit_link( $post_id ) {
 			'echo' => false,
 		]
 	);
-	$html  = "<span class=\"screen-reader-text\">{$edit}</span>";
-	$html .= "&nbsp;&nbsp;&nbsp;<span class=\"edit-link\"><a class=\"post-edit-link\" href=\"{$link}\" title=\"{$edit}\">{$icon}</a></span>";
 
-	echo wp_kses(
-		apply_filters( 'secretum_edit_link', $html, 10, 1 ),
-		[
-			'a'    => [
-				'class' => true,
-				'href'  => true,
-				'title' => true,
-			],
-			'span' => [
-				'class' => true,
-			],
-			'i'    => [
-				'class'       => true,
-				'aria-hidden' => true,
-			],
-		]
+	edit_post_link(
+		sprintf(
+			wp_kses(
+				/* translators: 1. Icon 2. Only visible to screen readers. 3: Name of current post. Only visible to screen readers. */
+				__( '%1$s <span class="screen-reader-text">%2$s %3$s</span>', 'secretum' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			$icon,
+			__( 'Edit Entry', 'secretum' ),
+			get_the_title()
+		),
+		'<span class="edit-link">',
+		'</span>'
 	);
 
 }//end secretum_edit_link()

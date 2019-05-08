@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.3.3
+**2019-05-07 - Hotfix**
+
+* Adjusted post edit link function to use edit_post_link().
+* Added customizer option to hide toggler in primary menu.
+* WordPress 5.2 Check.
+
 # 1.3.2
 **2019-05-07 - Hotfix**
 

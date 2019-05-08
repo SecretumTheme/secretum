@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.3.2' );
+define( 'SECRETUM_THEME_VERSION', '1.3.3' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -82,6 +82,7 @@ require_once SECRETUM_INC . '/template-functions/entry.php';
 require_once SECRETUM_INC . '/template-functions/featured-image.php';
 require_once SECRETUM_INC . '/template-functions/frontpage.php';
 require_once SECRETUM_INC . '/template-functions/header.php';
+require_once SECRETUM_INC . '/template-functions/navbar.php';
 require_once SECRETUM_INC . '/template-functions/post-navigation.php';
 require_once SECRETUM_INC . '/template-functions/sidebars.php';
 require_once SECRETUM_INC . '/template-functions.php';
