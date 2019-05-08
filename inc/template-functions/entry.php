@@ -230,7 +230,7 @@ function secretum_post_password_form() {
  * @param int $post_id Current Post ID.
  */
 function secretum_edit_link( $post_id ) {
-	$icon  = secretum_icon(
+	$icon = secretum_icon(
 		[
 			'fi'   => 'pencil',
 			'fa'   => 'fa-pencil',

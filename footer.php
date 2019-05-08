@@ -23,16 +23,6 @@ do_action( 'secretum_footer_before' );
 // Display Footer Area.
 get_template_part( 'template-parts/footer/display' );
 
-// Secretum Custom Headers & Footers Plugin.
-if ( secretum_mod( 'custom_footers' ) ) {
-	/**
-	 * Hook: secretum_hf
-	 *
-	 * @since 1.0.0
-	 */
-	do_action( 'secretum_hf', 'footers' );
-}
-
 /**
  * Hook: secretum_footer_after
  *

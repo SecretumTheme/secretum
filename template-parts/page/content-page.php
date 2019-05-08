@@ -42,7 +42,7 @@ namespace Secretum;
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'secretum_after_entrye_content' );
+		do_action( 'secretum_after_entry_content' );
 		?>
 	</div><!-- .entry-content -->
 

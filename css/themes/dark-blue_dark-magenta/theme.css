@@ -829,7 +829,6 @@ a.btn-primary, a.btn-secondary, a.btn-success, a.btn-info, a.btn-warning, a.btn-
 .navbar-dark .navbar-text a { color: #ffffff; }
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus { color: #ffffff; }
 .navbar-brand { white-space: normal; }
-nav.notoggler li { display: inline !important; text-align: -webkit-match-parent; }
 .navbar ul { border: 0; margin: 0; padding: 0; }
 .navbar .dropdown-menu { border: 0; border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; display: block; margin: 0; min-width: 10rem; padding: 0; }
 .navbar .dropdown-menu ul.dropdown-menu { border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; }
@@ -845,7 +844,7 @@ nav.notoggler li { display: inline !important; text-align: -webkit-match-parent;
   .navbar .dropdown-menu.show li:hover > .dropdown-menu, .navbar .dropdown-menu.show li:focus > .dropdown-menu { display: block; } }
 .navbar-toggler { padding: .05rem .25rem; font-size: 1rem; line-height: 1; border: 1px solid rgba(150, 150, 150, 0.5); }
 .navbar-toggler:focus { outline: none; outline: none -webkit-focus-ring-color; }
-.navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(150,150,150,0.5)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='1' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.8)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='1' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 .card { position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #ffffff; background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
 .card > hr { margin-right: 0; margin-left: 0; }
 .card > .list-group:first-child .list-group-item:first-child { border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; }
@@ -2319,7 +2318,7 @@ a.link-gray-900-hover:hover { color: #222425 !important; }
 .text-80 { font-size: 5rem; }
 .text-90 { font-size: 5.625rem; }
 .text-100 { font-size: 6.25rem; }
-blockquote { margin-left: 0; padding: 0 0 0 .75rem; }
+blockquote { font-size: 1.25rem; margin-bottom: 1rem; padding: 0 0 0 .75rem; }
 blockquote > p { margin: 0 0 .5rem; }
 blockquote > p cite { font-weight: bold; }
 blockquote cite { font-weight: bold; }
@@ -2502,8 +2501,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media { displa
 .widget .gallery-columns-5 .gallery-caption, .widget .gallery-columns-6 .gallery-caption, .widget .gallery-columns-7 .gallery-caption, .widget .gallery-columns-8 .gallery-caption, .widget .gallery-columns-9 .gallery-caption { display: none; }
 .widget.widget_top-posts ul li ul, .widget.widget_rss_links ul li ul, .widget.widget-grofile ul.grofile-links li ul, .widget.widget_pages ul li ul, .widget.widget_meta ul li ul { bottom: 0; }
 .widget.widget_nav_menu ul li li, .widget.widget_top-posts ul li, .widget.widget_top-posts ul li li, .widget.widget_rss_links ul li, .widget.widget_rss_links ul li li, .widget.widget-grofile ul.grofile-links li, .widget.widget-grofile ul.grofile-links li li { padding-bottom: 0.25em; padding-top: 0.25em; }
-.widget .calendar_wrap { padding: 0.0625rem 0; width: 100%; }
-.widget .calendar_wrap table { width: 100%; }
+.widget .calendar_wrap { padding: 0.0625rem 0; }
 .widget .calendar_wrap caption { background: #f7f7f7; caption-side: top; color: #eef0f1; font-size: 1.125rem; font-weight: bold; line-height: 2.25rem; margin: 0.1875rem 0 0 0; padding: 0; text-align: center; }
 .widget .calendar_wrap thead th { background: #f7f7f7; border: 0.0625rem solid #cdd2d7; border-bottom: none; color: #eef0f1; font-size: 0.75rem; font-weight: bold; padding: 0.5625rem 0; text-align: center; }
 .widget .calendar_wrap tbody td { background: #fcfcfa; border: 0.0625rem solid #cdd2d7; color: #333333; padding: 0.375rem 0; text-align: center; }
@@ -2547,5 +2545,3 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media { displa
   .table-dark { color: inherit; }
   .table-dark th, .table-dark td, .table-dark thead th, .table-dark tbody + tbody { border-color: #cdd2d7; }
   .table .thead-dark th { color: inherit; border-color: #cdd2d7; } }
-
-/*# sourceMappingURL=theme.css.map */

@@ -21,7 +21,7 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
-var sourcemaps      = require('gulp-sourcemaps');
+//var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
@@ -57,13 +57,13 @@ gulp.task('theme', gulp.series(
  */
 gulp.task('theme.css', function () {
     return gulp.src('./inc/assets/secretum/theme.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "theme.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -75,14 +75,14 @@ gulp.task('theme.css', function () {
  */
 gulp.task('theme.min.css', function () {
     return gulp.src('./inc/assets/secretum/theme.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "theme.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -94,13 +94,13 @@ gulp.task('theme.min.css', function () {
  */
 gulp.task('secretum.css', function () {
     return gulp.src('./inc/assets/secretum/secretum.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "secretum.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -112,14 +112,14 @@ gulp.task('secretum.css', function () {
  */
 gulp.task('secretum.min.css', function () {
     return gulp.src('./inc/assets/secretum/secretum.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "secretum.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

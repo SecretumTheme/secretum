@@ -82,7 +82,7 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section' => 'header_top',

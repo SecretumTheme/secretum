@@ -15,7 +15,7 @@ var gulp 			= require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
-var sourcemaps      = require('gulp-sourcemaps');
+//var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
@@ -49,14 +49,14 @@ gulp.task('customizer', gulp.series(
  */
 gulp.task('customizer.min.css', function () {
     return gulp.src('./inc/assets/secretum/customizer/customizer.css')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/customizer'))
     .pipe(notify({message: 'Created "customizer.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -68,14 +68,14 @@ gulp.task('customizer.min.css', function () {
  */
 gulp.task('custom-sections.min.css', function () {
     return gulp.src('./inc/assets/secretum/customizer/custom-sections.css')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/customizer'))
     .pipe(notify({message: 'Created "custom-sections.min.css"', onLast: true}))
     .on('error', console.error.bind(console))

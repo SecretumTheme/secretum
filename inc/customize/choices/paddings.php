@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_padding_top_bottom() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'py-0' => __( 'No Padding (py-0)', 'secretum' ),
 		'py-1' => __( '4px or .25em Padding (py-1)', 'secretum' ),
 		'py-2' => __( '8px or .5em Padding (py-2)', 'secretum' ),
@@ -43,7 +43,7 @@ function secretum_customizer_padding_top_bottom() {
  */
 function secretum_customizer_padding_top() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'pt-0' => __( 'No Padding (pt-0)', 'secretum' ),
 		'pt-1' => __( '4px or .25em Padding (pt-1)', 'secretum' ),
 		'pt-2' => __( '8px or .5em Padding (pt-2)', 'secretum' ),
@@ -64,7 +64,7 @@ function secretum_customizer_padding_top() {
  */
 function secretum_customizer_padding_bottom() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'pb-0' => __( 'No Padding (pb-0)', 'secretum' ),
 		'pb-1' => __( '4px or .25em Padding (pb-1)', 'secretum' ),
 		'pb-2' => __( '8px or .5em Padding (pb-2)', 'secretum' ),
@@ -85,7 +85,7 @@ function secretum_customizer_padding_bottom() {
  */
 function secretum_customizer_padding_left_right() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'px-0' => __( 'No Padding (px-0)', 'secretum' ),
 		'px-1' => __( '4px or .25em Padding (px-1)', 'secretum' ),
 		'px-2' => __( '8px or .5em Padding (px-2)', 'secretum' ),
@@ -106,7 +106,7 @@ function secretum_customizer_padding_left_right() {
  */
 function secretum_customizer_padding_left() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'pl-0' => __( 'No Padding (pl-0)', 'secretum' ),
 		'pl-1' => __( '4px or .25em Padding (pl-1)', 'secretum' ),
 		'pl-2' => __( '8px or .5em Padding (pl-2)', 'secretum' ),
@@ -127,7 +127,7 @@ function secretum_customizer_padding_left() {
  */
 function secretum_customizer_padding_right() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'pr-0' => __( 'No Padding (pr-0)', 'secretum' ),
 		'pr-1' => __( '4px or .25em Padding (pr-1)', 'secretum' ),
 		'pr-2' => __( '8px or .5em Padding (pr-2)', 'secretum' ),

@@ -14,14 +14,14 @@
 namespace Secretum;
 
 // Ignore If Password Required.
-if ( post_password_required() ) {
+if ( true === post_password_required() ) {
 	return;
 }
 
 // Hookable Action.
 do_action( 'secretum_before_comments' ); ?>
 <div class="comments-area my-5 py-5 border-top" id="comments">
-	<?php if ( have_comments() ) { ?>
+	<?php if ( true === have_comments() ) { ?>
 		<h2 class="comments-title">
 			<?php
 			$secretum_comments_number = get_comments_number();

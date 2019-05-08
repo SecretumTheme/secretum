@@ -173,7 +173,7 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section'   => 'entry',

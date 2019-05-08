@@ -23,7 +23,7 @@ namespace Secretum;
 function secretum_customizer_stylesheets() {
 	return array_merge(
 		[
-			'' => __( 'Theme Default', 'secretum' ),
+			'' => __( 'Stylesheet Default', 'secretum' ),
 		],
 		secretum_customizer_stylesheets_blue()
 	);

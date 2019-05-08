@@ -32,7 +32,7 @@ var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var notify          = require('gulp-notify');
 var rename          = require('gulp-rename');
-var sourcemaps      = require('gulp-sourcemaps');
+//var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var noComments      = require('gulp-strip-css-comments');
 var removeEmpty     = require('gulp-remove-empty-lines');
@@ -79,13 +79,13 @@ gulp.task('bootstrap', gulp.series(
  */
 gulp.task('ekko-lightbox.css', function () {
     return gulp.src('./inc/assets/vendors/ekko-lightbox/ekko-lightbox.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "ekko-lightbox.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -97,14 +97,14 @@ gulp.task('ekko-lightbox.css', function () {
  */
 gulp.task('ekko-lightbox.min.css', function () {
     return gulp.src('./inc/assets/vendors/ekko-lightbox/ekko-lightbox.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "ekko-lightbox.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -116,13 +116,13 @@ gulp.task('ekko-lightbox.min.css', function () {
  */
 gulp.task('foundation-icons.css', function () {
     return gulp.src('./inc/assets/vendors/foundation/foundation-icons.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "foundation-icons.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -134,14 +134,14 @@ gulp.task('foundation-icons.css', function () {
  */
 gulp.task('foundation-icons.min.css', function () {
     return gulp.src('./inc/assets/vendors/foundation/foundation-icons.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "foundation-icons.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -152,13 +152,13 @@ gulp.task('foundation-icons.min.css', function () {
  */
 gulp.task('bootstrap.css', function () {
     return gulp.src('./inc/assets/bootstrap/bootstrap.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compact'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "bootstrap.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -170,14 +170,14 @@ gulp.task('bootstrap.css', function () {
  */
 gulp.task('bootstrap.min.css', function () {
     return gulp.src('./inc/assets/bootstrap/bootstrap.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "bootstrap.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -189,14 +189,14 @@ gulp.task('bootstrap.min.css', function () {
  */
 gulp.task('bootstrap-bundle.css', function () {
     return gulp.src('./inc/assets/bootstrap/bootstrap-bundle.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "bootstrap-bundle.css"', onLast: true}))
     .on('error', console.error.bind(console))
@@ -208,14 +208,14 @@ gulp.task('bootstrap-bundle.css', function () {
  */
 gulp.task('bootstrap-bundle.min.css', function () {
     return gulp.src('./inc/assets/bootstrap/bootstrap-bundle.scss')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(noComments())
     .pipe(lineec())
     .pipe(removeEmpty({removeComments: true}))
     .pipe(autoprefixer(autoprefixers))
     .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({message: 'Created "bootstrap-bundle.min.css"', onLast: true}))
     .on('error', console.error.bind(console))
