@@ -648,6 +648,7 @@ function secretum_customizer_copyright_nav_settings() {
  */
 function secretum_customizer_frontpage_settings() {
 	return [
+		'frontpage_page_title_status'        => '',
 		'frontpage_header_status'            => '',
 		'frontpage_heading_bg'               => '',
 		'frontpage_heading_html'             => '',

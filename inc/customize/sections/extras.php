@@ -162,16 +162,16 @@ $customizer->select(
 
 // Section.
 $customizer->section(
-	'enqueue',
+	'enqueuejs',
 	'extras',
-	__( 'Enqueue Management', 'secretum' ),
+	__( 'JavaScript Management', 'secretum' ),
 	__( 'Select a checkbox to enable / display / make the feature active. Unchecked items are not in use.', 'secretum' )
 );
 
 
 // Checkbox.
 $customizer->checkbox(
-	'enqueue',
+	'enqueuejs',
 	'enqueue_primary_javascript_status',
 	__( 'Theme JavaScript Bundle File', 'secretum' ),
 	__( 'Secretums primary JavaScript bundle file, includes the Bootstrap bundle and theme support scripts.', 'secretum' ),
@@ -181,7 +181,7 @@ $customizer->checkbox(
 
 // Checkbox.
 $customizer->checkbox(
-	'enqueue',
+	'enqueuejs',
 	'enqueue_bootstrap_bundle_javascript_status',
 	__( 'Bootstrap JavaScript Bundle File', 'secretum' ),
 	__( 'All Bootstrap related JavaScript files bundled together. Note: The "Theme JavaScript Bundle File" setting above must be disabled/unchecked.', 'secretum' ),
@@ -191,7 +191,7 @@ $customizer->checkbox(
 
 // Checkbox.
 $customizer->checkbox(
-	'enqueue',
+	'enqueuejs',
 	'enqueue_secretum_javascript_status',
 	__( 'Secretum JavaScript File', 'secretum' ),
 	__( 'Theme support scripts that interact with the Bootstrap JavaScript bundle. Adds support for: clickable top-level dropdown menu items, sticky headers & menus, the menu toggler, and the scroll to top icon. If disabled/unchecked the listed features will reduce in functionality or be removed from use. Note: The "Theme JavaScript Bundle File" setting above must be disabled/unchecked.', 'secretum' ),
@@ -201,31 +201,40 @@ $customizer->checkbox(
 
 // Checkbox.
 $customizer->checkbox(
-	'enqueue',
+	'enqueuejs',
 	'enqueue_ekko_lightbox_status',
 	__( 'Ekko Lightbox', 'secretum' ),
-	__( 'Ekko is a very lightweight easy to use lightbox built around the Bootstrap Modal. This script is not bundled with the theme assets as most websites will not use a lightbox. Enable to use one of the simplest to use, fastest, lightweight lightboxes around.', 'secretum' ),
+	__( 'Ekko is a very lightweight and extremely easy to use lightbox that has the ability to display images, vidoes and html.', 'secretum' ),
 	$defaults['enqueue_ekko_lightbox_status']
+);
+
+
+// Section.
+$customizer->section(
+	'enqueuecss',
+	'extras',
+	__( 'Stylesheet Management', 'secretum' ),
+	__( 'Select a checkbox to enable / display / make the feature active. Unchecked items are not in use.', 'secretum' )
 );
 
 
 if ( true === secretum_is_woocomerce() ) {
 	// Checkbox.
 	$customizer->checkbox(
-		'enqueue',
+		'enqueuecss',
 		'enqueue_woocommerce_status',
-		__( 'Disable Secretum-WooCommerce Styles', 'secretum' ),
-		'',
+		__( 'Custom WooCommerce Stylesheet', 'secretum' ),
+		__( 'This is an additional stylesheet that makes WooCommerce look like the Secretum / Bootstrap4 layout.', 'secretum' ),
 		$defaults['enqueue_woocommerce_status']
 	);
 
 	if ( true === secretum_is_woobookings() ) {
 		// Checkbox.
 		$customizer->checkbox(
-			'enqueue',
+			'enqueuecss',
 			'enqueue_woocommerce_bookings_status',
-			__( 'Disable Secretum-WooCommerce Bookings Styles', 'secretum' ),
-			'',
+			__( 'Custom WooCommerce Bookings Stylesheet', 'secretum' ),
+		__( 'This is an additional stylesheet that that enhances / changes the look of the booking calendar form.', 'secretum' ),
 			$defaults['enqueue_woocommerce_bookings_status']
 		);
 	}
@@ -233,12 +242,20 @@ if ( true === secretum_is_woocomerce() ) {
 
 
 if ( true === class_exists( 'WPCF7' ) ) {
+	// Section.
+	$customizer->section(
+		'enqueue_contacts',
+		'extras',
+		__( 'Contact Form Management', 'secretum' ),
+		__( 'This feature was enabled when an adaptable contact form plugin was activated. DO NOT USE this feature if your website loads contact forms throughout the Website. This feature should only be used on Websites that have contact form(s) on a limited number of designated posts/pages, or better yet on a single page only. This feature forces adapted contact form plugins to load scripts and styles on set post/page ids, rather than the scripts/styles loading throughout the entire website.', 'secretum' )
+	);
+
 	// Input Text.
 	$customizer->input_text(
-		'enqueue',
+		'enqueue_contacts',
 		'enqueue_contact_pageids',
-		__( 'Contact Form Page IDs', 'secretum' ),
-		__( 'Make adapted contact form plugins load scripts and styles on set page ids, rather than the entire website. Enter a comma separated list of page IDs. Example: 90,1001', 'secretum' ),
+		__( 'Contact Form Post/Page IDs', 'secretum' ),
+		__( 'Enter a comma separated list of IDs. Example: 4,90,1001', 'secretum' ),
 		$defaults['enqueue_contact_pageids']
 	);
 }

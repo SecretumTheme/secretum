@@ -43,7 +43,8 @@ function secretum_customizer_stylesheets_blue() {
 		'bright-blue_bright-orange'     => __( 'Bright Blue - Bright Orange', 'secretum' ),
 		'dark-blue_dark-magenta'        => __( 'Dark Blue - Dark Magenta', 'secretum' ),
 		'dodger-blue_dark-grayish-blue' => __( 'Doger Blue 2 - Dark Grayish Blue', 'secretum' ),
-		'vivid-blue-dark-theme'         => __( 'Vivid Blue - Dark Theme', 'secretum' ),
+		'very-dark-blue_vivid-orange'   => __( 'Very Dark Blue - Vivid Orange', 'secretum' ),
+		'vivid-blue-dark-theme'         => __( 'Vivid Blue - Strong Red', 'secretum' ),
 	];
 
 }//end secretum_customizer_stylesheets_blue()

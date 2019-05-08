@@ -1,9 +1,9 @@
 === Secretum ===
 Contributors: SecretumTheme
 Requires at least: WordPress 4.8
-Tested up to: 5.1.1
+Tested up to: 5.2
 Requires PHP: 5.6
-Version: 1.3.4
+Version: 1.4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -81,9 +81,9 @@ Return to the Pages admin and customize the Front Page page as desired.
 
 == Changelog ==
 
-= 1.3.4 =
-* Released: 2019-05-07
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0134
+= 1.4.0 =
+* Released: 2019-05-08
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0140
 
 
 == Licenses ==
@@ -91,6 +91,7 @@ Return to the Pages admin and customize the Front Page page as desired.
 MIT Licensed Resources packaged with Secretum. Due to GDPR compliancy reasons Secretum does not use externally linked resources.
 
 * [Bootstrap 4](https://getbootstrap.com/) - [MIT License](https://opensource.org/licenses/MIT)
+* [Popper.js](https://popper.js.org/) - [MIT License](https://opensource.org/licenses/MIT)
 * [Foundation Icon Fonts 3](https://zurb.com/playground/foundation-icon-fonts-3) - [MIT License]( https://opensource.org/licenses/MIT)
 * [Lightbox For Bootstrap](https://github.com/ashleydw/lightbox) - [MIT License](https://opensource.org/licenses/MIT)
 * [Gulpfile for WordPress](https://github.com/ChrisWinters/gulpfile) - [MIT License](https://opensource.org/licenses/MIT)

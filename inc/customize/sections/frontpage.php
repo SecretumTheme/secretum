@@ -19,6 +19,26 @@ $customizer->panel(
 	__( 'Frontpage', 'secretum' )
 );
 
+
+// Section.
+$customizer->section(
+	'frontpage_display',
+	'frontpage',
+	__( 'Display Settings', 'secretum' ),
+	'A static frontpage must be set to use this feature. Select to display. Uncheck to remove all html markup.'
+);
+
+
+// Checkbox.
+$customizer->checkbox(
+	'frontpage_display',
+	'frontpage_page_title_status',
+	__( 'Page Title', 'secretum' ),
+	'This is the actual <h2>heading title</h2> of the page, oftened titled Front Page.',
+	$defaults['frontpage_page_title_status']
+);
+
+
 // Content.
 $customizer->section(
 	'frontpage_heading',
