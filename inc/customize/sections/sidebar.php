@@ -37,7 +37,7 @@ $customizer->radio(
 	__( 'Set the global sidebar location. This setting can be overridden at the post/page/post_type level.', 'secretum' ),
 	$defaults['sidebar_location'],
 	[
-		''      => __( 'Based on Theme', 'secretum' ),
+		''      => __( 'Stylesheet Default', 'secretum' ),
 		'right' => __( 'Right Sidebar', 'secretum' ),
 		'left'  => __( 'Left Sidebar', 'secretum' ),
 		'both'  => __( 'Both Sidebars', 'secretum' ),
@@ -86,7 +86,7 @@ $wp_customize->get_setting( 'secretum[sidebar_container_border_type]' )->transpo
 $wp_customize->get_setting( 'secretum[sidebar_container_border_radius]' )->transport = 'postMessage';
 $wp_customize->get_setting( 'secretum[sidebar_container_border_color]' )->transport  = 'postMessage';
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section'   => 'sidebar',

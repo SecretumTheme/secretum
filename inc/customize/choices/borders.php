@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_border() {
 	return [
-		''              => __( 'Theme Default', 'secretum' ),
+		''              => __( 'Stylesheet Default', 'secretum' ),
 		'border'        => __( 'Solid Border', 'secretum' ),
 		'border-top'    => __( 'Top Border', 'secretum' ),
 		'border-right'  => __( 'Right Border', 'secretum' ),
@@ -43,7 +43,7 @@ function secretum_customizer_border() {
  */
 function secretum_customizer_border_types() {
 	return [
-		''              => __( 'Theme Default', 'secretum' ),
+		''              => __( 'Stylesheet Default', 'secretum' ),
 		'border'        => __( 'Solid Border', 'secretum' ),
 		'border-top'    => __( 'Top Border', 'secretum' ),
 		'border-right'  => __( 'Right Border', 'secretum' ),
@@ -64,7 +64,7 @@ function secretum_customizer_border_types() {
  */
 function secretum_customizer_border_radius() {
 	return [
-		''               => __( 'Theme Default', 'secretum' ),
+		''               => __( 'Stylesheet Default', 'secretum' ),
 		'rounded-circle' => __( 'Circle', 'secretum' ),
 		'rounded-0'      => __( 'Square Borders', 'secretum' ),
 		'rounded'        => __( 'Rounded Borders', 'secretum' ),
@@ -86,7 +86,7 @@ function secretum_customizer_border_radius() {
  */
 function secretum_customizer_border_colors() {
 	return [
-		''                 => __( 'Theme Default', 'secretum' ),
+		''                 => __( 'Stylesheet Default', 'secretum' ),
 		'none'             => __( 'Remove Default', 'secretum' ),
 		'border-line'      => __( 'Line Color', 'secretum' ),
 		'border-primary'   => __( 'Primary Color', 'secretum' ),
@@ -117,10 +117,6 @@ function secretum_customizer_border_colors() {
 		'border-red'       => __( 'Red', 'secretum' ),
 		'border-teal'      => __( 'Teal', 'secretum' ),
 		'border-yellow'    => __( 'Yellow', 'secretum' ),
-		'border-danger'    => __( 'Danger', 'secretum' ),
-		'border-info'      => __( 'Info', 'secretum' ),
-		'border-success'   => __( 'Success', 'secretum' ),
-		'border-warning'   => __( 'Warning', 'secretum' ),
 	];
 
 }//end secretum_customizer_border_colors()

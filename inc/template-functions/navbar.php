@@ -13,7 +13,6 @@
 
 namespace Secretum;
 
-
 /**
  * Add or Remove Navbar Collapse ID
  *
@@ -32,7 +31,7 @@ function secretum_navbar_display( $type ) {
 		}
 	}
 
-	if ( 'class' === $type) {
+	if ( 'class' === $type ) {
 		if ( true !== $secretum_toggler_status ) {
 			return '';
 		} else {
@@ -40,7 +39,7 @@ function secretum_navbar_display( $type ) {
 		}
 	}
 
-	if ( 'id' === $type) {
+	if ( 'id' === $type ) {
 		if ( true !== $secretum_toggler_status ) {
 			return '';
 		} else {

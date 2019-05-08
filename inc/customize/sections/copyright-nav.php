@@ -64,7 +64,7 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section' => 'copyright_nav',

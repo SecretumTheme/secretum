@@ -188,7 +188,7 @@ class Customize_Textuals {
 	 */
 	final private function title( $title = '' ) {
 		if ( true === empty( $title ) ) {
-			$title = __( 'Textuals', 'secretum' );
+			$title = __( 'Typography', 'secretum' );
 		}
 
 		return $title;

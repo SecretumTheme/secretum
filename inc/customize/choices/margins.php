@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_margin_top_bottom() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'my-0' => __( 'No Margin (my-0)', 'secretum' ),
 		'my-1' => __( '4px or .25em Margin (my-1)', 'secretum' ),
 		'my-2' => __( '8px or .5em Margin (my-2)', 'secretum' ),
@@ -43,7 +43,7 @@ function secretum_customizer_margin_top_bottom() {
  */
 function secretum_customizer_margin_top() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'mt-0' => __( 'No Margin (mt-0)', 'secretum' ),
 		'mt-1' => __( '4px or .25em Margin (mt-1)', 'secretum' ),
 		'mt-2' => __( '8px or .5em Margin (mt-2)', 'secretum' ),
@@ -64,7 +64,7 @@ function secretum_customizer_margin_top() {
  */
 function secretum_customizer_margin_bottom() {
 	return [
-		''     => __( 'Theme Default', 'secretum' ),
+		''     => __( 'Stylesheet Default', 'secretum' ),
 		'mb-0' => __( 'No Margin (mb-0)', 'secretum' ),
 		'mb-1' => __( '4px or .25em Margin (mb-1)', 'secretum' ),
 		'mb-2' => __( '8px or .5em Margin (mb-2)', 'secretum' ),
@@ -85,7 +85,7 @@ function secretum_customizer_margin_bottom() {
  */
 function secretum_customizer_margin_left_right() {
 	return [
-		''        => __( 'Theme Default', 'secretum' ),
+		''        => __( 'Stylesheet Default', 'secretum' ),
 		'mx-0'    => __( 'No Margin (mx-0)', 'secretum' ),
 		'mx-1'    => __( '4px or .25em Margin (mx-1)', 'secretum' ),
 		'mx-2'    => __( '8px or .5em Margin (mx-2)', 'secretum' ),
@@ -107,7 +107,7 @@ function secretum_customizer_margin_left_right() {
  */
 function secretum_customizer_margin_left() {
 	return [
-		''        => __( 'Theme Default', 'secretum' ),
+		''        => __( 'Stylesheet Default', 'secretum' ),
 		'ml-0'    => __( 'No Margin (ml-0)', 'secretum' ),
 		'ml-1'    => __( '4px or .25em Margin (ml-1)', 'secretum' ),
 		'ml-2'    => __( '8px or .5em Margin (ml-2)', 'secretum' ),
@@ -129,7 +129,7 @@ function secretum_customizer_margin_left() {
  */
 function secretum_customizer_margin_right() {
 	return [
-		''        => __( 'Theme Default', 'secretum' ),
+		''        => __( 'Stylesheet Default', 'secretum' ),
 		'mr-0'    => __( 'No Margin (mr-0)', 'secretum' ),
 		'mr-1'    => __( '4px or .25em Margin (mr-1)', 'secretum' ),
 		'mr-2'    => __( '8px or .5em Margin (mr-2)', 'secretum' ),

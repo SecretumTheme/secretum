@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_font_sizes() {
 	return [
-		''         => __( 'Theme Default', 'secretum' ),
+		''         => __( 'Stylesheet Default', 'secretum' ),
 		'text-1'   => __( '1px / 0.0625rem', 'secretum' ),
 		'text-2'   => __( '2px / 0.125rem', 'secretum' ),
 		'text-3'   => __( '3px / 0.1875rem', 'secretum' ),
@@ -73,7 +73,7 @@ function secretum_customizer_font_sizes() {
  */
 function secretum_customizer_display_sizes() {
 	return [
-		''          => __( 'Theme Default', 'secretum' ),
+		''          => __( 'Stylesheet Default', 'secretum' ),
 		'display-1' => __( 'Display Size 1 (largest)', 'secretum' ),
 		'display-2' => __( 'Display Size 2', 'secretum' ),
 		'display-3' => __( 'Display Size 3', 'secretum' ),
@@ -92,7 +92,7 @@ function secretum_customizer_display_sizes() {
  */
 function secretum_customizer_heading_sizes() {
 	return [
-		''   => __( 'Theme Default', 'secretum' ),
+		''   => __( 'Stylesheet Default', 'secretum' ),
 		'h1' => __( 'Heading Size 1 (largest)', 'secretum' ),
 		'h2' => __( 'Heading Size 2', 'secretum' ),
 		'h3' => __( 'Heading Size 3', 'secretum' ),

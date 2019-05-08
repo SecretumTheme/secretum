@@ -46,7 +46,7 @@ $customizer->select(
 	'',
 	$defaults['featured_image_display_location'],
 	[
-		''               => __( 'Theme Default', 'secretum' ),
+		''               => __( 'Stylesheet Default', 'secretum' ),
 		'before_content' => __( 'Before Post Title', 'secretum' ),
 		'before_entry'   => __( 'Before Post Content', 'secretum' ),
 		'after_header'   => __( 'After Theme Header Area', 'secretum' ),

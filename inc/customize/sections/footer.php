@@ -80,7 +80,7 @@ $wp_customize->get_setting( 'secretum[footer_container_border_radius]' )->transp
 $wp_customize->get_setting( 'secretum[footer_container_border_color]' )->transport  = 'postMessage';
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'section'   => 'footer',

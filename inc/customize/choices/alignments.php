@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_margin_alignments() {
 	return [
-		''        => __( 'Theme Default', 'secretum' ),
+		''        => __( 'Stylesheet Default', 'secretum' ),
 		'mx-auto' => __( 'Align Center', 'secretum' ),
 		'mr-auto' => __( 'Align Left', 'secretum' ),
 		'ml-auto' => __( 'Align Right', 'secretum' ),
@@ -40,7 +40,7 @@ function secretum_customizer_margin_alignments() {
  */
 function secretum_customizer_text_alignments() {
 	return [
-		''            => __( 'Theme Default', 'secretum' ),
+		''            => __( 'Stylesheet Default', 'secretum' ),
 		'text-center' => __( 'Align Center', 'secretum' ),
 		'text-left'   => __( 'Align Left', 'secretum' ),
 		'text-right'  => __( 'Align Right', 'secretum' ),

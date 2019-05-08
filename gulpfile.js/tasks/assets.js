@@ -35,9 +35,9 @@ gulp.task('assets', function(done) {
     gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.scss')).pipe(gulp.dest('./inc/assets/vendors/ekko-lightbox'))
     gulp.src([
         './node_modules/ekko-lightbox/dist/ekko-lightbox.js',
-        './node_modules/ekko-lightbox/dist/ekko-lightbox.js.map',
+        //'./node_modules/ekko-lightbox/dist/ekko-lightbox.js.map',
         './node_modules/ekko-lightbox/dist/ekko-lightbox.min.js',
-        './node_modules/ekko-lightbox/dist/ekko-lightbox.min.js.map',
+        //'./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js.map',
     ]).pipe(gulp.dest('./js'))
 
     // Vendor: Bootstrap4
@@ -45,21 +45,21 @@ gulp.task('assets', function(done) {
     gulp.src('./node_modules/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest('./inc/assets/vendors/bootstrap4'))
     gulp.src([
         './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-        './node_modules/bootstrap/dist/js/bootstrap.bundle.js.map',
+        //'./node_modules/bootstrap/dist/js/bootstrap.bundle.js.map',
         './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-        './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map',
+        //'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map',
         './node_modules/bootstrap/dist/js/bootstrap.js',
-        './node_modules/bootstrap/dist/js/bootstrap.js.map',
+        //'./node_modules/bootstrap/dist/js/bootstrap.js.map',
         './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        './node_modules/bootstrap/dist/js/bootstrap.min.js.map',
+        //'./node_modules/bootstrap/dist/js/bootstrap.min.js.map',
     ]).pipe(gulp.dest('./js'))
 
     // Vendor: Popper.js
     gulp.src([
         './node_modules/popper.js/dist/popper.js',
-        './node_modules/popper.js/dist/popper.js.map',
+        //'./node_modules/popper.js/dist/popper.js.map',
         './node_modules/popper.js/dist/popper.min.js',
-        './node_modules/popper.js/dist/popper.min.js.map',
+        //'./node_modules/popper.js/dist/popper.min.js.map',
     ]).pipe(gulp.dest('./js'))
 
     // Vendor: Foundation

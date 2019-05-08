@@ -22,7 +22,7 @@ namespace Secretum;
  */
 function secretum_customizer_font_styles() {
 	return [
-		''                   => __( 'Theme Default', 'secretum' ),
+		''                   => __( 'Stylesheet Default', 'secretum' ),
 		'font-weight-bold'   => __( 'Weight: bold', 'secretum' ),
 		'font-weight-normal' => __( 'Weight: normal', 'secretum' ),
 		'font-weight-light'  => __( 'Weight: light', 'secretum' ),
@@ -41,7 +41,7 @@ function secretum_customizer_font_styles() {
  */
 function secretum_customizer_text_transform() {
 	return [
-		''                => __( 'Theme Default', 'secretum' ),
+		''                => __( 'Stylesheet Default', 'secretum' ),
 		'text-lowercase'  => __( 'Lowercase All Text', 'secretum' ),
 		'text-uppercase'  => __( 'Uppercase All Text', 'secretum' ),
 		'text-capitalize' => __( 'Capitalize First Letter', 'secretum' ),
@@ -59,7 +59,7 @@ function secretum_customizer_text_transform() {
  */
 function secretum_customizer_font_families() {
 	return [
-		''                  => __( 'Theme Default', 'secretum' ),
+		''                  => __( 'Stylesheet Default', 'secretum' ),
 		'arial'             => __( 'Arial, Helvetica, sans-serif', 'secretum' ),
 		'arialblack'        => __( 'Arial Black, Gadget, sans-serif', 'secretum' ),
 		'arialnarrow'       => __( 'Arial Narrow, Nimbus Sans L, sans-serif', 'secretum' ),

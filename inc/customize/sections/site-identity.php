@@ -287,12 +287,12 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'panel'     => 'site_identity',
 		'section'   => 'site_identity_title',
-		'title'     => __( 'Title Textuals', 'secretum' ),
+		'title'     => __( 'Title Typography', 'secretum' ),
 		'alignment' => true,
 	]
 );
@@ -317,12 +317,12 @@ $borders->settings(
 );
 
 
-// Textuals.
+// Typography.
 $textuals->settings(
 	[
 		'panel'     => 'site_identity',
 		'section'   => 'site_identity_desc',
-		'title'     => __( 'Tagline Textuals', 'secretum' ),
+		'title'     => __( 'Tagline Typography', 'secretum' ),
 		'alignment' => true,
 	]
 );
