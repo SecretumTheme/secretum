@@ -51,6 +51,15 @@ $customizer->checkbox(
 // Checkbox.
 $customizer->checkbox(
 	'primary_nav_display',
+	'primary_nav_toggler_status',
+	__( 'Mobile Menu Toggler', 'secretum' ),
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
+	$defaults['primary_nav_toggler_status']
+);
+
+// Checkbox.
+$customizer->checkbox(
+	'primary_nav_display',
 	'primary_nav_search_status',
 	__( 'Search Form Within Navbar', 'secretum' ),
 	__( 'Select to display. Uncheck to hide.', 'secretum' ),

@@ -825,6 +825,7 @@ a.btn-primary, a.btn-secondary, a.btn-success, a.btn-info, a.btn-warning, a.btn-
 .navbar-dark .navbar-text a { color: #fff; }
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus { color: #fff; }
 .navbar-brand { white-space: normal; }
+nav.notoggler li { display: inline !important; text-align: -webkit-match-parent; }
 .navbar ul { border: 0; margin: 0; padding: 0; }
 .navbar .dropdown-menu { border: 0; border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; display: block; margin: 0; min-width: 10rem; padding: 0; }
 .navbar .dropdown-menu ul.dropdown-menu { border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; }
