@@ -83,6 +83,10 @@ class Classes_Wrappers {
 		// Build New Classes String.
 		$classes = $wrappers . $borders . $textuals;
 
+		if ( 'frontpage' === $section && true === empty( $classes ) ) {
+			$this->classes( 'body', $return, $args );
+		}
+
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );
 	}

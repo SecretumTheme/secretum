@@ -35,7 +35,6 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 	$settings_array = wp_parse_args(
 		// Remove Blank Values From Setting Option.
 		array_filter( get_theme_mod( 'secretum', [] ), 'strlen' ),
-		//array_filter( get_option( 'secretum', [] ), 'strlen' ),
 		// Remove Blank Values From Default Settings.
 		array_filter( secretum_customizer_default_settings(), 'strlen' )
 	);
