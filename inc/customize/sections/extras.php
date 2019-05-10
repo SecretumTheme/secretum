@@ -234,7 +234,7 @@ if ( true === secretum_is_woocomerce() ) {
 			'enqueuecss',
 			'enqueue_woocommerce_bookings_status',
 			__( 'Custom WooCommerce Bookings Stylesheet', 'secretum' ),
-		__( 'This is an additional stylesheet that that enhances / changes the look of the booking calendar form.', 'secretum' ),
+			__( 'This is an additional stylesheet that that enhances / changes the look of the booking calendar form.', 'secretum' ),
 			$defaults['enqueue_woocommerce_bookings_status']
 		);
 	}

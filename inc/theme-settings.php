@@ -195,6 +195,7 @@ function secretum_load_default_settings( $settings ) {
 	$settings['primary_nav_cart_link_padding_t']               = 'pt-2';
 	$settings['primary_nav_cart_icon_size']                    = 'text-22';
 	$settings['primary_nav_cart_count_size']                   = 'text-14';
+	$settings['frontpage_heading_wrapper_border_type']         = 'border-0';
 	$settings['featured_image_wrapper_margin_bottom']          = 'mb-4';
 	$settings['entry_wrapper_padding_x']                       = 'px-4';
 	$settings['entry_wrapper_padding_y']                       = 'py-4';

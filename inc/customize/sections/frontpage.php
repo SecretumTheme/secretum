@@ -25,7 +25,7 @@ $customizer->section(
 	'frontpage_display',
 	'frontpage',
 	__( 'Display Settings', 'secretum' ),
-	'A static frontpage must be set to use this feature. Select to display. Uncheck to remove all html markup.'
+	__( 'A static frontpage must be set to use this feature.', 'secretum' )
 );
 
 
@@ -33,9 +33,74 @@ $customizer->section(
 $customizer->checkbox(
 	'frontpage_display',
 	'frontpage_page_title_status',
-	__( 'Page Title', 'secretum' ),
-	'This is the actual <h2>heading title</h2> of the page, oftened titled Front Page.',
+	__( 'Page Title Display', 'secretum' ),
+	__( 'This is the actual <h2>heading title</h2> of the page, often titled Front Page. A static frontpage must be set to use this feature. Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['frontpage_page_title_status']
+);
+
+
+// Checkbox.
+$customizer->checkbox(
+	'frontpage_display',
+	'frontpage_header_status',
+	__( 'Jumbo Heading Display', 'secretum' ),
+	__( 'A large heading HTML/Background Image area below the website header. Select to display. Uncheck to remove all html markup.', 'secretum' ),
+	$defaults['frontpage_header_status']
+);
+
+
+// Wrapper.
+$wrapper->settings(
+	[
+		'section'     => 'frontpage',
+		'title'       => __( 'Frontpage Wrapper', 'secretum' ),
+		'description' => __( 'Overrides "Body > Wrapper" settings for the frontpage only.', 'secretum' ),
+	]
+);
+
+
+// Wrapper Borders.
+$borders->settings(
+	[
+		'section' => 'frontpage_wrapper',
+	]
+);
+
+
+// Container.
+$container->settings(
+	[
+		'section'     => 'frontpage',
+		'title'       => __( 'Frontpage Container', 'secretum' ),
+		'description' => __( 'Overrides (Body > Container) settings for the frontpage only.', 'secretum' ),
+	]
+);
+
+
+// Container Borders.
+$borders->settings(
+	[
+		'section' => 'frontpage_container',
+	]
+);
+
+
+
+// Wrapper.
+$wrapper->settings(
+	[
+		'section'     => 'frontpage_heading',
+		'panel'       => 'frontpage',
+		'title'       => __( 'Jumbo Heading Wrapper', 'secretum' ),
+		'description' => __( 'Feature must be enabled to use. (Frontpage > Display Settings) A large heading HTML/Background Image area below the website header.', 'secretum' ),
+	]
+);
+
+// Wrapper Borders.
+$borders->settings(
+	[
+		'section' => 'frontpage_heading_wrapper',
+	]
 );
 
 
@@ -43,17 +108,8 @@ $customizer->checkbox(
 $customizer->section(
 	'frontpage_heading',
 	'frontpage',
-	__( 'Heading Content', 'secretum' ),
-	__( 'Content container below header/navbar and above the content body area.', 'secretum' )
-);
-
-// Checkbox.
-$customizer->checkbox(
-	'frontpage_heading',
-	'frontpage_header_status',
-	__( 'Frontpage Heading Area', 'secretum' ),
-	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
-	$defaults['frontpage_header_status']
+	__( 'Jumbo Heading Content', 'secretum' ),
+	__( 'A large heading HTML/Background Image area below the website header.', 'secretum' )
 );
 
 
@@ -72,31 +128,15 @@ $customizer->textarea(
 	'frontpage_heading',
 	'frontpage_heading_html',
 	__( 'Frontpage Heading HTML', 'secretum' ),
-	__( 'Full HTML control of the heading area. HTML will not display until a modification is made and published.', 'secretum' ),
-	'<div class="container-fluid py-5" id="container-heading">
-	<div class="row">
-		<div class="col-md">
-			<div class="display-4 text-center text-capitalize text-center font-weight-bold color-whitish">' . get_bloginfo( 'name' ) . '</div>
-			<div class="text-22 text-center text-capitalize text-center color-secondary">' . get_bloginfo( 'description' ) . '</div>
-		</div>
-	</div><!-- .row -->
-
-	<br />
-
-	<div class="row">
-		<div class="col mt-1 text-center">
-			<a href="#" class="btn btn-primary-light">' . __( 'Code is Poetry!', 'secretum' ) . '</a>
-		</div>
-	</div><!-- .row -->
-</div><!-- .container -->',
+	__( 'HTML will not display until a modification is made and published.', 'secretum' ),
+	'<!-- card examples: https://getbootstrap.com/docs/4.0/components/card/ -->
+<div class="card rounded-0 border-0 border-bottom border-line bg-transparent">
+	<img class="card-img" src="../wp-includes/images/blank.gif" alt="Replace Image and Alt Text, Set Height In Style Tag..." style="height: 270px">
+	<div class="card-img-overlay">
+	<h5 class="card-title display-4 text-capitalize text-center font-weight-bold color-whitish">Secretum Theme</h5>
+		<p class="card-text text-22 text-capitalize text-center color-secondary">Just another WordPress site</p>
+		<div class="mt-1 text-center"><a href="#" class="btn btn-primary" role="button">Code is Poetry!</a></div>
+	</div>
+</div>',
 	$defaults['frontpage_heading_html']
-);
-
-
-// Wrapper.
-$wrapper->settings(
-	[
-		'section' => 'frontpage',
-		'title'   => __( 'Heading Wrapper', 'secretum' ),
-	]
 );

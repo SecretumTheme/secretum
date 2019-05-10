@@ -26,7 +26,7 @@ $customizer->section(
 	'entry_display',
 	'entry',
 	__( 'Display Settings', 'secretum' ),
-	'Post/page content entry area. Open any post to view the entry area.'
+	__( 'Post/page content entry area. Open any post to view the entry area.', 'secretum' )
 );
 
 
@@ -35,7 +35,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_status',
 	__( 'Entry Area', 'secretum' ),
-	'Select to display. Uncheck to remove all html markup.',
+	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['entry_status']
 );
 
@@ -45,7 +45,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_published_status',
 	__( 'Published Date', 'secretum' ),
-	'Select to display. Uncheck to hide.',
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_published_status']
 );
 
@@ -81,7 +81,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_author_status',
 	__( 'Author Name', 'secretum' ),
-	'Select to display. Uncheck to hide.',
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_author_status']
 );
 
@@ -105,7 +105,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_catlinks_status',
 	__( 'Category Links', 'secretum' ),
-	'Select to display. Uncheck to hide.',
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_catlinks_status']
 );
 
@@ -115,7 +115,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_tagslinks_status',
 	__( 'Tag Links', 'secretum' ),
-	'Select to display. Uncheck to hide.',
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_tagslinks_status']
 );
 
@@ -125,7 +125,7 @@ $customizer->checkbox(
 	'entry_display',
 	'entry_meta_commentlink_status',
 	__( 'Comment Link', 'secretum' ),
-	'Select to display. Uncheck to hide.',
+	__( 'Select to display. Uncheck to hide.', 'secretum' ),
 	$defaults['entry_meta_commentlink_status']
 );
 

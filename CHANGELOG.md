@@ -1,12 +1,20 @@
 # Changelog
 
+# 1.4.2
+**2019-05-10 - Hotfix & Minor Feature Upgrade**
+
+* Corrected color wheel setting to use theme mod rather than option.
+* Corrected frontpage heading output of shortcodes to not esc_html.
+* Corrected frontpage wrapper/container calls to display on both static and non-static frontpages.
+* Split frontpage customize controls giving jumbotron features unique panels.
+
 # 1.4.1
-**2019-05-10 - Feature Release**
+**2019-05-10 - Minor Feature Upgrade**
 
 * Added color wheels to Customizer to override defined styling classes.
 
 # 1.4.0
-**2019-05-08 - Feature Release**
+**2019-05-08 - Features & Corrections**
 
 * Added do_shortcode() to frontpage heading output.
 * Added customizer setting to disable title on frontpage.
@@ -41,7 +49,7 @@
 * Adjusted new styling calls added in previous update.
 
 # 1.3.0
-**2019-05-06 - Feature Release**
+**2019-05-06 - Feature & Corrections**
 
 * Adjusted Bootstrap SCSS builds to exclude unused features.
 * Created new style enqueues for split stylesheets.
