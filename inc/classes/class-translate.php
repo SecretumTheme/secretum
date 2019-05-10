@@ -66,7 +66,8 @@ class Translate {
 	 */
 	final public function init() {
 		// Get Secretum Option.
-		$this->option = get_option( 'secretum', [] );
+		$this->option = get_theme_mod( 'secretum', [] );
+		//$this->option = get_option( 'secretum', [] );
 
 		// Get Secretum Option.
 		$this->default = $this->defaults();

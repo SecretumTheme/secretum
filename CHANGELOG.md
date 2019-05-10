@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.4.1
+**2019-05-10 - Feature Release**
+
+* Added color wheels to Customizer to override defined styling classes.
+
 # 1.4.0
 **2019-05-08 - Feature Release**
 

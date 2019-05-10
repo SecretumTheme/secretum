@@ -2352,9 +2352,14 @@ article img, article figure { max-width: 100%; height: auto; }
 .screen-reader-text { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; word-wrap: normal !important; }
 .screen-reader-text:focus { background-color: #f7f7f3; border-radius: 3px; -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #101112; display: block; font-size: 14px; font-size: 0.875rem; font-weight: 700; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }
 .alignleft { display: inline; float: left; margin-right: 1.5em; }
+img.alignleft { float: left; }
+img.alignleft::after { display: block; clear: both; content: ""; }
 .alignright { display: inline; float: right; margin-left: 1.5em; }
+img.alignright { float: right; }
+img.alignright::after { display: block; clear: both; content: ""; }
 .aligncenter { margin-left: auto; margin-right: auto; }
 .aligncenter::after { display: block; clear: both; content: ""; }
+img.aligncenter { display: block; margin: auto; }
 p.attachment { dipslay: block; }
 p.attachment img { max-width: 100%; height: auto; }
 p.attachment a, p.attachment a:hover, p.attachment a:focus { -webkit-box-shadow: none; box-shadow: none; background: none; display: inline-block; max-width: 100%; }

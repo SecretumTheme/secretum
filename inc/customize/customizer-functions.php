@@ -25,7 +25,7 @@ namespace Secretum;
 function secretum_customizer_reset( $value = '' ) {
 	if ( false === empty( $value ) && 'RESET' === $value ) {
 		// Delete Settings.
-		delete_option( 'secretum' );
+		remove_theme_mod( 'secretum' );
 	}
 
 	return '';
