@@ -3,7 +3,7 @@
  * Secretum Theme
  *
  * @package    Secretum
- * @subpackage Theme\Functions
+ * @subpackage Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.4.1' );
+define( 'SECRETUM_THEME_VERSION', '1.4.2' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );

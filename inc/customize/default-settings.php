@@ -648,21 +648,42 @@ function secretum_customizer_copyright_nav_settings() {
  */
 function secretum_customizer_frontpage_settings() {
 	return [
-		'frontpage_page_title_status'        => '',
-		'frontpage_header_status'            => '',
-		'frontpage_heading_bg'               => '',
-		'frontpage_heading_html'             => '',
-		'frontpage_map_status'               => '',
-		'frontpage_map_address'              => '',
+		'frontpage_page_title_status'                => '',
+		'frontpage_header_status'                    => '',
+		'frontpage_page_header_status'               => '',
+		'frontpage_page_content_status'              => '',
+		'frontpage_page_footer_status'               => '',
 		// Wrapper.
-		'frontpage_wrapper_background_color' => '',
-		'frontpage_wrapper_padding_x'        => '',
-		'frontpage_wrapper_padding_y'        => '',
-		'frontpage_wrapper_margin_top'       => '',
-		'frontpage_wrapper_margin_bottom'    => '',
-		'frontpage_wrapper_border_type'      => '',
-		'frontpage_wrapper_border_radius'    => '',
-		'frontpage_wrapper_border_color'     => '',
+		'frontpage_wrapper_background_color'         => '',
+		'frontpage_wrapper_padding_x'                => '',
+		'frontpage_wrapper_padding_y'                => '',
+		'frontpage_wrapper_margin_top'               => '',
+		'frontpage_wrapper_margin_bottom'            => '',
+		'frontpage_wrapper_border_type'              => '',
+		'frontpage_wrapper_border_radius'            => '',
+		'frontpage_wrapper_border_color'             => '',
+		// Container.
+		'frontpage_container_type'                   => '',
+		'frontpage_container_background_color'       => '',
+		'frontpage_container_margin_top'             => '',
+		'frontpage_container_margin_bottom'          => '',
+		'frontpage_container_padding_x'              => '',
+		'frontpage_container_padding_y'              => '',
+		'frontpage_container_border_type'            => '',
+		'frontpage_container_border_radius'          => '',
+		'frontpage_container_border_color'           => '',
+		// Frontpage Heading Wrapper.
+		'frontpage_heading_wrapper_background_color' => '',
+		'frontpage_heading_wrapper_padding_x'        => 'px-0',
+		'frontpage_heading_wrapper_padding_y'        => 'py-0',
+		'frontpage_heading_wrapper_margin_top'       => '',
+		'frontpage_heading_wrapper_margin_bottom'    => '',
+		'frontpage_heading_wrapper_border_type'      => '',
+		'frontpage_heading_wrapper_border_radius'    => 'rounded-0',
+		'frontpage_heading_wrapper_border_color'     => '',
+		// Frontpage Content.
+		'frontpage_heading_bg'                       => '',
+		'frontpage_heading_html'                     => '',
 	];
 
 }//end secretum_customizer_frontpage_settings()

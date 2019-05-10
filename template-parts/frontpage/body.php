@@ -14,8 +14,8 @@
 namespace Secretum;
 
 ?>
-<div class="wrapper<?php secretum_wrapper( 'body' ); ?>" id="index-wrapper">
-	<div class="container<?php secretum_container( 'body' ); ?>" id="content" tabindex="-1">
+<div class="wrapper<?php secretum_wrapper( 'frontpage' ); ?>" id="index-wrapper">
+	<div class="container<?php secretum_container( 'frontpage' ); ?>" id="content" tabindex="-1">
 		<div class="row">
 
 		<?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>

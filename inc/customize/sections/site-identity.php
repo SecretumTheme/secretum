@@ -118,7 +118,6 @@ $wp_customize->add_setting(
 		'sanitize_callback' => '\Secretum\secretum_customizer_sanitize_html',
 		'capability'        => 'manage_options',
 		'transport'         => 'postMessage',
-		'type'              => 'option',
 	]
 );
 
@@ -142,7 +141,6 @@ $wp_customize->add_setting(
 		'sanitize_callback' => '\Secretum\secretum_customizer_sanitize_html',
 		'capability'        => 'manage_options',
 		'transport'         => 'postMessage',
-		'type'              => 'option',
 	]
 );
 
@@ -244,7 +242,6 @@ $customizer->number(
 $wp_customize->add_setting(
 	'site_icon',
 	[
-		'type'              => 'option',
 		'capability'        => 'manage_options',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'absint',

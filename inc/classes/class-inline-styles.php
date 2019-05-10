@@ -7,7 +7,7 @@
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-build-css.php
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-inline-styles.php
  * @since      1.4.0
  */
 
@@ -18,7 +18,7 @@ namespace Secretum;
  *
  * @since 1.4.0
  */
-class Build_Css {
+class Inline_Styles {
 
 	/**
 	 * Option Array
@@ -35,8 +35,9 @@ class Build_Css {
 	 * @since 1.4.0
 	 */
 	final public function __construct() {
-		$this->option = get_theme_mod( 'secretum' );
-		//$this->option = get_option( 'secretum' );
+		if ( true === empty( $this->option ) ) {
+			$this->option = get_theme_mod( 'secretum' );
+		}
 
 	}//end __construct()
 
@@ -51,8 +52,8 @@ class Build_Css {
 	 * @return array
 	 */
 	final public function get_setting( $key ) {
-		if ( true !== empty( $this->option[$key] ) ) {
-			return $this->option[$key];
+		if ( true !== empty( $this->option[ $key ] ) ) {
+			return $this->option[ $key ];
 		}
 
 	}//end get_setting()
@@ -66,7 +67,7 @@ class Build_Css {
 	final public function styles() {
 		$css = '';
 
-		if ( null !==  $this->get_setting( 'website_background_color') ) {
+		if ( null !== $this->get_setting( 'website_background_color' ) ) {
 			$css .= $this->website_background_color( $this->get_setting( 'website_background_color' ) );
 		}
 
@@ -86,33 +87,68 @@ class Build_Css {
 			$css .= $this->primary_color( $primary_color, $primary_light_color, $primary_dark_color );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_secondary_color' ) ) {
+		if ( null !== $this->get_setting( 'inline_secondary_color' ) ) {
 			$css .= $this->secondary_color( $this->get_setting( 'inline_secondary_color' ) );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_background_color') ) {
+		if ( null !== $this->get_setting( 'inline_background_color' ) ) {
 			$css .= $this->background_color( $this->get_setting( 'inline_background_color' ) );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_text_color') ) {
+		if ( null !== $this->get_setting( 'inline_text_color' ) ) {
 			$css .= $this->text_color( $this->get_setting( 'inline_text_color' ) );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_text_alt_color' ) ) {
+		if ( null !== $this->get_setting( 'inline_text_alt_color' ) ) {
 			$css .= $this->text_alt_color( $this->get_setting( 'inline_text_alt_color' ) );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_link_color' ) ) {
+		if ( null !== $this->get_setting( 'inline_link_color' ) ) {
 			$css .= $this->link_color( $this->get_setting( 'inline_link_color' ) );
 		}
 
-		if ( null !==  $this->get_setting( 'inline_link_hover_color' ) ) {
+		if ( null !== $this->get_setting( 'inline_link_hover_color' ) ) {
 			$css .= $this->link_hover_color( $this->get_setting( 'inline_link_hover_color' ) );
+		}
+
+		if ( null !== $this->get_setting( 'frontpage_heading_bg' ) ) {
+			$css .= $this->background_image( $this->get_setting( 'frontpage_heading_bg' ) );
 		}
 
 		return trim( $css );
 
 	}//end styles()
+
+
+	/**
+	 * Website Body Background Color CSS
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param int $image_id Media ID.
+	 *
+	 * @return string CSS.
+	 */
+	final private function background_image( $image_id = '' ) {
+		// If Background ID Set.
+		if ( true !== empty( $image_id ) && is_numeric( $image_id ) ) {
+			// Get Attachment Array.
+			$image_src_array = wp_get_attachment_image_src( $image_id, 'full', false );
+
+			// Set Img SRC Url.
+			if ( isset( $image_src_array ) && isset( $image_src_array[0] ) ) {
+				$image_src = esc_url( $image_src_array[0] );
+			}
+		}
+
+		if ( false === isset( $image_src ) ) {
+			return;
+		}
+
+		$css  = '';
+		$css .= ".frontpage-heading { background-image:url( {$image_src} ); background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;width:100%; }\n";
+		return $css;
+	}//end background_image()
 
 
 	/**
@@ -133,7 +169,7 @@ class Build_Css {
 		$primary_light = $primary_light_color;
 		$primary_dark  = $primary_dark_color;
 
-		$css = '';
+		$css  = '';
 		$css .= ".btn-primary { {$bg_color} -webkit-gradient(linear, left top, left bottom, from({$primary_light}), to({$primary_color})) repeat-x; {$bg_color} -webkit-linear-gradient(top, {$primary_light}, {$primary_color}) repeat-x; {$bg_color} linear-gradient(180deg, {$primary_light}, {$primary_color}) repeat-x; {$border_color}; }\n";
 		$css .= ".btn-primary:hover { background: {$primary_light} -webkit-gradient(linear, left top, left bottom, from({$primary_color}), to({$primary_light})) repeat-x; background: {$primary_light} -webkit-linear-gradient(top, {$primary_color}, {$primary_light}) repeat-x; background: {$primary_light} linear-gradient(180deg, {$primary_color}, {$primary_light}) repeat-x; border-color: {$primary_dark}; }\n";
 		$css .= ".btn-outline-primary { {$text_color}; {$border_color}; }\n";
@@ -162,11 +198,11 @@ class Build_Css {
 	 * @return string CSS.
 	 */
 	final private function secondary_color( $secondary_color ) {
-		$text_color    = 'color: ' . $secondary_color;
-		$bg_color      = 'background-color: ' . $secondary_color;
-		$border_color  = 'border-color: ' . $secondary_color;
+		$text_color   = 'color: ' . $secondary_color;
+		$bg_color     = 'background-color: ' . $secondary_color;
+		$border_color = 'border-color: ' . $secondary_color;
 
-		$css = '';
+		$css  = '';
 		$css .= "caption, .blockquote-footer, .figure-caption, .form-check-input:disabled ~ .form-check-label, .btn-outline-secondary.disabled, .btn-outline-secondary:disabled, .btn-link:disabled, .btn-link.disabled, .dropdown-item.disabled, .dropdown-item:disabled, .dropdown-header, .nav-link.disabled, .nav-tabs .nav-link.disabled, .breadcrumb-item + .breadcrumb-item::before, .breadcrumb-item.active, .page-item.disabled .page-link, .list-group-item.disabled, .list-group-item:disabled, .toast-header, .content-area .entry-header h1.page-title, .content-area .entry-header h1.entry-title, .content-area .entry-header h2.entry-title, .content-area .entry-header h3.entry-title, h3.entry-title a:link, .widget h2.widget-title, .widget h3.widget-title, .widget h4.widget-title, .widget h2.widget-title a:link, .widget h3.widget-title a:link, .widget h4.widget-title a:link, .widget.widget_rss .rss-date, .widget.widget_rss li cite, .footer .widget .tagcloud a:link, .footer .widget .tagcloud a:active, .footer .widget .tagcloud a:visited { {$text_color}; }\n";
 		$css .= ".form-control::-webkit-input-placeholder, .form-control::-moz-placeholder, .form-control:-ms-input-placeholder, .form-control::-ms-input-placeholder, .form-control::placeholder { {$text_color}; opacity: 1; }\n";
 		$css .= ".btn-secondary, .btn-secondary.disabled, .btn-secondary:disabled, .btn-outline-secondary, .btn-outline-secondary:hover, .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .show > .btn-outline-secondary.dropdown-toggle, a.comment-reply-link { {$bg_color}; {$border_color}; }\n";
@@ -207,7 +243,7 @@ class Build_Css {
 	 * @return string CSS.
 	 */
 	final private function background_color( $background_color ) {
-		$css = ".body-bg, .body-bg-hover:hover, .body-bg-hover:focus { background-color: {$background_color}; !important; }\n";
+		$css  = ".body-bg, .body-bg-hover:hover, .body-bg-hover:focus { background-color: {$background_color}; !important; }\n";
 		$css .= ".dropdown-menu, .modal-content, .popover, .carousel-indicators li { background-color: {$background_color}; }\n";
 
 		return $css;

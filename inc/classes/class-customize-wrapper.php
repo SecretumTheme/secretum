@@ -72,9 +72,10 @@ class Customize_Wrapper {
 		$args = wp_parse_args(
 			$args,
 			[
-				'section' => '',
-				'panel'   => '',
-				'title'   => '',
+				'section'     => '',
+				'panel'       => '',
+				'title'       => '',
+				'description' => '',
 			]
 		);
 
@@ -83,12 +84,18 @@ class Customize_Wrapper {
 			wp_die( esc_html__( 'Section name is required in Wrapper $args array.', 'secretum' ) );
 		}
 
+		// Section Description.
+		$description = __( 'Wraps around all other containers, elements, and features related to this section.', 'secretum' );
+		if ( true !== empty( $args['description'] ) ) {
+			$description = $args['description'] . ' ' . $description;
+		}
+
 		// Section.
 		$this->customizer->section(
 			$args['section'] . '_wrapper',
 			$this->panel( $args['section'], $args['panel'] ),
 			$this->title( $args['title'] ),
-			__( 'Wraps around all other containers, elements, and features related to this section.', 'secretum' )
+			$description
 		);
 
 		// Select.

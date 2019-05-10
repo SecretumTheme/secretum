@@ -83,6 +83,10 @@ class Classes_Containers {
 		// Build New Classes String.
 		$classes = $containers . $borders . $textuals;
 
+		if ( 'frontpage' === $section && true === empty( $classes ) ) {
+			$this->classes( 'body', $return, $args );
+		}
+
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );
 	}

@@ -73,12 +73,19 @@ class Customize_Container {
 		$args = wp_parse_args(
 			$args,
 			[
-				'section' => '',
-				'panel'   => '',
-				'title'   => '',
-				'type'    => true,
+				'section'     => '',
+				'panel'       => '',
+				'title'       => '',
+				'description' => '',
+				'type'        => true,
 			]
 		);
+
+		// Section Description.
+		$description = __( 'A container that holds other related elements, features, content, etc. for this section. (Wrapper > Container > Other Stuff)', 'secretum' );
+		if ( true !== empty( $args['description'] ) ) {
+			$description = $args['description'] . ' ' . $description;
+		}
 
 		// Required.
 		if ( empty( $args['section'] ) ) {
@@ -90,7 +97,7 @@ class Customize_Container {
 			$args['section'] . '_container',
 			$this->panels( $args['section'], $args['panel'] ),
 			$this->title( $args['title'] ),
-			__( 'A container that holds other related elements, features, content, etc. (Wrapper > Container > Other Stuff)', 'secretum' )
+			$description
 		);
 
 		if ( true === $args['type'] ) {
