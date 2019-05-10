@@ -27,13 +27,6 @@ namespace Secretum;
  */
 class Classes_Nav_Cart_Textuals {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -84,19 +77,10 @@ class Classes_Nav_Cart_Textuals {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . $type . '_nav_cart_textuals';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Nav Cart Textuals Classes.
-			$classes  = '';
-			$classes .= secretum_mod( $section . '_cart' . $type . '_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_cart' . $type . '_size', 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Nav Cart Textuals Classes.
+		$classes  = '';
+		$classes .= secretum_mod( $section . '_cart' . $type . '_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_cart' . $type . '_size', 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

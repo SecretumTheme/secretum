@@ -28,13 +28,6 @@ namespace Secretum;
  */
 class Classes_Textuals {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -68,25 +61,16 @@ class Classes_Textuals {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_textual';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Textuals Classes.
-			$classes  = '';
-			$classes .= secretum_mod( $section . '_textual_alignment', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_font_family', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_font_size', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_font_style', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_text_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_link_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_link_hover_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_textual_text_transform', 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Textuals Classes.
+		$classes  = '';
+		$classes .= secretum_mod( $section . '_textual_alignment', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_font_family', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_font_size', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_font_style', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_text_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_link_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_link_hover_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_textual_text_transform', 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

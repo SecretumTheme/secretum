@@ -28,13 +28,6 @@ namespace Secretum;
  */
 class Classes_Nav_Items {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -68,26 +61,17 @@ class Classes_Nav_Items {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_nav_items';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Nav Items Classes.
-			$classes  = '';
-			$classes .= secretum_mod( $section . '_items_background_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_background_hover_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_margin_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_margin_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_padding_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_padding_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_border_type', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_border_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_items_border_radius', 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Nav Items Classes.
+		$classes  = '';
+		$classes .= secretum_mod( $section . '_items_background_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_background_hover_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_margin_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_margin_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_padding_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_padding_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_border_type', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_border_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_items_border_radius', 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

@@ -28,13 +28,6 @@ namespace Secretum;
  */
 class Classes_Theme {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -90,23 +83,16 @@ class Classes_Theme {
 			$setting = 'secretum_theme_text_link';
 		}
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
+		$classes = '';
 
-		// No Cached Classes.
-		if ( true === empty( $classes ) ) {
-			// Build Theme Classes.
-			$classes .= $this->build_background_colors( $args['bg_colors'] );
+		// Build Theme Classes.
+		$classes .= $this->build_background_colors( $args['bg_colors'] );
 
-			// Build Textual Classes.
-			$classes .= $this->build_text_link( $args['textuals'] );
+		// Build Textual Classes.
+		$classes .= $this->build_text_link( $args['textuals'] );
 
-			// Build Text/Link Classes.
-			$classes .= $this->build_textuals( $args['text_link'] );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Text/Link Classes.
+		$classes .= $this->build_textuals( $args['text_link'] );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

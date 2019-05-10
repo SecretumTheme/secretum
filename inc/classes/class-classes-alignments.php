@@ -28,13 +28,6 @@ namespace Secretum;
  */
 class Classes_Alignments {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -100,17 +93,8 @@ class Classes_Alignments {
 			$setting = $section . $text . '_text_alignment';
 		}
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( 'secretum_' . $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Alignment Classes.
-			$classes = secretum_mod( $setting, 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( 'secretum_' . $setting, $classes );
-		}
+		// Build Alignment Classes.
+		$classes = secretum_mod( $setting, 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( 'secretum_' . $setting, $return, $classes );

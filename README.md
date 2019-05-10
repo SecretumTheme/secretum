@@ -150,9 +150,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 1.4.0
-* Released: 2019-05-08
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0140
+### 1.4.1
+* Released: 2019-05-10
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0141
 
 
 ## Licenses

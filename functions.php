@@ -35,6 +35,11 @@ define( 'SECRETUM_THEME_NAME', 'secretum' );
 // PHP & WordPress Version Compare Checks.
 require_once SECRETUM_INC . '/versions.php';
 
+// Update Old Setting To New If It Exists.
+if ( get_option( 'secretum' ) ) {
+	set_theme_mod( 'secretum', get_option( 'secretum' ) );
+	delete_option( 'secretum' );
+}
 
 /**
  * Register Secretum Classes

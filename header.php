@@ -26,7 +26,6 @@ namespace Secretum;
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 
 <div class="hfeed site<?php secretum_theme_textual(); ?><?php secretum_theme_text_link(); ?>" id="page">
