@@ -142,7 +142,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'Secretum\secretum_customizer_sanitize_checkbox',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => sanitize_key( $default ),
 			]
 		);
@@ -178,7 +178,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'absint',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => false,
 			]
 		);
@@ -222,7 +222,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'Secretum\secretum_customizer_sanitize_int',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => (int) $default,
 			]
 		);
@@ -259,7 +259,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => sanitize_key( $default ),
 			]
 		);
@@ -296,7 +296,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => sanitize_key( $default ),
 			]
 		);
@@ -331,7 +331,7 @@ class Customize_Customizer {
 			'secretum[' . sanitize_key( $setting_name ) . ']',
 			[
 				'sanitize_callback' => 'sanitize_text_field',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'transport'         => 'refresh',
 				'default'           => wp_kses_post( $default ),
 			]
@@ -367,7 +367,7 @@ class Customize_Customizer {
 			[
 				'sanitize_callback' => 'Secretum\secretum_customizer_sanitize_html',
 				'transport'         => 'refresh',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'default'           => wp_kses_post( $default ),
 			]
 		);
@@ -402,7 +402,7 @@ class Customize_Customizer {
 				'sanitize_js_callback' => 'Secretum\secretum_customizer_decode_script',
 				'sanitize_callback'    => 'Secretum\secretum_customizer_sanitize_script',
 				'transport'            => 'refresh',
-				'type'                 => 'option',
+				//'type'                 => 'option',
 				'default'              => '',
 			]
 		);
@@ -430,7 +430,7 @@ class Customize_Customizer {
 			'secretum[reset]',
 			[
 				'sanitize_callback' => 'Secretum\secretum_customizer_reset',
-				'type'              => 'option',
+				//'type'              => 'option',
 				'transport'         => 'refresh',
 			]
 		);

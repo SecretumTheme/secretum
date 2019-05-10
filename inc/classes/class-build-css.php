@@ -35,7 +35,8 @@ class Build_Css {
 	 * @since 1.4.0
 	 */
 	final public function __construct() {
-		$this->option = get_option( 'secretum' );
+		$this->option = get_theme_mod( 'secretum' );
+		//$this->option = get_option( 'secretum' );
 
 	}//end __construct()
 
