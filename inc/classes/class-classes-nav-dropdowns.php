@@ -27,13 +27,6 @@ namespace Secretum;
  */
 class Classes_Nav_Dropdowns {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -67,26 +60,17 @@ class Classes_Nav_Dropdowns {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_dropdown';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Nav Dropdowns Classes.
-			$classes  = '';
-			$classes .= secretum_mod( $section . '_dropdown_background_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_background_hover_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_margin_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_margin_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_padding_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_padding_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_border_type', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_border_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_dropdown_border_radius', 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Nav Dropdowns Classes.
+		$classes  = '';
+		$classes .= secretum_mod( $section . '_dropdown_background_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_background_hover_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_margin_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_margin_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_padding_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_padding_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_border_type', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_border_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_dropdown_border_radius', 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

@@ -113,6 +113,9 @@ function secretum_enqueue_scripts() {
 		);
 	}
 
+	$secretum_inline_css = new \Secretum\Build_CSS();
+	wp_add_inline_style( 'secretum', $secretum_inline_css->styles() );
+
 	// Foundation Icons.
 	wp_enqueue_style(
 		'foundation',

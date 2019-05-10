@@ -28,13 +28,6 @@ namespace Secretum;
  */
 class Classes_Wrappers {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -78,26 +71,17 @@ class Classes_Wrappers {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_wrapper';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
+		// Build Wrapper Classes.
+		$wrappers = $this->build_wrappers( $section );
 
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Wrapper Classes.
-			$wrappers = $this->build_wrappers( $section );
+		// Build Border Classes.
+		$borders = $this->build_borders( $section, $args['borders'] );
 
-			// Build Border Classes.
-			$borders = $this->build_borders( $section, $args['borders'] );
+		// Build Textual Classes.
+		$textuals = $this->build_textuals( $section, $args['textuals'] );
 
-			// Build Textual Classes.
-			$textuals = $this->build_textuals( $section, $args['textuals'] );
-
-			// Build New Classes String.
-			$classes = $wrappers . $borders . $textuals;
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build New Classes String.
+		$classes = $wrappers . $borders . $textuals;
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

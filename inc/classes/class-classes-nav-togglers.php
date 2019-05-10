@@ -27,13 +27,6 @@ namespace Secretum;
  */
 class Classes_Nav_Togglers {
 	/**
-	 * Classes Transient.
-	 *
-	 * @since 1.0.0
-	 */
-	use Trait_Transient;
-
-	/**
 	 * Echo or Return Results.
 	 *
 	 * @since 1.0.0
@@ -67,28 +60,19 @@ class Classes_Nav_Togglers {
 		// Build Setting Name.
 		$setting = 'secretum_' . $section . '_toggler';
 
-		// Get Classes From Cache If Set.
-		$classes = $this->get_transient( $setting );
-
-		// No Classes Set, Build Fresh Classes String.
-		if ( true === empty( $classes ) ) {
-			// Build Nav Togglers Classes.
-			$classes  = '';
-			$classes .= secretum_mod( $section . '_toggler_background_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_margin_top', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_margin_bottom', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_padding_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_padding_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_wrapper_border_type', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_border_color', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_border_radius', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_margin_x', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_margin_y', 'attr', true );
-			$classes .= secretum_mod( $section . '_toggler_alignment', 'attr', true );
-
-			// Set Classes Cache.
-			$this->set_transient( $setting, $classes );
-		}
+		// Build Nav Togglers Classes.
+		$classes  = '';
+		$classes .= secretum_mod( $section . '_toggler_background_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_margin_top', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_margin_bottom', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_padding_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_padding_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_wrapper_border_type', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_border_color', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_border_radius', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_margin_x', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_margin_y', 'attr', true );
+		$classes .= secretum_mod( $section . '_toggler_alignment', 'attr', true );
 
 		// Echo or Return Classes.
 		return $this->echo_return( $setting, $return, $classes );

@@ -8,10 +8,20 @@
     margin-right: 1.5em;
 }
 
+img.alignleft {
+    float: left;
+    @include clearfix();
+}
+
 .alignright {
     display: inline;
     float: right;
     margin-left: 1.5em;
+}
+
+img.alignright {
+    float: right;
+    @include clearfix();
 }
 
 .aligncenter {
@@ -22,4 +32,9 @@
 		clear: both;
 		content: "";
 	}
+}
+
+img.aligncenter {
+    display: block;
+    margin: auto;
 }
