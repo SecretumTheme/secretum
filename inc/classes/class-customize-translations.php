@@ -98,7 +98,6 @@ class Customize_Translations {
 				[
 					'default'           => esc_html( $items['default'] ),
 					'sanitize_callback' => [ $this, 'sanitize' ],
-					'type'              => 'option',
 				]
 			);
 

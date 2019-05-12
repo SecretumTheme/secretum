@@ -20,7 +20,6 @@ namespace Secretum;
  * @example Classes_Theme::instance()->classes( 'return', [ 'bg' => true, 'textuals' => true, 'fonts' => true ] );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *

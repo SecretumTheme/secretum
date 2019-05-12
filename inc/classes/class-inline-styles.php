@@ -19,14 +19,13 @@ namespace Secretum;
  * @since 1.4.0
  */
 class Inline_Styles {
-
 	/**
-	 * Option Array
+	 * Theme Mod Settings
 	 *
 	 * @since 1.4.0
-	 * @var array
+	 * @var object
 	 */
-	private $option = [];
+	private $theme_mod = [];
 
 
 	/**
@@ -35,9 +34,8 @@ class Inline_Styles {
 	 * @since 1.4.0
 	 */
 	final public function __construct() {
-		if ( true === empty( $this->option ) ) {
-			$this->option = get_theme_mod( 'secretum' );
-		}
+		$theme_mod = new \Secretum\Theme_Mod();
+		$this->theme_mod = $theme_mod->settings();
 
 	}//end __construct()
 
@@ -52,8 +50,8 @@ class Inline_Styles {
 	 * @return array
 	 */
 	final public function get_setting( $key ) {
-		if ( true !== empty( $this->option[ $key ] ) ) {
-			return $this->option[ $key ];
+		if ( true !== empty( $this->theme_mod[ $key ] ) ) {
+			return $this->theme_mod[ $key ];
 		}
 
 	}//end get_setting()

@@ -36,6 +36,26 @@ function secretum_admin_notice_php_support() {
 }//end secretum_admin_notice_php_support()
 
 
+/**
+ * Force All Previous Versions Use Theme Mod
+ *
+ * @since 1.5.0
+ */
+function secretum_version_update() {
+	if ( true === get_theme_mod( 'secretum' ) ) {
+		return;
+	}
+
+	if ( true === get_option( 'secretum' ) ) {
+		set_theme_mod( 'secretum', get_option( 'secretum' ) );
+		delete_option( 'secretum' );
+	}
+
+}//end secretum_version_update()
+
+add_action( 'admin_init', 'Secretum\secretum_version_update' );
+
+
 // PHP Version Check.
 if ( true === version_compare( PHP_VERSION, '5.6', '<' ) ) {
 	add_filter( 'template_include', '__return_null', 99 );
