@@ -3,7 +3,7 @@ Contributors: SecretumTheme
 Requires at least: WordPress 4.8
 Tested up to: 5.2
 Requires PHP: 5.6
-Version: 1.4.2
+Version: 1.5.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ Secretum is a highly customizable fluid-responsive cross-device multi-purpose Wo
 
 == Description ==
 
-Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users. Create beautifully unique websites with the 400+ individual customizer settings – all without injecting extra CSS into the <head> of your website. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Secretum - Build Faster, Better & Smarter!
+Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users. Create beautifully unique websites with the 400+ individual customizer settings. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Secretum - Build Faster, Better & Smarter!
 
 
 == Installation ==
@@ -81,9 +81,9 @@ Return to the Pages admin and customize the Front Page page as desired.
 
 == Changelog ==
 
-= 1.4.2 =
-* Released: 2019-05-10
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0142
+= 1.5.0 =
+* Released: 2019-05-12
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0150
 
 
 == Licenses ==

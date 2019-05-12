@@ -18,6 +18,7 @@ composer.phar
 CONTRIBUTING.md
 TODO.md
 stage.sh
+child.sh
 
 node_modules/*
 inc/assets/vendors

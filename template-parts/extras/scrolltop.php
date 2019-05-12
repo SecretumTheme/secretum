@@ -20,7 +20,7 @@ if ( false === secretum_mod( 'scrolltop_status' ) ) {
 ?>
 
 <div class="scrolltop">
-	<div class="scroll<?php secretum_container( 'scrolltop', 'echo', [ 'textuals' => true ] ); ?><?php echo esc_attr( secretum_mod( 'scrolltop_container_background_hover_color', 'raw', true ) ); ?>">
+	<div class="scroll<?php secretum_container( 'scrolltop', 'echo', [ 'textuals' => true ] ); ?><?php echo esc_attr( secretum_mod( 'scrolltop_container_background_hover_color', 'raw', true ) ); ?>" title="<?php secretum_text( 'return_to_top_title', true ); ?>">
 		<i class="scroll-icon fi-arrow-up" aria-hidden="true"></i>
 	</div>
 </div>
