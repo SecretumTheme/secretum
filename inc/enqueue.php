@@ -97,7 +97,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_mod( 'theme_color_palette' ) ) {
 		wp_enqueue_style(
 			'secretum',
-			SECRETUM_STYLE_URL . '/css/themes/' . secretum_mod( 'theme_color_palette', 'attr', false ) . '/theme.min.css',
+			SECRETUM_THEME_URL . '/css/themes/' . secretum_mod( 'theme_color_palette', 'attr', false ) . '/theme.min.css',
 			[],
 			SECRETUM_THEME_VERSION,
 			'all'
@@ -106,7 +106,7 @@ function secretum_enqueue_scripts() {
 		// Default Style.
 		wp_enqueue_style(
 			'secretum',
-			SECRETUM_STYLE_URL . '/css/theme.min.css',
+			SECRETUM_THEME_URL . '/css/theme.min.css',
 			[],
 			SECRETUM_THEME_VERSION,
 			'all'
@@ -120,7 +120,7 @@ function secretum_enqueue_scripts() {
 	// Foundation Icons.
 	wp_enqueue_style(
 		'foundation',
-		SECRETUM_STYLE_URL . '/css/foundation-icons.min.css',
+		SECRETUM_THEME_URL . '/css/foundation-icons.min.css',
 		[],
 		'3.0',
 		'all'
@@ -130,7 +130,7 @@ function secretum_enqueue_scripts() {
 	if ( false !== secretum_mod( 'enqueue_primary_javascript_status' ) ) {
 		wp_enqueue_script(
 			'secretum',
-			SECRETUM_STYLE_URL . '/js/theme.min.js',
+			SECRETUM_THEME_URL . '/js/theme.min.js',
 			[ 'jquery' ],
 			SECRETUM_THEME_VERSION,
 			true
@@ -141,7 +141,7 @@ function secretum_enqueue_scripts() {
 		if ( true === secretum_mod( 'enqueue_bootstrap_bundle_js_status' ) ) {
 			wp_enqueue_script(
 				'secretum-bootstrap-bundle',
-				SECRETUM_STYLE_URL . '/js/bootstrap.bundle.min.js',
+				SECRETUM_THEME_URL . '/js/bootstrap.bundle.min.js',
 				[ 'jquery' ],
 				'4.2.1',
 				true
@@ -152,7 +152,7 @@ function secretum_enqueue_scripts() {
 		if ( true === secretum_mod( 'enqueue_secretum_javascript_status' ) ) {
 			wp_enqueue_script(
 				'secretum',
-				SECRETUM_STYLE_URL . '/js/secretum.min.js',
+				SECRETUM_THEME_URL . '/js/secretum.min.js',
 				[ 'jquery' ],
 				SECRETUM_THEME_VERSION,
 				true
@@ -164,7 +164,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_mod( 'enqueue_ekko_lightbox_status' ) && ( false === secretum_mod( 'enqueue_primary_javascript_status' ) || true === secretum_mod( 'enqueue_bootstrap_bundle_javascript_status' ) ) ) {
 		wp_enqueue_style(
 			'secretum-ekko-lightbox',
-			SECRETUM_STYLE_URL . '/css/ekko-lightbox.min.css',
+			SECRETUM_THEME_URL . '/css/ekko-lightbox.min.css',
 			[],
 			'5.3.0',
 			'all'
@@ -172,7 +172,7 @@ function secretum_enqueue_scripts() {
 
 		wp_enqueue_script(
 			'secretum-ekko-lightbox',
-			SECRETUM_STYLE_URL . '/js/ekko-lightbox.min.js',
+			SECRETUM_THEME_URL . '/js/ekko-lightbox.min.js',
 			[ 'jquery' ],
 			'5.3.0',
 			true
@@ -183,7 +183,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_is_woocomerce() && false !== secretum_mod( 'enqueue_woocommerce_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce',
-			SECRETUM_STYLE_URL . '/css/woocommerce.min.css',
+			SECRETUM_THEME_URL . '/css/woocommerce.min.css',
 			[],
 			SECRETUM_THEME_VERSION,
 			'all'
@@ -194,7 +194,7 @@ function secretum_enqueue_scripts() {
 	if ( true === secretum_is_woobookings() && false !== secretum_mod( 'enqueue_woocommerce_bookings_status' ) ) {
 		wp_enqueue_style(
 			'secretum-woocommerce-bookings',
-			SECRETUM_STYLE_URL . '/css/woocommerce-bookings.min.css',
+			SECRETUM_THEME_URL . '/css/woocommerce-bookings.min.css',
 			[],
 			SECRETUM_THEME_VERSION,
 			'all'
@@ -212,7 +212,7 @@ function secretum_enqueue_scripts() {
 
 		wp_enqueue_style(
 			'secretum-contact-form-7',
-			SECRETUM_STYLE_URL . '/css/contact-form-7.min.css',
+			SECRETUM_THEME_URL . '/css/contact-form-7.min.css',
 			[],
 			SECRETUM_THEME_VERSION,
 			'all'

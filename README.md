@@ -3,16 +3,16 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
 * **Tested up to:** 5.2
-* **Version:** 1.4.2
+* **Version:** 1.5.0
 * **License:** GPLv2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.0.23html
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, sticky-post, full-width-template, threaded-comments, theme-options, blog, e-commerce, translation-ready
 
 Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users.
 
 ## Description
 
-Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users. Create beautifully unique websites with the 400+ individual customizer settings – all without injecting extra CSS into the <head> of your website. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Secretum - Build Faster, Better & Smarter!
+Secretum is a highly customizable fluid-responsive cross-device multi-purpose WordPress theme created for both beginner and advanced WordPress users. Create beautifully unique websites with the 400+ individual customizer settings. The most novice of user can setup a Secretum website in minutes, while advanced users can rapid deploy multiple websites with different settings for every Website with ease. Use a child theme if you need a completely unique looking website design, otherwise a child theme is never needed; switch between layouts and color pallets directly within the Customizer. Secretum - Build Faster, Better & Smarter!
 
 
 ## For Support, Bugs & Feature Requests
@@ -104,8 +104,8 @@ Return to the Pages admin and customize the Front Page page as desired.
 		* Customize based on WordPress theming standards
 		* Customize/deploy default Customizer settings with custom filter
 * WordPress Customizer Features
-	* Currently over 350 unique settings and growing
-	* No CSS rendering in document headers for most features
+	* Currently over 400 unique settings and growing
+	* No CSS rendering in document head for most customizer features
 	* Enable / disable all major theme areas (header, footer, sidebars, post author, etc)
 	* Adjust all front-end Theme/WordPress text (Translations via Customizer)
 	* Adjust the color, font, spacing of most theme elements/features
@@ -150,9 +150,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 1.4.2
-* Released: 2019-05-10
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0142
+### 1.5.0
+* Released: 2019-05-12
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0150
 
 
 ## Licenses

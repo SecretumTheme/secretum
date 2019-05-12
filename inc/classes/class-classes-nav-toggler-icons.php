@@ -19,7 +19,6 @@ namespace Secretum;
  * @example Classes_Nav_Toggler_Icons::instance()->classes( $section, $return );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *

@@ -674,12 +674,12 @@ function secretum_customizer_frontpage_settings() {
 		'frontpage_container_border_color'           => '',
 		// Frontpage Heading Wrapper.
 		'frontpage_heading_wrapper_background_color' => '',
-		'frontpage_heading_wrapper_padding_x'        => 'px-0',
-		'frontpage_heading_wrapper_padding_y'        => 'py-0',
+		'frontpage_heading_wrapper_padding_x'        => '',
+		'frontpage_heading_wrapper_padding_y'        => '',
 		'frontpage_heading_wrapper_margin_top'       => '',
 		'frontpage_heading_wrapper_margin_bottom'    => '',
 		'frontpage_heading_wrapper_border_type'      => '',
-		'frontpage_heading_wrapper_border_radius'    => 'rounded-0',
+		'frontpage_heading_wrapper_border_radius'    => '',
 		'frontpage_heading_wrapper_border_color'     => '',
 		// Frontpage Content.
 		'frontpage_heading_bg'                       => '',

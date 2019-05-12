@@ -65,8 +65,8 @@ class Translate {
 	 * @since 1.0.0
 	 */
 	final public function init() {
-		// Get Secretum Option.
-		$this->option = get_theme_mod( 'secretum', [] );
+		$theme_mod = new \Secretum\Theme_Mod();
+		$this->theme_mod = $theme_mod->settings();
 
 		// Get Secretum Option.
 		$this->default = $this->defaults();
@@ -86,9 +86,9 @@ class Translate {
 	 */
 	final public function get( $key, $echo = false ) {
 		// Option Set.
-		if ( true === isset( $this->option[ $key ] ) ) {
+		if ( true === isset( $this->theme_mod[ $key ] ) ) {
 			// Get String From DB.
-			$string = filter_var( html_entity_decode( $this->option[ $key ] ), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
+			$string = filter_var( html_entity_decode( $this->theme_mod[ $key ] ), FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH );
 		} else {
 			// Default To Defaults.
 			$defaults = $this->defaults();

@@ -1,5 +1,11 @@
 # Changelog
 
+# 1.5.0
+**2019-05-12 - Feature Change**
+
+* Modified theme mod settings to use class-theme-mod.php grouping defaults & mods together.
+* Added missing title lable for scroll to top icon.
+
 # 1.4.2
 **2019-05-10 - Hotfix & Minor Feature Upgrade**
 

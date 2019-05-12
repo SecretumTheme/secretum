@@ -20,7 +20,6 @@ namespace Secretum;
  * @example Classes_Alignments::instance()->classes( 'header_top', 'return', [ 'margin' => true, 'text' => true || 'text' => 'sub-section' ] );
  *
  * @see inc/template-classes.php
- * @see classes/class-trait-transient.php
  * @see classes/class-trait-echo-return.php
  * @see inc/secretum-mod.php
  *

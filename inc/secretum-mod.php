@@ -31,16 +31,18 @@ namespace Secretum;
  * @return bool/string Sanitized Class Name
  */
 function secretum_mod( $setting_name, $escape = '', $space = '' ) {
-	// Build Settings Array.
-	$settings_array = wp_parse_args(
-		// Remove Blank Values From Setting Option.
-		array_filter( get_theme_mod( 'secretum', [] ), 'strlen' ),
-		// Remove Blank Values From Default Settings.
-		array_filter( secretum_customizer_default_settings(), 'strlen' )
-	);
+	$theme_mod_class   = new \Secretum\Theme_Mod();
+	$theme_mod_setting = $theme_mod_class->settings();
 
-	// Get Theme Mod.
-	$theme_mod = isset( $settings_array[ $setting_name ] ) ? $settings_array[ $setting_name ] : '';
+	$theme_mod = '';
+	if ( isset( $theme_mod_setting[ $setting_name ] ) ) {
+		$theme_mod = $theme_mod_setting[ $setting_name ];
+	}
+
+	$spacer = '';
+	if ( true !== empty( $space ) ) {
+		$spacer = ' ';
+	}
 
 	// Default Option Result.
 	$mod = false;
@@ -51,32 +53,32 @@ function secretum_mod( $setting_name, $escape = '', $space = '' ) {
 		switch ( $escape ) {
 			// Attribute.
 			case 'attr':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . esc_attr( $theme_mod );
+				$mod = $spacer . esc_attr( $theme_mod );
 				break;
 
 			// Interger.
 			case 'int':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . absint( $theme_mod );
+				$mod = $spacer . absint( $theme_mod );
 				break;
 
 			// HTML.
 			case 'html':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . html_entity_decode( $theme_mod );
+				$mod = $spacer . html_entity_decode( $theme_mod );
 				break;
 
 			// Script Output.
 			case 'script':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . json_decode( $theme_mod );
+				$mod = $spacer . json_decode( $theme_mod );
 				break;
 
 			// Raw Output.
 			case 'raw':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . $theme_mod;
+				$mod = $spacer . $theme_mod;
 				break;
 
 			// URL.
 			case 'url':
-				$mod = ( true !== empty( $space ) ? ' ' : '' ) . esc_url( $theme_mod );
+				$mod = $spacer . esc_url( $theme_mod );
 				break;
 		}
 	} elseif ( true !== empty( $theme_mod ) && 'none' === $theme_mod ) {

@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.4.2' );
+define( 'SECRETUM_THEME_VERSION', '1.5.0' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -35,11 +35,6 @@ define( 'SECRETUM_THEME_NAME', 'secretum' );
 // PHP & WordPress Version Compare Checks.
 require_once SECRETUM_INC . '/versions.php';
 
-// Update Old Setting To New If It Exists.
-if ( get_option( 'secretum' ) ) {
-	set_theme_mod( 'secretum', get_option( 'secretum' ) );
-	delete_option( 'secretum' );
-}
 
 /**
  * Register Secretum Classes
