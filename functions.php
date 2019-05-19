@@ -14,7 +14,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.5.0' );
+define( 'SECRETUM_THEME_VERSION', '1.6.0' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -138,6 +138,7 @@ function secretum_customize_register( $wp_customize ) {
 	require_once SECRETUM_INC . '/customize/choices/colors.php';
 	require_once SECRETUM_INC . '/customize/choices/containers.php';
 	require_once SECRETUM_INC . '/customize/choices/font-control.php';
+	require_once SECRETUM_INC . '/customize/choices/locations.php';
 	require_once SECRETUM_INC . '/customize/choices/margins.php';
 	require_once SECRETUM_INC . '/customize/choices/paddings.php';
 	require_once SECRETUM_INC . '/customize/choices/sizes.php';

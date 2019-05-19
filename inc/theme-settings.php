@@ -44,12 +44,15 @@ function secretum_setup_theme() {
 	load_theme_textdomain( 'secretum', SECRETUM_THEME_DIR . '/lang' );
 
 	// Register Navigation Menus.
+	// Saved - To Be Removed In Next Release.
+	// Temp: 'secretum-navbar-primary-below' => __( 'Primary Menu - Below Header (select 1 primary only)', 'secretum' ),.
+	// Temp: 'secretum-navbar-primary-above' => __( 'Primary Menu - Above Header (select 1 primary only)', 'secretum' ),.
+	// Temp: 'secretum-navbar-primary-left'  => __( 'Primary Menu - Left of Logo (select 1 primary only)', 'secretum' ),.
+	// Temp: 'secretum-navbar-primary-right' => __( 'Primary Menu - Right of Logo (select 1 primary only)', 'secretum' ),.
 	register_nav_menus(
 		[
-			'secretum-navbar-primary-below' => __( 'Primary Menu - Below Header (select 1 primary only)', 'secretum' ),
-			'secretum-navbar-primary-above' => __( 'Primary Menu - Above Header (select 1 primary only)', 'secretum' ),
-			'secretum-navbar-primary-left'  => __( 'Primary Menu - Left of Logo (select 1 primary only)', 'secretum' ),
-			'secretum-navbar-primary-right' => __( 'Primary Menu - Right of Logo (select 1 primary only)', 'secretum' ),
+			'secretum-navbar-primary'       => __( 'Primary Menu', 'secretum' ),
+			'secretum-navbar-primary-below' => __( 'Old Primary Menu (deprecated)', 'secretum' ),
 			'secretum-navbar-top'           => __( 'Header Top Menu (above header)', 'secretum' ),
 			'secretum-navbar-copyright'     => __( 'Copyright Menu', 'secretum' ),
 		]
@@ -200,7 +203,7 @@ function secretum_load_default_settings( $settings ) {
 	$settings['frontpage_heading_wrapper_border_radius']       = 'rounded-0';
 	$settings['frontpage_heading_wrapper_border_type']         = 'border-0';
 	$settings['featured_image_wrapper_margin_bottom']          = 'mb-4';
-	$settings['entry_wrapper_padding_x']                       = 'px-4';
+	$settings['entry_wrapper_padding_x']                       = 'px-3';
 	$settings['entry_wrapper_padding_y']                       = 'py-4';
 	$settings['entry_wrapper_margin_top']                      = 'mt-4';
 	$settings['entry_wrapper_margin_bottom']                   = 'mb-4';

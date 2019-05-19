@@ -13,6 +13,11 @@
 
 namespace Secretum;
 
+// If Navbar Location Above.
+if ( true === secretum_navbar_display_location( 'above' ) ) {
+	get_template_part( 'template-parts/primary-nav/navbar' );
+}
+
 // If Header Active.
 if ( false !== secretum_mod( 'header_status' ) ) {
 	// Custom Image/Video Header.
@@ -27,26 +32,41 @@ if ( false !== secretum_mod( 'header_status' ) ) {
 		</div><!-- .custom-header -->
 		<?php
 	}
+}
 
-	// Default Header.
+// If Header Active.
+if ( false !== secretum_mod( 'header_status' ) ) {
 	?>
 	<div class="header<?php secretum_wrapper( 'header' ); ?>" id="wrapper-header" itemscope itemtype="http://schema.org/WebSite">
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'secretum' ); ?></a>
-		<?php if ( true === has_nav_menu( 'secretum-navbar-primary-left' ) || true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
+		<?php if ( true === secretum_navbar_display_location( 'left' ) || true === secretum_navbar_display_location( 'right' ) ) { ?>
 			<nav class="navbar navbar-expand-lg p-0">
 		<?php } ?>
 
 			<div class="container<?php secretum_container( 'header' ); ?><?php secretum_alignment( 'site_identity', 'echo', [ 'margin' => true ] ); ?>">
-				<?php get_template_part( 'template-parts/primary-nav/navbar-left' ); ?>
-				<?php get_template_part( 'template-parts/header/logo' ); ?>
-				<?php get_template_part( 'template-parts/primary-nav/navbar-right' ); ?>
+				<?php
+				if ( true === secretum_navbar_display_location( 'left' ) ) {
+					get_template_part( 'template-parts/primary-nav/navbar' );
+				}
+
+				get_template_part( 'template-parts/header/logo' );
+
+				if ( true === secretum_navbar_display_location( 'right' ) ) {
+					get_template_part( 'template-parts/primary-nav/navbar' );
+				}
+				?>
 			</div><!-- .container -->
 
-		<?php if ( true === has_nav_menu( 'secretum-navbar-primary-left' ) || true === has_nav_menu( 'secretum-navbar-primary-right' ) ) { ?>
+		<?php if ( true === secretum_navbar_display_location( 'left' ) || true === secretum_navbar_display_location( 'right' ) ) { ?>
 			</nav><!-- .navbar -->
 		<?php } ?>
 
 	</div><!-- .header -->
 
 	<?php
+}
+
+// If Navbar Location Below.
+if ( true === secretum_navbar_display_location( 'below' ) ) {
+	get_template_part( 'template-parts/primary-nav/navbar' );
 }

@@ -58,30 +58,13 @@ table {
   }
 }
 
-
-// Pre Blocks
-pre {
-    color: $text-primary;
-    font-size: 95%;
-    line-height: 140%;
-    white-space: pre;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -o-pre-wrap;
-
-    // Pre Code Blocks
-    code {
-        color: $text-primary;
-        display: block;
-        font-size: 85%;
-        line-height: 140%;
-        padding: 0 1rem 1rem 1rem;
-        white-space: pre;
-        white-space: pre-wrap;
-        white-space: -moz-pre-wrap;
-        white-space: -o-pre-wrap;
+@media (max-width: 768px) {
+    table {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
+
 
 // Code Blocks
 code {

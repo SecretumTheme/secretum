@@ -26,13 +26,9 @@ trait Trait_Translations {
 	 */
 	final public function defaults() {
 		return [
-			'return_to_top_default'        => [
-				'label'   => __( 'Default Return To Top Text', 'secretum' ),
-				'default' => __( 'top ^', 'secretum' ),
-			],
-			'return_to_top_title'          => [
-				'label'   => __( 'Return To Top Icon Title Attribute', 'secretum' ),
-				'default' => __( 'Return to Top', 'secretum' ),
+			'primary_nav_toggler_text'     => [
+				'label'   => __( 'Toggler Text Next To Toggler Icon (enables if defined)', 'secretum' ),
+				'default' => '',
 			],
 			'continue_reading_text'        => [
 				'label'   => __( 'Archive Continue Reading Text', 'secretum' ),
@@ -205,6 +201,14 @@ trait Trait_Translations {
 			'error_document_text'          => [
 				'label'   => __( 'Error Document Notice Text', 'secretum' ),
 				'default' => __( 'It appears the document you requested no longer exists at this location. Try searching for the document below or browsing one of our other helpful links.', 'secretum' ),
+			],
+			'return_to_top_default'        => [
+				'label'   => __( 'Default Return To Top Text', 'secretum' ),
+				'default' => __( 'top ^', 'secretum' ),
+			],
+			'return_to_top_title'          => [
+				'label'   => __( 'Return To Top Icon Title Attribute', 'secretum' ),
+				'default' => __( 'Return to Top', 'secretum' ),
 			],
 		];
 
