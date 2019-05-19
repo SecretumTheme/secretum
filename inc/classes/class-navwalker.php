@@ -252,7 +252,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		if ( true !== empty( $args->has_children ) && 0 === $depth && $args->depth > 1 ) {
 			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			$atts['class']         = 'dropdown-toggle nav-link' . $spacing_classes;
-			$atts['data-toggle']   = 'dropdown';
+			$atts['data-toggle']   = 'dropdown clickable';
 			$atts['data-target']   = '#' . $atts['id'];
 			$atts['aria-expanded'] = 'false';
 			$atts['aria-haspopup'] = 'true';

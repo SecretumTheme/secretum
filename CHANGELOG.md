@@ -1,5 +1,14 @@
 # Changelog
 
+# 1.6.0
+**2019-05-12 - Feature Change**
+
+* Removed extra primary navs for display locations, moved/created display location setting in customizer.
+* Marked old primary nav locations as deprecated.
+* Added clickable class to navwalker for primary menu dropdowns; setting to disable clickable primary items is pending.
+* Added missing default setting to enable linked archive titles on archive listings.
+* Added customizer -> translations setting for toggler menu text.
+
 # 1.5.0
 **2019-05-12 - Feature Change**
 

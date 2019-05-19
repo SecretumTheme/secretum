@@ -41,24 +41,8 @@ get_template_part( 'template-parts/header/header-top' );
  */
 do_action( 'secretum_before_header' );
 
-// Navbar Menu Above Header.
-get_template_part( 'template-parts/primary-nav/navbar-above' );
-
 // Display Header Area.
 get_template_part( 'template-parts/header/display' );
-
-// Secretum Custom Headers & Footers Plugin.
-if ( secretum_mod( 'custom_headers' ) ) {
-	/**
-	 * Hook: secretum_hf
-	 *
-	 * @since 1.0.0
-	 */
-	do_action( 'secretum_hf', 'headers' );
-}
-
-// Navbar Menu Below Header.
-get_template_part( 'template-parts/primary-nav/navbar-below' );
 
 /**
  * Hook: secretum_after_header
