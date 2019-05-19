@@ -34,7 +34,7 @@ class Inline_Styles {
 	 * @since 1.4.0
 	 */
 	final public function __construct() {
-		$theme_mod = new \Secretum\Theme_Mod();
+		$theme_mod       = new \Secretum\Theme_Mod();
 		$this->theme_mod = $theme_mod->settings();
 
 	}//end __construct()

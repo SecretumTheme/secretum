@@ -2329,8 +2329,7 @@ code, kbd, tt, var { font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans 
 table { width: 100%; margin-bottom: .75rem; }
 table th, table td { padding: .5rem; vertical-align: top; }
 table thead th { vertical-align: bottom; }
-pre { color: #212529; font-size: 95%; line-height: 140%; white-space: pre; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; }
-pre code { color: #212529; display: block; font-size: 85%; line-height: 140%; padding: 0 1rem 1rem 1rem; white-space: pre; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; }
+@media (max-width: 768px) { table { margin-left: 0; margin-right: 0; } }
 code.code { border: none; color: #fd7e14; display: inline-block; padding: 0; }
 code.prettyprint { color: #212529; }
 code.prettyprint.onyx { background: #212529; border: 1px solid #101112; color: #f7f7f3; }
@@ -2406,7 +2405,6 @@ a.comment-reply-link:hover { background-color: #292d32; }
 .content-area .entry-header h1.page-title, .content-area .entry-header h1.entry-title, .content-area .entry-header h2.entry-title, .content-area .entry-header h3.entry-title { color: #6c757d; -ms-word-wrap: break-word; word-wrap: break-word; }
 .content-area .entry-header h1.page-title a:link, .content-area .entry-header h1.entry-title a:link, .content-area .entry-header h2.entry-title a:link, .content-area .entry-header h3.entry-title a:link { color: #6c757d; text-decoration: none; }
 .content-area .entry-content::after { display: block; clear: both; content: ""; }
-.content-area .entry-content .example { border: 1px solid #dee2e6; border-bottom: 0; border-radius: 7px 7px 0 0; margin: 2rem 0 0 0; display: block; padding: 1rem 1rem; }
 .content-area .entry-content h1.entry-heading { font-size: 2.2rem; padding-top: 2rem; }
 .content-area .entry-content h2.entry-heading { font-size: 1.75rem; padding-top: 2rem; }
 .content-area .entry-content h3.entry-heading { font-size: 1.5rem; padding-top: 2rem; }

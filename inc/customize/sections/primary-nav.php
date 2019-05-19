@@ -28,11 +28,23 @@ $customizer->section(
 	__( 'A menu must be assigned to a primary menu location for the navigation menu to display.', 'secretum' )
 );
 
+
+// Select.
+$customizer->select(
+	'primary_nav_display',
+	'primary_nav_location',
+	__( 'Menu Location', 'secretum' ),
+	'',
+	$defaults['primary_nav_location'],
+	secretum_customizer_primary_nav_location()
+);
+
+
 // Select.
 $customizer->select(
 	'primary_nav_display',
 	'primary_nav_alignment',
-	__( 'Alignment', 'secretum' ),
+	__( 'Menu Alignment', 'secretum' ),
 	'',
 	$defaults['primary_nav_alignment'],
 	secretum_customizer_margin_alignments()
@@ -53,9 +65,10 @@ $customizer->checkbox(
 	'primary_nav_display',
 	'primary_nav_toggler_status',
 	__( 'Mobile Menu Toggler', 'secretum' ),
-	__( 'Select to display. Uncheck to remove all html markup.', 'secretum' ),
+	__( 'NOTE: Uncheck ONLY if the menu has no dropdowns and the menu fits within a mobile browser window on its own. Select to display. Uncheck to remove all html markup.', 'secretum' ),
 	$defaults['primary_nav_toggler_status']
 );
+
 
 // Checkbox.
 $customizer->checkbox(

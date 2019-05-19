@@ -7117,7 +7117,7 @@
 	/*!
 	 * Make Dropdown Navbar Links Clickable
 	 */
-    $( '.navbar .dropdown > a' ).click( function() {
-      location.href = this.href;
+    $( '.navbar .dropdown.clickable > a' ).click( function() {
+		location.href = this.href;
     } );
 }( jQuery );

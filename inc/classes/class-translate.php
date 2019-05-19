@@ -65,7 +65,7 @@ class Translate {
 	 * @since 1.0.0
 	 */
 	final public function init() {
-		$theme_mod = new \Secretum\Theme_Mod();
+		$theme_mod       = new \Secretum\Theme_Mod();
 		$this->theme_mod = $theme_mod->settings();
 
 		// Get Secretum Option.
