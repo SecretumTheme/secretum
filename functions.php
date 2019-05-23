@@ -3,7 +3,6 @@
  * Secretum Theme
  *
  * @package    Secretum
- * @subpackage Functions
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -14,7 +13,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.6.0' );
+define( 'SECRETUM_THEME_VERSION', '1.7.0' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -72,6 +71,7 @@ spl_autoload_register( 'Secretum\secretum_register_classes' );
 // Include Theme Files.
 require_once SECRETUM_INC . '/customize/default-settings.php';
 require_once SECRETUM_INC . '/secretum-mod.php';
+require_once SECRETUM_INC . '/secretum-meta.php';
 require_once SECRETUM_INC . '/secretum-icon.php';
 require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';

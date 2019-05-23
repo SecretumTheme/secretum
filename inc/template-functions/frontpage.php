@@ -14,32 +14,25 @@
 namespace Secretum;
 
 /**
- * Inject Frontpage Inline BG Style
+ * Frontpage Body Display
  *
- * @since 1.0.0
+ * @since 1.7.0
  */
-function secretum_frontpage_bg_style() {
-	// Get Background Image ID.
-	$image_src_id = secretum_mod( 'frontpage_heading_bg', 'int' );
+function secretum_frontpage_display() {
+	if ( false !== secretum_mod( 'body_status' ) ) {
+		$secretum_page_template = get_post_meta( get_the_ID(), '_wp_page_template' );
 
-	// If Background ID Set.
-	if ( isset( $image_src_id ) && is_numeric( $image_src_id ) ) {
-		// Get Attachment Array.
-		$image_src_array = wp_get_attachment_image_src( $image_src_id, 'full', false );
+		if ( 'default' === $secretum_page_template[0] ) {
+			get_template_part( 'template-parts/frontpage/body' );
+		}
 
-		// Set Img SRC Url.
-		if ( isset( $image_src_array ) && isset( $image_src_array[0] ) ) {
-			$image_src = esc_url( $image_src_array[0] );
+		if ( 'page-templates/empty-content-only.php' === $secretum_page_template[0] ) {
+			get_template_part( 'template-parts/frontpage/body', 'empty' );
+		}
+
+		if ( 'page-templates/post-page-title-off.php' === $secretum_page_template[0] ) {
+			get_template_part( 'template-parts/frontpage/body', 'notitle' );
 		}
 	}
 
-	// Extra CSS.
-	$css = 'background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;width:100%;';
-
-	// Build Class String.
-	$class_string = ( isset( $image_src ) ) ? ' style="background-image:url( ' . $image_src . ' );' . $css . '"' : '';
-
-	// Return Class String.
-	echo wp_kses_post( apply_filters( 'secretum_frontpage_bg_style', $class_string, 10, 1 ) );
-
-}//end secretum_frontpage_bg_style()
+}//end secretum_frontpage_display()

@@ -2,13 +2,12 @@
 /**
  * Panels, Sections, & Settings
  *
- * @package    Secretum
- * @subpackage Customizer
- * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
- * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/extras.php
- * @since      1.0.0
+ * @package   Secretum
+ * @author    SecretumTheme <author@secretumtheme.com>
+ * @copyright 2018-2019 Secretum
+ * @license   https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link      https://github.com/SecretumTheme/secretum/blob/master/inc/customize/settings/extras.php
+ * @since     1.0.0
  */
 
 namespace Secretum;
@@ -286,7 +285,7 @@ $customizer->section(
 	'reset',
 	'extras',
 	__( 'Reset Settings', 'secretum' ),
-	__( 'THIS CAN NOT BE UNDONE! Deletes all theme unique customizer settings. Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum' )
+	__( 'THIS CAN NOT BE UNDONE! Deletes all theme related customizer settings! Enter the word RESET below, publish your changes, then manually refresh the browser window.', 'secretum' )
 );
 
 
