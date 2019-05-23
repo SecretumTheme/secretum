@@ -19,7 +19,7 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_metaboxes() {
-	new \Secretum\Metabox_Sidebars();
+	new \Secretum\Metaboxes();
 }
 
 add_action( 'admin_init', 'Secretum\secretum_metaboxes' );
@@ -40,16 +40,13 @@ add_action( 'admin_init', 'Secretum\secretum_metaboxes' );
  * @since 1.0.0
  */
 function secretum_sidebar_location( $location_check ) {
-	// Global Sidebar Location.
-	$global_location = secretum_mod( 'sidebar_location', 'attr' );
-
-	// Local Sidebar Location.
-	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
+	$sidebar_location = secretum_meta( 'meta_sidebars', '', 'attr' );
 
 	// Build Sidebar Location.
-	if ( true !== empty( $local_location[0] ) ) {
-		$sidebar_location = $local_location[0];
-	} else {
+	if ( true === empty( $sidebar_location ) ) {
+		// Global Sidebar Location.
+		$global_location = secretum_mod( 'sidebar_location', 'attr' );
+
 		$sidebar_location = $global_location;
 	}
 

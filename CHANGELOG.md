@@ -1,7 +1,21 @@
 # Changelog
 
+# 1.7.0
+**2019-05-22 - Version Check & Feature Upgrade**
+
+* WordPress 5.2.1 Version Check
+* Corrected frontpage template to use page templates, if a page template is selected.
+* Created frontpage template-parts body-empty.php & body-notitle.php to match theme templates when selected.
+* Created class-theme-meta.php & theme-meta.php moving all theme get_post_meta calls to a single location.
+* Created class-metaboxes.php moved class-metabox-sidebars.php featues and extended for new location calls.
+* Created page template post-page-title-off.php a full featured template with no page title.
+* Added get_header/footer calls to empty-content-only.php page template.
+* Modified class-classes-containers.php to check if meta data is set for container sizing.
+* Generated new translation file.
+* Re-generated all CSS/JS files.
+
 # 1.6.0
-**2019-05-12 - Feature Change**
+**2019-05-12 - Feature Upgrade**
 
 * Removed extra primary navs for display locations, moved/created display location setting in customizer.
 * Marked old primary nav locations as deprecated.
@@ -10,7 +24,7 @@
 * Added customizer -> translations setting for toggler menu text.
 
 # 1.5.0
-**2019-05-12 - Feature Change**
+**2019-05-12 - Feature Upgrade**
 
 * Modified theme mod settings to use class-theme-mod.php grouping defaults & mods together.
 * Added missing title lable for scroll to top icon.

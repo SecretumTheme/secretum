@@ -3,7 +3,6 @@
  * The frontpage template file
  *
  * @package    Secretum
- * @subpackage Theme\Front-Page
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -35,11 +34,12 @@ get_template_part( 'template-parts/frontpage/heading' );
 do_action( 'secretum_frontpage_before_body' );
 
 
-// Display If Allowed.
-if ( false !== secretum_mod( 'body_status' ) ) {
-	// Frontpage Body.
-	get_template_part( 'template-parts/frontpage/body' );
-}
+/**
+ * Frontpage Body Display
+ *
+ * @since 1.6.1
+ */
+secretum_frontpage_display();
 
 
 /**
@@ -48,10 +48,6 @@ if ( false !== secretum_mod( 'body_status' ) ) {
  * @since 1.0.0
  */
 do_action( 'secretum_frontpage_after_body' );
-
-
-// Frontpage Map.
-get_template_part( 'template-parts/frontpage/map' );
 
 
 /**

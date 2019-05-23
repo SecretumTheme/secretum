@@ -2,27 +2,18 @@
 /**
  * Feature Class
  *
- * @package    Secretum
- * @subpackage Classes
- * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
- * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/theme-mod.php
- * @since      1.5.0
+ * @package   Secretum
+ * @author    SecretumTheme <author@secretumtheme.com>
+ * @copyright 2018-2019 Secretum
+ * @license   https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link      https://github.com/SecretumTheme/secretum/blob/master/inc/classes/theme-mod.php
+ * @since     1.5.0
  */
 
 namespace Secretum;
 
 /**
- * Load Theme Mods Into Action Filter
- *
- * @example $theme_mod_class   = new \Secretum\Theme_Mod();
- * @example $theme_mod_setting = $theme_mod_class->settings();
- * @example echo $theme_mod_setting[ 'content_width' ];
- *
- * @see inc/classes/class-inline-styles.php
- * @see inc/classes/class-theme-mod.php
- * @see inc/classes/class-translate.php
+ * Get Theme Mods & Merge With Default Settings
  *
  * @since 1.5.0
  */
@@ -73,6 +64,5 @@ class Theme_Mod {
 		);
 
 	}//end settings()
-
 
 }//end class
