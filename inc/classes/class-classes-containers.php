@@ -2,13 +2,12 @@
 /**
  * Class Related To Theme Display Or Manipulation
  *
- * @package    Secretum
- * @subpackage Core\Classes\Classes_Containers
- * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
- * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
- * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-classes-containers.php
- * @since      1.0.0
+ * @package   Secretum
+ * @author    SecretumTheme <author@secretumtheme.com>
+ * @copyright 2018-2019 Secretum
+ * @license   https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link      https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-classes-containers.php
+ * @since     1.0.0
  */
 
 namespace Secretum;
@@ -92,6 +91,37 @@ class Classes_Containers {
 
 
 	/**
+	 * Build Container Type
+	 *
+	 * @param string $section Required Container Section Name.
+	 *
+	 * @return string Class Names.
+	 * @since 1.7.0
+	 */
+	final private function build_container_type( $section ) {
+		$classes = secretum_mod( $section . '_container_type', 'attr' );
+
+		if ( 'body' === $section ) {
+			$meta_array = secretum_meta( 'meta_container_type', 'body', 'attr', false );
+
+			if ( true !== empty( $meta_array ) && 'fluid' === $meta_array ) {
+				$classes = '-fluid';
+			}
+		}
+
+		if ( 'frontpage' === $section ) {
+			$meta_array = secretum_meta( 'meta_container_type', 'frontpage', 'attr', false );
+
+			if ( true !== empty( $meta_array ) && 'fluid' === $meta_array ) {
+				$classes = '-fluid';
+			}
+		}
+
+		return $classes;
+	}
+
+
+	/**
 	 * Build Container Classes String
 	 *
 	 * @param string $section Required Container Section Name.
@@ -104,7 +134,7 @@ class Classes_Containers {
 		$classes = '';
 
 		// Build Class String With Spaces Between Classes.
-		$classes .= secretum_mod( $section . '_container_type', 'attr' );
+		$classes .= $this->build_container_type( $section );
 		$classes .= secretum_mod( $section . '_container_background_color', 'attr', true );
 		$classes .= secretum_mod( $section . '_container_margin_top', 'attr', true );
 		$classes .= secretum_mod( $section . '_container_margin_bottom', 'attr', true );

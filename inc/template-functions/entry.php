@@ -49,16 +49,13 @@ add_action( 'secretum_before_entry_content', 'Secretum\secretum_before_entry_con
  * @since 1.0.0
  */
 function secretum_entry_columns() {
-	// Global Sidebar Location.
-	$global_location = secretum_mod( 'sidebar_location', 'attr' );
-
-	// Local Sidebar Location.
-	$local_location = get_post_meta( get_the_ID(), 'secretum_meta_sidebars' );
+	$sidebar_location = secretum_meta( 'meta_sidebars', '', 'attr' );
 
 	// Build Sidebar Location.
-	if ( true !== empty( $local_location[0] ) ) {
-		$sidebar_location = $local_location[0];
-	} else {
+	if ( true === empty( $sidebar_location ) ) {
+		// Global Sidebar Location.
+		$global_location = secretum_mod( 'sidebar_location', 'attr' );
+
 		$sidebar_location = $global_location;
 	}
 
