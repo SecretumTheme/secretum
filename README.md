@@ -3,7 +3,7 @@
 * **Contributors:** SecretumTheme
 * **Requires at least:** WordPress 4.8
 * **Tested up to:** 5.2.1
-* **Version:** 1.7.1
+* **Version:** 1.7.2
 * **License:** GPLv2 or later
 * **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 * **Tags:** one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, sticky-post, full-width-template, threaded-comments, theme-options, blog, e-commerce, translation-ready
@@ -150,9 +150,9 @@ Manual Tested With: [WordPress themeunittestdata.wordpress.xml](https://github.c
 
 ## Changelog
 
-### 1.7.1
+### 1.7.2
 * Released: 2019-05-24
-* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0171
+* Changelog: https://github.com/SecretumTheme/secretum/blob/master/CHANGELOG.md#0172
 
 
 ## Licenses

@@ -25,11 +25,11 @@ function secretum_frontpage_display() {
 			get_template_part( 'template-parts/frontpage/body' );
 		}
 
-		if ( 'page-templates/empty-content-only.php' === $secretum_page_template[0] ) {
+		if ( true === isset( $secretum_page_template[0] ) && 'page-templates/empty-content-only.php' === $secretum_page_template[0] ) {
 			get_template_part( 'template-parts/frontpage/body', 'empty' );
 		}
 
-		if ( 'page-templates/post-page-title-off.php' === $secretum_page_template[0] ) {
+		if ( true === isset( $secretum_page_template[0] ) && 'page-templates/post-page-title-off.php' === $secretum_page_template[0] ) {
 			get_template_part( 'template-parts/frontpage/body', 'notitle' );
 		}
 	}

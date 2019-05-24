@@ -426,7 +426,7 @@ class Navwalker extends \Walker_Nav_Menu {
 			]
 		);
 
-    	$wp_list_pages = wp_list_pages( [ 'echo' => false ] );
+		$wp_list_pages = wp_list_pages( [ 'echo' => false ] );
 
 		if ( true === empty( $wp_list_pages ) ) {
 
