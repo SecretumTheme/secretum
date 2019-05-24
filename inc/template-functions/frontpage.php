@@ -3,7 +3,6 @@
  * Functions related to theme display or manipulation
  *
  * @package    Secretum
- * @subpackage Core\Template-Functions\Frontpage
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -22,7 +21,7 @@ function secretum_frontpage_display() {
 	if ( false !== secretum_mod( 'body_status' ) ) {
 		$secretum_page_template = get_post_meta( get_the_ID(), '_wp_page_template' );
 
-		if ( 'default' === $secretum_page_template[0] ) {
+		if ( true === empty( $secretum_page_template ) || true === isset( $secretum_page_template[0] ) && 'default' === $secretum_page_template[0] ) {
 			get_template_part( 'template-parts/frontpage/body' );
 		}
 
