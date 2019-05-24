@@ -1,9 +1,15 @@
 # Changelog
 
+# 1.7.2
+**2019-05-24 - Hotfix**
+
+* Added frontpage/home check around entry-footer within post template part content.php.
+* Re-added recaptcha dequeues for Contact 7 Form when recaptcha is in use.
+* Corrected missing variable checks in frontpage post_meta calls.
+
 # 1.7.1
 **2019-05-24 - Hotfix**
 
-* Corrected footer enable/disable wrap to include footer tags.
 * Corrected edit post/page link returning its container when a parent container has been disabled.
 * Corrected frontpage post_meta call to allow empty when displaying the default template.
 * Corrected navwalker fallback to display pages menu when no menu is set and pages are published.

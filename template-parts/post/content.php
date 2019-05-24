@@ -58,6 +58,7 @@ namespace Secretum;
 		?>
 	</div><!-- .entry-content -->
 
+<?php if ( true !== is_front_page() && true !== is_home() ) { ?>
 	<footer class="entry-footer py-4">
 		<?php
 		secretum_post_date_linked_to_post( get_the_title() );
@@ -72,6 +73,7 @@ namespace Secretum;
 		get_template_part( 'template-parts/post/content', 'comments-links' );
 		?>
 	</footer><!-- .entry-footer -->
+<?php } ?>
 </article><!-- #post-## -->
 
 <?php secretum_edit_link( get_the_ID() ); ?>
