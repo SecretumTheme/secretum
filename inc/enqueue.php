@@ -3,7 +3,6 @@
  * Hook Scripts and Styles
  *
  * @package    Secretum
- * @subpackage Core\Enqueue
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -209,6 +208,8 @@ function secretum_enqueue_scripts() {
 	// Custom Contact Form 7 Styles.
 	if ( true === defined( 'WPCF7_PLUGIN' ) ) {
 		wp_dequeue_style( 'contact-form-7' );
+		wp_dequeue_script( 'google-recaptcha' );
+		wp_dequeue_script( 'wpcf7_recaptcha_enqueue_scripts' );
 
 		wp_enqueue_style(
 			'secretum-contact-form-7',
