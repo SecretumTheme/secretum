@@ -3,7 +3,6 @@
  * Template part for displaying posts
  *
  * @package    Secretum
- * @subpackage Template-Parts
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -71,9 +70,8 @@ namespace Secretum;
 
 		// Comment Link.
 		get_template_part( 'template-parts/post/content', 'comments-links' );
-
-		// Edit Link.
-		secretum_edit_link( get_the_ID() );
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+<?php secretum_edit_link( get_the_ID() ); ?>

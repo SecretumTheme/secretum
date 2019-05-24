@@ -3,7 +3,6 @@
  * Extend WordPress Menu Nav Walker
  *
  * @package    Secretum
- * @subpackage Core\Classes\Navwalker
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
@@ -404,10 +403,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @example \Secretum\Navwalker::fallback();
-	 *
-	 * @see \Secretum\Navwalker::fallback
-	 * @link https://github.com/SecretumTheme/secretum/blob/master/template-parts/primary-nav/navbar-below.php
+	 * @example \Secretum\Navwalker::fallback
 	 *
 	 * @param array $args {
 	 *     Optional. An array of arguments.
@@ -417,20 +413,52 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * }
 	 */
 	public static function fallback( $args = [] ) {
-		if ( true === current_user_can( 'edit_theme_options' ) ) {
-			// Build Args.
-			$args = wp_parse_args(
-				$args,
-				[
-					'menu_name' => 'menu',
-					'menu_text' => __( 'Create Menu', 'secretum' ),
-				]
-			);
+		wp_nav_menu(
+			[
+				'theme_location'  => '__false',
+				'container'       => 'ul',
+				'container_class' => 'container link-light link-gray-300-hover',
+				'menu_class'      => 'navbar-nav ml-auto py-3',
+				'menu_id'         => 'main-menu',
+				'link_before'     => '<span class="px-2">',
+				'link_after'      => '</span>',
+				'echo'            => true,
+			]
+		);
 
-			$text    = esc_html( $args['menu_text'] );
-			$url     = esc_url( admin_url( 'nav-menus.php' ) );
-			$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
-			$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+    	$wp_list_pages = wp_list_pages( [ 'echo' => false ] );
+
+		if ( true === empty( $wp_list_pages ) ) {
+
+			if ( true === current_user_can( 'edit_theme_options' ) ) {
+				// Build Args.
+				$args = wp_parse_args(
+					$args,
+					[
+						'menu_name' => 'menu',
+						'menu_text' => __( 'Create Menu', 'secretum' ),
+					]
+				);
+
+				$text    = esc_html( $args['menu_text'] );
+				$url     = esc_url( admin_url( 'nav-menus.php' ) );
+				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
+				$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+			} else {
+				// Build Args.
+				$args = wp_parse_args(
+					$args,
+					[
+						'menu_name' => 'menu',
+						'menu_text' => __( 'Home', 'secretum' ),
+					]
+				);
+
+				$url     = '#';
+				$text    = esc_html( $args['menu_text'] );
+				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
+				$html    = "<ul id=\"main-menu\" class=\"navbar-nav py-3 w-100\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+			}
 
 			$filtered = apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 );
 
@@ -451,7 +479,6 @@ class Navwalker extends \Walker_Nav_Menu {
 				]
 			);
 		}
-
 	}//end fallback()
 
 
