@@ -1,5 +1,15 @@
 # Changelog
 
+# 1.7.1
+**2019-05-24 - Hotfix**
+
+* Corrected footer enable/disable wrap to include footer tags.
+* Corrected edit post/page link returning its container when a parent container has been disabled.
+* Corrected frontpage post_meta call to allow empty when displaying the default template.
+* Corrected navwalker fallback to display pages menu when no menu is set and pages are published.
+* New: navwalker fallback adds # home link, when no menu set, no pages published, and user can not edit theme options.
+* Generated new translation file.
+
 # 1.7.0
 **2019-05-22 - Version Check & Feature Upgrade**
 
