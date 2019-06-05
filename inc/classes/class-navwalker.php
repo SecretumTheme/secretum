@@ -415,6 +415,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	public static function fallback( $args = [] ) {
 		wp_nav_menu(
 			[
+				'depth'           => 1,
 				'theme_location'  => '__false',
 				'container'       => 'ul',
 				'container_class' => 'container link-light link-gray-300-hover',

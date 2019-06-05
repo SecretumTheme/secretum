@@ -77,6 +77,7 @@ require_once SECRETUM_INC . '/enqueue.php';
 require_once SECRETUM_INC . '/theme-settings.php';
 require_once SECRETUM_INC . '/template-filters.php';
 require_once SECRETUM_INC . '/template-functions/author.php';
+require_once SECRETUM_INC . '/template-functions/breadcrumbs.php';
 require_once SECRETUM_INC . '/template-functions/copyright.php';
 require_once SECRETUM_INC . '/template-functions/entry.php';
 require_once SECRETUM_INC . '/template-functions/featured-image.php';

@@ -53,7 +53,7 @@ The 'wordpress' branch is a forced merge 'master' with the Github updater remove
 	* Open: Appearance Menu > Customize Link > :: Theme Design > Base Color Palette
 	* Select a base color palette the theme should use
 
-To further customize start with:
+### Customizations
 
 1) Adding a Logo
 	* Open: Appearance Menu > Customize Link > :: Site Identity > Branding
@@ -66,7 +66,7 @@ To further customize start with:
 	* Customizer > :: Copyright > Copyright Statement
 	* Customizer > :: Copyright > Wrapper > Background Color
 
-Setup a custom Blog:
+### Blog Setup
 
 1) Pages menu > Add New - Name the Page & Slug: Blog
 	* No content body is needed
@@ -75,7 +75,7 @@ Setup a custom Blog:
 	* Under "Your homepage displays" > Select "A static page (select below)"
 	* In the Post page dropdown select Blog
 
-Setup a custom Front Page:
+### Frontpage Setup
 
 1) Pages menu > Add New - Name the Page & Slug: Front Page
 	* Add temporary text content as a placeholder
@@ -90,6 +90,12 @@ Setup a custom Front Page:
 
 Return to the Pages admin and customize the Front Page page as desired.
 
+### Primary Nav Menu
+
+* By default the "primary menu" displays below the header area. The location can be moved to either; below/above the header area, or left/right of the website name/logo. Adjust the location within the Customizer > :: Primary Nav > Display Settings > Menu Location Dropdown.
+* Fresh WordPress installs with no menu location defined will display the published Sample Page for all users. If no pages are published, the primary menu for non-admins will display a Home link while admins will see a Create a Menu link. Otherwise menus with the location set to "Primary Menu" will display.
+* To define a new Primary Menu, open Appearance > Menus. Use any name you like for the menu name, then click the Create Menu button. Under the Display location section click the "Primary Menu" check box. Add your menu items, save the menu, then view the published changes.
+* Menus will display 5 levels deep. Parent menu items are clickable. Menu item names should be short, one or two words. Customizer alignment settings for the primary nav and menu items behave differently depending on the menu location.
 
 ## Features
 
@@ -99,10 +105,6 @@ Return to the Pages admin and customize the Front Page page as desired.
 	* First-time users can have a Website ready for use in less than 1 minute
 	* Any user can highly customize the look, layout, style, and colors within minutes
 		* The customizer uses primarily checkboxes and dropdowns, keeping it simple
-	* Advanced developers can create whatever they desire (dev via gulp)
-		* Child-theme ready
-		* Customize based on WordPress theming standards
-		* Customize/deploy default Customizer settings with custom filter
 * WordPress Customizer Features
 	* Currently over 400 unique settings and growing
 	* No CSS rendering in document head for most customizer features
