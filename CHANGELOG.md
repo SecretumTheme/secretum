@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.7.3
+**2019-06-05 - Hotfix**
+
+* Corrected content loop template to correctly display post titles when a page is set for post archives.
+* Replaced previous breadcrumbs with bootstrap friendly version. Customizer features coming soon.
+* Adjusted navwalker fallback to only allow 1 parent item element.
+
 # 1.7.2
 **2019-05-24 - Hotfix**
 

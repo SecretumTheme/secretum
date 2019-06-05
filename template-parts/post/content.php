@@ -18,13 +18,14 @@ namespace Secretum;
 		<?php
 		if ( true === is_single() ) {
 			the_title( '<h1 class="entry-title mb-4 text-40">', '</h1>' );
-
-		} elseif ( true === is_front_page() || true === is_home() ) {
-			if ( false !== secretum_mod( 'frontpage_page_title_status' ) ) {
-				the_title( '<h2 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+		} elseif ( true === is_front_page() && false !== secretum_mod( 'frontpage_page_title_status' ) ) {
+			the_title( '<h2 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		} elseif ( true === is_home() ) {
+			the_title( '<h2 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		} else {
-			the_title( '<h3 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			if ( true !== is_front_page() && true !== is_home() ) {
+				the_title( '<h3 class="entry-title mb-4 text-40"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			}
 		}
 
 		get_template_part( 'template-parts/post/content', 'entry-meta' );
@@ -58,7 +59,7 @@ namespace Secretum;
 		?>
 	</div><!-- .entry-content -->
 
-<?php if ( true !== is_front_page() && true !== is_home() ) { ?>
+<?php if ( true !== is_front_page() ) { ?>
 	<footer class="entry-footer py-4">
 		<?php
 		secretum_post_date_linked_to_post( get_the_title() );
