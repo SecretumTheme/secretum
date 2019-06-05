@@ -32,7 +32,7 @@
         "del": "^3.0.0",
         "ekko-lightbox": "git://github.com/ashleydw/lightbox.git",
         "foundation-icons": "^1.0.1",
-        "gulp": "^4.0.1",
+        "gulp": "^4.0.2",
         "gulp-autoprefixer": "^6.1.0",
         "gulp-concat": "^2.6.1",
         "gulp-imagemin": "^5.0.3",
@@ -50,7 +50,7 @@
         "gulp-uglifycss": "^1.1.0",
         "gulp-wp-pot": "^2.3.5",
         "inquirer": "^6.3.1",
-        "jquery": "^3.4.0",
+        "jquery": "^3.4.1",
         "popper.js": "^1.15.0",
         "require-dir": "^1.2.0",
         "undertaker-forward-reference": "^1.0.2"
