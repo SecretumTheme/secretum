@@ -827,6 +827,7 @@ a.btn-primary, a.btn-secondary, a.btn-success, a.btn-info, a.btn-warning, a.btn-
 .navbar-brand { white-space: normal; }
 .navbar ul { border: 0; margin: 0; padding: 0; }
 .navbar .dropdown-menu { border: 0; border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; display: block; margin: 0; min-width: 10rem; padding: 0; }
+@media (max-width: 991.98px) { .navbar .dropdown-menu { -webkit-box-shadow: none; -o-box-shadow: none; box-shadow: none; } }
 .navbar .dropdown-menu ul.dropdown-menu { border-left: 1px solid rgba(150, 150, 150, 0.5); border-radius: 0; }
 .navbar .dropdown-menu.show { display: block; }
 .navbar .dropdown-menu.show .dropdown-menu { display: block; }
