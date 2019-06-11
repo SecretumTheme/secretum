@@ -22,6 +22,12 @@
         margin: 0;
         min-width: 10rem;
         padding: 0;
+        @include media-breakpoint-down(md) {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -o-box-shadow: none;
+            box-shadow: none;
+        }
 
         ul.dropdown-menu {
             border-left: 1px solid rgba(150,150,150,0.5);
@@ -102,4 +108,3 @@
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' shape-rendering='crispEdges' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.8)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='1' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-
