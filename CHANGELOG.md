@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.7.4
+**2019-06-11 - Hotfix**
+
+* Removed dropshadow from navbar dropdown menu items when in mobile view of primary menu.
+
 # 1.7.3
 **2019-06-05 - Hotfix**
 
