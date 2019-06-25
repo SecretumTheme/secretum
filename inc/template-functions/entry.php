@@ -239,7 +239,7 @@ function secretum_edit_link( $post_id ) {
 		sprintf(
 			wp_kses(
 				/* translators: 1. Icon 2. Only visible to screen readers. 3: Name of current post. Only visible to screen readers. */
-				__( '%1$s <span class="screen-reader-text">%2$s %3$s</span>', 'secretum' ),
+				'%1$s <span class="screen-reader-text">%2$s %3$s</span>',
 				array(
 					'span' => array(
 						'class' => array(),
