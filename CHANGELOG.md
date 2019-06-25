@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.7.6
+**2019-06-25 - Hotfix**
+
+* Temporarily removed woocommerce-bookings templates, testing client not available.
+
 # 1.7.5
 **2019-06-25 - Hotfix**
 
@@ -9,7 +14,6 @@
 * Corrected edit post screenreader html being escaped in entry.php.
 * Corrected improperly formatted sprintf in woocommerce my account dashboard.
 * Corrected attr escaping in woocommerce review-order.
-* Temporarily removed woocommerce-bookings templates, testing client not available.
 * Added collapse wrapper to navbar fallback display when no menu is selected.
 * Created new dark color theme: soft yellow - vivid orange.
 
