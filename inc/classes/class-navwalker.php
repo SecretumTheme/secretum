@@ -413,23 +413,28 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * }
 	 */
 	public static function fallback( $args = [] ) {
-		wp_nav_menu(
-			[
-				'depth'           => 1,
-				'theme_location'  => '__false',
-				'container'       => 'ul',
-				'container_class' => 'container link-light link-gray-300-hover',
-				'menu_class'      => 'navbar-nav ml-auto py-3',
-				'menu_id'         => 'main-menu',
-				'link_before'     => '<span class="px-2">',
-				'link_after'      => '</span>',
-				'echo'            => true,
-			]
-		);
-
 		$wp_list_pages = wp_list_pages( [ 'echo' => false ] );
 
-		if ( true === empty( $wp_list_pages ) ) {
+		if ( true !== empty( $wp_list_pages ) ) {
+			echo wp_kses_post( '<div id="navbarNavDropdown" class="collapse navbar-collapse">' );
+
+			wp_nav_menu(
+				[
+					'depth'           => 1,
+					'theme_location'  => '__false',
+					'container'       => 'ul',
+					'container_class' => 'container link-light link-gray-300-hover',
+					'menu_class'      => 'navbar-nav ml-auto py-3',
+					'menu_id'         => 'main-menu',
+					'link_before'     => '<span class="px-2">',
+					'link_after'      => '</span>',
+					'echo'            => true,
+				]
+			);
+
+			echo wp_kses_post( '<div>' );
+
+		} else {
 
 			if ( true === current_user_can( 'edit_theme_options' ) ) {
 				// Build Args.
@@ -461,11 +466,15 @@ class Navwalker extends \Walker_Nav_Menu {
 				$html    = "<ul id=\"main-menu\" class=\"navbar-nav py-3 w-100\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
 			}
 
-			$filtered = apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 );
+			$filtered = '<div id="navbarNavDropdown" class="collapse navbar-collapse">' . apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 ) . '</div>';
 
 			echo wp_kses(
 				$filtered,
 				[
+					'div' => [
+						'id'    => true,
+						'class' => true,
+					],
 					'ul' => [
 						'id'    => true,
 						'class' => true,

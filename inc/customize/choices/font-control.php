@@ -69,7 +69,6 @@ function secretum_customizer_font_families() {
 		'comicsansms'       => __( 'Comic Sans MS, cursive', 'secretum' ),
 		'constantina'       => __( 'Constantina,Georgia, Nimbus Roman No9 L, serif', 'secretum' ),
 		'consolas'          => __( 'Consolas, Lucida Console, Bitstream VeraSans Mono, DejaVu Sans Mono, monospace', 'secretum' ),
-		'comicsansms'       => __( 'Comic Sans MS,  cursive', 'secretum' ),
 		'couriernew'        => __( 'Courier New, Courier,Freemono, Nimbus Mono L, monospace', 'secretum' ),
 		'garamond'          => __( 'Garamond, serif', 'secretum' ),
 		'georgia'           => __( 'Georgia, serif', 'secretum' ),

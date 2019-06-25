@@ -1,5 +1,18 @@
 # Changelog
 
+# 1.7.5
+**2019-06-25 - Hotfix**
+
+* Removed duplicated font selection in customizer font-control.
+* Removed secretum prefix from 3rd party enqueued files.
+* Corrected woocommerce wrapper-start to use proper customizer functions.
+* Corrected edit post screenreader html being escaped in entry.php.
+* Corrected improperly formatted sprintf in woocommerce my account dashboard.
+* Corrected attr escaping in woocommerce review-order.
+* Temporarily removed woocommerce-bookings templates, testing client not available.
+* Added collapse wrapper to navbar fallback display when no menu is selected.
+* Created new dark color theme: soft yellow - vivid orange.
+
 # 1.7.4
 **2019-06-11 - Hotfix**
 

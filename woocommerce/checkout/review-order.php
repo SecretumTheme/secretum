@@ -99,7 +99,7 @@ if ( true !== defined( 'ABSPATH' ) ) {
 		if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
 			foreach ( WC()->cart->get_tax_totals() as $secretum_code => $secretum_tax ) {
 				?>
-				<tr class="tax-rate tax-rate-<?php echo esc_html( sanitize_title( $secretum_code ) ); ?>">
+				<tr class="tax-rate tax-rate-<?php echo esc_attr( $secretum_code ); ?>">
 					<th><?php echo esc_html( $secretum_tax->label ); ?></th>
 					<td><?php echo wp_kses_post( $secretum_tax->formatted_amount ); ?></td>
 				</tr>
