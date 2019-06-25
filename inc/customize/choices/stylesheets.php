@@ -40,11 +40,12 @@ function secretum_customizer_stylesheets() {
  */
 function secretum_customizer_stylesheets_blue() {
 	return [
-		'bright-blue_bright-orange'     => __( 'Bright Blue - Bright Orange', 'secretum' ),
-		'dark-blue_dark-magenta'        => __( 'Dark Blue - Dark Magenta', 'secretum' ),
-		'dodger-blue_dark-grayish-blue' => __( 'Doger Blue 2 - Dark Grayish Blue', 'secretum' ),
-		'very-dark-blue_vivid-orange'   => __( 'Very Dark Blue - Vivid Orange', 'secretum' ),
-		'vivid-blue-dark-theme'         => __( 'Vivid Blue - Strong Red (dark theme)', 'secretum' ),
+		'bright-blue_bright-orange'           => __( 'Bright Blue - Bright Orange', 'secretum' ),
+		'dark-blue_dark-magenta'              => __( 'Dark Blue - Dark Magenta', 'secretum' ),
+		'dodger-blue_dark-grayish-blue'       => __( 'Doger Blue 2 - Dark Grayish Blue', 'secretum' ),
+		'very-dark-blue_vivid-orange'         => __( 'Very Dark Blue - Vivid Orange', 'secretum' ),
+		'vivid-blue-dark-theme'               => __( 'Vivid Blue - Strong Red (dark theme)', 'secretum' ),
+		'soft-yellow-vivid-orange-dark-theme' => __( 'Soft Yello - Vivid Orange (dark theme)', 'secretum' ),
 	];
 
 }//end secretum_customizer_stylesheets_blue()
