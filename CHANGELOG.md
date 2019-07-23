@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.7.7
+**2019-06-25 - Hotfix**
+
+* Removed unmodified template: woocommerce/single-product/related.php
+
 # 1.7.6
 **2019-06-25 - Hotfix**
 
