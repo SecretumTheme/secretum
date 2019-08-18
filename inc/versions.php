@@ -59,9 +59,20 @@ add_action( 'admin_init', 'Secretum\secretum_version_update' );
 // PHP Version Check.
 if ( true === version_compare( PHP_VERSION, '5.6', '<' ) ) {
 	add_filter( 'template_include', '__return_null', 99 );
+
 	switch_theme( WP_DEFAULT_THEME );
-	unset( $_GET['activated'] );
+
+	$secretum_activated = filter_input(
+		INPUT_GET,
+		'activated',
+		FILTER_SANITIZE_STRING,
+		( FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK )
+	);
+
+	unset( $secretum_activated );
+
 	add_action( 'admin_notices', 'Secretum\secretum_admin_notice_php_support' );
+
 	return;
 }
 
@@ -137,7 +148,15 @@ function secretum_admin_notice_previewer() {
 // WordPress Version Check.
 if ( true === version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
 	switch_theme( WP_DEFAULT_THEME );
-	unset( $_GET['activated'] );
+
+	$secretum_activated = filter_input(
+		INPUT_GET,
+		'activated',
+		FILTER_SANITIZE_STRING,
+		( FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK )
+	);
+
+	unset( $secretum_activated );
 
 	// Admin Notice.
 	add_action( 'admin_notices', 'Secretum\secretum_admin_notice_wordpress_support' );

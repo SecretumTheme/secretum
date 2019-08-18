@@ -98,11 +98,13 @@ class Navwalker extends \Walker_Nav_Menu {
 		$classes = [ 'dropdown-menu' . $this->dropdown_classes ];
 
 		/*
-			* // Filters the CSS class( es ) applied to a menu list element.
-			* // Documented in WordPress/wp-includes/class-walker-nav-menu.php.
-		*/
+		 * Filters the CSS class( es ) applied to a menu list element.
+		 * Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		 */
 
-		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+		$css_classes = apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth );
+		$class_names = join( ' ', $css_classes );
 
 		if ( true === isset( $class_names ) ) {
 			$ul_classes = ' class="' . esc_attr( $class_names ) . '"';
@@ -181,6 +183,7 @@ class Navwalker extends \Walker_Nav_Menu {
 
 		// Filters the arguments for a single nav menu item.
 		// Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
 		// Add .dropdown or .active classes where they are needed.
@@ -202,6 +205,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		// Allow filtering the classes.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$classes = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
 
 		// Form a string of classes in format: class="class_names".
@@ -215,6 +219,7 @@ class Navwalker extends \Walker_Nav_Menu {
 
 		// Filters the ID applied to a menu item's list item element.
 		// Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 
 		if ( true !== empty( $id ) ) {
@@ -274,6 +279,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		$atts = self::update_atts_for_linkmod_type( $atts, $linkmod_classes );
 
 		// Allow filtering of the $atts array before using it.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$atts_array = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 
 		// Clear Item.
@@ -316,10 +322,13 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		// This filter is documented in wp-includes/post-template.php.
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
 
 		// Filters a menu item's title.
 		// Documented in WordPress/wp-includes/class-walker-nav-menu.php.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
 		// If the .sr-only class was set apply to the nav items text only.
@@ -352,6 +361,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		// Append Contents To Output.
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 
 	}//end start_el()
@@ -475,14 +485,14 @@ class Navwalker extends \Walker_Nav_Menu {
 						'id'    => true,
 						'class' => true,
 					],
-					'ul' => [
+					'ul'  => [
 						'id'    => true,
 						'class' => true,
 					],
-					'li' => [
+					'li'  => [
 						'class' => true,
 					],
-					'a'  => [
+					'a'   => [
 						'href'  => true,
 						'class' => true,
 					],

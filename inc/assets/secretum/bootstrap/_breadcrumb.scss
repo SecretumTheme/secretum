@@ -2,19 +2,10 @@
  * Secretum - Breadcrumbs
  */
 
-.breadcrumbs {
-	color: $text-secondary;
-
-	a:link,
-	a:active,
-	a:visited,
-	a:hover {
-		color: $text-secondary;
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
+.breadcrumb {
+	background-color: transparent;
+	list-style: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 0;
 }
-

@@ -23,7 +23,7 @@ ol.comment-list {
 }
 
 .comment {
-    background-color: $gray-100;
+    background-color: $body-bg;
     margin-bottom: 8px;
 }
 
@@ -33,14 +33,14 @@ ol.comment-list {
 
 .comment.even,
 .pingback.even {
-    background-color: $gray-100;
+    background-color: $content-bg;
     margin-bottom: 12px;
     padding: 9px;
 }
 
 .comment.odd,
 .pingback.odd {
-    background-color: $gray-200;
+    background-color: darken($content-bg, 5%);
     margin-bottom: 12px;
     padding: 9px;
 }

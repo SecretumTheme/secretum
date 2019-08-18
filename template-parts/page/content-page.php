@@ -13,6 +13,12 @@
 
 namespace Secretum;
 
+/**
+ * Hook: secretum_before_page_content
+ *
+ * @since 1.8.0
+ */
+do_action( 'secretum_before_page_content' );
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
@@ -50,3 +56,11 @@ namespace Secretum;
 		<?php secretum_edit_link( get_the_ID() ); ?>
 	</footer><!-- .entry-footer -->
 </article>
+
+<?php 
+/**
+ * Hook: secretum_after_page_content
+ *
+ * @since 1.8.0
+ */
+do_action( 'secretum_after_page_content' );
