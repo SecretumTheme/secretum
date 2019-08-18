@@ -1,0 +1,39 @@
+/**
+ * Secretum Styling Variables
+ *
+ * @package    Secretum
+ * @subpackage Theme-SCSS
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/themes/dark-blue_dark-magenta/_variables.scss
+ */
+
+// Localized Image/Font Paths Within Rendered CSS
+$localized_path:					'../../../';
+
+// Bootstrap4: Color Values
+$primary: 							#006699 !default; // Dark Blue
+$secondary: 						#420746 !default; // Dark Magenta
+
+$gray-100: 							#eef0f1 !default;
+$gray-200: 							#dee1e4 !default;
+$gray-300: 							#cdd2d7 !default;
+$gray-400: 							#bdc3ca !default;
+$gray-500: 							#adb5bd !default;
+$gray-600: 							#8a9097 !default;
+$gray-700: 							#676c71 !default;
+$gray-800: 							#45484b !default;
+$gray-900: 							#222425 !default;
+
+$body-bg: 							#fcfcfa !default; // Light grayish yellow.
+$body-color: 						#333333 !default; // Very dark gray.
+
+// Secretum: New Colors
+$content-bg: 						#f7f7f7 !default; // Very light gray (mostly white).
+$text-primary: 						$body-color !default;
+$text-secondary: 					$gray-100 !default;
+$spacer-color: 						$gray-300 !default;
+$whitish:  							#f7f7f7 !default;
+$blackish: 							#111111 !default;
+$gray: 								#666666 !default;

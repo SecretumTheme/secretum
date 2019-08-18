@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.5.2
+ * @version    3.7.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/order/order-details.php
  * @since      1.0.0
@@ -23,8 +23,8 @@ if ( ! isset( $order_id ) && $order_id !== $secretum_order ) {
 	return;
 }
 
-$secretum_order_items           = $secretum_order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-$secretum_show_purchase_note    = $secretum_order->has_status(
+$secretum_order_items        = $secretum_order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
+$secretum_show_purchase_note = $secretum_order->has_status(
 	apply_filters(
 		'woocommerce_purchase_note_order_statuses',
 		[
@@ -33,6 +33,7 @@ $secretum_show_purchase_note    = $secretum_order->has_status(
 		]
 	)
 );
+
 $secretum_show_customer_details = is_user_logged_in() && $secretum_order->get_user_id() === get_current_user_id();
 $secretum_downloads             = $secretum_order->get_downloadable_items();
 $secretum_show_downloads        = $secretum_order->has_downloadable_item() && $secretum_order->is_download_permitted();
@@ -102,7 +103,7 @@ if ( $secretum_show_downloads ) {
 				?>
 				<tr>
 					<th><?php esc_html_e( 'Note:', 'secretum' ); ?></th>
-					<td><?php echo wp_kses_post( wptexturize( $secretum_order->get_customer_note() ) ); ?></td>
+					<td><?php echo wp_kses_post( nl2br( wptexturize( $secretum_order->get_customer_note() ) ) ); ?></td>
 				</tr>
 				<?php
 			}

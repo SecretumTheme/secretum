@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.2.0
+ * @version    3.7.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/orders.php
  * @since      1.0.0
@@ -33,7 +33,7 @@ if ( $has_orders ) {
 		</thead>
 		<tbody>
 			<?php
-			foreach ( $customer_orders->orders as $secretum_customer_order ) {
+			foreach ( $secretum_customer_orders->orders as $secretum_customer_order ) {
 				$secretum_order      = wc_get_order( $secretum_customer_order );
 				$secretum_item_count = $secretum_order->get_item_count();
 				?>
@@ -58,7 +58,7 @@ if ( $has_orders ) {
 							} elseif ( 'order-status' === $secretum_column_id ) {
 								echo esc_html( wc_get_order_status_name( $secretum_order->get_status() ) );
 							} elseif ( 'order-total' === $secretum_column_id ) {
-								/* Translators: 1) $value 2) number*/
+								/* Translators: 1) $secretum_value 2) number*/
 								printf( wp_kses_post( _n( '%1$s for %2$s item', '%1$s for %2$s items', $secretum_item_count, 'secretum' ) ), wp_kses_post( $secretum_order->get_formatted_order_total() ), absint( $secretum_item_count ) );
 							} elseif ( 'order-actions' === $secretum_column_id ) {
 								$secretum_actions = wc_get_account_orders_actions( $secretum_order );
@@ -67,8 +67,8 @@ if ( $has_orders ) {
 							<div class="text-center">
 								<?php
 								if ( ! empty( $secretum_actions ) ) {
-									foreach ( $secretum_actions as $secretum_key => $secretum_action ) {
-										echo '<a href="' . esc_url( $secretum_action['url'] ) . '" class="woocommerce-button btn btn-secondary ' . sanitize_html_class( $secretum_key ) . '">' . esc_html( $secretum_action['name'] ) . '</a>';
+									foreach ( $secretum_actions as $secretum_key => $secretum_value ) {
+										echo '<a href="' . esc_url( $secretum_value['url'] ) . '" class="woocommerce-button btn btn-secondary ' . sanitize_html_class( $secretum_key ) . '">' . esc_html( $secretum_value['name'] ) . '</a>';
 									}
 								}
 								?>

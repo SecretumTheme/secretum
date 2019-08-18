@@ -31,6 +31,7 @@ function secretum_customizer_default_settings() {
 			secretum_customizer_header_settings(),
 			secretum_customizer_primary_nav_settings(),
 			secretum_customizer_body_settings(),
+			secretum_customizer_breadcrumbs_settings(),
 			secretum_customizer_featured_image_settings(),
 			secretum_customizer_entry_settings(),
 			secretum_customizer_sidebar_settings(),
@@ -369,6 +370,52 @@ function secretum_customizer_body_settings() {
 	];
 
 }//end secretum_customizer_body_settings()
+
+
+/**
+ * Breadcrumbs Section
+ *
+ * @since 1.8.0
+ *
+ * @return array Secretum Customizer Settings
+ */
+function secretum_customizer_breadcrumbs_settings() {
+	return [
+		// Display.
+		'breadcrumbs_posts_status'               => '',
+		'breadcrumbs_pages_status'               => '',
+		'breadcrumbs_display_location'           => '',
+		'breadcrumbs_categories_type'            => '',
+		'breadcrumbs_home'                       => '',
+		// Wrapper.
+		'breadcrumbs_wrapper_background_color'   => '',
+		'breadcrumbs_wrapper_padding_x'          => '',
+		'breadcrumbs_wrapper_padding_y'          => '',
+		'breadcrumbs_wrapper_margin_top'         => '',
+		'breadcrumbs_wrapper_margin_bottom'      => '',
+		'breadcrumbs_wrapper_border_type'        => '',
+		'breadcrumbs_wrapper_border_radius'      => '',
+		'breadcrumbs_wrapper_border_color'       => '',
+		// Container.
+		'breadcrumbs_container_background_color' => '',
+		'breadcrumbs_container_margin_top'       => '',
+		'breadcrumbs_container_margin_bottom'    => '',
+		'breadcrumbs_container_padding_x'        => '',
+		'breadcrumbs_container_padding_y'        => '',
+		'breadcrumbs_container_border_type'      => '',
+		'breadcrumbs_container_border_radius'    => '',
+		'breadcrumbs_container_border_color'     => '',
+		// Textuals.
+		'breadcrumbs_textual_font_family'        => '',
+		'breadcrumbs_textual_font_size'          => '',
+		'breadcrumbs_textual_font_style'         => '',
+		'breadcrumbs_textual_text_transform'     => '',
+		'breadcrumbs_textual_text_color'         => '',
+		'breadcrumbs_textual_link_color'         => '',
+		'breadcrumbs_textual_link_hover_color'   => '',
+	];
+
+}//end secretum_customizer_breadcrumbs_settings()
 
 
 /**

@@ -1,0 +1,50 @@
+/**
+ * Secretum Styling Variables
+ *
+ * @package    Secretum
+ * @subpackage Theme-SCSS
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/themes/dt_vivid-blue-strong-red/variables.scss
+ */
+
+// Localized Image/Font Paths Within Rendered CSS
+$localized_path:					'../../../';
+
+// Bootstrap4: Color Values
+$primary: 							#3399cc !default; // Vivid Blue
+$secondary: 						#cc3333 !default; // Strong Red
+
+$gray-100: 							#f8f9fa !default;
+$gray-200: 							#e9ecef !default;
+$gray-300: 							#dee2e6 !default;
+$gray-400: 							#ced4da !default;
+$gray-500: 							#adb5bd !default;
+$gray-600: 							#6c757d !default;
+$gray-700: 							#495057 !default;
+$gray-800: 							#343a40 !default;
+$gray-900: 							#212529 !default;
+
+$blue: 								#3395ff !default;
+$indigo: 							#8540f5 !default;
+$purple: 							#8c68ce !default;
+$pink: 								#ed6ca7 !default;
+$red: 								#db2f3f !default;
+$orange: 							#fd7e14 !default;
+$yellow: 							#eefe79 !default;
+$green: 							#34ce57 !default;
+$teal: 								#3ce0af !default;
+$cyan: 								#1fc8e3 !default
+
+$body-bg: 							#161617 !default; // Very dark (mostly black) blue.
+$body-color: 						#e9e9e9 !default; // Very light gray.
+
+// Secretum: New Colors
+$content-bg: 						#191c20 !default; // Very dark (mostly black) blue.
+$text-primary: 						$body-color !default;
+$text-secondary: 					#fffff1 !default; // Very pale (mostly white) yellow.
+$spacer-color: 						$gray-600 !default;
+$whitish:  							#f7f7f3 !default;
+$blackish: 							#2e2f32 !default;
+$gray: 								#434a54 !default;
