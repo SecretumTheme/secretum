@@ -22,7 +22,7 @@ namespace Secretum;
 
 		<?php if ( false !== secretum_mod( 'entry_status' ) ) { ?>
 			<div class="col-md<?php secretum_entry_columns(); ?><?php secretum_wrapper( 'entry' ); ?> content-area" id="primary">
-				<main class="site-main<?php secretum_textual( 'entry' ); ?>" id="main">
+				<main class="site-main<?php secretum_container( 'entry' ); ?>" id="main">
 					<?php
 					/**
 					 * Hook: secretum_before_content
@@ -35,10 +35,6 @@ namespace Secretum;
 						while ( have_posts() ) {
 							the_post();
 							get_template_part( 'template-parts/post/content', get_post_format() );
-
-							if ( comments_open() || get_comments_number() ) {
-								comments_template();
-							}
 						}
 					} else {
 						get_template_part( 'template-parts/post/content', 'none' );

@@ -1,5 +1,24 @@
 # Changelog
 
+# 1.8.0
+**2019-XX-XX - XXXXXX**
+
+* Added breadcrumb settings to customizer
+* New Dark Theme: Primary Strong Yellow - Secondary Strong Red
+* New Light Theme: Primary Mostly Pure Blue - Secondary Moderate Green
+* Added secretum_before|after_post_content hooks around <article> tag
+* Added secretum_before|after_page_content hooks around <article> tag
+* Corrected Empty Content Only page template to use proper partical
+* Adjusted default whitespacing around breadcrumbs
+* Adjusted default colors for comments wrap, and odd/even backgrounds
+* Adjusted Version Compare to use filter_input to get 'activated' for unset
+* Created Secretum Manager class - Preparing for class call migration
+* Created Secretum Upgrade class - Version 1.8.0 Migration Added
+* Updated woocommerce/cart/cart.php
+* Updated woocommerce/myaccount/orders.php
+* Updated woocommerce/order/order-details.php
+* WordPress 5.2.2 Tested
+
 # 1.7.7
 **2019-06-25 - Hotfix**
 

@@ -9,10 +9,10 @@
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/theme.scss
  */
 
-@import "../vendors/bootstrap4/functions";
-@import "../vendors/bootstrap4/variables";
 @import "variables";
 @import "../theme_variables.scss";
+@import "../vendors/bootstrap4/functions";
+@import "../vendors/bootstrap4/variables";
 @import "../vendors/bootstrap4/mixins";
 @import "../vendors/bootstrap4/root";
 @import "../vendors/bootstrap4/reboot";

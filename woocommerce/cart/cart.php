@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.5.0
+ * @version    3.7.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
  * @since      1.0.0
@@ -52,7 +52,7 @@ do_action( 'woocommerce_before_cart' );
 						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $secretum_cart_item, $secretum_cart_item_key ) ); ?>">
 							<td class="product-remove">
 								<?php
-								$secretum_woo_cart_item_remove_link = apply_filters(
+								$secretum_cart_item_remove_link = apply_filters(
 									'woocommerce_cart_item_remove_link',
 									sprintf(
 										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
@@ -65,7 +65,7 @@ do_action( 'woocommerce_before_cart' );
 								);
 
 								echo wp_kses(
-									$secretum_woo_cart_item_remove_link,
+									$secretum_cart_item_remove_link,
 									[
 										'a' => [
 											'href'       => true,

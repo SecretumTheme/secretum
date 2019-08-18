@@ -20,6 +20,7 @@ TODO.md
 stage.sh
 child.sh
 
+package-lock.json
 node_modules/*
 inc/assets/vendors
 psds/*

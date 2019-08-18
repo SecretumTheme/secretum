@@ -64,20 +64,20 @@ $danger: 							$red !default;
 $light: 							$gray-100 !default;
 $dark: 								$gray-800 !default;
 
-$body-bg: 							#fcfcfa !default;
-$body-color: 						#212529 !default;
+$body-bg: 							#fcfcfa !default; // Light grayish yellow.
+$body-color: 						#212529 !default; // Very dark (mostly black) blue.
 
-$link-color: 						$gray-900 !default;
+$link-color: 						$blue !default; // Very dark (mostly black) blue.
 $link-decoration: 					underline !default;
-$link-hover-color: 					$gray-700 !default;
+$link-hover-color: 					darken($blue, 30%) !default;
 $link-hover-decoration: 			none !default;
 
 // Secretum: New Colors
-$content-bg: 						#f7f7f7 !default;
+$content-bg: 						#f7f7f7 !default; // Very light gray (mostly white).
 $text-primary: 						$body-color !default;
-$text-secondary: 					#495057 !default;
-$primary-light: 					lighten($primary, 5%) !default;
-$primary-dark: 						darken($primary, 5%) !default;
+$text-secondary: 					#495057 !default; // Very dark grayish blue.
+$primary-light: 					lighten($primary, 20%) !default;
+$primary-dark: 						darken($primary, 20%) !default;
 $spacer-color: 						$gray-600 !default;
 $whitish:  							#f7f7f3 !default;
 $blackish: 							#101112 !default;
@@ -155,3 +155,9 @@ $wp-calendar-td-hover:              darken($body-bg, 10%) !default;
 $wp-calendar-link-color:            $link-color !default;
 $wp-calendar-link-hover-color:      $link-hover-color !default;
 $wp-calendar-border-color:          $spacer-color !default;
+
+// Breadcrumbs
+$breadcrumb-padding-y:              1rem !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider-color:          $text-primary !default;
+$breadcrumb-active-color:           $link-hover-color !default;

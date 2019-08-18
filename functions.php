@@ -13,7 +13,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.7.7' );
+define( 'SECRETUM_THEME_VERSION', '1.8.0' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -122,6 +122,22 @@ function secretum_widgets_init() {
 add_action( 'widgets_init', 'Secretum\secretum_widgets_init' );
 
 
+/*
+ * Hooks a function on to a specific action.
+ * https://developer.wordpress.org/reference/functions/add_action/
+ *
+ * Fires after the theme is loaded.
+ * https://developer.wordpress.org/reference/hooks/after_setup_theme/
+ */
+add_action(
+	'after_setup_theme',
+	[
+		'Secretum\Secretum',
+		'init',
+	]
+);
+
+
 /**
  * WordPress Customizer.
  *
@@ -160,17 +176,18 @@ function secretum_customize_register( $wp_customize ) {
 	// Include Panels, Sections, and Settings.
 	require_once SECRETUM_INC . '/customize/sections/theme.php';
 	require_once SECRETUM_INC . '/customize/sections/site-identity.php';
+	require_once SECRETUM_INC . '/customize/sections/frontpage.php';
 	require_once SECRETUM_INC . '/customize/sections/header-top.php';
 	require_once SECRETUM_INC . '/customize/sections/header.php';
 	require_once SECRETUM_INC . '/customize/sections/primary-nav.php';
 	require_once SECRETUM_INC . '/customize/sections/body.php';
-	require_once SECRETUM_INC . '/customize/sections/featured-image.php';
 	require_once SECRETUM_INC . '/customize/sections/entry.php';
+	require_once SECRETUM_INC . '/customize/sections/featured-image.php';
+	require_once SECRETUM_INC . '/customize/sections/breadcrumbs.php';
 	require_once SECRETUM_INC . '/customize/sections/sidebar.php';
 	require_once SECRETUM_INC . '/customize/sections/footer.php';
 	require_once SECRETUM_INC . '/customize/sections/copyright.php';
 	require_once SECRETUM_INC . '/customize/sections/copyright-nav.php';
-	require_once SECRETUM_INC . '/customize/sections/frontpage.php';
 	require_once SECRETUM_INC . '/customize/sections/extras.php';
 
 	// Text Translations.

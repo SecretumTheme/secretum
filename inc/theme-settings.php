@@ -25,9 +25,7 @@ namespace Secretum;
  * @since 1.0.0
  */
 function secretum_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = secretum_mod( 'secretum_content_width' ) ? absint( secretum_mod( 'secretum_content_width', 'int' ) ) : 640;
 }
 
@@ -43,12 +41,6 @@ function secretum_setup_theme() {
 	// Load Theme Translated Strings.
 	load_theme_textdomain( 'secretum', SECRETUM_THEME_DIR . '/lang' );
 
-	// Register Navigation Menus.
-	// Saved - To Be Removed In Next Release.
-	// Temp: 'secretum-navbar-primary-below' => __( 'Primary Menu - Below Header (select 1 primary only)', 'secretum' ),.
-	// Temp: 'secretum-navbar-primary-above' => __( 'Primary Menu - Above Header (select 1 primary only)', 'secretum' ),.
-	// Temp: 'secretum-navbar-primary-left'  => __( 'Primary Menu - Left of Logo (select 1 primary only)', 'secretum' ),.
-	// Temp: 'secretum-navbar-primary-right' => __( 'Primary Menu - Right of Logo (select 1 primary only)', 'secretum' ),.
 	register_nav_menus(
 		[
 			'secretum-navbar-primary'       => __( 'Primary Menu', 'secretum' ),
@@ -168,6 +160,8 @@ function secretum_load_default_settings( $settings ) {
 	$settings['primary_nav_status']                            = true;
 	$settings['primary_nav_toggler_status']                    = true;
 	$settings['body_status']                                   = true;
+	$settings['breadcrumbs_posts_status']                      = true;
+	$settings['breadcrumbs_pages_status']                      = true;
 	$settings['featured_image_status']                         = true;
 	$settings['entry_status']                                  = true;
 	$settings['entry_meta_commentlink_status']                 = true;
@@ -198,19 +192,19 @@ function secretum_load_default_settings( $settings ) {
 	$settings['primary_nav_cart_link_padding_t']               = 'pt-2';
 	$settings['primary_nav_cart_icon_size']                    = 'text-22';
 	$settings['primary_nav_cart_count_size']                   = 'text-14';
+	$settings['breadcrumbs_display_location']                  = 'after_header';
+	$settings['breadcrumbs_wrapper_padding_y']                 = 'py-3';
 	$settings['frontpage_heading_wrapper_padding_x']           = 'px-0';
-	$settings['frontpage_heading_wrapper_padding_y']           = 'px-0';
+	$settings['frontpage_heading_wrapper_padding_y']           = 'py-0';
 	$settings['frontpage_heading_wrapper_border_radius']       = 'rounded-0';
 	$settings['frontpage_heading_wrapper_border_type']         = 'border-0';
 	$settings['featured_image_wrapper_margin_bottom']          = 'mb-4';
 	$settings['entry_wrapper_padding_x']                       = 'px-3';
 	$settings['entry_wrapper_padding_y']                       = 'py-4';
-	$settings['entry_wrapper_margin_top']                      = 'mt-4';
 	$settings['entry_wrapper_margin_bottom']                   = 'mb-4';
 	$settings['sidebar_location']                              = 'right';
 	$settings['sidebar_wrapper_padding_x']                     = 'px-4';
 	$settings['sidebar_wrapper_padding_y']                     = 'py-4';
-	$settings['sidebar_wrapper_margin_top']                    = 'mt-4';
 	$settings['sidebar_wrapper_margin_bottom']                 = 'mb-4';
 	$settings['sidebar_container_margin_bottom']               = 'mb-5';
 	$settings['footer_wrapper_padding_y']                      = 'py-4';
