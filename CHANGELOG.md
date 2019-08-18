@@ -1,7 +1,7 @@
 # Changelog
 
 # 1.8.0
-**2019-XX-XX - XXXXXX**
+**2019-08-18 - Feature Upgrades**
 
 * Added breadcrumb settings to customizer
 * New Dark Theme: Primary Strong Yellow - Secondary Strong Red
