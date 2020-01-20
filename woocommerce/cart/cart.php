@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.7.0
+ * @version    3.8.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
  * @since      1.0.0
@@ -66,15 +66,15 @@ do_action( 'woocommerce_before_cart' );
 
 								echo wp_kses(
 									$secretum_cart_item_remove_link,
-									[
-										'a' => [
+									array(
+										'a' => array(
 											'href'       => true,
 											'class'      => true,
 											'aria-label' => true,
 											'data-product_id' => true,
 											'data-product_sku' => true,
-										],
-									]
+										),
+									)
 								);
 								?>
 							</td>
@@ -85,29 +85,29 @@ do_action( 'woocommerce_before_cart' );
 							if ( ! $secretum_product_permalink ) {
 								echo wp_kses(
 									$secretum_woo_thumbnail,
-									[
-										'img' => [
+									array(
+										'img' => array(
 											'role'  => true,
 											'alt'   => true,
 											'src'   => true,
 											'style' => true,
-										],
-									]
+										),
+									)
 								);
 							} else {
 								echo wp_kses(
 									sprintf( '<a href="%s">%s</a>', esc_url( $secretum_product_permalink ), $secretum_woo_thumbnail ),
-									[
-										'a'   => [
+									array(
+										'a'   => array(
 											'href' => true,
-										],
-										'img' => [
+										),
+										'img' => array(
 											'role'  => true,
 											'alt'   => true,
 											'src'   => true,
 											'style' => true,
-										],
-									]
+										),
+									)
 								);
 							}
 							?>
@@ -140,13 +140,13 @@ do_action( 'woocommerce_before_cart' );
 								$secretum_product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $secretum_cart_item_key );
 							} else {
 								$secretum_product_quantity = woocommerce_quantity_input(
-									[
+									array(
 										'input_name'   => "cart[{$secretum_cart_item_key}][qty]",
 										'input_value'  => $secretum_cart_item['quantity'],
 										'max_value'    => $secretum_product->get_max_purchase_quantity(),
 										'min_value'    => '0',
 										'product_name' => $secretum_product->get_name(),
-									],
+									),
 									$secretum_product,
 									false
 								);
@@ -154,8 +154,8 @@ do_action( 'woocommerce_before_cart' );
 
 							echo wp_kses(
 								apply_filters( 'woocommerce_cart_item_quantity', $secretum_product_quantity, $secretum_cart_item_key, $secretum_cart_item ),
-								[
-									'input' => [
+								array(
+									'input' => array(
 										'type'            => true,
 										'id'              => true,
 										'class'           => true,
@@ -169,8 +169,8 @@ do_action( 'woocommerce_before_cart' );
 										'pattern'         => true,
 										'inputmode'       => true,
 										'aria-labelledby' => true,
-									],
-								]
+									),
+								)
 							);
 							?>
 							</td>

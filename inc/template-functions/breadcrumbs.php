@@ -54,16 +54,19 @@ function secretum_breadcrumb() {
 		$category_list = get_the_category();
 
 		if ( true !== empty( $category_list[0] ) ) {
-			$category_item = '<a href="' . esc_url( get_category_link( $category_list[0]->term_id ) ) . '">' . esc_html( $category_list[0]->name ) . '</a>';
+			$category_item = '<a href="' . esc_url( get_category_link( $category_list[0]->term_id ) ) . '"><span itemprop="name">' . esc_html( $category_list[0]->name ) . '</span></a>';
 		}
 	}
 
-	$home_url     = get_home_url( '/' );
-	$blog_name    = get_bloginfo( 'name' );
-	$page_title   = get_the_title( get_the_ID() );
-	$ol_schema    = ' itemscope itemtype="http://schema.org/BreadcrumbList"';
-	$li_schema    = ' itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
-	$li_aria_last = ' aria-current="page"';
+	$home_url        = get_home_url( '/' );
+	$blog_name       = get_bloginfo( 'name' );
+	$page_title      = get_the_title( get_the_ID() );
+	$ol_schema       = ' itemscope itemtype="http://schema.org/BreadcrumbList"';
+	$li_schema       = ' itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
+	$li_aria_last    = ' aria-current="page"';
+	$first_position  = '<meta itemprop="position" content="1" />';
+	$second_position = '<meta itemprop="position" content="2" />';
+	$third_position  = '<meta itemprop="position" content="3" />';
 
 	$html  = '<nav aria-label="breadcrumb" class="wrapper' . secretum_wrapper( 'breadcrumbs', 'return' ) . secretum_textual( 'breadcrumbs', 'return' ) . '">';
 	$html .= '<ol class="breadcrumb container' . secretum_container( 'breadcrumbs', 'return' ) . '"' . $ol_schema . '>';
@@ -71,23 +74,25 @@ function secretum_breadcrumb() {
 	$breadcrumbs_home = secretum_mod( 'breadcrumbs_home', 'attr' );
 
 	if ( 'icon' === $breadcrumbs_home ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><i class="fi-home"></i> <a href="' . $home_url . '">' . $blog_name . '</a></li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><i class="fi-home"></i> <a href="' . $home_url . '"><span itemprop="name">' . $blog_name . '</span></a>' . $first_position . '</li>';
 	} elseif ( 'link' === $breadcrumbs_home ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"><i class="fi-home"></i></a></li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"><span itemprop="name"><i class="fi-home" title="' . $blog_name . '"></i></span></a>' . $first_position . '</li>';
 	} elseif ( '' === $breadcrumbs_home || true === empty( $breadcrumbs_home ) ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '">' . $blog_name . '</a></li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"><span itemprop="name">' . $blog_name . '</span></a>' . $first_position . '</li>';
 	}
 
 	if ( ( true === is_category() || true === is_single() ) ) {
 		if ( true !== empty( $category_item ) ) {
-			$html .= '<li class="breadcrumb-item"' . $li_schema . '>' . $category_item . '</li>';
+			$html .= '<li class="breadcrumb-item"' . $li_schema . '>' . $category_item . $second_position . '</li>';
 		}
 
-		if ( true === is_single() ) {
-			$html .= '<li class="breadcrumb-item"' . $li_schema . $li_aria_last . '>' . $page_title . '</li>';
+		if ( true === empty( $category_item ) && true === is_single() ) {
+			$html .= '<li class="breadcrumb-item"' . $li_schema . $li_aria_last . '><span itemprop="name">' . $page_title . '</span>' . $second_position . '</li>';
+		} else {
+			$html .= '<li class="breadcrumb-item"' . $li_schema . $li_aria_last . '><span itemprop="name">' . $page_title . '</span>' . $third_position . '</li>';
 		}
 	} elseif ( true === is_page() ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . $li_aria_last . '>' . $page_title . '</li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . $li_aria_last . '><span itemprop="name">' . $page_title . '</span>' . $second_position . '</li>';
 	}
 
 	$html .= '</ol>';
@@ -97,33 +102,38 @@ function secretum_breadcrumb() {
 
 	echo wp_kses(
 		$html,
-		[
-			'nav'  => [
+		array(
+			'nav'  => array(
 				'aria-label' => true,
 				'class'      => true,
-			],
-			'ol'   => [
+			),
+			'ol'   => array(
 				'class'     => true,
 				'itemscope' => true,
 				'itemtype'  => true,
-			],
-			'li'   => [
+			),
+			'li'   => array(
 				'class'     => true,
 				'itemprop'  => true,
 				'itemscope' => true,
 				'itemtype'  => true,
-			],
-			'span' => [
-				'class' => true,
-			],
-			'a'    => [
+			),
+			'span' => array(
+				'class'     => true,
+				'itemprop'  => true,
+			),
+			'meta' => array(
+				'content'   => true,
+				'itemprop'  => true,
+			),
+			'a'    => array(
 				'class' => true,
 				'href'  => true,
 				'rel'   => true,
-			],
-			'i'    => [
+			),
+			'i'    => array(
 				'class' => true,
-			],
-		]
+			),
+		)
 	);
 }

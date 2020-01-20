@@ -33,7 +33,7 @@ if ( $has_orders ) {
 		</thead>
 		<tbody>
 			<?php
-			foreach ( $secretum_customer_orders->orders as $secretum_customer_order ) {
+			foreach ( $customer_orders->orders as $secretum_customer_order ) {
 				$secretum_order      = wc_get_order( $secretum_customer_order );
 				$secretum_item_count = $secretum_order->get_item_count();
 				?>
@@ -88,7 +88,7 @@ if ( $has_orders ) {
 
 	<?php do_action( 'woocommerce_before_account_orders_pagination' ); ?>
 
-	<?php if ( 1 < $secretum_customer_orders->max_num_pages ) { ?>
+	<?php if ( 1 < $customer_orders->max_num_pages ) { ?>
 		<div class="woocommerce-pagination woocommerce-pagination--without-numbers woocommerce-Pagination">
 			<?php if ( 1 !== $current_page ) { ?>
 				<a class="woocommerce-button woocommerce-button--previous woocommerce-Button woocommerce-Button--previous button" href="<?php echo esc_url( wc_get_endpoint_url( 'orders', $current_page - 1 ) ); ?>"><?php esc_html_e( 'Previous', 'secretum' ); ?></a>

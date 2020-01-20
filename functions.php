@@ -13,7 +13,7 @@
 namespace Secretum;
 
 // Constants.
-define( 'SECRETUM_THEME_VERSION', '1.8.0' );
+define( 'SECRETUM_THEME_VERSION', '1.9.0' );
 
 define( 'SECRETUM_DIR', dirname( __FILE__ ) );
 define( 'SECRETUM_BASE_URL', esc_url( home_url() ) );
@@ -131,10 +131,10 @@ add_action( 'widgets_init', 'Secretum\secretum_widgets_init' );
  */
 add_action(
 	'after_setup_theme',
-	[
+	array(
 		'Secretum\Secretum',
 		'init',
-	]
+	)
 );
 
 

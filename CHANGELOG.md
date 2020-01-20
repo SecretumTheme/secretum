@@ -1,5 +1,15 @@
 # Changelog
 
+# 1.9.0
+**2020-01-20 - Feature Upgrades**
+
+* [Issue #2](https://github.com/SecretumTheme/secretum/issues/2): Added position meta & itemprop name to breadcrumb items
+* Updated woocommerce/cart/cart.php
+* Updated woocommerce/checkout/form-login.php
+* Updated woocommerce/checkout/review-order.php
+* Corrected undefined var error in woocommerce/myaccount/orders.php
+* WordPress 5.3.2 Tested
+
 # 1.8.0
 **2019-08-18 - Feature Upgrades**
 
