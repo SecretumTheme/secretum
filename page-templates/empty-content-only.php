@@ -17,7 +17,7 @@ get_header();
 
 while ( have_posts() ) {
 	the_post();
-	get_template_part( 'template-parts/post/content', 'blank' );
+	get_template_part( 'template-parts/post/content', 'only' );
 }
 
 get_footer();

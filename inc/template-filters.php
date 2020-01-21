@@ -150,7 +150,9 @@ function secretum_comment_form_defaults( $defaults ) {
 	$defaults['title_reply_after']    = '</h2>';
 	$defaults['label_submit']         = secretum_text( 'comment_post_label', false );
 	$defaults['class_submit']         = 'btn btn-secondary';
-	$defaults['fields']               = apply_filters( 'comment_form_default_fields', $fields );
+
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+	$defaults['fields'] = apply_filters( 'comment_form_default_fields', $fields );
 
 	return $defaults;
 

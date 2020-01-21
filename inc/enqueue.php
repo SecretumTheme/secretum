@@ -139,7 +139,7 @@ function secretum_enqueue_scripts() {
 		// Bootstrap Bundle Script.
 		if ( true === secretum_mod( 'enqueue_bootstrap_bundle_js_status' ) ) {
 			wp_enqueue_script(
-				'secretum-bootstrap-bundle',
+				'bootstrap-bundle',
 				SECRETUM_THEME_URL . '/js/bootstrap.bundle.min.js',
 				[ 'jquery' ],
 				'4.2.1',
@@ -170,7 +170,7 @@ function secretum_enqueue_scripts() {
 		);
 
 		wp_enqueue_script(
-			'secretum-ekko-lightbox',
+			'ekko-lightbox',
 			SECRETUM_THEME_URL . '/js/ekko-lightbox.min.js',
 			[ 'jquery' ],
 			'5.3.0',

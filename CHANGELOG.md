@@ -1,5 +1,56 @@
 # Changelog
 
+# 1.9.0
+**2020-01-20 - Feature Upgrades**
+
+* [Issue #2](https://github.com/SecretumTheme/secretum/issues/2): Added position meta & itemprop name to breadcrumb items
+* Updated woocommerce/cart/cart.php
+* Updated woocommerce/checkout/form-login.php
+* Updated woocommerce/checkout/review-order.php
+* Corrected undefined var error in woocommerce/myaccount/orders.php
+* WordPress 5.3.2 Tested
+
+# 1.8.0
+**2019-08-18 - Feature Upgrades**
+
+* Added breadcrumb settings to customizer
+* New Dark Theme: Primary Strong Yellow - Secondary Strong Red
+* New Light Theme: Primary Mostly Pure Blue - Secondary Moderate Green
+* Added secretum_before|after_post_content hooks around <article> tag
+* Added secretum_before|after_page_content hooks around <article> tag
+* Corrected Empty Content Only page template to use proper partical
+* Adjusted default whitespacing around breadcrumbs
+* Adjusted default colors for comments wrap, and odd/even backgrounds
+* Adjusted Version Compare to use filter_input to get 'activated' for unset
+* Created Secretum Manager class - Preparing for class call migration
+* Created Secretum Upgrade class - Version 1.8.0 Migration Added
+* Updated woocommerce/cart/cart.php
+* Updated woocommerce/myaccount/orders.php
+* Updated woocommerce/order/order-details.php
+* WordPress 5.2.2 Tested
+
+# 1.7.7
+**2019-06-25 - Hotfix**
+
+* Removed unmodified template: woocommerce/single-product/related.php
+
+# 1.7.6
+**2019-06-25 - Hotfix**
+
+* Temporarily removed woocommerce-bookings templates, testing client not available.
+
+# 1.7.5
+**2019-06-25 - Hotfix**
+
+* Removed duplicated font selection in customizer font-control.
+* Removed secretum prefix from 3rd party enqueued files.
+* Corrected woocommerce wrapper-start to use proper customizer functions.
+* Corrected edit post screenreader html being escaped in entry.php.
+* Corrected improperly formatted sprintf in woocommerce my account dashboard.
+* Corrected attr escaping in woocommerce review-order.
+* Added collapse wrapper to navbar fallback display when no menu is selected.
+* Created new dark color theme: soft yellow - vivid orange.
+
 # 1.7.4
 **2019-06-11 - Hotfix**
 

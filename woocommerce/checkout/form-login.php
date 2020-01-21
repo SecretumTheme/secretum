@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.4.0
+ * @version    3.8.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/form-login.php
  * @since      1.0.0
@@ -30,20 +30,16 @@ if ( true === is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_ch
 <?php
 if ( true === secretum_is_woobookings() ) {
 	// WooCommerce Bookings.
-	woocommerce_login_form(
-		[
-			'message'  => __( 'If you have booked with us before, please enter your login details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.', 'secretum' ),
-			'redirect' => wc_get_page_permalink( 'checkout' ),
-			'hidden'   => true,
-		]
-	);
+	$secretum_shopping_message = __( 'If you have booked with us before, please enter your login details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.', 'secretum' );
 } else {
-	// WooCommerce Default.
-	woocommerce_login_form(
-		[
-			'message'  => __( 'If you have shopped with us before, please enter your login details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.', 'secretum' ),
-			'redirect' => wc_get_page_permalink( 'checkout' ),
-			'hidden'   => true,
-		]
-	);
+	// WooCommerce Modified.
+	$secretum_shopping_message = __( 'If you have shopped with us before, please enter your login details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.', 'secretum' );
 }
+
+woocommerce_login_form(
+	array(
+		'message'  => $secretum_shopping_message,
+		'redirect' => wc_get_checkout_url(),
+		'hidden'   => true,
+	)
+);

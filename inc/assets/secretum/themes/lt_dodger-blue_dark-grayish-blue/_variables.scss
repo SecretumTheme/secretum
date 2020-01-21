@@ -1,0 +1,42 @@
+/**
+ * Secretum Styling Variables
+ *
+ * Primary Color: Dodger Blue
+ * Secondary Color: Dark Grayish Blue
+ *
+ * @package    Secretum
+ * @subpackage Theme-SCSS
+ * @author     SecretumTheme <author@secretumtheme.com>
+ * @copyright  2018-2019 Secretum
+ * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
+ * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/assets/themes/dodger-blue_dark-grayish-blue/_variables.scss
+ */
+
+// Localized Image/Font Paths Within Rendered CSS
+$localized_path:					'../../../';
+
+// Bootstrap4: Color Values
+$primary: 							#1c86ee !default;
+$secondary: 						#36454f !default;
+
+$gray-100: 							#f8f9fa !default;
+$gray-200: 							#e9ecef !default;
+$gray-300: 							#dee2e6 !default;
+$gray-400: 							#ced4da !default;
+$gray-500: 							#adb5bd !default;
+$gray-600: 							#6c757d !default;
+$gray-700: 							#495057 !default;
+$gray-800: 							#343a40 !default;
+$gray-900: 							#212529 !default;
+
+$body-bg: 							#fcfcfa !default;
+$body-color: 						#212529 !default;
+
+// Secretum: New Colors
+$content-bg: 						#f7f7f1 !default;
+$text-primary: 						$body-color !default;
+$text-secondary: 					$gray-100 !default;
+$spacer-color: 						$gray-300 !default;
+$whitish:  							#f7f7f3 !default;
+$blackish: 							#101112 !default;
+$gray: 								#666666 !default;

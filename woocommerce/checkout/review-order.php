@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.3.0
+ * @version    3.8.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/checkout/review-order.php
  * @since      1.0.0
@@ -99,7 +99,7 @@ if ( true !== defined( 'ABSPATH' ) ) {
 		if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
 			foreach ( WC()->cart->get_tax_totals() as $secretum_code => $secretum_tax ) {
 				?>
-				<tr class="tax-rate tax-rate-<?php echo esc_html( sanitize_title( $secretum_code ) ); ?>">
+				<tr class="tax-rate tax-rate-<?php echo esc_attr( $secretum_code ); ?>">
 					<th><?php echo esc_html( $secretum_tax->label ); ?></th>
 					<td><?php echo wp_kses_post( $secretum_tax->formatted_amount ); ?></td>
 				</tr>
