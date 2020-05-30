@@ -26,6 +26,14 @@ trait Trait_Translations {
 	 */
 	final public function defaults() {
 		return [
+			'primary_nav_aria_label_text'  => [
+				'label'   => __( 'Primary Nav Aria Label Text', 'secretum' ),
+				'default' => __( 'Main', 'secretum' ),
+			],
+			'primary_nav_toggler_aria_label_text'  => [
+				'label'   => __( 'Toggler Aria Label Text', 'secretum' ),
+				'default' => __( 'Toggle navigation', 'secretum' ),
+			],
 			'primary_nav_toggler_text'     => [
 				'label'   => __( 'Toggler Text Next To Toggler Icon (enables if defined)', 'secretum' ),
 				'default' => '',

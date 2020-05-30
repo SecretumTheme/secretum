@@ -31,15 +31,6 @@ gulp.task('assets', function(done) {
     gulp.src('./inc/assets/secretum/customizer/*.css').pipe(gulp.dest('./css/customizer'))
     gulp.src('./inc/assets/secretum/customizer/*.js').pipe(gulp.dest('./js/customizer'))
 
-    // Vendor: Ekko Lightbox
-    gulp.src('./node_modules/ekko-lightbox/dist/ekko-lightbox.css').pipe(concat('ekko-lightbox.scss')).pipe(gulp.dest('./inc/assets/vendors/ekko-lightbox'))
-    gulp.src([
-        './node_modules/ekko-lightbox/dist/ekko-lightbox.js',
-        //'./node_modules/ekko-lightbox/dist/ekko-lightbox.js.map',
-        './node_modules/ekko-lightbox/dist/ekko-lightbox.min.js',
-        //'./node_modules/ekko-lightbox/dist/ekko-lightbox.min.js.map',
-    ]).pipe(gulp.dest('./js'))
-
     // Vendor: Bootstrap4
     gulp.src('./node_modules/bootstrap/scss/**/*.scss').pipe(gulp.dest('./inc/assets/vendors/bootstrap4'))
     gulp.src('./node_modules/bootstrap/dist/js/bootstrap.bundle.js').pipe(gulp.dest('./inc/assets/vendors/bootstrap4'))

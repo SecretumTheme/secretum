@@ -19,7 +19,7 @@ if ( true !== has_nav_menu( 'secretum-navbar-primary' ) && true === has_nav_menu
 }
 
 ?>
-<nav class="wrapper navbar <?php secretum_navbar_toggler_display( 'size' ); ?><?php secretum_wrapper( 'primary_nav' ); ?>">
+<nav class="wrapper navbar <?php secretum_navbar_toggler_display( 'size' ); ?><?php secretum_wrapper( 'primary_nav' ); ?>" aria-label="<?php secretum_text( 'primary_nav_aria_label_text', true ); ?>" role="navigation">
 <div class="container<?php secretum_container( 'primary_nav', 'echo', [ 'textuals' => true ] ); ?>">
 <?php
 if ( false !== secretum_mod( 'primary_nav_toggler_status' ) ) {

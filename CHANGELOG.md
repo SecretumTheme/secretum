@@ -1,5 +1,16 @@
 # Changelog
 
+# 2.0.0
+**2020-05-30 - Version Upgrade**
+
+* Started ARIA WCAG upgrade
+* Improved aria labeling for screenreaders on navigation menus
+* Added 2 new Customizer > :: Translations > WordPress Text fields for aria labels
+* Updated woocommerce/myaccount/form-login.php
+* Updated woocommerce/global/quantity-input.php
+* Removed ekko-lightbox & browser-sync as dev dependencies
+* WordPress 5.4.1 Tested
+
 # 1.9.0
 **2020-01-20 - Feature Upgrades**
 

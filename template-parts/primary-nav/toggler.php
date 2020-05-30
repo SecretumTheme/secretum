@@ -14,4 +14,4 @@
 namespace Secretum;
 
 ?>
-<button class="navbar-toggler<?php secretum_nav_toggler_wrapper( 'primary_nav' ); ?>" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><?php secretum_nav_toggler_text(); ?><span class="navbar-toggler-icon<?php secretum_nav_toggler_icon( 'primary_nav' ); ?>"></span></button>
+<button class="navbar-toggler<?php secretum_nav_toggler_wrapper( 'primary_nav' ); ?>" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php secretum_text( 'primary_nav_toggler_aria_label_text', true ); ?>"><?php secretum_nav_toggler_text(); ?><span class="navbar-toggler-icon<?php secretum_nav_toggler_icon( 'primary_nav' ); ?>"></span></button>
