@@ -6,7 +6,7 @@
  * @subpackage Secretum
  * @author     SecretumTheme <author@secretumtheme.com>
  * @copyright  2018-2019 Secretum
- * @version    3.6.0
+ * @version    4.1.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-login.php
  * @since      1.0.0
@@ -63,7 +63,7 @@ if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 	<hr class="d-md-none" />
 
 <?php
-if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
+if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) :
 	?>
 	</div><!-- .col-sm -->
 	<div class="col-sm">
@@ -74,37 +74,43 @@ if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) { ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 
 					<label for="reg_username"><?php esc_html_e( 'Username', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
 					<input type="text" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="username" id="reg_username" autocomplete="username" value="<?php echo ( true === filter_input( INPUT_POST, 'username' ) ) ? esc_html( filter_input( INPUT_POST, 'username', FILTER_SANITIZE_ENCODED ) ) : ''; ?>" />
 
 				</p>
-			<?php } ?>
+			<?php endif; ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 				<label for="reg_email"><?php esc_html_e( 'Email address', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
 				<input type="email" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="email" id="reg_email" autocomplete="email" value="<?php echo ( true === filter_input( INPUT_POST, 'email' ) ) ? esc_html( filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) ) : ''; ?>" />
 			</p>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) { ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-group row m-2">
 					<label for="reg_password"><?php esc_html_e( 'Password', 'secretum' ); ?>&nbsp;<span class="required">*</span></label>
 					<input type="password" class="woocommerce-Input woocommerce-Input--text form-control form-control-lg" name="password" id="reg_password" autocomplete="new-password" />
 				</p>
-			<?php } ?>
+
+			<?php else : ?>
+
+				<p><?php esc_html_e( 'A password will be sent to your email address.', 'secretum' ); ?></p>
+
+			<?php endif; ?>
+
+			<?php do_action( 'woocommerce_register_form' ); ?>
 
 			<p class="woocommerce-FormRow form-group m-3">
 				<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="register" value="<?php esc_html_e( 'Register', 'secretum' ); ?>"><?php esc_html_e( 'Register', 'secretum' ); ?></button>
 			</p>
 
-			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 		</form>
 	</div><!-- .col-sm -->
 </div><!-- .row -->
 	<?php
-}
+endif;
 
 do_action( 'woocommerce_after_customer_login_form' );

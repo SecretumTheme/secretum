@@ -8,18 +8,14 @@
 .Trash
 .Trash-*
 
-access_log
-error_log
-config.rb
-phpunit.xml
 readme.html
 README.html
-composer.phar
 CONTRIBUTING.md
 TODO.md
 stage.sh
-child.sh
+.copy-config
 
+composer.lock
 package-lock.json
 node_modules/*
 inc/assets/vendors

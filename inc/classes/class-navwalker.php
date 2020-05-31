@@ -124,7 +124,7 @@ class Navwalker extends \Walker_Nav_Menu {
 			$labelledby = 'aria-labelledby="' . end( $matches[2] ) . '"';
 		}
 
-		$output .= "{$n}{$indent}<ul{$ul_classes} {$labelledby} role=\"menu\">{$n}";
+		$output .= "{$n}{$indent}<ul{$ul_classes} {$labelledby} role=\"menubar\">{$n}";
 
 	}//end start_lvl()
 
@@ -212,7 +212,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		$class_names = join( ' ', $classes );
 
 		if ( true === isset( $class_names ) ) {
-			$li_classes = ' class="' . esc_attr( $class_names ) . '"';
+			$li_classes = 'role="none" class="' . esc_attr( $class_names ) . '"';
 		} else {
 			$li_classes = '';
 		}
@@ -459,7 +459,7 @@ class Navwalker extends \Walker_Nav_Menu {
 				$text    = esc_html( $args['menu_text'] );
 				$url     = esc_url( admin_url( 'nav-menus.php' ) );
 				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
-				$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+				$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\" role=\"menubar\"><li class=\"menu-item\" role=\"none\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
 			} else {
 				// Build Args.
 				$args = wp_parse_args(
@@ -473,7 +473,7 @@ class Navwalker extends \Walker_Nav_Menu {
 				$url     = '#';
 				$text    = esc_html( $args['menu_text'] );
 				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
-				$html    = "<ul id=\"main-menu\" class=\"navbar-nav py-3 w-100\"><li class=\"menu-item\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
+				$html    = "<ul id=\"main-menu\" class=\"navbar-nav py-3 w-100\" role=\"menubar\"><li class=\"menu-item\" role=\"none\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
 			}
 
 			$filtered = '<div id="navbarNavDropdown" class="collapse navbar-collapse">' . apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 ) . '</div>';
@@ -491,6 +491,7 @@ class Navwalker extends \Walker_Nav_Menu {
 					],
 					'li'  => [
 						'class' => true,
+						'role'  => true,
 					],
 					'a'   => [
 						'href'  => true,
