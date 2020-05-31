@@ -96,7 +96,7 @@ if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) :
 
 			<?php else : ?>
 
-				<p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
+				<p><?php esc_html_e( 'A password will be sent to your email address.', 'secretum' ); ?></p>
 
 			<?php endif; ?>
 
