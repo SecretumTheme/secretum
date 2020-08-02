@@ -257,6 +257,7 @@ function secretum_customizer_primary_nav_settings() {
 		'primary_nav_status'                            => '',
 		'primary_nav_toggler_status'                    => '',
 		'primary_nav_search_status'                     => '',
+		'primary_nav_search_location'                   => '',
 		'primary_nav_alignment'                         => '',
 		'primary_nav_location'                          => '',
 		// Wrapper.
