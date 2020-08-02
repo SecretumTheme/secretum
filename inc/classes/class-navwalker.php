@@ -79,7 +79,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * @param int      $depth  Depth of menu item. Used for padding.
 	 * @param stdClass $args   An object of wp_nav_menu() arguments.
 	 */
-	public function start_lvl( &$output, $depth = 0, $args = [] ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		// Discard Item Spacing.
 		if ( true === isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
@@ -95,7 +95,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		$indent = str_repeat( $t, $depth );
 
 		// Default class to add to the file.
-		$classes = [ 'dropdown-menu' . $this->dropdown_classes ];
+		$classes = array( 'dropdown-menu' . $this->dropdown_classes );
 
 		/*
 		 * Filters the CSS class( es ) applied to a menu list element.
@@ -142,7 +142,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 * @param stdClass $args   An object of wp_nav_menu() arguments.
 	 * @param int      $id     Current item ID.
 	 */
-	public function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		// Discard Item Spacing.
 		if ( true === isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
@@ -165,13 +165,13 @@ class Navwalker extends \Walker_Nav_Menu {
 		if ( true !== empty( $item->classes ) ) {
 			$classes = (array) $item->classes;
 		} else {
-			$classes = [];
+			$classes = array();
 		}
 
 		// Initialize some holder variables to store specially handled item
 		// wrappers and icons.
-		$linkmod_classes = [];
-		$icon_classes    = [];
+		$linkmod_classes = array();
+		$icon_classes    = array();
 
 		// Get an updated $classes array without linkmod or icon classes.
 		// NOTE: linkmod and icon class arrays are passed by reference and
@@ -232,7 +232,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		$output .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $li_classes . '>';
 
 		// initialize array for holding the $atts for the link item.
-		$atts = [];
+		$atts = array();
 
 		// Set title from item to the $atts array - if title is empty then
 		// default to item title.
@@ -422,85 +422,9 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *     @type string $arg['menu_text'] Menu label text. Default 'Create Menu'.
 	 * }
 	 */
-	public static function fallback( $args = [] ) {
-		$wp_list_pages = wp_list_pages( [ 'echo' => false ] );
-
-		if ( true !== empty( $wp_list_pages ) ) {
-			echo wp_kses_post( '<div id="navbarNavDropdown" class="collapse navbar-collapse">' );
-
-			wp_nav_menu(
-				[
-					'depth'           => 1,
-					'theme_location'  => '__false',
-					'container'       => 'ul',
-					'container_class' => 'container link-light link-gray-300-hover',
-					'menu_class'      => 'navbar-nav ml-auto py-3',
-					'menu_id'         => 'main-menu',
-					'link_before'     => '<span class="px-2">',
-					'link_after'      => '</span>',
-					'echo'            => true,
-				]
-			);
-
-			echo wp_kses_post( '<div>' );
-
-		} else {
-
-			if ( true === current_user_can( 'edit_theme_options' ) ) {
-				// Build Args.
-				$args = wp_parse_args(
-					$args,
-					[
-						'menu_name' => 'menu',
-						'menu_text' => __( 'Create Menu', 'secretum' ),
-					]
-				);
-
-				$text    = esc_html( $args['menu_text'] );
-				$url     = esc_url( admin_url( 'nav-menus.php' ) );
-				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
-				$html    = "<ul id=\"main-menu\" class=\"navbar-nav ml-auto py-3\" role=\"menubar\"><li class=\"menu-item\" role=\"none\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
-			} else {
-				// Build Args.
-				$args = wp_parse_args(
-					$args,
-					[
-						'menu_name' => 'menu',
-						'menu_text' => __( 'Home', 'secretum' ),
-					]
-				);
-
-				$url     = '#';
-				$text    = esc_html( $args['menu_text'] );
-				$classes = secretum_textual( 'primary_nav_dropdown', 'return' );
-				$html    = "<ul id=\"main-menu\" class=\"navbar-nav py-3 w-100\" role=\"menubar\"><li class=\"menu-item\" role=\"none\"><a href=\"{$url}\" class=\"{$classes}\">{$text}</a></li></ul>";
-			}
-
-			$filtered = '<div id="navbarNavDropdown" class="collapse navbar-collapse">' . apply_filters( 'secretum_' . esc_attr( $args['menu_name'] ) . '_fallback', $html, 10, 1 ) . '</div>';
-
-			echo wp_kses(
-				$filtered,
-				[
-					'div' => [
-						'id'    => true,
-						'class' => true,
-					],
-					'ul'  => [
-						'id'    => true,
-						'class' => true,
-					],
-					'li'  => [
-						'class' => true,
-						'role'  => true,
-					],
-					'a'   => [
-						'href'  => true,
-						'class' => true,
-					],
-				]
-			);
-		}
-	}//end fallback()
+	public static function fallback( $args = array() ) {
+		return '';
+	}
 
 
 	/**
@@ -561,7 +485,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * @return string Empty for default, a linkmod type string otherwise.
 	 */
-	private function get_linkmod_type( $linkmod_classes = [] ) {
+	private function get_linkmod_type( $linkmod_classes = array() ) {
 		$linkmod_type = '';
 		// Loop through array of linkmod classes to handle their $atts.
 		if ( true !== empty( $linkmod_classes ) ) {
@@ -594,7 +518,7 @@ class Navwalker extends \Walker_Nav_Menu {
 	 *
 	 * @return array Maybe updated array of attributes for item.
 	 */
-	private function update_atts_for_linkmod_type( $atts = [], $linkmod_classes = [] ) {
+	private function update_atts_for_linkmod_type( $atts = array(), $linkmod_classes = array() ) {
 		if ( true !== empty( $linkmod_classes ) ) {
 			foreach ( $linkmod_classes as $link_class ) {
 				if ( true !== empty( $link_class ) ) {
