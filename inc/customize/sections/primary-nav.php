@@ -5,7 +5,7 @@
  * @package    Secretum
  * @subpackage Customizer
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/customize/sections/primary-nav.php
  * @since      1.0.0
@@ -44,8 +44,8 @@ $customizer->select(
 $customizer->select(
 	'primary_nav_display',
 	'primary_nav_alignment',
-	__( 'Menu Alignment', 'secretum' ),
-	'',
+	__( 'Desktop Menu Alignment', 'secretum' ),
+	__( 'Open the "Toggler Icon" section to adjust the mobile-toggler view.', 'secretum' ),
 	$defaults['primary_nav_alignment'],
 	secretum_customizer_margin_alignments()
 );
@@ -80,83 +80,97 @@ $customizer->checkbox(
 );
 
 
+// Select.
+$customizer->select(
+	'primary_nav_display',
+	'primary_nav_search_location',
+	__( 'Search Location', 'secretum' ),
+	__( 'Where to display search input within primary nav.', 'secretum' ),
+	$defaults['primary_nav_search_location'],
+	array(
+		''    => __( 'Bottom/Last Nav Item (default)', 'secretum' ),
+		'top' => __( 'Top/First Nav Item', 'secretum' ),
+	)
+);
+
+
 // Wrapper.
 $wrapper->settings(
-	[
+	array(
 		'section' => 'primary_nav',
-	]
+	)
 );
 
 
 // Wrapper Borders.
 $borders->settings(
-	[
+	array(
 		'section' => 'primary_nav_wrapper',
-	]
+	)
 );
 
 
 // Container.
 $container->settings(
-	[
+	array(
 		'section' => 'primary_nav',
-	]
+	)
 );
 
 
 // Container Borders.
 $borders->settings(
-	[
+	array(
 		'section' => 'primary_nav_container',
-	]
+	)
 );
 
 
 // Typography.
 $textuals->settings(
-	[
+	array(
 		'section' => 'primary_nav',
-	]
+	)
 );
 
 
 // Nav Items.
 $navitems->settings(
-	[
+	array(
 		'section' => 'primary_nav',
-	]
+	)
 );
 
 // Nav Items Borders.
 $borders->settings(
-	[
+	array(
 		'section' => 'primary_nav_items',
-	]
+	)
 );
 
 
 // Nav Dropdown.
 $dropdown->settings(
-	[
+	array(
 		'section' => 'primary_nav',
-	]
+	)
 );
 
 // Nav Dropdown Borders.
 $borders->settings(
-	[
+	array(
 		'section' => 'primary_nav_dropdown',
-	]
+	)
 );
 
 // Nav Dropdown Typography.
 $textuals->settings(
-	[
+	array(
 		'title'     => __( 'Dropdown Typography', 'secretum' ),
 		'panel'     => 'primary_nav',
 		'section'   => 'primary_nav_dropdown',
 		'alignment' => true,
-	]
+	)
 );
 
 
@@ -226,9 +240,9 @@ $customizer->select(
 
 // Toggler Borders.
 $borders->settings(
-	[
+	array(
 		'section' => 'primary_nav_toggler',
-	]
+	)
 );
 
 

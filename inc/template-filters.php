@@ -3,15 +3,52 @@
  * WordPress Filters
  *
  * @package    Secretum
- * @subpackage Core\Template-Filters
+ * @subpackage Theme
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/template-filters.php
  * @since      1.0.0
  */
 
 namespace Secretum;
+
+/**
+ * Add Search Form to Primary Nav.
+ *
+ * @since 2.0.1
+ *
+ * @param  string $items Menu Items.
+ * @param  array  $args  Menu Args.
+ * @return string
+ */
+function secretum_primary_nav_search_form( $items, $args ) {
+	if ( true !== secretum_mod( 'primary_nav_search_status' ) ) {
+		return $items;
+	}
+
+	if ( 'secretum-navbar-primary' === $args->theme_location ) {
+		ob_start();
+		get_template_part( 'template-parts/primary-nav/search' );
+		$search = ob_get_contents();
+		ob_end_clean();
+
+		$location = secretum_mod( 'primary_nav_search_location', 'raw' );
+
+		if ( true !== empty( $location ) && 'top' === $location ) {
+			$items = '<li class="search">' . $search . '</li>' . $items;
+		}
+
+		if ( true === empty( $location ) ) {
+			$items .= '<li class="search">' . $search . '</li>';
+		}
+	}
+
+	return $items;
+}
+
+add_filter( 'wp_nav_menu_items', 'Secretum\secretum_primary_nav_search_form', 10, 2 );
+
 
 /**
  * Replaces [...] In Archive Excerpts
@@ -34,8 +71,7 @@ function secretum_excerpt_more( $excerpt ) {
 		'<p class="text-right"><span class="screen-reader-text">' . secretum_text( 'continue_reading_text' ) . ' ' . get_the_title() . '</span><a class="btn btn-secondary continue-reading" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'continue_reading_text' ) . '</a></p>',
 		$excerpt
 	);
-
-}//end secretum_excerpt_more()
+}
 
 add_filter( 'excerpt_more', 'Secretum\secretum_excerpt_more' );
 
@@ -49,8 +85,7 @@ add_filter( 'excerpt_more', 'Secretum\secretum_excerpt_more' );
  */
 function secretum_content_more_link() {
 	return '<p class="text-right"><span class="screen-reader-text">' . secretum_text( 'read_more_text' ) . '</span><a class="btn btn-secondary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . secretum_text( 'read_more_text' ) . '</a></p>';
-
-}//end secretum_content_more_link()
+}
 
 add_filter( 'the_content_more_link', 'Secretum\secretum_content_more_link' );
 
@@ -65,13 +100,12 @@ add_filter( 'the_content_more_link', 'Secretum\secretum_content_more_link' );
  * @return array Updated body class array
  */
 function secretum_post_class( $classes ) {
-	if ( is_page() ) {
-		$classes = array_diff( $classes, [ 'hentry' ] );
+	if ( true === is_page() ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
 	}
 
 	return $classes;
-
-}//end secretum_post_class()
+}
 
 add_filter( 'post_class', 'Secretum\secretum_post_class' );
 
@@ -117,8 +151,7 @@ function secretum_body_class( $classes ) {
 	$classes[] = secretum_theme_background_color();
 
 	return $classes;
-
-}//end secretum_body_class()
+}
 
 add_filter( 'body_class', 'Secretum\secretum_body_class', 20, 2 );
 
@@ -136,11 +169,11 @@ function secretum_comment_form_defaults( $defaults ) {
 	$req       = get_option( 'require_name_email' );
 	$aria_req  = ( $req ? " aria-required='true'" : '' );
 
-	$fields = [
+	$fields = array(
 		'author' => '<p class="form-group comment-form-author"><label for="author">' . secretum_text( 'commenter_name', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="author" name="author" type="text" value="' . esc_html( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
 		'email'  => '<p class="form-group comment-form-email"><label for="email">' . secretum_text( 'commenter_email', false ) . '</label>' . ( $req ? ' <span class="required">*</span>' : '' ) . '<input class="form-control" id="email" name="email" type="email" value="' . esc_html( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
 		'url'    => '<p class="form-group comment-form-url"><label for="url">' . secretum_text( 'commenter_website', false ) . '</label> <input class="form-control" id="url" name="url" type="url" value="' . esc_url( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-	];
+	);
 
 	$defaults['comment_field']        = '<div class="form-group comment-form-comment"><label for="comment">' . secretum_text( 'commenter_comment', false ) . ' <span class="required">*</span></label> <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea></div>';
 	$defaults['comment_notes_before'] = '<span class="required">*</span> ' . secretum_text( 'comments_required', false );
@@ -155,7 +188,6 @@ function secretum_comment_form_defaults( $defaults ) {
 	$defaults['fields'] = apply_filters( 'comment_form_default_fields', $fields );
 
 	return $defaults;
-
-}//end secretum_comment_form_defaults()
+}
 
 add_filter( 'comment_form_defaults', 'Secretum\secretum_comment_form_defaults' );
