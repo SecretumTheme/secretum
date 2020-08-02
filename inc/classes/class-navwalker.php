@@ -3,8 +3,9 @@
  * Extend WordPress Menu Nav Walker
  *
  * @package    Secretum
+ * @subpackage \Walker_Nav_Menu
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/inc/classes/class-navwalker.php
  * @since      1.0.0
@@ -64,8 +65,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		$this->setting_base     = $setting_base;
 		$this->dropdown_classes = $dropdown_classes;
 		$this->textual_classes  = $textual_classes;
-
-	}//end __construct()
+	}
 
 
 	/**
@@ -125,8 +125,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		$output .= "{$n}{$indent}<ul{$ul_classes} {$labelledby} role=\"menubar\">{$n}";
-
-	}//end start_lvl()
+	}
 
 
 	/**
@@ -151,7 +150,6 @@ class Navwalker extends \Walker_Nav_Menu {
 			// Set Spacing.
 			$t = "\t";
 			$n = "\n";
-
 		}
 
 		// Set Indent.
@@ -363,8 +361,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		// Append Contents To Output.
 		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-
-	}//end start_el()
+	}
 
 
 	/**
@@ -404,9 +401,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-
-	}//end display_element()
-
+	}
 
 	/**
 	 * Menu Fallback
@@ -471,8 +466,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $classes;
-
-	}//end separate_linkmods_and_icons_from_classes()
+	}
 
 
 	/**
@@ -504,8 +498,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $linkmod_type;
-
-	}//end get_linkmod_type()
+	}
 
 
 	/**
@@ -542,8 +535,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $atts;
-
-	}//end update_atts_for_linkmod_type()
+	}
 
 
 	/**
@@ -561,8 +553,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $text;
-
-	}//end wrap_for_screen_reader()
+	}
 
 
 	/**
@@ -590,8 +581,7 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $output;
-
-	}//end linkmod_element_open()
+	}
 
 
 	/**
@@ -616,7 +606,5 @@ class Navwalker extends \Walker_Nav_Menu {
 		}
 
 		return $output;
-
-	}//end linkmod_element_close()
-
-}//end class
+	}
+}
