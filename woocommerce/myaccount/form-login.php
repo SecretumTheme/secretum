@@ -2,10 +2,10 @@
 /**
  * Login Form
  *
- * @package    WooCommerce
- * @subpackage Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @version    4.1.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-login.php
@@ -45,7 +45,7 @@ if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 		<?php do_action( 'woocommerce_login_form' ); ?>
 
 		<p class="form-group m-3">
-			<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="login" value="<?php esc_html_e( 'Log in', 'secretum' ); ?>"><?php esc_html_e( 'Log in', 'secretum' ); ?></button>
+			<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="login" value="<?php esc_attr_e( 'Log in', 'secretum' ); ?>"><?php esc_html_e( 'Log in', 'secretum' ); ?></button>
 		</p>
 
 		<p class="form-check m-3">
@@ -103,7 +103,7 @@ if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) :
 			<?php do_action( 'woocommerce_register_form' ); ?>
 
 			<p class="woocommerce-FormRow form-group m-3">
-				<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="register" value="<?php esc_html_e( 'Register', 'secretum' ); ?>"><?php esc_html_e( 'Register', 'secretum' ); ?></button>
+				<button type="submit" class="woocommerce-Button btn btn-primary btn-lg" name="register" value="<?php esc_attr_e( 'Register', 'secretum' ); ?>"><?php esc_html_e( 'Register', 'secretum' ); ?></button>
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
