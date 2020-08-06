@@ -2,10 +2,10 @@
 /**
  * Cart Page
  *
- * @package    WooCommerce
- * @subpackage Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @version    3.8.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/cart/cart.php
@@ -112,7 +112,7 @@ do_action( 'woocommerce_before_cart' );
 							}
 							?>
 							</td>
-							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'secretum' ); ?>">
+							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'secretum' ); ?>">
 							<?php
 							if ( ! $secretum_product_permalink ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $secretum_product->get_name(), $secretum_cart_item, $secretum_cart_item_key ) . '&nbsp;' );
@@ -131,10 +131,10 @@ do_action( 'woocommerce_before_cart' );
 
 							?>
 							</td>
-							<td class="product-price" data-title="<?php esc_html_e( 'Price', 'secretum' ); ?>">
+							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'secretum' ); ?>">
 								<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $secretum_product ), $secretum_cart_item, $secretum_cart_item_key ) ); ?>
 							</td>
-							<td class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'secretum' ); ?>">
+							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'secretum' ); ?>">
 							<?php
 							if ( $secretum_product->is_sold_individually() ) {
 								$secretum_product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $secretum_cart_item_key );
@@ -174,7 +174,7 @@ do_action( 'woocommerce_before_cart' );
 							);
 							?>
 							</td>
-							<td class="product-subtotal" data-title="<?php esc_html_e( 'Total', 'secretum' ); ?>">
+							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'secretum' ); ?>">
 								<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $secretum_product, $secretum_cart_item['quantity'] ), $secretum_cart_item, $secretum_cart_item_key ) ); ?>
 							</td>
 						</tr>
@@ -190,17 +190,17 @@ do_action( 'woocommerce_before_cart' );
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon row">
 							<div class="col-xs pr-2">
-								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'secretum' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'secretum' ); ?>" />
+								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'secretum' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'secretum' ); ?>" />
 							</div>
 							<div class="col-xs">
-								<button type="submit" class="button" name="apply_coupon" value="<?php esc_html_e( 'Apply coupon', 'secretum' ); ?>"><?php esc_html_e( 'Apply coupon', 'secretum' ); ?></button>
+								<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'secretum' ); ?>"><?php esc_html_e( 'Apply coupon', 'secretum' ); ?></button>
 							</div>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 					</td>
 					<td colspan="2" class="actions">
-						<button type="submit" class="button" name="update_cart" value="<?php esc_html_e( 'Update cart', 'secretum' ); ?>"><?php esc_html_e( 'Update cart', 'secretum' ); ?></button>
+						<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'secretum' ); ?>"><?php esc_html_e( 'Update cart', 'secretum' ); ?></button>
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 

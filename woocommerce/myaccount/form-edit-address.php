@@ -2,10 +2,10 @@
 /**
  * Edit address form
  *
- * @package    WooCommerce
- * @subpackage Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-edit-address.php
@@ -49,7 +49,7 @@ if ( ! $load_address ) {
 			<input type="hidden" name="action" value="edit_address" />
 
 			<p class="form-group mt-5 mb-5">
-				<button type="submit" class="btn btn-primary btn-lg" name="save_address" value="<?php esc_html_e( 'Save address', 'secretum' ); ?>"><?php esc_html_e( 'Save address', 'secretum' ); ?></button>
+				<button type="submit" class="btn btn-primary btn-lg" name="save_address" value="<?php esc_attr_e( 'Save address', 'secretum' ); ?>"><?php esc_html_e( 'Save address', 'secretum' ); ?></button>
 			</p>
 		</div>
 	</form>
