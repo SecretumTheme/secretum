@@ -13,8 +13,8 @@
 
 namespace Secretum;
 
-if ( false !== secretum_mod( 'site_identity_tagline_status' ) && ( true !== has_nav_menu( 'secretum-navbar-primary-left' ) && true !== has_nav_menu( 'secretum-navbar-primary-right' ) ) ) {
-	?>
-	<p class="site-description<?php secretum_container( 'site_identity_desc', 'echo', [ 'textuals' => true ] ); ?> description-container"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
-	<?php
+if ( false === secretum_mod( 'site_identity_tagline_status' ) ) {
+	return;
 }
+?>
+<p class="site-description<?php secretum_container( 'site_identity_desc', 'echo', array( 'textuals' => true ) ); ?>"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>

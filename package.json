@@ -1,7 +1,7 @@
 {
     "name": "Secretum",
     "author": "SecretumTheme",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "license": "GPL-2.0",
     "repository": {
         "type": "git",
@@ -27,7 +27,7 @@
         "npm": ">=6.5.0"
     },
     "devDependencies": {
-        "bootstrap": "^4.3.1",
+        "bootstrap": "^4.5.1",
         "del": "^3.0.0",
         "foundation-icons": "^1.0.1",
         "gulp": "^4.0.2",

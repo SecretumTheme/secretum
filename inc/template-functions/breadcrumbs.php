@@ -54,7 +54,7 @@ function secretum_breadcrumb() {
 		$category_list = get_the_category();
 
 		if ( true !== empty( $category_list[0] ) ) {
-			$category_item = '<a href="' . esc_url( get_category_link( $category_list[0]->term_id ) ) . '"><span itemprop="name">' . esc_html( $category_list[0]->name ) . '</span></a>';
+			$category_item = '<a href="' . esc_url( get_category_link( $category_list[0]->term_id ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $category_list[0]->name ) . '</span></a>';
 		}
 	}
 
@@ -64,6 +64,8 @@ function secretum_breadcrumb() {
 	$ol_schema       = ' itemscope itemtype="http://schema.org/BreadcrumbList"';
 	$li_schema       = ' itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
 	$li_aria_last    = ' aria-current="page"';
+	$href_item_prop  = ' itemprop="item"';
+	$href_name_prop  = ' itemprop="name"';
 	$first_position  = '<meta itemprop="position" content="1" />';
 	$second_position = '<meta itemprop="position" content="2" />';
 	$third_position  = '<meta itemprop="position" content="3" />';
@@ -74,11 +76,11 @@ function secretum_breadcrumb() {
 	$breadcrumbs_home = secretum_mod( 'breadcrumbs_home', 'attr' );
 
 	if ( 'icon' === $breadcrumbs_home ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><i class="fi-home"></i> <a href="' . $home_url . '"><span itemprop="name">' . $blog_name . '</span></a>' . $first_position . '</li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><i class="fi-home"></i> <a href="' . $home_url . '"' . $href_item_prop . '><span' . $href_name_prop . '>' . $blog_name . '</span></a>' . $first_position . '</li>';
 	} elseif ( 'link' === $breadcrumbs_home ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"><span itemprop="name"><i class="fi-home" title="' . $blog_name . '"></i></span></a>' . $first_position . '</li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"' . $href_item_prop . '><span' . $href_name_prop . '><i class="fi-home" title="' . $blog_name . '"></i></span></a>' . $first_position . '</li>';
 	} elseif ( '' === $breadcrumbs_home || true === empty( $breadcrumbs_home ) ) {
-		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"><span itemprop="name">' . $blog_name . '</span></a>' . $first_position . '</li>';
+		$html .= '<li class="breadcrumb-item"' . $li_schema . '><a href="' . $home_url . '"' . $href_item_prop . '><span' . $href_name_prop . '>' . $blog_name . '</span></a>' . $first_position . '</li>';
 	}
 
 	if ( ( true === is_category() || true === is_single() ) ) {
@@ -119,17 +121,18 @@ function secretum_breadcrumb() {
 				'itemtype'  => true,
 			),
 			'span' => array(
-				'class'     => true,
-				'itemprop'  => true,
+				'class'    => true,
+				'itemprop' => true,
 			),
 			'meta' => array(
-				'content'   => true,
-				'itemprop'  => true,
+				'content'  => true,
+				'itemprop' => true,
 			),
 			'a'    => array(
-				'class' => true,
-				'href'  => true,
-				'rel'   => true,
+				'itemprop' => true,
+				'class'    => true,
+				'href'     => true,
+				'rel'      => true,
 			),
 			'i'    => array(
 				'class' => true,

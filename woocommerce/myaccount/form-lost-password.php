@@ -2,10 +2,10 @@
 /**
  * Lost password form
  *
- * @package    WooCommerce
- * @subpackage Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @version    3.5.2
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/myaccount/form-lost-password.php
@@ -32,7 +32,7 @@ do_action( 'woocommerce_before_lost_password_form' );
 
 	<p class="form-group mt-3">
 		<input type="hidden" name="wc_reset_password" value="true" />
-		<button type="submit" class="btn btn-primary" value="<?php esc_html_e( 'Reset password', 'secretum' ); ?>"><?php esc_html_e( 'Reset password', 'secretum' ); ?></button>
+		<button type="submit" class="btn btn-primary" value="<?php esc_attr_e( 'Reset password', 'secretum' ); ?>"><?php esc_html_e( 'Reset password', 'secretum' ); ?></button>
 	</p>
 
 	<?php wp_nonce_field( 'lost_password', 'woocommerce-lost-password-nonce' ); ?>
