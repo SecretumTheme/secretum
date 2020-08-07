@@ -2,6 +2,7 @@
 
 # 2.1.0
 **2020-08-06 - Feature Upgrades**
+* New Dark Theme Color Palette: Strong Green & Grayish Blue
 * Customizer feature (Primary Nav > Display Settings): Set the location of the search input within the primary nav menu
 * Modified how the default no-navigation menu functions when a theme is newly installed
 * Refactored brand logo and primary nav layout handler
