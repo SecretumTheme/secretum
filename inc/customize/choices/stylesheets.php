@@ -51,6 +51,7 @@ function secretum_customizer_theme_colors() {
 		'lt_very-dark-blue_vivid-orange'     => __( 'Light: Very Dark Blue - Vivid Orange', 'secretum' ),
 		'lt_mostly-pure-blue_moderate-green' => __( 'Light: Mostly Pure Blue - Moderate Green', 'secretum' ),
 		'dt_vivid-blue_strong-red'           => __( 'Dark: Vivid Blue - Strong Red', 'secretum' ),
+		'dt_strong-green_grayish-blue'       => __( 'Dark: Strong Green - Grayish Blue', 'secretum' ),
 		'dt_dark-yellow-olive_vivid-orange'  => __( 'Dark: Dark Yellow Olive - Vivid Orange', 'secretum' ),
 	];
 

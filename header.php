@@ -27,7 +27,7 @@ namespace Secretum;
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 <div class="hfeed site<?php secretum_theme_textual(); ?><?php secretum_theme_text_link(); ?>" id="page">
 
 <?php

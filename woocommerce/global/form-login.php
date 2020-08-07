@@ -2,10 +2,10 @@
 /**
  * Login form
  *
- * @package    WooCommerce
- * @subpackage Secretum
+ * @package    Secretum
+ * @subpackage WooCommerce
  * @author     SecretumTheme <author@secretumtheme.com>
- * @copyright  2018-2019 Secretum
+ * @copyright  2018-2020 Secretum
  * @version    3.6.0
  * @license    https://github.com/SecretumTheme/secretum/blob/master/license.txt GPL-2.0
  * @link       https://github.com/SecretumTheme/secretum/blob/master/woocommerce/global/form-login.php
@@ -48,7 +48,7 @@ if ( is_user_logged_in() ) {
 
 	<p class="form-row form-group">
 		<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-		<button type="submit" class="button" name="login" value="<?php esc_html_e( 'Login', 'secretum' ); ?>"><?php esc_html_e( 'Login', 'secretum' ); ?></button>
+		<button type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'secretum' ); ?>"><?php esc_html_e( 'Login', 'secretum' ); ?></button>
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ); ?>" />
 	</p>
 
